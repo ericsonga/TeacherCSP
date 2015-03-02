@@ -1,0 +1,2245 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Iteration &mdash; Programs, Information, and People: Interactive Edition</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Programs, Information, and People: Interactive Edition" href="../index.html" />
+    <link rel="next" title="Decisions and Selection" href="../Selection/selection.html" />
+    <link rel="prev" title="Sequences" href="../Sequences/index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pip';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+var _prum = [['id', '521dfcc4abe53d0749000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../toc.html">Programs, Information, and People</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../toc.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pip/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/assignments" id="registerlink">Project Page</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pip/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Iteration</a><ul>
+<li><a class="reference internal" href="#the-for-loop">The <strong>for</strong> Loop</a></li>
+<li><a class="reference internal" href="#flow-of-execution-of-the-for-loop">Flow of Execution of the for Loop</a></li>
+<li><a class="reference internal" href="#strings-and-for-loops">Strings and <tt class="docutils literal"><span class="pre">for</span></tt> loops</a></li>
+<li><a class="reference internal" href="#traversal-and-the-for-loop-by-index">Traversal and the <tt class="docutils literal"><span class="pre">for</span></tt> Loop: By Index</a></li>
+<li><a class="reference internal" href="#lists-and-for-loops">Lists and <tt class="docutils literal"><span class="pre">for</span></tt> loops</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-accumulator-pattern">The Accumulator Pattern</a><ul>
+<li><a class="reference internal" href="#the-accumulator-pattern-with-strings">The Accumulator Pattern with Strings</a></li>
+<li><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#glossary">Glossary</a></li>
+<li><a class="reference internal" href="#exercises">Exercises</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Sequences" data-toggle="tooltip">
+    <a href="../Sequences/index.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Decisions and Selection' data-toggle="tooltip" >
+    <a href="../Selection/selection.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="iteration">
+<span id="iteration-chap"></span><h1>Iteration<a class="headerlink" href="#iteration" title="Permalink to this headline">¶</a></h1>
+<p>A basic building block of all programs is to be able to repeat some code
+over and over again.  In computing, we refer to this repetitive execution as <strong>iteration</strong>.  In this section, we will explore some mechanisms for basic iteration.</p>
+<p>With collections (lists and strings), a lot of computations involve processing one item at a time.
+For strings this means that we would like to process one character at a time.
+Often we start at the beginning, select each character in turn, do something
+to it, and continue until the end. This pattern of processing is called a
+<strong>traversal</strong>, or <strong>iteration over the characters</strong>. Similarly, we can process each of the items in a list, one at a time,
+<strong>iteration over the items in the list</strong>.</p>
+<div class="section" id="the-for-loop">
+<span id="index-0"></span><h2>The <strong>for</strong> Loop<a class="headerlink" href="#the-for-loop" title="Permalink to this headline">¶</a></h2>
+<p>In Python, the <strong>for</strong> statement allows us to write programs that implement iteration.   As a simple example, let&#8217;s say we have some friends, and
+we&#8217;d like to send them each an email inviting them to our party.  We
+don&#8217;t quite know how to send email yet, so for the moment we&#8217;ll just print a
+message for each friend.</p>
+
+<div id="cont"></div>
+<div id="ch03_4" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ch03_4_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch03_4_saveb" onclick="saveEditor('ch03_4');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch03_4_loadb" onclick="requestCode('ch03_4');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('ch03_4','for name in [*doubleq*Joe*doubleq*, *doubleq*Amy*doubleq*, *doubleq*Brad*doubleq*, *doubleq*Angelina*doubleq*, *doubleq*Zuki*doubleq*, *doubleq*Thandi*doubleq*, *doubleq*Paris*doubleq*]:*nline*    print*open**doubleq*Hi*doubleq*, name, *doubleq*Please come to my party on Saturday!*doubleq**close*','1','*doubleq*Overall Tour*doubleq*; 1-2: Example04_Tour01_Line01; 2: Example04_Tour01_Line02; 1: Example04_Tour01_Line03;*atype*')"/>
+<button class='btn btn-default' id="ch03_4_vizb" onclick="injectCodelens(this,'ch03_4');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ch03_4_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ch03_4_code" class="active_code" prefixcode="undefined" lang="python">
+for name in ["Joe", "Amy", "Brad", "Angelina", "Zuki", "Thandi", "Paris"]:
+    print("Hi", name, "Please come to my party on Saturday!")
+</textarea>
+</div>
+
+<div class="ac_output"><pre id="ch03_4_suffix" style="display:none">
+</pre><pre id="ch03_4_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch03_4)</span> </p>
+<div id="ch03_4_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch03_4_saveb').toggle();
+    $('#ch03_4_loadb').toggle();
+}
+if ($("#ch03_4").attr("lang") !== "html" && $("#ch03_4_code_div").parents(".admonition").length == 0 && $("#ch03_4_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ch03_4_code_div").offset({
+			left: $("#ch03_4 .clearfix").offset().left
+		});
+	}
+	$("#ch03_4_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ch03_4_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ch03_4_runb").parent().siblings(".ac_output").show();
+			runit('ch03_4',this, undefined);
+			$("#ch03_4_runb").on("click", function(){
+				runit('ch03_4',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ch03_4_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ch03_4_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ch03_4_runb").on("click", function(){
+		runit('ch03_4',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Take a look at the output produced when you press the <tt class="docutils literal"><span class="pre">run</span></tt> button.  There is one line printed for each friend.  Here&#8217;s how it works:</p>
+<ul class="simple">
+<li><strong>name</strong> in this <tt class="docutils literal"><span class="pre">for</span></tt> statement is called the <strong>loop variable</strong>.</li>
+<li>The list of names in the square brackets is the sequence over which we will iterate.</li>
+<li>Line 2  is the <strong>loop body</strong>.  The loop body is always
+indented. The indentation determines exactly what statements are &#8220;in the
+loop&#8221;.  The loop body is performed one time for each name in the list.</li>
+<li>On each <em>iteration</em> or <em>pass</em> of the loop, first a check is done to see if
+there are still more items to be processed.  If there are none left (this is
+called the <strong>terminating condition</strong> of the loop), the loop has finished.
+Program execution continues at the next statement after the loop body.</li>
+<li>If there are items still to be processed, the loop variable is updated to
+refer to the next item in the list.  This means, in this case, that the loop
+body is executed here 7 times, and each time <cite>friendName</cite> will refer to a different
+friend.</li>
+<li>At the end of each execution of the body of the loop, Python returns
+to the <tt class="docutils literal"><span class="pre">for</span></tt> statement, to see if there are more items to be handled.</li>
+</ul>
+</div>
+<div class="section" id="flow-of-execution-of-the-for-loop">
+<span id="index-1"></span><h2>Flow of Execution of the for Loop<a class="headerlink" href="#flow-of-execution-of-the-for-loop" title="Permalink to this headline">¶</a></h2>
+<p>As a program executes, the interpreter always keeps track of which statement is
+about to be executed.  We call this the <strong>control flow</strong>, or the <strong>flow of
+execution</strong> of the program.  When humans execute programs, they often use their
+finger to point to each statement in turn.  So you could think of control flow
+as &#8220;Python&#8217;s moving finger&#8221;.</p>
+<p>Control flow until now has been strictly top to bottom, one statement at a
+time.  We call this type of control <strong>sequential</strong>.
+Sequential flow of control is always assumed to be the default behavior for a computer program.
+The <tt class="docutils literal"><span class="pre">for</span></tt> statement changes this.</p>
+<p>Flow of control is often easy to visualize and understand if we draw a flowchart.
+This flowchart shows the exact steps and logic of how the <tt class="docutils literal"><span class="pre">for</span></tt> statement executes.</p>
+<a class="reference internal image-reference" href="../_images/new_flowchart_for.png"><img alt="../_images/new_flowchart_for.png" src="../_images/new_flowchart_for.png" style="width: 300px;" /></a>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Not sure what a flowchart is? Check out this funny take on it, in <a class="reference external" href="http://xkcd.com/518/">XKCD</a>. <a class="reference external" href="http://xkcd.com/1195/">And this one</a>.</p>
+</div>
+<p>A codelens demonstration is a good way to help you visualize exactly how the flow of control
+works with the for loop.  Try stepping forward and backward through the program by pressing
+the buttons.  You can see the value of <tt class="docutils literal"><span class="pre">name</span></tt> change as the loop iterates thru the list of friends.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="vtest"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (vtest)</span> </p>
+</div>
+<script type="text/javascript">
+var vtest_trace = {"code": "for name in [\"Joe\", \"Amy\", \"Brad\", \"Angelina\", \"Zuki\", \"Thandi\", \"Paris\"]:\n    print(\"Hi \", name, \"  Please come to my party on Saturday!\")", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Joe"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Joe"}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Amy"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Amy"}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Brad"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Brad"}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Angelina"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n('Hi ', 'Angelina', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Angelina"}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n('Hi ', 'Angelina', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Zuki"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n('Hi ', 'Angelina', '  Please come to my party on Saturday!')\n('Hi ', 'Zuki', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Zuki"}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n('Hi ', 'Angelina', '  Please come to my party on Saturday!')\n('Hi ', 'Zuki', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Thandi"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n('Hi ', 'Angelina', '  Please come to my party on Saturday!')\n('Hi ', 'Zuki', '  Please come to my party on Saturday!')\n('Hi ', 'Thandi', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Thandi"}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n('Hi ', 'Angelina', '  Please come to my party on Saturday!')\n('Hi ', 'Zuki', '  Please come to my party on Saturday!')\n('Hi ', 'Thandi', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Paris"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n('Hi ', 'Angelina', '  Please come to my party on Saturday!')\n('Hi ', 'Zuki', '  Please come to my party on Saturday!')\n('Hi ', 'Thandi', '  Please come to my party on Saturday!')\n('Hi ', 'Paris', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Paris"}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["name"], "stdout": "('Hi ', 'Joe', '  Please come to my party on Saturday!')\n('Hi ', 'Amy', '  Please come to my party on Saturday!')\n('Hi ', 'Brad', '  Please come to my party on Saturday!')\n('Hi ', 'Angelina', '  Please come to my party on Saturday!')\n('Hi ', 'Zuki', '  Please come to my party on Saturday!')\n('Hi ', 'Thandi', '  Please come to my party on Saturday!')\n('Hi ', 'Paris', '  Please come to my party on Saturday!')\n", "func_name": "<module>", "stack_to_render": [], "globals": {"name": "Paris"}, "heap": {}, "line": 1, "event": "return"}]};
+var vtest_vis;
+
+$(document).ready(function() {
+    vtest_vis = new ExecutionVisualizer('vtest',vtest_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(vtest_vis,'vtest');
+    allVisualizers.push(vtest_vis);
+
+});
+
+$(document).ready(function() {
+    $("#vtest_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'vtest'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    vtest_vis.redrawConnectors();
+});
+</script>
+</div>
+<div class="section" id="strings-and-for-loops">
+<h2>Strings and <tt class="docutils literal"><span class="pre">for</span></tt> loops<a class="headerlink" href="#strings-and-for-loops" title="Permalink to this headline">¶</a></h2>
+<p>Since a string is simply a sequence of characters, the <tt class="docutils literal"><span class="pre">for</span></tt> loop iterates over each character automatically. (As always, try
+to predict what the output will be from this code before your run it.</p>
+
+<div id="cont"></div>
+<div id="ch08_6" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ch08_6_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch08_6_saveb" onclick="saveEditor('ch08_6');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch08_6_loadb" onclick="requestCode('ch08_6');">Load</button>
+<button class='btn btn-default' id="ch08_6_vizb" onclick="injectCodelens(this,'ch08_6');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ch08_6_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ch08_6_code" class="active_code" prefixcode="undefined" lang="python">
+for achar in "Go Spot Go":
+    print(achar)
+</textarea>
+</div>
+
+<div class="ac_output"><pre id="ch08_6_suffix" style="display:none">
+</pre><pre id="ch08_6_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch08_6)</span> </p>
+<div id="ch08_6_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch08_6_saveb').toggle();
+    $('#ch08_6_loadb').toggle();
+}
+if ($("#ch08_6").attr("lang") !== "html" && $("#ch08_6_code_div").parents(".admonition").length == 0 && $("#ch08_6_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ch08_6_code_div").offset({
+			left: $("#ch08_6 .clearfix").offset().left
+		});
+	}
+	$("#ch08_6_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ch08_6_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ch08_6_runb").parent().siblings(".ac_output").show();
+			runit('ch08_6',this, undefined);
+			$("#ch08_6_runb").on("click", function(){
+				runit('ch08_6',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ch08_6_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ch08_6_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ch08_6_runb").on("click", function(){
+		runit('ch08_6',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>The loop variable <tt class="docutils literal"><span class="pre">achar</span></tt> is automatically reassigned each character in the string &#8220;Go Spot Go&#8221;.
+We will refer to this type of sequence iteration as <strong>iteration by item</strong>.
+Note that the for loop processes the characters in a string or items in a sequence one at a time from left to right.</p>
+<p><strong>Check your understanding</strong></p>
+
+            <div id="test_question8_8_1" class="alert alert-warning">
+            <p>iter-1: How many times is the word HELLO printed by the following statements?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="s">&quot;python rocks&quot;</span>
+<span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+   <span class="k">print</span><span class="p">(</span><span class="s">&quot;HELLO&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_question8_8_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_question8_8_1_opt_a" />
+            <label for= "test_question8_8_1_opt_a">  a) 10</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_question8_8_1_opt_b" />
+            <label for= "test_question8_8_1_opt_b">  b) 11</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_question8_8_1_opt_c" />
+            <label for= "test_question8_8_1_opt_c">  c) 12</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_question8_8_1_opt_d" />
+            <label for= "test_question8_8_1_opt_d">  d) Error, the for statement needs to use the range function.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_question8_8_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_question8_8_1','c',['Iteration by item will process once for each item in the sequence.', 'The blank is part of the sequence.', 'Yes, there are 12 characters, including the blank.', 'The for statement can iterate over a sequence item by item.'])">Check Me</button>
+            <button class='btn btn-default' id="test_question8_8_1_bcomp" disabled name="compare" onclick="compareAnswers('test_question8_8_1');">Compare Me</button>
+            </form><br />
+            <div id="test_question8_8_1_feedback">
+            </div>
+            </div>
+            
+            <div id="test_question8_8_2" class="alert alert-warning">
+            <p>iter-2: How many times is the word HELLO printed by the following statements?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="s">&quot;python rocks&quot;</span>
+<span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">8</span><span class="p">]:</span>
+   <span class="k">print</span><span class="p">(</span><span class="s">&quot;HELLO&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_question8_8_2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_question8_8_2_opt_a" />
+            <label for= "test_question8_8_2_opt_a">  a) 4</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_question8_8_2_opt_b" />
+            <label for= "test_question8_8_2_opt_b">  b) 5</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_question8_8_2_opt_c" />
+            <label for= "test_question8_8_2_opt_c">  c) 6</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_question8_8_2_opt_d" />
+            <label for= "test_question8_8_2_opt_d">  d) Error, the for statement cannot use slice.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_question8_8_2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_question8_8_2','b',['Slice returns a sequence that can be iterated over.', 'Yes, The blank is part of the sequence returned by slice', 'Check the result of s[3:8].  It does not include the item at index 8.', 'Slice returns a sequence.'])">Check Me</button>
+            <button class='btn btn-default' id="test_question8_8_2_bcomp" disabled name="compare" onclick="compareAnswers('test_question8_8_2');">Compare Me</button>
+            </form><br />
+            <div id="test_question8_8_2_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="traversal-and-the-for-loop-by-index">
+<h2>Traversal and the <tt class="docutils literal"><span class="pre">for</span></tt> Loop: By Index<a class="headerlink" href="#traversal-and-the-for-loop-by-index" title="Permalink to this headline">¶</a></h2>
+<p>It is also possible to iterate through the <em>indexes</em> of a string or sequence. The <tt class="docutils literal"><span class="pre">for</span></tt> loop can then be used to iterate over these positions.
+These positions can be used together with the indexing operator to access the individual
+characters in the string.</p>
+
+<div id="cont"></div>
+<div id="ch08_7a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ch08_7a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch08_7a_saveb" onclick="saveEditor('ch08_7a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch08_7a_loadb" onclick="requestCode('ch08_7a');">Load</button>
+<button class='btn btn-default' id="ch08_7a_vizb" onclick="injectCodelens(this,'ch08_7a');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ch08_7a_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ch08_7a_code" class="active_code" prefixcode="undefined" lang="python">
+fruit = "apple"
+for idx in [0, 1, 2, 3, 4]:
+   currentChar = fruit[idx]
+   print(currentChar)
+
+# after you run this, try changing the order of items in the list [0, 1, 2, 3, 4] and see what happens.
+# What happens if you put the number 6 into the list, or the word "hello"?
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ch08_7a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ch08_7a_suffix" style="display:none">
+</pre><pre id="ch08_7a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch08_7a)</span> </p>
+<div id="ch08_7a_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch08_7a_saveb').toggle();
+    $('#ch08_7a_loadb').toggle();
+}
+if ($("#ch08_7a").attr("lang") !== "html" && $("#ch08_7a_code_div").parents(".admonition").length == 0 && $("#ch08_7a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ch08_7a_code_div").offset({
+			left: $("#ch08_7a .clearfix").offset().left
+		});
+	}
+	$("#ch08_7a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ch08_7a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ch08_7a_runb").parent().siblings(".ac_output").show();
+			runit('ch08_7a',this, undefined);
+			$("#ch08_7a_runb").on("click", function(){
+				runit('ch08_7a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ch08_7a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ch08_7a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ch08_7a_runb").on("click", function(){
+		runit('ch08_7a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Conveniently, we can use the <tt class="docutils literal"><span class="pre">range</span></tt> function to automatically generate the indices of the characters.</p>
+
+<div id="cont"></div>
+<div id="ch08_7a1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ch08_7a1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch08_7a1_saveb" onclick="saveEditor('ch08_7a1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch08_7a1_loadb" onclick="requestCode('ch08_7a1');">Load</button>
+<button class='btn btn-default' id="ch08_7a1_vizb" onclick="injectCodelens(this,'ch08_7a1');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ch08_7a1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ch08_7a1_code" class="active_code" prefixcode="undefined" lang="python">
+x = range(5)
+print(type(x))
+print(x)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ch08_7a1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ch08_7a1_suffix" style="display:none">
+</pre><pre id="ch08_7a1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch08_7a1)</span> </p>
+<div id="ch08_7a1_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch08_7a1_saveb').toggle();
+    $('#ch08_7a1_loadb').toggle();
+}
+if ($("#ch08_7a1").attr("lang") !== "html" && $("#ch08_7a1_code_div").parents(".admonition").length == 0 && $("#ch08_7a1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ch08_7a1_code_div").offset({
+			left: $("#ch08_7a1 .clearfix").offset().left
+		});
+	}
+	$("#ch08_7a1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ch08_7a1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ch08_7a1_runb").parent().siblings(".ac_output").show();
+			runit('ch08_7a1',this, undefined);
+			$("#ch08_7a1_runb").on("click", function(){
+				runit('ch08_7a1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ch08_7a1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ch08_7a1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ch08_7a1_runb").on("click", function(){
+		runit('ch08_7a1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Consider the following codelens example.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="ch08_7"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (ch08_7)</span> </p>
+</div>
+<script type="text/javascript">
+var ch08_7_trace = {"code": "fruit = \"apple\"\nx = range(5)\nfor idx in x:\n    currentChar = fruit[idx]\n    print(currentChar)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["fruit"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"fruit": "apple"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["fruit", "x"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 1], "fruit": "apple"}, "heap": {"1": ["LIST", 0, 1, 2, 3, 4]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["fruit", "x", "idx"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 1], "fruit": "apple", "idx": 0}, "heap": {"1": ["LIST", 0, 1, 2, 3, 4]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["fruit", "x", "idx", "currentChar"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 1], "fruit": "apple", "currentChar": "a", "idx": 0}, "heap": {"1": ["LIST", 0, 1, 2, 3, 4]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["fruit", "x", "idx", "currentChar"], "stdout": "a\n", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 1], "fruit": "apple", "currentChar": "a", "idx": 0}, "heap": {"1": ["LIST", 0, 1, 2, 3, 4]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["fruit", "x", "idx", "currentChar"], "stdout": "a\n", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 1], "fruit": "apple", "currentChar": "a", "idx": 1}, "heap": {"1": ["LIST", 0, 1, 2, 3, 4]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["fruit", "x", "idx", "currentChar"], "stdout": "a\n", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 1], "fruit": "apple", "currentChar": "p", "idx": 1}, "heap": {"1": ["LIST", 0, 1, 2, 3, 4]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["fruit", "x", "idx", "currentChar"], "stdout": "a\np\n", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 1], "fruit": "apple", "currentChar": "p", "idx": 1}, "heap": {"1": ["LIST", 0, 1, 2, 3, 4]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["fruit", "x", "idx", "currentChar"], "stdout": "a\np\n", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 1], "fruit": "apple", "currentChar": "p", "idx": 2}, "heap": {"1": ["LIST", 0, 1, 2, 3, 4]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["fruit", "x", "idx", "currentChar"], "stdout": "a\np\n", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 1], "fruit": "apple", "currentChar": "p", "idx": 2}, "heap": {"1": ["LIST", 0, 1, 2, 3, 4]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["fruit", "x", "idx", "currentChar"], "stdout": "a\np\np\n", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 1], "fruit": "apple", "currentChar": "p", "idx": 2}, "heap": {"1": ["LIST", 0, 1, 2, 3, 4]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["fruit", "x", "idx", "currentChar"], "stdout": "a\np\np\n", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 1], "fruit": "apple", "currentChar": "p", "idx": 3}, "heap": {"1": ["LIST", 0, 1, 2, 3, 4]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["fruit", "x", "idx", "currentChar"], "stdout": "a\np\np\n", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 1], "fruit": "apple", "currentChar": "l", "idx": 3}, "heap": {"1": ["LIST", 0, 1, 2, 3, 4]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["fruit", "x", "idx", "currentChar"], "stdout": "a\np\np\nl\n", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 1], "fruit": "apple", "currentChar": "l", "idx": 3}, "heap": {"1": ["LIST", 0, 1, 2, 3, 4]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["fruit", "x", "idx", "currentChar"], "stdout": "a\np\np\nl\n", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 1], "fruit": "apple", "currentChar": "l", "idx": 4}, "heap": {"1": ["LIST", 0, 1, 2, 3, 4]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["fruit", "x", "idx", "currentChar"], "stdout": "a\np\np\nl\n", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 1], "fruit": "apple", "currentChar": "e", "idx": 4}, "heap": {"1": ["LIST", 0, 1, 2, 3, 4]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["fruit", "x", "idx", "currentChar"], "stdout": "a\np\np\nl\ne\n", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 1], "fruit": "apple", "currentChar": "e", "idx": 4}, "heap": {"1": ["LIST", 0, 1, 2, 3, 4]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["fruit", "x", "idx", "currentChar"], "stdout": "a\np\np\nl\ne\n", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 1], "fruit": "apple", "currentChar": "e", "idx": 4}, "heap": {"1": ["LIST", 0, 1, 2, 3, 4]}, "line": 3, "event": "return"}]};
+var ch08_7_vis;
+
+$(document).ready(function() {
+    ch08_7_vis = new ExecutionVisualizer('ch08_7',ch08_7_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(ch08_7_vis,'ch08_7');
+    allVisualizers.push(ch08_7_vis);
+
+});
+
+$(document).ready(function() {
+    $("#ch08_7_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'ch08_7'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    ch08_7_vis.redrawConnectors();
+});
+</script>
+<p>The index positions in &#8220;apple&#8221; are 0,1,2,3 and 4.  This is exactly the same sequence of integers returned by <tt class="docutils literal"><span class="pre">range(5)</span></tt>.  The first time through the for loop, <tt class="docutils literal"><span class="pre">idx</span></tt> will be 0 and the &#8220;a&#8221; will be printed.  Then, <tt class="docutils literal"><span class="pre">idx</span></tt> will be reassigned to 1 and &#8220;p&#8221; will be displayed.  This will repeat for all the range values up to but not including 5.  Since &#8220;e&#8221; has index 4, this will be exactly right to show all
+of the characters.</p>
+<p>In order to make the iteration more general, we can use the <tt class="docutils literal"><span class="pre">len</span></tt> function to provide the bound for <tt class="docutils literal"><span class="pre">range</span></tt>.  This is a very common pattern for traversing any sequence by position.        Make sure you understand why the range function behaves
+correctly when using <tt class="docutils literal"><span class="pre">len</span></tt> of the string as its parameter value.</p>
+
+<div id="cont"></div>
+<div id="ch08_7b" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ch08_7b_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch08_7b_saveb" onclick="saveEditor('ch08_7b');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch08_7b_loadb" onclick="requestCode('ch08_7b');">Load</button>
+<button class='btn btn-default' id="ch08_7b_vizb" onclick="injectCodelens(this,'ch08_7b');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ch08_7b_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ch08_7b_code" class="active_code" prefixcode="undefined" lang="python">
+fruit = "apple"
+for idx in range(len(fruit)):
+    print(fruit[idx])
+</textarea>
+</div>
+
+<div class="ac_output"><pre id="ch08_7b_suffix" style="display:none">
+</pre><pre id="ch08_7b_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch08_7b)</span> </p>
+<div id="ch08_7b_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch08_7b_saveb').toggle();
+    $('#ch08_7b_loadb').toggle();
+}
+if ($("#ch08_7b").attr("lang") !== "html" && $("#ch08_7b_code_div").parents(".admonition").length == 0 && $("#ch08_7b_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ch08_7b_code_div").offset({
+			left: $("#ch08_7b .clearfix").offset().left
+		});
+	}
+	$("#ch08_7b_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ch08_7b_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ch08_7b_runb").parent().siblings(".ac_output").show();
+			runit('ch08_7b',this, undefined);
+			$("#ch08_7b_runb").on("click", function(){
+				runit('ch08_7b',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ch08_7b_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ch08_7b_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ch08_7b_runb").on("click", function(){
+		runit('ch08_7b',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>You may also note that iteration by position allows the programmer to control the direction of the
+traversal by changing the sequence of index values.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="ch08_8"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (ch08_8)</span> </p>
+</div>
+<script type="text/javascript">
+var ch08_8_trace = {"code": "fruit = \"apple\"\nfor idx in [0, 2, 4, 3, 1]:\n    print(fruit[idx])", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["fruit"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"fruit": "apple"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["fruit", "idx"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"fruit": "apple", "idx": 0}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["fruit", "idx"], "stdout": "a\n", "func_name": "<module>", "stack_to_render": [], "globals": {"fruit": "apple", "idx": 0}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["fruit", "idx"], "stdout": "a\n", "func_name": "<module>", "stack_to_render": [], "globals": {"fruit": "apple", "idx": 2}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["fruit", "idx"], "stdout": "a\np\n", "func_name": "<module>", "stack_to_render": [], "globals": {"fruit": "apple", "idx": 2}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["fruit", "idx"], "stdout": "a\np\n", "func_name": "<module>", "stack_to_render": [], "globals": {"fruit": "apple", "idx": 4}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["fruit", "idx"], "stdout": "a\np\ne\n", "func_name": "<module>", "stack_to_render": [], "globals": {"fruit": "apple", "idx": 4}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["fruit", "idx"], "stdout": "a\np\ne\n", "func_name": "<module>", "stack_to_render": [], "globals": {"fruit": "apple", "idx": 3}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["fruit", "idx"], "stdout": "a\np\ne\nl\n", "func_name": "<module>", "stack_to_render": [], "globals": {"fruit": "apple", "idx": 3}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["fruit", "idx"], "stdout": "a\np\ne\nl\n", "func_name": "<module>", "stack_to_render": [], "globals": {"fruit": "apple", "idx": 1}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["fruit", "idx"], "stdout": "a\np\ne\nl\np\n", "func_name": "<module>", "stack_to_render": [], "globals": {"fruit": "apple", "idx": 1}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["fruit", "idx"], "stdout": "a\np\ne\nl\np\n", "func_name": "<module>", "stack_to_render": [], "globals": {"fruit": "apple", "idx": 1}, "heap": {}, "line": 2, "event": "return"}]};
+var ch08_8_vis;
+
+$(document).ready(function() {
+    ch08_8_vis = new ExecutionVisualizer('ch08_8',ch08_8_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(ch08_8_vis,'ch08_8');
+    allVisualizers.push(ch08_8_vis);
+
+});
+
+$(document).ready(function() {
+    $("#ch08_8_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'ch08_8'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    ch08_8_vis.redrawConnectors();
+});
+</script>
+<p><strong>Check your understanding</strong></p>
+
+            <div id="test_question8_9_1" class="alert alert-warning">
+            <p>iter-3: How many times is the letter o printed by the following statements?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="s">&quot;python rocks&quot;</span>
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+   <span class="k">if</span> <span class="n">idx</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+</pre></div>
+</div>
+<form name="test_question8_9_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_question8_9_1_opt_a" />
+            <label for= "test_question8_9_1_opt_a">  a) 0</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_question8_9_1_opt_b" />
+            <label for= "test_question8_9_1_opt_b">  b) 1</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_question8_9_1_opt_c" />
+            <label for= "test_question8_9_1_opt_c">  c) 2</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_question8_9_1_opt_d" />
+            <label for= "test_question8_9_1_opt_d">  d) Error, the for statement cannot have an if inside.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_question8_9_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_question8_9_1','c',['The for loop visits each index but the selection only prints some of them.', 'o is at positions 4 and 8', 'Yes, it will print all the characters in even index positions and the o character appears both times in an even location.', 'The for statement can have any statements inside, including if as well as for.'])">Check Me</button>
+            <button class='btn btn-default' id="test_question8_9_1_bcomp" disabled name="compare" onclick="compareAnswers('test_question8_9_1');">Compare Me</button>
+            </form><br />
+            <div id="test_question8_9_1_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="lists-and-for-loops">
+<h2>Lists and <tt class="docutils literal"><span class="pre">for</span></tt> loops<a class="headerlink" href="#lists-and-for-loops" title="Permalink to this headline">¶</a></h2>
+<p>It is also possible to perform <strong>list traversal</strong> using iteration by item as well as iteration by index.</p>
+
+<div id="cont"></div>
+<div id="chp09_03a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp09_03a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp09_03a_saveb" onclick="saveEditor('chp09_03a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp09_03a_loadb" onclick="requestCode('chp09_03a');">Load</button>
+<button class='btn btn-default' id="chp09_03a_vizb" onclick="injectCodelens(this,'chp09_03a');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp09_03a_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp09_03a_code" class="active_code" prefixcode="undefined" lang="python">
+fruits = ["apple","orange","banana","cherry"]
+
+for afruit in fruits:     # by item
+    print(afruit)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp09_03a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp09_03a_suffix" style="display:none">
+</pre><pre id="chp09_03a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp09_03a)</span> </p>
+<div id="chp09_03a_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp09_03a_saveb').toggle();
+    $('#chp09_03a_loadb').toggle();
+}
+if ($("#chp09_03a").attr("lang") !== "html" && $("#chp09_03a_code_div").parents(".admonition").length == 0 && $("#chp09_03a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp09_03a_code_div").offset({
+			left: $("#chp09_03a .clearfix").offset().left
+		});
+	}
+	$("#chp09_03a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp09_03a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp09_03a_runb").parent().siblings(".ac_output").show();
+			runit('chp09_03a',this, undefined);
+			$("#chp09_03a_runb").on("click", function(){
+				runit('chp09_03a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp09_03a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp09_03a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp09_03a_runb").on("click", function(){
+		runit('chp09_03a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>It almost reads like natural language: For (every) fruit in (the list of) fruits,
+print (the name of the) fruit.</p>
+<p>We can also use the indices to access the items in an iterative fashion.</p>
+
+<div id="cont"></div>
+<div id="chp09_03b" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp09_03b_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp09_03b_saveb" onclick="saveEditor('chp09_03b');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp09_03b_loadb" onclick="requestCode('chp09_03b');">Load</button>
+<button class='btn btn-default' id="chp09_03b_vizb" onclick="injectCodelens(this,'chp09_03b');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp09_03b_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp09_03b_code" class="active_code" prefixcode="undefined" lang="python">
+fruits = ["apple","orange","banana","cherry"]
+
+for position in range(len(fruits)):     # by index
+    print(fruits[position])
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp09_03b_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp09_03b_suffix" style="display:none">
+</pre><pre id="chp09_03b_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp09_03b)</span> </p>
+<div id="chp09_03b_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp09_03b_saveb').toggle();
+    $('#chp09_03b_loadb').toggle();
+}
+if ($("#chp09_03b").attr("lang") !== "html" && $("#chp09_03b_code_div").parents(".admonition").length == 0 && $("#chp09_03b_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp09_03b_code_div").offset({
+			left: $("#chp09_03b .clearfix").offset().left
+		});
+	}
+	$("#chp09_03b_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp09_03b_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp09_03b_runb").parent().siblings(".ac_output").show();
+			runit('chp09_03b',this, undefined);
+			$("#chp09_03b_runb").on("click", function(){
+				runit('chp09_03b',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp09_03b_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp09_03b_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp09_03b_runb").on("click", function(){
+		runit('chp09_03b',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>In this example, each time through the loop, the variable <tt class="docutils literal"><span class="pre">position</span></tt> is used as an index into the
+list, printing the <tt class="docutils literal"><span class="pre">position</span></tt>-eth element. Note that we used <tt class="docutils literal"><span class="pre">len</span></tt> as the upper bound on the range
+so that we can iterate correctly no matter how many items are in the list.</p>
+<p>Since lists are mutable, it is often desirable to traverse a list, modifying
+each of its elements as you go. The following code squares all the numbers from <tt class="docutils literal"><span class="pre">1</span></tt> to
+<tt class="docutils literal"><span class="pre">5</span></tt> using iteration by position.</p>
+
+<div id="cont"></div>
+<div id="chp09_for4" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp09_for4_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp09_for4_saveb" onclick="saveEditor('chp09_for4');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp09_for4_loadb" onclick="requestCode('chp09_for4');">Load</button>
+<button class='btn btn-default' id="chp09_for4_vizb" onclick="injectCodelens(this,'chp09_for4');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp09_for4_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp09_for4_code" class="active_code" prefixcode="undefined" lang="python">
+numbers = [10, 20, 30, 40, 50]
+print(numbers)
+
+for i in range(len(numbers)):
+    numbers[i] = numbers[i]**2
+
+print(numbers)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp09_for4_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp09_for4_suffix" style="display:none">
+</pre><pre id="chp09_for4_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp09_for4)</span> </p>
+<div id="chp09_for4_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp09_for4_saveb').toggle();
+    $('#chp09_for4_loadb').toggle();
+}
+if ($("#chp09_for4").attr("lang") !== "html" && $("#chp09_for4_code_div").parents(".admonition").length == 0 && $("#chp09_for4_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp09_for4_code_div").offset({
+			left: $("#chp09_for4 .clearfix").offset().left
+		});
+	}
+	$("#chp09_for4_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp09_for4_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp09_for4_runb").parent().siblings(".ac_output").show();
+			runit('chp09_for4',this, undefined);
+			$("#chp09_for4_runb").on("click", function(){
+				runit('chp09_for4',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp09_for4_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp09_for4_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp09_for4_runb").on("click", function(){
+		runit('chp09_for4',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Take a moment to think about <tt class="docutils literal"><span class="pre">range(len(numbers))</span></tt> until you understand how
+it works. In this case, since <tt class="docutils literal"><span class="pre">len(numbers)</span></tt> is 5, it&#8217;s the same as saying <tt class="docutils literal"><span class="pre">range(5)</span></tt>.
+We are interested here in both the <em>value</em> (10, 20, 30, etc.) and its <em>index</em> within the
+list (0, 1, 2, etc.), so that we can assign a new value to the position in the list.</p>
+<p><strong>Check your understanding</strong></p>
+
+            <div id="test_question9_16_1" class="alert alert-warning">
+            <p>iter-4: What is printed by the following statements?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">blist</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">alist</span><span class="p">:</span>
+   <span class="n">blist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">blist</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_question9_16_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_question9_16_1_opt_a" />
+            <label for= "test_question9_16_1_opt_a">  a) [4,2,8,6,5]</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_question9_16_1_opt_b" />
+            <label for= "test_question9_16_1_opt_b">  b) [4,2,8,6,5,5]</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_question9_16_1_opt_c" />
+            <label for= "test_question9_16_1_opt_c">  c) [9,7,13,11,10]</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_question9_16_1_opt_d" />
+            <label for= "test_question9_16_1_opt_d">  d) Error, you cannot concatenate inside an append.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_question9_16_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_question9_16_1','c',['5 is added to each item before the append is peformed.', 'There are too many items in this list.  Only 5 append operations are performed.', 'Yes, the for loop processes each item of the list.  5 is added before it is appended to blist.', '5 is added to each item before the append is performed.'])">Check Me</button>
+            <button class='btn btn-default' id="test_question9_16_1_bcomp" disabled name="compare" onclick="compareAnswers('test_question9_16_1');">Compare Me</button>
+            </form><br />
+            <div id="test_question9_16_1_feedback">
+            </div>
+            </div>
+            </div>
+</div>
+<div class="section" id="the-accumulator-pattern">
+<span id="accum-pattern"></span><h1>The Accumulator Pattern<a class="headerlink" href="#the-accumulator-pattern" title="Permalink to this headline">¶</a></h1>
+<p>One common programming &#8220;pattern&#8221; is to traverse a sequence, <strong>accumulating</strong> a value as we go,
+such as the sum-so-far or the maximum-so-far. That way, at the end of the traversal we have accumulated a single
+value, such as the sum total of all the items or the largest item.</p>
+<dl class="docutils">
+<dt>The anatomy of the accumulation pattern includes:</dt>
+<dd><ul class="first last simple">
+<li><strong>initializing</strong> an &#8220;acccumulator&#8221; variable to an initial value (such as 0 if accumulating a sum)</li>
+<li><strong>iterating</strong> (e.g., traversing the items in a sequence)</li>
+<li><strong>updating</strong> the accumulator variable on each iteration (i.e., when processing each item in the sequence)</li>
+</ul>
+</dd>
+</dl>
+<p>For example, consider the following code, which computes the sum of the numbers in a list.</p>
+
+<div id="cont"></div>
+<div id="iter_accum1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="iter_accum1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="iter_accum1_saveb" onclick="saveEditor('iter_accum1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="iter_accum1_loadb" onclick="requestCode('iter_accum1');">Load</button>
+<button class='btn btn-default' id="iter_accum1_vizb" onclick="injectCodelens(this,'iter_accum1');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="iter_accum1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="iter_accum1_code" class="active_code" prefixcode="undefined" lang="python">
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+accum = 0
+for w in nums:
+   accum = accum + w
+print accum
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="iter_accum1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="iter_accum1_suffix" style="display:none">
+</pre><pre id="iter_accum1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (iter_accum1)</span> </p>
+<div id="iter_accum1_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#iter_accum1_saveb').toggle();
+    $('#iter_accum1_loadb').toggle();
+}
+if ($("#iter_accum1").attr("lang") !== "html" && $("#iter_accum1_code_div").parents(".admonition").length == 0 && $("#iter_accum1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#iter_accum1_code_div").offset({
+			left: $("#iter_accum1 .clearfix").offset().left
+		});
+	}
+	$("#iter_accum1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#iter_accum1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#iter_accum1_runb").parent().siblings(".ac_output").show();
+			runit('iter_accum1',this, undefined);
+			$("#iter_accum1_runb").on("click", function(){
+				runit('iter_accum1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#iter_accum1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#iter_accum1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#iter_accum1_runb").on("click", function(){
+		runit('iter_accum1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>In the program above, notice that the variable <tt class="docutils literal"><span class="pre">accum</span></tt> starts out with a value of 0.
+Next, the iteration is performed 10 times.  Inside the for loop, the update occurs.
+<tt class="docutils literal"><span class="pre">w</span></tt> has the value of current item (1 the first time, then 2, then 3, etc.).
+<tt class="docutils literal"><span class="pre">accum</span></tt> is reassigned a new value which is the old value plus the current value of <tt class="docutils literal"><span class="pre">w</span></tt>.</p>
+<p>This pattern of iterating the updating of a variable is commonly
+referred to as the <strong>accumulator pattern</strong>.  We refer to the variable as the <strong>accumulator</strong>.  This pattern will come up over and over again.  Remember that the key
+to making it work successfully is to be sure to initialize the variable before you start the iteration.
+Once inside the iteration, it is required that you update the accumulator.</p>
+<p>Here is the same program in codelens.  Step thru the function and watch the &#8220;running total&#8221; accumulate the result.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="iter_accum2"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (iter_accum2)</span> </p>
+</div>
+<script type="text/javascript">
+var iter_accum2_trace = {"code": "nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\naccum = 0\nfor w in nums:\n   accum = accum + w\nprint accum", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["nums"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["nums", "accum"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 0, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 0, "w": 1, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 1, "w": 1, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 1, "w": 2, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 3, "w": 2, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 3, "w": 3, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 6, "w": 3, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 6, "w": 4, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 10, "w": 4, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 10, "w": 5, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 15, "w": 5, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 15, "w": 6, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 21, "w": 6, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 21, "w": 7, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 28, "w": 7, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 28, "w": 8, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 36, "w": 8, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 36, "w": 9, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 45, "w": 9, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 45, "w": 10, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 55, "w": 10, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 55, "w": 10, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["nums", "accum", "w"], "stdout": "55\n", "func_name": "<module>", "stack_to_render": [], "globals": {"accum": 55, "w": 10, "nums": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 5, "event": "return"}]};
+var iter_accum2_vis;
+
+$(document).ready(function() {
+    iter_accum2_vis = new ExecutionVisualizer('iter_accum2',iter_accum2_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(iter_accum2_vis,'iter_accum2');
+    allVisualizers.push(iter_accum2_vis);
+
+});
+
+$(document).ready(function() {
+    $("#iter_accum2_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'iter_accum2'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    iter_accum2_vis.redrawConnectors();
+});
+</script>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">What would happen if we indented the print accum statement? Not sure? Make a prediction, then try it and find out.</p>
+</div>
+<p><strong>Check your understanding</strong></p>
+
+            <div id="test_question5_4_1" class="alert alert-warning">
+            <p>iter-5: Consider the following code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+   <span class="n">accum</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="n">accum</span> <span class="o">=</span> <span class="n">accum</span> <span class="o">+</span> <span class="n">w</span>
+<span class="k">print</span> <span class="n">accum</span>
+</pre></div>
+</div>
+<p>What happens if you put the initialization of accum inside the for loop as the first
+instruction in the loop?</p>
+<form name="test_question5_4_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_question5_4_1_opt_a" />
+            <label for= "test_question5_4_1_opt_a">  a) It will print out 10 instead of 55</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_question5_4_1_opt_b" />
+            <label for= "test_question5_4_1_opt_b">  b) It will cause a run-time error</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_question5_4_1_opt_c" />
+            <label for= "test_question5_4_1_opt_c">  c) It will print out 0 instead of 55</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_question5_4_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_question5_4_1','a',['The variable accum will be reset to 0 each time through the loop. Then it will add the current item. Only the last item will count.', 'Assignment statements are perfectly legal inside loops and will not cause an error.', 'Good thought: the variable accum will be reset to 0 each time through the loop. But then it adds the current item.'])">Check Me</button>
+            <button class='btn btn-default' id="test_question5_4_1_bcomp" disabled name="compare" onclick="compareAnswers('test_question5_4_1');">Compare Me</button>
+            </form><br />
+            <div id="test_question5_4_1_feedback">
+            </div>
+            </div>
+            
+        <div class='parsons alert alert-warning' id="parsons-411">
+        <div class="parsons-text">iter-6: Rearrange the code statements so that the program will add up the first n odd numbers where n is provided by the user.<br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-411" style="display:none;">n = int(input('How many even numbers would you like to add together?'))\nthesum = 0\noddnumber = 1
+for counter in range(n):
+   thesum = thesum + oddnumber\noddnumber = oddnumber + 2
+print(thesum)</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-411" class="sortable-code"></div>
+        <div id="parsons-sortableCode-411" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe411" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset411" value="Reset"/>
+        <div id="parsons-message-411"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-411").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-411").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-411");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_411.getHash("#ul-parsons-sortableCode-411");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'question5_4_1p'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'question5_4_1p'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-411");
+            var trashul = $("#ul-parsons-sortableTrash-411");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_411 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-411',
+		'trashId': 'parsons-sortableTrash-411',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_411.init($pjQ("#parsons-orig-411").text());
+	pp_411.shuffleLines();
+            
+        if(localStorage.getItem('question5_4_1p') && localStorage.getItem('question5_4_1p-trash')) {
+            try {
+                var solution = localStorage.getItem('question5_4_1p');
+                var trash = localStorage.getItem('question5_4_1p-trash');
+                pp_411.createHTMLFromHashes(solution,trash);
+                pp_411.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old question5_4_1p state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset411").click(function(event){
+              event.preventDefault();
+              pp_411.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-411");
+            var trashul = $("#ul-parsons-sortableTrash-411");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe411").click(function(event){
+              event.preventDefault();
+              var hash = pp_411.getHash("#ul-parsons-sortableCode-411");
+              localStorage.setItem('question5_4_1p',hash);
+              hash = pp_411.getHash("#ul-parsons-sortableTrash-411");
+              localStorage.setItem('question5_4_1p-trash',hash);
+            
+            pp_411.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+<div class="section" id="the-accumulator-pattern-with-strings">
+<h2>The Accumulator Pattern with Strings<a class="headerlink" href="#the-accumulator-pattern-with-strings" title="Permalink to this headline">¶</a></h2>
+<p>We can also accumulate strings rather than accumulating numbers. The following &#8220;stuttering&#8221; program
+isn&#8217;t very useful, but we will see more useful things later that accumulate strings.</p>
+
+<div id="cont"></div>
+<div id="ch08_acc1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ch08_acc1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch08_acc1_saveb" onclick="saveEditor('ch08_acc1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch08_acc1_loadb" onclick="requestCode('ch08_acc1');">Load</button>
+<button class='btn btn-default' id="ch08_acc1_vizb" onclick="injectCodelens(this,'ch08_acc1');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ch08_acc1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ch08_acc1_code" class="active_code" prefixcode="undefined" lang="python">
+s = raw_input("Enter some text")
+ac = ""
+for c in s:
+   ac = ac + c + "-" + c + "-"
+
+print ac
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ch08_acc1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ch08_acc1_suffix" style="display:none">
+</pre><pre id="ch08_acc1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch08_acc1)</span> </p>
+<div id="ch08_acc1_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch08_acc1_saveb').toggle();
+    $('#ch08_acc1_loadb').toggle();
+}
+if ($("#ch08_acc1").attr("lang") !== "html" && $("#ch08_acc1_code_div").parents(".admonition").length == 0 && $("#ch08_acc1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ch08_acc1_code_div").offset({
+			left: $("#ch08_acc1 .clearfix").offset().left
+		});
+	}
+	$("#ch08_acc1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ch08_acc1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ch08_acc1_runb").parent().siblings(".ac_output").show();
+			runit('ch08_acc1',this, undefined);
+			$("#ch08_acc1_runb").on("click", function(){
+				runit('ch08_acc1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ch08_acc1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ch08_acc1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ch08_acc1_runb").on("click", function(){
+		runit('ch08_acc1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Look carefully at line 4 in the above program (<tt class="docutils literal"><span class="pre">ac</span> <span class="pre">=</span> <span class="pre">ac</span> <span class="pre">+</span> <span class="pre">c</span> <span class="pre">+</span> <span class="pre">&quot;-&quot;</span> <span class="pre">+</span> <span class="pre">c</span> <span class="pre">+</span> <span class="pre">&quot;-&quot;</span></tt>).
+In words, it says that the new value of <tt class="docutils literal"><span class="pre">ac</span></tt> will be the old value of <tt class="docutils literal"><span class="pre">ac</span></tt> concatenated with the current character a dash, then the current character and a dash again.
+We are building the result string character by character.</p>
+<p>Take a close look also at the initialization of <tt class="docutils literal"><span class="pre">ac</span></tt>.  We start with an empty string and then begin adding
+new characters to the end. Also note that I have given it a different name this time, <tt class="docutils literal"><span class="pre">ac</span></tt> instead of <tt class="docutils literal"><span class="pre">accum</span></tt>. There&#8217;s
+nothing magical about these names. You could use any valid variable and it would work the same (try substituting x for ac
+everywhere in the above code).</p>
+<p><strong>Check your understanding</strong></p>
+
+            <div id="test_question8_11_1" class="alert alert-warning">
+            <p>iter-7: What is printed by the following statements:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">s</span> <span class="o">=</span> <span class="s">&quot;ball&quot;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+   <span class="n">r</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">r</span>
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_question8_11_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_question8_11_1_opt_a" />
+            <label for= "test_question8_11_1_opt_a">  a) Ball</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_question8_11_1_opt_b" />
+            <label for= "test_question8_11_1_opt_b">  b) BALL</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_question8_11_1_opt_c" />
+            <label for= "test_question8_11_1_opt_c">  c) LLAB</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_question8_11_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_question8_11_1','c',['Each item is converted to upper case before concatenation.', 'Each character is converted to upper case but the order is wrong.', 'Yes, the order is reversed due to the order of the concatenation.'])">Check Me</button>
+            <button class='btn btn-default' id="test_question8_11_1_bcomp" disabled name="compare" onclick="compareAnswers('test_question8_11_1');">Compare Me</button>
+            </form><br />
+            <div id="test_question8_11_1_feedback">
+            </div>
+            </div>
+            <div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.</p>
+
+<div id="cont"></div>
+<div id="scratch_08_03" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="scratch_08_03_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="scratch_08_03_saveb" onclick="saveEditor('scratch_08_03');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="scratch_08_03_loadb" onclick="requestCode('scratch_08_03');">Load</button>
+<button class='btn btn-default' id="scratch_08_03_vizb" onclick="injectCodelens(this,'scratch_08_03');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="scratch_08_03_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="scratch_08_03_code" class="active_code" prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="scratch_08_03_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="scratch_08_03_suffix" style="display:none">
+</pre><pre id="scratch_08_03_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (scratch_08_03)</span> </p>
+<div id="scratch_08_03_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#scratch_08_03_saveb').toggle();
+    $('#scratch_08_03_loadb').toggle();
+}
+if ($("#scratch_08_03").attr("lang") !== "html" && $("#scratch_08_03_code_div").parents(".admonition").length == 0 && $("#scratch_08_03_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#scratch_08_03_code_div").offset({
+			left: $("#scratch_08_03 .clearfix").offset().left
+		});
+	}
+	$("#scratch_08_03_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#scratch_08_03_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#scratch_08_03_runb").parent().siblings(".ac_output").show();
+			runit('scratch_08_03',this, undefined);
+			$("#scratch_08_03_runb").on("click", function(){
+				runit('scratch_08_03',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#scratch_08_03_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#scratch_08_03_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#scratch_08_03_runb").on("click", function(){
+		runit('scratch_08_03',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>This chapter introduced the central concept of <strong>iteration</strong>.  The following summary
+may prove helpful in remembering what you learned.</p>
+<dl class="glossary docutils">
+</dl>
+</div>
+</div>
+<div class="section" id="glossary">
+<h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary docutils">
+<dt id="term-for-loop-traversal-for">for loop traversal (<tt class="docutils literal"><span class="pre">for</span></tt>)</dt>
+<dd><p class="first"><em>Traversing</em> a string or a list means accessing each character in the string or item in the list, one
+at a time.  For example, the following for loop:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">ix</span> <span class="ow">in</span> <span class="s">&#39;Example&#39;</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p class="last">executes the body of the loop 7 times with different values of <cite>ix</cite> each time.</p>
+</dd>
+<dt id="term-range">range</dt>
+<dd>A function that produces a list of numbers. For example, <cite>range(5)</cite>, produces a list of five
+numbers, starting with 0, <cite>[0, 1, 2, 3, 4]</cite>.</dd>
+<dt id="term-pattern">pattern</dt>
+<dd>A sequence of statements, or a style of coding something that has
+general applicability in a number of different situations.  Part of
+becoming a mature programmer is to learn and establish the
+patterns and algorithms that form your toolkit.</dd>
+<dt id="term-index">index</dt>
+<dd>A variable or value used to select a member of an ordered collection, such as
+a character from a string, or an element from a list.</dd>
+<dt id="term-traverse">traverse</dt>
+<dd>To iterate through the elements of a collection, performing a similar
+operation on each.</dd>
+<dt id="term-accumulator-pattern">accumulator pattern</dt>
+<dd>A pattern where the program initializes an accumulator variable and then changes it
+during each iteration, accumulating a final result.</dd>
+</dl>
+</div>
+<div class="section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><p class="first">(You&#8217;ll work on this one in class. Feel free to start thinking about it.) Print out a neatly formatted multiplication table, up to 12 x 12.</p>
+
+<div id="cont"></div>
+<div id="ex_8_4" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ex_8_4_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ex_8_4_saveb" onclick="saveEditor('ex_8_4');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ex_8_4_loadb" onclick="requestCode('ex_8_4');">Load</button>
+<button class='btn btn-default' id="ex_8_4_vizb" onclick="injectCodelens(this,'ex_8_4');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ex_8_4_coach_b" onclick="injectCodeCoach('ex_8_4');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ex_8_4_showb" onclick="$('#ex_8_4_code_div').toggle();cm_editors['ex_8_4_code'].refresh();$('#ex_8_4_saveb').toggle();$('#ex_8_4_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ex_8_4')"/>
+
+</div>
+<br/>
+<div id="ex_8_4_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ex_8_4_code" class="active_code" prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ex_8_4_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ex_8_4_suffix" style="display:none">
+</pre><pre id="ex_8_4_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ex_8_4)</span> </p>
+<div id="ex_8_4_codelens_div" style="display:none"></div><div id="ex_8_4_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ex_8_4_saveb').toggle();
+    $('#ex_8_4_loadb').toggle();
+}
+if ($("#ex_8_4").attr("lang") !== "html" && $("#ex_8_4_code_div").parents(".admonition").length == 0 && $("#ex_8_4_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ex_8_4_code_div").offset({
+			left: $("#ex_8_4 .clearfix").offset().left
+		});
+	}
+	$("#ex_8_4_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ex_8_4_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ex_8_4_runb").parent().siblings(".ac_output").show();
+			runit('ex_8_4',this, undefined);
+			$("#ex_8_4_runb").on("click", function(){
+				runit('ex_8_4',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ex_8_4_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ex_8_4_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ex_8_4_runb").on("click", function(){
+		runit('ex_8_4',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</li>
+<li><p class="first">(You&#8217;ll work on on this one in class. Feel free to start thinking about it.) In Robert McCloskey&#8217;s
+book <em>Make Way for Ducklings</em>, the names of the ducklings are Jack, Kack, Lack,
+Mack, Nack, Ouack, Pack, and Quack.  This loop tries to output these names in order.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">prefixes</span> <span class="o">=</span> <span class="s">&quot;JKLMNOPQ&quot;</span>
+<span class="n">suffix</span> <span class="o">=</span> <span class="s">&quot;ack&quot;</span>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">prefixes</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="n">suffix</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Of course, that&#8217;s not quite right because Ouack and Quack are misspelled.
+Can you fix it?</p>
+<blockquote>
+<div>
+<div id="cont"></div>
+<div id="ex_8_2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ex_8_2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ex_8_2_saveb" onclick="saveEditor('ex_8_2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ex_8_2_loadb" onclick="requestCode('ex_8_2');">Load</button>
+<button class='btn btn-default' id="ex_8_2_vizb" onclick="injectCodelens(this,'ex_8_2');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ex_8_2_coach_b" onclick="injectCodeCoach('ex_8_2');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ex_8_2_showb" onclick="$('#ex_8_2_code_div').toggle();cm_editors['ex_8_2_code'].refresh();$('#ex_8_2_saveb').toggle();$('#ex_8_2_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ex_8_2')"/>
+
+</div>
+<br/>
+<div id="ex_8_2_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ex_8_2_code" class="active_code" prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ex_8_2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ex_8_2_suffix" style="display:none">
+</pre><pre id="ex_8_2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ex_8_2)</span> </p>
+<div id="ex_8_2_codelens_div" style="display:none"></div><div id="ex_8_2_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ex_8_2_saveb').toggle();
+    $('#ex_8_2_loadb').toggle();
+}
+if ($("#ex_8_2").attr("lang") !== "html" && $("#ex_8_2_code_div").parents(".admonition").length == 0 && $("#ex_8_2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ex_8_2_code_div").offset({
+			left: $("#ex_8_2 .clearfix").offset().left
+		});
+	}
+	$("#ex_8_2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ex_8_2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ex_8_2_runb").parent().siblings(".ac_output").show();
+			runit('ex_8_2',this, undefined);
+			$("#ex_8_2_runb").on("click", function(){
+				runit('ex_8_2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ex_8_2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ex_8_2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ex_8_2_runb").on("click", function(){
+		runit('ex_8_2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></blockquote>
+</li>
+</ol>
+<p>#. Get the user to enter some text and print it out in reverse. (Hint: we did this as well as capitalizing
+in one of the earlier exercises. But first see if you can generate the answer without looking back.)</p>
+<blockquote>
+<div>
+<div id="cont"></div>
+<div id="ex_8_5" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ex_8_5_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ex_8_5_saveb" onclick="saveEditor('ex_8_5');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ex_8_5_loadb" onclick="requestCode('ex_8_5');">Load</button>
+<button class='btn btn-default' id="ex_8_5_vizb" onclick="injectCodelens(this,'ex_8_5');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ex_8_5_coach_b" onclick="injectCodeCoach('ex_8_5');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ex_8_5_showb" onclick="$('#ex_8_5_code_div').toggle();cm_editors['ex_8_5_code'].refresh();$('#ex_8_5_saveb').toggle();$('#ex_8_5_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ex_8_5')"/>
+
+</div>
+<br/>
+<div id="ex_8_5_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ex_8_5_code" class="active_code" prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ex_8_5_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ex_8_5_suffix" style="display:none">
+</pre><pre id="ex_8_5_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ex_8_5)</span> </p>
+<div id="ex_8_5_codelens_div" style="display:none"></div><div id="ex_8_5_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ex_8_5_saveb').toggle();
+    $('#ex_8_5_loadb').toggle();
+}
+if ($("#ex_8_5").attr("lang") !== "html" && $("#ex_8_5_code_div").parents(".admonition").length == 0 && $("#ex_8_5_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ex_8_5_code_div").offset({
+			left: $("#ex_8_5 .clearfix").offset().left
+		});
+	}
+	$("#ex_8_5_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ex_8_5_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ex_8_5_runb").parent().siblings(".ac_output").show();
+			runit('ex_8_5',this, undefined);
+			$("#ex_8_5_runb").on("click", function(){
+				runit('ex_8_5',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ex_8_5_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ex_8_5_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ex_8_5_runb").on("click", function(){
+		runit('ex_8_5',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></blockquote>
+<p>#. Get the user to enter some text and print out True if it&#8217;s a palindrome, False otherwise. (Hint: reuse
+some of your code from the last question.)</p>
+<blockquote>
+<div>
+<div id="cont"></div>
+<div id="ex_8_6" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ex_8_6_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ex_8_6_saveb" onclick="saveEditor('ex_8_6');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ex_8_6_loadb" onclick="requestCode('ex_8_6');">Load</button>
+<button class='btn btn-default' id="ex_8_6_vizb" onclick="injectCodelens(this,'ex_8_6');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ex_8_6_coach_b" onclick="injectCodeCoach('ex_8_6');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ex_8_6_showb" onclick="$('#ex_8_6_code_div').toggle();cm_editors['ex_8_6_code'].refresh();$('#ex_8_6_saveb').toggle();$('#ex_8_6_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ex_8_6')"/>
+
+</div>
+<br/>
+<div id="ex_8_6_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ex_8_6_code" class="active_code" prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ex_8_6_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ex_8_6_suffix" style="display:none">
+</pre><pre id="ex_8_6_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ex_8_6)</span> </p>
+<div id="ex_8_6_codelens_div" style="display:none"></div><div id="ex_8_6_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ex_8_6_saveb').toggle();
+    $('#ex_8_6_loadb').toggle();
+}
+if ($("#ex_8_6").attr("lang") !== "html" && $("#ex_8_6_code_div").parents(".admonition").length == 0 && $("#ex_8_6_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ex_8_6_code_div").offset({
+			left: $("#ex_8_6 .clearfix").offset().left
+		});
+	}
+	$("#ex_8_6_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ex_8_6_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ex_8_6_runb").parent().siblings(".ac_output").show();
+			runit('ex_8_6',this, undefined);
+			$("#ex_8_6_runb").on("click", function(){
+				runit('ex_8_6',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ex_8_6_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ex_8_6_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ex_8_6_runb").on("click", function(){
+		runit('ex_8_6',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></blockquote>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 Paul Resnick, Brad Miller, David Ranum, Created using Runestone Interactive.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

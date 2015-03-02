@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Map, Filter, and List Comprehensions &mdash; Programs, Information, and People: Interactive Edition</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Programs, Information, and People: Interactive Edition" href="../index.html" />
+    <link rel="next" title="Sorting Lists of Instances" href="../Sort/sorting_instances.html" />
+    <link rel="prev" title="Classes and Objects - Digging a little deeper" href="../Classes/fractions.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pip';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+var _prum = [['id', '521dfcc4abe53d0749000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../toc.html">Programs, Information, and People</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../toc.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pip/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/assignments" id="registerlink">Project Page</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pip/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Map, Filter, and List Comprehensions</a><ul>
+<li><a class="reference internal" href="#map">Map</a></li>
+<li><a class="reference internal" href="#filter">Filter</a></li>
+<li><a class="reference internal" href="#list-comprehensions">List Comprehensions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#reduce">Reduce</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Classes and Objects - Digging a little deeper" data-toggle="tooltip">
+    <a href="../Classes/fractions.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Sorting Lists of Instances' data-toggle="tooltip" >
+    <a href="../Sort/sorting_instances.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="map-filter-and-list-comprehensions">
+<span id="listcomp-chap"></span><span id="index-0"></span><h1>Map, Filter, and List Comprehensions<a class="headerlink" href="#map-filter-and-list-comprehensions" title="Permalink to this headline">¶</a></h1>
+<p>Let&#8217;s revisit the <a class="reference internal" href="../Iteration/iteration.html#accum-pattern"><em>accumulator pattern</em></a>. We have frequently taken a list and produced another list from it that contains either a subset of the items or a transformed version of each item. When each item is transformed we say that the operation is a <strong>mapping, or just a map</strong> of the original list. When some items are omitted, we call it a <strong>filter</strong>.</p>
+<p>Python provides built-in functions <tt class="docutils literal"><span class="pre">map</span></tt> and <tt class="docutils literal"><span class="pre">filter</span></tt>. Python also provides a new syntax, called <strong>list comprehensions</strong>, that lets you express a mapping and/or filtering operation. Just as with named functions and lambda expressions, some students seem to find it easier to think in terms of the map and filter functions, while other students find it easier to read and write list comprehensions. You&#8217;ll learn both ways; one may even help you understand the other. Most python programmers use list comprehensions, so make sure you learn to read those; you can choose to learn to write list comprehensions or to use map and filter, whichever you prefer.</p>
+<div class="section" id="map">
+<h2>Map<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h2>
+<p>The following function produces a new list with each item in the original list doubled. It is an example of a mapping, from the original list to a new list of the same length, where each element is doubled.</p>
+
+<div id="cont"></div>
+<div id="listcomp_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="listcomp_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_1_saveb" onclick="saveEditor('listcomp_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_1_loadb" onclick="requestCode('listcomp_1');">Load</button>
+<button class='btn btn-default' id="listcomp_1_vizb" onclick="injectCodelens(this,'listcomp_1');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="listcomp_1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="listcomp_1_code" class="active_code" prefixcode="undefined" lang="python">
+def doubleStuff(a_list):
+    """ Return a new list in which contains doubles of the elements in a_list. """
+    new_list = []
+    for value in a_list:
+        new_elem = 2 * value
+        new_list.append(new_elem)
+    return new_list
+
+things = [2, 5, 9]
+print(things)
+things = doubleStuff(things)
+print(things)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="listcomp_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="listcomp_1_suffix" style="display:none">
+</pre><pre id="listcomp_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (listcomp_1)</span> </p>
+<div id="listcomp_1_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#listcomp_1_saveb').toggle();
+    $('#listcomp_1_loadb').toggle();
+}
+if ($("#listcomp_1").attr("lang") !== "html" && $("#listcomp_1_code_div").parents(".admonition").length == 0 && $("#listcomp_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#listcomp_1_code_div").offset({
+			left: $("#listcomp_1 .clearfix").offset().left
+		});
+	}
+	$("#listcomp_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#listcomp_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#listcomp_1_runb").parent().siblings(".ac_output").show();
+			runit('listcomp_1',this, undefined);
+			$("#listcomp_1_runb").on("click", function(){
+				runit('listcomp_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#listcomp_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#listcomp_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#listcomp_1_runb").on("click", function(){
+		runit('listcomp_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>The doubleStuff function is an example of the accumulator pattern. On line 3, new_list is initialized. On line 5, the doubled value for the current item is produced and on line 6 it is appended to the list we&#8217;re accumulating. Line 7 executes after we&#8217;ve process all the items in the original list: it returns the new_list. Once again, codelens helps us to see the actual references and objects as they are passed and returned.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="listcomp_2"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (listcomp_2)</span> </p>
+</div>
+<script type="text/javascript">
+var listcomp_2_trace = {"code": "def doubleStuff(a_list):\n    \"\"\" Return a new list in which contains doubles of the elements in a_list. \"\"\"\n    new_list = []\n    for value in a_list:\n        new_elem = 2 * value\n        new_list.append(new_elem)\n    return new_list\n\nthings = [2, 5, 9]\nthings = doubleStuff(things)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["doubleStuff"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"doubleStuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "doubleStuff(a_list)", null]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["doubleStuff", "things"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"things": ["REF", 2], "doubleStuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "doubleStuff(a_list)", null], "2": ["LIST", 2, 5, 9]}, "line": 10, "event": "step_line"}, {"ordered_globals": ["doubleStuff", "things"], "stdout": "", "func_name": "doubleStuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a_list": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "doubleStuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "doubleStuff_f1", "ordered_varnames": ["a_list"]}], "globals": {"things": ["REF", 2], "doubleStuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "doubleStuff(a_list)", null], "2": ["LIST", 2, 5, 9]}, "line": 1, "event": "call"}, {"ordered_globals": ["doubleStuff", "things"], "stdout": "", "func_name": "doubleStuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a_list": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "doubleStuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "doubleStuff_f1", "ordered_varnames": ["a_list"]}], "globals": {"things": ["REF", 2], "doubleStuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "doubleStuff(a_list)", null], "2": ["LIST", 2, 5, 9]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["doubleStuff", "things"], "stdout": "", "func_name": "doubleStuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"new_list": ["REF", 3], "a_list": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "doubleStuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "doubleStuff_f1", "ordered_varnames": ["a_list", "new_list"]}], "globals": {"things": ["REF", 2], "doubleStuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "doubleStuff(a_list)", null], "2": ["LIST", 2, 5, 9], "3": ["LIST"]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["doubleStuff", "things"], "stdout": "", "func_name": "doubleStuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"new_list": ["REF", 3], "a_list": ["REF", 2], "value": 2}, "is_highlighted": true, "is_parent": false, "func_name": "doubleStuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "doubleStuff_f1", "ordered_varnames": ["a_list", "new_list", "value"]}], "globals": {"things": ["REF", 2], "doubleStuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "doubleStuff(a_list)", null], "2": ["LIST", 2, 5, 9], "3": ["LIST"]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["doubleStuff", "things"], "stdout": "", "func_name": "doubleStuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"new_elem": 4, "new_list": ["REF", 3], "a_list": ["REF", 2], "value": 2}, "is_highlighted": true, "is_parent": false, "func_name": "doubleStuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "doubleStuff_f1", "ordered_varnames": ["a_list", "new_list", "value", "new_elem"]}], "globals": {"things": ["REF", 2], "doubleStuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "doubleStuff(a_list)", null], "2": ["LIST", 2, 5, 9], "3": ["LIST"]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["doubleStuff", "things"], "stdout": "", "func_name": "doubleStuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"new_elem": 4, "new_list": ["REF", 3], "a_list": ["REF", 2], "value": 2}, "is_highlighted": true, "is_parent": false, "func_name": "doubleStuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "doubleStuff_f1", "ordered_varnames": ["a_list", "new_list", "value", "new_elem"]}], "globals": {"things": ["REF", 2], "doubleStuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "doubleStuff(a_list)", null], "2": ["LIST", 2, 5, 9], "3": ["LIST", 4]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["doubleStuff", "things"], "stdout": "", "func_name": "doubleStuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"new_elem": 4, "new_list": ["REF", 3], "a_list": ["REF", 2], "value": 5}, "is_highlighted": true, "is_parent": false, "func_name": "doubleStuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "doubleStuff_f1", "ordered_varnames": ["a_list", "new_list", "value", "new_elem"]}], "globals": {"things": ["REF", 2], "doubleStuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "doubleStuff(a_list)", null], "2": ["LIST", 2, 5, 9], "3": ["LIST", 4]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["doubleStuff", "things"], "stdout": "", "func_name": "doubleStuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"new_elem": 10, "new_list": ["REF", 3], "a_list": ["REF", 2], "value": 5}, "is_highlighted": true, "is_parent": false, "func_name": "doubleStuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "doubleStuff_f1", "ordered_varnames": ["a_list", "new_list", "value", "new_elem"]}], "globals": {"things": ["REF", 2], "doubleStuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "doubleStuff(a_list)", null], "2": ["LIST", 2, 5, 9], "3": ["LIST", 4]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["doubleStuff", "things"], "stdout": "", "func_name": "doubleStuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"new_elem": 10, "new_list": ["REF", 3], "a_list": ["REF", 2], "value": 5}, "is_highlighted": true, "is_parent": false, "func_name": "doubleStuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "doubleStuff_f1", "ordered_varnames": ["a_list", "new_list", "value", "new_elem"]}], "globals": {"things": ["REF", 2], "doubleStuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "doubleStuff(a_list)", null], "2": ["LIST", 2, 5, 9], "3": ["LIST", 4, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["doubleStuff", "things"], "stdout": "", "func_name": "doubleStuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"new_elem": 10, "new_list": ["REF", 3], "a_list": ["REF", 2], "value": 9}, "is_highlighted": true, "is_parent": false, "func_name": "doubleStuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "doubleStuff_f1", "ordered_varnames": ["a_list", "new_list", "value", "new_elem"]}], "globals": {"things": ["REF", 2], "doubleStuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "doubleStuff(a_list)", null], "2": ["LIST", 2, 5, 9], "3": ["LIST", 4, 10]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["doubleStuff", "things"], "stdout": "", "func_name": "doubleStuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"new_elem": 18, "new_list": ["REF", 3], "a_list": ["REF", 2], "value": 9}, "is_highlighted": true, "is_parent": false, "func_name": "doubleStuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "doubleStuff_f1", "ordered_varnames": ["a_list", "new_list", "value", "new_elem"]}], "globals": {"things": ["REF", 2], "doubleStuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "doubleStuff(a_list)", null], "2": ["LIST", 2, 5, 9], "3": ["LIST", 4, 10]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["doubleStuff", "things"], "stdout": "", "func_name": "doubleStuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"new_elem": 18, "new_list": ["REF", 3], "a_list": ["REF", 2], "value": 9}, "is_highlighted": true, "is_parent": false, "func_name": "doubleStuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "doubleStuff_f1", "ordered_varnames": ["a_list", "new_list", "value", "new_elem"]}], "globals": {"things": ["REF", 2], "doubleStuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "doubleStuff(a_list)", null], "2": ["LIST", 2, 5, 9], "3": ["LIST", 4, 10, 18]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["doubleStuff", "things"], "stdout": "", "func_name": "doubleStuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"new_elem": 18, "new_list": ["REF", 3], "a_list": ["REF", 2], "value": 9}, "is_highlighted": true, "is_parent": false, "func_name": "doubleStuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "doubleStuff_f1", "ordered_varnames": ["a_list", "new_list", "value", "new_elem"]}], "globals": {"things": ["REF", 2], "doubleStuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "doubleStuff(a_list)", null], "2": ["LIST", 2, 5, 9], "3": ["LIST", 4, 10, 18]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["doubleStuff", "things"], "stdout": "", "func_name": "doubleStuff", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"new_elem": 18, "new_list": ["REF", 3], "a_list": ["REF", 2], "value": 9, "__return__": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "doubleStuff", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "doubleStuff_f1", "ordered_varnames": ["a_list", "new_list", "value", "new_elem", "__return__"]}], "globals": {"things": ["REF", 2], "doubleStuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "doubleStuff(a_list)", null], "2": ["LIST", 2, 5, 9], "3": ["LIST", 4, 10, 18]}, "line": 7, "event": "return"}, {"ordered_globals": ["doubleStuff", "things"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"things": ["REF", 3], "doubleStuff": ["REF", 1]}, "heap": {"1": ["FUNCTION", "doubleStuff(a_list)", null], "3": ["LIST", 4, 10, 18]}, "line": 10, "event": "return"}]};
+var listcomp_2_vis;
+
+$(document).ready(function() {
+    listcomp_2_vis = new ExecutionVisualizer('listcomp_2',listcomp_2_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(listcomp_2_vis,'listcomp_2');
+    allVisualizers.push(listcomp_2_vis);
+
+});
+
+$(document).ready(function() {
+    $("#listcomp_2_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'listcomp_2'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    listcomp_2_vis.redrawConnectors();
+});
+</script>
+<p>This pattern of computation is so common that python offers a more general way to do mappings, the <tt class="docutils literal"><span class="pre">map</span></tt> function, that makes it more clear what the overall structure of the computation is. map takes two arguments, a function and a sequence. The function is the mapper that transforms items. It is automatically applied to each item in the sequence. You don&#8217;t have to initialize an accumulator or iterate with a for loop at all.</p>
+<p>As we did when passing a function as a parameter to the <tt class="docutils literal"><span class="pre">sorted</span></tt> function, we can specify a function to pass to <tt class="docutils literal"><span class="pre">map</span></tt> either by referring to a function by name, or by providing a lambda expression.</p>
+
+<div id="cont"></div>
+<div id="listcomp_3" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="listcomp_3_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_3_saveb" onclick="saveEditor('listcomp_3');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_3_loadb" onclick="requestCode('listcomp_3');">Load</button>
+<button class='btn btn-default' id="listcomp_3_vizb" onclick="injectCodelens(this,'listcomp_3');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="listcomp_3_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="listcomp_3_code" class="active_code" prefixcode="undefined" lang="python">
+def triple(value):
+   return 3*value
+
+def tripleStuff(a_list):
+   new_list = map(triple, a_list)
+   return new_list
+
+def quadrupleStuff(a_list):
+   new_list = map(lambda value: 4*value, a_list)
+   return new_list
+
+things = [2, 5, 9]
+things3 = tripleStuff(things)
+print things3
+things4 = quadrupleStuff(things)
+print things4
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="listcomp_3_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="listcomp_3_suffix" style="display:none">
+</pre><pre id="listcomp_3_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (listcomp_3)</span> </p>
+<div id="listcomp_3_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#listcomp_3_saveb').toggle();
+    $('#listcomp_3_loadb').toggle();
+}
+if ($("#listcomp_3").attr("lang") !== "html" && $("#listcomp_3_code_div").parents(".admonition").length == 0 && $("#listcomp_3_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#listcomp_3_code_div").offset({
+			left: $("#listcomp_3 .clearfix").offset().left
+		});
+	}
+	$("#listcomp_3_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#listcomp_3_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#listcomp_3_runb").parent().siblings(".ac_output").show();
+			runit('listcomp_3',this, undefined);
+			$("#listcomp_3_runb").on("click", function(){
+				runit('listcomp_3',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#listcomp_3_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#listcomp_3_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#listcomp_3_runb").on("click", function(){
+		runit('listcomp_3',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Of course, once we get used to using the map function, it&#8217;s no longer necessary to define functions like tripleStuff and quadrupleStuff.</p>
+
+<div id="cont"></div>
+<div id="listcomp_4" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="listcomp_4_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_4_saveb" onclick="saveEditor('listcomp_4');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_4_loadb" onclick="requestCode('listcomp_4');">Load</button>
+<button class='btn btn-default' id="listcomp_4_vizb" onclick="injectCodelens(this,'listcomp_4');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="listcomp_4_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="listcomp_4_code" class="active_code" prefixcode="undefined" lang="python">
+things = [2, 5, 9]
+
+things4 = map(lambda value: 4*value, things)
+print things4
+
+# or all on one line
+print map(lambda value: 5*value, [1, 2, 3])
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="listcomp_4_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="listcomp_4_suffix" style="display:none">
+</pre><pre id="listcomp_4_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (listcomp_4)</span> </p>
+<div id="listcomp_4_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#listcomp_4_saveb').toggle();
+    $('#listcomp_4_loadb').toggle();
+}
+if ($("#listcomp_4").attr("lang") !== "html" && $("#listcomp_4_code_div").parents(".admonition").length == 0 && $("#listcomp_4_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#listcomp_4_code_div").offset({
+			left: $("#listcomp_4 .clearfix").offset().left
+		});
+	}
+	$("#listcomp_4_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#listcomp_4_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#listcomp_4_runb").parent().siblings(".ac_output").show();
+			runit('listcomp_4',this, undefined);
+			$("#listcomp_4_runb").on("click", function(){
+				runit('listcomp_4',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#listcomp_4_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#listcomp_4_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#listcomp_4_runb").on("click", function(){
+		runit('listcomp_4',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There are some problems with the implementation of the map function in this online environment. So take a look at the exercises in the file session22.py</p>
+</div>
+</div>
+<div class="section" id="filter">
+<h2>Filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h2>
+<p>Now consider another common pattern: going through a list and keeping only those items that meet certain criteria. This is called a filter.</p>
+
+<div id="cont"></div>
+<div id="listcomp_5" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="listcomp_5_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_5_saveb" onclick="saveEditor('listcomp_5');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_5_loadb" onclick="requestCode('listcomp_5');">Load</button>
+<button class='btn btn-default' id="listcomp_5_vizb" onclick="injectCodelens(this,'listcomp_5');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="listcomp_5_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="listcomp_5_code" class="active_code" prefixcode="undefined" lang="python">
+def keep_evens(nums):
+   new_list = []
+   for num in nums:
+      if num % 2 == 0:
+         new_list.append(num)
+   return new_list
+
+print keep_evens([3, 4, 6, 7, 0, 1])
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="listcomp_5_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="listcomp_5_suffix" style="display:none">
+</pre><pre id="listcomp_5_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (listcomp_5)</span> </p>
+<div id="listcomp_5_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#listcomp_5_saveb').toggle();
+    $('#listcomp_5_loadb').toggle();
+}
+if ($("#listcomp_5").attr("lang") !== "html" && $("#listcomp_5_code_div").parents(".admonition").length == 0 && $("#listcomp_5_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#listcomp_5_code_div").offset({
+			left: $("#listcomp_5 .clearfix").offset().left
+		});
+	}
+	$("#listcomp_5_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#listcomp_5_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#listcomp_5_runb").parent().siblings(".ac_output").show();
+			runit('listcomp_5',this, undefined);
+			$("#listcomp_5_runb").on("click", function(){
+				runit('listcomp_5',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#listcomp_5_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#listcomp_5_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#listcomp_5_runb").on("click", function(){
+		runit('listcomp_5',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Again, this pattern of computation is so common that python offers a more compact and general way to do it, the <tt class="docutils literal"><span class="pre">filter</span></tt> function. filter takes two arguments, a function and a sequence. The function takes one item and return True if the item should. It is automatically called for each item in the sequence. You don&#8217;t have to initialize an accumulator or iterate with a for loop.</p>
+
+<div id="cont"></div>
+<div id="listcomp_6" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="listcomp_6_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_6_saveb" onclick="saveEditor('listcomp_6');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_6_loadb" onclick="requestCode('listcomp_6');">Load</button>
+<button class='btn btn-default' id="listcomp_6_vizb" onclick="injectCodelens(this,'listcomp_6');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="listcomp_6_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="listcomp_6_code" class="active_code" prefixcode="undefined" lang="python">
+def keep_odds(nums):
+   new_list = filter(lambda num: num % 2 == 1, nums)
+   return new_list
+
+print keep_odds([3, 4, 6, 7, 0, 1])
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="listcomp_6_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="listcomp_6_suffix" style="display:none">
+</pre><pre id="listcomp_6_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (listcomp_6)</span> </p>
+<div id="listcomp_6_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#listcomp_6_saveb').toggle();
+    $('#listcomp_6_loadb').toggle();
+}
+if ($("#listcomp_6").attr("lang") !== "html" && $("#listcomp_6_code_div").parents(".admonition").length == 0 && $("#listcomp_6_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#listcomp_6_code_div").offset({
+			left: $("#listcomp_6 .clearfix").offset().left
+		});
+	}
+	$("#listcomp_6_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#listcomp_6_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#listcomp_6_runb").parent().siblings(".ac_output").show();
+			runit('listcomp_6',this, undefined);
+			$("#listcomp_6_runb").on("click", function(){
+				runit('listcomp_6',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#listcomp_6_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#listcomp_6_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#listcomp_6_runb").on("click", function(){
+		runit('listcomp_6',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Now try the filter exercises in session22.py</p>
+</div>
+<div class="section" id="list-comprehensions">
+<h2>List Comprehensions<a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">¶</a></h2>
+<p>Python provides an alternative way to do map and filter operations, called a <strong>list comprehension</strong>.  Many programmers find them to understand and write. List comprehensions are concise ways to create lists from other lists.  The general syntax is:</p>
+<div class="highlight-python"><div class="highlight"><pre>[&lt;expression&gt; for &lt;item&gt; in &lt;sequence&gt; if  &lt;condition&gt;]
+</pre></div>
+</div>
+<p>where the if clause is optional.  For example,</p>
+
+<div id="cont"></div>
+<div id="listcomp_7" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="listcomp_7_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_7_saveb" onclick="saveEditor('listcomp_7');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_7_loadb" onclick="requestCode('listcomp_7');">Load</button>
+<button class='btn btn-default' id="listcomp_7_vizb" onclick="injectCodelens(this,'listcomp_7');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="listcomp_7_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="listcomp_7_code" class="active_code" prefixcode="undefined" lang="python">
+things = [2, 5, 9]
+
+yourlist = [value * 2 for value in things]
+
+print(yourlist)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="listcomp_7_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="listcomp_7_suffix" style="display:none">
+</pre><pre id="listcomp_7_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (listcomp_7)</span> </p>
+<div id="listcomp_7_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#listcomp_7_saveb').toggle();
+    $('#listcomp_7_loadb').toggle();
+}
+if ($("#listcomp_7").attr("lang") !== "html" && $("#listcomp_7_code_div").parents(".admonition").length == 0 && $("#listcomp_7_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#listcomp_7_code_div").offset({
+			left: $("#listcomp_7 .clearfix").offset().left
+		});
+	}
+	$("#listcomp_7_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#listcomp_7_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#listcomp_7_runb").parent().siblings(".ac_output").show();
+			runit('listcomp_7',this, undefined);
+			$("#listcomp_7_runb").on("click", function(){
+				runit('listcomp_7',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#listcomp_7_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#listcomp_7_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#listcomp_7_runb").on("click", function(){
+		runit('listcomp_7',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>The expression is <tt class="docutils literal"><span class="pre">value</span> <span class="pre">*</span> <span class="pre">2</span></tt>. The item variable is <tt class="docutils literal"><span class="pre">value</span></tt> and the sequence is <tt class="docutils literal"><span class="pre">things</span></tt>. This is an alternative way to perform a mapping operation. As with <tt class="docutils literal"><span class="pre">map</span></tt>, each item in the sequence is transformed into an item in the new list. Instead of the iteration happening automatically, however, we have adopted the syntax of the for loop which may make it easier to understand.</p>
+<p>Just as in a regular for loop, the part of the statement <tt class="docutils literal"><span class="pre">for</span> <span class="pre">value</span> <span class="pre">in</span> <span class="pre">things</span></tt> says to execute some code once for each item in things. Each time that code is executed, <tt class="docutils literal"><span class="pre">value</span></tt> is bound to one item from <tt class="docutils literal"><span class="pre">things</span></tt>. The code that is executed each time is the expression at the beginning, <tt class="docutils literal"><span class="pre">value</span> <span class="pre">*</span> <span class="pre">2</span></tt>, rather than a block of code indented underneath the for statement. The other difference from a regular for loop is that each time the expression is evaluated, the resulting value is appended to a list. That happens automatically, without the programmer explicitly initializing an empty list or appending each item.</p>
+<p>The <tt class="docutils literal"><span class="pre">if</span></tt> clause of a list comprehension can be used to do a filter operation. To perform a pure filter operation, the expression can be simply the variable that is bound to each item. For example, the following list comprehension will keep only the positive numbers from the original list.</p>
+
+<div id="cont"></div>
+<div id="listcomp_8" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="listcomp_8_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_8_saveb" onclick="saveEditor('listcomp_8');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_8_loadb" onclick="requestCode('listcomp_8');">Load</button>
+<button class='btn btn-default' id="listcomp_8_vizb" onclick="injectCodelens(this,'listcomp_8');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="listcomp_8_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="listcomp_8_code" class="active_code" prefixcode="undefined" lang="python">
+def keep_evens(nums):
+   new_list = [num for num in nums if num % 2 == 0]
+   return new_list
+
+print keep_evens([3, 4, 6, 7, 0, 1])
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="listcomp_8_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="listcomp_8_suffix" style="display:none">
+</pre><pre id="listcomp_8_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (listcomp_8)</span> </p>
+<div id="listcomp_8_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#listcomp_8_saveb').toggle();
+    $('#listcomp_8_loadb').toggle();
+}
+if ($("#listcomp_8").attr("lang") !== "html" && $("#listcomp_8_code_div").parents(".admonition").length == 0 && $("#listcomp_8_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#listcomp_8_code_div").offset({
+			left: $("#listcomp_8 .clearfix").offset().left
+		});
+	}
+	$("#listcomp_8_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#listcomp_8_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#listcomp_8_runb").parent().siblings(".ac_output").show();
+			runit('listcomp_8',this, undefined);
+			$("#listcomp_8_runb").on("click", function(){
+				runit('listcomp_8',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#listcomp_8_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#listcomp_8_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#listcomp_8_runb").on("click", function(){
+		runit('listcomp_8',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>You can also combine map and filter operations by chaining them together, or with a single list comprehension.</p>
+
+<div id="cont"></div>
+<div id="listcomp_9" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="listcomp_9_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_9_saveb" onclick="saveEditor('listcomp_9');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_9_loadb" onclick="requestCode('listcomp_9');">Load</button>
+<button class='btn btn-default' id="listcomp_9_vizb" onclick="injectCodelens(this,'listcomp_9');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="listcomp_9_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="listcomp_9_code" class="active_code" prefixcode="undefined" lang="python">
+things = [3, 4, 6, 7, 0, 1
+#chaining together filter and map:
+# first, filter to keep only the even numbers
+# double each of them
+print map(lambda x: x*2, filter(lambda y: y % 2 == 0, things))
+
+# equivalent version using list comprehension
+print [x*2 for x in things if x % 2 == 0]
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="listcomp_9_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="listcomp_9_suffix" style="display:none">
+</pre><pre id="listcomp_9_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (listcomp_9)</span> </p>
+<div id="listcomp_9_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#listcomp_9_saveb').toggle();
+    $('#listcomp_9_loadb').toggle();
+}
+if ($("#listcomp_9").attr("lang") !== "html" && $("#listcomp_9_code_div").parents(".admonition").length == 0 && $("#listcomp_9_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#listcomp_9_code_div").offset({
+			left: $("#listcomp_9 .clearfix").offset().left
+		});
+	}
+	$("#listcomp_9_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#listcomp_9_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#listcomp_9_runb").parent().siblings(".ac_output").show();
+			runit('listcomp_9',this, undefined);
+			$("#listcomp_9_runb").on("click", function(){
+				runit('listcomp_9',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#listcomp_9_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#listcomp_9_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#listcomp_9_runb").on("click", function(){
+		runit('listcomp_9',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p><strong>Check your understanding</strong></p>
+
+            <div id="test_question9_20_1" class="alert alert-warning">
+            <p>listcomp-1: What is printed by the following statements?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span><span class="o">*</span><span class="mi">2</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">alist</span> <span class="k">if</span> <span class="n">num</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">blist</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_question9_20_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_question9_20_1_opt_a" />
+            <label for= "test_question9_20_1_opt_a">  a) [4,2,8,6,5]</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_question9_20_1_opt_b" />
+            <label for= "test_question9_20_1_opt_b">  b) [8,4,16,12,10]</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_question9_20_1_opt_c" />
+            <label for= "test_question9_20_1_opt_c">  c) 10</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_question9_20_1_opt_d" />
+            <label for= "test_question9_20_1_opt_d">  d) [10].</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_question9_20_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_question9_20_1','d',['Items from alist are doubled before being placed in blist.', 'Not all the items in alist are to be included in blist.  Look at the if clause.', 'The result needs to be a list.', 'Yes, 5 is the only odd number in alist.  It is doubled before being placed in blist.'])">Check Me</button>
+            <button class='btn btn-default' id="test_question9_20_1_bcomp" disabled name="compare" onclick="compareAnswers('test_question9_20_1');">Compare Me</button>
+            </form><br />
+            <div id="test_question9_20_1_feedback">
+            </div>
+            </div>
+            <p>Now try the list comprehension exercises in session22.py</p>
+</div>
+</div>
+<div class="section" id="reduce">
+<h1>Reduce<a class="headerlink" href="#reduce" title="Permalink to this headline">¶</a></h1>
+<p>Another common form of the accumulator pattern is to combine or summarize all the items in a list.</p>
+<p>For example, we can count the items in a list, or add them all up.</p>
+
+<div id="cont"></div>
+<div id="listcomp_10" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="listcomp_10_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_10_saveb" onclick="saveEditor('listcomp_10');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_10_loadb" onclick="requestCode('listcomp_10');">Load</button>
+<button class='btn btn-default' id="listcomp_10_vizb" onclick="injectCodelens(this,'listcomp_10');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="listcomp_10_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="listcomp_10_code" class="active_code" prefixcode="undefined" lang="python">
+nums = [3, 4, 6, 7, 0, 1]
+
+count = 0
+for num in nums:
+   count = count + 1
+print count
+
+total = 0
+for num in nums:
+   total = total + num
+print total
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="listcomp_10_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="listcomp_10_suffix" style="display:none">
+</pre><pre id="listcomp_10_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (listcomp_10)</span> </p>
+<div id="listcomp_10_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#listcomp_10_saveb').toggle();
+    $('#listcomp_10_loadb').toggle();
+}
+if ($("#listcomp_10").attr("lang") !== "html" && $("#listcomp_10_code_div").parents(".admonition").length == 0 && $("#listcomp_10_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#listcomp_10_code_div").offset({
+			left: $("#listcomp_10 .clearfix").offset().left
+		});
+	}
+	$("#listcomp_10_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#listcomp_10_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#listcomp_10_runb").parent().siblings(".ac_output").show();
+			runit('listcomp_10',this, undefined);
+			$("#listcomp_10_runb").on("click", function(){
+				runit('listcomp_10',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#listcomp_10_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#listcomp_10_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#listcomp_10_runb").on("click", function(){
+		runit('listcomp_10',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>These particular operations, counting and summing, are so commonly performed that python provides built-in functions, <tt class="docutils literal"><span class="pre">len</span></tt> and <tt class="docutils literal"><span class="pre">sum</span></tt></p>
+
+<div id="cont"></div>
+<div id="listcomp_11" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="listcomp_11_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_11_saveb" onclick="saveEditor('listcomp_11');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_11_loadb" onclick="requestCode('listcomp_11');">Load</button>
+<button class='btn btn-default' id="listcomp_11_vizb" onclick="injectCodelens(this,'listcomp_11');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="listcomp_11_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="listcomp_11_code" class="active_code" prefixcode="undefined" lang="python">
+nums = [3, 4, 6, 7, 0, 1]
+
+print len(nums)
+print sum(nums)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="listcomp_11_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="listcomp_11_suffix" style="display:none">
+</pre><pre id="listcomp_11_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (listcomp_11)</span> </p>
+<div id="listcomp_11_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#listcomp_11_saveb').toggle();
+    $('#listcomp_11_loadb').toggle();
+}
+if ($("#listcomp_11").attr("lang") !== "html" && $("#listcomp_11_code_div").parents(".admonition").length == 0 && $("#listcomp_11_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#listcomp_11_code_div").offset({
+			left: $("#listcomp_11 .clearfix").offset().left
+		});
+	}
+	$("#listcomp_11_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#listcomp_11_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#listcomp_11_runb").parent().siblings(".ac_output").show();
+			runit('listcomp_11',this, undefined);
+			$("#listcomp_11_runb").on("click", function(){
+				runit('listcomp_11',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#listcomp_11_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#listcomp_11_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#listcomp_11_runb").on("click", function(){
+		runit('listcomp_11',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>There&#8217;s also a built-in function <tt class="docutils literal"><span class="pre">max</span></tt> that works analogously, aggreating a list of numbers by keeping the largest one.</p>
+<p>Another common accumulation that combines all the elements is to take a list of strings and concatenate them all together, separating them with some separator such as a comma or, in the example below, &#8211;.</p>
+
+<div id="cont"></div>
+<div id="listcomp_12" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="listcomp_12_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_12_saveb" onclick="saveEditor('listcomp_12');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_12_loadb" onclick="requestCode('listcomp_12');">Load</button>
+<button class='btn btn-default' id="listcomp_12_vizb" onclick="injectCodelens(this,'listcomp_12');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="listcomp_12_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="listcomp_12_code" class="active_code" prefixcode="undefined" lang="python">
+strings = ["Hello", "hi", "bye", "wonderful"]
+
+result = strings[0]
+for s in strings[1:]:
+   result = result + "--" + s
+print result
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="listcomp_12_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="listcomp_12_suffix" style="display:none">
+</pre><pre id="listcomp_12_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (listcomp_12)</span> </p>
+<div id="listcomp_12_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#listcomp_12_saveb').toggle();
+    $('#listcomp_12_loadb').toggle();
+}
+if ($("#listcomp_12").attr("lang") !== "html" && $("#listcomp_12_code_div").parents(".admonition").length == 0 && $("#listcomp_12_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#listcomp_12_code_div").offset({
+			left: $("#listcomp_12 .clearfix").offset().left
+		});
+	}
+	$("#listcomp_12_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#listcomp_12_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#listcomp_12_runb").parent().siblings(".ac_output").show();
+			runit('listcomp_12',this, undefined);
+			$("#listcomp_12_runb").on("click", function(){
+				runit('listcomp_12',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#listcomp_12_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#listcomp_12_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#listcomp_12_runb").on("click", function(){
+		runit('listcomp_12',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Again, this way of combining lists of strings is so common that python has a built-in way to do it, in this case the <tt class="docutils literal"><span class="pre">join</span></tt> method. It&#8217;s invoked in a slightly strange way because join is a method of string class, not a method of the list class. The string to invoke the method on is the separator to be used in between each of the elements. The list of strings that are to be concatenated together is passed as a parameter.</p>
+
+<div id="cont"></div>
+<div id="listcomp_13" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="listcomp_13_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_13_saveb" onclick="saveEditor('listcomp_13');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_13_loadb" onclick="requestCode('listcomp_13');">Load</button>
+<button class='btn btn-default' id="listcomp_13_vizb" onclick="injectCodelens(this,'listcomp_13');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="listcomp_13_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="listcomp_13_code" class="active_code" prefixcode="undefined" lang="python">
+strings = ["Hello", "hi", "bye", "wonderful"]
+
+print "--".join(strings)
+print ", ".join(strings)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="listcomp_13_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="listcomp_13_suffix" style="display:none">
+</pre><pre id="listcomp_13_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (listcomp_13)</span> </p>
+<div id="listcomp_13_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#listcomp_13_saveb').toggle();
+    $('#listcomp_13_loadb').toggle();
+}
+if ($("#listcomp_13").attr("lang") !== "html" && $("#listcomp_13_code_div").parents(".admonition").length == 0 && $("#listcomp_13_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#listcomp_13_code_div").offset({
+			left: $("#listcomp_13 .clearfix").offset().left
+		});
+	}
+	$("#listcomp_13_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#listcomp_13_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#listcomp_13_runb").parent().siblings(".ac_output").show();
+			runit('listcomp_13',this, undefined);
+			$("#listcomp_13_runb").on("click", function(){
+				runit('listcomp_13',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#listcomp_13_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#listcomp_13_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#listcomp_13_runb").on("click", function(){
+		runit('listcomp_13',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>More generally, python provides a function <tt class="docutils literal"><span class="pre">reduce</span></tt> which takes a list and produces a combined value from all the elements. Check out the <a class="reference external" href="http://docs.python.org/2.7/library/functions.html#reduce">documentation</a>. The first parameter is a function that combines a result-so-far with the next element of a list, producing a new result-so-far. The second parameter is the list to be aggregated. An optional third parameter is the initial value for the accumulator variable. If it&#8217;s not provided, the first element of the list is used as the intitial value.</p>
+<p>All of the specific accumulations that you&#8217;ve seen before can be expressed compactly using the <tt class="docutils literal"><span class="pre">reduce</span></tt> function, though it may take a little decoding to understand exactly what they do.</p>
+
+<div id="cont"></div>
+<div id="listcomp_14" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="listcomp_14_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_14_saveb" onclick="saveEditor('listcomp_14');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_14_loadb" onclick="requestCode('listcomp_14');">Load</button>
+<button class='btn btn-default' id="listcomp_14_vizb" onclick="injectCodelens(this,'listcomp_14');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="listcomp_14_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="listcomp_14_code" class="active_code" prefixcode="undefined" lang="python">
+nums = [3, 4, 6, -7, 0, 1]
+
+# count them; len
+print reduce(lambda x, y: x +1, nums, 0)
+
+# add them up; sum
+print reduce(lambda x, y: x + y, nums)
+
+# find the largest; max
+def greater(x, y):
+   if x > y:
+      return x
+   else:
+      return y
+print reduce(greater, nums)
+
+
+strings = ["Hello", "hi", "bye", "wonderful"]
+# join the strings into one big string
+print reduce(lambda x, y: x + "--" + y, strings)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="listcomp_14_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="listcomp_14_suffix" style="display:none">
+</pre><pre id="listcomp_14_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (listcomp_14)</span> </p>
+<div id="listcomp_14_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#listcomp_14_saveb').toggle();
+    $('#listcomp_14_loadb').toggle();
+}
+if ($("#listcomp_14").attr("lang") !== "html" && $("#listcomp_14_code_div").parents(".admonition").length == 0 && $("#listcomp_14_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#listcomp_14_code_div").offset({
+			left: $("#listcomp_14 .clearfix").offset().left
+		});
+	}
+	$("#listcomp_14_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#listcomp_14_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#listcomp_14_runb").parent().siblings(".ac_output").show();
+			runit('listcomp_14',this, undefined);
+			$("#listcomp_14_runb").on("click", function(){
+				runit('listcomp_14',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#listcomp_14_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#listcomp_14_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#listcomp_14_runb").on("click", function(){
+		runit('listcomp_14',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Of course, it&#8217;s easier to understand code using the more specific functions <tt class="docutils literal"><span class="pre">len,</span> <span class="pre">sum,</span> <span class="pre">max,</span> <span class="pre">and</span> <span class="pre">join</span></tt>, so you should use those rather than <tt class="docutils literal"><span class="pre">reduce</span></tt> whenever you can. But sometimes you want to make a custom aggregator for which there is no built-in. For example, from here&#8217;s a solution to a question from the Winter 2014 midterm exam.</p>
+
+<div id="cont"></div>
+<div id="listcomp_15" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="listcomp_15_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_15_saveb" onclick="saveEditor('listcomp_15');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="listcomp_15_loadb" onclick="requestCode('listcomp_15');">Load</button>
+<button class='btn btn-default' id="listcomp_15_vizb" onclick="injectCodelens(this,'listcomp_15');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="listcomp_15_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="listcomp_15_code" class="active_code" prefixcode="undefined" lang="python">
+# manual accumulation
+def maxabs(nums):
+   best_so_far = nums[0]
+   for num in nums:
+     if abs(num) > abs(best_so_far):
+        best_so_far = num
+   return best_so_far
+
+# alternative using reduce
+# find the max absolute value
+def greater_abs(x, y):
+    if abs(x) > abs(y):
+        return x
+    else:
+        return y
+
+def maxabs2(nums):
+  return reduce(greater_abs, nums)
+
+nums = [3, 4, 6, -7, 0, 1]
+print maxabs(nums)
+print maxabs2(nums)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="listcomp_15_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="listcomp_15_suffix" style="display:none">
+</pre><pre id="listcomp_15_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (listcomp_15)</span> </p>
+<div id="listcomp_15_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#listcomp_15_saveb').toggle();
+    $('#listcomp_15_loadb').toggle();
+}
+if ($("#listcomp_15").attr("lang") !== "html" && $("#listcomp_15_code_div").parents(".admonition").length == 0 && $("#listcomp_15_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#listcomp_15_code_div").offset({
+			left: $("#listcomp_15 .clearfix").offset().left
+		});
+	}
+	$("#listcomp_15_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#listcomp_15_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#listcomp_15_runb").parent().siblings(".ac_output").show();
+			runit('listcomp_15',this, undefined);
+			$("#listcomp_15_runb").on("click", function(){
+				runit('listcomp_15',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#listcomp_15_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#listcomp_15_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#listcomp_15_runb").on("click", function(){
+		runit('listcomp_15',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 Paul Resnick, Brad Miller, David Ranum, Created using Runestone Interactive.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

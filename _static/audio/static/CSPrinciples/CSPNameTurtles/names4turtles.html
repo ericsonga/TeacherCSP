@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Assign a Name to a Turtle &mdash; CS Principles</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="CS Principles" href="../index.html" />
+    <link rel="next" title="Naming Everything" href="../CSPNameNames/names4names2.html" />
+    <link rel="prev" title="Assign a Name to a String" href="../CSPNameStrings/namestrings.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'CSPrinciples';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS Principles</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/CSPrinciples/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/CSPrinciples/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Assign a Name to a Turtle</a></li>
+<li><a class="reference internal" href="#bob-builds-a-house">Bob Builds a House</a></li>
+<li><a class="reference internal" href="#changing-turtle-programs">Changing Turtle Programs</a></li>
+<li><a class="reference internal" href="#bigteachernote-teacher-note-body-syntonic"> Teacher Note: Body Syntonic</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Assign a Name to a String" data-toggle="tooltip">
+    <a href="../CSPNameStrings/namestrings.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Naming Everything' data-toggle="tooltip" >
+    <a href="../CSPNameNames/names4names2.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="assign-a-name-to-a-turtle">
+<h1>Assign a Name to a Turtle<a class="headerlink" href="#assign-a-name-to-a-turtle" title="Permalink to this headline">¶</a></h1>
+<p><strong>Learning Objectives:</strong></p>
+<ul class="simple">
+<li>Use assignment to name objects like turtles.</li>
+<li>Understand that using the right object at the right time, in order, is critical to success.</li>
+</ul>
+<p id="index-0">Names can be more than numbers and strings.  They can also be turtles or &#8220;screens&#8221; (a space on the page where a turtle can draw).  You can also call things like turtles and screens <strong>objects</strong>.  <strong>Objects</strong> in programming are things that do the action in a program.</p>
+<p>We have seen this example once before.</p>
+
+<div id="cont"></div>
+<div id="Turtle_Names1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Turtle_Names1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_Names1_saveb" onclick="saveEditor('Turtle_Names1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_Names1_loadb" onclick="requestCode('Turtle_Names1');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Turtle_Names1','from turtle import *        # use the turtle library*nline*space = Screen*open**close*            # create a turtle screen *open*space*close**nline*zari = Turtle*open**close*             # create a turtle named zari*nline*zari.setheading*open*90*close*         # Point due north*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*90*close*              # turn by 90 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*90*close*              # turn by 90 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*90*close*              # turn by 90 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*90*close*              # turn by 90 degrees','1','*doubleq*Line-by-line Tour*doubleq*; 1: t1-line1; 2: t1-line2; 3: t1-line3; 4: t1-line4; 5: t1-line5; 6: t1-line6; 7: t1-for100-1; 8: t1-right90-1; 9: t1-for100-2; 10: t1-right90-2; 11: t1-for100-3; 12: t1-right90-3;*atype*')"/>
+
+</div>
+<br/>
+<div id="Turtle_Names1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Turtle_Names1_code" class="active_code" prefixcode="undefined" lang="python">
+from turtle import *        # use the turtle library
+space = Screen()            # create a turtle screen (space)
+zari = Turtle()             # create a turtle named zari
+zari.setheading(90)         # Point due north
+zari.forward(100)           # tell zari to move forward by 100 units
+zari.right(90)              # turn by 90 degrees
+zari.forward(100)           # tell zari to move forward by 100 units
+zari.right(90)              # turn by 90 degrees
+zari.forward(100)           # tell zari to move forward by 100 units
+zari.right(90)              # turn by 90 degrees
+zari.forward(100)           # tell zari to move forward by 100 units
+zari.right(90)              # turn by 90 degrees
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Turtle_Names1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Turtle_Names1_suffix" style="display:none">
+</pre><pre id="Turtle_Names1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Turtle_Names1)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Turtle_Names1_saveb').toggle();
+    $('#Turtle_Names1_loadb').toggle();
+}
+if ($("#Turtle_Names1").attr("lang") !== "html" && $("#Turtle_Names1_code_div").parents(".admonition").length == 0 && $("#Turtle_Names1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Turtle_Names1_code_div").offset({
+			left: $("#Turtle_Names1 .clearfix").offset().left
+		});
+	}
+	$("#Turtle_Names1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Turtle_Names1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Turtle_Names1_runb").parent().siblings(".ac_output").show();
+			runit('Turtle_Names1',this, undefined);
+			$("#Turtle_Names1_runb").on("click", function(){
+				runit('Turtle_Names1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Turtle_Names1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Turtle_Names1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Turtle_Names1_runb").on("click", function(){
+		runit('Turtle_Names1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Now try this one.</p>
+
+<div id="cont"></div>
+<div id="Turtle_Names2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Turtle_Names2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_Names2_saveb" onclick="saveEditor('Turtle_Names2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_Names2_loadb" onclick="requestCode('Turtle_Names2');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Turtle_Names2','from turtle import *        # use the turtle library*nline*space = Screen*open**close*            # create a turtle screen *open*space*close**nline*zari = Turtle*open**close*             # create a turtle named zari*nline*zari.setheading*open*90*close*         # Point due north*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*120*close*             # turn right by 120 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*120*close*             # turn right by 120 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*120*close*             # turn right by 120 degrees','1','*doubleq*Line-by-line Tour*doubleq*; 1: tri-line1; 2: tri-line2; 3: tri-line3; 4: tri-line4; 5: tri-line5; 6: tri-line6; 7: tri-line7; 8: tri-line8; 9: tri-line9; 10: tri-line10;*atype*')"/>
+
+</div>
+<br/>
+<div id="Turtle_Names2_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Turtle_Names2_code" class="active_code" prefixcode="undefined" lang="python">
+from turtle import *        # use the turtle library
+space = Screen()            # create a turtle screen (space)
+zari = Turtle()             # create a turtle named zari
+zari.setheading(90)         # Point due north
+zari.forward(100)           # tell zari to move forward by 100 units
+zari.right(120)             # turn right by 120 degrees
+zari.forward(100)           # tell zari to move forward by 100 units
+zari.right(120)             # turn right by 120 degrees
+zari.forward(100)           # tell zari to move forward by 100 units
+zari.right(120)             # turn right by 120 degrees
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Turtle_Names2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Turtle_Names2_suffix" style="display:none">
+</pre><pre id="Turtle_Names2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Turtle_Names2)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Turtle_Names2_saveb').toggle();
+    $('#Turtle_Names2_loadb').toggle();
+}
+if ($("#Turtle_Names2").attr("lang") !== "html" && $("#Turtle_Names2_code_div").parents(".admonition").length == 0 && $("#Turtle_Names2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Turtle_Names2_code_div").offset({
+			left: $("#Turtle_Names2 .clearfix").offset().left
+		});
+	}
+	$("#Turtle_Names2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Turtle_Names2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Turtle_Names2_runb").parent().siblings(".ac_output").show();
+			runit('Turtle_Names2',this, undefined);
+			$("#Turtle_Names2_runb").on("click", function(){
+				runit('Turtle_Names2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Turtle_Names2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Turtle_Names2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Turtle_Names2_runb").on("click", function(){
+		runit('Turtle_Names2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="5-Turtle_Names2_Q1" class="alert alert-warning">
+            csp-5-1: What shape did that draw?<form name="5-Turtle_Names2_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="5-Turtle_Names2_Q1_opt_a" />
+            <label for= "5-Turtle_Names2_Q1_opt_a">  a) A square</label><br />
+            
+            <input type="radio" name="group1" value="b" id="5-Turtle_Names2_Q1_opt_b" />
+            <label for= "5-Turtle_Names2_Q1_opt_b">  b) A triangle</label><br />
+            
+            <input type="radio" name="group1" value="c" id="5-Turtle_Names2_Q1_opt_c" />
+            <label for= "5-Turtle_Names2_Q1_opt_c">  c) A rectangle</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('5-Turtle_Names2_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('5-Turtle_Names2_Q1','b',['That was the first program, but not the second program.', 'Now, what if you did one more forward and right.  Would it still be a triangle? Try it!', 'But, we could change the first program to make a rectangle.  Can you change two lines in the first program to draw a rectangle?'])">Check Me</button>
+            <button class='btn btn-default' id="5-Turtle_Names2_Q1_bcomp" disabled name="compare" onclick="compareAnswers('5-Turtle_Names2_Q1');">Compare Me</button>
+            </form><br />
+            <div id="5-Turtle_Names2_Q1_feedback">
+            </div>
+            </div>
+            <p>This works because <tt class="docutils literal"><span class="pre">zari</span></tt> is a turtle, and each statement gets executed, one right after the other.  If we introduce another turtle and another name, it doesn&#8217;t work the same</p>
+
+<div id="cont"></div>
+<div id="Two_Turtles" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Two_Turtles_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Two_Turtles_saveb" onclick="saveEditor('Two_Turtles');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Two_Turtles_loadb" onclick="requestCode('Two_Turtles');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Two_Turtles','from turtle import *        # use the turtle library*nline*space = Screen*open**close*            # create a turtle screen *open*space*close**nline*zari = Turtle*open**close*             # create a turtle named zari*nline*zari.setheading*open*90*close*         # Point due north*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*120*close*             # turn right by 120 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*120*close*             # turn right by 120 degrees*nline*chad = Turtle*open**close*             # create a new turtle named chad*nline*chad.color*open**doubleq*orange*doubleq**close*        # change the color chad*singleq*s draws with*nline*chad.forward*open*100*close*           # tell chad to move forward by 100 units*nline*chad.right*open*120*close*             # turn chad by 120 degrees','1','*doubleq*Line-by-line Tour*doubleq*; 1: tt-line1; 2: tt-line2; 3: tt-line3; 4: tt-line4; 5: tt-line5; 6: tt-line6; 7: tt-line7; 8: tt-line8; 9: tt-line9; 10: tt-line10; 11: tt-line11; 12: tt-line12;*atype*')"/>
+
+</div>
+<br/>
+<div id="Two_Turtles_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Two_Turtles_code" class="active_code" prefixcode="undefined" lang="python">
+from turtle import *        # use the turtle library
+space = Screen()            # create a turtle screen (space)
+zari = Turtle()             # create a turtle named zari
+zari.setheading(90)         # Point due north
+zari.forward(100)           # tell zari to move forward by 100 units
+zari.right(120)             # turn right by 120 degrees
+zari.forward(100)           # tell zari to move forward by 100 units
+zari.right(120)             # turn right by 120 degrees
+chad = Turtle()             # create a new turtle named chad
+chad.color("orange")        # change the color chad's draws with
+chad.forward(100)           # tell chad to move forward by 100 units
+chad.right(120)             # turn chad by 120 degrees
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Two_Turtles_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Two_Turtles_suffix" style="display:none">
+</pre><pre id="Two_Turtles_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Two_Turtles)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Two_Turtles_saveb').toggle();
+    $('#Two_Turtles_loadb').toggle();
+}
+if ($("#Two_Turtles").attr("lang") !== "html" && $("#Two_Turtles_code_div").parents(".admonition").length == 0 && $("#Two_Turtles_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Two_Turtles_code_div").offset({
+			left: $("#Two_Turtles .clearfix").offset().left
+		});
+	}
+	$("#Two_Turtles_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Two_Turtles_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Two_Turtles_runb").parent().siblings(".ac_output").show();
+			runit('Two_Turtles',this, undefined);
+			$("#Two_Turtles_runb").on("click", function(){
+				runit('Two_Turtles',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Two_Turtles_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Two_Turtles_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Two_Turtles_runb").on("click", function(){
+		runit('Two_Turtles',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="5-Turtle_Dir_Q1" class="alert alert-warning">
+            csp-5-2: Which way does a turtle face when first created?<form name="5-Turtle_Dir_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="5-Turtle_Dir_Q1_opt_a" />
+            <label for= "5-Turtle_Dir_Q1_opt_a">  a) North</label><br />
+            
+            <input type="radio" name="group1" value="b" id="5-Turtle_Dir_Q1_opt_b" />
+            <label for= "5-Turtle_Dir_Q1_opt_b">  b) South</label><br />
+            
+            <input type="radio" name="group1" value="c" id="5-Turtle_Dir_Q1_opt_c" />
+            <label for= "5-Turtle_Dir_Q1_opt_c">  c) East</label><br />
+            
+            <input type="radio" name="group1" value="d" id="5-Turtle_Dir_Q1_opt_d" />
+            <label for= "5-Turtle_Dir_Q1_opt_d">  d) West</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('5-Turtle_Dir_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('5-Turtle_Dir_Q1','c',['The turtles in some of the examples faced north because of the \u003Ccode\u003Esetheading(90)\u003C/code\u003E instruction. Which way does chad move first?', 'Which way does chad first move in the example above?  North is at the top of the page.', 'Turtles start off facing east which is toward the right side of the page.', 'Which way does chad first move in the example above?   North is at the top of the page.'])">Check Me</button>
+            <button class='btn btn-default' id="5-Turtle_Dir_Q1_bcomp" disabled name="compare" onclick="compareAnswers('5-Turtle_Dir_Q1');">Compare Me</button>
+            </form><br />
+            <div id="5-Turtle_Dir_Q1_feedback">
+            </div>
+            </div>
+            <p><strong>Mixed up programs</strong></p>
+
+        <div class='parsons alert alert-warning' id="parsons-115">
+        <div class="parsons-text">csp-5-3: The following program uses a turtle to draw a capital L as shown in the picture to the left of this text, <img src="../_static/TurtleL4.png" width="150" align="left" hspace="10" vspace="5" /> but the lines are mixed up.  The program should do all necessary set-up: import the turtle module, get the space to draw on, and create the turtle.  Remember that the turtle starts off facing east when it is created.  The turtle should turn to face south and draw a line that is 150 pixels long and then turn to face east and draw a line that is 75 pixels long.  We have added a compass to the picture to indicate the directions north, south, west, and east.  <br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.</p><br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-115" style="display:none;">from turtle import *
+space = Screen()\nella = Turtle()
+ella.right(90)\nella.forward(150)
+ella.left(90)
+ella.forward(75)</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-115" class="sortable-code"></div>
+        <div id="parsons-sortableCode-115" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe115" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset115" value="Reset"/>
+        <div id="parsons-message-115"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-115").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-115").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-115");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_115.getHash("#ul-parsons-sortableCode-115");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'5-Turtle_L'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'5-Turtle_L'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-115");
+            var trashul = $("#ul-parsons-sortableTrash-115");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_115 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-115',
+		'trashId': 'parsons-sortableTrash-115',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_115.init($pjQ("#parsons-orig-115").text());
+	pp_115.shuffleLines();
+            
+        if(localStorage.getItem('5-Turtle_L') && localStorage.getItem('5-Turtle_L-trash')) {
+            try {
+                var solution = localStorage.getItem('5-Turtle_L');
+                var trash = localStorage.getItem('5-Turtle_L-trash');
+                pp_115.createHTMLFromHashes(solution,trash);
+                pp_115.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old 5-Turtle_L state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset115").click(function(event){
+              event.preventDefault();
+              pp_115.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-115");
+            var trashul = $("#ul-parsons-sortableTrash-115");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe115").click(function(event){
+              event.preventDefault();
+              var hash = pp_115.getHash("#ul-parsons-sortableCode-115");
+              localStorage.setItem('5-Turtle_L',hash);
+              hash = pp_115.getHash("#ul-parsons-sortableTrash-115");
+              localStorage.setItem('5-Turtle_L-trash',hash);
+            
+            pp_115.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+
+        <div class='parsons alert alert-warning' id="parsons-131">
+        <div class="parsons-text">csp-5-4: The following program uses a turtle to draw a checkmark as shown to the left, <img src="../_static/TurtleCheckmark4.png" width="150" align="left" hspace="10" vspace="5" /> but the lines are mixed up.  The program should do all necessary set-up: import the turtle module, get the window to draw on, and create the turtle.  The turtle should turn to face southeast, draw a line that is 75 pixels long, then turn to face northeast, and draw a line that is 150 pixels long.  We have added a compass to the picture to indicate the directions north, south, west, and east.  Northeast is between north and east. Southeast is between south and east. <br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.</p><br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-131" style="display:none;">from turtle import *
+space = turtle.Screen()\nmaria = turtle.Turtle()
+maria.right(45)
+maria.forward(75)
+maria.left(90)
+maria.forward(150)</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-131" class="sortable-code"></div>
+        <div id="parsons-sortableCode-131" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe131" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset131" value="Reset"/>
+        <div id="parsons-message-131"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-131").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-131").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-131");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_131.getHash("#ul-parsons-sortableCode-131");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'5-Turtle_Check'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'5-Turtle_Check'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-131");
+            var trashul = $("#ul-parsons-sortableTrash-131");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_131 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-131',
+		'trashId': 'parsons-sortableTrash-131',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_131.init($pjQ("#parsons-orig-131").text());
+	pp_131.shuffleLines();
+            
+        if(localStorage.getItem('5-Turtle_Check') && localStorage.getItem('5-Turtle_Check-trash')) {
+            try {
+                var solution = localStorage.getItem('5-Turtle_Check');
+                var trash = localStorage.getItem('5-Turtle_Check-trash');
+                pp_131.createHTMLFromHashes(solution,trash);
+                pp_131.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old 5-Turtle_Check state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset131").click(function(event){
+              event.preventDefault();
+              pp_131.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-131");
+            var trashul = $("#ul-parsons-sortableTrash-131");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe131").click(function(event){
+              event.preventDefault();
+              var hash = pp_131.getHash("#ul-parsons-sortableCode-131");
+              localStorage.setItem('5-Turtle_Check',hash);
+              hash = pp_131.getHash("#ul-parsons-sortableTrash-131");
+              localStorage.setItem('5-Turtle_Check-trash',hash);
+            
+            pp_131.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+</div>
+<div class="section" id="bob-builds-a-house">
+<h1>Bob Builds a House<a class="headerlink" href="#bob-builds-a-house" title="Permalink to this headline">¶</a></h1>
+<p>Let&#8217;s combine the square and triangle code to create a house.</p>
+
+<div id="cont"></div>
+<div id="Turtle_House" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Turtle_House_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_House_saveb" onclick="saveEditor('Turtle_House');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_House_loadb" onclick="requestCode('Turtle_House');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Turtle_House','from turtle import *      # use the turtle library*nline*space = Screen*open**close*          # create a turtle screen *open*space*close**nline*bob = Turtle*open**close*            # create a turtle named bob*nline**nline*# Make a square*nline*bob.forward*open*100*close*          # tell bob to move forward by 100 units*nline*bob.right*open*90*close*             # turn right by 90 degrees*nline*bob.forward*open*100*close*          # tell bob to move forward by 100 units*nline*bob.right*open*90*close*             # turn right by 90 degrees*nline*bob.forward*open*100*close*          # tell bob to move forward by 100 units*nline*bob.right*open*90*close*             # turn right by 90 degrees*nline*bob.forward*open*100*close*          # tell bob to move forward by 100 units*nline**nline*# Position for roof*nline*bob.right*open*90*close**nline**nline*# Make a roof*nline*bob.forward*open*100*close*          # tell bob to move forward by 100 units*nline*bob.right*open*-120*close*           # turn LEFT by 120 degrees*nline*bob.forward*open*100*close*          # tell bob to move forward by 100 units*nline*bob.right*open*-120*close*           # turn LEFT by 120 degrees*nline*bob.forward*open*100*close*          # tell bob to move forward by 100 units*nline*bob.right*open*-120*close*           # turn LEFT by 120 degrees','1','*doubleq*Section Tour*doubleq*; 1-3: house-line1-3; 6-12: house-line5-11; 15: house-line13; 18-23: house-line18-23;*atype*')"/>
+
+</div>
+<br/>
+<div id="Turtle_House_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Turtle_House_code" class="active_code" prefixcode="undefined" lang="python">
+from turtle import *      # use the turtle library
+space = Screen()          # create a turtle screen (space)
+bob = Turtle()            # create a turtle named bob
+
+# Make a square
+bob.forward(100)          # tell bob to move forward by 100 units
+bob.right(90)             # turn right by 90 degrees
+bob.forward(100)          # tell bob to move forward by 100 units
+bob.right(90)             # turn right by 90 degrees
+bob.forward(100)          # tell bob to move forward by 100 units
+bob.right(90)             # turn right by 90 degrees
+bob.forward(100)          # tell bob to move forward by 100 units
+
+# Position for roof
+bob.right(90)
+
+# Make a roof
+bob.forward(100)          # tell bob to move forward by 100 units
+bob.right(-120)           # turn LEFT by 120 degrees
+bob.forward(100)          # tell bob to move forward by 100 units
+bob.right(-120)           # turn LEFT by 120 degrees
+bob.forward(100)          # tell bob to move forward by 100 units
+bob.right(-120)           # turn LEFT by 120 degrees
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Turtle_House_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Turtle_House_suffix" style="display:none">
+</pre><pre id="Turtle_House_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Turtle_House)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Turtle_House_saveb').toggle();
+    $('#Turtle_House_loadb').toggle();
+}
+if ($("#Turtle_House").attr("lang") !== "html" && $("#Turtle_House_code_div").parents(".admonition").length == 0 && $("#Turtle_House_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Turtle_House_code_div").offset({
+			left: $("#Turtle_House .clearfix").offset().left
+		});
+	}
+	$("#Turtle_House_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Turtle_House_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Turtle_House_runb").parent().siblings(".ac_output").show();
+			runit('Turtle_House',this, undefined);
+			$("#Turtle_House_runb").on("click", function(){
+				runit('Turtle_House',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Turtle_House_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Turtle_House_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Turtle_House_runb").on("click", function(){
+		runit('Turtle_House',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Let&#8217;s imagine going on to make another partial square along the slope, to create a &#8220;chimney.&#8221;</p>
+<img alt="../_images/turtle-house.png" src="../_images/turtle-house.png" />
+
+        <div class='parsons alert alert-warning' id="parsons-186">
+        <div class="parsons-text">csp-5-5: Align the program pieces below to make the house and chimney figure above.  Draw the square first for the main part of the house, next draw the roof, and finally draw the chimney.<br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-186" style="display:none;">from turtle import *\nspace = Screen()\nbob = Turtle()
+# Make a square\nbob.forward(100)\nbob.right(90)\nbob.forward(100)\nbob.right(90)\nbob.forward(100)\nbob.right(90)\nbob.forward(100)
+# Position for roof\nbob.right(90)
+# Make a roof\nbob.forward(100)\nbob.right(-120)\nbob.forward(100)\nbob.right(-120)\nbob.forward(100)\nbob.right(-120)
+# Position for chimney\nbob.right(-60)\nbob.forward(40)\nbob.setheading(90)
+# Draw chimney\nbob.pencolor("red")\nbob.forward(30)\nbob.right(90)\nbob.forward(30)\nbob.right(90)\nbob.forward(30)\nbob.right(90)</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-186" class="sortable-code"></div>
+        <div id="parsons-sortableCode-186" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe186" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset186" value="Reset"/>
+        <div id="parsons-message-186"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-186").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-186").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-186");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_186.getHash("#ul-parsons-sortableCode-186");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'5-Turtle_House'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'5-Turtle_House'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-186");
+            var trashul = $("#ul-parsons-sortableTrash-186");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_186 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-186',
+		'trashId': 'parsons-sortableTrash-186',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_186.init($pjQ("#parsons-orig-186").text());
+	pp_186.shuffleLines();
+            
+        if(localStorage.getItem('5-Turtle_House') && localStorage.getItem('5-Turtle_House-trash')) {
+            try {
+                var solution = localStorage.getItem('5-Turtle_House');
+                var trash = localStorage.getItem('5-Turtle_House-trash');
+                pp_186.createHTMLFromHashes(solution,trash);
+                pp_186.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old 5-Turtle_House state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset186").click(function(event){
+              event.preventDefault();
+              pp_186.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-186");
+            var trashul = $("#ul-parsons-sortableTrash-186");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe186").click(function(event){
+              event.preventDefault();
+              var hash = pp_186.getHash("#ul-parsons-sortableCode-186");
+              localStorage.setItem('5-Turtle_House',hash);
+              hash = pp_186.getHash("#ul-parsons-sortableTrash-186");
+              localStorage.setItem('5-Turtle_House-trash',hash);
+            
+            pp_186.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+</div>
+<div class="section" id="changing-turtle-programs">
+<h1>Changing Turtle Programs<a class="headerlink" href="#changing-turtle-programs" title="Permalink to this headline">¶</a></h1>
+<p>Run the following program.</p>
+
+<div id="cont"></div>
+<div id="Turtle_Names4" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Turtle_Names4_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_Names4_saveb" onclick="saveEditor('Turtle_Names4');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_Names4_loadb" onclick="requestCode('Turtle_Names4');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Turtle_Names4','from turtle import *        # use the turtle library*nline*space = Screen*open**close*            # create a turtle screen *open*space*close**nline*alex = Turtle*open**close*             # create a turtle named alex*nline*alex.forward*open*150*close*           # tell alex to move forward by 150 units*nline*alex.left*open*90*close*               # turn by 90 degrees*nline*alex.forward*open*75*close*            # tell alex to move forward by 75 units','1','*doubleq*Line-by-line Tour*doubleq*; 1: first-turtle-line-1; 2: first-turtle-line-2; 3: first-turtle-line-3; 4: first-turtle-line-4; 5: first-turtle-line-5; 6: first-turtle-line-6;*atype*')"/>
+
+</div>
+<br/>
+<div id="Turtle_Names4_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Turtle_Names4_code" class="active_code" prefixcode="undefined" lang="python">
+from turtle import *        # use the turtle library
+space = Screen()            # create a turtle screen (space)
+alex = Turtle()             # create a turtle named alex
+alex.forward(150)           # tell alex to move forward by 150 units
+alex.left(90)               # turn by 90 degrees
+alex.forward(75)            # tell alex to move forward by 75 units
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Turtle_Names4_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Turtle_Names4_suffix" style="display:none">
+</pre><pre id="Turtle_Names4_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Turtle_Names4)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Turtle_Names4_saveb').toggle();
+    $('#Turtle_Names4_loadb').toggle();
+}
+if ($("#Turtle_Names4").attr("lang") !== "html" && $("#Turtle_Names4_code_div").parents(".admonition").length == 0 && $("#Turtle_Names4_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Turtle_Names4_code_div").offset({
+			left: $("#Turtle_Names4 .clearfix").offset().left
+		});
+	}
+	$("#Turtle_Names4_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Turtle_Names4_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Turtle_Names4_runb").parent().siblings(".ac_output").show();
+			runit('Turtle_Names4',this, undefined);
+			$("#Turtle_Names4_runb").on("click", function(){
+				runit('Turtle_Names4',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Turtle_Names4_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Turtle_Names4_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Turtle_Names4_runb").on("click", function(){
+		runit('Turtle_Names4',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="5-Turtle_Names4_Q1" class="alert alert-warning">
+            csp-5-6: If you wanted to make both of the turtle lines in that last program the same length, what change would you make to the program?  (Feel free to actually make the change in the program and click <em>Run</em> to try it!)<form name="5-Turtle_Names4_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="5-Turtle_Names4_Q1_opt_a" />
+            <label for= "5-Turtle_Names4_Q1_opt_a">  a) Change the 150 to 90</label><br />
+            
+            <input type="radio" name="group1" value="b" id="5-Turtle_Names4_Q1_opt_b" />
+            <label for= "5-Turtle_Names4_Q1_opt_b">  b) Change the 75 to 90</label><br />
+            
+            <input type="radio" name="group1" value="c" id="5-Turtle_Names4_Q1_opt_c" />
+            <label for= "5-Turtle_Names4_Q1_opt_c">  c) Change the 75 to 150</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('5-Turtle_Names4_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('5-Turtle_Names4_Q1','c',['The turtle moves forward 150 units and turns 90 degrees.', 'The turtle moves forward 75 units and turns 90 degrees.', 'Then both sides would be 150 units long.'])">Check Me</button>
+            <button class='btn btn-default' id="5-Turtle_Names4_Q1_bcomp" disabled name="compare" onclick="compareAnswers('5-Turtle_Names4_Q1');">Compare Me</button>
+            </form><br />
+            <div id="5-Turtle_Names4_Q1_feedback">
+            </div>
+            </div>
+            <p><strong>Slightly Harder Problem:</strong> Now, let&#8217;s connect the end point to the starting point.  The shape we&#8217;ll create is an equilateral triangle.  The number 57 isn&#8217;t guesswork &#8211; it is roughly the square root of 40^2 + 40^2.  However, there is an error in this program and it won&#8217;t work as intended.  <strong>Can you fix it?</strong></p>
+
+<div id="cont"></div>
+<div id="Turtle_Names5" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Turtle_Names5_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_Names5_saveb" onclick="saveEditor('Turtle_Names5');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_Names5_loadb" onclick="requestCode('Turtle_Names5');">Load</button>
+
+</div>
+<br/>
+<div id="Turtle_Names5_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Turtle_Names5_code" class="active_code" prefixcode="undefined" lang="python">
+from turtle import *        # use the turtle library
+space = Screen()            # create a turtle screen (space)
+alex = Turtle()             # create a turtle named alex
+alex.forward(40)            # tell alex to move forward by 150 units
+alex.left(90)               # turn by 90 degrees
+alex.forward(40)            # complete the second leg of a triangle
+alex.left(0)                # ZERO won't actually work
+alex.forward(57)            # Close the triangle
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Turtle_Names5_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Turtle_Names5_suffix" style="display:none">
+</pre><pre id="Turtle_Names5_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Turtle_Names5)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Turtle_Names5_saveb').toggle();
+    $('#Turtle_Names5_loadb').toggle();
+}
+if ($("#Turtle_Names5").attr("lang") !== "html" && $("#Turtle_Names5_code_div").parents(".admonition").length == 0 && $("#Turtle_Names5_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Turtle_Names5_code_div").offset({
+			left: $("#Turtle_Names5 .clearfix").offset().left
+		});
+	}
+	$("#Turtle_Names5_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Turtle_Names5_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Turtle_Names5_runb").parent().siblings(".ac_output").show();
+			runit('Turtle_Names5',this, undefined);
+			$("#Turtle_Names5_runb").on("click", function(){
+				runit('Turtle_Names5',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Turtle_Names5_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Turtle_Names5_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Turtle_Names5_runb").on("click", function(){
+		runit('Turtle_Names5',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="5-Turtle_Names5_Q1" class="alert alert-warning">
+            csp-5-7: The code <tt class="docutils literal"><span class="pre">alex.left(0)</span></tt> will not turn the turtle toward the starting point.  Which of these will?<form name="5-Turtle_Names5_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="5-Turtle_Names5_Q1_opt_a" />
+            <label for= "5-Turtle_Names5_Q1_opt_a">  a) alex.left(45)</label><br />
+            
+            <input type="radio" name="group1" value="b" id="5-Turtle_Names5_Q1_opt_b" />
+            <label for= "5-Turtle_Names5_Q1_opt_b">  b) alex.left(90)</label><br />
+            
+            <input type="radio" name="group1" value="c" id="5-Turtle_Names5_Q1_opt_c" />
+            <label for= "5-Turtle_Names5_Q1_opt_c">  c) alex.left(135)</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('5-Turtle_Names5_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('5-Turtle_Names5_Q1','c',['The turtle turns the exterior angle, not the interior angle.', 'That would make another right angle. Which would be more like a square shape.', 'The interior angles of a triangle need to add up to 180.  So far we have one angle of 90 so the other two must be equal and must total 90.  They both have to be 45, but we tell the turtle to turn the exterior angle so 180 \u002D 45 \u003D 135.'])">Check Me</button>
+            <button class='btn btn-default' id="5-Turtle_Names5_Q1_bcomp" disabled name="compare" onclick="compareAnswers('5-Turtle_Names5_Q1');">Compare Me</button>
+            </form><br />
+            <div id="5-Turtle_Names5_Q1_feedback">
+            </div>
+            </div>
+            
+        <div class='parsons alert alert-warning' id="parsons-282">
+        <div class="parsons-text">csp-5-8: The following program uses a turtle to draw a capital T as shown to the left, <img src="../_static/TurtleT.png" width="150" align="left" hspace="10" vspace="5"/> but the lines are mixed up.  The program should do all necessary set-up, create the turtle, and set the pen size to 10.  After that the turtle should turn to face north, draw a line that is 150 pixels long, turn to face west, and draw a line that is 50 pixels long.  Next, the turtle should turn 180 degrees and draw a line that is 100 pixels long.  Finally, set the window to close when the user clicks in it.<br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.</p><br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-282" style="display:none;">from turtle import *
+space = Screen()\njamal = Turtle()
+jamal.setheading(90)
+jamal.forward(150)
+jamal.left(90)\njamal.forward(50)
+jamal.right(180)\njamal.forward(100)</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-282" class="sortable-code"></div>
+        <div id="parsons-sortableCode-282" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe282" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset282" value="Reset"/>
+        <div id="parsons-message-282"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-282").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-282").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-282");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_282.getHash("#ul-parsons-sortableCode-282");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'5-Turtle-T'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'5-Turtle-T'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-282");
+            var trashul = $("#ul-parsons-sortableTrash-282");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_282 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-282',
+		'trashId': 'parsons-sortableTrash-282',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_282.init($pjQ("#parsons-orig-282").text());
+	pp_282.shuffleLines();
+            
+        if(localStorage.getItem('5-Turtle-T') && localStorage.getItem('5-Turtle-T-trash')) {
+            try {
+                var solution = localStorage.getItem('5-Turtle-T');
+                var trash = localStorage.getItem('5-Turtle-T-trash');
+                pp_282.createHTMLFromHashes(solution,trash);
+                pp_282.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old 5-Turtle-T state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset282").click(function(event){
+              event.preventDefault();
+              pp_282.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-282");
+            var trashul = $("#ul-parsons-sortableTrash-282");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe282").click(function(event){
+              event.preventDefault();
+              var hash = pp_282.getHash("#ul-parsons-sortableCode-282");
+              localStorage.setItem('5-Turtle-T',hash);
+              hash = pp_282.getHash("#ul-parsons-sortableTrash-282");
+              localStorage.setItem('5-Turtle-T-trash',hash);
+            
+            pp_282.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+</div>
+<div class="section" id="bigteachernote-teacher-note-body-syntonic">
+<h1><a class="reference internal" href="../_images/apple5.jpg"><img alt="teacher note" class="align-top" src="../_images/apple5.jpg" style="width: 50px;" /></a> Teacher Note: Body Syntonic<a class="headerlink" href="#bigteachernote-teacher-note-body-syntonic" title="Permalink to this headline">¶</a></h1>
+<p id="index-1">One of the things that <a class="reference external" href="http://en.wikipedia.org/wiki/Seymour_Papert">Seymour Papert</a>, the person who first used turtles in programming, most liked about the turtle is that students could test their programs using <a class="reference external" href="http://en.wikipedia.org/wiki/Turtle_graphics">body syntonic</a> reasoning.  This means that a turtle moves in the way that a student moves.  Students can go forward and turn right.  A student can pretend to <em>be the turtle</em>, doing exactly what the program says.  In this video, our &#8220;turtle&#8221; person, Barbara Ericson, doesn&#8217;t take 100 steps.  Instead, she goes forward 3 steps since her steps are so much larger than a turtle&#8217;s.</p>
+<p><strong>Click on the right arrow below to play the following video.</strong></p>
+<div id="body_syntonic_turtle" class="video_popup" >
+<video controls preload="none"  poster="../_static/body-syntonic-turtle.png">
+    <source src="http://ice-web.cc.gatech.edu/ce21/1/static/video/body-syntonic-turtle.mov" type="video/mp4"></source>
+    <source src="http://ice-web.cc.gatech.edu/ce21/1/static/video/body-syntonic-turtle.webm" type="video/webm"></source>
+    No supported video types
+</video>
+</div>
+<script>
+   jQuery(function($) {
+      $('#body_syntonic_turtle_thumb').click(function(e) {
+         $('#body_syntonic_turtle').show();
+         $('#body_syntonic_turtle_thumb').hide();
+         logBookEvent({'event':'video','act':'play','div_id': 'body_syntonic_turtle'});
+         // Log the run event
+      });
+	  $('#body_syntonic_turtle video').one("click", function(){
+		this.play();
+	  });
+	  $('#body_syntonic_turtle video').one("play", function(){
+		logBookEvent({'event':'video','act':'play','div_id': 'body_syntonic_turtle'});
+	  });
+   });
+</script>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014, Mark Guzdial, Barbara Ericson, and Briana Morrison.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>An Anagram Detection Example &mdash; Problem Solving with Algorithms and Data Structures</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
+    <link rel="next" title="Performance of Python Data Structures" href="PerformanceofPythonDataStructures.html" />
+    <link rel="prev" title="Big-O Notation" href="BigONotation.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pythonds';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">Problem Solving with Algorithms and Data Structures</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pythonds/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/initiateGroup' id="joinGroupLink">Join a Study Group</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/schedule' id="groupScheduleLink">Group Schedule</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/newschedule' id="newChapterLink">Schedule New Chapter</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/manageGroup' id="manageGroupLink">Manage Group</a></li>
+			<li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/assignments/index'>Progress Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pythonds/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">An Anagram Detection Example</a><ul>
+<li><a class="reference internal" href="#solution-1-checking-off">Solution 1: Checking Off</a></li>
+<li><a class="reference internal" href="#solution-2-sort-and-compare">Solution 2: Sort and Compare</a></li>
+<li><a class="reference internal" href="#solution-3-brute-force">Solution 3: Brute Force</a></li>
+<li><a class="reference internal" href="#solution-4-count-and-compare">Solution 4: Count and Compare</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Big-O Notation" data-toggle="tooltip">
+    <a href="BigONotation.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Performance of Python Data Structures' data-toggle="tooltip" >
+    <a href="PerformanceofPythonDataStructures.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="an-anagram-detection-example">
+<h1>An Anagram Detection Example<a class="headerlink" href="#an-anagram-detection-example" title="Permalink to this headline">¶</a></h1>
+<p>A good example problem for showing algorithms with different orders of
+magnitude is the classic anagram detection problem for strings. One
+string is an anagram of another if the second is simply a rearrangement
+of the first. For example, <tt class="docutils literal"><span class="pre">'heart'</span></tt> and <tt class="docutils literal"><span class="pre">'earth'</span></tt> are anagrams. The
+strings <tt class="docutils literal"><span class="pre">'python'</span></tt> and <tt class="docutils literal"><span class="pre">'typhon'</span></tt> are anagrams as well. For the sake
+of simplicity, we will assume that the two strings in question are of
+equal length and that they are made up of symbols from the set of 26
+lowercase alphabetic characters. Our goal is to write a boolean function
+that will take two strings and return whether they are anagrams.</p>
+<div class="section" id="solution-1-checking-off">
+<h2>Solution 1: Checking Off<a class="headerlink" href="#solution-1-checking-off" title="Permalink to this headline">¶</a></h2>
+<p>Our first solution to the anagram problem will check to see that each
+character in the first string actually occurs in the second. If it is
+possible to “checkoff” each character, then the two strings must be
+anagrams. Checking off a character will be accomplished by replacing it
+with the special Python value <tt class="docutils literal"><span class="pre">None</span></tt>. However, since strings in Python
+are immutable, the first step in the process will be to convert the
+second string to a list. Each character from the first string can be
+checked against the characters in the list and if found, checked off by
+replacement. <a class="reference internal" href="#lst-anagramsolution"><em>ActiveCode 1</em></a> shows this function.</p>
+
+<div id="cont"></div>
+<div id="active5" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="active5_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="active5_saveb" onclick="saveEditor('active5');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="active5_loadb" onclick="requestCode('active5');">Load</button>
+<button class='btn btn-default' id="active5_vizb" onclick="injectCodelens(this,'active5');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="active5_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="active5_code" class="active_code" prefixcode="undefined" lang="python">
+def anagramSolution1(s1,s2):
+    alist = list(s2)
+
+    pos1 = 0
+    stillOK = True
+
+    while pos1 < len(s1) and stillOK:
+        pos2 = 0
+        found = False
+        while pos2 < len(alist) and not found:
+            if s1[pos1] == alist[pos2]:
+                found = True
+            else:
+                pos2 = pos2 + 1
+
+        if found:
+            alist[pos2] = None
+        else:
+            stillOK = False
+
+        pos1 = pos1 + 1
+
+    return stillOK
+
+print(anagramSolution1('abcd','dcba'))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="active5_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="active5_suffix" style="display:none">
+</pre><pre id="active5_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text">Checking Off (active5)</span> </p>
+<div id="active5_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#active5_saveb').toggle();
+    $('#active5_loadb').toggle();
+}
+if ($("#active5").attr("lang") !== "html" && $("#active5_code_div").parents(".admonition").length == 0 && $("#active5_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#active5_code_div").offset({
+			left: $("#active5 .clearfix").offset().left
+		});
+	}
+	$("#active5_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#active5_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#active5_runb").parent().siblings(".ac_output").show();
+			runit('active5',this, undefined);
+			$("#active5_runb").on("click", function(){
+				runit('active5',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#active5_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#active5_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#active5_runb").on("click", function(){
+		runit('active5',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>To analyze this algorithm, we need to note that each of the <em>n</em>
+characters in <tt class="docutils literal"><span class="pre">s1</span></tt> will cause an iteration through up to <em>n</em>
+characters in the list from <tt class="docutils literal"><span class="pre">s2</span></tt>. Each of the <em>n</em> positions in the
+list will be visited once to match a character from <tt class="docutils literal"><span class="pre">s1</span></tt>. The number
+of visits then becomes the sum of the integers from 1 to <em>n</em>. We stated
+earlier that this can be written as</p>
+<div class="math">
+\[\begin{split}\sum_{i=1}^{n} i &amp;= \frac {n(n+1)}{2} \\
+                 &amp;= \frac {1}{2}n^{2} + \frac {1}{2}n\end{split}\]</div>
+<p>As <span class="math">\(n\)</span> gets large, the <span class="math">\(n^{2}\)</span> term will dominate the
+<span class="math">\(n\)</span> term and the <span class="math">\(\frac {1}{2}\)</span> can be ignored.
+Therefore, this solution is <span class="math">\(O(n^{2})\)</span>.</p>
+</div>
+<div class="section" id="solution-2-sort-and-compare">
+<h2>Solution 2: Sort and Compare<a class="headerlink" href="#solution-2-sort-and-compare" title="Permalink to this headline">¶</a></h2>
+<p>Another solution to the anagram problem will make use of the fact that
+even though <tt class="docutils literal"><span class="pre">s1</span></tt> and <tt class="docutils literal"><span class="pre">s2</span></tt> are different, they are anagrams only if
+they consist of exactly the same characters. So, if we begin by sorting
+each string alphabetically, from a to z, we will end up with the same
+string if the original two strings are anagrams. <a class="reference internal" href="#lst-ana2"><em>ActiveCode 2</em></a> shows
+this solution. Again, in Python we can use the built-in <tt class="docutils literal"><span class="pre">sort</span></tt> method
+on lists by simply converting each string to a list at the start.</p>
+
+<div id="cont"></div>
+<div id="active6" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="active6_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="active6_saveb" onclick="saveEditor('active6');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="active6_loadb" onclick="requestCode('active6');">Load</button>
+<button class='btn btn-default' id="active6_vizb" onclick="injectCodelens(this,'active6');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="active6_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="active6_code" class="active_code" prefixcode="undefined" lang="python">
+def anagramSolution2(s1,s2):
+    alist1 = list(s1)
+    alist2 = list(s2)
+
+    alist1.sort()
+    alist2.sort()
+
+    pos = 0
+    matches = True
+
+    while pos < len(s1) and matches:
+        if alist1[pos]==alist2[pos]:
+            pos = pos + 1
+        else:
+            matches = False
+
+    return matches
+
+print(anagramSolution2('abcde','edcba'))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="active6_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="active6_suffix" style="display:none">
+</pre><pre id="active6_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text">Sort and Compare (active6)</span> </p>
+<div id="active6_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#active6_saveb').toggle();
+    $('#active6_loadb').toggle();
+}
+if ($("#active6").attr("lang") !== "html" && $("#active6_code_div").parents(".admonition").length == 0 && $("#active6_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#active6_code_div").offset({
+			left: $("#active6 .clearfix").offset().left
+		});
+	}
+	$("#active6_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#active6_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#active6_runb").parent().siblings(".ac_output").show();
+			runit('active6',this, undefined);
+			$("#active6_runb").on("click", function(){
+				runit('active6',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#active6_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#active6_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#active6_runb").on("click", function(){
+		runit('active6',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>At first glance you may be tempted to think that this algorithm is
+<span class="math">\(O(n)\)</span>, since there is one simple iteration to compare the <em>n</em>
+characters after the sorting process. However, the two calls to the
+Python <tt class="docutils literal"><span class="pre">sort</span></tt> method are not without their own cost. As we will see in
+a later chapter, sorting is typically either <span class="math">\(O(n^{2})\)</span> or
+<span class="math">\(O(n\log n)\)</span>, so the sorting operations dominate the iteration.
+In the end, this algorithm will have the same order of magnitude as that
+of the sorting process.</p>
+</div>
+<div class="section" id="solution-3-brute-force">
+<h2>Solution 3: Brute Force<a class="headerlink" href="#solution-3-brute-force" title="Permalink to this headline">¶</a></h2>
+<p>A <strong>brute force</strong> technique for solving a problem typically tries to
+exhaust all possibilities. For the anagram detection problem, we can
+simply generate a list of all possible strings using the characters from
+<tt class="docutils literal"><span class="pre">s1</span></tt> and then see if <tt class="docutils literal"><span class="pre">s2</span></tt> occurs. However, there is a difficulty
+with this approach. When generating all possible strings from <tt class="docutils literal"><span class="pre">s1</span></tt>,
+there are <em>n</em> possible first characters, <span class="math">\(n-1\)</span> possible
+characters for the second position, <span class="math">\(n-2\)</span> for the third, and so
+on. The total number of candidate strings is
+<span class="math">\(n*(n-1)*(n-2)*...*3*2*1\)</span>, which is <span class="math">\(n!\)</span>. Although some
+of the strings may be duplicates, the program cannot know this ahead of
+time and so it will still generate <span class="math">\(n!\)</span> different strings.</p>
+<p>It turns out that <span class="math">\(n!\)</span> grows even faster than <span class="math">\(2^{n}\)</span> as
+<em>n</em> gets large. In fact, if <tt class="docutils literal"><span class="pre">s1</span></tt> were 20 characters long, there would
+be <span class="math">\(20!=2,432,902,008,176,640,000\)</span> possible candidate strings.
+If we processed one possibility every second, it would still take us
+77,146,816,596 years to go through the entire list. This is probably not
+going to be a good solution.</p>
+</div>
+<div class="section" id="solution-4-count-and-compare">
+<h2>Solution 4: Count and Compare<a class="headerlink" href="#solution-4-count-and-compare" title="Permalink to this headline">¶</a></h2>
+<p>Our final solution to the anagram problem takes advantage of the fact
+that any two anagrams will have the same number of a’s, the same number
+of b’s, the same number of c’s, and so on. In order to decide whether
+two strings are anagrams, we will first count the number of times each
+character occurs. Since there are 26 possible characters, we can use a
+list of 26 counters, one for each possible character. Each time we see a
+particular character, we will increment the counter at that position. In
+the end, if the two lists of counters are identical, the strings must be
+anagrams. <a class="reference internal" href="#lst-ana4"><em>ActiveCode 3</em></a> shows this solution.</p>
+
+<div id="cont"></div>
+<div id="active7" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="active7_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="active7_saveb" onclick="saveEditor('active7');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="active7_loadb" onclick="requestCode('active7');">Load</button>
+<button class='btn btn-default' id="active7_vizb" onclick="injectCodelens(this,'active7');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="active7_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="active7_code" class="active_code" prefixcode="undefined" lang="python">
+def anagramSolution4(s1,s2):
+    c1 = [0]*26
+    c2 = [0]*26
+
+    for i in range(len(s1)):
+        pos = ord(s1[i])-ord('a')
+        c1[pos] = c1[pos] + 1
+
+    for i in range(len(s2)):
+        pos = ord(s2[i])-ord('a')
+        c2[pos] = c2[pos] + 1
+
+    j = 0
+    stillOK = True
+    while j<26 and stillOK:
+        if c1[j]==c2[j]:
+            j = j + 1
+        else:
+            stillOK = False
+
+    return stillOK
+
+print(anagramSolution4('apple','pleap'))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="active7_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="active7_suffix" style="display:none">
+</pre><pre id="active7_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text">Count and Compare (active7)</span> </p>
+<div id="active7_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#active7_saveb').toggle();
+    $('#active7_loadb').toggle();
+}
+if ($("#active7").attr("lang") !== "html" && $("#active7_code_div").parents(".admonition").length == 0 && $("#active7_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#active7_code_div").offset({
+			left: $("#active7 .clearfix").offset().left
+		});
+	}
+	$("#active7_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#active7_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#active7_runb").parent().siblings(".ac_output").show();
+			runit('active7',this, undefined);
+			$("#active7_runb").on("click", function(){
+				runit('active7',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#active7_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#active7_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#active7_runb").on("click", function(){
+		runit('active7',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Again, the solution has a number of iterations. However, unlike the
+first solution, none of them are nested. The first two iterations used
+to count the characters are both based on <em>n</em>. The third iteration,
+comparing the two lists of counts, always takes 26 steps since there are
+26 possible characters in the strings. Adding it all up gives us
+<span class="math">\(T(n)=2n+26\)</span> steps. That is <span class="math">\(O(n)\)</span>. We have found a
+linear order of magnitude algorithm for solving this problem.</p>
+<p>Before leaving this example, we need to say something about space
+requirements. Although the last solution was able to run in linear time,
+it could only do so by using additional storage to keep the two lists of
+character counts. In other words, this algorithm sacrificed space in
+order to gain time.</p>
+<p>This is a common occurrence. On many occasions you will need to make
+decisions between time and space trade-offs. In this case, the amount of
+extra space is not significant. However, if the underlying alphabet had
+millions of characters, there would be more concern. As a computer
+scientist, when given a choice of algorithms, it will be up to you to
+determine the best use of computing resources given a particular
+problem.</p>
+<div class="admonition-self-check admonition">
+<p class="first admonition-title">Self Check</p>
+
+            <div id="analysis_1" class="alert alert-warning">
+            <p>Q-1: Given the following code fragment, what is its Big-O running time?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">test</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+   <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+      <span class="n">test</span> <span class="o">=</span> <span class="n">test</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span>
+</pre></div>
+</div>
+<form name="analysis_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="analysis_1_opt_a" />
+            <label for= "analysis_1_opt_a">  a) O(n)</label><br />
+            
+            <input type="radio" name="group1" value="b" id="analysis_1_opt_b" />
+            <label for= "analysis_1_opt_b">  b) O(n^2)</label><br />
+            
+            <input type="radio" name="group1" value="c" id="analysis_1_opt_c" />
+            <label for= "analysis_1_opt_c">  c) O(log n)</label><br />
+            
+            <input type="radio" name="group1" value="d" id="analysis_1_opt_d" />
+            <label for= "analysis_1_opt_d">  d) O(n^3)</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('analysis_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('analysis_1','b',['In an example like this you want to count the nested loops. especially the loops that are dependent on the same variable, in this case, n.', 'A singly nested loop like this is O(n^2)', 'log n typically is indicated when the problem is iteratvely made smaller', 'In an example like this you want to count the nested loops. especially the loops that are dependent on the same variable, in this case, n.'])">Check Me</button>
+            <button class='btn btn-default' id="analysis_1_bcomp" disabled name="compare" onclick="compareAnswers('analysis_1');">Compare Me</button>
+            </form><br />
+            <div id="analysis_1_feedback">
+            </div>
+            </div>
+            
+            <div id="analysis_2" class="alert alert-warning">
+            <p>Q-2: Given the following code fragment what is its Big-O running time?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">test</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+   <span class="n">test</span> <span class="o">=</span> <span class="n">test</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+   <span class="n">test</span> <span class="o">=</span> <span class="n">test</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<form name="analysis_2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="analysis_2_opt_a" />
+            <label for= "analysis_2_opt_a">  a) O(n)</label><br />
+            
+            <input type="radio" name="group1" value="b" id="analysis_2_opt_b" />
+            <label for= "analysis_2_opt_b">  b) O(n^2)</label><br />
+            
+            <input type="radio" name="group1" value="c" id="analysis_2_opt_c" />
+            <label for= "analysis_2_opt_c">  c) O(log n)</label><br />
+            
+            <input type="radio" name="group1" value="d" id="analysis_2_opt_d" />
+            <label for= "analysis_2_opt_d">  d) O(n^3)</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('analysis_2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('analysis_2','a',['Even though there are two loops they are not nested.  You might think of this as O(2n) but we can ignore the constant 2.', 'Be careful, in counting loops you want to make sure the loops are nested.', 'log n typically is indicated when the problem is iteratvely made smaller', 'Be careful, in counting loops you want to make sure the loops are nested.'])">Check Me</button>
+            <button class='btn btn-default' id="analysis_2_bcomp" disabled name="compare" onclick="compareAnswers('analysis_2');">Compare Me</button>
+            </form><br />
+            <div id="analysis_2_feedback">
+            </div>
+            </div>
+            
+            <div id="analysis_3" class="alert alert-warning">
+            <p>Q-3: Given the following code fragment what is its Big-O running time?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">i</span> <span class="o">=</span> <span class="n">n</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="n">k</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+   <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">//</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<form name="analysis_3_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="analysis_3_opt_a" />
+            <label for= "analysis_3_opt_a">  a) O(n)</label><br />
+            
+            <input type="radio" name="group1" value="b" id="analysis_3_opt_b" />
+            <label for= "analysis_3_opt_b">  b) O(n^2)</label><br />
+            
+            <input type="radio" name="group1" value="c" id="analysis_3_opt_c" />
+            <label for= "analysis_3_opt_c">  c) O(log n)</label><br />
+            
+            <input type="radio" name="group1" value="d" id="analysis_3_opt_d" />
+            <label for= "analysis_3_opt_d">  d) O(n^3)</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('analysis_3');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('analysis_3','c',['Look carefully at the loop variable i.  Notice that the value of i is cut in half each time through the loop.  This is a big hint that the performance is better than O(n)', 'Check again, is this a nested loop?', 'The value of i is cut in half each time through the loop so it will only take log n iterations.', 'Check again, is this a nested loop?'])">Check Me</button>
+            <button class='btn btn-default' id="analysis_3_bcomp" disabled name="compare" onclick="compareAnswers('analysis_3');">Compare Me</button>
+            </form><br />
+            <div id="analysis_3_feedback">
+            </div>
+            </div>
+            </div>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - Big-O Notation' data-toggle="tooltip">
+    <a href="BigONotation.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="BigONotation.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Performance of Python Data Structures' data-toggle="tooltip" >
+    <a href="PerformanceofPythonDataStructures.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="PerformanceofPythonDataStructures.html" >Next Section - Performance of Python Data Structures</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014 Brad Miller, David Ranum.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

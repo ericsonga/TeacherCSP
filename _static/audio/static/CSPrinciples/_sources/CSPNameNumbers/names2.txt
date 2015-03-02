@@ -1,0 +1,481 @@
+..  Copyright (C)  Mark Guzdial, Barbara Ericson, Briana Morrison
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3 or
+    any later version published by the Free Software Foundation; with
+    Invariant Sections being Forward, Prefaces, and Contributor List,
+    no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license
+    is included in the section entitled "GNU Free Documentation License".
+
+.. |teachernote| image:: Figures/apple.jpg
+    :width: 30px
+    :align: top
+    :alt: teacher note
+    
+.. |bigteachernote| image:: Figures/apple.jpg
+    :width: 50px
+    :align: top
+    :alt: teacher note
+
+.. |runbutton| image:: Figures/run-button.png
+    :height: 20px
+    :align: top
+    :alt: run button
+
+.. |audiobutton| image:: Figures/start-audio-tour.png
+    :height: 20px
+    :align: top
+    :alt: audio tour button
+
+.. |codelensfirst| image:: Figures/codelens-first.png
+    :height: 20px
+    :align: top
+    :alt: move to first button
+
+.. |codelensback| image:: Figures/codelens-back.png
+    :height: 20px
+    :align: top
+    :alt: back button
+
+.. |codelensfwd| image:: Figures/codelens-forward.png
+    :height: 20px
+    :align: top
+    :alt: forward (next) button
+
+.. |codelenslast| image:: Figures/codelens-last.png
+    :height: 20px
+    :align: top
+    :alt: move to last button
+    
+.. 	qnum::
+	:start: 1
+	:prefix: csp-3-
+
+.. highlight:: java
+   :linenothreshold: 4
+
+Assigning a Name
+==================
+
+**Learning Objectives:**
+
+- Use assignment in calculations.
+- Understand the ways that students get assignments wrong.
+- Reuse variables across different assignment statements.
+	
+..	index::
+	single: variable
+	pair: programming; variable
+	
+A computer can associate a name with a value.  It does this by creating a **variable**, which is named space that can hold a value.  You can think of a variable as a box that has a label on it and you can store a value in the box.  The value can be anything that can be represented on a computer and stored in a computer's memory.  A computer's memory is only made up of numbers (really, just patterns of voltages, but we can think about them as numbers).  Everything that a computer can remember in its memory is translated into these numbers -- but we'll explain how that works later.  
+
+An example of a **variable** is a score in a computer game.  It usually starts at 0 and increases as you play the game. 
+
+.. figure:: Figures/pongScore.png
+    :width: 400px
+    :align: center
+    :figclass: align-center
+    
+    Figure 1: A pong game in `Scratch <http://scratch.mit.edu>`_ with a score shown in the upper left.
+
+..	index::
+	single: assignment
+	pair: programming; assignment
+	
+In programming languages, setting a variable's value is also called **assignment**.  A statement like ``a = 4`` means that the symbol ``a`` refers to space that is assigned the value ``4``.  When we use the symbol ``a`` in a program the computer will substitute the value ``4``.  If we later change the value stored at ``a``, say by doing ``a = 7.2`` then we say that the variable ``a`` now has the value ``7.2``.
+
+**Click on the right arrow below to play the following video.**
+
+.. video:: intro_assignment
+   :controls:
+   :thumb: ../_static/video-think-about-assignment.png
+
+   http://ice-web.cc.gatech.edu/ce21/1/static/video/assignment-v2-small.mov
+   http://ice-web.cc.gatech.edu/ce21/1/static/video/assignment-v2-small.webm
+
+The right hand side of the assignment statement doesn't have to be a value.  It can be *an expression*, like ``2*2``.  See the table below for some common mathematical expressions. 
+
++------------+-----------------------------------+
+| Expression | Arithmetic meaning                |
++------------+-----------------------------------+
+| 1 + 2      | Addition, the result is 3         |
++------------+-----------------------------------+
+| 3 * 4      | Multiplication, the result is 12  |
++------------+-----------------------------------+
+| 2.0 / 4.0  | Division, the result is 0.5       |
++------------+-----------------------------------+
+| 1 / 3      | Integer division, the result is 0 |
++------------+-----------------------------------+
+| 2 % 3      | Modulo (remainder), the result is | 
+|            | 2                                 |
++------------+-----------------------------------+
+| -1         | Negation, the result is -1        |
++------------+-----------------------------------+
+
+Why is the result of ``1 / 3`` zero?  That isn't what you get when you try the same expression on a calculator.  On a computer integers are stored differently than floating point numbers and when the computer sees you using integers in a calculation it only keeps the integer part of the result.  The expression ``1 / 3`` would result in ``0.33333333333333`` on a calculator, but Python only keeps the integer part (the part before the decimal point) which is just ``0``.  
+
+You may not be familiar with the modulus (remainder) operator ``%``.  It returns the remainder when you divide the first number by the second.  In this case 3 goes into 2 zero times with a remainder of 2.  The result of ``5 % 2`` would be 1 since 2 goes into 5, two times with a remainder of 1. 
+
+Driving from Chicago to Dallas
+====================================
+
+..	index::
+	single: CodeLens
+	
+As an example, imagine that you were planning to drive from Chicago to Dallas. If you know how many miles-per-gallon your car gets, and how many miles it is, you can estimate the number of gallons it will take.
+
+Use the *CodeLens* below to trace through what it would look like for a computer to execute this program:
+
+- Press |codelensfwd| to go forward executing a single line of the program.
+- Press |codelenslast| to execute all the lines of the program.
+
+.. codelens:: Chicago_2_Dallas
+
+   distance = 924.7
+   MPG = 35.5
+   gallons = distance / MPG
+
+Now, if we know the average cost of a gallon of gas.  Then, we can figure out the cost of the trip from Chicago to Dallas in your car.
+
+.. codelens:: Chicago_2_Dallas_Cost
+
+   distance = 924.7
+   MPG = 35.5
+   gallons = distance / MPG
+   costPerGallon = 3.65
+   costTrip = gallons * costPerGallon
+   
+..	index::
+	single: tracing
+	pair: programming; tracing
+	
+What we're doing above is **tracing** a program.  Normally, we **run** a program -- tell the computer to execute each step of the program as fast as possible. When we do that, we don't see individual variable values, as we can above.  We can check values (including the values for variables) by printing them.  The function ``print`` can take an *input* (a variable name inside of parentheses) whose value will be displayed. 
+
+Press the |runbutton| below to see this program run at full speed.
+
+.. activecode:: Trip_Calculator
+   :tour_1: "Line by line tour"; 1: trp-line1; 2: trp-line2; 3: trp-line3; 4: trp-line4; 5: trp-line5; 6: trp-line6; 7: trp-line7; 
+
+   distance = 924.7
+   MPG = 35.5
+   gallons = distance / MPG
+   costPerGallon = 3.65
+   costTrip = gallons * costPerGallon
+   print("Cost to get from Chicago to Dallas")
+   print(costTrip)
+
+How does this program work?  Try pressing the |audiobutton| button above to listen to an explanation of the program.
+
+Try editing the program above and running it to answer this question:
+
+.. mchoicemf:: 3-Chicago_2_Dallas_Q1
+   :answer_a: Yes
+   :answer_b: No
+   :answer_c: We should fly instead.
+   :correct: a
+   :feedback_a: Yes, the cost would be $89.86 (which you knew by editing the program above and running it)
+   :feedback_b: Try it -- it's just under $90.
+   :feedback_c: You might be right, but figure out the cost by editing the above program
+
+   If the cost per gallon drops to $3.45, can we drive from Chicago to Dallas for less than $90 in gas?
+
+Following the Ketchup Ooze
+====================================
+
+Let's compute how long it would take ketchup to ooze down a table.  Imagine that you tilted a four foot table, and poured ketchup at the top.  How long would it take to get to the bottom of the table?  We're going to ignore physics and the angle of the table, and just start from the average speed of ketchup as .028 miles per hour.
+
+.. figure:: Figures/ketchup.jpg
+    :width: 200px
+    :align: center
+    :alt: A picture of ketchup dripping from a bottle
+    :figclass: align-center
+
+    Figure 2: Ketchup dripping speed
+
+.. codelens:: Ketchup_Speed
+
+   dripMPH = .028
+   FPM = 5280.0
+   dripFPH = dripMPH * FPM
+   MPH = 60
+   dripFPM = dripFPH / MPH
+   print("Ketchup speed in feet per minute:")
+   print(dripFPM)
+   print("Ketchup speed to move 4 feet in minutes:")
+   print(4 / dripFPM)
+   
+The next type of problem is new.  It shows correct code in code blocks on the left side, but the order is mixed up.  You need to drag the blocks to the right side in the right order.  Please watch the video below for a demonstration.
+   
+**Click on the right arrow below to play the following video.**
+   
+.. video:: parsons
+   :controls:
+   :thumb: ../_static/MixedUpCodeVideoThumb.png
+
+   http://ice-web.cc.gatech.edu/ce21/1/static/video/MixedUpCode.mov
+   http://ice-web.cc.gatech.edu/ce21/1/static/video/MixedUpCode.webm
+
+.. parsonsprob:: 3-Ketchup_Speed
+
+   The following program figures out the ketchup speed in feet per <i>seconds</i>.  Drag the blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p>
+   -----
+   dripMPH = .028
+   FPM= 5280.0
+   dripFPH = dripMPH * FPM
+   =====
+   MPH = 60
+   dripFPM = dripFPH / MPH
+   =====
+   SPM = 60
+   dripFPS = dripFPM / SPM
+   =====
+   print("Ketchup speed:")
+   print(ketchupFPS)
+
+Walking through Assignment more Generally
+======================================================
+
+Let's explore assignment in general.  Try tracing this example.
+
+.. codelens:: Assign_Basic
+
+   a = 1
+   b = 12.3
+   c = "Fred"
+   d = b
+
+.. mchoicemf:: 3-Assignment_Q1
+   :answer_a: 1
+   :answer_b: 12.3
+   :answer_c: "b"
+   :answer_d: "d"
+   :correct: b
+   :feedback_a: The variable a is not used in defining the variable b.
+   :feedback_b: The variable d is set to the same value as the contents of the variable b.  The variable b still holds the value 12.3 as well.  
+   :feedback_c: The variable d gets assigned the same value as the one stored in b.
+   :feedback_d: The variable d gets its value from the variable b.  
+
+   What is the value of variable ``d`` when this program is finished running?
+
+The *sequence* of statements in a program is very important.  Assignment doesn't create some kind of relationship between the names, like in mathematics.  The variable ``a`` might equal ``12`` at one point, and ``15`` at another. An assignment statement is an action that occurs once, and then is over with.    
+
+.. codelens:: Assign_Multiple
+
+	    var1 = 45
+	    var1 = 17.3
+	    var2 = var1
+
+.. mchoicemf:: 3-Assignment_Multiple_Q1
+		   :answer_a: var1 is 45, var2 is 45
+		   :answer_b: var1 is 45, var2 is var1
+		   :answer_c: var1 is 17.3, var2 is 45
+		   :answer_d: var1 is 17.3, var2 is 17.3
+		   :correct: d
+		   :feedback_a: The variable var1 was set to 45, but that gets changed in line 2, before var2 gets set to any value at all.
+		   :feedback_b: Both variables contain numeric values, because those are the only values in this program.
+		   :feedback_c: The variable var2 never gets set to 45 in this program.
+		   :feedback_d: The variable var1 is first set to 45 and then changed to 17.3, and then, var2 gets the value from var1.
+
+		   What are the values in ``var1`` and ``var2`` after this program runs?
+
+We can see values (including the values for named variables) by printing them.  It's a useful way to see what's going on inside a program.  Try running this example where we're having the computer calculate the number of days in three weeks:
+
+.. activecode:: Assign_Days
+   :tour_1: "Line by line tour"; 1: calcDays-line1; 2: calcDays-line2; 3: calcDays-line3; 4: calcDays-line4; 5: calcDays-line5; 6: calcDays-line6;
+
+   daysInWeek = 7
+   print(daysInWeek)
+   numDays = 7 * 3
+   print(numDays)
+   numDays2 = daysInWeek * 3
+   print(numDays2)
+
+.. mchoicemf:: 3-Assign_Days_Q1
+		   :answer_a: 7, 7*3, daysInWeek*3
+		   :answer_b: daysInWeek, numDays, numDays2
+		   :answer_c: 7, 21, 21
+		   :answer_d: 7, 21, 3
+		   :correct: c
+		   :feedback_a: The values will actually be computed and numbers will be printed.
+		   :feedback_b: The variable names will not be printed.
+		   :feedback_c: The first print will print the value of daysInWeek (7), the second the value of numDays (21), and the third the value of numDays2 (21).
+		   :feedback_d: The value for daysInWeek will be computed and assigned.
+
+		   What three values are printed when this program runs?
+   
+.. parsonsprob:: 3-Per_Person_Cost
+
+   The following program should figure out the cost per person for a dinner including the tip. But the blocks have been mixed up.  Drag the blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p>
+   -----
+   bill = 89.23
+   =====
+   tip = bill * 0.20
+   =====
+   total = bill + tip
+   =====
+   numPeople = 3
+   perPersonCost = total / numPeople
+   =====
+   print(perPersonCost)
+
+|bigteachernote| Teacher Note: Misconceptions
+======================================================
+
+..	index::
+	pair: misconceptions; assignment
+	single: assignment move misconception
+	single: assignment relationship misconception
+
+There is a lot of research evidence that assignment is a difficult topic for students who are first learning to program.  `In a study of professional graphic designers who had taught themselves to program <http://doi.acm.org/10.1145/1753326.1753430>`_, the assignment statement was rated the top most difficult programming statement to learn.  Why is that?  
+
+One reason may be because assignment requires the programmer to be *consistent* in understanding and predicting what happens in a program.  Assignment is always the *value on the right* gets copied to the space named by *the variable on the left*.  `Researchers at Middlesex University in England <http://www.eis.mdx.ac.uk/research/PhDArea/saeed/>`_ found that a critical predictor of success in programming is to see that assignment **always** does the same thing 
+
+**How do students get assignment wrong?**   Here are three ways.  One is that they see assignment as being a *move* of the value (rather than a *copy*).  So, they think that after ``var1 = var2`` the variable ``var1`` has the value from ``var2`` and the variable ``var2`` has a value of nothing or zero.
+
+**Click on the right arrow below to play the following video.**
+   
+.. video:: assignment_zero
+   :controls:
+   :thumb: ../_static/video-misconception-zeroing.png
+
+   http://ice-web.cc.gatech.edu/ce21/1/static/video/assignment-zeroed-small.mov
+   http://ice-web.cc.gatech.edu/ce21/1/static/video/assignment-zeroed-small.webm  
+
+A second model, which may be more common, is that they see assignment as a *relationship*.   Once ``var1 = var2`` then any change to ``var2`` will automatically change ``var1``.  The problem here is that the student doesn't see the assignment as an *action*.  If a student doesn't see the assignment as an action, it's hard to understand why the *ordering* of statements is important.
+
+.. video:: assignment_relationship
+   :controls:
+   :thumb: ../_static/video-misconception-relationship.png
+
+   http://ice-web.cc.gatech.edu/ce21/1/static/video/assignment-relationship-small.mov
+   http://ice-web.cc.gatech.edu/ce21/1/static/video/assignment-relationship-small.webm 
+   
+A third problem is that some students have *assignment dyslexia*, which means that instead of writing the assignment with the variable name on the left side of the ``=`` and the value on the right, they reverse it as shown below.    
+
+
+:: 
+
+   7 = daysInWeek
+   
+The computer sees the above assignment statement as an attempt to change what 7 means, and won't allow it.  It will cause an error when you try to run it.  
+
+**How do we help students get assignments right?**  Have students trace programs with assignments, where they draw values in boxes.  Watch what they do, and try to be aware of their model for how assignment works.  If they have one of these other models, try some of the examples in this section -- by tracing, and then on the computer.  Get students to see where their model doesn't accurately capture what the computer is doing.
+
+Let's say that you showed Sam this program:
+
+.. sourcecode:: python
+
+	number2 = 32
+	number1 = number2
+	number2 = 17
+
+Then asked Sam, "What's the value for the variable `number1`?"
+
+.. mchoicemf:: 3-Diagnosing_Assignment_Q1
+  :answer_a: Sam may see assignment as a move.
+  :answer_b: Sam may see assignment as a copy.
+  :answer_c: Sam may see assignment as a relationship.
+  :correct: c
+  :feedback_a: Assignment-as-move says that number1 is 32 and number2 has 17, but number2 was empty or zero after number1 = number2
+  :feedback_b: Assignment really is a copy, so that's not a misconception.  Assignment-as-copy wouldn't lead to number1 being 17.
+  :feedback_c: If Sam thinks changing number2 changes number1, Sam may misunderstand assignment as creating a relationship.
+
+   If the answer was `17`, Sam might have what kind of misconception?
+
+Figuring out an Invoice
+====================================
+
+We can use variables to solve problems like those we might solve in a spreadsheet.  Imagine that you had a spreadsheet with an invoice for an office supply company.
+
+.. figure:: Figures/invoice.png
+    :width: 600px
+    :align: center
+    :alt: a spreadsheet
+    :figclass: align-center
+    
+    Figure 3: A spreadsheet with order information  
+
+Here's a program to compute the total price for the invoice.  Be sure to click |audiobutton| to understand what's happening here.
+
+ .. activecode:: Invoice1
+    :tour_1: "Line by line tour"; 1: inv-line1; 2: inv-line2; 3: inv-line3; 4: inv-line4; 5: inv-line5; 6: inv-line6; 7: inv-line7; 8: inv-line8; 
+
+    quantity1 = 2
+    unitPrice1 = 7.56
+    total1 = quantity1 * unitPrice1
+    quantity2 = 4
+    unitPrice2 = 4.71
+    total2 = quantity2 * unitPrice2
+    invoiceTotal = total1 + total2
+    print(invoiceTotal)
+
+.. mchoicemf:: 3-Invoice1_Q1
+		   :answer_a: 7
+		   :answer_b: 6
+		   :answer_c: 5
+		   :answer_d: 2
+		   :correct: a
+		   :feedback_a: Yes, quantity1, unitPrice1, total1, quantity2, unitPrice2, total2, invoiceTotal.
+		   :feedback_b: There are three variables per line, two lines, and one total.
+		   :feedback_c: There are three variables per line, two lines, and one total.
+		   :feedback_d: There are three variables per line, two lines, and one total.
+
+		   How many variables are in this program?
+
+We don't really have to create new variables ``quantity2`` and ``unitPrice2``.  We only use those to compute the total for the line, and then we could reuse those variable names.
+
+.. codelens:: Invoice2
+
+  quantity = 2
+  unitPrice = 7.56
+  total1 = quantity * unitPrice
+  quantity = 4
+  unitPrice = 4.71
+  total2 = quantity * unitPrice
+  invoiceTotal = total1 + total2
+  print(invoiceTotal)
+
+.. mchoicemf:: 3-Invoice2_Q1
+		   :answer_a: 7
+		   :answer_b: 6
+		   :answer_c: 5
+		   :answer_d: 2
+		   :correct: c
+		   :feedback_a: We have two fewer variables now.
+		   :feedback_b: We have a total for each line (two), a quantity, a unitPrice, and an invoiceTotal.
+		   :feedback_c: The variables are quantity, unitPrice, total1, total2, and invoiceTotal. 
+		   :feedback_d: We have a total for each line (two), a quantity, a unitPrice, and an invoiceTotal.
+
+		   How many variables are in this program?
+
+Let's say that apples are $0.40 apiece, and pears are $0.65 apiece.  Modify the program below to calculate the total cost.
+
+.. activecode:: Complete_Assignment
+
+   apples = 4
+   pears = 3
+   totalCost =
+   print(totalCost)
+
+You are welcome to try out the following answers by copying and pasting them into the program above before answering this question:
+
+.. mchoicemf:: 3-Make_An_Assignment_Q1
+  :answer_a: totalCost = apples + pears
+  :answer_b: totalCost = (0.4 * apples) + (0.65 * pears)
+  :answer_c: totalCost = (0.4 * pears) + (0.65 * apples)
+  :answer_d: totalCost = (0.4 + apples) * (0.65 + pears)
+  :correct: b
+  :feedback_a: That does not consider the cost of the apples or pears.
+  :feedback_b: We need to multiply the cost per apple times the number of apples and add it to the cost per pear times the number of pears.
+  :feedback_c: That gets the costs backwards
+  :feedback_d: That is the wrong formula for computing total cost.
+
+   Which line of code will compute the correct ``totalCost`` if put into line 3 above?
+
+|bigteachernote| Teacher Note: Why Videos?
+======================================================
+
+Why are we using video to demonstrate different ways of thinking about assignment?  Video is not as effective as text or diagrams for conveying information, because it's dynamic (it moves) which makes it harder to remember.  However, video is good for presenting *spatial* or *visual* models.  
+
+Researchers in spatial reasoning suggests that computer science has a strong visual component.   Students with strong spatial reasoning skills are more likely to succeed in computer science (but if students don't have strong spatial reasoning, we can help them develop those skills). We know that understanding what an ``=`` (equals sign) means in mathematics relies heavily on spatial reasoning.  It may be that spatial reasoning is also important in understanding assignment in computer science. Gestures, sketches, and *video* are good ways to provide spatial information to students, to provide guidance to students to *think* visually -- not just memorize a diagram. It's easy to get a diagram wrong (in conflict with how the students think about the subject).  Gestures, sketches, and videos are fleeting (only available for a short while) and thus support learning, but require students to develop their *own* visual understanding.
+
+

@@ -1,0 +1,318 @@
+..  Copyright (C)  Mark Guzdial, Barbara Ericson, Briana Morrison
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3 or
+    any later version published by the Free Software Foundation; with
+    Invariant Sections being Forward, Prefaces, and Contributor List,
+    no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license
+    is included in the section entitled "GNU Free Documentation License".
+
+.. |bigteachernote| image:: Figures/apple.jpg
+    :width: 50px
+    :align: top
+    :alt: teacher note
+
+.. 	qnum::
+	:start: 1
+	:prefix: csp-5-
+	
+.. highlight:: java
+   :linenothreshold: 4
+
+Assign a Name to a Turtle
+==============================
+
+**Learning Objectives:**
+
+- Use assignment to name objects like turtles.
+- Understand that using the right object at the right time, in order, is critical to success.
+
+..	index::
+	single: objects
+	
+Names can be more than numbers and strings.  They can also be turtles or "screens" (a space on the page where a turtle can draw).  You can also call things like turtles and screens **objects**.  **Objects** in programming are things that do the action in a program.  
+
+We have seen this example once before.
+
+.. activecode:: Turtle_Names1
+    :tour_1: "Line-by-line Tour"; 1: t1-line1; 2: t1-line2; 3: t1-line3; 4: t1-line4; 5: t1-line5; 6: t1-line6; 7: t1-for100-1; 8: t1-right90-1; 9: t1-for100-2; 10: t1-right90-2; 11: t1-for100-3; 12: t1-right90-3;
+    :nocodelens:
+	
+    from turtle import *	# use the turtle library
+    space = Screen()		# create a turtle screen (space)
+    zari = Turtle() 		# create a turtle named zari
+    zari.setheading(90)		# Point due north
+    zari.forward(100)		# tell zari to move forward by 100 units
+    zari.right(90)   		# turn by 90 degrees
+    zari.forward(100)		# tell zari to move forward by 100 units
+    zari.right(90)   		# turn by 90 degrees
+    zari.forward(100)		# tell zari to move forward by 100 units
+    zari.right(90)   		# turn by 90 degrees
+    zari.forward(100)		# tell zari to move forward by 100 units
+    zari.right(90)    		# turn by 90 degrees
+
+Now try this one.  
+
+.. activecode:: Turtle_Names2
+    :tour_1: "Line-by-line Tour"; 1: tri-line1; 2: tri-line2; 3: tri-line3; 4: tri-line4; 5: tri-line5; 6: tri-line6; 7: tri-line7; 8: tri-line8; 9: tri-line9; 10: tri-line10;
+    :nocodelens:
+	
+    from turtle import *   	# use the turtle library
+    space = Screen()     	# create a turtle screen (space)
+    zari = Turtle()      	# create a turtle named zari
+    zari.setheading(90) 	# Point due north
+    zari.forward(100)  		# tell zari to move forward by 100 units
+    zari.right(120) 		# turn right by 120 degrees
+    zari.forward(100)		# tell zari to move forward by 100 units
+    zari.right(120)   		# turn right by 120 degrees
+    zari.forward(100) 		# tell zari to move forward by 100 units
+    zari.right(120)   		# turn right by 120 degrees
+
+.. mchoicemf:: 5-Turtle_Names2_Q1
+   :answer_a: A square
+   :answer_b: A triangle
+   :answer_c: A rectangle
+   :correct: b
+   :feedback_a: That was the first program, but not the second program.
+   :feedback_b: Now, what if you did one more forward and right.  Would it still be a triangle? Try it!
+   :feedback_c: But, we could change the first program to make a rectangle.  Can you change two lines in the first program to draw a rectangle?
+
+   What shape did that draw?
+
+This works because ``zari`` is a turtle, and each statement gets executed, one right after the other.  If we introduce another turtle and another name, it doesn't work the same
+
+.. activecode:: Two_Turtles
+    :tour_1: "Line-by-line Tour"; 1: tt-line1; 2: tt-line2; 3: tt-line3; 4: tt-line4; 5: tt-line5; 6: tt-line6; 7: tt-line7; 8: tt-line8; 9: tt-line9; 10: tt-line10; 11: tt-line11; 12: tt-line12;
+    :nocodelens:
+	
+    from turtle import * 	# use the turtle library
+    space = Screen()     	# create a turtle screen (space)
+    zari = Turtle()     	# create a turtle named zari
+    zari.setheading(90) 	# Point due north
+    zari.forward(100)   	# tell zari to move forward by 100 units
+    zari.right(120)     	# turn right by 120 degrees
+    zari.forward(100)     	# tell zari to move forward by 100 units
+    zari.right(120)      	# turn right by 120 degrees
+    chad = Turtle()     	# create a new turtle named chad
+    chad.color("orange")  	# change the color chad's draws with
+    chad.forward(100)     	# tell chad to move forward by 100 units
+    chad.right(120)     	# turn chad by 120 degrees
+    
+.. mchoicemf:: 5-Turtle_Dir_Q1
+   :answer_a: North
+   :answer_b: South
+   :answer_c: East
+   :answer_d: West
+   :correct: c
+   :feedback_a: The turtles in some of the examples faced north because of the <code>setheading(90)</code> instruction. Which way does chad move first?
+   :feedback_b: Which way does chad first move in the example above?  North is at the top of the page.
+   :feedback_c: Turtles start off facing east which is toward the right side of the page.
+   :feedback_d: Which way does chad first move in the example above?   North is at the top of the page.
+
+   Which way does a turtle face when first created?
+    
+**Mixed up programs**
+
+.. parsonsprob:: 5-Turtle_L
+
+   The following program uses a turtle to draw a capital L as shown in the picture to the left of this text, <img src="../_static/TurtleL4.png" width="150" align="left" hspace="10" vspace="5" /> but the lines are mixed up.  The program should do all necessary set-up: import the turtle module, get the space to draw on, and create the turtle.  Remember that the turtle starts off facing east when it is created.  The turtle should turn to face south and draw a line that is 150 pixels long and then turn to face east and draw a line that is 75 pixels long.  We have added a compass to the picture to indicate the directions north, south, west, and east.  <br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.</p>
+   -----
+   from turtle import *
+   =====
+   space = Screen()
+   ella = Turtle()
+   =====
+   ella.right(90)
+   ella.forward(150)
+   =====
+   ella.left(90)
+   =====
+   ella.forward(75)
+   
+.. parsonsprob:: 5-Turtle_Check
+
+   The following program uses a turtle to draw a checkmark as shown to the left, <img src="../_static/TurtleCheckmark4.png" width="150" align="left" hspace="10" vspace="5" /> but the lines are mixed up.  The program should do all necessary set-up: import the turtle module, get the window to draw on, and create the turtle.  The turtle should turn to face southeast, draw a line that is 75 pixels long, then turn to face northeast, and draw a line that is 150 pixels long.  We have added a compass to the picture to indicate the directions north, south, west, and east.  Northeast is between north and east. Southeast is between south and east. <br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.</p>
+   -----
+   from turtle import *
+   =====
+   space = turtle.Screen()
+   maria = turtle.Turtle()
+   =====
+   maria.right(45)
+   =====
+   maria.forward(75)
+   =====
+   maria.left(90)
+   =====
+   maria.forward(150)
+   
+
+Bob Builds a House
+==============================
+
+Let's combine the square and triangle code to create a house.
+
+.. activecode:: Turtle_House
+  :tour_1: "Section Tour"; 1-3: house-line1-3; 6-12: house-line5-11; 15: house-line13; 18-23: house-line18-23;
+  :nocodelens:
+  
+  from turtle import *      # use the turtle library
+  space = Screen()          # create a turtle screen (space)
+  bob = Turtle()            # create a turtle named bob
+  
+  # Make a square
+  bob.forward(100)          # tell bob to move forward by 100 units
+  bob.right(90)             # turn right by 90 degrees
+  bob.forward(100)          # tell bob to move forward by 100 units
+  bob.right(90)             # turn right by 90 degrees
+  bob.forward(100)          # tell bob to move forward by 100 units
+  bob.right(90)             # turn right by 90 degrees
+  bob.forward(100)          # tell bob to move forward by 100 units
+  
+  # Position for roof
+  bob.right(90)
+  
+  # Make a roof
+  bob.forward(100)          # tell bob to move forward by 100 units
+  bob.right(-120)           # turn LEFT by 120 degrees
+  bob.forward(100)          # tell bob to move forward by 100 units
+  bob.right(-120)           # turn LEFT by 120 degrees
+  bob.forward(100)          # tell bob to move forward by 100 units
+  bob.right(-120)           # turn LEFT by 120 degrees
+
+Let's imagine going on to make another partial square along the slope, to create a "chimney."
+
+.. image:: Figures/turtle-house.png
+
+.. parsonsprob:: 5-Turtle_House
+
+   Align the program pieces below to make the house and chimney figure above.  Draw the square first for the main part of the house, next draw the roof, and finally draw the chimney.
+   -----
+   from turtle import * 
+   space = Screen()
+   bob = Turtle() 
+   =====
+   # Make a square
+   bob.forward(100) 
+   bob.right(90) 
+   bob.forward(100) 
+   bob.right(90) 
+   bob.forward(100) 
+   bob.right(90) 
+   bob.forward(100) 
+   =====
+   # Position for roof
+   bob.right(90)
+   =====
+   # Make a roof
+   bob.forward(100)   
+   bob.right(-120)   
+   bob.forward(100)   
+   bob.right(-120)   
+   bob.forward(100) 
+   bob.right(-120)  
+   =====
+   # Position for chimney
+   bob.right(-60)
+   bob.forward(40)
+   bob.setheading(90) 
+   =====
+   # Draw chimney
+   bob.pencolor("red")
+   bob.forward(30)
+   bob.right(90)
+   bob.forward(30)
+   bob.right(90)
+   bob.forward(30)
+   bob.right(90)
+
+Changing Turtle Programs
+==============================
+
+Run the following program.  
+
+.. activecode:: Turtle_Names4
+    :tour_1: "Line-by-line Tour"; 1: first-turtle-line-1; 2: first-turtle-line-2; 3: first-turtle-line-3; 4: first-turtle-line-4; 5: first-turtle-line-5; 6: first-turtle-line-6;
+    :nocodelens:
+	
+    from turtle import * 	# use the turtle library
+    space = Screen()    	# create a turtle screen (space)
+    alex = Turtle()      	# create a turtle named alex
+    alex.forward(150)     	# tell alex to move forward by 150 units
+    alex.left(90)       	# turn by 90 degrees
+    alex.forward(75)      	# tell alex to move forward by 75 units
+
+.. mchoicemf:: 5-Turtle_Names4_Q1
+   :answer_a: Change the 150 to 90
+   :answer_b: Change the 75 to 90
+   :answer_c: Change the 75 to 150
+   :correct: c
+   :feedback_a: The turtle moves forward 150 units and turns 90 degrees.
+   :feedback_b: The turtle moves forward 75 units and turns 90 degrees.
+   :feedback_c: Then both sides would be 150 units long.
+
+   If you wanted to make both of the turtle lines in that last program the same length, what change would you make to the program?  (Feel free to actually make the change in the program and click *Run* to try it!)
+
+
+**Slightly Harder Problem:** Now, let's connect the end point to the starting point.  The shape we'll create is an equilateral triangle.  The number 57 isn't guesswork -- it is roughly the square root of 40^2 + 40^2.  However, there is an error in this program and it won't work as intended.  **Can you fix it?**  
+
+.. activecode:: Turtle_Names5
+    :nocodelens:
+	
+    from turtle import * 	# use the turtle library
+    space = Screen()     	# create a turtle screen (space)
+    alex = Turtle()      	# create a turtle named alex
+    alex.forward(40)     	# tell alex to move forward by 150 units
+    alex.left(90)       	# turn by 90 degrees
+    alex.forward(40)     	# complete the second leg of a triangle
+    alex.left(0)         	# ZERO won't actually work
+    alex.forward(57)      	# Close the triangle
+
+
+.. mchoicemf:: 5-Turtle_Names5_Q1
+   :answer_a: alex.left(45)
+   :answer_b: alex.left(90)
+   :answer_c: alex.left(135)
+   :correct: c
+   :feedback_a: The turtle turns the exterior angle, not the interior angle.
+   :feedback_b: That would make another right angle. Which would be more like a square shape.
+   :feedback_c: The interior angles of a triangle need to add up to 180.  So far we have one angle of 90 so the other two must be equal and must total 90.  They both have to be 45, but we tell the turtle to turn the exterior angle so 180 - 45 = 135.
+
+   The code ``alex.left(0)`` will not turn the turtle toward the starting point.  Which of these will?
+   
+.. parsonsprob:: 5-Turtle-T
+
+   The following program uses a turtle to draw a capital T as shown to the left, <img src="../_static/TurtleT.png" width="150" align="left" hspace="10" vspace="5"/> but the lines are mixed up.  The program should do all necessary set-up, create the turtle, and set the pen size to 10.  After that the turtle should turn to face north, draw a line that is 150 pixels long, turn to face west, and draw a line that is 50 pixels long.  Next, the turtle should turn 180 degrees and draw a line that is 100 pixels long.  Finally, set the window to close when the user clicks in it.<br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.</p>  
+   -----
+   from turtle import *
+   =====
+   space = Screen()    	
+   jamal = Turtle()
+   ===== 
+   jamal.setheading(90) 
+   =====                
+   jamal.forward(150)
+   =====
+   jamal.left(90)
+   jamal.forward(50)
+   =====
+   jamal.right(180)
+   jamal.forward(100)
+   
+
+|bigteachernote| Teacher Note: Body Syntonic
+============================================================
+
+..	index::
+	single: Seymour Papert
+	
+One of the things that `Seymour Papert <http://en.wikipedia.org/wiki/Seymour_Papert>`_, the person who first used turtles in programming, most liked about the turtle is that students could test their programs using `body syntonic <http://en.wikipedia.org/wiki/Turtle_graphics>`_ reasoning.  This means that a turtle moves in the way that a student moves.  Students can go forward and turn right.  A student can pretend to *be the turtle*, doing exactly what the program says.  In this video, our "turtle" person, Barbara Ericson, doesn't take 100 steps.  Instead, she goes forward 3 steps since her steps are so much larger than a turtle's.
+
+**Click on the right arrow below to play the following video.**
+
+.. video:: body_syntonic_turtle
+   :controls:
+   :thumb: ../_static/body-syntonic-turtle.png
+
+   http://ice-web.cc.gatech.edu/ce21/1/static/video/body-syntonic-turtle.mov
+   http://ice-web.cc.gatech.edu/ce21/1/static/video/body-syntonic-turtle.webm
+

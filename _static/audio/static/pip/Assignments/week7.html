@@ -1,0 +1,4739 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Week 7: ends February 21 &mdash; Programs, Information, and People: Interactive Edition</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Programs, Information, and People: Interactive Edition" href="../index.html" />
+    <link rel="next" title="Week 6: ends February 14" href="week6.html" />
+    <link rel="prev" title="Week 8: ends March 14, 2014" href="week8.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pip';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+var _prum = [['id', '521dfcc4abe53d0749000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../toc.html">Programs, Information, and People</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../toc.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pip/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/assignments" id="registerlink">Project Page</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pip/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Week 7: ends February 21</a><ul>
+<li><a class="reference internal" href="#reading-response-6">Reading Response 6</a></li>
+<li><a class="reference internal" href="#problem-set-6">Problem Set 6</a></li>
+<li><a class="reference internal" href="#tuesday-in-class-exercises-sorting">Tuesday In-class Exercises: Sorting</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Week 8: ends March 14, 2014" data-toggle="tooltip">
+    <a href="week8.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Week 6: ends February 14' data-toggle="tooltip" >
+    <a href="week6.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="week-7-ends-february-21">
+<h1>Week 7: ends February 21<a class="headerlink" href="#week-7-ends-february-21" title="Permalink to this headline">¶</a></h1>
+<p>For this week you have the following graded activities:</p>
+<ol class="arabic">
+<li><p class="first">Do the multiple choice questions and exercises in the textbook chapters, including the ones at the bottom of the chapters, below the glossary. Don&#8217;t forget to click <strong>Save</strong> for each of the exercises.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Before Tuesday&#8217;s class:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="../NestedData/nested.html#nested-data-chap"><em>Nested Data</em></a></li>
+<li><a class="reference internal" href="../MoreAboutIteration/moreiteration.html#while-loop"><em>Indefinite Iteration</em></a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Before Thursday&#8217;s class:</dt>
+<dd><ul class="first last simple">
+<li>No additional textbook reading</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+<li><p class="first">Turn in the reading response, by 8 PM the night before your registered section meets.</p>
+<ul class="simple">
+<li>Read <em>The Most Human Human</em>, Chapter 10</li>
+<li><a class="reference internal" href="#response-6"><em>Reading response 6</em></a></li>
+</ul>
+</li>
+<li><p class="first">Save answers to the exercises in Problem Set 6:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#problem-set-6"><em>Problem Set 6</em></a></li>
+</ul>
+</li>
+<li><p class="first">Supplemental exercises:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#session-12"><em>In-class exercises Tuesday</em></a></li>
+</ul>
+</li>
+</ol>
+<div class="section" id="reading-response-6">
+<span id="response-6"></span><h2>Reading Response 6<a class="headerlink" href="#reading-response-6" title="Permalink to this headline">¶</a></h2>
+<p>In what situations do you encounter high surprisal? Low surprisal? What kind of conversations do you have that contain a lot of information? Explain (briefly).</p>
+
+<div id="cont"></div>
+<div id="rr_6_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rr_6_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_6_1_saveb" onclick="saveEditor('rr_6_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_6_1_loadb" onclick="requestCode('rr_6_1');">Load</button>
+<button class='btn btn-default' id="rr_6_1_vizb" onclick="injectCodelens(this,'rr_6_1');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rr_6_1_coach_b" onclick="injectCodeCoach('rr_6_1');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rr_6_1_showb" onclick="$('#rr_6_1_code_div').toggle();cm_editors['rr_6_1_code'].refresh();$('#rr_6_1_saveb').toggle();$('#rr_6_1_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rr_6_1')"/>
+
+</div>
+<br/>
+<div id="rr_6_1_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rr_6_1_code" class="active_code" prefixcode="undefined" lang="python">
+# Fill in your response in between the triple quotes
+s = """
+
+"""
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rr_6_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rr_6_1_suffix" style="display:none">
+</pre><pre id="rr_6_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rr_6_1)</span> </p>
+<div id="rr_6_1_codelens_div" style="display:none"></div><div id="rr_6_1_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rr_6_1_saveb').toggle();
+    $('#rr_6_1_loadb').toggle();
+}
+if ($("#rr_6_1").attr("lang") !== "html" && $("#rr_6_1_code_div").parents(".admonition").length == 0 && $("#rr_6_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rr_6_1_code_div").offset({
+			left: $("#rr_6_1 .clearfix").offset().left
+		});
+	}
+	$("#rr_6_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rr_6_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rr_6_1_runb").parent().siblings(".ac_output").show();
+			runit('rr_6_1',this, undefined);
+			$("#rr_6_1_runb").on("click", function(){
+				runit('rr_6_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rr_6_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rr_6_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rr_6_1_runb").on("click", function(){
+		runit('rr_6_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Give an example of compression other than the ones Christian addresses. Explain. Why? In what situations does this occur?</p>
+
+<div id="cont"></div>
+<div id="rr_6_2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rr_6_2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_6_2_saveb" onclick="saveEditor('rr_6_2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_6_2_loadb" onclick="requestCode('rr_6_2');">Load</button>
+<button class='btn btn-default' id="rr_6_2_vizb" onclick="injectCodelens(this,'rr_6_2');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rr_6_2_coach_b" onclick="injectCodeCoach('rr_6_2');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rr_6_2_showb" onclick="$('#rr_6_2_code_div').toggle();cm_editors['rr_6_2_code'].refresh();$('#rr_6_2_saveb').toggle();$('#rr_6_2_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rr_6_2')"/>
+
+</div>
+<br/>
+<div id="rr_6_2_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rr_6_2_code" class="active_code" prefixcode="undefined" lang="python">
+# Fill in your response in between the triple quotes
+s = """
+
+"""
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rr_6_2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rr_6_2_suffix" style="display:none">
+</pre><pre id="rr_6_2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rr_6_2)</span> </p>
+<div id="rr_6_2_codelens_div" style="display:none"></div><div id="rr_6_2_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rr_6_2_saveb').toggle();
+    $('#rr_6_2_loadb').toggle();
+}
+if ($("#rr_6_2").attr("lang") !== "html" && $("#rr_6_2_code_div").parents(".admonition").length == 0 && $("#rr_6_2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rr_6_2_code_div").offset({
+			left: $("#rr_6_2 .clearfix").offset().left
+		});
+	}
+	$("#rr_6_2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rr_6_2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rr_6_2_runb").parent().siblings(".ac_output").show();
+			runit('rr_6_2',this, undefined);
+			$("#rr_6_2_runb").on("click", function(){
+				runit('rr_6_2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rr_6_2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rr_6_2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rr_6_2_runb").on("click", function(){
+		runit('rr_6_2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Was there anything from this chapter you found confusing? If so, what? What are some ways we can apply some of these concepts to what we know about programming, aside from playing the Shannon Game?</p>
+
+<div id="cont"></div>
+<div id="rr_6_3" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rr_6_3_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_6_3_saveb" onclick="saveEditor('rr_6_3');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_6_3_loadb" onclick="requestCode('rr_6_3');">Load</button>
+<button class='btn btn-default' id="rr_6_3_vizb" onclick="injectCodelens(this,'rr_6_3');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rr_6_3_coach_b" onclick="injectCodeCoach('rr_6_3');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rr_6_3_showb" onclick="$('#rr_6_3_code_div').toggle();cm_editors['rr_6_3_code'].refresh();$('#rr_6_3_saveb').toggle();$('#rr_6_3_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rr_6_3')"/>
+
+</div>
+<br/>
+<div id="rr_6_3_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rr_6_3_code" class="active_code" prefixcode="undefined" lang="python">
+# Fill in your response in between the triple quotes
+s = """
+
+"""
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rr_6_3_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rr_6_3_suffix" style="display:none">
+</pre><pre id="rr_6_3_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rr_6_3)</span> </p>
+<div id="rr_6_3_codelens_div" style="display:none"></div><div id="rr_6_3_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rr_6_3_saveb').toggle();
+    $('#rr_6_3_loadb').toggle();
+}
+if ($("#rr_6_3").attr("lang") !== "html" && $("#rr_6_3_code_div").parents(".admonition").length == 0 && $("#rr_6_3_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rr_6_3_code_div").offset({
+			left: $("#rr_6_3 .clearfix").offset().left
+		});
+	}
+	$("#rr_6_3_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rr_6_3_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rr_6_3_runb").parent().siblings(".ac_output").show();
+			runit('rr_6_3',this, undefined);
+			$("#rr_6_3_runb").on("click", function(){
+				runit('rr_6_3',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rr_6_3_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rr_6_3_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rr_6_3_runb").on("click", function(){
+		runit('rr_6_3',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+<div class="section" id="problem-set-6">
+<span id="id1"></span><h2>Problem Set 6<a class="headerlink" href="#problem-set-6" title="Permalink to this headline">¶</a></h2>
+<p>In the problem set for this week we will be creating a program that plays the Shannon game.</p>
+<p>Before we work on the Shannon game, let&#8217;s work through a few warm up questions to test your understanding of nested data, and
+to introduce you to a nested data structure that we&#8217;ll be using later on in the
+problem set.</p>
+<ol class="arabic simple">
+<li>(1 point) Follow the directions in the code to read and manipulate the nested data structure &#8216;heuristics_dictionary&#8217;.</li>
+</ol>
+<div id='ps_6_1_tabs' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_6_1_tabs-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_6_1_tabs-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_6_1_tabs-Problem'>
+<div id="cont"></div>
+<div id="ps_6_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_6_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_1_saveb" onclick="saveEditor('ps_6_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_1_loadb" onclick="requestCode('ps_6_1');">Load</button>
+<button class='btn btn-default' id="ps_6_1_vizb" onclick="injectCodelens(this,'ps_6_1');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ps_6_1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_6_1_code" class="active_code" prefixcode="undefined" lang="python">
+heuristics_dictionary = {
+    'a':{
+        'priority':2,
+        'guesses':['b','c','d','n','p','s'],
+        },
+    'q':{
+        'priority':1,
+        'guesses':['u','a'],
+        },
+    'ti':{
+        'priority':1,
+        'guesses':['e', 'a', 'g', 'd', 'r', 'n']
+        }
+}
+
+
+# In one line of code, print out the list
+#of guesses associated with the key 'q'
+
+# In one line of code, add the letter 'z'
+# to the guesses associated with 'q'.
+
+# Add a key 'tim' to the dictionary, where the value is a dictionary
+# with the same structure that the others have.
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_6_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_6_1_suffix" style="display:none">
+</pre><pre id="ps_6_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_6_1)</span> </p>
+<div id="ps_6_1_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_6_1_saveb').toggle();
+    $('#ps_6_1_loadb').toggle();
+}
+if ($("#ps_6_1").attr("lang") !== "html" && $("#ps_6_1_code_div").parents(".admonition").length == 0 && $("#ps_6_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_6_1_code_div").offset({
+			left: $("#ps_6_1 .clearfix").offset().left
+		});
+	}
+	$("#ps_6_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_6_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_6_1_runb").parent().siblings(".ac_output").show();
+			runit('ps_6_1',this, undefined);
+			$("#ps_6_1_runb").on("click", function(){
+				runit('ps_6_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_6_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_6_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_6_1_runb").on("click", function(){
+		runit('ps_6_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_6_1_tabs-Solution'>
+<div id="cont"></div>
+<div id="ps_6_1_a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_6_1_a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_1_a_saveb" onclick="saveEditor('ps_6_1_a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_1_a_loadb" onclick="requestCode('ps_6_1_a');">Load</button>
+<button class='btn btn-default' id="ps_6_1_a_vizb" onclick="injectCodelens(this,'ps_6_1_a');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ps_6_1_a_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_6_1_a_code" class="active_code" prefixcode="undefined" lang="python">
+heuristics_dictionary = {
+    'a':{
+        'priority':2,
+        'guesses':['b','c','d','n','p','s'],
+        },
+    'q':{
+        'priority':1,
+        'guesses':['u','a'],
+        },
+    'ti':{
+        'priority':1,
+        'guesses':['e', 'a', 'g', 'd', 'r', 'n']
+        }
+}
+
+
+# In one line of code, print out the list
+#of guesses associated with the key 'q'
+print heuristics_dictionary['q']['guesses']
+
+# In one line of code, add the letter 'z'
+# to the guesses associated with 'q'.
+heuristics_dictionary['q']['guesses'].append('z')
+
+# Add a key 'tim' to the dictionary, where the value is a dictionary
+# with the same structure that the others have.
+heuristics_dictionary['tim'] = {
+    'priority':2,
+    'guesses': ['e',' ']
+}
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_6_1_a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_6_1_a_suffix" style="display:none">
+</pre><pre id="ps_6_1_a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_6_1_a)</span> </p>
+<div id="ps_6_1_a_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_6_1_a_saveb').toggle();
+    $('#ps_6_1_a_loadb').toggle();
+}
+if ($("#ps_6_1_a").attr("lang") !== "html" && $("#ps_6_1_a_code_div").parents(".admonition").length == 0 && $("#ps_6_1_a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_6_1_a_code_div").offset({
+			left: $("#ps_6_1_a .clearfix").offset().left
+		});
+	}
+	$("#ps_6_1_a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_6_1_a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_6_1_a_runb").parent().siblings(".ac_output").show();
+			runit('ps_6_1_a',this, undefined);
+			$("#ps_6_1_a_runb").on("click", function(){
+				runit('ps_6_1_a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_6_1_a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_6_1_a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_6_1_a_runb").on("click", function(){
+		runit('ps_6_1_a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_6_1_tabs .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_6_1_tabs .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_6_1_tabs .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+<ol class="arabic simple" start="2">
+<li>(1 point) Count the number of consonants in the all the &#8216;guesses&#8217; lists of the nested datastructure &#8216;heuristics.&#8217;</li>
+</ol>
+<div id='ps_6_2_tabs' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_6_2_tabs-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_6_2_tabs-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_6_2_tabs-Problem'>
+<div id="cont"></div>
+<div id="ps_6_2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_6_2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_2_saveb" onclick="saveEditor('ps_6_2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_2_loadb" onclick="requestCode('ps_6_2');">Load</button>
+<button class='btn btn-default' id="ps_6_2_vizb" onclick="injectCodelens(this,'ps_6_2');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ps_6_2_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_6_2_code" class="active_code" prefixcode="undefined" lang="python">
+heuristics_dictionary = {
+    'a':{
+        'priority':2,
+        'guesses':['b','c','d','n','p','s'],
+        },
+    'q':{
+        'priority':1,
+        'guesses':['u','a'],
+        },
+    'ti':{
+        'priority':1,
+        'guesses':['e', 'a', 'g', 'd', 'r', 'n']
+        }
+}
+
+# write code to count the number of consonants
+
+# the correct answer is 10
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_6_2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_6_2_suffix" style="display:none">
+</pre><pre id="ps_6_2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_6_2)</span> </p>
+<div id="ps_6_2_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_6_2_saveb').toggle();
+    $('#ps_6_2_loadb').toggle();
+}
+if ($("#ps_6_2").attr("lang") !== "html" && $("#ps_6_2_code_div").parents(".admonition").length == 0 && $("#ps_6_2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_6_2_code_div").offset({
+			left: $("#ps_6_2 .clearfix").offset().left
+		});
+	}
+	$("#ps_6_2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_6_2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_6_2_runb").parent().siblings(".ac_output").show();
+			runit('ps_6_2',this, undefined);
+			$("#ps_6_2_runb").on("click", function(){
+				runit('ps_6_2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_6_2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_6_2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_6_2_runb").on("click", function(){
+		runit('ps_6_2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_6_2_tabs-Solution'>
+<div id="cont"></div>
+<div id="ps_6_2_a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_6_2_a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_2_a_saveb" onclick="saveEditor('ps_6_2_a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_2_a_loadb" onclick="requestCode('ps_6_2_a');">Load</button>
+<button class='btn btn-default' id="ps_6_2_a_vizb" onclick="injectCodelens(this,'ps_6_2_a');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ps_6_2_a_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_6_2_a_code" class="active_code" prefixcode="undefined" lang="python">
+heuristics_dictionary = {
+    'a':{
+        'priority':2,
+        'guesses':['b','c','d','n','p','s'],
+        },
+    'q':{
+        'priority':1,
+        'guesses':['u','a'],
+        },
+    'ti':{
+        'priority':1,
+        'guesses':['e', 'a', 'g', 'd', 'r', 'n']
+        }
+}
+
+# write code to count the number of consonants
+count = 0
+for key in heuristics_dictionary:
+    for l in heuristics_dictionary[key]['guesses']:
+        if l not in 'aeiou':
+            count = count + 1
+
+# the correct answer is 10
+print "There are "+str(count)+" consonants in heuristics_dictionary."
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_6_2_a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_6_2_a_suffix" style="display:none">
+</pre><pre id="ps_6_2_a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_6_2_a)</span> </p>
+<div id="ps_6_2_a_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_6_2_a_saveb').toggle();
+    $('#ps_6_2_a_loadb').toggle();
+}
+if ($("#ps_6_2_a").attr("lang") !== "html" && $("#ps_6_2_a_code_div").parents(".admonition").length == 0 && $("#ps_6_2_a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_6_2_a_code_div").offset({
+			left: $("#ps_6_2_a .clearfix").offset().left
+		});
+	}
+	$("#ps_6_2_a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_6_2_a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_6_2_a_runb").parent().siblings(".ac_output").show();
+			runit('ps_6_2_a',this, undefined);
+			$("#ps_6_2_a_runb").on("click", function(){
+				runit('ps_6_2_a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_6_2_a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_6_2_a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_6_2_a_runb").on("click", function(){
+		runit('ps_6_2_a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_6_2_tabs .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_6_2_tabs .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_6_2_tabs .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+<p>Later on you will be using a dictionary like the one you&#8217;ve just been working with, to make guesses in the Shannon game.
+The idea is that if the most recent letter in a text was &#8216;a&#8217;, then you should guess for the next letter, in order,
+b, c, d, n, p, and s. If none of those is right, you would fall back on some other guessing method to generate
+more guesses. Similarly, if the most recent two letters were &#8216;ti&#8217;, then for the next letter you would
+guess, in order, e, then a, g, d, r, and n.</p>
+<ol class="arabic simple" start="3">
+<li>(1 points) Invoke game using alternative guessers</li>
+</ol>
+<div id='ps_6_3_tabs' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_6_3_tabs-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_6_3_tabs-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_6_3_tabs-Problem'>
+<div id="cont"></div>
+<div id="ps_6_3" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_6_3_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_3_saveb" onclick="saveEditor('ps_6_3');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_3_loadb" onclick="requestCode('ps_6_3');">Load</button>
+<button class='btn btn-default' id="ps_6_3_vizb" onclick="injectCodelens(this,'ps_6_3');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ps_6_3_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_6_3_code" class="active_code" prefixcode="undefined" lang="python">
+####Don't change this code; add and change code at the bottom #####
+import random
+
+def letter_frequencies(txt):
+    d = {}
+    for c in txt:
+        if c not in d:
+            d[c] = 1
+        elif c in alphabet:
+            d[c] = d[c] + 1
+        # don't bother tracking letters that aren't in our alphabet
+    return d
+
+def guess(prev_txt, guessed_already):
+    # guess a letter randomly
+    idx = random.randrange(0, len(alphabet))
+    return alphabet[idx]
+
+
+def guess_no_dup(prev_txt, guessed_already):
+    # guess a letter randomly until you find one that hasn't been guessed yet
+    while True:
+        idx = random.randrange(0, len(alphabet))
+        candidate =  alphabet[idx]
+        if candidate not in guessed_already:
+            return candidate
+
+def keys_sorted_by_value(d):
+    in_order = sorted(d.items(), None, lambda x: x[1], True)
+    res = []
+    for (k, v) in in_order:
+        res.append(k)
+    return res
+
+def guess_by_frequency(prev_txt, guessed_already):
+    # return the best one that hasn't been guessed yet
+    for let in keys_sorted_by_value(overall_freqs):
+        if let not in guessed_already:
+            return let
+    return None # No unguessed letters left; shouldn't happen!
+
+def game(txt, feedback=True, guesser = guess):
+    """Plays one game"""
+
+    # accumulate the text that's been revealed
+    revealed_text = ""
+
+    # accumulate the total guess count
+    total_guesses = 0
+    # accumulate the total characters to be guessed
+    total_chars = 0
+
+    # Loop through the letters in the text, making a guess for each
+    for c in txt:
+        if c in alphabet: # skip letters not in our alphabet; don't have to guess them
+            total_chars = total_chars + 1
+            # accumulate the guesses made for this letter
+            guesses = ""
+            guessed = False
+            if feedback:
+                print "guessing " + c,
+            while not guessed:
+                # guess until you get it right
+                g = guesser(revealed_text, guesses)
+                guesses = guesses + g
+                if g == c:
+                    guessed = True
+                if feedback:
+                    print g,
+
+            total_guesses = total_guesses + len(guesses)
+            revealed_text = revealed_text + c
+            if feedback:
+                print(str(len(guesses)) + " guesses ")
+
+    return total_chars, total_guesses
+
+
+# note, the last two characters are the single quote and double quote. They are
+# escaped, writen as \' and \", similar to how we have used escaping for tabs, \t,
+# and newlines, \n.
+alphabet = " !#$%&()*,-./0123456789:;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]abcdefghijklmnopqrstuvwxyz\'\""
+caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+f = open('train.txt', 'r')
+overall_freqs = letter_frequencies(f.read())
+caps_freqs = {}
+for c in caps:
+    if c in overall_freqs:
+        caps_freqs[c] = overall_freqs[c]
+sorted_caps = keys_sorted_by_value(caps_freqs)
+heuristics = {'q':{'priority': 1, 'guesses':['u', 'a']}, '. ':{'priority': 2, 'guesses': sorted_caps}}
+txt1 = "Question. Everything."
+txt2 = "Try to guess as Holmes would what the next letter will be in this quite short text. Now is the time."
+
+#### Don't change any code above this line #####
+
+print(game(txt1))
+
+#Invoke game on txt1 using the alternate guessers
+#guess_no_dup and guess_by_frequency
+#(Note: if it's running too slow, try invoking it with the
+#feedback parameter set to False.)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_6_3_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_6_3_suffix" style="display:none">
+</pre><pre id="ps_6_3_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_6_3)</span> </p>
+<div id="ps_6_3_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_6_3_saveb').toggle();
+    $('#ps_6_3_loadb').toggle();
+}
+if ($("#ps_6_3").attr("lang") !== "html" && $("#ps_6_3_code_div").parents(".admonition").length == 0 && $("#ps_6_3_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_6_3_code_div").offset({
+			left: $("#ps_6_3 .clearfix").offset().left
+		});
+	}
+	$("#ps_6_3_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_6_3_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_6_3_runb").parent().siblings(".ac_output").show();
+			runit('ps_6_3',this, undefined);
+			$("#ps_6_3_runb").on("click", function(){
+				runit('ps_6_3',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_6_3_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_6_3_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_6_3_runb").on("click", function(){
+		runit('ps_6_3',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_6_3_tabs-Solution'>
+<div id="cont"></div>
+<div id="ps_6_3_a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_6_3_a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_3_a_saveb" onclick="saveEditor('ps_6_3_a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_3_a_loadb" onclick="requestCode('ps_6_3_a');">Load</button>
+<button class='btn btn-default' id="ps_6_3_a_vizb" onclick="injectCodelens(this,'ps_6_3_a');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ps_6_3_a_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_6_3_a_code" class="active_code" prefixcode="undefined" lang="python">
+####Don't change this code; add and change code at the bottom #####
+import random
+
+def letter_frequencies(txt):
+    d = {}
+    for c in txt:
+        if c not in d:
+            d[c] = 1
+        elif c in alphabet:
+            d[c] = d[c] + 1
+        # don't bother tracking letters that aren't in our alphabet
+    return d
+
+def guess(prev_txt, guessed_already):
+    # guess a letter randomly
+    idx = random.randrange(0, len(alphabet))
+    return alphabet[idx]
+
+
+def guess_no_dup(prev_txt, guessed_already):
+    # guess a letter randomly until you find one that hasn't been guessed yet
+    while True:
+        idx = random.randrange(0, len(alphabet))
+        candidate =  alphabet[idx]
+        if candidate not in guessed_already:
+            return candidate
+
+def keys_sorted_by_value(d):
+    in_order = sorted(d.items(), None, lambda x: x[1], True)
+    res = []
+    for (k, v) in in_order:
+        res.append(k)
+    return res
+
+def guess_by_frequency(prev_txt, guessed_already):
+    # return the best one that hasn't been guessed yet
+    for let in keys_sorted_by_value(overall_freqs):
+        if let not in guessed_already:
+            return let
+    return None # No unguessed letters left; shouldn't happen!
+
+def game(txt, feedback=True, guesser = guess):
+    """Plays one game"""
+
+    # accumulate the text that's been revealed
+    revealed_text = ""
+
+    # accumulate the total guess count
+    total_guesses = 0
+    # accumulate the total characters to be guessed
+    total_chars = 0
+
+    # Loop through the letters in the text, making a guess for each
+    for c in txt:
+        if c in alphabet: # skip letters not in our alphabet; don't have to guess them
+            total_chars = total_chars + 1
+            # accumulate the guesses made for this letter
+            guesses = ""
+            guessed = False
+            if feedback:
+                print "guessing " + c,
+            while not guessed:
+                # guess until you get it right
+                g = guesser(revealed_text, guesses)
+                guesses = guesses + g
+                if g == c:
+                    guessed = True
+                if feedback:
+                    print g,
+
+            total_guesses = total_guesses + len(guesses)
+            revealed_text = revealed_text + c
+            if feedback:
+                print(str(len(guesses)) + " guesses ")
+
+    return total_chars, total_guesses
+
+
+# note, the last two characters are the single quote and double quote. They are
+# escaped, writen as \' and \", similar to how we have used escaping for tabs, \t,
+# and newlines, \n.
+alphabet = " !#$%&()*,-./0123456789:;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]abcdefghijklmnopqrstuvwxyz\'\""
+caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+f = open('train.txt', 'r')
+overall_freqs = letter_frequencies(f.read())
+caps_freqs = {}
+for c in caps:
+    if c in overall_freqs:
+        caps_freqs[c] = overall_freqs[c]
+sorted_caps = keys_sorted_by_value(caps_freqs)
+heuristics = {'q':{'priority': 1, 'guesses':['u', 'a']}, '. ':{'priority': 2, 'guesses': sorted_caps}}
+txt1 = "Question. Everything."
+txt2 = "Try to guess as Holmes would what the next letter will be in this quite short text. Now is the time."
+
+#### Don't change any code above this line #####
+
+game(txt1, False, guess_no_dup)
+game(txt1, False, guess_by_frequency)
+
+#Invoke game on txt1 using the alternate guessers
+#guess_no_dup and guess_by_frequency
+#(Note: if it's running too slow, try invoking it with the
+#feedback parameter set to False.)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_6_3_a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_6_3_a_suffix" style="display:none">
+</pre><pre id="ps_6_3_a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_6_3_a)</span> </p>
+<div id="ps_6_3_a_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_6_3_a_saveb').toggle();
+    $('#ps_6_3_a_loadb').toggle();
+}
+if ($("#ps_6_3_a").attr("lang") !== "html" && $("#ps_6_3_a_code_div").parents(".admonition").length == 0 && $("#ps_6_3_a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_6_3_a_code_div").offset({
+			left: $("#ps_6_3_a .clearfix").offset().left
+		});
+	}
+	$("#ps_6_3_a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_6_3_a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_6_3_a_runb").parent().siblings(".ac_output").show();
+			runit('ps_6_3_a',this, undefined);
+			$("#ps_6_3_a_runb").on("click", function(){
+				runit('ps_6_3_a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_6_3_a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_6_3_a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_6_3_a_runb").on("click", function(){
+		runit('ps_6_3_a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_6_3_tabs .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_6_3_tabs .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_6_3_tabs .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+<ol class="arabic simple" start="4">
+<li>(1 points) write guess_after_q to guess u if previous letter was q</li>
+</ol>
+<div id='ps_6_4_tabs' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_6_4_tabs-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_6_4_tabs-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_6_4_tabs-Problem'>
+<div id="cont"></div>
+<div id="ps_6_4" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_6_4_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_4_saveb" onclick="saveEditor('ps_6_4');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_4_loadb" onclick="requestCode('ps_6_4');">Load</button>
+<button class='btn btn-default' id="ps_6_4_vizb" onclick="injectCodelens(this,'ps_6_4');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ps_6_4_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_6_4_code" class="active_code" prefixcode="undefined" lang="python">
+####Don't change this code; add and change code at the bottom #####
+import random
+
+def letter_frequencies(txt):
+    d = {}
+    for c in txt:
+        if c not in d:
+            d[c] = 1
+        elif c in alphabet:
+            d[c] = d[c] + 1
+        # don't bother tracking letters that aren't in our alphabet
+    return d
+
+def guess(prev_txt, guessed_already):
+    # guess a letter randomly
+    idx = random.randrange(0, len(alphabet))
+    return alphabet[idx]
+
+
+def guess_no_dup(prev_txt, guessed_already):
+    # guess a letter randomly until you find one that hasn't been guessed yet
+    while True:
+        idx = random.randrange(0, len(alphabet))
+        candidate =  alphabet[idx]
+        if candidate not in guessed_already:
+            return candidate
+
+def keys_sorted_by_value(d):
+    in_order = sorted(d.items(), None, lambda x: x[1], True)
+    res = []
+    for (k, v) in in_order:
+        res.append(k)
+    return res
+
+def guess_by_frequency(prev_txt, guessed_already):
+    # return the best one that hasn't been guessed yet
+    for let in keys_sorted_by_value(overall_freqs):
+        if let not in guessed_already:
+            return let
+    return None # No unguessed letters left; shouldn't happen!
+
+def game(txt, feedback=True, guesser = guess):
+    """Plays one game"""
+
+    # accumulate the text that's been revealed
+    revealed_text = ""
+
+    # accumulate the total guess count
+    total_guesses = 0
+    # accumulate the total characters to be guessed
+    total_chars = 0
+
+    # Loop through the letters in the text, making a guess for each
+    for c in txt:
+        if c in alphabet: # skip letters not in our alphabet; don't have to guess them
+            total_chars = total_chars + 1
+            # accumulate the guesses made for this letter
+            guesses = ""
+            guessed = False
+            if feedback:
+                print "guessing " + c,
+            while not guessed:
+                # guess until you get it right
+                g = guesser(revealed_text, guesses)
+                guesses = guesses + g
+                if g == c:
+                    guessed = True
+                if feedback:
+                    print g,
+
+            total_guesses = total_guesses + len(guesses)
+            revealed_text = revealed_text + c
+            if feedback:
+                print(str(len(guesses)) + " guesses ")
+
+    return total_chars, total_guesses
+
+
+# note, the last two characters are the single quote and double quote. They are
+# escaped, writen as \' and \", similar to how we have used escaping for tabs, \t,
+# and newlines, \n.
+alphabet = " !#$%&()*,-./0123456789:;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]abcdefghijklmnopqrstuvwxyz\'\""
+caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+f = open('train.txt', 'r')
+overall_freqs = letter_frequencies(f.read())
+caps_freqs = {}
+for c in caps:
+    if c in overall_freqs:
+        caps_freqs[c] = overall_freqs[c]
+sorted_caps = keys_sorted_by_value(caps_freqs)
+heuristics = {'q':{'priority': 1, 'guesses':['u', 'a']}, '. ':{'priority': 2, 'guesses': sorted_caps}}
+txt1 = "Question. Everything."
+txt2 = "Try to guess as Holmes would what the next letter will be in this quite short text. Now is the time."
+
+#### Don't change any code above this line #####
+
+# Fill in the function definition below
+
+def u_after_q(prev_txt, guessed_already):
+    # Fill this in.
+    # If the most recent letter of prev_txt
+    # was q, guess u.
+    # Otherwise, get a from guess_by_frequency
+
+import test
+test.testEqual(u_after_q("This q", " eta"), "u")
+test.testEqual(u_after_q("This q", "uta "), "e")
+test.testEqual(u_after_q("This ", " e"), "t")
+
+# once you pass the tests, make calls to guess to see many fewer guesses
+# are needed with u_after_q than with guess_by_frequency
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_6_4_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_6_4_suffix" style="display:none">
+</pre><pre id="ps_6_4_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_6_4)</span> </p>
+<div id="ps_6_4_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_6_4_saveb').toggle();
+    $('#ps_6_4_loadb').toggle();
+}
+if ($("#ps_6_4").attr("lang") !== "html" && $("#ps_6_4_code_div").parents(".admonition").length == 0 && $("#ps_6_4_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_6_4_code_div").offset({
+			left: $("#ps_6_4 .clearfix").offset().left
+		});
+	}
+	$("#ps_6_4_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_6_4_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_6_4_runb").parent().siblings(".ac_output").show();
+			runit('ps_6_4',this, undefined);
+			$("#ps_6_4_runb").on("click", function(){
+				runit('ps_6_4',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_6_4_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_6_4_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_6_4_runb").on("click", function(){
+		runit('ps_6_4',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_6_4_tabs-Solution'>
+<div id="cont"></div>
+<div id="ps_6_4_a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_6_4_a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_4_a_saveb" onclick="saveEditor('ps_6_4_a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_4_a_loadb" onclick="requestCode('ps_6_4_a');">Load</button>
+<button class='btn btn-default' id="ps_6_4_a_vizb" onclick="injectCodelens(this,'ps_6_4_a');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ps_6_4_a_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_6_4_a_code" class="active_code" prefixcode="undefined" lang="python">
+####Don't change this code; add and change code at the bottom #####
+import random
+
+def letter_frequencies(txt):
+    d = {}
+    for c in txt:
+        if c not in d:
+            d[c] = 1
+        elif c in alphabet:
+            d[c] = d[c] + 1
+        # don't bother tracking letters that aren't in our alphabet
+    return d
+
+def guess(prev_txt, guessed_already):
+    # guess a letter randomly
+    idx = random.randrange(0, len(alphabet))
+    return alphabet[idx]
+
+
+def guess_no_dup(prev_txt, guessed_already):
+    # guess a letter randomly until you find one that hasn't been guessed yet
+    while True:
+        idx = random.randrange(0, len(alphabet))
+        candidate =  alphabet[idx]
+        if candidate not in guessed_already:
+            return candidate
+
+def keys_sorted_by_value(d):
+    in_order = sorted(d.items(), None, lambda x: x[1], True)
+    res = []
+    for (k, v) in in_order:
+        res.append(k)
+    return res
+
+def guess_by_frequency(prev_txt, guessed_already):
+    # return the best one that hasn't been guessed yet
+    for let in keys_sorted_by_value(overall_freqs):
+        if let not in guessed_already:
+            return let
+    return None # No unguessed letters left; shouldn't happen!
+
+def game(txt, feedback=True, guesser = guess):
+    """Plays one game"""
+
+    # accumulate the text that's been revealed
+    revealed_text = ""
+
+    # accumulate the total guess count
+    total_guesses = 0
+    # accumulate the total characters to be guessed
+    total_chars = 0
+
+    # Loop through the letters in the text, making a guess for each
+    for c in txt:
+        if c in alphabet: # skip letters not in our alphabet; don't have to guess them
+            total_chars = total_chars + 1
+            # accumulate the guesses made for this letter
+            guesses = ""
+            guessed = False
+            if feedback:
+                print "guessing " + c,
+            while not guessed:
+                # guess until you get it right
+                g = guesser(revealed_text, guesses)
+                guesses = guesses + g
+                if g == c:
+                    guessed = True
+                if feedback:
+                    print g,
+
+            total_guesses = total_guesses + len(guesses)
+            revealed_text = revealed_text + c
+            if feedback:
+                print(str(len(guesses)) + " guesses ")
+
+    return total_chars, total_guesses
+
+
+# note, the last two characters are the single quote and double quote. They are
+# escaped, writen as \' and \", similar to how we have used escaping for tabs, \t,
+# and newlines, \n.
+alphabet = " !#$%&()*,-./0123456789:;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]abcdefghijklmnopqrstuvwxyz\'\""
+caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+f = open('train.txt', 'r')
+overall_freqs = letter_frequencies(f.read())
+caps_freqs = {}
+for c in caps:
+    if c in overall_freqs:
+        caps_freqs[c] = overall_freqs[c]
+sorted_caps = keys_sorted_by_value(caps_freqs)
+heuristics = {'q':{'priority': 1, 'guesses':['u', 'a']}, '. ':{'priority': 2, 'guesses': sorted_caps}}
+txt1 = "Question. Everything."
+txt2 = "Try to guess as Holmes would what the next letter will be in this quite short text. Now is the time."
+
+#### Don't change any code above this line #####
+
+# Fill in the function definition below
+
+def u_after_q(prev_txt, guessed_already):
+    if len(prev_txt) > 1 and prev_txt[-1].lower() == 'q':
+        if 'u' not in guessed_already:
+            return 'u'
+    return guess_by_frequency(prev_txt, guessed_already)
+
+import test
+test.testEqual(u_after_q("This q", " eta"), "u")
+test.testEqual(u_after_q("This q", "uta "), "e")
+test.testEqual(u_after_q("This ", " e"), "t")
+
+# once you pass the tests, make calls to guess to see many fewer guesses
+# are needed with u_after_q than with guess_by_frequency
+
+g1 = game(txt1, False, guess_by_frequency)
+g2 = game(txt1, False, u_after_q)
+
+diff = g1[1] - g2[1]
+print "There are "+str(diff)+" fewer guesses"
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_6_4_a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_6_4_a_suffix" style="display:none">
+</pre><pre id="ps_6_4_a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_6_4_a)</span> </p>
+<div id="ps_6_4_a_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_6_4_a_saveb').toggle();
+    $('#ps_6_4_a_loadb').toggle();
+}
+if ($("#ps_6_4_a").attr("lang") !== "html" && $("#ps_6_4_a_code_div").parents(".admonition").length == 0 && $("#ps_6_4_a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_6_4_a_code_div").offset({
+			left: $("#ps_6_4_a .clearfix").offset().left
+		});
+	}
+	$("#ps_6_4_a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_6_4_a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_6_4_a_runb").parent().siblings(".ac_output").show();
+			runit('ps_6_4_a',this, undefined);
+			$("#ps_6_4_a_runb").on("click", function(){
+				runit('ps_6_4_a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_6_4_a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_6_4_a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_6_4_a_runb").on("click", function(){
+		runit('ps_6_4_a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_6_4_tabs .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_6_4_tabs .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_6_4_tabs .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+<ol class="arabic simple" start="5">
+<li>(1 point) Try guessing capitals first for a new sentence</li>
+</ol>
+<div id='ps_6_5_tabs' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_6_5_tabs-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_6_5_tabs-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_6_5_tabs-Problem'>
+<div id="cont"></div>
+<div id="ps_6_5" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_6_5_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_5_saveb" onclick="saveEditor('ps_6_5');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_5_loadb" onclick="requestCode('ps_6_5');">Load</button>
+<button class='btn btn-default' id="ps_6_5_vizb" onclick="injectCodelens(this,'ps_6_5');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ps_6_5_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_6_5_code" class="active_code" prefixcode="undefined" lang="python">
+####Don't change this code; add and change code at the bottom #####
+import random
+
+def letter_frequencies(txt):
+    d = {}
+    for c in txt:
+        if c not in d:
+            d[c] = 1
+        elif c in alphabet:
+            d[c] = d[c] + 1
+        # don't bother tracking letters that aren't in our alphabet
+    return d
+
+def guess(prev_txt, guessed_already):
+    # guess a letter randomly
+    idx = random.randrange(0, len(alphabet))
+    return alphabet[idx]
+
+
+def guess_no_dup(prev_txt, guessed_already):
+    # guess a letter randomly until you find one that hasn't been guessed yet
+    while True:
+        idx = random.randrange(0, len(alphabet))
+        candidate =  alphabet[idx]
+        if candidate not in guessed_already:
+            return candidate
+
+def keys_sorted_by_value(d):
+    in_order = sorted(d.items(), None, lambda x: x[1], True)
+    res = []
+    for (k, v) in in_order:
+        res.append(k)
+    return res
+
+def guess_by_frequency(prev_txt, guessed_already):
+    # return the best one that hasn't been guessed yet
+    for let in keys_sorted_by_value(overall_freqs):
+        if let not in guessed_already:
+            return let
+    return None # No unguessed letters left; shouldn't happen!
+
+def game(txt, feedback=True, guesser = guess):
+    """Plays one game"""
+
+    # accumulate the text that's been revealed
+    revealed_text = ""
+
+    # accumulate the total guess count
+    total_guesses = 0
+    # accumulate the total characters to be guessed
+    total_chars = 0
+
+    # Loop through the letters in the text, making a guess for each
+    for c in txt:
+        if c in alphabet: # skip letters not in our alphabet; don't have to guess them
+            total_chars = total_chars + 1
+            # accumulate the guesses made for this letter
+            guesses = ""
+            guessed = False
+            if feedback:
+                print "guessing " + c,
+            while not guessed:
+                # guess until you get it right
+                g = guesser(revealed_text, guesses)
+                guesses = guesses + g
+                if g == c:
+                    guessed = True
+                if feedback:
+                    print g,
+
+            total_guesses = total_guesses + len(guesses)
+            revealed_text = revealed_text + c
+            if feedback:
+                print(str(len(guesses)) + " guesses ")
+
+    return total_chars, total_guesses
+
+
+# note, the last two characters are the single quote and double quote. They are
+# escaped, writen as \' and \", similar to how we have used escaping for tabs, \t,
+# and newlines, \n.
+alphabet = " !#$%&()*,-./0123456789:;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]abcdefghijklmnopqrstuvwxyz\'\""
+caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+f = open('train.txt', 'r')
+overall_freqs = letter_frequencies(f.read())
+caps_freqs = {}
+for c in caps:
+    if c in overall_freqs:
+        caps_freqs[c] = overall_freqs[c]
+sorted_caps = keys_sorted_by_value(caps_freqs)
+heuristics = {'q':{'priority': 1, 'guesses':['u', 'a']}, '. ':{'priority': 2, 'guesses': sorted_caps}}
+txt1 = "Question. Everything."
+txt2 = "Try to guess as Holmes would what the next letter will be in this quite short text. Now is the time."
+
+#### Don't change any code above this line #####
+
+# Fill in the function definition below
+
+def new_sentence_cap(prev_txt, guessed_already):
+    # Fill this in.
+    # If the most recent two letters of prev_txt
+    # were a period followed by a space, try guessing
+    # capitals, in order of their frequency.
+    # If not capital letter works, get a from guess_by_frequency.
+    # (Hint: the global variable sorted_caps already has
+    # the capital letters in order of how frequently they occur in
+    # the long text train.txt)
+
+import test
+test.testEqual(new_sentence_cap("Question. ", ""), "I")
+test.testEqual(new_sentence_cap("Question. ", "IH"), "T")
+test.testEqual(new_sentence_cap("This ", " et"), "a")
+
+# once you pass the tests, make calls to guess to see many fewer guesses
+# are needed with new_sentence_cap than with guess_by_frequency
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_6_5_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_6_5_suffix" style="display:none">
+</pre><pre id="ps_6_5_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_6_5)</span> </p>
+<div id="ps_6_5_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_6_5_saveb').toggle();
+    $('#ps_6_5_loadb').toggle();
+}
+if ($("#ps_6_5").attr("lang") !== "html" && $("#ps_6_5_code_div").parents(".admonition").length == 0 && $("#ps_6_5_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_6_5_code_div").offset({
+			left: $("#ps_6_5 .clearfix").offset().left
+		});
+	}
+	$("#ps_6_5_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_6_5_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_6_5_runb").parent().siblings(".ac_output").show();
+			runit('ps_6_5',this, undefined);
+			$("#ps_6_5_runb").on("click", function(){
+				runit('ps_6_5',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_6_5_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_6_5_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_6_5_runb").on("click", function(){
+		runit('ps_6_5',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_6_5_tabs-Solution'>
+<div id="cont"></div>
+<div id="ps_6_5_a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_6_5_a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_5_a_saveb" onclick="saveEditor('ps_6_5_a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_5_a_loadb" onclick="requestCode('ps_6_5_a');">Load</button>
+<button class='btn btn-default' id="ps_6_5_a_vizb" onclick="injectCodelens(this,'ps_6_5_a');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ps_6_5_a_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_6_5_a_code" class="active_code" prefixcode="undefined" lang="python">
+####Don't change this code; add and change code at the bottom #####
+import random
+
+def letter_frequencies(txt):
+    d = {}
+    for c in txt:
+        if c not in d:
+            d[c] = 1
+        elif c in alphabet:
+            d[c] = d[c] + 1
+        # don't bother tracking letters that aren't in our alphabet
+    return d
+
+def guess(prev_txt, guessed_already):
+    # guess a letter randomly
+    idx = random.randrange(0, len(alphabet))
+    return alphabet[idx]
+
+
+def guess_no_dup(prev_txt, guessed_already):
+    # guess a letter randomly until you find one that hasn't been guessed yet
+    while True:
+        idx = random.randrange(0, len(alphabet))
+        candidate =  alphabet[idx]
+        if candidate not in guessed_already:
+            return candidate
+
+def keys_sorted_by_value(d):
+    in_order = sorted(d.items(), None, lambda x: x[1], True)
+    res = []
+    for (k, v) in in_order:
+        res.append(k)
+    return res
+
+def guess_by_frequency(prev_txt, guessed_already):
+    # return the best one that hasn't been guessed yet
+    for let in keys_sorted_by_value(overall_freqs):
+        if let not in guessed_already:
+            return let
+    return None # No unguessed letters left; shouldn't happen!
+
+def game(txt, feedback=True, guesser = guess):
+    """Plays one game"""
+
+    # accumulate the text that's been revealed
+    revealed_text = ""
+
+    # accumulate the total guess count
+    total_guesses = 0
+    # accumulate the total characters to be guessed
+    total_chars = 0
+
+    # Loop through the letters in the text, making a guess for each
+    for c in txt:
+        if c in alphabet: # skip letters not in our alphabet; don't have to guess them
+            total_chars = total_chars + 1
+            # accumulate the guesses made for this letter
+            guesses = ""
+            guessed = False
+            if feedback:
+                print "guessing " + c,
+            while not guessed:
+                # guess until you get it right
+                g = guesser(revealed_text, guesses)
+                guesses = guesses + g
+                if g == c:
+                    guessed = True
+                if feedback:
+                    print g,
+
+            total_guesses = total_guesses + len(guesses)
+            revealed_text = revealed_text + c
+            if feedback:
+                print(str(len(guesses)) + " guesses ")
+
+    return total_chars, total_guesses
+
+
+# note, the last two characters are the single quote and double quote. They are
+# escaped, writen as \' and \", similar to how we have used escaping for tabs, \t,
+# and newlines, \n.
+alphabet = " !#$%&()*,-./0123456789:;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]abcdefghijklmnopqrstuvwxyz\'\""
+caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+f = open('train.txt', 'r')
+overall_freqs = letter_frequencies(f.read())
+caps_freqs = {}
+for c in caps:
+    if c in overall_freqs:
+        caps_freqs[c] = overall_freqs[c]
+sorted_caps = keys_sorted_by_value(caps_freqs)
+heuristics = {'q':{'priority': 1, 'guesses':['u', 'a']}, '. ':{'priority': 2, 'guesses': sorted_caps}}
+txt1 = "Question. Everything."
+txt2 = "Try to guess as Holmes would what the next letter will be in this quite short text. Now is the time."
+
+#### Don't change any code above this line #####
+
+# Fill in the function definition below
+
+def new_sentence_cap(prev_txt, guessed_already):
+    if len(prev_txt) >= 2 and prev_txt[-2:] == ". ":
+        for l in sorted_caps:
+            if l not in guessed_already:
+                return l
+    return guess_by_frequency(prev_txt, guessed_already)
+
+import test
+test.testEqual(new_sentence_cap("Question. ", ""), "I")
+test.testEqual(new_sentence_cap("Question. ", "IH"), "T")
+test.testEqual(new_sentence_cap("This ", " et"), "a")
+
+# once you pass the tests, make calls to guess to see many fewer guesses
+# are needed with new_sentence_cap than with guess_by_frequency
+g1 = game(txt1, False, guess_by_frequency)
+g2 = game(txt1, False, new_sentence_cap)
+
+diff = g1[1] - g2[1]
+print "There are "+str(diff)+" fewer guesses"
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_6_5_a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_6_5_a_suffix" style="display:none">
+</pre><pre id="ps_6_5_a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_6_5_a)</span> </p>
+<div id="ps_6_5_a_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_6_5_a_saveb').toggle();
+    $('#ps_6_5_a_loadb').toggle();
+}
+if ($("#ps_6_5_a").attr("lang") !== "html" && $("#ps_6_5_a_code_div").parents(".admonition").length == 0 && $("#ps_6_5_a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_6_5_a_code_div").offset({
+			left: $("#ps_6_5_a .clearfix").offset().left
+		});
+	}
+	$("#ps_6_5_a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_6_5_a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_6_5_a_runb").parent().siblings(".ac_output").show();
+			runit('ps_6_5_a',this, undefined);
+			$("#ps_6_5_a_runb").on("click", function(){
+				runit('ps_6_5_a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_6_5_a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_6_5_a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_6_5_a_runb").on("click", function(){
+		runit('ps_6_5_a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_6_5_tabs .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_6_5_tabs .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_6_5_tabs .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+<ol class="arabic simple" start="6">
+<li>(2 points) Generalize the previous two functions</li>
+</ol>
+<div id='ps_6_6_tabs' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_6_6_tabs-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_6_6_tabs-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_6_6_tabs-Problem'>
+<div id="cont"></div>
+<div id="ps_6_6" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_6_6_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_6_saveb" onclick="saveEditor('ps_6_6');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_6_loadb" onclick="requestCode('ps_6_6');">Load</button>
+<button class='btn btn-default' id="ps_6_6_vizb" onclick="injectCodelens(this,'ps_6_6');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ps_6_6_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_6_6_code" class="active_code" prefixcode="undefined" lang="python">
+####Don't change this code; add and change code at the bottom #####
+import random
+
+def letter_frequencies(txt):
+    d = {}
+    for c in txt:
+        if c not in d:
+            d[c] = 1
+        elif c in alphabet:
+            d[c] = d[c] + 1
+        # don't bother tracking letters that aren't in our alphabet
+    return d
+
+def guess(prev_txt, guessed_already):
+    # guess a letter randomly
+    idx = random.randrange(0, len(alphabet))
+    return alphabet[idx]
+
+
+def guess_no_dup(prev_txt, guessed_already):
+    # guess a letter randomly until you find one that hasn't been guessed yet
+    while True:
+        idx = random.randrange(0, len(alphabet))
+        candidate =  alphabet[idx]
+        if candidate not in guessed_already:
+            return candidate
+
+def keys_sorted_by_value(d):
+    in_order = sorted(d.items(), None, lambda x: x[1], True)
+    res = []
+    for (k, v) in in_order:
+        res.append(k)
+    return res
+
+def guess_by_frequency(prev_txt, guessed_already):
+    # return the best one that hasn't been guessed yet
+    for let in keys_sorted_by_value(overall_freqs):
+        if let not in guessed_already:
+            return let
+    return None # No unguessed letters left; shouldn't happen!
+
+def game(txt, feedback=True, guesser = guess):
+    """Plays one game"""
+
+    # accumulate the text that's been revealed
+    revealed_text = ""
+
+    # accumulate the total guess count
+    total_guesses = 0
+    # accumulate the total characters to be guessed
+    total_chars = 0
+
+    # Loop through the letters in the text, making a guess for each
+    for c in txt:
+        if c in alphabet: # skip letters not in our alphabet; don't have to guess them
+            total_chars = total_chars + 1
+            # accumulate the guesses made for this letter
+            guesses = ""
+            guessed = False
+            if feedback:
+                print "guessing " + c,
+            while not guessed:
+                # guess until you get it right
+                g = guesser(revealed_text, guesses)
+                guesses = guesses + g
+                if g == c:
+                    guessed = True
+                if feedback:
+                    print g,
+
+            total_guesses = total_guesses + len(guesses)
+            revealed_text = revealed_text + c
+            if feedback:
+                print(str(len(guesses)) + " guesses ")
+
+    return total_chars, total_guesses
+
+
+# note, the last two characters are the single quote and double quote. They are
+# escaped, writen as \' and \", similar to how we have used escaping for tabs, \t,
+# and newlines, \n.
+alphabet = " !#$%&()*,-./0123456789:;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]abcdefghijklmnopqrstuvwxyz\'\""
+caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+f = open('train.txt', 'r')
+overall_freqs = letter_frequencies(f.read())
+caps_freqs = {}
+for c in caps:
+    if c in overall_freqs:
+        caps_freqs[c] = overall_freqs[c]
+sorted_caps = keys_sorted_by_value(caps_freqs)
+heuristics = {'q':{'priority': 1, 'guesses':['u', 'a']}, '. ':{'priority': 2, 'guesses': sorted_caps}}
+txt1 = "Question. Everything."
+txt2 = "Try to guess as Holmes would what the next letter will be in this quite short text. Now is the time."
+
+#### Don't change any code above this line #####
+
+# Fill in the function definition below
+
+def heuristic_guesser(prev_txt, guessed_already):
+    # We are providing the next line for you
+    # print sorted_heuristics to see what it produces
+    sorted_heuristics = sorted(heuristics.items(), None, lambda x: x[1]['priority'], True)
+
+    # Fill this in.
+    # Generalize from the previous two problems. The dictionary
+    # heuristics contains information about what guesses to make when
+    # the most recent revealed text matches one of the
+    # dictionary's keys. Each key's value is a dictionary with a key
+    # for the priority of that heuristic, and key for what guesses
+    # to make.
+
+    # Your code should process the heuristics in order of
+    # their priority (see the variable sorted_heuristics that
+    # is provided for you in this function).
+
+    # If the key matches the most recent letter (or letters,
+    # if the key is more than one letter), then return
+    # the first letter in its guesses that has not been guessed yet.
+
+import test
+test.testEqual(heuristic_guesser("This q", " eta"), "u")
+test.testEqual(heuristic_guesser("This q", "u t"), "e")
+test.testEqual(heuristic_guesser("This ", " e"), "t")
+test.testEqual(heuristic_guesser("Question. ", ""), "I")
+test.testEqual(heuristic_guesser("Question. ", "IH"), "T")
+test.testEqual(heuristic_guesser("This ", " et"), "a")
+
+# once you pass the tests, make calls to guess to see many fewer guesses
+# are needed with heuristic_guesser
+
+# now add a few more entries into the heuristics dictionary, and try
+# running guess() again with heuristic_guesser, to see how much improvement
+# the extra dictionary entries give you.
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_6_6_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_6_6_suffix" style="display:none">
+</pre><pre id="ps_6_6_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_6_6)</span> </p>
+<div id="ps_6_6_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_6_6_saveb').toggle();
+    $('#ps_6_6_loadb').toggle();
+}
+if ($("#ps_6_6").attr("lang") !== "html" && $("#ps_6_6_code_div").parents(".admonition").length == 0 && $("#ps_6_6_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_6_6_code_div").offset({
+			left: $("#ps_6_6 .clearfix").offset().left
+		});
+	}
+	$("#ps_6_6_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_6_6_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_6_6_runb").parent().siblings(".ac_output").show();
+			runit('ps_6_6',this, undefined);
+			$("#ps_6_6_runb").on("click", function(){
+				runit('ps_6_6',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_6_6_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_6_6_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_6_6_runb").on("click", function(){
+		runit('ps_6_6',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_6_6_tabs-Solution'>
+<div id="cont"></div>
+<div id="ps_6_6_a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_6_6_a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_6_a_saveb" onclick="saveEditor('ps_6_6_a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_6_a_loadb" onclick="requestCode('ps_6_6_a');">Load</button>
+<button class='btn btn-default' id="ps_6_6_a_vizb" onclick="injectCodelens(this,'ps_6_6_a');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ps_6_6_a_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_6_6_a_code" class="active_code" prefixcode="undefined" lang="python">
+####Don't change this code; add and change code at the bottom #####
+import random
+
+def letter_frequencies(txt):
+    d = {}
+    for c in txt:
+        if c not in d:
+            d[c] = 1
+        elif c in alphabet:
+            d[c] = d[c] + 1
+        # don't bother tracking letters that aren't in our alphabet
+    return d
+
+def guess(prev_txt, guessed_already):
+    # guess a letter randomly
+    idx = random.randrange(0, len(alphabet))
+    return alphabet[idx]
+
+
+def guess_no_dup(prev_txt, guessed_already):
+    # guess a letter randomly until you find one that hasn't been guessed yet
+    while True:
+        idx = random.randrange(0, len(alphabet))
+        candidate =  alphabet[idx]
+        if candidate not in guessed_already:
+            return candidate
+
+def keys_sorted_by_value(d):
+    in_order = sorted(d.items(), None, lambda x: x[1], True)
+    res = []
+    for (k, v) in in_order:
+        res.append(k)
+    return res
+
+def guess_by_frequency(prev_txt, guessed_already):
+    # return the best one that hasn't been guessed yet
+    for let in keys_sorted_by_value(overall_freqs):
+        if let not in guessed_already:
+            return let
+    return None # No unguessed letters left; shouldn't happen!
+
+def game(txt, feedback=True, guesser = guess):
+    """Plays one game"""
+
+    # accumulate the text that's been revealed
+    revealed_text = ""
+
+    # accumulate the total guess count
+    total_guesses = 0
+    # accumulate the total characters to be guessed
+    total_chars = 0
+
+    # Loop through the letters in the text, making a guess for each
+    for c in txt:
+        if c in alphabet: # skip letters not in our alphabet; don't have to guess them
+            total_chars = total_chars + 1
+            # accumulate the guesses made for this letter
+            guesses = ""
+            guessed = False
+            if feedback:
+                print "guessing " + c,
+            while not guessed:
+                # guess until you get it right
+                g = guesser(revealed_text, guesses)
+                guesses = guesses + g
+                if g == c:
+                    guessed = True
+                if feedback:
+                    print g,
+
+            total_guesses = total_guesses + len(guesses)
+            revealed_text = revealed_text + c
+            if feedback:
+                print(str(len(guesses)) + " guesses ")
+
+    return total_chars, total_guesses
+
+
+# note, the last two characters are the single quote and double quote. They are
+# escaped, writen as \' and \", similar to how we have used escaping for tabs, \t,
+# and newlines, \n.
+alphabet = " !#$%&()*,-./0123456789:;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]abcdefghijklmnopqrstuvwxyz\'\""
+caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+f = open('train.txt', 'r')
+overall_freqs = letter_frequencies(f.read())
+caps_freqs = {}
+for c in caps:
+    if c in overall_freqs:
+        caps_freqs[c] = overall_freqs[c]
+sorted_caps = keys_sorted_by_value(caps_freqs)
+heuristics = {'q':{'priority': 1, 'guesses':['u', 'a']}, '. ':{'priority': 2, 'guesses': sorted_caps}}
+txt1 = "Question. Everything."
+txt2 = "Try to guess as Holmes would what the next letter will be in this quite short text. Now is the time."
+
+#### Don't change any code above this line #####
+
+# Fill in the function definition below
+
+def heuristic_guesser(prev_txt, guessed_already):
+    sorted_heuristics = sorted(heuristics.items(), None, lambda x: x[1]['priority'], False)
+
+    for key,value in sorted_heuristics:
+        key_length = len(key)
+        if len(prev_txt) >= key_length and prev_txt[-key_length:].lower() == key:
+            for l in value['guesses']:
+                if l not in guessed_already:
+                    return l
+    return guess_by_frequency(prev_txt, guessed_already)
+
+import test
+test.testEqual(heuristic_guesser("This q", " eta"), "u")
+test.testEqual(heuristic_guesser("This q", "u ta"), "e")
+test.testEqual(heuristic_guesser("This ", " e"), "t")
+test.testEqual(heuristic_guesser("Question. ", ""), "I")
+test.testEqual(heuristic_guesser("Question. ", "IH"), "T")
+test.testEqual(heuristic_guesser("This ", " et"), "a")
+
+# once you pass the tests, make calls to guess to see many fewer guesses
+# are needed with heuristic_guesser
+
+g1 = game(txt1, False, guess_by_frequency)
+g2 = game(txt1, False, heuristic_guesser)
+
+diff = g1[1] - g2[1]
+print "There are "+str(diff)+" fewer guesses"
+
+# now add a few more entries into the heuristics dictionary, and try
+# running guess() again with heuristic_guesser, to see how much improvement
+# the extra dictionary entries give you.
+
+heuristics[''] = {
+    'priority':4,
+    'guesses': ['e'],
+}
+heuristics['v'] = {
+    'priority':4,
+    'guesses': ['e'],
+}
+heuristics['th'] = {
+    'priority':2,
+    'guesses': ['e','i'],
+}
+
+g1 = game(txt1, False, guess_by_frequency)
+g2 = game(txt1, False, heuristic_guesser)
+
+diff = g1[1] - g2[1]
+print "There are "+str(diff)+" fewer guesses"
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_6_6_a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_6_6_a_suffix" style="display:none">
+</pre><pre id="ps_6_6_a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_6_6_a)</span> </p>
+<div id="ps_6_6_a_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_6_6_a_saveb').toggle();
+    $('#ps_6_6_a_loadb').toggle();
+}
+if ($("#ps_6_6_a").attr("lang") !== "html" && $("#ps_6_6_a_code_div").parents(".admonition").length == 0 && $("#ps_6_6_a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_6_6_a_code_div").offset({
+			left: $("#ps_6_6_a .clearfix").offset().left
+		});
+	}
+	$("#ps_6_6_a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_6_6_a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_6_6_a_runb").parent().siblings(".ac_output").show();
+			runit('ps_6_6_a',this, undefined);
+			$("#ps_6_6_a_runb").on("click", function(){
+				runit('ps_6_6_a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_6_6_a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_6_6_a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_6_6_a_runb").on("click", function(){
+		runit('ps_6_6_a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_6_6_tabs .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_6_6_tabs .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_6_6_tabs .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+<ol class="arabic simple" start="7">
+<li>(1 point) Add heuristics to the dictionary</li>
+</ol>
+<div id='ps_6_7_tabs' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_6_7_tabs-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_6_7_tabs-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_6_7_tabs-Problem'>
+<div id="cont"></div>
+<div id="ps_6_7" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_6_7_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_7_saveb" onclick="saveEditor('ps_6_7');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_7_loadb" onclick="requestCode('ps_6_7');">Load</button>
+<button class='btn btn-default' id="ps_6_7_vizb" onclick="injectCodelens(this,'ps_6_7');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ps_6_7_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_6_7_code" class="active_code" prefixcode="undefined" lang="python">
+####Don't change this code; add and change code at the bottom #####
+import random
+
+def letter_frequencies(txt):
+    d = {}
+    for c in txt:
+        if c not in d:
+            d[c] = 1
+        elif c in alphabet:
+            d[c] = d[c] + 1
+        # don't bother tracking letters that aren't in our alphabet
+    return d
+
+def guess(prev_txt, guessed_already):
+    # guess a letter randomly
+    idx = random.randrange(0, len(alphabet))
+    return alphabet[idx]
+
+
+def guess_no_dup(prev_txt, guessed_already):
+    # guess a letter randomly until you find one that hasn't been guessed yet
+    while True:
+        idx = random.randrange(0, len(alphabet))
+        candidate =  alphabet[idx]
+        if candidate not in guessed_already:
+            return candidate
+
+def keys_sorted_by_value(d):
+    in_order = sorted(d.items(), None, lambda x: x[1], True)
+    res = []
+    for (k, v) in in_order:
+        res.append(k)
+    return res
+
+def guess_by_frequency(prev_txt, guessed_already):
+    # return the best one that hasn't been guessed yet
+    for let in keys_sorted_by_value(overall_freqs):
+        if let not in guessed_already:
+            return let
+    return None # No unguessed letters left; shouldn't happen!
+
+def game(txt, feedback=True, guesser = guess):
+    """Plays one game"""
+
+    # accumulate the text that's been revealed
+    revealed_text = ""
+
+    # accumulate the total guess count
+    total_guesses = 0
+    # accumulate the total characters to be guessed
+    total_chars = 0
+
+    # Loop through the letters in the text, making a guess for each
+    for c in txt:
+        if c in alphabet: # skip letters not in our alphabet; don't have to guess them
+            total_chars = total_chars + 1
+            # accumulate the guesses made for this letter
+            guesses = ""
+            guessed = False
+            if feedback:
+                print "guessing " + c,
+            while not guessed:
+                # guess until you get it right
+                g = guesser(revealed_text, guesses)
+                guesses = guesses + g
+                if g == c:
+                    guessed = True
+                if feedback:
+                    print g,
+
+            total_guesses = total_guesses + len(guesses)
+            revealed_text = revealed_text + c
+            if feedback:
+                print(str(len(guesses)) + " guesses ")
+
+    return total_chars, total_guesses
+
+
+# note, the last two characters are the single quote and double quote. They are
+# escaped, writen as \' and \", similar to how we have used escaping for tabs, \t,
+# and newlines, \n.
+alphabet = " !#$%&()*,-./0123456789:;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]abcdefghijklmnopqrstuvwxyz\'\""
+caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+f = open('train.txt', 'r')
+overall_freqs = letter_frequencies(f.read())
+caps_freqs = {}
+for c in caps:
+    if c in overall_freqs:
+        caps_freqs[c] = overall_freqs[c]
+sorted_caps = keys_sorted_by_value(caps_freqs)
+heuristics = {'q':{'priority': 1, 'guesses':['u', 'a']}, '. ':{'priority': 2, 'guesses': sorted_caps}}
+txt1 = "Question. Everything."
+txt2 = "Try to guess as Holmes would what the next letter will be in this quite short text. Now is the time."
+
+#### Don't change any code above this line #####
+
+# Add to the heuristics dictionary entries for all the
+# prefixes of the word 'time' (i.e., after a t, guess i, after ti guess m,
+# after tim guess e, and after time guess space or period
+
+import test
+test.testEqual(heuristics['ti']['guesses'][0], 'm')
+
+# We have provided a function, add_word, that generalizes what you
+# just did with 'time'. It automatically adds all
+# the prefixes for any word, with the next letter of the word as
+# the only guess.
+def add_word(w, pri = 2):
+    """Takes a word w as input and adds all its prefixes to the
+    heuristics dictionary"""
+    for i in range(len(w)-1):
+        prefix = w[:i+1]
+        next_let = w[i+1]
+        heuristics[prefix] = {'priority' : pri, 'guesses':[next_let]}
+    heuristics[w] = {'priority' : pri, 'guesses':[' ', '.', ',']}
+
+# Invoke add_words as necessary to make the tests pass
+
+test.testEqual(heuristics['Ho']['priority'], 3)
+test.testEqual(heuristics['Ho']['guesses'][0], 'l')
+test.testEqual(heuristics['gue']['guesses'][0], 's')
+test.testEqual(heuristics['nex']['guesses'][0], 't')
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_6_7_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_6_7_suffix" style="display:none">
+</pre><pre id="ps_6_7_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_6_7)</span> </p>
+<div id="ps_6_7_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_6_7_saveb').toggle();
+    $('#ps_6_7_loadb').toggle();
+}
+if ($("#ps_6_7").attr("lang") !== "html" && $("#ps_6_7_code_div").parents(".admonition").length == 0 && $("#ps_6_7_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_6_7_code_div").offset({
+			left: $("#ps_6_7 .clearfix").offset().left
+		});
+	}
+	$("#ps_6_7_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_6_7_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_6_7_runb").parent().siblings(".ac_output").show();
+			runit('ps_6_7',this, undefined);
+			$("#ps_6_7_runb").on("click", function(){
+				runit('ps_6_7',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_6_7_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_6_7_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_6_7_runb").on("click", function(){
+		runit('ps_6_7',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_6_7_tabs-Solution'>
+<div id="cont"></div>
+<div id="ps_6_7_a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_6_7_a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_7_a_saveb" onclick="saveEditor('ps_6_7_a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_7_a_loadb" onclick="requestCode('ps_6_7_a');">Load</button>
+<button class='btn btn-default' id="ps_6_7_a_vizb" onclick="injectCodelens(this,'ps_6_7_a');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ps_6_7_a_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_6_7_a_code" class="active_code" prefixcode="undefined" lang="python">
+####Don't change this code; add and change code at the bottom #####
+import random
+
+def letter_frequencies(txt):
+    d = {}
+    for c in txt:
+        if c not in d:
+            d[c] = 1
+        elif c in alphabet:
+            d[c] = d[c] + 1
+        # don't bother tracking letters that aren't in our alphabet
+    return d
+
+def guess(prev_txt, guessed_already):
+    # guess a letter randomly
+    idx = random.randrange(0, len(alphabet))
+    return alphabet[idx]
+
+
+def guess_no_dup(prev_txt, guessed_already):
+    # guess a letter randomly until you find one that hasn't been guessed yet
+    while True:
+        idx = random.randrange(0, len(alphabet))
+        candidate =  alphabet[idx]
+        if candidate not in guessed_already:
+            return candidate
+
+def keys_sorted_by_value(d):
+    in_order = sorted(d.items(), None, lambda x: x[1], True)
+    res = []
+    for (k, v) in in_order:
+        res.append(k)
+    return res
+
+def guess_by_frequency(prev_txt, guessed_already):
+    # return the best one that hasn't been guessed yet
+    for let in keys_sorted_by_value(overall_freqs):
+        if let not in guessed_already:
+            return let
+    return None # No unguessed letters left; shouldn't happen!
+
+def game(txt, feedback=True, guesser = guess):
+    """Plays one game"""
+
+    # accumulate the text that's been revealed
+    revealed_text = ""
+
+    # accumulate the total guess count
+    total_guesses = 0
+    # accumulate the total characters to be guessed
+    total_chars = 0
+
+    # Loop through the letters in the text, making a guess for each
+    for c in txt:
+        if c in alphabet: # skip letters not in our alphabet; don't have to guess them
+            total_chars = total_chars + 1
+            # accumulate the guesses made for this letter
+            guesses = ""
+            guessed = False
+            if feedback:
+                print "guessing " + c,
+            while not guessed:
+                # guess until you get it right
+                g = guesser(revealed_text, guesses)
+                guesses = guesses + g
+                if g == c:
+                    guessed = True
+                if feedback:
+                    print g,
+
+            total_guesses = total_guesses + len(guesses)
+            revealed_text = revealed_text + c
+            if feedback:
+                print(str(len(guesses)) + " guesses ")
+
+    return total_chars, total_guesses
+
+
+# note, the last two characters are the single quote and double quote. They are
+# escaped, writen as \' and \", similar to how we have used escaping for tabs, \t,
+# and newlines, \n.
+alphabet = " !#$%&()*,-./0123456789:;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]abcdefghijklmnopqrstuvwxyz\'\""
+caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+f = open('train.txt', 'r')
+overall_freqs = letter_frequencies(f.read())
+caps_freqs = {}
+for c in caps:
+    if c in overall_freqs:
+        caps_freqs[c] = overall_freqs[c]
+sorted_caps = keys_sorted_by_value(caps_freqs)
+heuristics = {'q':{'priority': 1, 'guesses':['u', 'a']}, '. ':{'priority': 2, 'guesses': sorted_caps}}
+txt1 = "Question. Everything."
+txt2 = "Try to guess as Holmes would what the next letter will be in this quite short text. Now is the time."
+
+#### Don't change any code above this line #####
+
+# Add to the heuristics dictionary entries for all the
+# prefixes of the word 'time' (i.e., after a t, guess i, after ti guess m,
+# after tim guess e, and after time guess space or period
+
+heuristics['t'] = {
+    'priority': 2,
+    'guesses': ['i']
+}
+heuristics['ti'] = {
+    'priority': 2,
+    'guesses': ['m']
+}
+heuristics['tim'] = {
+    'priority': 2,
+    'guesses': ['e']
+}
+heuristics['time'] = {
+    'priority': 2,
+    'guesses': [' ','.']
+}
+
+import test
+test.testEqual(heuristics['ti']['guesses'][0], 'm')
+
+# We have provided a function, add_word, that generalizes what you
+# just did with 'time'. It automatically adds all
+# the prefixes for any word, with the next letter of the word as
+# the only guess.
+def add_word(w, pri = 2):
+    """Takes a word w as input and adds all its prefixes to the
+    heuristics dictionary"""
+    for i in range(len(w)-1):
+        prefix = w[:i+1]
+        next_let = w[i+1]
+        heuristics[prefix] = {'priority' : pri, 'guesses':[next_let]}
+    heuristics[w] = {'priority' : pri, 'guesses':[' ', '.', ',']}
+
+# Invoke add_words as necessary to make the tests pass
+
+add_word('Hole',3)
+add_word('guess')
+add_word('next')
+#OR
+for w in txt2.split():
+    add_word(w,3)
+
+test.testEqual(heuristics['Ho']['priority'], 3)
+test.testEqual(heuristics['Ho']['guesses'][0], 'l')
+test.testEqual(heuristics['gue']['guesses'][0], 's')
+test.testEqual(heuristics['nex']['guesses'][0], 't')
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_6_7_a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_6_7_a_suffix" style="display:none">
+</pre><pre id="ps_6_7_a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_6_7_a)</span> </p>
+<div id="ps_6_7_a_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_6_7_a_saveb').toggle();
+    $('#ps_6_7_a_loadb').toggle();
+}
+if ($("#ps_6_7_a").attr("lang") !== "html" && $("#ps_6_7_a_code_div").parents(".admonition").length == 0 && $("#ps_6_7_a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_6_7_a_code_div").offset({
+			left: $("#ps_6_7_a .clearfix").offset().left
+		});
+	}
+	$("#ps_6_7_a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_6_7_a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_6_7_a_runb").parent().siblings(".ac_output").show();
+			runit('ps_6_7_a',this, undefined);
+			$("#ps_6_7_a_runb").on("click", function(){
+				runit('ps_6_7_a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_6_7_a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_6_7_a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_6_7_a_runb").on("click", function(){
+		runit('ps_6_7_a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_6_7_tabs .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_6_7_tabs .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_6_7_tabs .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+<ol class="arabic simple" start="8">
+<li>(2 points) Adding heuristics for the most common words</li>
+</ol>
+<div id='ps_6_8_tabs' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_6_8_tabs-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_6_8_tabs-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_6_8_tabs-Problem'>
+<div id="cont"></div>
+<div id="ps_6_8" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_6_8_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_8_saveb" onclick="saveEditor('ps_6_8');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_8_loadb" onclick="requestCode('ps_6_8');">Load</button>
+<button class='btn btn-default' id="ps_6_8_vizb" onclick="injectCodelens(this,'ps_6_8');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ps_6_8_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_6_8_code" class="active_code" prefixcode="undefined" lang="python">
+####Don't change this code; add and change code at the bottom #####
+import random
+
+def letter_frequencies(txt):
+    d = {}
+    for c in txt:
+        if c not in d:
+            d[c] = 1
+        elif c in alphabet:
+            d[c] = d[c] + 1
+        # don't bother tracking letters that aren't in our alphabet
+    return d
+
+def guess(prev_txt, guessed_already):
+    # guess a letter randomly
+    idx = random.randrange(0, len(alphabet))
+    return alphabet[idx]
+
+
+def guess_no_dup(prev_txt, guessed_already):
+    # guess a letter randomly until you find one that hasn't been guessed yet
+    while True:
+        idx = random.randrange(0, len(alphabet))
+        candidate =  alphabet[idx]
+        if candidate not in guessed_already:
+            return candidate
+
+def keys_sorted_by_value(d):
+    in_order = sorted(d.items(), None, lambda x: x[1], True)
+    res = []
+    for (k, v) in in_order:
+        res.append(k)
+    return res
+
+def guess_by_frequency(prev_txt, guessed_already):
+    # return the best one that hasn't been guessed yet
+    for let in keys_sorted_by_value(overall_freqs):
+        if let not in guessed_already:
+            return let
+    return None # No unguessed letters left; shouldn't happen!
+
+def game(txt, feedback=True, guesser = guess):
+    """Plays one game"""
+
+    # accumulate the text that's been revealed
+    revealed_text = ""
+
+    # accumulate the total guess count
+    total_guesses = 0
+    # accumulate the total characters to be guessed
+    total_chars = 0
+
+    # Loop through the letters in the text, making a guess for each
+    for c in txt:
+        if c in alphabet: # skip letters not in our alphabet; don't have to guess them
+            total_chars = total_chars + 1
+            # accumulate the guesses made for this letter
+            guesses = ""
+            guessed = False
+            if feedback:
+                print "guessing " + c,
+            while not guessed:
+                # guess until you get it right
+                g = guesser(revealed_text, guesses)
+                guesses = guesses + g
+                if g == c:
+                    guessed = True
+                if feedback:
+                    print g,
+
+            total_guesses = total_guesses + len(guesses)
+            revealed_text = revealed_text + c
+            if feedback:
+                print(str(len(guesses)) + " guesses ")
+
+    return total_chars, total_guesses
+
+
+# note, the last two characters are the single quote and double quote. They are
+# escaped, writen as \' and \", similar to how we have used escaping for tabs, \t,
+# and newlines, \n.
+alphabet = " !#$%&()*,-./0123456789:;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]abcdefghijklmnopqrstuvwxyz\'\""
+caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+f = open('train.txt', 'r')
+overall_freqs = letter_frequencies(f.read())
+caps_freqs = {}
+for c in caps:
+    if c in overall_freqs:
+        caps_freqs[c] = overall_freqs[c]
+sorted_caps = keys_sorted_by_value(caps_freqs)
+heuristics = {'q':{'priority': 1, 'guesses':['u', 'a']}, '. ':{'priority': 2, 'guesses': sorted_caps}}
+txt1 = "Question. Everything."
+txt2 = "Try to guess as Holmes would what the next letter will be in this quite short text. Now is the time."
+
+#### Don't change any code above this line #####
+
+# copy your heuristic_guesser function definition here
+
+def add_word(w, pri = 2):
+    """Takes a word w as input and adds all its prefixes to the
+    heuristics dictionary"""
+    for i in range(len(w)-1):
+        prefix = w[:i+1]
+        next_let = w[i+1]
+        heuristics[prefix] = {'priority' : pri, 'guesses':[next_let]}
+    heuristics[w] = {'priority' : pri, 'guesses':[' ', '.', ',']}
+
+f = open('train.txt', 'r')
+train = f.read()
+f.close()
+
+f= open('test.txt', 'r')
+test = f.read()
+f.close()
+
+# call game using heuristic_guesser on the text in the variable test.
+# Your browser will probably timeout, so give it just the first few hundred
+# characters of test (Hint: take a slice).
+
+# Now use the text in the variable train to calculate the most frequent
+# words in that text. Only consider words that have more than 4 letters.
+# Call the add_word function on each of the 20 most frequent words.
+# Then see how much your heuristic_guesser has improved.
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_6_8_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_6_8_suffix" style="display:none">
+</pre><pre id="ps_6_8_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_6_8)</span> </p>
+<div id="ps_6_8_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_6_8_saveb').toggle();
+    $('#ps_6_8_loadb').toggle();
+}
+if ($("#ps_6_8").attr("lang") !== "html" && $("#ps_6_8_code_div").parents(".admonition").length == 0 && $("#ps_6_8_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_6_8_code_div").offset({
+			left: $("#ps_6_8 .clearfix").offset().left
+		});
+	}
+	$("#ps_6_8_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_6_8_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_6_8_runb").parent().siblings(".ac_output").show();
+			runit('ps_6_8',this, undefined);
+			$("#ps_6_8_runb").on("click", function(){
+				runit('ps_6_8',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_6_8_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_6_8_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_6_8_runb").on("click", function(){
+		runit('ps_6_8',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_6_8_tabs-Solution'>
+<div id="cont"></div>
+<div id="ps_6_8_a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_6_8_a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_8_a_saveb" onclick="saveEditor('ps_6_8_a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_6_8_a_loadb" onclick="requestCode('ps_6_8_a');">Load</button>
+<button class='btn btn-default' id="ps_6_8_a_vizb" onclick="injectCodelens(this,'ps_6_8_a');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ps_6_8_a_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_6_8_a_code" class="active_code" prefixcode="undefined" lang="python">
+####Don't change this code; add and change code at the bottom #####
+import random
+
+def letter_frequencies(txt):
+    d = {}
+    for c in txt:
+        if c not in d:
+            d[c] = 1
+        elif c in alphabet:
+            d[c] = d[c] + 1
+        # don't bother tracking letters that aren't in our alphabet
+    return d
+
+def guess(prev_txt, guessed_already):
+    # guess a letter randomly
+    idx = random.randrange(0, len(alphabet))
+    return alphabet[idx]
+
+
+def guess_no_dup(prev_txt, guessed_already):
+    # guess a letter randomly until you find one that hasn't been guessed yet
+    while True:
+        idx = random.randrange(0, len(alphabet))
+        candidate =  alphabet[idx]
+        if candidate not in guessed_already:
+            return candidate
+
+def keys_sorted_by_value(d):
+    in_order = sorted(d.items(), None, lambda x: x[1], True)
+    res = []
+    for (k, v) in in_order:
+        res.append(k)
+    return res
+
+def guess_by_frequency(prev_txt, guessed_already):
+    # return the best one that hasn't been guessed yet
+    for let in keys_sorted_by_value(overall_freqs):
+        if let not in guessed_already:
+            return let
+    return None # No unguessed letters left; shouldn't happen!
+
+def game(txt, feedback=True, guesser = guess):
+    """Plays one game"""
+
+    # accumulate the text that's been revealed
+    revealed_text = ""
+
+    # accumulate the total guess count
+    total_guesses = 0
+    # accumulate the total characters to be guessed
+    total_chars = 0
+
+    # Loop through the letters in the text, making a guess for each
+    for c in txt:
+        if c in alphabet: # skip letters not in our alphabet; don't have to guess them
+            total_chars = total_chars + 1
+            # accumulate the guesses made for this letter
+            guesses = ""
+            guessed = False
+            if feedback:
+                print "guessing " + c,
+            while not guessed:
+                # guess until you get it right
+                g = guesser(revealed_text, guesses)
+                guesses = guesses + g
+                if g == c:
+                    guessed = True
+                if feedback:
+                    print g,
+
+            total_guesses = total_guesses + len(guesses)
+            revealed_text = revealed_text + c
+            if feedback:
+                print(str(len(guesses)) + " guesses ")
+
+    return total_chars, total_guesses
+
+
+# note, the last two characters are the single quote and double quote. They are
+# escaped, writen as \' and \", similar to how we have used escaping for tabs, \t,
+# and newlines, \n.
+alphabet = " !#$%&()*,-./0123456789:;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]abcdefghijklmnopqrstuvwxyz\'\""
+caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+f = open('train.txt', 'r')
+overall_freqs = letter_frequencies(f.read())
+caps_freqs = {}
+for c in caps:
+    if c in overall_freqs:
+        caps_freqs[c] = overall_freqs[c]
+sorted_caps = keys_sorted_by_value(caps_freqs)
+heuristics = {'q':{'priority': 1, 'guesses':['u', 'a']}, '. ':{'priority': 2, 'guesses': sorted_caps}}
+txt1 = "Question. Everything."
+txt2 = "Try to guess as Holmes would what the next letter will be in this quite short text. Now is the time."
+
+#### Don't change any code above this line #####
+
+def heuristic_guesser(prev_txt, guessed_already):
+    sorted_heuristics = sorted(heuristics.items(), None, lambda x: x[1]['priority'], False)
+
+    for key,value in sorted_heuristics:
+        key_length = len(key)
+        if len(prev_txt) >= key_length and prev_txt[-key_length:].lower() == key:
+            for l in value['guesses']:
+                if l not in guessed_already:
+                    return l
+    return guess_by_frequency(prev_txt, guessed_already)
+
+def add_word(w, pri = 2):
+    """Takes a word w as input and adds all its prefixes to the
+    heuristics dictionary"""
+    for i in range(len(w)-1):
+        prefix = w[:i+1]
+        next_let = w[i+1]
+        heuristics[prefix] = {'priority' : pri, 'guesses':[next_let]}
+    heuristics[w] = {'priority' : pri, 'guesses':[' ', '.', ',']}
+
+f = open('train.txt', 'r')
+train = f.read()
+f.close()
+
+f= open('test.txt', 'r')
+test = f.read()
+f.close()
+
+
+# call game using heuristic_guesser on the text in the variable test.
+# Your browser will probably timeout, so give it just the first few hundred
+# characters of test (Hint: take a slice).
+
+small_test = test[:100] # Grab a slice from the middle
+original_game = game(small_test, False, heuristic_guesser)
+
+# Now use the text in the variable train to calculate the most frequent
+# words in that text. Only consider words that have more than 4 letters.
+# Call the add_word function on each of the 20 most frequent words.
+# Then see how much your heuristic_guesser has improved.
+
+words = {}
+for w in train.split():
+    if w not in words:
+        words[w] = 1
+    else:
+        words[w] = words[w] + 1
+
+sorted_words = sorted(words.items(), None, lambda x: x[1])
+
+n = 0
+while n <= 0 and n < len(sorted_words) :
+    add_word(sorted_words[n][0])
+    n = n + 1
+
+improved_game = game(small_test, False, heuristic_guesser)
+
+diff = original_game[1] - improved_game[1]
+print "The improved game made "+str(diff)+" less guesses."
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_6_8_a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_6_8_a_suffix" style="display:none">
+</pre><pre id="ps_6_8_a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_6_8_a)</span> </p>
+<div id="ps_6_8_a_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_6_8_a_saveb').toggle();
+    $('#ps_6_8_a_loadb').toggle();
+}
+if ($("#ps_6_8_a").attr("lang") !== "html" && $("#ps_6_8_a_code_div").parents(".admonition").length == 0 && $("#ps_6_8_a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_6_8_a_code_div").offset({
+			left: $("#ps_6_8_a .clearfix").offset().left
+		});
+	}
+	$("#ps_6_8_a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_6_8_a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_6_8_a_runb").parent().siblings(".ac_output").show();
+			runit('ps_6_8_a',this, undefined);
+			$("#ps_6_8_a_runb").on("click", function(){
+				runit('ps_6_8_a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_6_8_a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_6_8_a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_6_8_a_runb").on("click", function(){
+		runit('ps_6_8_a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_6_8_tabs .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_6_8_tabs .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_6_8_tabs .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+
+<pre id="about_programming.txt" style="display: none;">
+Computer programming (often shortened to programming) is a process that leads from an
+original formulation of a computing problem to executable programs. It involves
+activities such as analysis, understanding, and generically solving such problems
+resulting in an algorithm, verification of requirements of the algorithm including its
+correctness and its resource consumption, implementation (or coding) of the algorithm in
+a target programming language, testing, debugging, and maintaining the source code,
+implementation of the build system and management of derived artefacts such as machine
+code of computer programs. The algorithm is often only represented in human-parseable
+form and reasoned about using logic. Source code is written in one or more programming
+languages (such as C++, C#, Java, Python, Smalltalk, JavaScript, etc.). The purpose of
+programming is to find a sequence of instructions that will automate performing a
+specific task or solve a given problem. The process of programming thus often requires
+expertise in many different subjects, including knowledge of the application domain,
+specialized algorithms and formal logic.
+Within software engineering, programming (the implementation) is regarded as one phase in a software development process. There is an on-going debate on the extent to which
+the writing of programs is an art form, a craft, or an engineering discipline. In
+general, good programming is considered to be the measured application of all three,
+with the goal of producing an efficient and evolvable software solution (the criteria
+for "efficient" and "evolvable" vary considerably). The discipline differs from many
+other technical professions in that programmers, in general, do not need to be licensed
+or pass any standardized (or governmentally regulated) certification tests in order to
+call themselves "programmers" or even "software engineers." Because the discipline
+covers many areas, which may or may not include critical applications, it is debatable
+whether licensing is required for the profession as a whole. In most cases, the
+discipline is self-governed by the entities which require the programming, and sometimes
+very strict environments are defined (e.g. United States Air Force use of AdaCore and
+security clearance). However, representing oneself as a "professional software engineer"
+without a license from an accredited institution is illegal in many parts of the world.
+</pre>
+
+<pre id="test.txt" style="display: none;">
+ I had called upon my friend, Mr. Sherlock Holmes, one day in the
+ autumn of last year and found him in deep conversation with a
+ very stout, florid-faced, elderly gentleman with fiery red hair.
+ With an apology for my intrusion, I was about to withdraw when
+ Holmes pulled me abruptly into the room and closed the door
+ behind me.
+
+ "You could not possibly have come at a better time, my dear
+ Watson," he said cordially.
+
+ "I was afraid that you were engaged."
+
+ "So I am. Very much so."
+
+ "Then I can wait in the next room."
+
+ "Not at all. This gentleman, Mr. Wilson, has been my partner and
+ helper in many of my most successful cases, and I have no
+ doubt that he will be of the utmost use to me in yours also."
+
+ The stout gentleman half rose from his chair and gave a bob of
+ greeting, with a quick little questioning glance from his small
+ fat-encircled eyes.
+
+ "Try the settee," said Holmes, relapsing into his armchair and
+ putting his fingertips together, as was his custom when in
+ judicial moods. "I know, my dear Watson, that you share my love
+ of all that is bizarre and outside the conventions and humdrum
+ routine of everyday life. You have shown your relish for it by
+ the enthusiasm which has prompted you to chronicle, and, if you
+ will excuse my saying so, somewhat to embellish so many of my own
+ little adventures."
+
+ "Your cases have indeed been of the greatest interest to me," I
+ observed.
+
+ "You will remember that I remarked the other day, just before we
+ went into the very simple problem presented by Miss Mary
+ Sutherland, that for strange effects and extraordinary
+ combinations we must go to life itself, which is always far more
+ daring than any effort of the imagination."
+
+ "A proposition which I took the liberty of doubting."
+
+ "You did, Doctor, but none the less you must come round to my
+ view, for otherwise I shall keep on piling fact upon fact on you
+ until your reason breaks down under them and acknowledges me to
+ be right. Now, Mr. Jabez Wilson here has been good enough to call
+ upon me this morning, and to begin a narrative which promises to
+ be one of the most singular which I have listened to for some
+ time. You have heard me remark that the strangest and most unique
+ things are very often connected not with the larger but with the
+ smaller crimes, and occasionally, indeed, where there is room for
+ doubt whether any positive crime has been committed. As far as I
+ have heard it is impossible for me to say whether the present
+ case is an instance of crime or not, but the course of events is
+ certainly among the most singular that I have ever listened to.
+ Perhaps, Mr. Wilson, you would have the great kindness to
+ recommence your narrative. I ask you not merely because my friend
+ Dr. Watson has not heard the opening part but also because the
+ peculiar nature of the story makes me anxious to have every
+ possible detail from your lips. As a rule, when I have heard some
+ slight indication of the course of events, I am able to guide
+ myself by the thousands of other similar cases which occur to my
+ memory. In the present instance I am forced to admit that the
+ facts are, to the best of my belief, unique."
+</pre>
+
+<pre id="train.txt" style="display: none;">
+ Project Gutenberg's The Adventures of Sherlock Holmes, by Arthur Conan Doyle
+
+ This eBook is for the use of anyone anywhere at no cost and with
+ almost no restrictions whatsoever.  You may copy it, give it away or
+ re-use it under the terms of the Project Gutenberg License included
+ with this eBook or online at www.gutenberg.net
+
+
+ Title: The Adventures of Sherlock Holmes
+
+ Author: Arthur Conan Doyle
+
+ Posting Date: April 18, 2011 [EBook #1661]
+ First Posted: November 29, 2002
+
+ Language: English
+
+
+ *** START OF THIS PROJECT GUTENBERG EBOOK THE ADVENTURES OF SHERLOCK HOLMES ***
+
+
+
+
+ Produced by an anonymous Project Gutenberg volunteer and Jose Menendez
+
+
+
+
+
+
+
+
+
+ THE ADVENTURES OF SHERLOCK HOLMES
+
+ by
+
+ SIR ARTHUR CONAN DOYLE
+
+
+
+  I. A Scandal in Bohemia
+ II. The Red-headed League
+ III. A Case of Identity
+ IV. The Boscombe Valley Mystery
+  V. The Five Orange Pips
+ VI. The Man with the Twisted Lip
+ VII. The Adventure of the Blue Carbuncle
+ VIII. The Adventure of the Speckled Band
+ IX. The Adventure of the Engineer's Thumb
+  X. The Adventure of the Noble Bachelor
+ XI. The Adventure of the Beryl Coronet
+ XII. The Adventure of the Copper Beeches
+
+
+
+
+ ADVENTURE I. A SCANDAL IN BOHEMIA
+
+ I.
+
+ To Sherlock Holmes she is always THE woman. I have seldom heard
+ him mention her under any other name. In his eyes she eclipses
+ and predominates the whole of her sex. It was not that he felt
+ any emotion akin to love for Irene Adler. All emotions, and that
+ one particularly, were abhorrent to his cold, precise but
+ admirably balanced mind. He was, I take it, the most perfect
+ reasoning and observing machine that the world has seen, but as a
+ lover he would have placed himself in a false position. He never
+ spoke of the softer passions, save with a gibe and a sneer. They
+ were admirable things for the observer--excellent for drawing the
+ veil from men's motives and actions. But for the trained reasoner
+ to admit such intrusions into his own delicate and finely
+ adjusted temperament was to introduce a distracting factor which
+ might throw a doubt upon all his mental results. Grit in a
+ sensitive instrument, or a crack in one of his own high-power
+ lenses, would not be more disturbing than a strong emotion in a
+ nature such as his. And yet there was but one woman to him, and
+ that woman was the late Irene Adler, of dubious and questionable
+ memory.
+
+ I had seen little of Holmes lately. My marriage had drifted us
+ away from each other. My own complete happiness, and the
+ home-centred interests which rise up around the man who first
+ finds himself master of his own establishment, were sufficient to
+ absorb all my attention, while Holmes, who loathed every form of
+ society with his whole Bohemian soul, remained in our lodgings in
+ Baker Street, buried among his old books, and alternating from
+ week to week between cocaine and ambition, the drowsiness of the
+ drug, and the fierce energy of his own keen nature. He was still,
+ as ever, deeply attracted by the study of crime, and occupied his
+ immense faculties and extraordinary powers of observation in
+ following out those clues, and clearing up those mysteries which
+ had been abandoned as hopeless by the official police. From time
+ to time I heard some vague account of his doings: of his summons
+ to Odessa in the case of the Trepoff murder, of his clearing up
+ of the singular tragedy of the Atkinson brothers at Trincomalee,
+ and finally of the mission which he had accomplished so
+ delicately and successfully for the reigning family of Holland.
+ Beyond these signs of his activity, however, which I merely
+ shared with all the readers of the daily press, I knew little of
+ my former friend and companion.
+
+ One night--it was on the twentieth of March, 1888--I was
+ returning from a journey to a patient (for I had now returned to
+ civil practice), when my way led me through Baker Street. As I
+ passed the well-remembered door, which must always be associated
+ in my mind with my wooing, and with the dark incidents of the
+ Study in Scarlet, I was seized with a keen desire to see Holmes
+ again, and to know how he was employing his extraordinary powers.
+ His rooms were brilliantly lit, and, even as I looked up, I saw
+ his tall, spare figure pass twice in a dark silhouette against
+ the blind. He was pacing the room swiftly, eagerly, with his head
+ sunk upon his chest and his hands clasped behind him. To me, who
+ knew his every mood and habit, his attitude and manner told their
+ own story. He was at work again. He had risen out of his
+ drug-created dreams and was hot upon the scent of some new
+ problem. I rang the bell and was shown up to the chamber which
+ had formerly been in part my own.
+
+ His manner was not effusive. It seldom was; but he was glad, I
+ think, to see me. With hardly a word spoken, but with a kindly
+ eye, he waved me to an armchair, threw across his case of cigars,
+ and indicated a spirit case and a gasogene in the corner. Then he
+ stood before the fire and looked me over in his singular
+ introspective fashion.
+
+ "Wedlock suits you," he remarked. "I think, Watson, that you have
+ put on seven and a half pounds since I saw you."
+
+ "Seven!" I answered.
+
+ "Indeed, I should have thought a little more. Just a trifle more,
+ I fancy, Watson. And in practice again, I observe. You did not
+ tell me that you intended to go into harness."
+
+ "Then, how do you know?"
+
+ "I see it, I deduce it. How do I know that you have been getting
+ yourself very wet lately, and that you have a most clumsy and
+ careless servant girl?"
+
+ "My dear Holmes," said I, "this is too much. You would certainly
+ have been burned, had you lived a few centuries ago. It is true
+ that I had a country walk on Thursday and came home in a dreadful
+ mess, but as I have changed my clothes I can't imagine how you
+ deduce it. As to Mary Jane, she is incorrigible, and my wife has
+ given her notice, but there, again, I fail to see how you work it
+ out."
+
+ He chuckled to himself and rubbed his long, nervous hands
+ together.
+
+ "It is simplicity itself," said he; "my eyes tell me that on the
+ inside of your left shoe, just where the firelight strikes it,
+ the leather is scored by six almost parallel cuts. Obviously they
+ have been caused by someone who has very carelessly scraped round
+ the edges of the sole in order to remove crusted mud from it.
+ Hence, you see, my double deduction that you had been out in vile
+ weather, and that you had a particularly malignant boot-slitting
+ specimen of the London slavey. As to your practice, if a
+ gentleman walks into my rooms smelling of iodoform, with a black
+ mark of nitrate of silver upon his right forefinger, and a bulge
+ on the right side of his top-hat to show where he has secreted
+ his stethoscope, I must be dull, indeed, if I do not pronounce
+ him to be an active member of the medical profession."
+
+ I could not help laughing at the ease with which he explained his
+ process of deduction. "When I hear you give your reasons," I
+ remarked, "the thing always appears to me to be so ridiculously
+ simple that I could easily do it myself, though at each
+ successive instance of your reasoning I am baffled until you
+ explain your process. And yet I believe that my eyes are as good
+ as yours."
+
+ "Quite so," he answered, lighting a cigarette, and throwing
+ himself down into an armchair. "You see, but you do not observe.
+ The distinction is clear. For example, you have frequently seen
+ the steps which lead up from the hall to this room."
+
+ "Frequently."
+
+ "How often?"
+
+ "Well, some hundreds of times."
+
+ "Then how many are there?"
+
+ "How many? I don't know."
+
+ "Quite so! You have not observed. And yet you have seen. That is
+ just my point. Now, I know that there are seventeen steps,
+ because I have both seen and observed. By-the-way, since you are
+ interested in these little problems, and since you are good
+ enough to chronicle one or two of my trifling experiences, you
+ may be interested in this." He threw over a sheet of thick,
+ pink-tinted note-paper which had been lying open upon the table.
+ "It came by the last post," said he. "Read it aloud."
+
+ The note was undated, and without either signature or address.
+
+ "There will call upon you to-night, at a quarter to eight
+ o'clock," it said, "a gentleman who desires to consult you upon a
+ matter of the very deepest moment. Your recent services to one of
+ the royal houses of Europe have shown that you are one who may
+ safely be trusted with matters which are of an importance which
+ can hardly be exaggerated. This account of you we have from all
+ quarters received. Be in your chamber then at that hour, and do
+ not take it amiss if your visitor wear a mask."
+
+ "This is indeed a mystery," I remarked. "What do you imagine that
+ it means?"
+
+ "I have no data yet. It is a capital mistake to theorize before
+ one has data. Insensibly one begins to twist facts to suit
+ theories, instead of theories to suit facts. But the note itself.
+ What do you deduce from it?"
+
+ I carefully examined the writing, and the paper upon which it was
+ written.
+
+ "The man who wrote it was presumably well to do," I remarked,
+ endeavouring to imitate my companion's processes. "Such paper
+ could not be bought under half a crown a packet. It is peculiarly
+ strong and stiff."
+
+ "Peculiar--that is the very word," said Holmes. "It is not an
+ English paper at all. Hold it up to the light."
+
+ I did so, and saw a large "E" with a small "g," a "P," and a
+ large "G" with a small "t" woven into the texture of the paper.
+
+ "What do you make of that?" asked Holmes.
+
+ "The name of the maker, no doubt; or his monogram, rather."
+
+ "Not at all. The 'G' with the small 't' stands for
+ 'Gesellschaft,' which is the German for 'Company.' It is a
+ customary contraction like our 'Co.' 'P,' of course, stands for
+ 'Papier.' Now for the 'Eg.' Let us glance at our Continental
+ Gazetteer." He took down a heavy brown volume from his shelves.
+ "Eglow, Eglonitz--here we are, Egria. It is in a German-speaking
+ country--in Bohemia, not far from Carlsbad. 'Remarkable as being
+ the scene of the death of Wallenstein, and for its numerous
+ glass-factories and paper-mills.' Ha, ha, my boy, what do you
+ make of that?" His eyes sparkled, and he sent up a great blue
+ triumphant cloud from his cigarette.
+
+ "The paper was made in Bohemia," I said.
+
+ "Precisely. And the man who wrote the note is a German. Do you
+ note the peculiar construction of the sentence--'This account of
+ you we have from all quarters received.' A Frenchman or Russian
+ could not have written that. It is the German who is so
+ uncourteous to his verbs. It only remains, therefore, to discover
+ what is wanted by this German who writes upon Bohemian paper and
+ prefers wearing a mask to showing his face. And here he comes, if
+ I am not mistaken, to resolve all our doubts."
+
+ As he spoke there was the sharp sound of horses' hoofs and
+ grating wheels against the curb, followed by a sharp pull at the
+ bell. Holmes whistled.
+
+ "A pair, by the sound," said he. "Yes," he continued, glancing
+ out of the window. "A nice little brougham and a pair of
+ beauties. A hundred and fifty guineas apiece. There's money in
+ this case, Watson, if there is nothing else."
+
+ "I think that I had better go, Holmes."
+
+ "Not a bit, Doctor. Stay where you are. I am lost without my
+ Boswell. And this promises to be interesting. It would be a pity
+ to miss it."
+
+ "But your client--"
+
+ "Never mind him. I may want your help, and so may he. Here he
+ comes. Sit down in that armchair, Doctor, and give us your best
+ attention."
+
+ A slow and heavy step, which had been heard upon the stairs and
+ in the passage, paused immediately outside the door. Then there
+ was a loud and authoritative tap.
+
+ "Come in!" said Holmes.
+
+ A man entered who could hardly have been less than six feet six
+ inches in height, with the chest and limbs of a Hercules. His
+ dress was rich with a richness which would, in England, be looked
+ upon as akin to bad taste. Heavy bands of astrakhan were slashed
+ across the sleeves and fronts of his double-breasted coat, while
+ the deep blue cloak which was thrown over his shoulders was lined
+ with flame-coloured silk and secured at the neck with a brooch
+ which consisted of a single flaming beryl. Boots which extended
+ halfway up his calves, and which were trimmed at the tops with
+ rich brown fur, completed the impression of barbaric opulence
+ which was suggested by his whole appearance. He carried a
+ broad-brimmed hat in his hand, while he wore across the upper
+ part of his face, extending down past the cheekbones, a black
+ vizard mask, which he had apparently adjusted that very moment,
+ for his hand was still raised to it as he entered. From the lower
+ part of the face he appeared to be a man of strong character,
+ with a thick, hanging lip, and a long, straight chin suggestive
+ of resolution pushed to the length of obstinacy.
+
+ "You had my note?" he asked with a deep harsh voice and a
+ strongly marked German accent. "I told you that I would call." He
+ looked from one to the other of us, as if uncertain which to
+ address.
+</pre>
+</div>
+<div class="section" id="tuesday-in-class-exercises-sorting">
+<span id="session-12"></span><h2>Tuesday In-class Exercises: Sorting<a class="headerlink" href="#tuesday-in-class-exercises-sorting" title="Permalink to this headline">¶</a></h2>
+<div id='q1' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#q1-Question'><span>Question</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#q1-Answer'><span>Answer</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='q1-Question'><p>Sort this list in descending order by value</p>
+
+<div id="cont"></div>
+<div id="session_12_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="session_12_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="session_12_1_saveb" onclick="saveEditor('session_12_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="session_12_1_loadb" onclick="requestCode('session_12_1');">Load</button>
+<button class='btn btn-default' id="session_12_1_vizb" onclick="injectCodelens(this,'session_12_1');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="session_12_1_coach_b" onclick="injectCodeCoach('session_12_1');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="session_12_1_showb" onclick="$('#session_12_1_code_div').toggle();cm_editors['session_12_1_code'].refresh();$('#session_12_1_saveb').toggle();$('#session_12_1_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('session_12_1')"/>
+
+</div>
+<br/>
+<div id="session_12_1_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="session_12_1_code" class="active_code" prefixcode="undefined" lang="python">
+L = [0, 1, 6, 7, 3, 6, 8, 4, 4]
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="session_12_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="session_12_1_suffix" style="display:none">
+</pre><pre id="session_12_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (session_12_1)</span> </p>
+<div id="session_12_1_codelens_div" style="display:none"></div><div id="session_12_1_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#session_12_1_saveb').toggle();
+    $('#session_12_1_loadb').toggle();
+}
+if ($("#session_12_1").attr("lang") !== "html" && $("#session_12_1_code_div").parents(".admonition").length == 0 && $("#session_12_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#session_12_1_code_div").offset({
+			left: $("#session_12_1 .clearfix").offset().left
+		});
+	}
+	$("#session_12_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#session_12_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#session_12_1_runb").parent().siblings(".ac_output").show();
+			runit('session_12_1',this, undefined);
+			$("#session_12_1_runb").on("click", function(){
+				runit('session_12_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#session_12_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#session_12_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#session_12_1_runb").on("click", function(){
+		runit('session_12_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='q1-Answer'></div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#q1 .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#q1 .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#q1 .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+<div id='q2' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#q2-Question'><span>Question</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#q2-Answer'><span>Answer</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='q2-Question'><p>Sort this list in descending order by absolute value</p>
+
+<div id="cont"></div>
+<div id="session_12_2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="session_12_2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="session_12_2_saveb" onclick="saveEditor('session_12_2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="session_12_2_loadb" onclick="requestCode('session_12_2');">Load</button>
+<button class='btn btn-default' id="session_12_2_vizb" onclick="injectCodelens(this,'session_12_2');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="session_12_2_coach_b" onclick="injectCodeCoach('session_12_2');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="session_12_2_showb" onclick="$('#session_12_2_code_div').toggle();cm_editors['session_12_2_code'].refresh();$('#session_12_2_saveb').toggle();$('#session_12_2_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('session_12_2')"/>
+
+</div>
+<br/>
+<div id="session_12_2_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="session_12_2_code" class="active_code" prefixcode="undefined" lang="python">
+L = [0, -1, -6, 7, 3, 6, 8, 4, 4]
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="session_12_2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="session_12_2_suffix" style="display:none">
+</pre><pre id="session_12_2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (session_12_2)</span> </p>
+<div id="session_12_2_codelens_div" style="display:none"></div><div id="session_12_2_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#session_12_2_saveb').toggle();
+    $('#session_12_2_loadb').toggle();
+}
+if ($("#session_12_2").attr("lang") !== "html" && $("#session_12_2_code_div").parents(".admonition").length == 0 && $("#session_12_2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#session_12_2_code_div").offset({
+			left: $("#session_12_2 .clearfix").offset().left
+		});
+	}
+	$("#session_12_2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#session_12_2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#session_12_2_runb").parent().siblings(".ac_output").show();
+			runit('session_12_2',this, undefined);
+			$("#session_12_2_runb").on("click", function(){
+				runit('session_12_2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#session_12_2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#session_12_2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#session_12_2_runb").on("click", function(){
+		runit('session_12_2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='q2-Answer'></div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#q2 .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#q2 .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#q2 .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+<div id='q3' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#q3-Question'><span>Question</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#q3-Answer'><span>Answer</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='q3-Question'><p>Sort the top-level list in ascending order by the number of items in the sublists.</p>
+
+<div id="cont"></div>
+<div id="session_12_3" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="session_12_3_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="session_12_3_saveb" onclick="saveEditor('session_12_3');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="session_12_3_loadb" onclick="requestCode('session_12_3');">Load</button>
+<button class='btn btn-default' id="session_12_3_vizb" onclick="injectCodelens(this,'session_12_3');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="session_12_3_coach_b" onclick="injectCodeCoach('session_12_3');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="session_12_3_showb" onclick="$('#session_12_3_code_div').toggle();cm_editors['session_12_3_code'].refresh();$('#session_12_3_saveb').toggle();$('#session_12_3_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('session_12_3')"/>
+
+</div>
+<br/>
+<div id="session_12_3_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="session_12_3_code" class="active_code" prefixcode="undefined" lang="python">
+L = [[1, 2, 3], [4], [5, 6], [7, 8, 9, 10]]
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="session_12_3_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="session_12_3_suffix" style="display:none">
+</pre><pre id="session_12_3_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (session_12_3)</span> </p>
+<div id="session_12_3_codelens_div" style="display:none"></div><div id="session_12_3_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#session_12_3_saveb').toggle();
+    $('#session_12_3_loadb').toggle();
+}
+if ($("#session_12_3").attr("lang") !== "html" && $("#session_12_3_code_div").parents(".admonition").length == 0 && $("#session_12_3_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#session_12_3_code_div").offset({
+			left: $("#session_12_3 .clearfix").offset().left
+		});
+	}
+	$("#session_12_3_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#session_12_3_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#session_12_3_runb").parent().siblings(".ac_output").show();
+			runit('session_12_3',this, undefined);
+			$("#session_12_3_runb").on("click", function(){
+				runit('session_12_3',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#session_12_3_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#session_12_3_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#session_12_3_runb").on("click", function(){
+		runit('session_12_3',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='q3-Answer'></div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#q3 .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#q3 .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#q3 .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+<div id='q4' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#q4-Question'><span>Question</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#q4-Answer'><span>Answer</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='q4-Question'><p>Sort the top-level list in ascending order by the value of the first item in each sublist.</p>
+
+<div id="cont"></div>
+<div id="session_12_4" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="session_12_4_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="session_12_4_saveb" onclick="saveEditor('session_12_4');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="session_12_4_loadb" onclick="requestCode('session_12_4');">Load</button>
+<button class='btn btn-default' id="session_12_4_vizb" onclick="injectCodelens(this,'session_12_4');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="session_12_4_coach_b" onclick="injectCodeCoach('session_12_4');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="session_12_4_showb" onclick="$('#session_12_4_code_div').toggle();cm_editors['session_12_4_code'].refresh();$('#session_12_4_saveb').toggle();$('#session_12_4_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('session_12_4')"/>
+
+</div>
+<br/>
+<div id="session_12_4_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="session_12_4_code" class="active_code" prefixcode="undefined" lang="python">
+L = [[5, 2, 3], [4], [9, 6], [1, 8, 9, 10]]
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="session_12_4_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="session_12_4_suffix" style="display:none">
+</pre><pre id="session_12_4_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (session_12_4)</span> </p>
+<div id="session_12_4_codelens_div" style="display:none"></div><div id="session_12_4_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#session_12_4_saveb').toggle();
+    $('#session_12_4_loadb').toggle();
+}
+if ($("#session_12_4").attr("lang") !== "html" && $("#session_12_4_code_div").parents(".admonition").length == 0 && $("#session_12_4_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#session_12_4_code_div").offset({
+			left: $("#session_12_4 .clearfix").offset().left
+		});
+	}
+	$("#session_12_4_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#session_12_4_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#session_12_4_runb").parent().siblings(".ac_output").show();
+			runit('session_12_4',this, undefined);
+			$("#session_12_4_runb").on("click", function(){
+				runit('session_12_4',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#session_12_4_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#session_12_4_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#session_12_4_runb").on("click", function(){
+		runit('session_12_4',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='q4-Answer'></div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#q4 .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#q4 .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#q4 .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+<div id='q5' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#q5-Question'><span>Question</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#q5-Answer'><span>Answer</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='q5-Question'><p>Write a function that takes a dictionary as input and returns a list
+of its keys, sorted based on their associated values.</p>
+
+<div id="cont"></div>
+<div id="session_12_5" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="session_12_5_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="session_12_5_saveb" onclick="saveEditor('session_12_5');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="session_12_5_loadb" onclick="requestCode('session_12_5');">Load</button>
+<button class='btn btn-default' id="session_12_5_vizb" onclick="injectCodelens(this,'session_12_5');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="session_12_5_coach_b" onclick="injectCodeCoach('session_12_5');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="session_12_5_showb" onclick="$('#session_12_5_code_div').toggle();cm_editors['session_12_5_code'].refresh();$('#session_12_5_saveb').toggle();$('#session_12_5_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('session_12_5')"/>
+
+</div>
+<br/>
+<div id="session_12_5_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="session_12_5_code" class="active_code" prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="session_12_5_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="session_12_5_suffix" style="display:none">
+</pre><pre id="session_12_5_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (session_12_5)</span> </p>
+<div id="session_12_5_codelens_div" style="display:none"></div><div id="session_12_5_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#session_12_5_saveb').toggle();
+    $('#session_12_5_loadb').toggle();
+}
+if ($("#session_12_5").attr("lang") !== "html" && $("#session_12_5_code_div").parents(".admonition").length == 0 && $("#session_12_5_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#session_12_5_code_div").offset({
+			left: $("#session_12_5 .clearfix").offset().left
+		});
+	}
+	$("#session_12_5_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#session_12_5_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#session_12_5_runb").parent().siblings(".ac_output").show();
+			runit('session_12_5',this, undefined);
+			$("#session_12_5_runb").on("click", function(){
+				runit('session_12_5',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#session_12_5_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#session_12_5_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#session_12_5_runb").on("click", function(){
+		runit('session_12_5',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='q5-Answer'></div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#q5 .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#q5 .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#q5 .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 Paul Resnick, Brad Miller, David Ranum, Created using Runestone Interactive.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

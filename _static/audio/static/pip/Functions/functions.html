@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Functions &mdash; Programs, Information, and People: Interactive Edition</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Programs, Information, and People: Interactive Edition" href="../index.html" />
+    <link rel="next" title="More on Functions" href="functions2.html" />
+    <link rel="prev" title="Building A Program" href="../Debugging/debugTracers.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pip';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+var _prum = [['id', '521dfcc4abe53d0749000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../toc.html">Programs, Information, and People</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../toc.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pip/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/assignments" id="registerlink">Project Page</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pip/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Functions</a><ul>
+<li><a class="reference internal" href="#functions-definitions">Functions Definitions</a></li>
+<li><a class="reference internal" href="#function-invocation">Function Invocation</a></li>
+<li><a class="reference internal" href="#function-parameters">Function Parameters</a></li>
+<li><a class="reference internal" href="#returning-a-value-from-a-function">Returning a value from a function</a></li>
+<li><a class="reference internal" href="#a-function-that-accumulates">A function that accumulates</a></li>
+<li><a class="reference internal" href="#glossary">Glossary</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Building A Program" data-toggle="tooltip">
+    <a href="../Debugging/debugTracers.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - More on Functions' data-toggle="tooltip" >
+    <a href="functions2.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="functions">
+<span id="functions-chap"></span><h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions-definitions">
+<span id="index-0"></span><h2>Functions Definitions<a class="headerlink" href="#functions-definitions" title="Permalink to this headline">¶</a></h2>
+<div id="function_intro" class="video_popup" >
+<video controls preload="none"  poster="../_static/function_intro.png">
+    <source src="http://media.interactivepython.org/thinkcsVideos/FunctionsIntro.mov" type="video/mp4"></source>
+    <source src="http://media.interactivepython.org/thinkcsVideos/FunctionsIntro.webm" type="video/webm"></source>
+    No supported video types
+</video>
+</div>
+<script>
+   jQuery(function($) {
+      $('#function_intro_thumb').click(function(e) {
+         $('#function_intro').show();
+         $('#function_intro_thumb').hide();
+         logBookEvent({'event':'video','act':'play','div_id': 'function_intro'});
+         // Log the run event
+      });
+	  $('#function_intro video').one("click", function(){
+		this.play();
+	  });
+	  $('#function_intro video').one("play", function(){
+		logBookEvent({'event':'video','act':'play','div_id': 'function_intro'});
+	  });
+   });
+</script>
+<p>In Python, a <strong>function</strong> is a chunk of code that performs some operation that
+is meaningful for a person to think about as a whole unit. Once a function has
+been defined and you are satisfied that it does what it is supposed to do,
+you will start thinking about it in terms of the larger operation that it performs
+rather than the specific lines of code that make it work.</p>
+<p>In this chapter you will learn about <em>named</em> functions, functions that can be
+referred to by name when you want to execute them.</p>
+<p>The syntax for creating a named function, a <strong>function definition</strong>, is:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">name</span><span class="p">(</span> <span class="n">parameters</span> <span class="p">):</span>
+    <span class="n">statements</span>
+</pre></div>
+</div>
+<p>You can make up any names you want for the functions you create, except that
+you can&#8217;t use a name that is a Python keyword, and the names must follow the rules
+for legal identifiers that were given previously. The parameters specify
+what information, if any, you have to provide in order to use the new function.  Another way to say this is that the parameters specify what the function needs to do it&#8217;s work.</p>
+<p>There can be any number of statements inside the function, but they have to be
+indented from the <tt class="docutils literal"><span class="pre">def</span></tt>.
+In the examples in this book, we will use the
+standard indentation of four spaces. Function definitions are the third of
+several <strong>compound statements</strong> we will see, all of which have the same
+pattern:</p>
+<ol class="arabic simple">
+<li>A header line which begins with a keyword and ends with a colon.</li>
+<li>A <strong>body</strong> consisting of one or more Python statements, each
+indented the same amount &#8211; <em>4 spaces is the Python standard</em> &#8211; from
+the header line.</li>
+</ol>
+<p>We&#8217;ve already seen the <tt class="docutils literal"><span class="pre">for</span></tt> statement which follows this pattern and the <tt class="docutils literal"><span class="pre">if</span></tt>, <tt class="docutils literal"><span class="pre">elif</span></tt>, and <tt class="docutils literal"><span class="pre">else</span></tt> statements that do so as well.</p>
+<p>In a function definition, the keyword in the header is <tt class="docutils literal"><span class="pre">def</span></tt>, which is
+followed by the name of the function and some <em>parameter names</em> enclosed in
+parentheses. The parameter list may be empty, or it may contain any number of
+parameters separated from one another by commas. In either case, the parentheses are required.</p>
+<p>We will come back to the parameters in a little while, but first let&#8217;s see what
+happens when a function is executed, using a function without any parameters
+to illustrate.</p>
+<p>Here&#8217;s the definition of a simple function, hello.</p>
+
+<div id="cont"></div>
+<div id="functions_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="functions_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="functions_1_saveb" onclick="saveEditor('functions_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="functions_1_loadb" onclick="requestCode('functions_1');">Load</button>
+<button class='btn btn-default' id="functions_1_vizb" onclick="injectCodelens(this,'functions_1');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="functions_1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="functions_1_code" class="active_code" prefixcode="undefined" lang="python">
+def hello():
+   """This function says hello and greets you"""
+   print("Hello")
+   print("Glad to meet you")
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="functions_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="functions_1_suffix" style="display:none">
+</pre><pre id="functions_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (functions_1)</span> </p>
+<div id="functions_1_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#functions_1_saveb').toggle();
+    $('#functions_1_loadb').toggle();
+}
+if ($("#functions_1").attr("lang") !== "html" && $("#functions_1_code_div").parents(".admonition").length == 0 && $("#functions_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#functions_1_code_div").offset({
+			left: $("#functions_1 .clearfix").offset().left
+		});
+	}
+	$("#functions_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#functions_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#functions_1_runb").parent().siblings(".ac_output").show();
+			runit('functions_1',this, undefined);
+			$("#functions_1_runb").on("click", function(){
+				runit('functions_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#functions_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#functions_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#functions_1_runb").on("click", function(){
+		runit('functions_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<div class="admonition-docstrings admonition">
+<p class="first admonition-title">docstrings</p>
+<p>If the first thing after the function header is a string (some tools insist that
+it must be a triple-quoted string), it is called a <strong>docstring</strong>
+and gets special treatment in Python and in some of the programming tools.</p>
+<p>Another way to retrieve this information is to use the interactive
+interpreter, and enter the expression <tt class="docutils literal"><span class="pre">&lt;function_name&gt;.__doc__</span></tt>, which will retrieve the
+docstring for the function.  So the string you write as documentation at the start of a function is
+retrievable by python tools <em>at runtime</em>.  This is different from comments in your code,
+which are completely eliminated when the program is parsed.</p>
+<p class="last">By convention, Python programmers use docstrings for the key documentation of
+their functions.</p>
+</div>
+</div>
+<div class="section" id="function-invocation">
+<h2>Function Invocation<a class="headerlink" href="#function-invocation" title="Permalink to this headline">¶</a></h2>
+<p>Defining a new function does not make the function run. If you just run the code above, nothing will print!
+To execute the function, we need a <strong>function call</strong>.  This is also known as a <strong>function invocation</strong>.</p>
+<p>The way to invoke a function is to refer to it by name, followed by parentheses. Since there are no parameters for
+the function hello, we won&#8217;t need to put anything inside the parentheses when we call it. Once we&#8217;ve defined a function, we can call it as often as we like and its
+statements will be executed each time we call it.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="functions_2"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (functions_2)</span> </p>
+</div>
+<script type="text/javascript">
+var functions_2_trace = {"code": "def hello():\n   print(\"Hello\")\n   print(\"Glad to meet you\")\n\nprint(type(hello))\nprint(type(\"hello\"))\n\nhello()\nprint(\"Hey, that just printed two lines with one line of code!\")\nhello()  # do it again, just because we can...", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["hello"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"hello": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello()", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["hello"], "stdout": "<type 'function'>\n", "func_name": "<module>", "stack_to_render": [], "globals": {"hello": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello()", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["hello"], "stdout": "<type 'function'>\n<type 'str'>\n", "func_name": "<module>", "stack_to_render": [], "globals": {"hello": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello()", null]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["hello"], "stdout": "<type 'function'>\n<type 'str'>\n", "func_name": "hello", "stack_to_render": [{"frame_id": 1, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "hello", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello_f1", "ordered_varnames": []}], "globals": {"hello": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello()", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["hello"], "stdout": "<type 'function'>\n<type 'str'>\n", "func_name": "hello", "stack_to_render": [{"frame_id": 1, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "hello", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello_f1", "ordered_varnames": []}], "globals": {"hello": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello()", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["hello"], "stdout": "<type 'function'>\n<type 'str'>\nHello\n", "func_name": "hello", "stack_to_render": [{"frame_id": 1, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "hello", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello_f1", "ordered_varnames": []}], "globals": {"hello": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello()", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["hello"], "stdout": "<type 'function'>\n<type 'str'>\nHello\nGlad to meet you\n", "func_name": "hello", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"__return__": null}, "is_highlighted": true, "is_parent": false, "func_name": "hello", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello_f1", "ordered_varnames": ["__return__"]}], "globals": {"hello": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello()", null]}, "line": 3, "event": "return"}, {"ordered_globals": ["hello"], "stdout": "<type 'function'>\n<type 'str'>\nHello\nGlad to meet you\n", "func_name": "<module>", "stack_to_render": [], "globals": {"hello": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello()", null]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["hello"], "stdout": "<type 'function'>\n<type 'str'>\nHello\nGlad to meet you\nHey, that just printed two lines with one line of code!\n", "func_name": "<module>", "stack_to_render": [], "globals": {"hello": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello()", null]}, "line": 10, "event": "step_line"}, {"ordered_globals": ["hello"], "stdout": "<type 'function'>\n<type 'str'>\nHello\nGlad to meet you\nHey, that just printed two lines with one line of code!\n", "func_name": "hello", "stack_to_render": [{"frame_id": 2, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "hello", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello_f2", "ordered_varnames": []}], "globals": {"hello": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello()", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["hello"], "stdout": "<type 'function'>\n<type 'str'>\nHello\nGlad to meet you\nHey, that just printed two lines with one line of code!\n", "func_name": "hello", "stack_to_render": [{"frame_id": 2, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "hello", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello_f2", "ordered_varnames": []}], "globals": {"hello": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello()", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["hello"], "stdout": "<type 'function'>\n<type 'str'>\nHello\nGlad to meet you\nHey, that just printed two lines with one line of code!\nHello\n", "func_name": "hello", "stack_to_render": [{"frame_id": 2, "encoded_locals": {}, "is_highlighted": true, "is_parent": false, "func_name": "hello", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello_f2", "ordered_varnames": []}], "globals": {"hello": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello()", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["hello"], "stdout": "<type 'function'>\n<type 'str'>\nHello\nGlad to meet you\nHey, that just printed two lines with one line of code!\nHello\nGlad to meet you\n", "func_name": "hello", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"__return__": null}, "is_highlighted": true, "is_parent": false, "func_name": "hello", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello_f2", "ordered_varnames": ["__return__"]}], "globals": {"hello": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello()", null]}, "line": 3, "event": "return"}, {"ordered_globals": ["hello"], "stdout": "<type 'function'>\n<type 'str'>\nHello\nGlad to meet you\nHey, that just printed two lines with one line of code!\nHello\nGlad to meet you\n", "func_name": "<module>", "stack_to_render": [], "globals": {"hello": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello()", null]}, "line": 10, "event": "return"}]};
+var functions_2_vis;
+
+$(document).ready(function() {
+    functions_2_vis = new ExecutionVisualizer('functions_2',functions_2_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(functions_2_vis,'functions_2');
+    allVisualizers.push(functions_2_vis);
+
+});
+
+$(document).ready(function() {
+    $("#functions_2_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'functions_2'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    functions_2_vis.redrawConnectors();
+});
+</script>
+<p>Let&#8217;s take a closer look at what happens when you define a function and when
+you execute the function. Try stepping through the code above.</p>
+<p>First, note that in Step 1, when it executes line 1, it does <em>not</em> execute lines 2 and 3.
+Instead, as you can see in blue &#8220;Global variables&#8221; area, it creates a variable named hello whose
+value is a python function object. In the diagram that object is labeled hello() with a notation above
+it that it is a function.</p>
+<p>At Step 2, the next line of code to execute is line 5. Just to emphasize that
+hello is a variable like any other, and that functions are python objects like any other,
+just of a particular type, line 5 prints out the type of the object referred to
+by the variable hello. It&#8217;s type is officially &#8216;function&#8217;.</p>
+<p>Line 6 is just there to remind you of the difference between referring to the
+variable name (function name) hello and referring to the string &#8220;hello&#8221;.</p>
+<p>At Step 4 we get to line 8, which has an invocation of the function. The way function
+invocation works is that the code block inside the function definition is executed
+in the usual way, but at the end, execution jumps to the point after the function
+invocation.</p>
+<p>You can see that by following the next few steps. At Step 5, the red arrow has moved to line
+2, which will execute next. We say that <em>control has passed</em> from the top-level program
+to the function hello. After Steps 5 and 6 print out two lines, at Step 7, control will
+be passed back to the point after where the invocation was started. At Step 8, that has
+happened.</p>
+<p>The same process of invocation occurs again on line 10, with lines 2 and 3 getting
+executed a second time.</p>
+<p><strong>Check your understanding</strong></p>
+
+            <div id="test_questionfunctions_1_1" class="alert alert-warning">
+            func-1: What is a function in Python?<form name="test_questionfunctions_1_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionfunctions_1_1_opt_a" />
+            <label for= "test_questionfunctions_1_1_opt_a">  a) A named sequence of statements.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionfunctions_1_1_opt_b" />
+            <label for= "test_questionfunctions_1_1_opt_b">  b) Any sequence of statements.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionfunctions_1_1_opt_c" />
+            <label for= "test_questionfunctions_1_1_opt_c">  c) A mathematical expression that calculates a value.</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_questionfunctions_1_1_opt_d" />
+            <label for= "test_questionfunctions_1_1_opt_d">  d) A statement of the form x = 5 + 4.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionfunctions_1_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionfunctions_1_1','a',['Yes, a function is a named sequence of statements.', 'While functions contain sequences of statements, not all sequences of statements are considered functions.', 'While some functions do calculate values, the python idea of a function is slightly different from the mathematical idea of a function in that not all functions calculate values.  Consider, for example, the turtle functions in this section.   They made the turtle draw a specific shape, rather than calculating a value.', 'This statement is called an assignment statement.  It assigns the value on the right (9), to the name on the left (x).'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionfunctions_1_1_bcomp" disabled name="compare" onclick="compareAnswers('test_questionfunctions_1_1');">Compare Me</button>
+            </form><br />
+            <div id="test_questionfunctions_1_1_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionfunctions_1_2" class="alert alert-warning">
+            func-2: What is one main purpose of a function?<form name="test_questionfunctions_1_2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionfunctions_1_2_opt_a" />
+            <label for= "test_questionfunctions_1_2_opt_a">  a) To improve the speed of execution</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionfunctions_1_2_opt_b" />
+            <label for= "test_questionfunctions_1_2_opt_b">  b) To help the programmer organize programs into chunks that match how they think about the solution to the problem.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionfunctions_1_2_opt_c" />
+            <label for= "test_questionfunctions_1_2_opt_c">  c) All Python programs must be written using functions</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_questionfunctions_1_2_opt_d" />
+            <label for= "test_questionfunctions_1_2_opt_d">  d) To calculate values.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionfunctions_1_2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionfunctions_1_2','b',['Functions have little effect on how fast the program runs.', 'While functions are not required, they help the programmer better think about the solution by organizing pieces of the solution into logical chunks that can be reused.', 'In the first several chapters, you have seen many examples of Python programs written without the use of functions.  While writing and using functions is desirable and essential for good programming style as your programs get longer, it is not required.', 'Not all functions calculate values.'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionfunctions_1_2_bcomp" disabled name="compare" onclick="compareAnswers('test_questionfunctions_1_2');">Compare Me</button>
+            </form><br />
+            <div id="test_questionfunctions_1_2_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionfunctions_1_2a" class="alert alert-warning">
+            <p>func-3: How many lines will be output by executing this code?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+   <span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span>
+   <span class="k">print</span><span class="p">(</span><span class="s">&quot;Glad to meet you&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_questionfunctions_1_2a_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionfunctions_1_2a_opt_a" />
+            <label for= "test_questionfunctions_1_2a_opt_a">  a) 0</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionfunctions_1_2a_opt_b" />
+            <label for= "test_questionfunctions_1_2a_opt_b">  b) 1</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionfunctions_1_2a_opt_c" />
+            <label for= "test_questionfunctions_1_2a_opt_c">  c) 2</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionfunctions_1_2a');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionfunctions_1_2a','a',['The code only defines the function. Nothing prints until the function is called.', 'Check again.', 'When the function is invoked, it will print two lines, but it has only been defined, not invoked.'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionfunctions_1_2a_bcomp" disabled name="compare" onclick="compareAnswers('test_questionfunctions_1_2a');">Compare Me</button>
+            </form><br />
+            <div id="test_questionfunctions_1_2a_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionfunctions_1_2b" class="alert alert-warning">
+            <p>func-4: How many lines will be output by executing this code?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+   <span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span>
+   <span class="k">print</span><span class="p">(</span><span class="s">&quot;Glad to meet you&quot;</span><span class="p">)</span>
+
+<span class="n">hello</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;It works&quot;</span><span class="p">)</span>
+<span class="n">hello</span><span class="p">()</span>
+<span class="n">hello</span><span class="p">()</span>
+</pre></div>
+</div>
+<form name="test_questionfunctions_1_2b_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionfunctions_1_2b_opt_a" />
+            <label for= "test_questionfunctions_1_2b_opt_a">  a) 0</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionfunctions_1_2b_opt_b" />
+            <label for= "test_questionfunctions_1_2b_opt_b">  b) 1</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionfunctions_1_2b_opt_c" />
+            <label for= "test_questionfunctions_1_2b_opt_c">  c) 3</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_questionfunctions_1_2b_opt_d" />
+            <label for= "test_questionfunctions_1_2b_opt_d">  d) 4</label><br />
+            
+            <input type="radio" name="group1" value="e" id="test_questionfunctions_1_2b_opt_e" />
+            <label for= "test_questionfunctions_1_2b_opt_e">  e) 7</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionfunctions_1_2b');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionfunctions_1_2b','e',['Here the the function is invoked and there is also a separate print statement.', 'There is only one print statement outside the funciton, but the invocations of hello also cause lines to print.', 'There are three print statements, but the function is invoked more than once.', 'Each time the function is invoked, it will print two lines, not one.', 'Three invocations generate two lines each, plus the line \u0022It works\u0022'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionfunctions_1_2b_bcomp" disabled name="compare" onclick="compareAnswers('test_questionfunctions_1_2b');">Compare Me</button>
+            </form><br />
+            <div id="test_questionfunctions_1_2b_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="function-parameters">
+<h2>Function Parameters<a class="headerlink" href="#function-parameters" title="Permalink to this headline">¶</a></h2>
+<p>Named functions are nice because, once they are defined and we understand what they do,
+we can refer to them by name and not think too much about what they do.
+With parameters, functions are even more powerful, because they can do pretty
+much the same thing on each invocation, but not exactly the same thing. The
+parameters can cause them to do something a little different.</p>
+<p>The figure below shows this relationship.  A function needs certain information to do its work.  These values, often called <strong>arguments</strong> or <strong>actual parameters</strong> or <strong>parameter values</strong>, are passed to the function by the user.</p>
+<img alt="../_images/blackboxproc.png" src="../_images/blackboxproc.png" />
+<p>This type of diagram is often called a <strong>black-box diagram</strong> because it only states the requirements from the perspective of the user (well, the programmer, but the programmer who uses the function, who may be different than the programmer who created the function).
+The user must know the name of the function and what arguments need to be passed.  The details of how the function works are hidden inside the &#8220;black-box&#8221;.</p>
+<p>You have already been making function invocations with parameters. For example,
+when you write <tt class="docutils literal"><span class="pre">len(&quot;abc&quot;)</span></tt> or <tt class="docutils literal"><span class="pre">len([3,</span> <span class="pre">9,</span> <span class="pre">&quot;hello&quot;])</span></tt>, len is the name of
+a function, and the value that you put inside the parentheses, the string &#8220;abc&#8221;
+or the list [3, 9, &#8220;hello&#8221;], is a parameter value.</p>
+<p>When a function has one or more parameters, the names of the parameters appear
+in the function definition, and the values to assign to those parameters appear
+inside the parentheses of the function invocation. Let&#8217;s look at each of those
+a little more carefully.</p>
+<p>In the definition, the parameter list is sometimes referred to
+as the <strong>formal parameters</strong> or <strong>parameter names</strong>.  These names can be any valid
+variable name. If there is more than one, they are separated by commas.</p>
+<p>In the function invocation, inside the parentheses one value should be provided
+for each of the parameter names. These values are separated by commas. The
+values can be specified either directly, or by any python expression including a
+reference to some other variable name.</p>
+<p>That can get kind of confusing, so let&#8217;s start by looking at a function with just
+one parameter. The revised hello function personalizes the greeting: the person
+to greet is specified by the parameter.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="functions_3"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (functions_3)</span> </p>
+</div>
+<script type="text/javascript">
+var functions_3_trace = {"code": "def hello2(s):\n   print(\"Hello \" + s)\n   print(\"Glad to meet you\")\n\nhello2(\"Nick\")\nhello2(\"Jackie\")", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["hello2"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"hello2": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello2(s)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["hello2"], "stdout": "", "func_name": "hello2", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"s": "Nick"}, "is_highlighted": true, "is_parent": false, "func_name": "hello2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello2_f1", "ordered_varnames": ["s"]}], "globals": {"hello2": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello2(s)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["hello2"], "stdout": "", "func_name": "hello2", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"s": "Nick"}, "is_highlighted": true, "is_parent": false, "func_name": "hello2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello2_f1", "ordered_varnames": ["s"]}], "globals": {"hello2": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello2(s)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["hello2"], "stdout": "Hello Nick\n", "func_name": "hello2", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"s": "Nick"}, "is_highlighted": true, "is_parent": false, "func_name": "hello2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello2_f1", "ordered_varnames": ["s"]}], "globals": {"hello2": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello2(s)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["hello2"], "stdout": "Hello Nick\nGlad to meet you\n", "func_name": "hello2", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"__return__": null, "s": "Nick"}, "is_highlighted": true, "is_parent": false, "func_name": "hello2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello2_f1", "ordered_varnames": ["s", "__return__"]}], "globals": {"hello2": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello2(s)", null]}, "line": 3, "event": "return"}, {"ordered_globals": ["hello2"], "stdout": "Hello Nick\nGlad to meet you\n", "func_name": "<module>", "stack_to_render": [], "globals": {"hello2": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello2(s)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["hello2"], "stdout": "Hello Nick\nGlad to meet you\n", "func_name": "hello2", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"s": "Jackie"}, "is_highlighted": true, "is_parent": false, "func_name": "hello2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello2_f2", "ordered_varnames": ["s"]}], "globals": {"hello2": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello2(s)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["hello2"], "stdout": "Hello Nick\nGlad to meet you\n", "func_name": "hello2", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"s": "Jackie"}, "is_highlighted": true, "is_parent": false, "func_name": "hello2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello2_f2", "ordered_varnames": ["s"]}], "globals": {"hello2": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello2(s)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["hello2"], "stdout": "Hello Nick\nGlad to meet you\nHello Jackie\n", "func_name": "hello2", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"s": "Jackie"}, "is_highlighted": true, "is_parent": false, "func_name": "hello2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello2_f2", "ordered_varnames": ["s"]}], "globals": {"hello2": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello2(s)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["hello2"], "stdout": "Hello Nick\nGlad to meet you\nHello Jackie\nGlad to meet you\n", "func_name": "hello2", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"__return__": null, "s": "Jackie"}, "is_highlighted": true, "is_parent": false, "func_name": "hello2", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello2_f2", "ordered_varnames": ["s", "__return__"]}], "globals": {"hello2": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello2(s)", null]}, "line": 3, "event": "return"}, {"ordered_globals": ["hello2"], "stdout": "Hello Nick\nGlad to meet you\nHello Jackie\nGlad to meet you\n", "func_name": "<module>", "stack_to_render": [], "globals": {"hello2": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello2(s)", null]}, "line": 6, "event": "return"}]};
+var functions_3_vis;
+
+$(document).ready(function() {
+    functions_3_vis = new ExecutionVisualizer('functions_3',functions_3_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(functions_3_vis,'functions_3');
+    allVisualizers.push(functions_3_vis);
+
+});
+
+$(document).ready(function() {
+    $("#functions_3_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'functions_3'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    functions_3_vis.redrawConnectors();
+});
+</script>
+<p>First, notice that hello2 has one formal parameter, s. You can tell that because
+there is exactly one variable name inside the parentheses on line 1.</p>
+<p>Next, notice what happened during Step 2. Control was passed to the function, just like
+we saw before. But in addition, the variable s was bound to a value, the
+string &#8220;Nick&#8221;. When it got to Step 7, for the second invocation of the function, s
+was bound to &#8220;Jackie&#8221;.</p>
+<p>Function invocations always work that way. The expression inside the parentheses
+on the line that invokes the function is evaluated before control is passed to
+the function. The value is assigned to the corresponding formal parameter. Then, when
+the code block inside the function is executing, it can refer to that formal
+parameter and get its value, the value that was &#8216;passed into&#8217; the function.</p>
+<p>To get a feel for that, let&#8217;s invoke hello2 using some more complicated expressions.
+Try some of your own, too.</p>
+
+<div id="cont"></div>
+<div id="functions_4" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="functions_4_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="functions_4_saveb" onclick="saveEditor('functions_4');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="functions_4_loadb" onclick="requestCode('functions_4');">Load</button>
+<button class='btn btn-default' id="functions_4_vizb" onclick="injectCodelens(this,'functions_4');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="functions_4_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="functions_4_code" class="active_code" prefixcode="undefined" lang="python">
+def hello2(s):
+   print("Hello " + s)
+   print("Glad to meet you")
+
+hello2("Nick" + " and Jackie")
+hello2("Class " * 3)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="functions_4_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="functions_4_suffix" style="display:none">
+</pre><pre id="functions_4_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (functions_4)</span> </p>
+<div id="functions_4_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#functions_4_saveb').toggle();
+    $('#functions_4_loadb').toggle();
+}
+if ($("#functions_4").attr("lang") !== "html" && $("#functions_4_code_div").parents(".admonition").length == 0 && $("#functions_4_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#functions_4_code_div").offset({
+			left: $("#functions_4 .clearfix").offset().left
+		});
+	}
+	$("#functions_4_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#functions_4_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#functions_4_runb").parent().siblings(".ac_output").show();
+			runit('functions_4',this, undefined);
+			$("#functions_4_runb").on("click", function(){
+				runit('functions_4',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#functions_4_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#functions_4_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#functions_4_runb").on("click", function(){
+		runit('functions_4',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Now let&#8217;s consider a function with two parameters. This version of hello takes
+a parameter that controls how many times the greeting will be printed.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="functions_5"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (functions_5)</span> </p>
+</div>
+<script type="text/javascript">
+var functions_5_trace = {"code": "def hello3(s, n):\n   print((\" hello \" + s)*n)\n\nhello3(\"world\", 4)\nhello3(\"\", 1)\nhello3(\"Kitty\", 11)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["hello3"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"hello3": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello3(s, n)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["hello3"], "stdout": "", "func_name": "hello3", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"s": "world", "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "hello3", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello3_f1", "ordered_varnames": ["s", "n"]}], "globals": {"hello3": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello3(s, n)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["hello3"], "stdout": "", "func_name": "hello3", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"s": "world", "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "hello3", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello3_f1", "ordered_varnames": ["s", "n"]}], "globals": {"hello3": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello3(s, n)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["hello3"], "stdout": " hello world hello world hello world hello world\n", "func_name": "hello3", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"__return__": null, "s": "world", "n": 4}, "is_highlighted": true, "is_parent": false, "func_name": "hello3", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello3_f1", "ordered_varnames": ["s", "n", "__return__"]}], "globals": {"hello3": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello3(s, n)", null]}, "line": 2, "event": "return"}, {"ordered_globals": ["hello3"], "stdout": " hello world hello world hello world hello world\n", "func_name": "<module>", "stack_to_render": [], "globals": {"hello3": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello3(s, n)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["hello3"], "stdout": " hello world hello world hello world hello world\n", "func_name": "hello3", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"s": "", "n": 1}, "is_highlighted": true, "is_parent": false, "func_name": "hello3", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello3_f2", "ordered_varnames": ["s", "n"]}], "globals": {"hello3": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello3(s, n)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["hello3"], "stdout": " hello world hello world hello world hello world\n", "func_name": "hello3", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"s": "", "n": 1}, "is_highlighted": true, "is_parent": false, "func_name": "hello3", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello3_f2", "ordered_varnames": ["s", "n"]}], "globals": {"hello3": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello3(s, n)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["hello3"], "stdout": " hello world hello world hello world hello world\n hello \n", "func_name": "hello3", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"__return__": null, "s": "", "n": 1}, "is_highlighted": true, "is_parent": false, "func_name": "hello3", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello3_f2", "ordered_varnames": ["s", "n", "__return__"]}], "globals": {"hello3": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello3(s, n)", null]}, "line": 2, "event": "return"}, {"ordered_globals": ["hello3"], "stdout": " hello world hello world hello world hello world\n hello \n", "func_name": "<module>", "stack_to_render": [], "globals": {"hello3": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello3(s, n)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["hello3"], "stdout": " hello world hello world hello world hello world\n hello \n", "func_name": "hello3", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"s": "Kitty", "n": 11}, "is_highlighted": true, "is_parent": false, "func_name": "hello3", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello3_f3", "ordered_varnames": ["s", "n"]}], "globals": {"hello3": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello3(s, n)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["hello3"], "stdout": " hello world hello world hello world hello world\n hello \n", "func_name": "hello3", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"s": "Kitty", "n": 11}, "is_highlighted": true, "is_parent": false, "func_name": "hello3", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello3_f3", "ordered_varnames": ["s", "n"]}], "globals": {"hello3": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello3(s, n)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["hello3"], "stdout": " hello world hello world hello world hello world\n hello \n hello Kitty hello Kitty hello Kitty hello Kitty hello Kitty hello Kitty hello Kitty hello Kitty hello Kitty hello Kitty hello Kitty\n", "func_name": "hello3", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"__return__": null, "s": "Kitty", "n": 11}, "is_highlighted": true, "is_parent": false, "func_name": "hello3", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "hello3_f3", "ordered_varnames": ["s", "n", "__return__"]}], "globals": {"hello3": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello3(s, n)", null]}, "line": 2, "event": "return"}, {"ordered_globals": ["hello3"], "stdout": " hello world hello world hello world hello world\n hello \n hello Kitty hello Kitty hello Kitty hello Kitty hello Kitty hello Kitty hello Kitty hello Kitty hello Kitty hello Kitty hello Kitty\n", "func_name": "<module>", "stack_to_render": [], "globals": {"hello3": ["REF", 1]}, "heap": {"1": ["FUNCTION", "hello3(s, n)", null]}, "line": 6, "event": "return"}]};
+var functions_5_vis;
+
+$(document).ready(function() {
+    functions_5_vis = new ExecutionVisualizer('functions_5',functions_5_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(functions_5_vis,'functions_5');
+    allVisualizers.push(functions_5_vis);
+
+});
+
+$(document).ready(function() {
+    $("#functions_5_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'functions_5'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    functions_5_vis.redrawConnectors();
+});
+</script>
+<p>At Step 3 of the execution, in the first invocation of hello3, notice that the variable s is bound
+to the value &#8220;world&#8221; and the variable n is bound to the value 4.</p>
+<p>That&#8217;s how function invocations always work. Each of the expressions, separated by commas, that are inside the
+parentheses are evaluated to produce values. Then those values are matched up positionally
+with the formal parameters. The first parameter name is bound to the first value
+provided. The second parameter name is bound to the second value provided. And so on.</p>
+<p><strong>Check your understanding</strong></p>
+
+            <div id="test_questionfunctions_1_3" class="alert alert-warning">
+            func-5: Which of the following is a valid function header (first line of a function definition)?<form name="test_questionfunctions_1_3_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionfunctions_1_3_opt_a" />
+            <label for= "test_questionfunctions_1_3_opt_a">  a) def greet(t):</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionfunctions_1_3_opt_b" />
+            <label for= "test_questionfunctions_1_3_opt_b">  b) def greet:</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionfunctions_1_3_opt_c" />
+            <label for= "test_questionfunctions_1_3_opt_c">  c) greet(t, n):</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_questionfunctions_1_3_opt_d" />
+            <label for= "test_questionfunctions_1_3_opt_d">  d) def greet(t, n)</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionfunctions_1_3');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionfunctions_1_3','a',['A function may take zero or more parameters.  In this case it has one.', 'A function needs to specify its parameters in its header. If there are no paramters, put () after the function name.', 'A function definition needs to include the keyword def.', 'A function definition header must end in a colon (:).'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionfunctions_1_3_bcomp" disabled name="compare" onclick="compareAnswers('test_questionfunctions_1_3');">Compare Me</button>
+            </form><br />
+            <div id="test_questionfunctions_1_3_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionfunctions_1_4" class="alert alert-warning">
+            <p>func-6: What is the name of the following function?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">print_many</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Print out string x, y times.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="k">print</span> <span class="n">x</span>
+</pre></div>
+</div>
+<form name="test_questionfunctions_1_4_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionfunctions_1_4_opt_a" />
+            <label for= "test_questionfunctions_1_4_opt_a">  a) def print_many(x, y):</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionfunctions_1_4_opt_b" />
+            <label for= "test_questionfunctions_1_4_opt_b">  b) print_many</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionfunctions_1_4_opt_c" />
+            <label for= "test_questionfunctions_1_4_opt_c">  c) print_many(x, y)</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_questionfunctions_1_4_opt_d" />
+            <label for= "test_questionfunctions_1_4_opt_d">  d) Print out string x, y times.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionfunctions_1_4');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionfunctions_1_4','b',['This line is the complete function header (except for the semi\u002Dcolon) which includes the name as well as several other components.', 'Yes, the name of the function is given after the keyword def and before the list of parameters.', 'This includes the function name and its parameters', 'This is a comment stating what the function does.'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionfunctions_1_4_bcomp" disabled name="compare" onclick="compareAnswers('test_questionfunctions_1_4');">Compare Me</button>
+            </form><br />
+            <div id="test_questionfunctions_1_4_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionfunctions_1_5" class="alert alert-warning">
+            <p>func-7: What are the parameters of the following function?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">print_many</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Print out string x, y times.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="k">print</span> <span class="n">x</span>
+</pre></div>
+</div>
+<form name="test_questionfunctions_1_5_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionfunctions_1_5_opt_a" />
+            <label for= "test_questionfunctions_1_5_opt_a">  a) i</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionfunctions_1_5_opt_b" />
+            <label for= "test_questionfunctions_1_5_opt_b">  b) x</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionfunctions_1_5_opt_c" />
+            <label for= "test_questionfunctions_1_5_opt_c">  c) x, y</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_questionfunctions_1_5_opt_d" />
+            <label for= "test_questionfunctions_1_5_opt_d">  d) x, y, i</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionfunctions_1_5');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionfunctions_1_5','c',['i is a variable used inside of the function, but not a parameter, which is passed in to the function.', 'x is only one of the parameters to this function.', 'Yes, the function specifies two parameters: x and y.', 'the parameters include only those variables whose values that the function expects to receive as input.  They are specified in the header of the function.'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionfunctions_1_5_bcomp" disabled name="compare" onclick="compareAnswers('test_questionfunctions_1_5');">Compare Me</button>
+            </form><br />
+            <div id="test_questionfunctions_1_5_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionfunctions_1_6" class="alert alert-warning">
+            <p>func-8: Considering the function below, which of the following statements correctly invokes, or calls, this function (i.e., causes it to run)?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">print_many</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+   <span class="sd">&quot;&quot;&quot;Print out string x, y times.&quot;&quot;&quot;</span>
+   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+       <span class="k">print</span> <span class="n">x</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<form name="test_questionfunctions_1_6_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionfunctions_1_6_opt_a" />
+            <label for= "test_questionfunctions_1_6_opt_a">  a) print_many(x, y)</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionfunctions_1_6_opt_b" />
+            <label for= "test_questionfunctions_1_6_opt_b">  b) print_many</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionfunctions_1_6_opt_c" />
+            <label for= "test_questionfunctions_1_6_opt_c">  c) print_many("Greetings")</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_questionfunctions_1_6_opt_d" />
+            <label for= "test_questionfunctions_1_6_opt_d">  d) print_many("Greetings", 10):</label><br />
+            
+            <input type="radio" name="group1" value="e" id="test_questionfunctions_1_6_opt_e" />
+            <label for= "test_questionfunctions_1_6_opt_e">  e) print_many("Greetings", z)</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionfunctions_1_6');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionfunctions_1_6','e',['No, x and y are the names of the formal parameters to this function.  When the function is called, it requires actual values to be passed in.', 'A function call always requires parentheses after the name of the function.', 'This function takes two parameters (arguments)', 'A colon is only required in a function definition.  It will cause an error with a function call.', 'Since z has the value 3, we have passed in two correct values for this function. \u0022Greetings\u0022 will be printed 3 times.'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionfunctions_1_6_bcomp" disabled name="compare" onclick="compareAnswers('test_questionfunctions_1_6');">Compare Me</button>
+            </form><br />
+            <div id="test_questionfunctions_1_6_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionfunctions_1_7" class="alert alert-warning">
+            func-9: True or false: A function can be called several times by placing a function call in the body of a loop.<form name="test_questionfunctions_1_7_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionfunctions_1_7_opt_a" />
+            <label for= "test_questionfunctions_1_7_opt_a">  a) True</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionfunctions_1_7_opt_b" />
+            <label for= "test_questionfunctions_1_7_opt_b">  b) False</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionfunctions_1_7');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionfunctions_1_7','a',['Yes, you can call a function multiple times by putting the call in a loop.', 'One of the purposes of a function is to allow you to call it more than once.   Placing it in a loop allows it to executed multiple times as the body of the loop runs multiple times.'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionfunctions_1_7_bcomp" disabled name="compare" onclick="compareAnswers('test_questionfunctions_1_7');">Compare Me</button>
+            </form><br />
+            <div id="test_questionfunctions_1_7_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionfunctions_1_8" class="alert alert-warning">
+            <p>func-10: What output will the following code produce?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">cyu</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+   <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">):</span>
+      <span class="k">print</span> <span class="n">s1</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="k">print</span> <span class="n">s2</span>
+
+<span class="n">cyu</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span> <span class="s">&quot;Goodbye&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_questionfunctions_1_8_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionfunctions_1_8_opt_a" />
+            <label for= "test_questionfunctions_1_8_opt_a">  a) Hello</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionfunctions_1_8_opt_b" />
+            <label for= "test_questionfunctions_1_8_opt_b">  b) Goodbye</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionfunctions_1_8_opt_c" />
+            <label for= "test_questionfunctions_1_8_opt_c">  c) s1</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_questionfunctions_1_8_opt_d" />
+            <label for= "test_questionfunctions_1_8_opt_d">  d) s2</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionfunctions_1_8');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionfunctions_1_8','b',['\u0022Hello\u0022 is shorter than \u0022Goodbye\u0022', '\u0022Goodbye\u0022 is longer than \u0022Hello\u0022', 's1 is a variable name\u003B its value would print out, not the variable name', 's2 is a variable name\u003B its value would print out, not the variable name'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionfunctions_1_8_bcomp" disabled name="compare" onclick="compareAnswers('test_questionfunctions_1_8');">Compare Me</button>
+            </form><br />
+            <div id="test_questionfunctions_1_8_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="returning-a-value-from-a-function">
+<h2>Returning a value from a function<a class="headerlink" href="#returning-a-value-from-a-function" title="Permalink to this headline">¶</a></h2>
+<p>Not only can you pass a parameter value into a function, a function can also
+produce a value. You have already seen this in some previous functions that
+you have used. For example, <tt class="docutils literal"><span class="pre">len</span></tt> takes a list or string as a parameter value
+and returns a number, the length of that list or string. <tt class="docutils literal"><span class="pre">range</span></tt> takes an integer
+as a parameter value and returns a list containing all the numbers from 0 up to
+that parameter value.</p>
+<p>Functions that return values are sometimes called <strong>fruitful functions</strong>.
+In many other languages, a chunk that doesn&#8217;t return a value is called a <strong>procedure</strong>,
+but we will stick here with the Python way of also calling it a function, or if we want
+to stress it, a <em>non-fruitful</em> function.</p>
+<img alt="../_images/blackboxfun.png" src="../_images/blackboxfun.png" />
+<p>How do we write our own fruitful function?  Let&#8217;s start by creating a very simple
+mathematical function that we will call <tt class="docutils literal"><span class="pre">square</span></tt>.  The square function will take one number
+as a parameter and return the result of squaring that number.  Here is the
+black-box diagram with the Python code following.</p>
+<img alt="../_images/squarefun.png" src="../_images/squarefun.png" />
+
+<div id="cont"></div>
+<div id="ch04_square" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ch04_square_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch04_square_saveb" onclick="saveEditor('ch04_square');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch04_square_loadb" onclick="requestCode('ch04_square');">Load</button>
+<button class='btn btn-default' id="ch04_square_vizb" onclick="injectCodelens(this,'ch04_square');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ch04_square_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ch04_square_code" class="active_code" prefixcode="undefined" lang="python">
+def square(x):
+    y = x * x
+    return y
+
+toSquare = 10
+result = square(toSquare)
+print("The result of " + str(toSquare) + " squared is " + str(result))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ch04_square_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ch04_square_suffix" style="display:none">
+</pre><pre id="ch04_square_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch04_square)</span> </p>
+<div id="ch04_square_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch04_square_saveb').toggle();
+    $('#ch04_square_loadb').toggle();
+}
+if ($("#ch04_square").attr("lang") !== "html" && $("#ch04_square_code_div").parents(".admonition").length == 0 && $("#ch04_square_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ch04_square_code_div").offset({
+			left: $("#ch04_square .clearfix").offset().left
+		});
+	}
+	$("#ch04_square_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ch04_square_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ch04_square_runb").parent().siblings(".ac_output").show();
+			runit('ch04_square',this, undefined);
+			$("#ch04_square_runb").on("click", function(){
+				runit('ch04_square',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ch04_square_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ch04_square_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ch04_square_runb").on("click", function(){
+		runit('ch04_square',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>The <strong>return</strong> statement is followed by an expression which is evaluated.  Its
+result is returned to the caller as the &#8220;fruit&#8221; of calling this function.
+Because the return statement can contain any Python expression we could have
+avoided creating the <strong>temporary variable</strong> <tt class="docutils literal"><span class="pre">y</span></tt> and simply used
+<tt class="docutils literal"><span class="pre">return</span> <span class="pre">x*x</span></tt>.
+Try modifying the square function above to see that this works just the same.
+On the other hand, using <strong>temporary variables</strong> like <tt class="docutils literal"><span class="pre">y</span></tt> in the program above makes
+debugging
+easier.  These temporary variables are referred to as <strong>local variables</strong>.</p>
+<p>Notice something important here. The name of the variable we pass as an
+argument &#8212; <tt class="docutils literal"><span class="pre">toSquare</span></tt> &#8212; has nothing to do with the name of the formal parameter
+&#8212; <tt class="docutils literal"><span class="pre">x</span></tt>.  It is as if  <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">toSquare</span></tt> is executed when <tt class="docutils literal"><span class="pre">square</span></tt> is called.
+It doesn&#8217;t matter what the value was named in
+the caller (the place where the function was invoked).
+Inside <tt class="docutils literal"><span class="pre">square</span></tt>, it&#8217;s name is <tt class="docutils literal"><span class="pre">x</span></tt>.  You can see this very clearly in
+codelens, where the global variables and the local variables for the square
+function are in separate boxes.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="ch04_clsquare"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (ch04_clsquare)</span> </p>
+</div>
+<script type="text/javascript">
+var ch04_clsquare_trace = {"code": "def square(x):\n    y = x * x\n    return y\n\ntoSquare = 10\nsquareResult = square(toSquare)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["square"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1]}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 100, "x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "y"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 100, "x": 10, "__return__": 100}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "y", "__return__"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "return"}, {"ordered_globals": ["square", "toSquare", "squareResult"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "squareResult": 100, "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 6, "event": "return"}]};
+var ch04_clsquare_vis;
+
+$(document).ready(function() {
+    ch04_clsquare_vis = new ExecutionVisualizer('ch04_clsquare',ch04_clsquare_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(ch04_clsquare_vis,'ch04_clsquare');
+    allVisualizers.push(ch04_clsquare_vis);
+
+});
+
+$(document).ready(function() {
+    $("#ch04_clsquare_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'ch04_clsquare'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    ch04_clsquare_vis.redrawConnectors();
+});
+</script>
+<p>There is one more aspect of function return values that should be noted.
+All Python functions return the value <tt class="docutils literal"><span class="pre">None</span></tt> unless there is an explicit return statement with
+a value other than <tt class="docutils literal"><span class="pre">None.</span></tt>
+Consider the following common mistake made by beginning Python
+programmers.  As you step through this example, pay very close attention to the return
+value in the local variables listing.  Then look at what is printed when the
+function returns.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="ch04_clsquare_bad"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (ch04_clsquare_bad)</span> </p>
+</div>
+<script type="text/javascript">
+var ch04_clsquare_bad_trace = {"code": "def square(x):\n    y = x * x\n    print(y)   # Bad! should use return instead!\n\ntoSquare = 10\nsquareResult = square(toSquare)\nprint(\"The result of \" + str(toSquare) + \" squared is \" + str(squareResult))", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["square"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1]}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 100, "x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "y"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["square", "toSquare"], "stdout": "100\n", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 100, "x": 10, "__return__": null}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "y", "__return__"]}], "globals": {"square": ["REF", 1], "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 3, "event": "return"}, {"ordered_globals": ["square", "toSquare", "squareResult"], "stdout": "100\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "squareResult": null, "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["square", "toSquare", "squareResult"], "stdout": "100\nThe result of 10 squared is None\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "squareResult": null, "toSquare": 10}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 7, "event": "return"}]};
+var ch04_clsquare_bad_vis;
+
+$(document).ready(function() {
+    ch04_clsquare_bad_vis = new ExecutionVisualizer('ch04_clsquare_bad',ch04_clsquare_bad_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(ch04_clsquare_bad_vis,'ch04_clsquare_bad');
+    allVisualizers.push(ch04_clsquare_bad_vis);
+
+});
+
+$(document).ready(function() {
+    $("#ch04_clsquare_bad_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'ch04_clsquare_bad'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    ch04_clsquare_bad_vis.redrawConnectors();
+});
+</script>
+<p>The problem with this function is that even though it prints the value of the square,
+that value will not be returned to the place
+where the call was done.  Since line 6 uses the return value as the right hand
+side of an assignment statement, the evaluation of the
+function will be <tt class="docutils literal"><span class="pre">None</span></tt>.  In this case, <tt class="docutils literal"><span class="pre">squareResult</span></tt> will refer to that
+value after the assignment statement and therefore the result printed in line 7 is incorrect.
+Typically, functions will return values that can be printed or processed in some other way by the caller.</p>
+<p>A return statement, once executed, immediately terminates execution of a function, even if it is not the
+last statement in the function. In the following code, when line 3 executes, the
+value 5 is returned and assigned to the variable x, then printed. Lines 4 and 5
+never execute. Run the following code and try making some modifications of
+it to make sure you understand why &#8220;there&#8221; and 10 never print out.</p>
+
+<div id="cont"></div>
+<div id="functions_5a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="functions_5a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="functions_5a_saveb" onclick="saveEditor('functions_5a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="functions_5a_loadb" onclick="requestCode('functions_5a');">Load</button>
+<button class='btn btn-default' id="functions_5a_vizb" onclick="injectCodelens(this,'functions_5a');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="functions_5a_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="functions_5a_code" class="active_code" prefixcode="undefined" lang="python">
+def weird():
+   print("here")
+   return(5)
+   print("there")
+   return(10)
+
+x= weird()
+print(x)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="functions_5a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="functions_5a_suffix" style="display:none">
+</pre><pre id="functions_5a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (functions_5a)</span> </p>
+<div id="functions_5a_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#functions_5a_saveb').toggle();
+    $('#functions_5a_loadb').toggle();
+}
+if ($("#functions_5a").attr("lang") !== "html" && $("#functions_5a_code_div").parents(".admonition").length == 0 && $("#functions_5a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#functions_5a_code_div").offset({
+			left: $("#functions_5a .clearfix").offset().left
+		});
+	}
+	$("#functions_5a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#functions_5a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#functions_5a_runb").parent().siblings(".ac_output").show();
+			runit('functions_5a',this, undefined);
+			$("#functions_5a_runb").on("click", function(){
+				runit('functions_5a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#functions_5a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#functions_5a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#functions_5a_runb").on("click", function(){
+		runit('functions_5a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>So far, we have just seen return values being assigned to variables. For example,
+we had the line <tt class="docutils literal"><span class="pre">squareResult</span> <span class="pre">=</span> <span class="pre">square(toSquare)</span></tt>. As with all assignment statements,
+the right hand side is executed first. It invokes the square function, passing in a
+parameter value 10 (the current value of toSquare). That returns a value 100, which
+completes the evaluation of the right-hand side of the assignment. 100 is then assigned
+to the variable squareResult. In this case, the function invocation was the entire expression
+that was evaluated.</p>
+<p>Function invocations, however, can also be used as part of more complicated expressions.
+For example, <tt class="docutils literal"><span class="pre">squareResult</span> <span class="pre">=</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">square(toSquare)</span></tt>. In this case, the value 100 is
+returned and is then multiplied by 2 to produce the value 200. When python evaluates an expression
+like <tt class="docutils literal"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">3</span></tt>, it substitutes the current value of x into the expression and then
+does the multiplication. When python evaluates an expression like <tt class="docutils literal"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">square(toSquare)</span></tt>, it substitutes
+the return value 100 for entire function invocation and then does the multiplication.</p>
+<p>To reiterate, when executing a line of code <tt class="docutils literal"><span class="pre">squareResult</span> <span class="pre">=</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">square(toSquare)</span></tt>, the python
+interpreter does these steps:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>It&#8217;s an assignment statement, so evaluate the right-hand side expression <tt class="docutils literal"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">square(toSquare)</span></tt>.</li>
+<li>Look up the values of the variables square and toSquare: square is a function object and toSquare is 10</li>
+<li>Pass 10 as a parameter value to the function, get back the return value 100</li>
+<li>Substitute 100 for square(toSquare), so that the expression now reads <tt class="docutils literal"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">100</span></tt></li>
+<li>Assign 200 to variable <tt class="docutils literal"><span class="pre">squareResult</span></tt></li>
+</ol>
+</div></blockquote>
+<p><strong>Check your understanding</strong></p>
+
+            <div id="test_questionfunctions_2_1" class="alert alert-warning">
+            <p>func-11: What is wrong with the following function definition:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">addEm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">z</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;the answer is&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_questionfunctions_2_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionfunctions_2_1_opt_a" />
+            <label for= "test_questionfunctions_2_1_opt_a">  a) You should never use a print statement in a function definition.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionfunctions_2_1_opt_b" />
+            <label for= "test_questionfunctions_2_1_opt_b">  b) You should not have any statements in a function after the return statement.  Once the function gets to the return statement it will immediately stop executing the function.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionfunctions_2_1_opt_c" />
+            <label for= "test_questionfunctions_2_1_opt_c">  c) You must calculate the value of x+y+z before you return it.</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_questionfunctions_2_1_opt_d" />
+            <label for= "test_questionfunctions_2_1_opt_d">  d) A function cannot return a number.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionfunctions_2_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionfunctions_2_1','b',['Although you should not mistake print for return, you may include print statements inside your functions.', 'This is a very common mistake so be sure to watch out for it when you write your code!', 'Python will automatically calculate the value x+y+z and then return it in the statement as it is written', 'Functions can return any legal data, including (but not limited to) numbers, strings, lists, dictionaries, etc.'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionfunctions_2_1_bcomp" disabled name="compare" onclick="compareAnswers('test_questionfunctions_2_1');">Compare Me</button>
+            </form><br />
+            <div id="test_questionfunctions_2_1_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionfunctions_2_2" class="alert alert-warning">
+            <p>func-12: What will the following function return?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">addEm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_questionfunctions_2_2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionfunctions_2_2_opt_a" />
+            <label for= "test_questionfunctions_2_2_opt_a">  a) The value None</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionfunctions_2_2_opt_b" />
+            <label for= "test_questionfunctions_2_2_opt_b">  b) The value of x+y+z</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionfunctions_2_2_opt_c" />
+            <label for= "test_questionfunctions_2_2_opt_c">  c) The string 'x+y+z'</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionfunctions_2_2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionfunctions_2_2','a',['We have accidentally used print where we mean return.  Therefore, the function will return the value None by default.  This is a VERY COMMON mistake so watch out!  This mistake is also particularly difficult to find because when you run the function the output looks the same.  It is not until you try to assign its value to a variable that you can notice a difference.', 'Careful!  This is a very common mistake.  Here we have printed the value x+y+z but we have not returned it.  To return a value we MUST use the return keyword.', 'x+y+z calculates a number (assuming x+y+z are numbers) which represents the sum of the values x, y and z.'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionfunctions_2_2_bcomp" disabled name="compare" onclick="compareAnswers('test_questionfunctions_2_2');">Compare Me</button>
+            </form><br />
+            <div id="test_questionfunctions_2_2_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionfunctions_2_3" class="alert alert-warning">
+            <p>func-13: What will the following code output?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="n">square</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+<form name="test_questionfunctions_2_3_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionfunctions_2_3_opt_a" />
+            <label for= "test_questionfunctions_2_3_opt_a">  a) 25</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionfunctions_2_3_opt_b" />
+            <label for= "test_questionfunctions_2_3_opt_b">  b) 50</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionfunctions_2_3_opt_c" />
+            <label for= "test_questionfunctions_2_3_opt_c">  c) 25 + 25</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionfunctions_2_3');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionfunctions_2_3','b',['It squares 5 twice, and adds them together', 'The two return values are added together', 'The two results are substituted into the expression and then it is evaluated. The returned values are integers in this case, not strings'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionfunctions_2_3_bcomp" disabled name="compare" onclick="compareAnswers('test_questionfunctions_2_3');">Compare Me</button>
+            </form><br />
+            <div id="test_questionfunctions_2_3_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionfunctions_2_4" class="alert alert-warning">
+            <p>func-14: What will the following code output?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+</pre></div>
+</div>
+<form name="test_questionfunctions_2_4_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionfunctions_2_4_opt_a" />
+            <label for= "test_questionfunctions_2_4_opt_a">  a) 8</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionfunctions_2_4_opt_b" />
+            <label for= "test_questionfunctions_2_4_opt_b">  b) 16</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionfunctions_2_4_opt_c" />
+            <label for= "test_questionfunctions_2_4_opt_c">  c) Error: can't put a function invocation inside parentheses</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionfunctions_2_4');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionfunctions_2_4','b',['It squares 2, yielding the value 4. But that doesn\u0027t mean the next value multiplies 2 and 4.', 'It squares 2, yielding the value 4. 4 is then passed as a value to square again, yeilding 16.', 'This is a more complicated expression, but still valid. The expression square(2) is evaluated, and the return value 4 substitutes for square(2) in the expression.'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionfunctions_2_4_bcomp" disabled name="compare" onclick="compareAnswers('test_questionfunctions_2_4');">Compare Me</button>
+            </form><br />
+            <div id="test_questionfunctions_2_4_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionfunctions_2_5" class="alert alert-warning">
+            <p>func-15: What will the following code output?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">cyu2</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">-</span><span class="n">y</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">cyu2</span><span class="p">(</span><span class="s">&quot;Yes&quot;</span><span class="p">,</span> <span class="s">&quot;no&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">z</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;First one was longer&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Second one was at least as long&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_questionfunctions_2_5_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionfunctions_2_5_opt_a" />
+            <label for= "test_questionfunctions_2_5_opt_a">  a) 1</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionfunctions_2_5_opt_b" />
+            <label for= "test_questionfunctions_2_5_opt_b">  b) Yes</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionfunctions_2_5_opt_c" />
+            <label for= "test_questionfunctions_2_5_opt_c">  c) First one was longer</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_questionfunctions_2_5_opt_d" />
+            <label for= "test_questionfunctions_2_5_opt_d">  d) Second one was at least as long</label><br />
+            
+            <input type="radio" name="group1" value="e" id="test_questionfunctions_2_5_opt_e" />
+            <label for= "test_questionfunctions_2_5_opt_e">  e) Error</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionfunctions_2_5');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionfunctions_2_5','c',['cyu2 returns the value 1, but that\u0027s not what prints.', '\u0022Yes\u0022 is longer, but that\u0027s not what prints.', 'cyu2 returns the value 1, which is assigned to z.', 'cyu2 returns the value 1, which is assigned to z.', 'what do you think will cause an error.'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionfunctions_2_5_bcomp" disabled name="compare" onclick="compareAnswers('test_questionfunctions_2_5');">Compare Me</button>
+            </form><br />
+            <div id="test_questionfunctions_2_5_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionfunctions_2_6" class="alert alert-warning">
+            <p>func-16: Which will print out first, square, g, or a number?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;square&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;g&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">3</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+</pre></div>
+</div>
+<form name="test_questionfunctions_2_6_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionfunctions_2_6_opt_a" />
+            <label for= "test_questionfunctions_2_6_opt_a">  a) square</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionfunctions_2_6_opt_b" />
+            <label for= "test_questionfunctions_2_6_opt_b">  b) g</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionfunctions_2_6_opt_c" />
+            <label for= "test_questionfunctions_2_6_opt_c">  c) a number</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionfunctions_2_6');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionfunctions_2_6','b',['Before executing square, it has to figure out what value to pass in, so g is executed first', 'g has to be executed and return a value in order to know what paramater value to provide to x.', 'square and g both have to execute before the number is printed.'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionfunctions_2_6_bcomp" disabled name="compare" onclick="compareAnswers('test_questionfunctions_2_6');">Compare Me</button>
+            </form><br />
+            <div id="test_questionfunctions_2_6_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="a-function-that-accumulates">
+<h2>A function that accumulates<a class="headerlink" href="#a-function-that-accumulates" title="Permalink to this headline">¶</a></h2>
+<p>We have used the <tt class="docutils literal"><span class="pre">len</span></tt> function a lot already. If it weren&#8217;t part of python,
+our lives as programmers would have been a lot harder.</p>
+<p>Well, actually, not that much harder. Now that we know how to define functions, we could define
+<tt class="docutils literal"><span class="pre">len</span></tt> ourselves if it did not exist. Previously, we have used the accumlator to
+pattern to count the number of lines in a file. Let&#8217;s use that same idea and
+just wrap it in a function definition. We&#8217;ll call it <tt class="docutils literal"><span class="pre">mylen</span></tt> to distinguish it
+from the real <tt class="docutils literal"><span class="pre">len</span></tt> which already exists. We actually <em>could</em> call it len, but
+that wouldn&#8217;t be a very good idea, because it would replace the original len function,
+and our implementation may not be a very good one.</p>
+
+<div id="cont"></div>
+<div id="functions_6" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="functions_6_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="functions_6_saveb" onclick="saveEditor('functions_6');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="functions_6_loadb" onclick="requestCode('functions_6');">Load</button>
+<button class='btn btn-default' id="functions_6_vizb" onclick="injectCodelens(this,'functions_6');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="functions_6_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="functions_6_code" class="active_code" prefixcode="undefined" lang="python">
+def mylen(x):
+   c = 0 # initialize count variable to 0
+   for y in x:
+      c = c + 1   # increment the counter for each item in x
+   return c
+
+print(mylen("hello"))
+print(mylen([1, 2, 7]))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="functions_6_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="functions_6_suffix" style="display:none">
+</pre><pre id="functions_6_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (functions_6)</span> </p>
+<div id="functions_6_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#functions_6_saveb').toggle();
+    $('#functions_6_loadb').toggle();
+}
+if ($("#functions_6").attr("lang") !== "html" && $("#functions_6_code_div").parents(".admonition").length == 0 && $("#functions_6_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#functions_6_code_div").offset({
+			left: $("#functions_6 .clearfix").offset().left
+		});
+	}
+	$("#functions_6_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#functions_6_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#functions_6_runb").parent().siblings(".ac_output").show();
+			runit('functions_6',this, undefined);
+			$("#functions_6_runb").on("click", function(){
+				runit('functions_6',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#functions_6_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#functions_6_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#functions_6_runb").on("click", function(){
+		runit('functions_6',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.</p>
+
+<div id="cont"></div>
+<div id="scratch_05_06" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="scratch_05_06_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="scratch_05_06_saveb" onclick="saveEditor('scratch_05_06');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="scratch_05_06_loadb" onclick="requestCode('scratch_05_06');">Load</button>
+<button class='btn btn-default' id="scratch_05_06_vizb" onclick="injectCodelens(this,'scratch_05_06');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="scratch_05_06_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="scratch_05_06_code" class="active_code" prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="scratch_05_06_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="scratch_05_06_suffix" style="display:none">
+</pre><pre id="scratch_05_06_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (scratch_05_06)</span> </p>
+<div id="scratch_05_06_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#scratch_05_06_saveb').toggle();
+    $('#scratch_05_06_loadb').toggle();
+}
+if ($("#scratch_05_06").attr("lang") !== "html" && $("#scratch_05_06_code_div").parents(".admonition").length == 0 && $("#scratch_05_06_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#scratch_05_06_code_div").offset({
+			left: $("#scratch_05_06 .clearfix").offset().left
+		});
+	}
+	$("#scratch_05_06_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#scratch_05_06_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#scratch_05_06_runb").parent().siblings(".ac_output").show();
+			runit('scratch_05_06',this, undefined);
+			$("#scratch_05_06_runb").on("click", function(){
+				runit('scratch_05_06',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#scratch_05_06_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#scratch_05_06_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#scratch_05_06_runb").on("click", function(){
+		runit('scratch_05_06',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+</div>
+<div class="section" id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-argument">argument</dt>
+<dd>A value provided to a function when the function is called. This value
+is assigned to the corresponding parameter in the function.  The argument
+can be the result of an expression which may involve operators,
+operands and calls to other fruitful functions.</dd>
+<dt id="term-body">body</dt>
+<dd>The second part of a compound statement. The body consists of a
+sequence of statements all indented the same amount from the beginning
+of the header.  The standard amount of indentation used within the
+Python community is 4 spaces.</dd>
+<dt id="term-compound-statement">compound statement</dt>
+<dd><p class="first">A statement that consists of two parts:</p>
+<ol class="arabic simple">
+<li>header - which begins with a keyword determining the statement
+type, and ends with a colon.</li>
+<li>body - containing one or more statements indented the same amount
+from the header.</li>
+</ol>
+<p>The syntax of a compound statement looks like this:</p>
+<div class="last highlight-python"><div class="highlight"><pre><span class="n">keyword</span> <span class="n">expression</span><span class="p">:</span>
+    <span class="n">statement</span>
+    <span class="n">statement</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</dd>
+<dt id="term-docstring">docstring</dt>
+<dd>If the first thing in a function body is a string (or, we&#8217;ll see later, in other situations
+too) that is attached to the function as its <tt class="docutils literal"><span class="pre">__doc__</span></tt> attribute.</dd>
+<dt id="term-flow-of-execution">flow of execution</dt>
+<dd>The order in which statements are executed during a program run.</dd>
+<dt id="term-function">function</dt>
+<dd>A named sequence of statements that performs some useful operation.
+Functions may or may not take parameters and may or may not produce a
+result.</dd>
+<dt id="term-function-call">function call</dt>
+<dd>A statement that executes a function. It consists of the name of the
+function followed by a list of arguments enclosed in parentheses.</dd>
+<dt id="term-function-definition">function definition</dt>
+<dd>A statement that creates a new function, specifying its name,
+parameters, and the statements it executes.</dd>
+<dt id="term-fruitful-function">fruitful function</dt>
+<dd>A function that returns a value when it is called.</dd>
+<dt id="term-header-line">header line</dt>
+<dd>The first part of a compound statement. A header line begins with a keyword and
+ends with a colon (:)</dd>
+<dt id="term-parameter">parameter</dt>
+<dd>A name used inside a function to refer to the value which was passed
+to it as an argument.</dd>
+</dl>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 Paul Resnick, Brad Miller, David Ranum, Created using Runestone Interactive.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

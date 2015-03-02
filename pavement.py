@@ -9,7 +9,7 @@ from sphinxcontrib import paverutils
 sys.path.append(os.getcwd())
 
 ######## CHANGE THIS ##########
-project_name = "CSPrinciples"
+project_name = "Teacher-CSP"
 ###############################
 
 master_url = 'http://interactivepython.org'

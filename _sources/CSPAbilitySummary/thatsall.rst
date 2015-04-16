@@ -53,3 +53,9 @@ Computers today are fast.  A typical computer today might execute a single assig
 We know that there are some limits to what we can compute.  For example, we know that we can't write a computer program that can test all other computer programs.  The problem is called *The Halting Problem*. Imagine a program as one big long string.  We know that we can look at parts of that string using indexing.  We know that we can make decisions using ``if`` statements.  Can we write a program that can read other programs as strings, and tell us whether or not they will work?  The same brilliant mathematician who defined computers for us, also wrote the mathematical proof that such a program is *impossible*. We can't write a general "program checker."
 
 But we don't know the limits of computing with respect to ourselves.  Are we computable?  Is our intelligence just a really big and complicated program, with millions of conditions and hundreds of loops and billions of variables?  Is it possible to write a program that *is* intelligent?  We don't know the answers to those questions yet, but it's a fascinating problem to see how far we can push Alan Turing's machine.
+
+
+.. note::  
+
+   This is the end of this eBook.  Readers who are part of the teacher study should go to `https://www.surveymonkey.com/s/TeacherFollow <https://www.surveymonkey.com/s/TeacherFollow>`_ and take the final post test for these last chapters.  Thank you very much for participating in our study!
+

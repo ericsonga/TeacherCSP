@@ -24,4 +24,8 @@ In this book, we are going to talk about what a computer can do in terms of the 
 - Computers can make decisions.
 - Computers can take data apart.
 
+.. note::  
+
+   This is the end of chapter 2.  Readers who are part of the teacher study should go to `https://www.surveymonkey.com/s/TeacherQ12 <https://www.surveymonkey.com/s/TeacherQ12>`_ and take the post test for chapters 1 and 2 before continuing on to chapter 3.
+
 

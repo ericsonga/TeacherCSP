@@ -35,3 +35,9 @@ But computer science students often make an economic argument to themselves.
 Mark Guzdial, one of the authors of this book, used to teach a 2nd year undergraduate course on *Object-oriented Design*.  He wanted to know how much programming they knew before we got started.  One year, he gave them the challenge of writing the program to print the times table, just as you just saw ealier.  With a ``for`` loop, it's three lines of code.  Out of 75 students, only 15 used a ``for`` loop.  *Every* other student used a ``while`` loop.  Using a ``while`` loop is more lines of code, and more opportunities for error. (And many of the students did make errors.)  But they were more *comfortable* with the ``while`` loop, because that's what they had used the most.
 
 Start out using the ``for`` loop in your classes as we have done in the prior chapter.  It will be easier and more natural for students. 
+
+.. note::  
+
+   This is the end of chapter 8.  Readers who are part of the teacher study should go to `https://www.surveymonkey.com/s/TeacherQ78 <https://www.surveymonkey.com/s/TeacherQ78>`_ and take the post test for chapters 7 and 8 before continuing on to chapter 9.
+
+

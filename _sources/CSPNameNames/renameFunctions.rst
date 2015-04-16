@@ -45,3 +45,9 @@ The functions ``abs`` and ``int`` are *names*.  They are *variables* whose value
    :feedback_d: Yes! Absolute will make it positive, and noDecimal will throw away the values after the decimal point leaving just the 16.
    
    If you add one more line to the above program, `print(noDecimal(absolute(-16.789)))`, what prints?
+   
+.. note::  
+
+   This is the end of chapter 6.  Readers who are part of the teacher study should go to `https://www.surveymonkey.com/s/TeacherQ56 <https://www.surveymonkey.com/s/TeacherQ56>`_ and take the post test for chapters 5 and 6 before continuing on to chapter 7.
+
+

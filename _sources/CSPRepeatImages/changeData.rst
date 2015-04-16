@@ -152,3 +152,8 @@ Let's try side-to-side copying.
    
    Try it: How would you mirror the image from left-to-right around a vertical line in the middle of the picture?  Try changing line 22 to these.  If you get it right it will look like the women is nose to nose with herself.
 
+.. note::  
+
+   This is the end of chapter 11.  Readers who are part of the teacher study should go to `https://www.surveymonkey.com/s/TeacherQ911 <https://www.surveymonkey.com/s/TeacherQ911>`_ and take the post test for chapters 9 through 11 before continuing on to chapter 12.
+
+

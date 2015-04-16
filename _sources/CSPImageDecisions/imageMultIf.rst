@@ -79,3 +79,10 @@ We can use multiple if's to reduce the number of colors in an image.  Let's say 
    
 Rewrite the code for posterizing an image using if and else rather than multiple if's.  Test that it still works correctly.  
 
+
+.. note::  
+
+   This is the end of chapter 15.  Readers who are part of the teacher study should go to `https://www.surveymonkey.com/s/TeacherQ1415 <https://www.surveymonkey.com/s/TeacherQ1415>`_ and take the post test for chapters 14 and 15 before continuing on to chapter 16.
+
+
+       

@@ -33,4 +33,9 @@
 |bigteachernote| Teacher Note: Why Audio Tours?
 ======================================================================
  The apple icon above indicates a teacher note, for more explanation behind the pedagogy, suggestions how to teach something, or insight into student difficulties with a concept.  Why are we using audio tours to explain the code?  Research in educational psychology suggests that text explanation for a text program may lead to cognitive overload.  Learners might understand a program better with an audio explanation, rather than a text explanation, so that you can be looking at the program while you hear the explanation.  In the classroom, your voice explaining a program may be more easier for a student to understand than reading a textbook.
+ 
+.. note::  
+
+   This is the end of chapter 4.  Readers who are part of the teacher study should go to `https://www.surveymonkey.com/s/TeacherQ34 <https://www.surveymonkey.com/s/TeacherQ34>`_ and take the post test for chapters 3 and 4 before continuing on to chapter 5.
+
 

@@ -54,4 +54,10 @@ Creating a procedure with parameters makes it easy to customize the madlib stori
    
        witchStory("Emily", "Smith", "girl", "2783 Main Street", "smell")
 
+.. note::  
+
+   This is the end of chapter 17.  Readers who are part of the teacher study should go to `https://www.surveymonkey.com/s/TeacherQ1617 <https://www.surveymonkey.com/s/TeacherQ1617>`_ and take the post test for chapters 16 and 17 before continuing on to chapter 18.
+
+
+       
 

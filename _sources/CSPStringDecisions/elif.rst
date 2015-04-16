@@ -122,6 +122,12 @@ Here's the fortune teller code from before but now it is written using ``elif`` 
    :feedback_d: There are only 5 logical expression here so it can't be more than 5.  
 
    How many conditions (logical expressions) are checked in the code above if the user answered 2?
+   
+.. note::  
+
+   This is the end of chapter 13.  Readers who are part of the teacher study should go to `https://www.surveymonkey.com/s/TeacherQ1213 <https://www.surveymonkey.com/s/TeacherQ1213>`_ and take the post test for chapters 12 and 13 before continuing on to chapter 14.
+
+
        
 
 

@@ -49,6 +49,7 @@ Chapter 2: What can Computers Do?
    CSPTuring/whatIsComputer.rst
    CSPTuring/turingMachines.rst
    CSPTuring/abilities.rst
+   CSPTuring/exam1a2.rst
 
 SECTION 2: NAMING
 ::::::::::::::::::::::::::::::::::::::::::::
@@ -83,6 +84,7 @@ Chapter 4: Names for Strings
    CSPNameStrings/assignNameStr.rst
    CSPNameStrings/madlib.rst
    CSPNameStrings/whyAudio.rst
+   CSPNameStrings/exam3a4.rst
    
 Chapter 5: Names for Turtles
 ::::::::::::::::::::::::::::::::::
@@ -109,6 +111,7 @@ Chapter 6: Computers can Name Anything
    CSPNameNames/nameSets.rst
    CSPNameNames/imageLib.rst
    CSPNameNames/renameFunctions.rst
+   CSPNameNames/exam5a6.rst
    
 SECTION 3: REPEATING
 :::::::::::::::::::::::::
@@ -139,6 +142,7 @@ Chapter 8: While and For Loops
    CSPWhileAndForLoops/whileCount.rst
    CSPWhileAndForLoops/while.rst
    CSPWhileAndForLoops/teacherWhileVSFor.rst
+   CSPWhileAndForLoops/exam7a8.rst
    
 Chapter 9: Repeating Steps with Strings
 :::::::::::::::::::::::::::::::::::::::::
@@ -173,6 +177,7 @@ Chapter 11: Repeating Steps with Images
    CSPRepeatImages/changeColor.rst
    CSPRepeatImages/changeColorLoc.rst
    CSPRepeatImages/changeData.rst
+   CSPRepeatImages/exam9t11.rst
    
 SECTION 4: DECISIONS
 ::::::::::::::::::::::::::::::::::::::::::::
@@ -205,6 +210,7 @@ Chapter 13: Using Decisions with Strings
    CSPStringDecisions/input.rst
    CSPStringDecisions/fortuneTeller.rst
    CSPStringDecisions/elif.rst
+   CSPStringDecisions/exam12a13.rst
    
 Chapter 14: Using Decisions with Turtles
 ::::::::::::::::::::::::::::::::::::::::::::
@@ -228,6 +234,7 @@ Chapter 15: Using Decisions with Images
    CSPImageDecisions/combineImages.rst
    CSPImageDecisions/imageIfElse.rst
    CSPImageDecisions/imageMultIf.rst
+   CSPImageDecisions/exam14a15.rst
    
 SECTION 5: DATA
 :::::::::::::::::::::::::::::::::::::::::::
@@ -262,6 +269,7 @@ Chapter 17: Getting pieces out of strings
    CSPStringPieces/madLibPieces.rst
    CSPStringPieces/split.rst
    CSPStringPieces/strProcParam.rst
+   CSPStringPieces/exam16a17.rst
    
 Chapter 18: Working with Data on the Web
 ::::::::::::::::::::::::::::::::::::::::::::
@@ -294,6 +302,7 @@ Chapter 20: Computer Abilities Summary
    :maxdepth: 2
    
    CSPAbilitySummary/thatsall.rst
+   CSPAbilitySummary/examPost.rst
    
 Indices
 ::::::::::::::::::

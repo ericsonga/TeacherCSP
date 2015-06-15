@@ -422,30 +422,55 @@ This program uses the same data file that we have been using, but if you want to
    min25 = 500
    for line in lines:
        values = line.split(":")
-       new25 = float(values[2])
+       new25 = float(values[2]) # set the value for new25 to be the current PM 2.5 value
        if new25 < min25:
-           minCity = values[0]
-           min25 = new25
+           minCity = values[0] # Save the minimum city and state 
+           min25 = new25 # save the minimum PM 2.5 value
    print("Smallest PM 2.5 ",min25," in ",minCity)
+   
+.. tabbed:: tab_max_pol
 
-Can you now write the code to get the city with the smallest PM 10 value?  Change the lines that start with a comment (a ``#``) below.
+    .. tab:: Min_Polution_10_Exercise
 
-.. activecode:: min10
-   :nocodelens:
+       Can you now write the code to get the city with the smallest PM 10 value?  Change the lines that start with a comment (a ``#``) below.  If you have problems see a solution in the other tab.
 
-   inFile = open("uspoll.txt","r")
-   lines = inFile.readlines()
-   inFile.close()
+       .. activecode:: min10_ex
+          :nocodelens:
+
+          inFile = open("uspoll.txt","r")
+          lines = inFile.readlines()
+          inFile.close()
      
-   minCity = ''
-   min10 = 500
-   for line in lines:
-       values = line.split(":")
-       # set the value for new10 to be the current PM 10 value
-       if new10 < min10:
-           # Save the minimum city 
-           # save the minimum PM 10 value
-   print("Smallest PM 10 value is ",min10," in ",minCity)
+          minCity = ''
+          min10 = 500
+          for line in lines:
+              values = line.split(":")
+              # set the value for new10 to be the current PM 10 value
+              if new10 < min10:
+                  # Save the minimum city and state
+                  # save the minimum PM 10 value
+          print("Smallest PM 10 value is ",min10," in ",minCity)
+          
+    .. tab:: Min_Polution_10_Answer
+
+       Here is a solution to finding the city with the smallest PM 10 pollution.  
+       
+       .. activecode:: min10_answer
+          :nocodelens:
+
+          inFile = open("uspoll.txt","r")
+          lines = inFile.readlines()
+          inFile.close()
+     
+          minCity = ''
+          min10 = 500
+          for line in lines:
+              values = line.split(":")
+              new10 = float(values[1])
+              if new10 < min10:
+                  minCity = values[0]
+                  min10 = new10
+          print("Smallest PM 10 value is ",min10," in ",minCity)
 
 .. mchoicemf:: 18_5_1_min10
    :answer_a: The same city has the minimum PM 2.5 and the minimum PM 10.  

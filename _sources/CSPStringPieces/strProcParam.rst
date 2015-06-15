@@ -56,7 +56,8 @@ Creating a procedure with parameters makes it easy to customize the madlib stori
 
 .. note::  
 
-   This is the end of chapter 17.  Readers who are part of the teacher study should go to `https://www.surveymonkey.com/s/TeacherQ1617 <https://www.surveymonkey.com/s/TeacherQ1617>`_ and take the post test for chapters 16 and 17 before continuing on to chapter 18.
+   This is the end of chapter 17.  Readers who are part of the teacher study should continue to the next section which is an exam on chapters 16 and 17.  If you are not part of the study you can skip the exam or take it if you wish.  Remember that you can go to the table of contents by clicking on "CS Principles" in the upper left corner of this window.
+
 
 
        

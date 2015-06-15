@@ -58,8 +58,8 @@ We can also change which part of the picture we read and manipulate.  When we ar
     halfHeight = (int) (img.getHeight() / 2)
     for x in range(halfWidth):
     	for y in range(halfHeight):
-        
-        	# STEP 4: GET THE DATA
+
+            # STEP 4: GET THE DATA
             p = img.getPixel(x, y)
             r = p.getRed()
             g = p.getGreen()
@@ -142,7 +142,7 @@ Let's try side-to-side copying.
 .. mchoicemf:: 11_6_1_Image_Mirror_Q1
    :answer_a: img.setPixel(halfway - x, y, newPixel) 
    :answer_b: img.setPixel(x - halfway, y, newPixel) 
-   :answer_c: img.setPixel(img.getWidth() - x, y, newPixel) 
+   :answer_c: img.setPixel(img.getWidth() - 1 - x, y, newPixel) 
    :answer_d: img.setPixel(x - img.getWidth(), y, newPixel) 
    :correct: c
    :feedback_a: It does mirror, but only the left half
@@ -154,6 +154,7 @@ Let's try side-to-side copying.
 
 .. note::  
 
-   This is the end of chapter 11.  Readers who are part of the teacher study should go to `https://www.surveymonkey.com/s/TeacherQ911 <https://www.surveymonkey.com/s/TeacherQ911>`_ and take the post test for chapters 9 through 11 before continuing on to chapter 12.
+   This is the end of chapter 11.  Readers who are part of the teacher study should continue to the next section which is an exam on chapters 9, 10, and 11.  If you are not part of the study you can skip the exam or take it if you wish.  Remember that you can go to the table of contents by clicking on "CS Principles" in the upper left corner of this window.
+
 
 

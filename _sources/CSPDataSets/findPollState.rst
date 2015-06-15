@@ -415,6 +415,8 @@ This program uses the same data file that we have been using, but if you want to
    cityState = pieces[0].split(" ")
    print("City:", cityState[0])
    print("State:", cityState[1])
+   print("PM 10:", pieces[1])
+   print("PM 2.5:", pieces[2])
 
 But, what if the city name has a space in it?  Then we won't get the state in the second slot.  It is safer to split on ``,``.
 
@@ -442,14 +444,14 @@ Now, let's reuse the average code and look for a particular state.
    infile.close()
    
    state = "CA"
-   total25 = 0
+   total25 = 0 # create and initialize total25
    count = 1.0
    for line in lines:
        values = line.split(":")
        cityState = values[0].split(",")
        if cityState[1].find(state) >= 0:
-           new25 = float(values[2])
-           total25 = total25 + new25
+           new25 = float(values[2]) # get the current pollution value
+           total25 = total25 + new25 # add the current pollution to total25
            count = count + 1
 	 
    print("Average PM 2.5 value for " , state, " is ", total25/count)

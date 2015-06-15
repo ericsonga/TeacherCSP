@@ -57,7 +57,7 @@ Here's an example of conditional execution (using an ``if`` statement) with a tu
    :feedback_c: Each iteration of the loop draws one peak and there are 4 peaks per row.  There is room for 4 rows so the answer is 4 * 4 = 16.
    :feedback_d: This would try to draw on the line below the end of the drawing area.  
 
-   What value should you use for range in line 10 to complete the pattern to fill the drawing space?  
+   What value should you use for range in line 17 in the program above (td_pattern) to complete the pattern to fill the drawing space?  
    
 Modify the code above to draw a different pattern.  Try turning changing the direction of every turn, what does that do?
    

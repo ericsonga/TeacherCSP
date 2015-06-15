@@ -21,7 +21,7 @@
 Practice with if
 ======================
 
-The program below is broken in a subtle way.  For one value of ``weight``, the ``price`` will not be set to any value, so the calculation of ``total`` will fail with an error that something ``is not defined``.  This is why professional programmers will assign *some* value to a variable like ``price`` at the beginning of the program, so that errors like this won't happen.  Can you figure out the value of ``weight`` that will result in an error?
+The program below is broken in a subtle way.  For one value of ``weight``, the ``price`` will not be set to any value, so the calculation of ``total`` will fail with an error that something ``is not defined``.  This is why professional programmers will assign *some* value to a variable like ``price`` at the beginning of the program, so that errors like this won't happen.  Can you figure out the value of ``weight`` that will result in an error?  Modify the code below to try different values for weight.  
 
 .. activeCode:: Price_If_Broken
   :tour_1: "Structural Tour"; 1: c1-line1; 2-3: c1-line2-3; 4-5: c3-line4-5; 6: c1-line6; 7-9: c3f-line7-9;
@@ -36,7 +36,7 @@ The program below is broken in a subtle way.  For one value of ``weight``, the `
   print(price)
   print(total)
 
-Try different values for ``weight`` then answer the below:
+Try different values for ``weight`` in the above code and then answer the question below:
 
 .. fillintheblank:: 12_6_1_brokenrange
   :correct: ^1$|1\.[0]*$
@@ -82,7 +82,7 @@ It is certainly possible to have multiple ``if`` statements, and each one can ma
    :answer_d: D
    :answer_e: E
    :correct: d
-   :feedback_a: Notice that each of the first 4 statements start with an if.  What will actually be printed?  Try it.  
+   :feedback_a: Notice that each of the first 4 statements start with an if.  What is the value of grade when it is printed?
    :feedback_b: Each of the first 4 if statements will execute.
    :feedback_c: Copy this code to an activecode window and run it.
    :feedback_d: Each of the first 4 if statements will be executed. So grade will be set to A, then B then C and finally D.  

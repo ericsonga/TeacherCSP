@@ -408,7 +408,7 @@ This program uses the same data file that we have been using, but if you want to
        Yuma, AZ :14 :9
        </pre>
 
-One of the interesting questions to explore is, "Which city has the worst pollution?" The program below figures that out for the PM 2.5 value.  It will read all the data in, then set ``max25`` (the maximum PM 2.5 value) to zero.  It will then loop through all the city data and if the current pollution (in ``new25``) is greater than ``max25``, it will save that value in ``max25`` and that city name as ``maxCity``.  We need the ``float`` function to convert the string into a number that we can compare.
+One of the interesting questions to explore is, "Which city has the worst pollution?" The program below figures that out for the PM 2.5 value.  It will read all the data in, then set ``max25`` (the maximum PM 2.5 value) to zero.  It will then loop through all the city data and if the current pollution (in ``new25``) is greater than ``max25``, it will save that value in ``max25`` and save that city name as ``maxCity``.  We need the ``float`` function to convert the string into a number that we can compare.
 
 .. activecode:: max25
    :tour_1: "Structural tour"; 1: web3-line1; 2: web3-line2; 3: web3-line3; 5: web3-line5; 6: web3-line6; 7: web3-line7; 8: web3-line8; 9: web3-line9; 10: web3-line10; 11: web3-line11; 12: web3-line12; 13: web3-line13;
@@ -417,35 +417,71 @@ One of the interesting questions to explore is, "Which city has the worst pollut
    inFile = open("uspoll.txt","r")
    lines = inFile.readlines()
    inFile.close()
-     
+
    maxCity = ''
-   max25 = 0
+   max25 = 0 # initialize max25
    for line in lines:
        values = line.split(":")
-       new25 = float(values[2])
+       new25 = float(values[2]) # get the current value
        if new25 > max25:
            maxCity = values[0]
-           max25 = new25
+           max25 = new25 # save the new maximum
    print("Largest PM 2.5 value is ",max25," in ",maxCity)
    
-Change the lines that start with a comment (a ``#``) below to find the city with the highest PM 10 pollution.  
+.. mchoicemf:: 18_4_3_max10
+   :answer_a: new10 = float(values[0])
+   :answer_b: new10 = float(values[1])
+   :answer_c: new10 = float(values[2])
+   :correct: b
+   :feedback_a: This would get the city and state.
+   :feedback_b: This gets the value of PM 10.
+   :feedback_c: This gets the value of PM 2.5. 
+
+   Which of the following would return the value of the PM 10 pollution instead at line 9?  
    
-.. activecode:: max10
-   :nocodelens:
+.. tabbed:: tab_max_pol
+
+    .. tab:: Max_Polution_10_Exercise
+   
+       Replace the lines that start with a comment (a ``#``) below to find the city with the highest PM 10 pollution.  If you have trouble solving this, you can look at the other tab which shows a solution.
+   
+       .. activecode:: max10
+          :nocodelens:
   
-   inFile = open("uspoll.txt","r")
-   lines = inFile.readlines()
-   inFile.close()
+          inFile = open("uspoll.txt","r")
+          lines = inFile.readlines()
+          inFile.close()
      
-   maxCity = ''
-   # initialize max10 here
-   for line in lines:
-       values = line.split(":")
-       # set the value for new10 to be the current PM 10 value
-       if new10 > max10:
-           maxCity = values[0]
-           # save the new maximum
-   print("Largest PM 10 value is ",max10," in ",maxCity)
+           maxCity = ''
+           # initialize max10 here
+           for line in lines:
+               values = line.split(":")
+               # set the value for new10 to be the current PM 10 value
+               if new10 > max10:
+                   maxCity = values[0]
+                   # save the new maximum
+           print("Largest PM 10 value is ",max10," in ",maxCity)
+           
+    .. tab:: Max_Polution_10_Answer
+   
+       Change the lines that start with a comment (a ``#``) below to find the city with the highest PM 10 pollution.  
+   
+       .. activecode:: max10_answer
+          :nocodelens:
+  
+          inFile = open("uspoll.txt","r")
+          lines = inFile.readlines()
+          inFile.close()
+     
+          maxCity = ''
+          max10 = 0 # initialize max10
+          for line in lines:
+              values = line.split(":")
+              new10 = float(values[1]) # set the value for new10 to be the current PM 10 value
+              if new10 > max10:
+                  maxCity = values[0]
+                  max10 = new10  # save the new maximum
+          print("Largest PM 10 value is ",max10," in ",maxCity)
    
 .. mchoicemf:: 18_4_3_max10_max25_q
    :answer_a: The same city has the maximum value for both PM 2.5 and PM 10.

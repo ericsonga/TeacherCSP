@@ -72,7 +72,7 @@ Since the outer loop changes the  x (the column) and the inner loop changes the 
     for x in range(img.getWidth()):
     	for y in range(img.getHeight()):
         
-        	# STEP 4: GET THE DATA
+			# STEP 4: GET THE DATA
             p = img.getPixel(x, y)
             
             # STEP 5: MODIFY THE COLOR
@@ -98,10 +98,11 @@ We don't always have to modify the pixel color.  Sometimes we can just change th
     img = Image("vangogh.jpg")
 
     # STEP 3: LOOP THROUGH THE PIXELS
-    for x in range(img.getWidth()):
-    	for y in range(img.getHeight()):
+    last = min(img.getWidth(), img.getHeight())
+    for x in range(last):
+    	for y in range(last):
         
-        	# STEP 4: GET THE DATA
+            # STEP 4: GET THE DATA
             p = img.getPixel(x, y)
             
             # STEP 6: MODIFY THE IMAGE
@@ -146,7 +147,9 @@ This one does a little math with the x and y.
             p = img.getPixel(x, y)
             
             # STEP 6: CHANGE THE IMAGE
-            img.setPixel(img.getWidth() - x, img.getHeight() - y, p)
+            img.setPixel(img.getWidth() - 1 - x, 
+                         img.getHeight() - 1 - y, 
+                         p)
             
     # STEP 7: SHOW THE RESULT
     win = ImageWin(img.getWidth(),img.getHeight())

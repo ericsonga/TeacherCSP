@@ -30,7 +30,7 @@ The code below uses the ``window_width()`` function of the ``Screen`` object tha
     
     from turtle import *             # use the turtle library
     from sys import *                # use the system library
-    setExecutionLimit(70000)         # let this take up to 70 seconds
+    setExecutionLimit(100000)        # let this take up to 100 seconds
     space = Screen()                 # create a turtle screen (space)
     
     width = space.window_width()     # get the width of the screen (space)
@@ -51,16 +51,16 @@ The code below uses the ``window_width()`` function of the ``Screen`` object tha
        
 .. mchoicemf:: 14_3_1_finish_stripes
    :answer_a: 10
-   :answer_b: 20
-   :answer_c: 21
-   :answer_d: 40
+   :answer_b: 16
+   :answer_c: 17
+   :answer_d: 32
    :correct: c
    :feedback_a: This will stop before filling the top half of the space. Try it.
    :feedback_b: The turtle starts at the middle of height and draws 5 pixels below it and 5 pixels above it, so this leaves 5 pixels at the top that need to be filled.
-   :feedback_c: The height of the top half is 200 and each stripe is a height of 10 so 20 nearly does it, but 21 fills the entire area.
+   :feedback_c: The height of the top half is 160 and each stripe is a height of 10 so 16 nearly does it, but 17 fills the entire area.  The turtle starts in the middle of the space so the first row has 5 pixels above the middle and 5 below.
    :feedback_d: This would fill more than the top half.
 
-   What value should you use as the parameter for the range function in line 7 to fill the top half of the drawing space with stripes?  The height of the space is 400.  
+   What value should you use as the parameter for the range function in line 12 to fill the top half of the drawing space with stripes?  The height of the space is 320.  
        
 Try to change the code above to use an ``else`` instead of the second ``if`` and yet still have the same result.  
 Try to change the code above to use both an ``elif`` and ``else`` to draw three different colored stripes in a repeated pattern.  You can use ``y % 3`` for three different conditions.  

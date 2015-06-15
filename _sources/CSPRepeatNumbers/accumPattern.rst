@@ -140,7 +140,7 @@ How do we know what's really going on in this program?  How do we know that *num
    :feedback_c: That would give us the even numbers from 0 to 98.
    :feedback_d: That would give us [1,3,5,...99].
 
-   Change the program above (in ActiveCode 7) to add up all the ODD numbers including up to 99.  You should run it to get 2500. What change did you make to the program?
+   Change the program above (in ActiveCode 3: Numbers_Sum_Even) to add up all the ODD numbers including up to 99.  You should run it to get 2500. What change did you make to the program?
    
 .. parsonsprob:: 7_5_5_Sum_From_50
 

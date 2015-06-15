@@ -36,6 +36,5 @@
  
 .. note::  
 
-   This is the end of chapter 4.  Readers who are part of the teacher study should go to `https://www.surveymonkey.com/s/TeacherQ34 <https://www.surveymonkey.com/s/TeacherQ34>`_ and take the post test for chapters 3 and 4 before continuing on to chapter 5.
-
+   This is the end of chapter 4.   Readers who are part of the teacher study should continue to the next section which is an exam on chapters 3 and 4.  If you are not part of the study you can skip the exam or take it if you wish.  Remember that you can go to the table of contents by clicking on "CS Principles" in the upper left corner of this window.
 

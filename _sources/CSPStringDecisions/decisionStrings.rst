@@ -98,7 +98,7 @@ then answer the multiple choice questions below.
 
    What is the first thing printed when the score is 25?
    
-Now go back and fix the last code to work correctly.  Remember that you can use ``and`` to join two logical expressions.  This is especially useful if you want to test if a number is in a range of numbers like 10 to 19 inclusive.
+Now go back and change the last active code (csp_sd_score) to work correctly.  Remember that you can use ``and`` to join two logical expressions.  This is especially useful if you want to test if a number is in a range of numbers like 10 to 19 inclusive.  So change the example to print the first thing if less than 10, the second thing if it is between 10 and 19 and the third thing if it is 20 or more.  
 
 
 

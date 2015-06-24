@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Keyword Parameters &mdash; Programs, Information, and People: Interactive Edition</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Programs, Information, and People: Interactive Edition" href="../index.html" />
+    <link rel="next" title="Tuples" href="../Sequences/tuples.html" />
+    <link rel="prev" title="Optional Parameters" href="optionalParams.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pip';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+var _prum = [['id', '521dfcc4abe53d0749000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../toc.html">Programs, Information, and People</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../toc.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pip/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/assignments" id="registerlink">Project Page</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pip/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Keyword Parameters</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Optional Parameters" data-toggle="tooltip">
+    <a href="optionalParams.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Tuples' data-toggle="tooltip" >
+    <a href="../Sequences/tuples.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="keyword-parameters">
+<span id="keyword-pararams-chap"></span><h1>Keyword Parameters<a class="headerlink" href="#keyword-parameters" title="Permalink to this headline">¶</a></h1>
+<p>Previously, in the chapter on <a class="reference internal" href="optionalParams.html#optional-pararams-chap"><em>Optional Parameters</em></a> you learned how to define default values for formal parameters, which made it optional to provide values for those parameters when invoking the functions.</p>
+<p>In this chapter, you&#8217;ll see one more way to invoke functions with optional parameters, with keyword-based parameter passing. This is particularly convenient when there are several optional parameters and you want to provide a value for one of the later parameters while not providing a value for the earlier ones.</p>
+<p>The online official python documentation includes a tutorial on optional parameters which covers the topic quite well. Please read the content there: * <a class="reference external" href="http://docs.python.org/2/tutorial/controlflow.html#keyword-arguments">Keyword arguments</a></p>
+<p>Don&#8217;t worry about the <tt class="docutils literal"><span class="pre">def</span> <span class="pre">cheeseshop(kind,</span> <span class="pre">*arguments,</span> <span class="pre">**keywords):</span></tt> example. You should be able to get by without understanding <tt class="docutils literal"><span class="pre">*parameters</span></tt> and <tt class="docutils literal"><span class="pre">**parameters</span></tt> in this course. But do make sure you understand the stuff above that.</p>
+<p>The basic idea of passing arguments by keyword is very simple. When invoking a function, inside the parentheses there are always 0 or more values, separated by commas. With keyword arguments, some of the values can be of the form <tt class="docutils literal"><span class="pre">paramname</span> <span class="pre">=</span> <span class="pre">&lt;expr&gt;</span></tt> instead of just <tt class="docutils literal"><span class="pre">&lt;expr&gt;</span></tt>. Note that when you have <tt class="docutils literal"><span class="pre">paramname</span> <span class="pre">=</span> <span class="pre">&lt;expr&gt;</span></tt> in a function definition, it is defining the default value for a parameter when no value is provided in the invocation; when you have <tt class="docutils literal"><span class="pre">paramname</span> <span class="pre">=</span> <span class="pre">&lt;expr&gt;</span></tt> in the invocation, it is supplying a value, overriding the default for that paramname.</p>
+<p>To make it easier to follow the details of the examples in the official python tutorial, you can step through them in CodeLens.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="keyword_params_1"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (keyword_params_1)</span> </p>
+</div>
+<script type="text/javascript">
+var keyword_params_1_trace = {"code": "def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):\n    print \"-- This parrot wouldn't\", action,\n    print \"if you put\", voltage, \"volts through it.\"\n    print \"-- Lovely plumage, the\", type\n    print \"-- It's\", state, \"!\"\n\nparrot(1000)                                          # 1 positional argument\nparrot(voltage=1000)                                  # 1 keyword argument\nparrot(voltage=1000000, action='VOOOOOM')             # 2 keyword arguments\nparrot(action='VOOOOOM', voltage=1000000)             # 2 keyword arguments\nparrot('a million', 'bereft of life', 'jump')         # 3 positional arguments\nparrot('a thousand', state='pushing up the daisies')  # 1 positional, 1 keyword", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "", "func_name": "parrot", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"action": "voom", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f1", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["parrot"], "stdout": "", "func_name": "parrot", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"action": "voom", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f1", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom", "func_name": "parrot", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"action": "voom", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f1", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"action": "voom", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f1", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"action": "voom", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f1", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"action": "voom", "__return__": null, "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f1", "ordered_varnames": ["voltage", "state", "action", "type", "__return__"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 5, "event": "return"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n", "func_name": "<module>", "stack_to_render": [], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"action": "voom", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f2", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"action": "voom", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f2", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom", "func_name": "parrot", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"action": "voom", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f2", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"action": "voom", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f2", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"action": "voom", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f2", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"action": "voom", "__return__": null, "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f2", "ordered_varnames": ["voltage", "state", "action", "type", "__return__"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 5, "event": "return"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n", "func_name": "<module>", "stack_to_render": [], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"action": "VOOOOOM", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f3", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"action": "VOOOOOM", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f3", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM", "func_name": "parrot", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"action": "VOOOOOM", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f3", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"action": "VOOOOOM", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f3", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"action": "VOOOOOM", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f3", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"action": "VOOOOOM", "__return__": null, "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f3", "ordered_varnames": ["voltage", "state", "action", "type", "__return__"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 5, "event": "return"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n", "func_name": "<module>", "stack_to_render": [], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 10, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 4, "encoded_locals": {"action": "VOOOOOM", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f4", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 4, "encoded_locals": {"action": "VOOOOOM", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f4", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM", "func_name": "parrot", "stack_to_render": [{"frame_id": 4, "encoded_locals": {"action": "VOOOOOM", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f4", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 4, "encoded_locals": {"action": "VOOOOOM", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f4", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 4, "encoded_locals": {"action": "VOOOOOM", "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f4", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 4, "encoded_locals": {"action": "VOOOOOM", "__return__": null, "state": "a stiff", "type": "Norwegian Blue", "voltage": 1000000}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f4", "ordered_varnames": ["voltage", "state", "action", "type", "__return__"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 5, "event": "return"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n", "func_name": "<module>", "stack_to_render": [], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 11, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 5, "encoded_locals": {"action": "jump", "state": "bereft of life", "type": "Norwegian Blue", "voltage": "a million"}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f5", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 5, "encoded_locals": {"action": "jump", "state": "bereft of life", "type": "Norwegian Blue", "voltage": "a million"}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f5", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't jump", "func_name": "parrot", "stack_to_render": [{"frame_id": 5, "encoded_locals": {"action": "jump", "state": "bereft of life", "type": "Norwegian Blue", "voltage": "a million"}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f5", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't jump if you put a million volts through it.\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 5, "encoded_locals": {"action": "jump", "state": "bereft of life", "type": "Norwegian Blue", "voltage": "a million"}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f5", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't jump if you put a million volts through it.\n-- Lovely plumage, the Norwegian Blue\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 5, "encoded_locals": {"action": "jump", "state": "bereft of life", "type": "Norwegian Blue", "voltage": "a million"}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f5", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't jump if you put a million volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's bereft of life !\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 5, "encoded_locals": {"action": "jump", "__return__": null, "state": "bereft of life", "type": "Norwegian Blue", "voltage": "a million"}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f5", "ordered_varnames": ["voltage", "state", "action", "type", "__return__"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 5, "event": "return"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't jump if you put a million volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's bereft of life !\n", "func_name": "<module>", "stack_to_render": [], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 12, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't jump if you put a million volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's bereft of life !\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 6, "encoded_locals": {"action": "voom", "state": "pushing up the daisies", "type": "Norwegian Blue", "voltage": "a thousand"}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f6", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't jump if you put a million volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's bereft of life !\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 6, "encoded_locals": {"action": "voom", "state": "pushing up the daisies", "type": "Norwegian Blue", "voltage": "a thousand"}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f6", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't jump if you put a million volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's bereft of life !\n-- This parrot wouldn't voom", "func_name": "parrot", "stack_to_render": [{"frame_id": 6, "encoded_locals": {"action": "voom", "state": "pushing up the daisies", "type": "Norwegian Blue", "voltage": "a thousand"}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f6", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't jump if you put a million volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's bereft of life !\n-- This parrot wouldn't voom if you put a thousand volts through it.\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 6, "encoded_locals": {"action": "voom", "state": "pushing up the daisies", "type": "Norwegian Blue", "voltage": "a thousand"}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f6", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't jump if you put a million volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's bereft of life !\n-- This parrot wouldn't voom if you put a thousand volts through it.\n-- Lovely plumage, the Norwegian Blue\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 6, "encoded_locals": {"action": "voom", "state": "pushing up the daisies", "type": "Norwegian Blue", "voltage": "a thousand"}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f6", "ordered_varnames": ["voltage", "state", "action", "type"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't jump if you put a million volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's bereft of life !\n-- This parrot wouldn't voom if you put a thousand volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's pushing up the daisies !\n", "func_name": "parrot", "stack_to_render": [{"frame_id": 6, "encoded_locals": {"action": "voom", "__return__": null, "state": "pushing up the daisies", "type": "Norwegian Blue", "voltage": "a thousand"}, "is_highlighted": true, "is_parent": false, "func_name": "parrot", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "parrot_f6", "ordered_varnames": ["voltage", "state", "action", "type", "__return__"]}], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 5, "event": "return"}, {"ordered_globals": ["parrot"], "stdout": "-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't voom if you put 1000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't VOOOOOM if you put 1000000 volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's a stiff !\n-- This parrot wouldn't jump if you put a million volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's bereft of life !\n-- This parrot wouldn't voom if you put a thousand volts through it.\n-- Lovely plumage, the Norwegian Blue\n-- It's pushing up the daisies !\n", "func_name": "<module>", "stack_to_render": [], "globals": {"parrot": ["REF", 1]}, "heap": {"1": ["FUNCTION", "parrot(voltage, state, action, type)", null]}, "line": 12, "event": "return"}]};
+var keyword_params_1_vis;
+
+$(document).ready(function() {
+    keyword_params_1_vis = new ExecutionVisualizer('keyword_params_1',keyword_params_1_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(keyword_params_1_vis,'keyword_params_1');
+    allVisualizers.push(keyword_params_1_vis);
+
+});
+
+$(document).ready(function() {
+    $("#keyword_params_1_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'keyword_params_1'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    keyword_params_1_vis.redrawConnectors();
+});
+</script>
+<p>As you step through it, each time the function is invoked, make a prediction about what each of the four parameter values will be during execution of lines 2-5. Then, look below at the stack frame to see what they actually are.</p>
+<p><strong>Check your understanding</strong></p>
+
+            <div id="test_questionkeyword_params_1" class="alert alert-warning">
+            <p>keyword-params-1: What value will be printed for z?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">initial</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">initial</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&quot;x, y, z are:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
+
+<span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_questionkeyword_params_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionkeyword_params_1_opt_a" />
+            <label for= "test_questionkeyword_params_1_opt_a">  a) 2</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionkeyword_params_1_opt_b" />
+            <label for= "test_questionkeyword_params_1_opt_b">  b) 3</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionkeyword_params_1_opt_c" />
+            <label for= "test_questionkeyword_params_1_opt_c">  c) 5</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_questionkeyword_params_1_opt_d" />
+            <label for= "test_questionkeyword_params_1_opt_d">  d) 7</label><br />
+            
+            <input type="radio" name="group1" value="e" id="test_questionkeyword_params_1_opt_e" />
+            <label for= "test_questionkeyword_params_1_opt_e">  e) Runtime error since not enough values are passed in the call to f</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionkeyword_params_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionkeyword_params_1','d',['2 is bound to x, not z', '3 is the default value for y, not z', '5 is bound to y, not z', '2 is bound x, 3 to y, and z gets its default value', 'z has a default value in the function definition, so it\u0027s optional to pass a value for it.'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionkeyword_params_1_bcomp" disabled name="compare" onclick="compareAnswers('test_questionkeyword_params_1');">Compare Me</button>
+            </form><br />
+            <div id="test_questionkeyword_params_1_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionkeyword_params_2" class="alert alert-warning">
+            <p>keyword-params-2: What value will be printed for y?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">initial</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">initial</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&quot;x, y, z are:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
+
+<span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_questionkeyword_params_2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionkeyword_params_2_opt_a" />
+            <label for= "test_questionkeyword_params_2_opt_a">  a) 2</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionkeyword_params_2_opt_b" />
+            <label for= "test_questionkeyword_params_2_opt_b">  b) 3</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionkeyword_params_2_opt_c" />
+            <label for= "test_questionkeyword_params_2_opt_c">  c) 5</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_questionkeyword_params_2_opt_d" />
+            <label for= "test_questionkeyword_params_2_opt_d">  d) 10</label><br />
+            
+            <input type="radio" name="group1" value="e" id="test_questionkeyword_params_2_opt_e" />
+            <label for= "test_questionkeyword_params_2_opt_e">  e) Runtime error since no value is provided for y, which comes before z</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionkeyword_params_2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionkeyword_params_2','b',['2 is bound to x, not y', '3 is the default value for y, and no value is specified for y,', 'say what?', '10 is the second value passed, but it is bound to z, not y.', 'That\u0027s the beauty of passing parameters with keywords\u003B you can skip some parameters and they get their default values.'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionkeyword_params_2_bcomp" disabled name="compare" onclick="compareAnswers('test_questionkeyword_params_2');">Compare Me</button>
+            </form><br />
+            <div id="test_questionkeyword_params_2_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionkeyword_params_3" class="alert alert-warning">
+            <p>keyword-params-3: What value will be printed for x?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">initial</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">initial</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&quot;x, y, z are:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
+
+<span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_questionkeyword_params_3_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionkeyword_params_3_opt_a" />
+            <label for= "test_questionkeyword_params_3_opt_a">  a) 2</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionkeyword_params_3_opt_b" />
+            <label for= "test_questionkeyword_params_3_opt_b">  b) 3</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionkeyword_params_3_opt_c" />
+            <label for= "test_questionkeyword_params_3_opt_c">  c) 5</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_questionkeyword_params_3_opt_d" />
+            <label for= "test_questionkeyword_params_3_opt_d">  d) 7</label><br />
+            
+            <input type="radio" name="group1" value="e" id="test_questionkeyword_params_3_opt_e" />
+            <label for= "test_questionkeyword_params_3_opt_e">  e) Runtime error since two different values are provided for x</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionkeyword_params_3');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionkeyword_params_3','e',['2 is bound to x since it\u0027s the first value, but so is 5, based on keyword', '', '5 is bound to x by keyword, but 2 is also bound to it by virtue of being the value and not having a keyword. In the online environment, it actually allows this, but not in a proper python interpreter.', '', '2 is bound to x since it\u0027s the first value, but so is 5, based on keyword'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionkeyword_params_3_bcomp" disabled name="compare" onclick="compareAnswers('test_questionkeyword_params_3');">Compare Me</button>
+            </form><br />
+            <div id="test_questionkeyword_params_3_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionkeyword_params_4" class="alert alert-warning">
+            <p>keyword-params-4: What value will be printed for z?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">initial</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">initial</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&quot;x, y, z are:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
+<span class="n">initial</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_questionkeyword_params_4_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionkeyword_params_4_opt_a" />
+            <label for= "test_questionkeyword_params_4_opt_a">  a) 2</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionkeyword_params_4_opt_b" />
+            <label for= "test_questionkeyword_params_4_opt_b">  b) 7</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionkeyword_params_4_opt_c" />
+            <label for= "test_questionkeyword_params_4_opt_c">  c) 0</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_questionkeyword_params_4_opt_d" />
+            <label for= "test_questionkeyword_params_4_opt_d">  d) Runtime error since two different values are provided for initial</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionkeyword_params_4');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionkeyword_params_4','b',['2 is bound to x, no z', 'the default value for z is determined at the time the function is defined\u003B at that time initial has the value 0.', 'the default value for z is determined at the time the function is defined, not when it is invoked', 'there\u0027s nothing wrong with reassigning the value of a variable at a later time'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionkeyword_params_4_bcomp" disabled name="compare" onclick="compareAnswers('test_questionkeyword_params_4');">Compare Me</button>
+            </form><br />
+            <div id="test_questionkeyword_params_4_feedback">
+            </div>
+            </div>
+            </div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 Paul Resnick, Brad Miller, David Ranum, Created using Runestone Interactive.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Assigning a Name &mdash; CS Principles</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="CS Principles" href="../index.html" />
+    <link rel="next" title="Assign a Name to a String" href="../CSPNameStrings/namestrings.html" />
+    <link rel="prev" title="What is a Computer?" href="../CSPTuring/turing.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'CSPrinciples';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS Principles</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/CSPrinciples/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/CSPrinciples/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Assigning a Name</a></li>
+<li><a class="reference internal" href="#driving-from-chicago-to-dallas">Driving from Chicago to Dallas</a></li>
+<li><a class="reference internal" href="#following-the-ketchup-ooze">Following the Ketchup Ooze</a></li>
+<li><a class="reference internal" href="#walking-through-assignment-more-generally">Walking through Assignment more Generally</a></li>
+<li><a class="reference internal" href="#bigteachernote-teacher-note-misconceptions"> Teacher Note: Misconceptions</a></li>
+<li><a class="reference internal" href="#figuring-out-an-invoice">Figuring out an Invoice</a></li>
+<li><a class="reference internal" href="#bigteachernote-teacher-note-why-videos"> Teacher Note: Why Videos?</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - What is a Computer?" data-toggle="tooltip">
+    <a href="../CSPTuring/turing.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Assign a Name to a String' data-toggle="tooltip" >
+    <a href="../CSPNameStrings/namestrings.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="assigning-a-name">
+<h1>Assigning a Name<a class="headerlink" href="#assigning-a-name" title="Permalink to this headline">¶</a></h1>
+<p><strong>Learning Objectives:</strong></p>
+<ul class="simple">
+<li>Use assignment in calculations.</li>
+<li>Understand the ways that students get assignments wrong.</li>
+<li>Reuse variables across different assignment statements.</li>
+</ul>
+<p id="index-0">A computer can associate a name with a value.  It does this by creating a <strong>variable</strong>, which is named space that can hold a value.  You can think of a variable as a box that has a label on it and you can store a value in the box.  The value can be anything that can be represented on a computer and stored in a computer&#8217;s memory.  A computer&#8217;s memory is only made up of numbers (really, just patterns of voltages, but we can think about them as numbers).  Everything that a computer can remember in its memory is translated into these numbers &#8211; but we&#8217;ll explain how that works later.</p>
+<p>An example of a <strong>variable</strong> is a score in a computer game.  It usually starts at 0 and increases as you play the game.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/pongScore.png"><img alt="../_images/pongScore.png" src="../_images/pongScore.png" style="width: 400px;" /></a>
+<p class="caption">Figure 1: A pong game in <a class="reference external" href="http://scratch.mit.edu">Scratch</a> with a score shown in the upper left.</p>
+</div>
+<p id="index-1">In programming languages, setting a variable&#8217;s value is also called <strong>assignment</strong>.  A statement like <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">4</span></tt> means that the symbol <tt class="docutils literal"><span class="pre">a</span></tt> refers to space that is assigned the value <tt class="docutils literal"><span class="pre">4</span></tt>.  When we use the symbol <tt class="docutils literal"><span class="pre">a</span></tt> in a program the computer will substitute the value <tt class="docutils literal"><span class="pre">4</span></tt>.  If we later change the value stored at <tt class="docutils literal"><span class="pre">a</span></tt>, say by doing <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">7.2</span></tt> then we say that the variable <tt class="docutils literal"><span class="pre">a</span></tt> now has the value <tt class="docutils literal"><span class="pre">7.2</span></tt>.</p>
+<p><strong>Click on the right arrow below to play the following video.</strong></p>
+<div id="intro_assignment" class="video_popup" >
+<video controls preload="none"  poster="../_static/video-think-about-assignment.png">
+    <source src="http://ice-web.cc.gatech.edu/ce21/1/static/video/assignment-v2-small.mov" type="video/mp4"></source>
+    <source src="http://ice-web.cc.gatech.edu/ce21/1/static/video/assignment-v2-small.webm" type="video/webm"></source>
+    No supported video types
+</video>
+</div>
+<script>
+   jQuery(function($) {
+      $('#intro_assignment_thumb').click(function(e) {
+         $('#intro_assignment').show();
+         $('#intro_assignment_thumb').hide();
+         logBookEvent({'event':'video','act':'play','div_id': 'intro_assignment'});
+         // Log the run event
+      });
+	  $('#intro_assignment video').one("click", function(){
+		this.play();
+	  });
+	  $('#intro_assignment video').one("play", function(){
+		logBookEvent({'event':'video','act':'play','div_id': 'intro_assignment'});
+	  });
+   });
+</script>
+<p>The right hand side of the assignment statement doesn&#8217;t have to be a value.  It can be <em>an expression</em>, like <tt class="docutils literal"><span class="pre">2*2</span></tt>.  See the table below for some common mathematical expressions.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Expression</td>
+<td>Arithmetic meaning</td>
+</tr>
+<tr class="row-even"><td>1 + 2</td>
+<td>Addition, the result is 3</td>
+</tr>
+<tr class="row-odd"><td>3 * 4</td>
+<td>Multiplication, the result is 12</td>
+</tr>
+<tr class="row-even"><td>2.0 / 4.0</td>
+<td>Division, the result is 0.5</td>
+</tr>
+<tr class="row-odd"><td>1 / 3</td>
+<td>Integer division, the result is 0</td>
+</tr>
+<tr class="row-even"><td>2 % 3</td>
+<td>Modulo (remainder), the result is
+2</td>
+</tr>
+<tr class="row-odd"><td>-1</td>
+<td>Negation, the result is -1</td>
+</tr>
+</tbody>
+</table>
+<p>Why is the result of <tt class="docutils literal"><span class="pre">1</span> <span class="pre">/</span> <span class="pre">3</span></tt> zero?  That isn&#8217;t what you get when you try the same expression on a calculator.  On a computer integers are stored differently than floating point numbers and when the computer sees you using integers in a calculation it only keeps the integer part of the result.  The expression <tt class="docutils literal"><span class="pre">1</span> <span class="pre">/</span> <span class="pre">3</span></tt> would result in <tt class="docutils literal"><span class="pre">0.33333333333333</span></tt> on a calculator, but Python only keeps the integer part (the part before the decimal point) which is just <tt class="docutils literal"><span class="pre">0</span></tt>.</p>
+<p>You may not be familiar with the modulus (remainder) operator <tt class="docutils literal"><span class="pre">%</span></tt>.  It returns the remainder when you divide the first number by the second.  In this case 3 goes into 2 zero times with a remainder of 2.  The result of <tt class="docutils literal"><span class="pre">5</span> <span class="pre">%</span> <span class="pre">2</span></tt> would be 1 since 2 goes into 5, two times with a remainder of 1.</p>
+</div>
+<div class="section" id="driving-from-chicago-to-dallas">
+<h1>Driving from Chicago to Dallas<a class="headerlink" href="#driving-from-chicago-to-dallas" title="Permalink to this headline">¶</a></h1>
+<p id="index-2">As an example, imagine that you were planning to drive from Chicago to Dallas. If you know how many miles-per-gallon your car gets, and how many miles it is, you can estimate the number of gallons it will take.</p>
+<p>Use the <em>CodeLens</em> below to trace through what it would look like for a computer to execute this program:</p>
+<ul class="simple">
+<li>Press <a class="reference internal" href="../_images/codelens-forward.png"><img alt="forward (next) button" class="align-top" src="../_images/codelens-forward.png" style="height: 20px;" /></a> to go forward executing a single line of the program.</li>
+<li>Press <a class="reference internal" href="../_images/codelens-last.png"><img alt="move to last button" class="align-top" src="../_images/codelens-last.png" style="height: 20px;" /></a> to execute all the lines of the program.</li>
+</ul>
+
+<div class="alert alert-warning cd_section">
+<div id="Chicago_2_Dallas"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (Chicago_2_Dallas)</span> </p>
+</div>
+<script type="text/javascript">
+var Chicago_2_Dallas_trace = {"code": "distance = 924.7\nMPG = 35.5\ngallons = distance / MPG", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["distance"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"distance": 924.7}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["distance", "MPG"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"MPG": 35.5, "distance": 924.7}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["distance", "MPG", "gallons"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"MPG": 35.5, "distance": 924.7, "gallons": 26.0479}, "heap": {}, "line": 3, "event": "return"}]};
+var Chicago_2_Dallas_vis;
+
+$(document).ready(function() {
+    Chicago_2_Dallas_vis = new ExecutionVisualizer('Chicago_2_Dallas',Chicago_2_Dallas_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(Chicago_2_Dallas_vis,'Chicago_2_Dallas');
+    allVisualizers.push(Chicago_2_Dallas_vis);
+
+});
+
+$(document).ready(function() {
+    $("#Chicago_2_Dallas_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'Chicago_2_Dallas'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    Chicago_2_Dallas_vis.redrawConnectors();
+});
+</script>
+<p>Now, if we know the average cost of a gallon of gas.  Then, we can figure out the cost of the trip from Chicago to Dallas in your car.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="Chicago_2_Dallas_Cost"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (Chicago_2_Dallas_Cost)</span> </p>
+</div>
+<script type="text/javascript">
+var Chicago_2_Dallas_Cost_trace = {"code": "distance = 924.7\nMPG = 35.5\ngallons = distance / MPG\ncostPerGallon = 3.65\ncostTrip = gallons * costPerGallon", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["distance"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"distance": 924.7}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["distance", "MPG"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"MPG": 35.5, "distance": 924.7}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["distance", "MPG", "gallons"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"MPG": 35.5, "distance": 924.7, "gallons": 26.0479}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["distance", "MPG", "gallons", "costPerGallon"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"MPG": 35.5, "distance": 924.7, "costPerGallon": 3.65, "gallons": 26.0479}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["distance", "MPG", "gallons", "costPerGallon", "costTrip"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"MPG": 35.5, "gallons": 26.0479, "costPerGallon": 3.65, "costTrip": 95.0748, "distance": 924.7}, "heap": {}, "line": 5, "event": "return"}]};
+var Chicago_2_Dallas_Cost_vis;
+
+$(document).ready(function() {
+    Chicago_2_Dallas_Cost_vis = new ExecutionVisualizer('Chicago_2_Dallas_Cost',Chicago_2_Dallas_Cost_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(Chicago_2_Dallas_Cost_vis,'Chicago_2_Dallas_Cost');
+    allVisualizers.push(Chicago_2_Dallas_Cost_vis);
+
+});
+
+$(document).ready(function() {
+    $("#Chicago_2_Dallas_Cost_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'Chicago_2_Dallas_Cost'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    Chicago_2_Dallas_Cost_vis.redrawConnectors();
+});
+</script>
+<p id="index-3">What we&#8217;re doing above is <strong>tracing</strong> a program.  Normally, we <strong>run</strong> a program &#8211; tell the computer to execute each step of the program as fast as possible. When we do that, we don&#8217;t see individual variable values, as we can above.  We can check values (including the values for variables) by printing them.  The function <tt class="docutils literal"><span class="pre">print</span></tt> can take an <em>input</em> (a variable name inside of parentheses) whose value will be displayed.</p>
+<p>Press the <a class="reference internal" href="../_images/run-button.png"><img alt="run button" class="align-top" src="../_images/run-button.png" style="height: 20px;" /></a> below to see this program run at full speed.</p>
+
+<div id="cont"></div>
+<div id="Trip_Calculator" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Trip_Calculator_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Trip_Calculator_saveb" onclick="saveEditor('Trip_Calculator');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Trip_Calculator_loadb" onclick="requestCode('Trip_Calculator');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Trip_Calculator','distance = 924.7*nline*MPG = 35.5*nline*gallons = distance / MPG*nline*costPerGallon = 3.65*nline*costTrip = gallons * costPerGallon*nline*print*open**doubleq*Cost to get from Chicago to Dallas*doubleq**close**nline*print*open*costTrip*close*','1','*doubleq*Line by line tour*doubleq*; 1: trp-line1; 2: trp-line2; 3: trp-line3; 4: trp-line4; 5: trp-line5; 6: trp-line6; 7: trp-line7;*atype*')"/>
+<button class='btn btn-default' id="Trip_Calculator_vizb" onclick="injectCodelens(this,'Trip_Calculator');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Trip_Calculator_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Trip_Calculator_code" class="active_code" prefixcode="undefined" lang="python">
+distance = 924.7
+MPG = 35.5
+gallons = distance / MPG
+costPerGallon = 3.65
+costTrip = gallons * costPerGallon
+print("Cost to get from Chicago to Dallas")
+print(costTrip)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Trip_Calculator_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Trip_Calculator_suffix" style="display:none">
+</pre><pre id="Trip_Calculator_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Trip_Calculator)</span> </p>
+<div id="Trip_Calculator_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Trip_Calculator_saveb').toggle();
+    $('#Trip_Calculator_loadb').toggle();
+}
+if ($("#Trip_Calculator").attr("lang") !== "html" && $("#Trip_Calculator_code_div").parents(".admonition").length == 0 && $("#Trip_Calculator_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Trip_Calculator_code_div").offset({
+			left: $("#Trip_Calculator .clearfix").offset().left
+		});
+	}
+	$("#Trip_Calculator_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Trip_Calculator_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Trip_Calculator_runb").parent().siblings(".ac_output").show();
+			runit('Trip_Calculator',this, undefined);
+			$("#Trip_Calculator_runb").on("click", function(){
+				runit('Trip_Calculator',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Trip_Calculator_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Trip_Calculator_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Trip_Calculator_runb").on("click", function(){
+		runit('Trip_Calculator',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>How does this program work?  Try pressing the <a class="reference internal" href="../_images/start-audio-tour.png"><img alt="audio tour button" class="align-top" src="../_images/start-audio-tour.png" style="height: 20px;" /></a> button above to listen to an explanation of the program.</p>
+<p>Try editing the program above and running it to answer this question:</p>
+
+            <div id="3-Chicago_2_Dallas_Q1" class="alert alert-warning">
+            csp-3-1: If the cost per gallon drops to $3.45, can we drive from Chicago to Dallas for less than $90 in gas?<form name="3-Chicago_2_Dallas_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="3-Chicago_2_Dallas_Q1_opt_a" />
+            <label for= "3-Chicago_2_Dallas_Q1_opt_a">  a) Yes</label><br />
+            
+            <input type="radio" name="group1" value="b" id="3-Chicago_2_Dallas_Q1_opt_b" />
+            <label for= "3-Chicago_2_Dallas_Q1_opt_b">  b) No</label><br />
+            
+            <input type="radio" name="group1" value="c" id="3-Chicago_2_Dallas_Q1_opt_c" />
+            <label for= "3-Chicago_2_Dallas_Q1_opt_c">  c) We should fly instead.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('3-Chicago_2_Dallas_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('3-Chicago_2_Dallas_Q1','a',['Yes, the cost would be $89.86 (which you knew by editing the program above and running it)', 'Try it \u002D\u002D it\u0027s just under $90.', 'You might be right, but figure out the cost by editing the above program'])">Check Me</button>
+            <button class='btn btn-default' id="3-Chicago_2_Dallas_Q1_bcomp" disabled name="compare" onclick="compareAnswers('3-Chicago_2_Dallas_Q1');">Compare Me</button>
+            </form><br />
+            <div id="3-Chicago_2_Dallas_Q1_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="following-the-ketchup-ooze">
+<h1>Following the Ketchup Ooze<a class="headerlink" href="#following-the-ketchup-ooze" title="Permalink to this headline">¶</a></h1>
+<p>Let&#8217;s compute how long it would take ketchup to ooze down a table.  Imagine that you tilted a four foot table, and poured ketchup at the top.  How long would it take to get to the bottom of the table?  We&#8217;re going to ignore physics and the angle of the table, and just start from the average speed of ketchup as .028 miles per hour.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/ketchup.jpg"><img alt="A picture of ketchup dripping from a bottle" src="../_images/ketchup.jpg" style="width: 200px;" /></a>
+<p class="caption">Figure 2: Ketchup dripping speed</p>
+</div>
+
+<div class="alert alert-warning cd_section">
+<div id="Ketchup_Speed"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (Ketchup_Speed)</span> </p>
+</div>
+<script type="text/javascript">
+var Ketchup_Speed_trace = {"code": "dripMPH = .028\nFPM = 5280.0\ndripFPH = dripMPH * FPM\nMPH = 60\ndripFPM = dripFPH / MPH\nprint(\"Ketchup speed in feet per minute:\")\nprint(dripFPM)\nprint(\"Ketchup speed to move 4 feet in minutes:\")\nprint(4 / dripFPM)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["dripMPH"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"dripMPH": 0.028}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["dripMPH", "FPM"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"FPM": ["SPECIAL_FLOAT", "5280.0"], "dripMPH": 0.028}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["dripMPH", "FPM", "dripFPH"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"FPM": ["SPECIAL_FLOAT", "5280.0"], "dripMPH": 0.028, "dripFPH": 147.84}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["dripMPH", "FPM", "dripFPH", "MPH"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"FPM": ["SPECIAL_FLOAT", "5280.0"], "dripMPH": 0.028, "dripFPH": 147.84, "MPH": 60}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["dripMPH", "FPM", "dripFPH", "MPH", "dripFPM"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"FPM": ["SPECIAL_FLOAT", "5280.0"], "dripMPH": 0.028, "dripFPH": 147.84, "MPH": 60, "dripFPM": 2.464}, "heap": {}, "line": 6, "event": "step_line"}, {"ordered_globals": ["dripMPH", "FPM", "dripFPH", "MPH", "dripFPM"], "stdout": "Ketchup speed in feet per minute:\n", "func_name": "<module>", "stack_to_render": [], "globals": {"FPM": ["SPECIAL_FLOAT", "5280.0"], "dripMPH": 0.028, "dripFPH": 147.84, "MPH": 60, "dripFPM": 2.464}, "heap": {}, "line": 7, "event": "step_line"}, {"ordered_globals": ["dripMPH", "FPM", "dripFPH", "MPH", "dripFPM"], "stdout": "Ketchup speed in feet per minute:\n2.464\n", "func_name": "<module>", "stack_to_render": [], "globals": {"FPM": ["SPECIAL_FLOAT", "5280.0"], "dripMPH": 0.028, "dripFPH": 147.84, "MPH": 60, "dripFPM": 2.464}, "heap": {}, "line": 8, "event": "step_line"}, {"ordered_globals": ["dripMPH", "FPM", "dripFPH", "MPH", "dripFPM"], "stdout": "Ketchup speed in feet per minute:\n2.464\nKetchup speed to move 4 feet in minutes:\n", "func_name": "<module>", "stack_to_render": [], "globals": {"FPM": ["SPECIAL_FLOAT", "5280.0"], "dripMPH": 0.028, "dripFPH": 147.84, "MPH": 60, "dripFPM": 2.464}, "heap": {}, "line": 9, "event": "step_line"}, {"ordered_globals": ["dripMPH", "FPM", "dripFPH", "MPH", "dripFPM"], "stdout": "Ketchup speed in feet per minute:\n2.464\nKetchup speed to move 4 feet in minutes:\n1.62337662338\n", "func_name": "<module>", "stack_to_render": [], "globals": {"FPM": ["SPECIAL_FLOAT", "5280.0"], "dripMPH": 0.028, "dripFPH": 147.84, "MPH": 60, "dripFPM": 2.464}, "heap": {}, "line": 9, "event": "return"}]};
+var Ketchup_Speed_vis;
+
+$(document).ready(function() {
+    Ketchup_Speed_vis = new ExecutionVisualizer('Ketchup_Speed',Ketchup_Speed_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(Ketchup_Speed_vis,'Ketchup_Speed');
+    allVisualizers.push(Ketchup_Speed_vis);
+
+});
+
+$(document).ready(function() {
+    $("#Ketchup_Speed_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'Ketchup_Speed'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    Ketchup_Speed_vis.redrawConnectors();
+});
+</script>
+<p>The next type of problem is new.  It shows correct code in code blocks on the left side, but the order is mixed up.  You need to drag the blocks to the right side in the right order.  Please watch the video below for a demonstration.</p>
+<p><strong>Click on the right arrow below to play the following video.</strong></p>
+<div id="parsons" class="video_popup" >
+<video controls preload="none"  poster="../_static/MixedUpCodeVideoThumb.png">
+    <source src="http://ice-web.cc.gatech.edu/ce21/1/static/video/MixedUpCode.mov" type="video/mp4"></source>
+    <source src="http://ice-web.cc.gatech.edu/ce21/1/static/video/MixedUpCode.webm" type="video/webm"></source>
+    No supported video types
+</video>
+</div>
+<script>
+   jQuery(function($) {
+      $('#parsons_thumb').click(function(e) {
+         $('#parsons').show();
+         $('#parsons_thumb').hide();
+         logBookEvent({'event':'video','act':'play','div_id': 'parsons'});
+         // Log the run event
+      });
+	  $('#parsons video').one("click", function(){
+		this.play();
+	  });
+	  $('#parsons video').one("play", function(){
+		logBookEvent({'event':'video','act':'play','div_id': 'parsons'});
+	  });
+   });
+</script>
+
+        <div class='parsons alert alert-warning' id="parsons-217">
+        <div class="parsons-text">csp-3-2: The following program figures out the ketchup speed in feet per <i>seconds</i>.  Drag the blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p><br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-217" style="display:none;">dripMPH = .028\nFPM= 5280.0\ndripFPH = dripMPH * FPM
+MPH = 60\ndripFPM = dripFPH / MPH
+SPM = 60\ndripFPS = dripFPM / SPM
+print("Ketchup speed:")\nprint(ketchupFPS)</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-217" class="sortable-code"></div>
+        <div id="parsons-sortableCode-217" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe217" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset217" value="Reset"/>
+        <div id="parsons-message-217"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-217").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-217").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-217");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_217.getHash("#ul-parsons-sortableCode-217");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'3-Ketchup_Speed'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'3-Ketchup_Speed'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-217");
+            var trashul = $("#ul-parsons-sortableTrash-217");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_217 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-217',
+		'trashId': 'parsons-sortableTrash-217',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_217.init($pjQ("#parsons-orig-217").text());
+	pp_217.shuffleLines();
+            
+        if(localStorage.getItem('3-Ketchup_Speed') && localStorage.getItem('3-Ketchup_Speed-trash')) {
+            try {
+                var solution = localStorage.getItem('3-Ketchup_Speed');
+                var trash = localStorage.getItem('3-Ketchup_Speed-trash');
+                pp_217.createHTMLFromHashes(solution,trash);
+                pp_217.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old 3-Ketchup_Speed state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset217").click(function(event){
+              event.preventDefault();
+              pp_217.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-217");
+            var trashul = $("#ul-parsons-sortableTrash-217");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe217").click(function(event){
+              event.preventDefault();
+              var hash = pp_217.getHash("#ul-parsons-sortableCode-217");
+              localStorage.setItem('3-Ketchup_Speed',hash);
+              hash = pp_217.getHash("#ul-parsons-sortableTrash-217");
+              localStorage.setItem('3-Ketchup_Speed-trash',hash);
+            
+            pp_217.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+</div>
+<div class="section" id="walking-through-assignment-more-generally">
+<h1>Walking through Assignment more Generally<a class="headerlink" href="#walking-through-assignment-more-generally" title="Permalink to this headline">¶</a></h1>
+<p>Let&#8217;s explore assignment in general.  Try tracing this example.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="Assign_Basic"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (Assign_Basic)</span> </p>
+</div>
+<script type="text/javascript">
+var Assign_Basic_trace = {"code": "a = 1\nb = 12.3\nc = \"Fred\"\nd = b", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["a"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"a": 1}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["a", "b"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"a": 1, "b": 12.3}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["a", "b", "c"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"a": 1, "c": "Fred", "b": 12.3}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["a", "b", "c", "d"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"a": 1, "c": "Fred", "b": 12.3, "d": 12.3}, "heap": {}, "line": 4, "event": "return"}]};
+var Assign_Basic_vis;
+
+$(document).ready(function() {
+    Assign_Basic_vis = new ExecutionVisualizer('Assign_Basic',Assign_Basic_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(Assign_Basic_vis,'Assign_Basic');
+    allVisualizers.push(Assign_Basic_vis);
+
+});
+
+$(document).ready(function() {
+    $("#Assign_Basic_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'Assign_Basic'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    Assign_Basic_vis.redrawConnectors();
+});
+</script>
+
+            <div id="3-Assignment_Q1" class="alert alert-warning">
+            csp-3-3: What is the value of variable <tt class="docutils literal"><span class="pre">d</span></tt> when this program is finished running?<form name="3-Assignment_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="3-Assignment_Q1_opt_a" />
+            <label for= "3-Assignment_Q1_opt_a">  a) 1</label><br />
+            
+            <input type="radio" name="group1" value="b" id="3-Assignment_Q1_opt_b" />
+            <label for= "3-Assignment_Q1_opt_b">  b) 12.3</label><br />
+            
+            <input type="radio" name="group1" value="c" id="3-Assignment_Q1_opt_c" />
+            <label for= "3-Assignment_Q1_opt_c">  c) "b"</label><br />
+            
+            <input type="radio" name="group1" value="d" id="3-Assignment_Q1_opt_d" />
+            <label for= "3-Assignment_Q1_opt_d">  d) "d"</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('3-Assignment_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('3-Assignment_Q1','b',['The variable a is not used in defining the variable b.', 'The variable d is set to the same value as the contents of the variable b.  The variable b still holds the value 12.3 as well.', 'The variable d gets assigned the same value as the one stored in b.', 'The variable d gets its value from the variable b.'])">Check Me</button>
+            <button class='btn btn-default' id="3-Assignment_Q1_bcomp" disabled name="compare" onclick="compareAnswers('3-Assignment_Q1');">Compare Me</button>
+            </form><br />
+            <div id="3-Assignment_Q1_feedback">
+            </div>
+            </div>
+            <p>The <em>sequence</em> of statements in a program is very important.  Assignment doesn&#8217;t create some kind of relationship between the names, like in mathematics.  The variable <tt class="docutils literal"><span class="pre">a</span></tt> might equal <tt class="docutils literal"><span class="pre">12</span></tt> at one point, and <tt class="docutils literal"><span class="pre">15</span></tt> at another. An assignment statement is an action that occurs once, and then is over with.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="Assign_Multiple"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (Assign_Multiple)</span> </p>
+</div>
+<script type="text/javascript">
+var Assign_Multiple_trace = {"code": "var1 = 45\nvar1 = 17.3\nvar2 = var1", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["var1"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"var1": 45}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["var1"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"var1": 17.3}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["var1", "var2"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"var1": 17.3, "var2": 17.3}, "heap": {}, "line": 3, "event": "return"}]};
+var Assign_Multiple_vis;
+
+$(document).ready(function() {
+    Assign_Multiple_vis = new ExecutionVisualizer('Assign_Multiple',Assign_Multiple_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(Assign_Multiple_vis,'Assign_Multiple');
+    allVisualizers.push(Assign_Multiple_vis);
+
+});
+
+$(document).ready(function() {
+    $("#Assign_Multiple_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'Assign_Multiple'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    Assign_Multiple_vis.redrawConnectors();
+});
+</script>
+
+            <div id="3-Assignment_Multiple_Q1" class="alert alert-warning">
+            csp-3-4: What are the values in <tt class="docutils literal"><span class="pre">var1</span></tt> and <tt class="docutils literal"><span class="pre">var2</span></tt> after this program runs?<form name="3-Assignment_Multiple_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="3-Assignment_Multiple_Q1_opt_a" />
+            <label for= "3-Assignment_Multiple_Q1_opt_a">  a) var1 is 45, var2 is 45</label><br />
+            
+            <input type="radio" name="group1" value="b" id="3-Assignment_Multiple_Q1_opt_b" />
+            <label for= "3-Assignment_Multiple_Q1_opt_b">  b) var1 is 45, var2 is var1</label><br />
+            
+            <input type="radio" name="group1" value="c" id="3-Assignment_Multiple_Q1_opt_c" />
+            <label for= "3-Assignment_Multiple_Q1_opt_c">  c) var1 is 17.3, var2 is 45</label><br />
+            
+            <input type="radio" name="group1" value="d" id="3-Assignment_Multiple_Q1_opt_d" />
+            <label for= "3-Assignment_Multiple_Q1_opt_d">  d) var1 is 17.3, var2 is 17.3</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('3-Assignment_Multiple_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('3-Assignment_Multiple_Q1','d',['The variable var1 was set to 45, but that gets changed in line 2, before var2 gets set to any value at all.', 'Both variables contain numeric values, because those are the only values in this program.', 'The variable var2 never gets set to 45 in this program.', 'The variable var1 is first set to 45 and then changed to 17.3, and then, var2 gets the value from var1.'])">Check Me</button>
+            <button class='btn btn-default' id="3-Assignment_Multiple_Q1_bcomp" disabled name="compare" onclick="compareAnswers('3-Assignment_Multiple_Q1');">Compare Me</button>
+            </form><br />
+            <div id="3-Assignment_Multiple_Q1_feedback">
+            </div>
+            </div>
+            <p>We can see values (including the values for named variables) by printing them.  It&#8217;s a useful way to see what&#8217;s going on inside a program.  Try running this example where we&#8217;re having the computer calculate the number of days in three weeks:</p>
+
+<div id="cont"></div>
+<div id="Assign_Days" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Assign_Days_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Assign_Days_saveb" onclick="saveEditor('Assign_Days');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Assign_Days_loadb" onclick="requestCode('Assign_Days');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Assign_Days','daysInWeek = 7*nline*print*open*daysInWeek*close**nline*numDays = 7 * 3*nline*print*open*numDays*close**nline*numDays2 = daysInWeek * 3*nline*print*open*numDays2*close*','1','*doubleq*Line by line tour*doubleq*; 1: calcDays-line1; 2: calcDays-line2; 3: calcDays-line3; 4: calcDays-line4; 5: calcDays-line5; 6: calcDays-line6;*atype*')"/>
+<button class='btn btn-default' id="Assign_Days_vizb" onclick="injectCodelens(this,'Assign_Days');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Assign_Days_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Assign_Days_code" class="active_code" prefixcode="undefined" lang="python">
+daysInWeek = 7
+print(daysInWeek)
+numDays = 7 * 3
+print(numDays)
+numDays2 = daysInWeek * 3
+print(numDays2)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Assign_Days_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Assign_Days_suffix" style="display:none">
+</pre><pre id="Assign_Days_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Assign_Days)</span> </p>
+<div id="Assign_Days_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Assign_Days_saveb').toggle();
+    $('#Assign_Days_loadb').toggle();
+}
+if ($("#Assign_Days").attr("lang") !== "html" && $("#Assign_Days_code_div").parents(".admonition").length == 0 && $("#Assign_Days_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Assign_Days_code_div").offset({
+			left: $("#Assign_Days .clearfix").offset().left
+		});
+	}
+	$("#Assign_Days_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Assign_Days_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Assign_Days_runb").parent().siblings(".ac_output").show();
+			runit('Assign_Days',this, undefined);
+			$("#Assign_Days_runb").on("click", function(){
+				runit('Assign_Days',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Assign_Days_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Assign_Days_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Assign_Days_runb").on("click", function(){
+		runit('Assign_Days',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="3-Assign_Days_Q1" class="alert alert-warning">
+            csp-3-5: What three values are printed when this program runs?<form name="3-Assign_Days_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="3-Assign_Days_Q1_opt_a" />
+            <label for= "3-Assign_Days_Q1_opt_a">  a) 7, 7*3, daysInWeek*3</label><br />
+            
+            <input type="radio" name="group1" value="b" id="3-Assign_Days_Q1_opt_b" />
+            <label for= "3-Assign_Days_Q1_opt_b">  b) daysInWeek, numDays, numDays2</label><br />
+            
+            <input type="radio" name="group1" value="c" id="3-Assign_Days_Q1_opt_c" />
+            <label for= "3-Assign_Days_Q1_opt_c">  c) 7, 21, 21</label><br />
+            
+            <input type="radio" name="group1" value="d" id="3-Assign_Days_Q1_opt_d" />
+            <label for= "3-Assign_Days_Q1_opt_d">  d) 7, 21, 3</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('3-Assign_Days_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('3-Assign_Days_Q1','c',['The values will actually be computed and numbers will be printed.', 'The variable names will not be printed.', 'The first print will print the value of daysInWeek (7), the second the value of numDays (21), and the third the value of numDays2 (21).', 'The value for daysInWeek will be computed and assigned.'])">Check Me</button>
+            <button class='btn btn-default' id="3-Assign_Days_Q1_bcomp" disabled name="compare" onclick="compareAnswers('3-Assign_Days_Q1');">Compare Me</button>
+            </form><br />
+            <div id="3-Assign_Days_Q1_feedback">
+            </div>
+            </div>
+            
+        <div class='parsons alert alert-warning' id="parsons-305">
+        <div class="parsons-text">csp-3-6: The following program should figure out the cost per person for a dinner including the tip. But the blocks have been mixed up.  Drag the blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p><br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-305" style="display:none;">bill = 89.23
+tip = bill * 0.20
+total = bill + tip
+numPeople = 3\nperPersonCost = total / numPeople
+print(perPersonCost)</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-305" class="sortable-code"></div>
+        <div id="parsons-sortableCode-305" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe305" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset305" value="Reset"/>
+        <div id="parsons-message-305"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-305").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-305").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-305");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_305.getHash("#ul-parsons-sortableCode-305");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'3-Per_Person_Cost'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'3-Per_Person_Cost'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-305");
+            var trashul = $("#ul-parsons-sortableTrash-305");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_305 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-305',
+		'trashId': 'parsons-sortableTrash-305',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_305.init($pjQ("#parsons-orig-305").text());
+	pp_305.shuffleLines();
+            
+        if(localStorage.getItem('3-Per_Person_Cost') && localStorage.getItem('3-Per_Person_Cost-trash')) {
+            try {
+                var solution = localStorage.getItem('3-Per_Person_Cost');
+                var trash = localStorage.getItem('3-Per_Person_Cost-trash');
+                pp_305.createHTMLFromHashes(solution,trash);
+                pp_305.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old 3-Per_Person_Cost state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset305").click(function(event){
+              event.preventDefault();
+              pp_305.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-305");
+            var trashul = $("#ul-parsons-sortableTrash-305");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe305").click(function(event){
+              event.preventDefault();
+              var hash = pp_305.getHash("#ul-parsons-sortableCode-305");
+              localStorage.setItem('3-Per_Person_Cost',hash);
+              hash = pp_305.getHash("#ul-parsons-sortableTrash-305");
+              localStorage.setItem('3-Per_Person_Cost-trash',hash);
+            
+            pp_305.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+</div>
+<div class="section" id="bigteachernote-teacher-note-misconceptions">
+<h1><a class="reference internal" href="../_images/apple3.jpg"><img alt="teacher note" class="align-top" src="../_images/apple3.jpg" style="width: 50px;" /></a> Teacher Note: Misconceptions<a class="headerlink" href="#bigteachernote-teacher-note-misconceptions" title="Permalink to this headline">¶</a></h1>
+<p id="index-4">There is a lot of research evidence that assignment is a difficult topic for students who are first learning to program.  <a class="reference external" href="http://doi.acm.org/10.1145/1753326.1753430">In a study of professional graphic designers who had taught themselves to program</a>, the assignment statement was rated the top most difficult programming statement to learn.  Why is that?</p>
+<p>One reason may be because assignment requires the programmer to be <em>consistent</em> in understanding and predicting what happens in a program.  Assignment is always the <em>value on the right</em> gets copied to the space named by <em>the variable on the left</em>.  <a class="reference external" href="http://www.eis.mdx.ac.uk/research/PhDArea/saeed/">Researchers at Middlesex University in England</a> found that a critical predictor of success in programming is to see that assignment <strong>always</strong> does the same thing</p>
+<p><strong>How do students get assignment wrong?</strong>   Here are three ways.  One is that they see assignment as being a <em>move</em> of the value (rather than a <em>copy</em>).  So, they think that after <tt class="docutils literal"><span class="pre">var1</span> <span class="pre">=</span> <span class="pre">var2</span></tt> the variable <tt class="docutils literal"><span class="pre">var1</span></tt> has the value from <tt class="docutils literal"><span class="pre">var2</span></tt> and the variable <tt class="docutils literal"><span class="pre">var2</span></tt> has a value of nothing or zero.</p>
+<p><strong>Click on the right arrow below to play the following video.</strong></p>
+<div id="assignment_zero" class="video_popup" >
+<video controls preload="none"  poster="../_static/video-misconception-zeroing.png">
+    <source src="http://ice-web.cc.gatech.edu/ce21/1/static/video/assignment-zeroed-small.mov" type="video/mp4"></source>
+    <source src="http://ice-web.cc.gatech.edu/ce21/1/static/video/assignment-zeroed-small.webm" type="video/webm"></source>
+    No supported video types
+</video>
+</div>
+<script>
+   jQuery(function($) {
+      $('#assignment_zero_thumb').click(function(e) {
+         $('#assignment_zero').show();
+         $('#assignment_zero_thumb').hide();
+         logBookEvent({'event':'video','act':'play','div_id': 'assignment_zero'});
+         // Log the run event
+      });
+	  $('#assignment_zero video').one("click", function(){
+		this.play();
+	  });
+	  $('#assignment_zero video').one("play", function(){
+		logBookEvent({'event':'video','act':'play','div_id': 'assignment_zero'});
+	  });
+   });
+</script>
+<p>A second model, which may be more common, is that they see assignment as a <em>relationship</em>.   Once <tt class="docutils literal"><span class="pre">var1</span> <span class="pre">=</span> <span class="pre">var2</span></tt> then any change to <tt class="docutils literal"><span class="pre">var2</span></tt> will automatically change <tt class="docutils literal"><span class="pre">var1</span></tt>.  The problem here is that the student doesn&#8217;t see the assignment as an <em>action</em>.  If a student doesn&#8217;t see the assignment as an action, it&#8217;s hard to understand why the <em>ordering</em> of statements is important.</p>
+<div id="assignment_relationship" class="video_popup" >
+<video controls preload="none"  poster="../_static/video-misconception-relationship.png">
+    <source src="http://ice-web.cc.gatech.edu/ce21/1/static/video/assignment-relationship-small.mov" type="video/mp4"></source>
+    <source src="http://ice-web.cc.gatech.edu/ce21/1/static/video/assignment-relationship-small.webm" type="video/webm"></source>
+    No supported video types
+</video>
+</div>
+<script>
+   jQuery(function($) {
+      $('#assignment_relationship_thumb').click(function(e) {
+         $('#assignment_relationship').show();
+         $('#assignment_relationship_thumb').hide();
+         logBookEvent({'event':'video','act':'play','div_id': 'assignment_relationship'});
+         // Log the run event
+      });
+	  $('#assignment_relationship video').one("click", function(){
+		this.play();
+	  });
+	  $('#assignment_relationship video').one("play", function(){
+		logBookEvent({'event':'video','act':'play','div_id': 'assignment_relationship'});
+	  });
+   });
+</script>
+<p>A third problem is that some students have <em>assignment dyslexia</em>, which means that instead of writing the assignment with the variable name on the left side of the <tt class="docutils literal"><span class="pre">=</span></tt> and the value on the right, they reverse it as shown below.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="mi">7</span> <span class="o">=</span> <span class="n">daysInWeek</span>
+</pre></div>
+</div>
+<p>The computer sees the above assignment statement as an attempt to change what 7 means, and won&#8217;t allow it.  It will cause an error when you try to run it.</p>
+<p><strong>How do we help students get assignments right?</strong>  Have students trace programs with assignments, where they draw values in boxes.  Watch what they do, and try to be aware of their model for how assignment works.  If they have one of these other models, try some of the examples in this section &#8211; by tracing, and then on the computer.  Get students to see where their model doesn&#8217;t accurately capture what the computer is doing.</p>
+<p>Let&#8217;s say that you showed Sam this program:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">number2</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">number1</span> <span class="o">=</span> <span class="n">number2</span>
+<span class="n">number2</span> <span class="o">=</span> <span class="mi">17</span>
+</pre></div>
+</div>
+<p>Then asked Sam, &#8220;What&#8217;s the value for the variable <cite>number1</cite>?&#8221;</p>
+
+            <div id="3-Diagnosing_Assignment_Q1" class="alert alert-warning">
+            csp-3-7:  If the answer was <cite>17</cite>, Sam might have what kind of misconception?<form name="3-Diagnosing_Assignment_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="3-Diagnosing_Assignment_Q1_opt_a" />
+            <label for= "3-Diagnosing_Assignment_Q1_opt_a">  a) Sam may see assignment as a move.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="3-Diagnosing_Assignment_Q1_opt_b" />
+            <label for= "3-Diagnosing_Assignment_Q1_opt_b">  b) Sam may see assignment as a copy.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="3-Diagnosing_Assignment_Q1_opt_c" />
+            <label for= "3-Diagnosing_Assignment_Q1_opt_c">  c) Sam may see assignment as a relationship.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('3-Diagnosing_Assignment_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('3-Diagnosing_Assignment_Q1','c',['Assignment\u002Das\u002Dmove says that number1 is 32 and number2 has 17, but number2 was empty or zero after number1 \u003D number2', 'Assignment really is a copy, so that\u0027s not a misconception.  Assignment\u002Das\u002Dcopy wouldn\u0027t lead to number1 being 17.', 'If Sam thinks changing number2 changes number1, Sam may misunderstand assignment as creating a relationship.'])">Check Me</button>
+            <button class='btn btn-default' id="3-Diagnosing_Assignment_Q1_bcomp" disabled name="compare" onclick="compareAnswers('3-Diagnosing_Assignment_Q1');">Compare Me</button>
+            </form><br />
+            <div id="3-Diagnosing_Assignment_Q1_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="figuring-out-an-invoice">
+<h1>Figuring out an Invoice<a class="headerlink" href="#figuring-out-an-invoice" title="Permalink to this headline">¶</a></h1>
+<p>We can use variables to solve problems like those we might solve in a spreadsheet.  Imagine that you had a spreadsheet with an invoice for an office supply company.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/invoice.png"><img alt="a spreadsheet" src="../_images/invoice.png" style="width: 600px;" /></a>
+<p class="caption">Figure 3: A spreadsheet with order information</p>
+</div>
+<p>Here&#8217;s a program to compute the total price for the invoice.  Be sure to click <a class="reference internal" href="../_images/start-audio-tour.png"><img alt="audio tour button" class="align-top" src="../_images/start-audio-tour.png" style="height: 20px;" /></a> to understand what&#8217;s happening here.</p>
+<blockquote>
+<div>
+<div id="cont"></div>
+<div id="Invoice1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Invoice1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Invoice1_saveb" onclick="saveEditor('Invoice1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Invoice1_loadb" onclick="requestCode('Invoice1');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Invoice1','quantity1 = 2*nline*unitPrice1 = 7.56*nline*total1 = quantity1 * unitPrice1*nline*quantity2 = 4*nline*unitPrice2 = 4.71*nline*total2 = quantity2 * unitPrice2*nline*invoiceTotal = total1 + total2*nline*print*open*invoiceTotal*close*','1','*doubleq*Line by line tour*doubleq*; 1: inv-line1; 2: inv-line2; 3: inv-line3; 4: inv-line4; 5: inv-line5; 6: inv-line6; 7: inv-line7; 8: inv-line8;*atype*')"/>
+<button class='btn btn-default' id="Invoice1_vizb" onclick="injectCodelens(this,'Invoice1');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Invoice1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Invoice1_code" class="active_code" prefixcode="undefined" lang="python">
+quantity1 = 2
+unitPrice1 = 7.56
+total1 = quantity1 * unitPrice1
+quantity2 = 4
+unitPrice2 = 4.71
+total2 = quantity2 * unitPrice2
+invoiceTotal = total1 + total2
+print(invoiceTotal)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Invoice1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Invoice1_suffix" style="display:none">
+</pre><pre id="Invoice1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Invoice1)</span> </p>
+<div id="Invoice1_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Invoice1_saveb').toggle();
+    $('#Invoice1_loadb').toggle();
+}
+if ($("#Invoice1").attr("lang") !== "html" && $("#Invoice1_code_div").parents(".admonition").length == 0 && $("#Invoice1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Invoice1_code_div").offset({
+			left: $("#Invoice1 .clearfix").offset().left
+		});
+	}
+	$("#Invoice1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Invoice1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Invoice1_runb").parent().siblings(".ac_output").show();
+			runit('Invoice1',this, undefined);
+			$("#Invoice1_runb").on("click", function(){
+				runit('Invoice1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Invoice1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Invoice1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Invoice1_runb").on("click", function(){
+		runit('Invoice1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></blockquote>
+
+            <div id="3-Invoice1_Q1" class="alert alert-warning">
+            csp-3-8: How many variables are in this program?<form name="3-Invoice1_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="3-Invoice1_Q1_opt_a" />
+            <label for= "3-Invoice1_Q1_opt_a">  a) 7</label><br />
+            
+            <input type="radio" name="group1" value="b" id="3-Invoice1_Q1_opt_b" />
+            <label for= "3-Invoice1_Q1_opt_b">  b) 6</label><br />
+            
+            <input type="radio" name="group1" value="c" id="3-Invoice1_Q1_opt_c" />
+            <label for= "3-Invoice1_Q1_opt_c">  c) 5</label><br />
+            
+            <input type="radio" name="group1" value="d" id="3-Invoice1_Q1_opt_d" />
+            <label for= "3-Invoice1_Q1_opt_d">  d) 2</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('3-Invoice1_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('3-Invoice1_Q1','a',['Yes, quantity1, unitPrice1, total1, quantity2, unitPrice2, total2, invoiceTotal.', 'There are three variables per line, two lines, and one total.', 'There are three variables per line, two lines, and one total.', 'There are three variables per line, two lines, and one total.'])">Check Me</button>
+            <button class='btn btn-default' id="3-Invoice1_Q1_bcomp" disabled name="compare" onclick="compareAnswers('3-Invoice1_Q1');">Compare Me</button>
+            </form><br />
+            <div id="3-Invoice1_Q1_feedback">
+            </div>
+            </div>
+            <p>We don&#8217;t really have to create new variables <tt class="docutils literal"><span class="pre">quantity2</span></tt> and <tt class="docutils literal"><span class="pre">unitPrice2</span></tt>.  We only use those to compute the total for the line, and then we could reuse those variable names.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="Invoice2"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (Invoice2)</span> </p>
+</div>
+<script type="text/javascript">
+var Invoice2_trace = {"code": "quantity = 2\nunitPrice = 7.56\ntotal1 = quantity * unitPrice\nquantity = 4\nunitPrice = 4.71\ntotal2 = quantity * unitPrice\ninvoiceTotal = total1 + total2\nprint(invoiceTotal)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["quantity"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"quantity": 2}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["quantity", "unitPrice"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"unitPrice": 7.56, "quantity": 2}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["quantity", "unitPrice", "total1"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"unitPrice": 7.56, "total1": 15.12, "quantity": 2}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["quantity", "unitPrice", "total1"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"unitPrice": 7.56, "total1": 15.12, "quantity": 4}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["quantity", "unitPrice", "total1"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"unitPrice": 4.71, "total1": 15.12, "quantity": 4}, "heap": {}, "line": 6, "event": "step_line"}, {"ordered_globals": ["quantity", "unitPrice", "total1", "total2"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"unitPrice": 4.71, "total1": 15.12, "total2": 18.84, "quantity": 4}, "heap": {}, "line": 7, "event": "step_line"}, {"ordered_globals": ["quantity", "unitPrice", "total1", "total2", "invoiceTotal"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"invoiceTotal": 33.96, "unitPrice": 4.71, "total1": 15.12, "total2": 18.84, "quantity": 4}, "heap": {}, "line": 8, "event": "step_line"}, {"ordered_globals": ["quantity", "unitPrice", "total1", "total2", "invoiceTotal"], "stdout": "33.96\n", "func_name": "<module>", "stack_to_render": [], "globals": {"quantity": 4, "unitPrice": 4.71, "total1": 15.12, "total2": 18.84, "invoiceTotal": 33.96}, "heap": {}, "line": 8, "event": "return"}]};
+var Invoice2_vis;
+
+$(document).ready(function() {
+    Invoice2_vis = new ExecutionVisualizer('Invoice2',Invoice2_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(Invoice2_vis,'Invoice2');
+    allVisualizers.push(Invoice2_vis);
+
+});
+
+$(document).ready(function() {
+    $("#Invoice2_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'Invoice2'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    Invoice2_vis.redrawConnectors();
+});
+</script>
+
+            <div id="3-Invoice2_Q1" class="alert alert-warning">
+            csp-3-9: How many variables are in this program?<form name="3-Invoice2_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="3-Invoice2_Q1_opt_a" />
+            <label for= "3-Invoice2_Q1_opt_a">  a) 7</label><br />
+            
+            <input type="radio" name="group1" value="b" id="3-Invoice2_Q1_opt_b" />
+            <label for= "3-Invoice2_Q1_opt_b">  b) 6</label><br />
+            
+            <input type="radio" name="group1" value="c" id="3-Invoice2_Q1_opt_c" />
+            <label for= "3-Invoice2_Q1_opt_c">  c) 5</label><br />
+            
+            <input type="radio" name="group1" value="d" id="3-Invoice2_Q1_opt_d" />
+            <label for= "3-Invoice2_Q1_opt_d">  d) 2</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('3-Invoice2_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('3-Invoice2_Q1','c',['We have two fewer variables now.', 'We have a total for each line (two), a quantity, a unitPrice, and an invoiceTotal.', 'The variables are quantity, unitPrice, total1, total2, and invoiceTotal.', 'We have a total for each line (two), a quantity, a unitPrice, and an invoiceTotal.'])">Check Me</button>
+            <button class='btn btn-default' id="3-Invoice2_Q1_bcomp" disabled name="compare" onclick="compareAnswers('3-Invoice2_Q1');">Compare Me</button>
+            </form><br />
+            <div id="3-Invoice2_Q1_feedback">
+            </div>
+            </div>
+            <p>Let&#8217;s say that apples are $0.40 apiece, and pears are $0.65 apiece.  Modify the program below to calculate the total cost.</p>
+
+<div id="cont"></div>
+<div id="Complete_Assignment" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Complete_Assignment_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Complete_Assignment_saveb" onclick="saveEditor('Complete_Assignment');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Complete_Assignment_loadb" onclick="requestCode('Complete_Assignment');">Load</button>
+<button class='btn btn-default' id="Complete_Assignment_vizb" onclick="injectCodelens(this,'Complete_Assignment');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Complete_Assignment_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Complete_Assignment_code" class="active_code" prefixcode="undefined" lang="python">
+apples = 4
+pears = 3
+totalCost =
+print(totalCost)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Complete_Assignment_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Complete_Assignment_suffix" style="display:none">
+</pre><pre id="Complete_Assignment_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Complete_Assignment)</span> </p>
+<div id="Complete_Assignment_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Complete_Assignment_saveb').toggle();
+    $('#Complete_Assignment_loadb').toggle();
+}
+if ($("#Complete_Assignment").attr("lang") !== "html" && $("#Complete_Assignment_code_div").parents(".admonition").length == 0 && $("#Complete_Assignment_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Complete_Assignment_code_div").offset({
+			left: $("#Complete_Assignment .clearfix").offset().left
+		});
+	}
+	$("#Complete_Assignment_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Complete_Assignment_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Complete_Assignment_runb").parent().siblings(".ac_output").show();
+			runit('Complete_Assignment',this, undefined);
+			$("#Complete_Assignment_runb").on("click", function(){
+				runit('Complete_Assignment',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Complete_Assignment_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Complete_Assignment_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Complete_Assignment_runb").on("click", function(){
+		runit('Complete_Assignment',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>You are welcome to try out the following answers by copying and pasting them into the program above before answering this question:</p>
+
+            <div id="3-Make_An_Assignment_Q1" class="alert alert-warning">
+            csp-3-10:  Which line of code will compute the correct <tt class="docutils literal"><span class="pre">totalCost</span></tt> if put into line 3 above?<form name="3-Make_An_Assignment_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="3-Make_An_Assignment_Q1_opt_a" />
+            <label for= "3-Make_An_Assignment_Q1_opt_a">  a) totalCost = apples + pears</label><br />
+            
+            <input type="radio" name="group1" value="b" id="3-Make_An_Assignment_Q1_opt_b" />
+            <label for= "3-Make_An_Assignment_Q1_opt_b">  b) totalCost = (0.4 * apples) + (0.65 * pears)</label><br />
+            
+            <input type="radio" name="group1" value="c" id="3-Make_An_Assignment_Q1_opt_c" />
+            <label for= "3-Make_An_Assignment_Q1_opt_c">  c) totalCost = (0.4 * pears) + (0.65 * apples)</label><br />
+            
+            <input type="radio" name="group1" value="d" id="3-Make_An_Assignment_Q1_opt_d" />
+            <label for= "3-Make_An_Assignment_Q1_opt_d">  d) totalCost = (0.4 + apples) * (0.65 + pears)</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('3-Make_An_Assignment_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('3-Make_An_Assignment_Q1','b',['That does not consider the cost of the apples or pears.', 'We need to multiply the cost per apple times the number of apples and add it to the cost per pear times the number of pears.', 'That gets the costs backwards', 'That is the wrong formula for computing total cost.'])">Check Me</button>
+            <button class='btn btn-default' id="3-Make_An_Assignment_Q1_bcomp" disabled name="compare" onclick="compareAnswers('3-Make_An_Assignment_Q1');">Compare Me</button>
+            </form><br />
+            <div id="3-Make_An_Assignment_Q1_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="bigteachernote-teacher-note-why-videos">
+<h1><a class="reference internal" href="../_images/apple3.jpg"><img alt="teacher note" class="align-top" src="../_images/apple3.jpg" style="width: 50px;" /></a> Teacher Note: Why Videos?<a class="headerlink" href="#bigteachernote-teacher-note-why-videos" title="Permalink to this headline">¶</a></h1>
+<p>Why are we using video to demonstrate different ways of thinking about assignment?  Video is not as effective as text or diagrams for conveying information, because it&#8217;s dynamic (it moves) which makes it harder to remember.  However, video is good for presenting <em>spatial</em> or <em>visual</em> models.</p>
+<p>Researchers in spatial reasoning suggests that computer science has a strong visual component.   Students with strong spatial reasoning skills are more likely to succeed in computer science (but if students don&#8217;t have strong spatial reasoning, we can help them develop those skills). We know that understanding what an <tt class="docutils literal"><span class="pre">=</span></tt> (equals sign) means in mathematics relies heavily on spatial reasoning.  It may be that spatial reasoning is also important in understanding assignment in computer science. Gestures, sketches, and <em>video</em> are good ways to provide spatial information to students, to provide guidance to students to <em>think</em> visually &#8211; not just memorize a diagram. It&#8217;s easy to get a diagram wrong (in conflict with how the students think about the subject).  Gestures, sketches, and videos are fleeting (only available for a short while) and thus support learning, but require students to develop their <em>own</em> visual understanding.</p>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014, Mark Guzdial, Barbara Ericson, and Briana Morrison.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

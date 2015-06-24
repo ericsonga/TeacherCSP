@@ -1,0 +1,1806 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Repeating Steps &mdash; CS Principles</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="CS Principles" href="../index.html" />
+    <link rel="next" title="More Types of Loops" href="../CSPWhileAndForLoops/repeat3.html" />
+    <link rel="prev" title="Naming Everything" href="../CSPNameNames/names4names2.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'CSPrinciples';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS Principles</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/CSPrinciples/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/CSPrinciples/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Repeating Steps</a></li>
+<li><a class="reference internal" href="#repeating-with-numbers">Repeating with Numbers</a></li>
+<li><a class="reference internal" href="#what-is-a-list">What is a List?</a></li>
+<li><a class="reference internal" href="#bigteachernote-teacher-note-names-are-just-words"> Teacher Note: Names are Just Words</a><ul>
+<li><a class="reference internal" href="#using-better-variable-names">Using Better Variable Names</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-range-function">The Range Function</a></li>
+<li><a class="reference internal" href="#there-s-a-pattern-here">There&#8217;s a Pattern Here!</a></li>
+<li><a class="reference internal" href="#using-the-accumulator-pattern">Using the Accumulator Pattern</a></li>
+<li><a class="reference internal" href="#bigteachernote-teacher-note-print-is-your-friend"> Teacher Note: Print() is Your Friend</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Naming Everything" data-toggle="tooltip">
+    <a href="../CSPNameNames/names4names2.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - More Types of Loops' data-toggle="tooltip" >
+    <a href="../CSPWhileAndForLoops/repeat3.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="repeating-steps">
+<h1>Repeating Steps<a class="headerlink" href="#repeating-steps" title="Permalink to this headline">¶</a></h1>
+<p><strong>Learning Objectives:</strong>:</p>
+<ul class="simple">
+<li>Use a <em>for</em> loop to repeat code.</li>
+<li>Use <em>range</em> to create a list of numbers</li>
+</ul>
+<p>We often have to repeat steps in a process.  If you are making a cake the recipe might say add an ingredient and then stir it 50 times or until the batter is smooth.  You can probably handle stirring the batter 50 times, but what if you had to stir it 1,000 times?  You might want a machine to do that.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/stirCake.jpg"><img alt="a cake mix that must be stirred" src="../_images/stirCake.jpg" style="height: 250px;" /></a>
+<p class="caption">Figure 1: A cake mix that must be stirred</p>
+</div>
+<p id="index-0">A computer never gets tired.  It can do the same thing over-and-over without slipping up.  It can execute a program for as long as it has electricity.  So, there must be a way to tell a computer to do things over-and-over.  Computers know how to repeat steps in a program and the way they do this is often called a <strong>loop</strong> or <strong>iteration</strong>.  Have you ever had an <strong>earworm</strong>?  This is when a song gets stuck in your head and keeps repeating as if the song was set to <strong>loop</strong> (repeat after playing).</p>
+</div>
+<div class="section" id="repeating-with-numbers">
+<h1>Repeating with Numbers<a class="headerlink" href="#repeating-with-numbers" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="index-1"></span><p id="index-2">We are going to use a <tt class="docutils literal"><span class="pre">for</span></tt> loop.  A <tt class="docutils literal"><span class="pre">for</span></tt> loop will use a variable and make the variable take on each of the values in a <strong>list</strong> of numbers one at a time.  Notice that line 3 in the program below ends with a <tt class="docutils literal"><span class="pre">:</span></tt> and that line 4 is <strong>indented</strong> so that it starts under the <tt class="docutils literal"><span class="pre">r</span></tt> in <tt class="docutils literal"><span class="pre">for</span></tt>.  <strong>Indented</strong> means that text on the line has spaces at the beginning of the line so that the text doesn&#8217;t start right at the left boundary. Both the <tt class="docutils literal"><span class="pre">:</span></tt> and the indention are required in a loop.  Line 3 is the start of the <tt class="docutils literal"><span class="pre">for</span></tt> loop and line 4 is the <strong>body</strong> of the loop.  The <strong>body</strong> of the loop is repeated for each value in the list <tt class="docutils literal"><span class="pre">thingsToAdd</span></tt>.</p>
+<p>What is the sum of all the numbers between 1 and 10?  Run the program below to calculate the answer.</p>
+
+<div id="cont"></div>
+<div id="Numbers_Repeat1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Numbers_Repeat1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Repeat1_saveb" onclick="saveEditor('Numbers_Repeat1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Repeat1_loadb" onclick="requestCode('Numbers_Repeat1');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Numbers_Repeat1','sum = 0  # Start out with nothing*nline*thingsToAdd = [1,2,3,4,5,6,7,8,9,10]*nline*for number in thingsToAdd:*nline*  sum = sum + number*nline*print*open*sum*close*','2','*doubleq*Line by line tour*doubleq*; 1: for1_line1; 2: for1_line2; 3: for1_line3; 4: for1_line4; 5: for1_line5;*atype**doubleq*High level tour*doubleq*; 1-2: for1_line1-2; 3-4: for1_line3-4; 5: for1_s_line5;*atype*')"/>
+<button class='btn btn-default' id="Numbers_Repeat1_vizb" onclick="injectCodelens(this,'Numbers_Repeat1');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Numbers_Repeat1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Numbers_Repeat1_code" class="active_code" prefixcode="undefined" lang="python">
+sum = 0  # Start out with nothing
+thingsToAdd = [1,2,3,4,5,6,7,8,9,10]
+for number in thingsToAdd:
+  sum = sum + number
+print(sum)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Numbers_Repeat1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Numbers_Repeat1_suffix" style="display:none">
+</pre><pre id="Numbers_Repeat1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Numbers_Repeat1)</span> </p>
+<div id="Numbers_Repeat1_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Numbers_Repeat1_saveb').toggle();
+    $('#Numbers_Repeat1_loadb').toggle();
+}
+if ($("#Numbers_Repeat1").attr("lang") !== "html" && $("#Numbers_Repeat1_code_div").parents(".admonition").length == 0 && $("#Numbers_Repeat1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Numbers_Repeat1_code_div").offset({
+			left: $("#Numbers_Repeat1 .clearfix").offset().left
+		});
+	}
+	$("#Numbers_Repeat1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Numbers_Repeat1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Numbers_Repeat1_runb").parent().siblings(".ac_output").show();
+			runit('Numbers_Repeat1',this, undefined);
+			$("#Numbers_Repeat1_runb").on("click", function(){
+				runit('Numbers_Repeat1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Numbers_Repeat1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Numbers_Repeat1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Numbers_Repeat1_runb").on("click", function(){
+		runit('Numbers_Repeat1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="7-Numbers_Repeat1_Q1" class="alert alert-warning">
+            csp-7-1: What is printed if you change the program above so that line 5 is also indented the same amount as line 4?<form name="7-Numbers_Repeat1_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="7-Numbers_Repeat1_Q1_opt_a" />
+            <label for= "7-Numbers_Repeat1_Q1_opt_a">  a) It prints the same thing it did before.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="7-Numbers_Repeat1_Q1_opt_b" />
+            <label for= "7-Numbers_Repeat1_Q1_opt_b">  b) It prints the value of sum 10 times and sum is different each time it is printed.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="7-Numbers_Repeat1_Q1_opt_c" />
+            <label for= "7-Numbers_Repeat1_Q1_opt_c">  c) It prints the same sum 10 times.</label><br />
+            
+            <input type="radio" name="group1" value="d" id="7-Numbers_Repeat1_Q1_opt_d" />
+            <label for= "7-Numbers_Repeat1_Q1_opt_d">  d) You get an error.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('7-Numbers_Repeat1_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7-Numbers_Repeat1_Q1','b',['Did you actually try it?', 'Both lines 4 and 5 are now in the body of the loop and are executed each time through the loop.', 'Sum should be changing.', 'You can have more than one line in the body of a loop.'])">Check Me</button>
+            <button class='btn btn-default' id="7-Numbers_Repeat1_Q1_bcomp" disabled name="compare" onclick="compareAnswers('7-Numbers_Repeat1_Q1');">Compare Me</button>
+            </form><br />
+            <div id="7-Numbers_Repeat1_Q1_feedback">
+            </div>
+            </div>
+            
+            <div id="7-Numbers_Repeat1_Q2" class="alert alert-warning">
+            csp-7-2: What is printed if you change the program above so that lines 4 and 5 are not indented?<form name="7-Numbers_Repeat1_Q2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="7-Numbers_Repeat1_Q2_opt_a" />
+            <label for= "7-Numbers_Repeat1_Q2_opt_a">  a) It prints the same thing it did before.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="7-Numbers_Repeat1_Q2_opt_b" />
+            <label for= "7-Numbers_Repeat1_Q2_opt_b">  b) It prints the value of sum 10 times and sum is different each time it is printed.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="7-Numbers_Repeat1_Q2_opt_c" />
+            <label for= "7-Numbers_Repeat1_Q2_opt_c">  c) It prints the same sum 10 times.</label><br />
+            
+            <input type="radio" name="group1" value="d" id="7-Numbers_Repeat1_Q2_opt_d" />
+            <label for= "7-Numbers_Repeat1_Q2_opt_d">  d) You get an error.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('7-Numbers_Repeat1_Q2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7-Numbers_Repeat1_Q2','d',['Did you actually try it?', 'Both lines 4 and 5 are not in the loop anymore.', 'Is the print repeated now?', 'You have to have at least one statement in the body of a loop.'])">Check Me</button>
+            <button class='btn btn-default' id="7-Numbers_Repeat1_Q2_bcomp" disabled name="compare" onclick="compareAnswers('7-Numbers_Repeat1_Q2');">Compare Me</button>
+            </form><br />
+            <div id="7-Numbers_Repeat1_Q2_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="what-is-a-list">
+<h1>What is a List?<a class="headerlink" href="#what-is-a-list" title="Permalink to this headline">¶</a></h1>
+<p>A <strong>list</strong> holds items in order. The <strong>list</strong> is specified on line 2 in the program in ActiveCode 1 above as <tt class="docutils literal"><span class="pre">[1,2,3,4,5,6,7,8,9,10]</span></tt>.  A <strong>list</strong> in Python is enclosed in <tt class="docutils literal"><span class="pre">[</span></tt> and <tt class="docutils literal"><span class="pre">]</span></tt> and can have values separated by commas.  You probably use <strong>lists</strong> all the time.  People often
+make a list before they go shopping or a list of things to do.  A <strong>list</strong> has an order and each list item has a position in the list, like the first item in a list or the last item in a list.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/lists1.jpg"><img alt="a shopping list" src="../_images/lists1.jpg" style="height: 250px;" /></a>
+<p class="caption">Figure 2: A shopping list</p>
+</div>
+<p>When you ran the code above in Numbers_Repeat1 above, did you get 55?  That&#8217;s the sum of all the numbers from 1 to 10.  Here is the program again.  Run it if you don&#8217;t remember what it printed before.</p>
+
+<div id="cont"></div>
+<div id="Numbers_Repeat2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Numbers_Repeat2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Repeat2_saveb" onclick="saveEditor('Numbers_Repeat2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Repeat2_loadb" onclick="requestCode('Numbers_Repeat2');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Numbers_Repeat2','sum = 0  # Start out with nothing*nline*thingsToAdd = [1,2,3,4,5,6,7,8,9,10]*nline*for number in thingsToAdd:*nline*  sum = sum + number*nline*print*open*sum*close*','2','*doubleq*Line by line tour*doubleq*; 1: for1_line1; 2: for1_line2; 3: for1_line3; 4: for1_line4; 5: for1_line5;*atype**doubleq*High level tour*doubleq*; 1-2: for1_line1-2; 3-4: for1_line3-4; 5: for1_s_line5;*atype*')"/>
+<button class='btn btn-default' id="Numbers_Repeat2_vizb" onclick="injectCodelens(this,'Numbers_Repeat2');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Numbers_Repeat2_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Numbers_Repeat2_code" class="active_code" prefixcode="undefined" lang="python">
+sum = 0  # Start out with nothing
+thingsToAdd = [1,2,3,4,5,6,7,8,9,10]
+for number in thingsToAdd:
+  sum = sum + number
+print(sum)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Numbers_Repeat2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Numbers_Repeat2_suffix" style="display:none">
+</pre><pre id="Numbers_Repeat2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Numbers_Repeat2)</span> </p>
+<div id="Numbers_Repeat2_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Numbers_Repeat2_saveb').toggle();
+    $('#Numbers_Repeat2_loadb').toggle();
+}
+if ($("#Numbers_Repeat2").attr("lang") !== "html" && $("#Numbers_Repeat2_code_div").parents(".admonition").length == 0 && $("#Numbers_Repeat2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Numbers_Repeat2_code_div").offset({
+			left: $("#Numbers_Repeat2 .clearfix").offset().left
+		});
+	}
+	$("#Numbers_Repeat2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Numbers_Repeat2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Numbers_Repeat2_runb").parent().siblings(".ac_output").show();
+			runit('Numbers_Repeat2',this, undefined);
+			$("#Numbers_Repeat2_runb").on("click", function(){
+				runit('Numbers_Repeat2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Numbers_Repeat2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Numbers_Repeat2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Numbers_Repeat2_runb").on("click", function(){
+		runit('Numbers_Repeat2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="7-Numbers_Repeat2_Q1" class="alert alert-warning">
+            csp-7-3: Now, change the program above to get the product instead of the sum (e.g., replace <cite>+</cite> with <cite>*</cite>, and replace the <cite>0</cite> as the initial value of <cite>sum</cite> to <cite>1</cite>).  What do you get now when you run the program?<form name="7-Numbers_Repeat2_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="7-Numbers_Repeat2_Q1_opt_a" />
+            <label for= "7-Numbers_Repeat2_Q1_opt_a">  a) 55</label><br />
+            
+            <input type="radio" name="group1" value="b" id="7-Numbers_Repeat2_Q1_opt_b" />
+            <label for= "7-Numbers_Repeat2_Q1_opt_b">  b) 0</label><br />
+            
+            <input type="radio" name="group1" value="c" id="7-Numbers_Repeat2_Q1_opt_c" />
+            <label for= "7-Numbers_Repeat2_Q1_opt_c">  c) 3628800</label><br />
+            
+            <input type="radio" name="group1" value="d" id="7-Numbers_Repeat2_Q1_opt_d" />
+            <label for= "7-Numbers_Repeat2_Q1_opt_d">  d) Error - number is too big</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('7-Numbers_Repeat2_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7-Numbers_Repeat2_Q1','c',['That\u0027s the sum', 'That\u0027s what you get if you leave the sum as 0.  Multipying everything by 0 gets you 0', 'That\u0027s 1*2*3*4*5*6*7*8*9*10', 'It should actually work'])">Check Me</button>
+            <button class='btn btn-default' id="7-Numbers_Repeat2_Q1_bcomp" disabled name="compare" onclick="compareAnswers('7-Numbers_Repeat2_Q1');">Compare Me</button>
+            </form><br />
+            <div id="7-Numbers_Repeat2_Q1_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="bigteachernote-teacher-note-names-are-just-words">
+<h1><a class="reference internal" href="../_images/apple7.jpg"><img alt="teacher note" class="align-top" src="../_images/apple7.jpg" style="width: 50px;" /></a> Teacher Note: Names are Just Words<a class="headerlink" href="#bigteachernote-teacher-note-names-are-just-words" title="Permalink to this headline">¶</a></h1>
+<p>Once you change the program above in order to use <tt class="docutils literal"><span class="pre">*</span></tt> instead of <tt class="docutils literal"><span class="pre">+</span></tt>, you will see that it is still using the name (<em>variable</em>) <tt class="docutils literal"><span class="pre">sum</span></tt> to represent the <cite>product</cite> of all the numbers in <tt class="docutils literal"><span class="pre">thingsToAdd</span></tt>.  The program would be <em>better</em> if we used the right name for the variable: <tt class="docutils literal"><span class="pre">product</span></tt> instead of <tt class="docutils literal"><span class="pre">sum</span></tt> once we switched to multiplication (<tt class="docutils literal"><span class="pre">*</span></tt>) from addition (<tt class="docutils literal"><span class="pre">+</span></tt>).  However, the program still <em>works</em>.  In the end, the names for the variables are there for the benefit of the <em>humans</em>, not the computer.  The computer doesn&#8217;t care if we name the program <cite>xyzzy1776</cite>.  It will <em>work</em> with a bad variable name.  It&#8217;s just not as readable.  <strong>You should write your programs so that people can understand them, not just computers.</strong></p>
+<div class="section" id="using-better-variable-names">
+<h2>Using Better Variable Names<a class="headerlink" href="#using-better-variable-names" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s write that program again with a better variable name.  We will use <tt class="docutils literal"><span class="pre">product</span></tt> instead of <tt class="docutils literal"><span class="pre">sum</span></tt> for the variable name that holds the result of the calculation.  Step through the code below by clicking on the <em>Forward</em> button and note what value the variable <tt class="docutils literal"><span class="pre">number</span></tt> is set to each time through the loop.  Also note how the variable <tt class="docutils literal"><span class="pre">product</span></tt> changes during the loop.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="Numbers_Product"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (Numbers_Product)</span> </p>
+</div>
+<script type="text/javascript">
+var Numbers_Product_trace = {"code": "product = 1  # Start out with nothing\nnumbers = [1,2,3,4,5,6,7,8,9,10]\nfor number in numbers:\n  product = product * number\nprint(product)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["product"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 1}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["product", "numbers"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 1, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 1, "number": 1, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 1, "number": 1, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 1, "number": 2, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 2, "number": 2, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 2, "number": 3, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 6, "number": 3, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 6, "number": 4, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 24, "number": 4, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 24, "number": 5, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 120, "number": 5, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 120, "number": 6, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 720, "number": 6, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 720, "number": 7, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 5040, "number": 7, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 5040, "number": 8, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 40320, "number": 8, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 40320, "number": 9, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 362880, "number": 9, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 362880, "number": 10, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 3628800, "number": 10, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 3628800, "number": 10, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["product", "numbers", "number"], "stdout": "3628800\n", "func_name": "<module>", "stack_to_render": [], "globals": {"product": 3628800, "number": 10, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}, "line": 5, "event": "return"}]};
+var Numbers_Product_vis;
+
+$(document).ready(function() {
+    Numbers_Product_vis = new ExecutionVisualizer('Numbers_Product',Numbers_Product_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(Numbers_Product_vis,'Numbers_Product');
+    allVisualizers.push(Numbers_Product_vis);
+
+});
+
+$(document).ready(function() {
+    $("#Numbers_Product_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'Numbers_Product'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    Numbers_Product_vis.redrawConnectors();
+});
+</script>
+
+            <div id="7-Numbers_Product_Q1" class="alert alert-warning">
+            csp-7-4: What is the value of number the 3rd time through the loop?<form name="7-Numbers_Product_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="7-Numbers_Product_Q1_opt_a" />
+            <label for= "7-Numbers_Product_Q1_opt_a">  a) 1</label><br />
+            
+            <input type="radio" name="group1" value="b" id="7-Numbers_Product_Q1_opt_b" />
+            <label for= "7-Numbers_Product_Q1_opt_b">  b) 2</label><br />
+            
+            <input type="radio" name="group1" value="c" id="7-Numbers_Product_Q1_opt_c" />
+            <label for= "7-Numbers_Product_Q1_opt_c">  c) 3</label><br />
+            
+            <input type="radio" name="group1" value="d" id="7-Numbers_Product_Q1_opt_d" />
+            <label for= "7-Numbers_Product_Q1_opt_d">  d) 4</label><br />
+            
+            <input type="radio" name="group1" value="e" id="7-Numbers_Product_Q1_opt_e" />
+            <label for= "7-Numbers_Product_Q1_opt_e">  e) 10</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('7-Numbers_Product_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7-Numbers_Product_Q1','c',['That\u0027s the value the first time through the loop', 'That\u0027s the value the second time through the loop', 'That\u0027s the value the third time through the loop', 'That\u0027s the value the fourth time through the loop', 'That\u0027s the value the last time through the loop'])">Check Me</button>
+            <button class='btn btn-default' id="7-Numbers_Product_Q1_bcomp" disabled name="compare" onclick="compareAnswers('7-Numbers_Product_Q1');">Compare Me</button>
+            </form><br />
+            <div id="7-Numbers_Product_Q1_feedback">
+            </div>
+            </div>
+            
+            <div id="7-Numbers_Product_Q2" class="alert alert-warning">
+            csp-7-5: What is the value of product after the 4th time through the loop?<form name="7-Numbers_Product_Q2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="7-Numbers_Product_Q2_opt_a" />
+            <label for= "7-Numbers_Product_Q2_opt_a">  a) 6</label><br />
+            
+            <input type="radio" name="group1" value="b" id="7-Numbers_Product_Q2_opt_b" />
+            <label for= "7-Numbers_Product_Q2_opt_b">  b) 10</label><br />
+            
+            <input type="radio" name="group1" value="c" id="7-Numbers_Product_Q2_opt_c" />
+            <label for= "7-Numbers_Product_Q2_opt_c">  c) 24</label><br />
+            
+            <input type="radio" name="group1" value="d" id="7-Numbers_Product_Q2_opt_d" />
+            <label for= "7-Numbers_Product_Q2_opt_d">  d) 120</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('7-Numbers_Product_Q2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7-Numbers_Product_Q2','c',['That\u0027s the value after the 3rd time through the loop.', 'That\u0027s the value if we were adding up the values rather than multiplying them.', 'That\u0027s the value after the 4th time through the loop.', 'That\u0027s the value after the 5th time through the loop.'])">Check Me</button>
+            <button class='btn btn-default' id="7-Numbers_Product_Q2_bcomp" disabled name="compare" onclick="compareAnswers('7-Numbers_Product_Q2');">Compare Me</button>
+            </form><br />
+            <div id="7-Numbers_Product_Q2_feedback">
+            </div>
+            </div>
+            </div>
+</div>
+<div class="section" id="the-range-function">
+<h1>The Range Function<a class="headerlink" href="#the-range-function" title="Permalink to this headline">¶</a></h1>
+<p>That long list of values in the variable <tt class="docutils literal"><span class="pre">numbers</span></tt> (<tt class="docutils literal"><span class="pre">numbers</span> <span class="pre">=</span> <span class="pre">[1,2,3,4,5,6,7,8,9,10]</span></tt>), can also be generated by the <tt class="docutils literal"><span class="pre">range</span></tt> function.  The <tt class="docutils literal"><span class="pre">range</span></tt> function can take two <tt class="docutils literal"><span class="pre">input</span></tt> values.  The first one is the starting value, and the last one is the ending value <strong>BUT</strong>, the range doesn&#8217;t include that value.  If only <em>one</em> value is given as input to <tt class="docutils literal"><span class="pre">range</span></tt>, the list of numbers returned starts with zero.</p>
+
+<div id="cont"></div>
+<div id="Numbers_Range" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Numbers_Range_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Range_saveb" onclick="saveEditor('Numbers_Range');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Range_loadb" onclick="requestCode('Numbers_Range');">Load</button>
+<button class='btn btn-default' id="Numbers_Range_vizb" onclick="injectCodelens(this,'Numbers_Range');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Numbers_Range_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Numbers_Range_code" class="active_code" prefixcode="undefined" lang="python">
+print range(10)
+print range(1,10)
+print range(11)
+print range(1,11)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Numbers_Range_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Numbers_Range_suffix" style="display:none">
+</pre><pre id="Numbers_Range_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Numbers_Range)</span> </p>
+<div id="Numbers_Range_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Numbers_Range_saveb').toggle();
+    $('#Numbers_Range_loadb').toggle();
+}
+if ($("#Numbers_Range").attr("lang") !== "html" && $("#Numbers_Range_code_div").parents(".admonition").length == 0 && $("#Numbers_Range_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Numbers_Range_code_div").offset({
+			left: $("#Numbers_Range .clearfix").offset().left
+		});
+	}
+	$("#Numbers_Range_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Numbers_Range_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Numbers_Range_runb").parent().siblings(".ac_output").show();
+			runit('Numbers_Range',this, undefined);
+			$("#Numbers_Range_runb").on("click", function(){
+				runit('Numbers_Range',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Numbers_Range_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Numbers_Range_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Numbers_Range_runb").on("click", function(){
+		runit('Numbers_Range',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="Numbers_Range_Q1" class="alert alert-warning">
+            csp-7-6: Which of the following lines actually gives us the numbers we need to get the product of all numbers from 1 to 10?<form name="Numbers_Range_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="Numbers_Range_Q1_opt_a" />
+            <label for= "Numbers_Range_Q1_opt_a">  a) print range(10)</label><br />
+            
+            <input type="radio" name="group1" value="b" id="Numbers_Range_Q1_opt_b" />
+            <label for= "Numbers_Range_Q1_opt_b">  b) print range(1,10)</label><br />
+            
+            <input type="radio" name="group1" value="c" id="Numbers_Range_Q1_opt_c" />
+            <label for= "Numbers_Range_Q1_opt_c">  c) print range(11)</label><br />
+            
+            <input type="radio" name="group1" value="d" id="Numbers_Range_Q1_opt_d" />
+            <label for= "Numbers_Range_Q1_opt_d">  d) print range(1,11)</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('Numbers_Range_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('Numbers_Range_Q1','d',['That includes zero and doesn\u0027t include 10: [0,1,2,3,4,5,6,7,8,9]', 'That doesn\u0027t include 10: [1,2,3,4,5,6,7,8,9]', 'That includes zero: [0,1,2,3,4,5,6,7,8,9,10]', 'That returns [1,2,3,4,5,6,7,8,9,10]'])">Check Me</button>
+            <button class='btn btn-default' id="Numbers_Range_Q1_bcomp" disabled name="compare" onclick="compareAnswers('Numbers_Range_Q1');">Compare Me</button>
+            </form><br />
+            <div id="Numbers_Range_Q1_feedback">
+            </div>
+            </div>
+            <p>Let&#8217;s rewrite the program that calculates the product using the <tt class="docutils literal"><span class="pre">range</span></tt> function to generate the list of numbers as shown below.</p>
+
+<div id="cont"></div>
+<div id="Numbers_Product2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Numbers_Product2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Product2_saveb" onclick="saveEditor('Numbers_Product2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Product2_loadb" onclick="requestCode('Numbers_Product2');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Numbers_Product2','product = 1  # Start out with nothing*nline*numbers = range*open*1,11*close**nline*for number in numbers:*nline*  product = product * number*nline*print*open*product*close*','1','*doubleq*Line by line tour*doubleq*; 1: for2_line1; 2: for2_line2; 3: for2_line3; 4: for2_line4; 5: for2_line5;*atype*')"/>
+<button class='btn btn-default' id="Numbers_Product2_vizb" onclick="injectCodelens(this,'Numbers_Product2');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Numbers_Product2_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Numbers_Product2_code" class="active_code" prefixcode="undefined" lang="python">
+product = 1  # Start out with nothing
+numbers = range(1,11)
+for number in numbers:
+  product = product * number
+print(product)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Numbers_Product2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Numbers_Product2_suffix" style="display:none">
+</pre><pre id="Numbers_Product2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Numbers_Product2)</span> </p>
+<div id="Numbers_Product2_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Numbers_Product2_saveb').toggle();
+    $('#Numbers_Product2_loadb').toggle();
+}
+if ($("#Numbers_Product2").attr("lang") !== "html" && $("#Numbers_Product2_code_div").parents(".admonition").length == 0 && $("#Numbers_Product2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Numbers_Product2_code_div").offset({
+			left: $("#Numbers_Product2 .clearfix").offset().left
+		});
+	}
+	$("#Numbers_Product2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Numbers_Product2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Numbers_Product2_runb").parent().siblings(".ac_output").show();
+			runit('Numbers_Product2',this, undefined);
+			$("#Numbers_Product2_runb").on("click", function(){
+				runit('Numbers_Product2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Numbers_Product2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Numbers_Product2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Numbers_Product2_runb").on("click", function(){
+		runit('Numbers_Product2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="7-Numbers_Product_Q3" class="alert alert-warning">
+            csp-7-7: Change ONE number in the above program to tell us the product of all numbers from 1 to 20<form name="7-Numbers_Product_Q3_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="7-Numbers_Product_Q3_opt_a" />
+            <label for= "7-Numbers_Product_Q3_opt_a">  a) 121645100408832000</label><br />
+            
+            <input type="radio" name="group1" value="b" id="7-Numbers_Product_Q3_opt_b" />
+            <label for= "7-Numbers_Product_Q3_opt_b">  b) 3628800</label><br />
+            
+            <input type="radio" name="group1" value="c" id="7-Numbers_Product_Q3_opt_c" />
+            <label for= "7-Numbers_Product_Q3_opt_c">  c) 362880</label><br />
+            
+            <input type="radio" name="group1" value="d" id="7-Numbers_Product_Q3_opt_d" />
+            <label for= "7-Numbers_Product_Q3_opt_d">  d) 2432902008176640000</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('7-Numbers_Product_Q3');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7-Numbers_Product_Q3','d',['That is the product of all numbers from 1 to 19 (e.g., you changed the 11 to 20)', 'That is the product of all numbers from 1 to 10 (e.g., no change at all)', 'That is the product of all numbers from 1 to 9 (e.g., you changed the 11 to 10)', 'That is the product of all numbers from 1 to 20 (e.g., you changed the 11 to 21)'])">Check Me</button>
+            <button class='btn btn-default' id="7-Numbers_Product_Q3_bcomp" disabled name="compare" onclick="compareAnswers('7-Numbers_Product_Q3');">Compare Me</button>
+            </form><br />
+            <div id="7-Numbers_Product_Q3_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="there-s-a-pattern-here">
+<h1>There&#8217;s a Pattern Here!<a class="headerlink" href="#there-s-a-pattern-here" title="Permalink to this headline">¶</a></h1>
+<p>`
+There&#8217;s a pattern in these programs, a pattern that is common when processing data.  We call this the <strong>Accumulator Pattern</strong>.  In the first program above, we <em>accumulated</em> the values into the variable <tt class="docutils literal"><span class="pre">sum</span></tt>.  In the last few programs, we <em>accumulated</em> a product into the variable <tt class="docutils literal"><span class="pre">product</span></tt>.</p>
+<p>Here are the five steps in this pattern.</p>
+<ol class="arabic simple">
+<li>Set the accumulator variable to its initial value.  This is the value we want if there is no data to be processed.</li>
+<li>Get all the data to be processed.</li>
+<li>Step through all the data using a <tt class="docutils literal"><span class="pre">for</span></tt> loop so that the variable takes on each value in the data.</li>
+<li>Combine each <em>piece</em> of the data into the accumulator.</li>
+<li>Do something with the result.</li>
+</ol>
+</div>
+<div class="section" id="using-the-accumulator-pattern">
+<h1>Using the Accumulator Pattern<a class="headerlink" href="#using-the-accumulator-pattern" title="Permalink to this headline">¶</a></h1>
+<p>What is the sum of all the numbers between 0 and 100?  We can answer that easily using our pattern.</p>
+
+<div id="cont"></div>
+<div id="Numbers_Sum" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Numbers_Sum_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Sum_saveb" onclick="saveEditor('Numbers_Sum');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Sum_loadb" onclick="requestCode('Numbers_Sum');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Numbers_Sum','# STEP 1: INITIALIZE ACCUMULATOR*nline*sum = 0  # Start out with nothing*nline*# STEP 2: GET DATA*nline*numbers = range*open*101*close**nline*# STEP 3: LOOP THROUGH THE DATA*nline*for number in numbers:*nline*  # STEP 4: ACCUMULATE*nline*  sum = sum + number*nline*# STEP 5: PROCESS RESULT*nline*print*open*sum*close*','1','*doubleq*Code tour*doubleq*; 2: accum_line2; 4: accum_line4; 6: accum_line6; 8: accum_line8; 10: accum_line10;*atype*')"/>
+<button class='btn btn-default' id="Numbers_Sum_vizb" onclick="injectCodelens(this,'Numbers_Sum');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Numbers_Sum_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Numbers_Sum_code" class="active_code" prefixcode="undefined" lang="python">
+# STEP 1: INITIALIZE ACCUMULATOR
+sum = 0  # Start out with nothing
+# STEP 2: GET DATA
+numbers = range(101)
+# STEP 3: LOOP THROUGH THE DATA
+for number in numbers:
+  # STEP 4: ACCUMULATE
+  sum = sum + number
+# STEP 5: PROCESS RESULT
+print(sum)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Numbers_Sum_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Numbers_Sum_suffix" style="display:none">
+</pre><pre id="Numbers_Sum_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Numbers_Sum)</span> </p>
+<div id="Numbers_Sum_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Numbers_Sum_saveb').toggle();
+    $('#Numbers_Sum_loadb').toggle();
+}
+if ($("#Numbers_Sum").attr("lang") !== "html" && $("#Numbers_Sum_code_div").parents(".admonition").length == 0 && $("#Numbers_Sum_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Numbers_Sum_code_div").offset({
+			left: $("#Numbers_Sum .clearfix").offset().left
+		});
+	}
+	$("#Numbers_Sum_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Numbers_Sum_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Numbers_Sum_runb").parent().siblings(".ac_output").show();
+			runit('Numbers_Sum',this, undefined);
+			$("#Numbers_Sum_runb").on("click", function(){
+				runit('Numbers_Sum',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Numbers_Sum_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Numbers_Sum_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Numbers_Sum_runb").on("click", function(){
+		runit('Numbers_Sum',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+        <div class='parsons alert alert-warning' id="parsons-269">
+        <div class="parsons-text">csp-7-8: The following is the correct code for printing the sum of all the odd numbers from 1 to 100 using the accumulator pattern, but it is mixed up. Drag the blocks from the left and put them in the correct order on the right.  <b>Remember that the statements in the body of a loop must be indented!</b>  To indent a block drag it further right. Click the <i>Check Me</i> button to check your solution.</p><br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-269" style="display:none;">sum = 0
+numbers = range(1,100,2)
+for number in numbers:
+   sum = sum + number
+print(sum)</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-269" class="sortable-code"></div>
+        <div id="parsons-sortableCode-269" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe269" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset269" value="Reset"/>
+        <div id="parsons-message-269"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-269").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-269").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-269");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_269.getHash("#ul-parsons-sortableCode-269");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'7-Sum_100'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'7-Sum_100'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-269");
+            var trashul = $("#ul-parsons-sortableTrash-269");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_269 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-269',
+		'trashId': 'parsons-sortableTrash-269',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_269.init($pjQ("#parsons-orig-269").text());
+	pp_269.shuffleLines();
+            
+        if(localStorage.getItem('7-Sum_100') && localStorage.getItem('7-Sum_100-trash')) {
+            try {
+                var solution = localStorage.getItem('7-Sum_100');
+                var trash = localStorage.getItem('7-Sum_100-trash');
+                pp_269.createHTMLFromHashes(solution,trash);
+                pp_269.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old 7-Sum_100 state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset269").click(function(event){
+              event.preventDefault();
+              pp_269.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-269");
+            var trashul = $("#ul-parsons-sortableTrash-269");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe269").click(function(event){
+              event.preventDefault();
+              var hash = pp_269.getHash("#ul-parsons-sortableCode-269");
+              localStorage.setItem('7-Sum_100',hash);
+              hash = pp_269.getHash("#ul-parsons-sortableTrash-269");
+              localStorage.setItem('7-Sum_100-trash',hash);
+            
+            pp_269.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+<p>The <cite>range</cite> function has one more version that we can use here.  By providing <em>three</em> input numbers, we can specify the <em>start</em> value, the <em>ending</em> value (which is one more than the <em>last</em> value), and the <em>step</em> &#8211; how much to skip <em>between</em> numbers.</p>
+
+<div id="cont"></div>
+<div id="Range_Examples" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Range_Examples_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Range_Examples_saveb" onclick="saveEditor('Range_Examples');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Range_Examples_loadb" onclick="requestCode('Range_Examples');">Load</button>
+<button class='btn btn-default' id="Range_Examples_vizb" onclick="injectCodelens(this,'Range_Examples');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Range_Examples_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Range_Examples_code" class="active_code" prefixcode="undefined" lang="python">
+print range(10)
+print range(1,11)
+print range(0,11,2)
+print range(1,11,3)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Range_Examples_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Range_Examples_suffix" style="display:none">
+</pre><pre id="Range_Examples_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Range_Examples)</span> </p>
+<div id="Range_Examples_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Range_Examples_saveb').toggle();
+    $('#Range_Examples_loadb').toggle();
+}
+if ($("#Range_Examples").attr("lang") !== "html" && $("#Range_Examples_code_div").parents(".admonition").length == 0 && $("#Range_Examples_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Range_Examples_code_div").offset({
+			left: $("#Range_Examples .clearfix").offset().left
+		});
+	}
+	$("#Range_Examples_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Range_Examples_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Range_Examples_runb").parent().siblings(".ac_output").show();
+			runit('Range_Examples',this, undefined);
+			$("#Range_Examples_runb").on("click", function(){
+				runit('Range_Examples',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Range_Examples_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Range_Examples_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Range_Examples_runb").on("click", function(){
+		runit('Range_Examples',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Now let&#8217;s answer a slightly harder question: What is the sum of all the <em>even</em> numbers between 0 and 100?  It&#8217;s easy with our pattern.</p>
+
+<div id="cont"></div>
+<div id="Numbers_Sum_Even" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Numbers_Sum_Even_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Sum_Even_saveb" onclick="saveEditor('Numbers_Sum_Even');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Sum_Even_loadb" onclick="requestCode('Numbers_Sum_Even');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Numbers_Sum_Even','# STEP 1: INITIALIZE ACCUMULATOR*nline*sum = 0  # Start out with nothing*nline*# STEP 2: GET DATA*nline*numbers = range*open*0,101,2*close**nline*# STEP 3: LOOP THROUGH THE DATA*nline*for number in numbers:*nline*  # STEP 4: ACCUMULATE*nline*  sum = sum + number*nline*# STEP 5: PROCESS RESULT*nline*print*open*sum*close*','1','*doubleq*Code tour*doubleq*; 2: accE_line2; 4: accE_line4; 6: accE_line6; 8: accE_line8; 10: accE_line10;*atype*')"/>
+<button class='btn btn-default' id="Numbers_Sum_Even_vizb" onclick="injectCodelens(this,'Numbers_Sum_Even');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Numbers_Sum_Even_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Numbers_Sum_Even_code" class="active_code" prefixcode="undefined" lang="python">
+# STEP 1: INITIALIZE ACCUMULATOR
+sum = 0  # Start out with nothing
+# STEP 2: GET DATA
+numbers = range(0,101,2)
+# STEP 3: LOOP THROUGH THE DATA
+for number in numbers:
+  # STEP 4: ACCUMULATE
+  sum = sum + number
+# STEP 5: PROCESS RESULT
+print(sum)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Numbers_Sum_Even_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Numbers_Sum_Even_suffix" style="display:none">
+</pre><pre id="Numbers_Sum_Even_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Numbers_Sum_Even)</span> </p>
+<div id="Numbers_Sum_Even_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Numbers_Sum_Even_saveb').toggle();
+    $('#Numbers_Sum_Even_loadb').toggle();
+}
+if ($("#Numbers_Sum_Even").attr("lang") !== "html" && $("#Numbers_Sum_Even_code_div").parents(".admonition").length == 0 && $("#Numbers_Sum_Even_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Numbers_Sum_Even_code_div").offset({
+			left: $("#Numbers_Sum_Even .clearfix").offset().left
+		});
+	}
+	$("#Numbers_Sum_Even_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Numbers_Sum_Even_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Numbers_Sum_Even_runb").parent().siblings(".ac_output").show();
+			runit('Numbers_Sum_Even',this, undefined);
+			$("#Numbers_Sum_Even_runb").on("click", function(){
+				runit('Numbers_Sum_Even',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Numbers_Sum_Even_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Numbers_Sum_Even_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Numbers_Sum_Even_runb").on("click", function(){
+		runit('Numbers_Sum_Even',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="7-Numbers_Even_Q1" class="alert alert-warning">
+            csp-7-9: Why do we stop at 101 in the above program?<form name="7-Numbers_Even_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="7-Numbers_Even_Q1_opt_a" />
+            <label for= "7-Numbers_Even_Q1_opt_a">  a) Because we started at 0</label><br />
+            
+            <input type="radio" name="group1" value="b" id="7-Numbers_Even_Q1_opt_b" />
+            <label for= "7-Numbers_Even_Q1_opt_b">  b) Because we want to include 100</label><br />
+            
+            <input type="radio" name="group1" value="c" id="7-Numbers_Even_Q1_opt_c" />
+            <label for= "7-Numbers_Even_Q1_opt_c">  c) Because the computer only understands 1s and 0s</label><br />
+            
+            <input type="radio" name="group1" value="d" id="7-Numbers_Even_Q1_opt_d" />
+            <label for= "7-Numbers_Even_Q1_opt_d">  d) Because we're using a step of 2</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('7-Numbers_Even_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7-Numbers_Even_Q1','b',['We would want to include 100.', 'If we stop BEFORE 101, we include 100.', 'Internally, yes, but in Python, all decimal digits are allowed.', 'That doesn\u0027t really matter.'])">Check Me</button>
+            <button class='btn btn-default' id="7-Numbers_Even_Q1_bcomp" disabled name="compare" onclick="compareAnswers('7-Numbers_Even_Q1');">Compare Me</button>
+            </form><br />
+            <div id="7-Numbers_Even_Q1_feedback">
+            </div>
+            </div>
+            
+            <div id="7-Numbers_Even_Q2" class="alert alert-warning">
+            csp-7-10: Why do we START with zero?<form name="7-Numbers_Even_Q2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="7-Numbers_Even_Q2_opt_a" />
+            <label for= "7-Numbers_Even_Q2_opt_a">  a) Because if we started with 1, we would get all odd numbers</label><br />
+            
+            <input type="radio" name="group1" value="b" id="7-Numbers_Even_Q2_opt_b" />
+            <label for= "7-Numbers_Even_Q2_opt_b">  b) Because all lists start with zero</label><br />
+            
+            <input type="radio" name="group1" value="c" id="7-Numbers_Even_Q2_opt_c" />
+            <label for= "7-Numbers_Even_Q2_opt_c">  c) Because we end with 101</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('7-Numbers_Even_Q2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7-Numbers_Even_Q2','a',['This gives us [0,2,4,6...98,100].', 'They don\u0027t have to start at 0.', 'That is true, but is not relevant here.'])">Check Me</button>
+            <button class='btn btn-default' id="7-Numbers_Even_Q2_bcomp" disabled name="compare" onclick="compareAnswers('7-Numbers_Even_Q2');">Compare Me</button>
+            </form><br />
+            <div id="7-Numbers_Even_Q2_feedback">
+            </div>
+            </div>
+            <p>How do we know what&#8217;s really going on in this program?  How do we know that <em>number</em> is taking on all of the even values from 0 to 100?  One way we can tell is by using a CodeLens on a smaller problem from 0 to 20.  We can step through the program line-by-line, or race to the end by clicking the <em>Last</em> button and then step backwards.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="Numbers_Sum_Step"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (Numbers_Sum_Step)</span> </p>
+</div>
+<script type="text/javascript">
+var Numbers_Sum_Step_trace = {"code": "# STEP 1: INITIALIZE ACCUMULATOR\nsum = 0  # Start out with nothing\n# STEP 2: GET DATA\nnumbers = range(0,21,2)\n# STEP 3: LOOP THROUGH THE DATA\nfor number in numbers:\n  # STEP 4: ACCUMULATE\n  sum = sum + number\n# STEP 5: PROCESS RESULT\nprint(sum)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["sum"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 0}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["sum", "numbers"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 0, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 0, "number": 0, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 0, "number": 0, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 0, "number": 2, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 2, "number": 2, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 2, "number": 4, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 6, "number": 4, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 6, "number": 6, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 12, "number": 6, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 12, "number": 8, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 20, "number": 8, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 20, "number": 10, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 30, "number": 10, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 30, "number": 12, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 42, "number": 12, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 42, "number": 14, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 56, "number": 14, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 56, "number": 16, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 72, "number": 16, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 72, "number": 18, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 90, "number": 18, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 90, "number": 20, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 110, "number": 20, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 110, "number": 20, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 10, "event": "step_line"}, {"ordered_globals": ["sum", "numbers", "number"], "stdout": "110\n", "func_name": "<module>", "stack_to_render": [], "globals": {"sum": 110, "number": 20, "numbers": ["REF", 1]}, "heap": {"1": ["LIST", 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]}, "line": 10, "event": "return"}]};
+var Numbers_Sum_Step_vis;
+
+$(document).ready(function() {
+    Numbers_Sum_Step_vis = new ExecutionVisualizer('Numbers_Sum_Step',Numbers_Sum_Step_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(Numbers_Sum_Step_vis,'Numbers_Sum_Step');
+    allVisualizers.push(Numbers_Sum_Step_vis);
+
+});
+
+$(document).ready(function() {
+    $("#Numbers_Sum_Step_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'Numbers_Sum_Step'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    Numbers_Sum_Step_vis.redrawConnectors();
+});
+</script>
+
+            <div id="7-Numbers_Add_Odds_Q1" class="alert alert-warning">
+            csp-7-11: Change the program above (in ActiveCode 7) to add up all the ODD numbers including up to 99.  You should run it to get 2500. What change did you make to the program?<form name="7-Numbers_Add_Odds_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="7-Numbers_Add_Odds_Q1_opt_a" />
+            <label for= "7-Numbers_Add_Odds_Q1_opt_a">  a) Changed the range step from 2 to 3</label><br />
+            
+            <input type="radio" name="group1" value="b" id="7-Numbers_Add_Odds_Q1_opt_b" />
+            <label for= "7-Numbers_Add_Odds_Q1_opt_b">  b) Changed the range end from 101 to 100</label><br />
+            
+            <input type="radio" name="group1" value="c" id="7-Numbers_Add_Odds_Q1_opt_c" />
+            <label for= "7-Numbers_Add_Odds_Q1_opt_c">  c) Changed the range end from 101 to 99</label><br />
+            
+            <input type="radio" name="group1" value="d" id="7-Numbers_Add_Odds_Q1_opt_d" />
+            <label for= "7-Numbers_Add_Odds_Q1_opt_d">  d) Changed the range start from 0 to 1</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('7-Numbers_Add_Odds_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7-Numbers_Add_Odds_Q1','d',['That would give us [0,3,6,9,12...99].', 'That would give us the even numbers from 0 to 98.', 'That would give us the even numbers from 0 to 98.', 'That would give us [1,3,5,...99].'])">Check Me</button>
+            <button class='btn btn-default' id="7-Numbers_Add_Odds_Q1_bcomp" disabled name="compare" onclick="compareAnswers('7-Numbers_Add_Odds_Q1');">Compare Me</button>
+            </form><br />
+            <div id="7-Numbers_Add_Odds_Q1_feedback">
+            </div>
+            </div>
+            
+        <div class='parsons alert alert-warning' id="parsons-360">
+        <div class="parsons-text">csp-7-12: The following is the correct code for printing the sum of all the even numbers from 50 to 100 using the accumulator pattern, but it is mixed up. Drag the blocks from the left and put them in the correct order on the right.  Don't forget to indent blocks in the body of the loop.  Just drag the block further right to indent.  Click the <i>Check Me</i> button to check your solution.</p><br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-360" style="display:none;">sum = 0
+numbers = range(50,101,2)
+for number in numbers:
+   sum = sum + number
+print(sum)
+numbers = range(50,100,2) #distractor</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-360" class="sortable-code"></div>
+        <div id="parsons-sortableCode-360" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe360" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset360" value="Reset"/>
+        <div id="parsons-message-360"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-360").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-360").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-360");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_360.getHash("#ul-parsons-sortableCode-360");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'7-Sum_From_50'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'7-Sum_From_50'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-360");
+            var trashul = $("#ul-parsons-sortableTrash-360");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_360 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-360',
+		'trashId': 'parsons-sortableTrash-360',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_360.init($pjQ("#parsons-orig-360").text());
+	pp_360.shuffleLines();
+            
+        if(localStorage.getItem('7-Sum_From_50') && localStorage.getItem('7-Sum_From_50-trash')) {
+            try {
+                var solution = localStorage.getItem('7-Sum_From_50');
+                var trash = localStorage.getItem('7-Sum_From_50-trash');
+                pp_360.createHTMLFromHashes(solution,trash);
+                pp_360.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old 7-Sum_From_50 state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset360").click(function(event){
+              event.preventDefault();
+              pp_360.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-360");
+            var trashul = $("#ul-parsons-sortableTrash-360");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe360").click(function(event){
+              event.preventDefault();
+              var hash = pp_360.getHash("#ul-parsons-sortableCode-360");
+              localStorage.setItem('7-Sum_From_50',hash);
+              hash = pp_360.getHash("#ul-parsons-sortableTrash-360");
+              localStorage.setItem('7-Sum_From_50-trash',hash);
+            
+            pp_360.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+</div>
+<div class="section" id="bigteachernote-teacher-note-print-is-your-friend">
+<h1><a class="reference internal" href="../_images/apple7.jpg"><img alt="teacher note" class="align-top" src="../_images/apple7.jpg" style="width: 50px;" /></a> Teacher Note: Print() is Your Friend<a class="headerlink" href="#bigteachernote-teacher-note-print-is-your-friend" title="Permalink to this headline">¶</a></h1>
+<p>The goal of this stage of learning about programming is to develop a mental model of how the program works.  Can students look at a program and <em>predict</em> what&#8217;s going to happen?  Can they figure out the values of the variables?  Feel free to insert lots of <tt class="docutils literal"><span class="pre">print()</span></tt> function calls.  Have students make a prediction about variable values, then insert <tt class="docutils literal"><span class="pre">print()</span></tt> calls to display the variable values, and run the program to find out whether the prediction is right.  Run this version to see what gets printed.</p>
+
+<div id="cont"></div>
+<div id="Numbers_Sum_Print" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Numbers_Sum_Print_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Sum_Print_saveb" onclick="saveEditor('Numbers_Sum_Print');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Sum_Print_loadb" onclick="requestCode('Numbers_Sum_Print');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Numbers_Sum_Print','# STEP 1: INITIALIZE ACCUMULATOR*nline*sum = 0  # Start out with nothing*nline*# STEP 2: GET DATA*nline*numbers = range*open*0,101,2*close**nline*print*open**doubleq*All the numbers:*doubleq*,numbers*close**nline*# STEP 3: LOOP THROUGH THE DATA*nline*for number in numbers:*nline*  print*open**doubleq*Number:*doubleq*,number*close**nline*  # STEP 4: ACCUMULATE*nline*  sum = sum + number*nline*# STEP 5: PROCESS RESULT*nline*print*open*sum*close*','1','*doubleq*Code tour*doubleq*; 2: accL_line2; 4: accL_line4; 5: accL_line5; 7: accL_line7; 8: accL_line8; 10: accL_line10; 12: accL_line12;*atype*')"/>
+<button class='btn btn-default' id="Numbers_Sum_Print_vizb" onclick="injectCodelens(this,'Numbers_Sum_Print');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Numbers_Sum_Print_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Numbers_Sum_Print_code" class="active_code" prefixcode="undefined" lang="python">
+# STEP 1: INITIALIZE ACCUMULATOR
+sum = 0  # Start out with nothing
+# STEP 2: GET DATA
+numbers = range(0,101,2)
+print("All the numbers:",numbers)
+# STEP 3: LOOP THROUGH THE DATA
+for number in numbers:
+  print("Number:",number)
+  # STEP 4: ACCUMULATE
+  sum = sum + number
+# STEP 5: PROCESS RESULT
+print(sum)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Numbers_Sum_Print_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Numbers_Sum_Print_suffix" style="display:none">
+</pre><pre id="Numbers_Sum_Print_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Numbers_Sum_Print)</span> </p>
+<div id="Numbers_Sum_Print_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Numbers_Sum_Print_saveb').toggle();
+    $('#Numbers_Sum_Print_loadb').toggle();
+}
+if ($("#Numbers_Sum_Print").attr("lang") !== "html" && $("#Numbers_Sum_Print_code_div").parents(".admonition").length == 0 && $("#Numbers_Sum_Print_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Numbers_Sum_Print_code_div").offset({
+			left: $("#Numbers_Sum_Print .clearfix").offset().left
+		});
+	}
+	$("#Numbers_Sum_Print_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Numbers_Sum_Print_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Numbers_Sum_Print_runb").parent().siblings(".ac_output").show();
+			runit('Numbers_Sum_Print',this, undefined);
+			$("#Numbers_Sum_Print_runb").on("click", function(){
+				runit('Numbers_Sum_Print',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Numbers_Sum_Print_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Numbers_Sum_Print_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Numbers_Sum_Print_runb").on("click", function(){
+		runit('Numbers_Sum_Print',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+        <div class='parsons alert alert-warning' id="parsons-396">
+        <div class="parsons-text">csp-7-13: The following is the correct code for printing the value of number and the sum each time through the loop, but it is mixed up. The code should initialize the accumulator, create the list of numbers, and then loop through the list of numbers.  Each time through the loop it should print the value of number, add the value of number to the accumulator, and then print the current sum.  Drag the blocks from the left and put them in the correct order on the right.  Don't forget to indent blocks in the body of the loop.  Just drag the block further right to indent.  Click the <i>Check Me</i> button to check your solution.</p><br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-396" style="display:none;">sum = 0
+numbers = range(0,101,2)
+for number in numbers:
+   print("Number:",number)
+   sum = sum + number
+   print(sum)</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-396" class="sortable-code"></div>
+        <div id="parsons-sortableCode-396" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe396" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset396" value="Reset"/>
+        <div id="parsons-message-396"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-396").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-396").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-396");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_396.getHash("#ul-parsons-sortableCode-396");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'7-Print-Sum-Evens'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'7-Print-Sum-Evens'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-396");
+            var trashul = $("#ul-parsons-sortableTrash-396");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_396 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-396',
+		'trashId': 'parsons-sortableTrash-396',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_396.init($pjQ("#parsons-orig-396").text());
+	pp_396.shuffleLines();
+            
+        if(localStorage.getItem('7-Print-Sum-Evens') && localStorage.getItem('7-Print-Sum-Evens-trash')) {
+            try {
+                var solution = localStorage.getItem('7-Print-Sum-Evens');
+                var trash = localStorage.getItem('7-Print-Sum-Evens-trash');
+                pp_396.createHTMLFromHashes(solution,trash);
+                pp_396.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old 7-Print-Sum-Evens state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset396").click(function(event){
+              event.preventDefault();
+              pp_396.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-396");
+            var trashul = $("#ul-parsons-sortableTrash-396");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe396").click(function(event){
+              event.preventDefault();
+              var hash = pp_396.getHash("#ul-parsons-sortableCode-396");
+              localStorage.setItem('7-Print-Sum-Evens',hash);
+              hash = pp_396.getHash("#ul-parsons-sortableTrash-396");
+              localStorage.setItem('7-Print-Sum-Evens-trash',hash);
+            
+            pp_396.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014, Mark Guzdial, Barbara Ericson, and Briana Morrison.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

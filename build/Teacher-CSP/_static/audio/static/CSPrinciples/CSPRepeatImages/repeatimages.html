@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Using Repetition with Images &mdash; CS Principles</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="CS Principles" href="../index.html" />
+    <link rel="next" title="Making Decisions" href="../CSPIntroDecisions/decisions2.html" />
+    <link rel="prev" title="Using Repetition with Turtles" href="../CSPRepeatTurtles/repeatturtles.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'CSPrinciples';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS Principles</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/CSPrinciples/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/CSPrinciples/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Using Repetition with Images</a></li>
+<li><a class="reference internal" href="#bigteachernote-teachers-notes-understanding-image-representation"> Teachers Notes: Understanding Image Representation</a></li>
+<li><a class="reference internal" href="#a-library-of-images">A Library of Images</a></li>
+<li><a class="reference internal" href="#a-pattern-for-image-processing">A Pattern for Image Processing</a></li>
+<li><a class="reference internal" href="#changing-step-5-increasing-and-decreasing-color-values">Changing Step 5: Increasing and decreasing color values</a></li>
+<li><a class="reference internal" href="#changing-step-6-changing-where-we-put-the-colors">Changing Step 6: Changing where we put the colors</a></li>
+<li><a class="reference internal" href="#changing-step-3-changing-which-data-we-use">Changing Step 3: Changing which data we use</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Using Repetition with Turtles" data-toggle="tooltip">
+    <a href="../CSPRepeatTurtles/repeatturtles.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Making Decisions' data-toggle="tooltip" >
+    <a href="../CSPIntroDecisions/decisions2.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="using-repetition-with-images">
+<h1>Using Repetition with Images<a class="headerlink" href="#using-repetition-with-images" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="index-0"></span><p id="index-1">Pictures on a computer are broken up into little bits called <strong>pixels</strong>, for <em>picture</em> (pix) <em>elements</em> (els).  These are laid out on a grid, from left to right (horizontal or <strong>x</strong> dimension) and top to bottom (vertical or <strong>y</strong> dimension).</p>
+<p>Pixels are quite small.  Even this small picture below has 180 columns and 240 rows of pixels:</p>
+<img src="../_static/arch.jpg" id="arch.jpg"><p>Each pixel has a color associated with it: An amount of redness, an amount of greenness, and an amount of blueness.
+Let&#8217;s remove the red from this picture.  Now, there are lot of lines in the program below, but fortunately, you can ignore most of them. The Audio Tour explains the important lines.  Press <a class="reference internal" href="../_images/start-audio-tour2.png"><img alt="audio tour button" class="align-top" src="../_images/start-audio-tour2.png" style="height: 20px;" /></a> to hear the audio tour explanation.  When you run this program it may take several minutes to show the changed picture.</p>
+
+<div id="cont"></div>
+<div id="Image_Remove_Red" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Image_Remove_Red_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Remove_Red_saveb" onclick="saveEditor('Image_Remove_Red');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Remove_Red_loadb" onclick="requestCode('Image_Remove_Red');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Image_Remove_Red','import image*nline**nline*# CREATE AN IMAGE FROM A FILE*nline*img = image.Image*open**doubleq*arch.jpg*doubleq**close**nline**nline*# CLEAR THE RED FROM ALL PIXELS*nline*for x in range*open*img.getWidth*open**close**close*:*nline*    for y in range*open*img.getHeight*open**close**close*:*nline*        p = img.getPixel*open*x, y*close**nline*        p.setRed*open*0*close**nline*        img.setPixel*open*x, y, p*close**nline**nline*win = image.ImageWin*open**close**nline*img.draw*open*win*close*','1','*doubleq*Important Lines Tour*doubleq*; 4: img1-line4; 7-9: img1-line7-9; 10: img1-line10; 11: img1-line11;*atype*')"/>
+
+</div>
+<br/>
+<div id="Image_Remove_Red_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Image_Remove_Red_code" class="active_code" prefixcode="undefined" lang="python">
+import image
+
+# CREATE AN IMAGE FROM A FILE
+img = image.Image("arch.jpg")
+
+# CLEAR THE RED FROM ALL PIXELS
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+        p = img.getPixel(x, y)
+        p.setRed(0)
+        img.setPixel(x, y, p)
+
+win = image.ImageWin()
+img.draw(win)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Image_Remove_Red_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Image_Remove_Red_suffix" style="display:none">
+</pre><pre id="Image_Remove_Red_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Image_Remove_Red)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Image_Remove_Red_saveb').toggle();
+    $('#Image_Remove_Red_loadb').toggle();
+}
+if ($("#Image_Remove_Red").attr("lang") !== "html" && $("#Image_Remove_Red_code_div").parents(".admonition").length == 0 && $("#Image_Remove_Red_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Image_Remove_Red_code_div").offset({
+			left: $("#Image_Remove_Red .clearfix").offset().left
+		});
+	}
+	$("#Image_Remove_Red_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Image_Remove_Red_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Image_Remove_Red_runb").parent().siblings(".ac_output").show();
+			runit('Image_Remove_Red',this, undefined);
+			$("#Image_Remove_Red_runb").on("click", function(){
+				runit('Image_Remove_Red',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Image_Remove_Red_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Image_Remove_Red_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Image_Remove_Red_runb").on("click", function(){
+		runit('Image_Remove_Red',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>The program above can take several minutes to execute on the <tt class="docutils literal"><span class="pre">arch.jpg</span></tt> picture.  But we&#8217;re not stuck using just the arch image.  We can use smaller images which will execute more quickly.</p>
+</div>
+<div class="section" id="bigteachernote-teachers-notes-understanding-image-representation">
+<h1><a class="reference internal" href="../_images/apple6.jpg"><img alt="teacher note" class="align-top" src="../_images/apple6.jpg" style="width: 50px;" /></a> Teachers Notes: Understanding Image Representation<a class="headerlink" href="#bigteachernote-teachers-notes-understanding-image-representation" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div>Understanding images requires understanding a set of abstractions:</div></blockquote>
+<ol class="arabic simple">
+<li>Pictures are made up of little pixels, laid out on an (x,y) grid.</li>
+<li>Each pixel contains a color.</li>
+<li>Each color has a red part, a green part, and a blue part.</li>
+<li>Each color part is actually a number between 0 and 255.</li>
+</ol>
+<p>There are some excellent CS Unplugged activities for understanding <a class="reference external" href="http://csunplugged.org/image-representation">image and color representation</a>.</p>
+</div>
+<div class="section" id="a-library-of-images">
+<h1>A Library of Images<a class="headerlink" href="#a-library-of-images" title="Permalink to this headline">¶</a></h1>
+<p>Because of the way that web page images work, you can only manipulate pictures here that have been pre-loaded to this web-server.  Modify the program above to try out the code on some of these other images by changing line 4 above.</p>
+<table>
+<tr><td>beach.jpg</td><td>baby.jpg</td><td>vangogh.jpg</td><td>swan.jpg</td></tr>
+<tr><td><img src="../_static/beach.jpg" id="beach.jpg"></td><td><img src="../_static/baby.jpg" id="baby.jpg"></td><td><img src="../_static/vangogh.jpg" id="vangogh.jpg"></td><td><img src="../_static/swan.jpg" id="swan.jpg"></td></tr>
+</table>
+<table>
+<tr><td>puppy.jpg</td><td>kitten.jpg</td><td>girl.jpg</td><td>motorcycle.jpg</td></tr>
+<tr><td><img src="../_static/puppy.jpg" id="puppy.jpg"></td><td><img src="../_static/kitten.jpg" id="kitten.jpg"></td><td><img src="../_static/girl.jpg" id="girl.jpg"></td><td><img src="../_static/motorcycle.jpg" id="motorcycle.jpg"></td></tr>
+</table>
+<table>
+<tr><td>gal1.jpg</td><td>guy1.jpg</td><td>gal2.jpg</td></tr>
+<tr><td><img src="../_static/gal1.jpg" id="gal1.jpg"></td><td><img src="../_static/guy1.jpg" id="guy1.jpg"></td><td><img src="../_static/gal2.jpg" id="gal2.jpg"></td></tr>
+</table></div>
+<div class="section" id="a-pattern-for-image-processing">
+<h1>A Pattern for Image Processing<a class="headerlink" href="#a-pattern-for-image-processing" title="Permalink to this headline">¶</a></h1>
+<p>As we have seen with turtles and words, there are some general patterns in the programs that we write.  With turtles, there was a polygon pattern (based on the Total Turtle Trip Theorem).  With words and numbers, there is the accumulator pattern.</p>
+<p>The image processing pattern looks like this.  This program actually doesn&#8217;t do anything to the image at all.  We&#8217;re just describing the pattern.</p>
+
+<div id="cont"></div>
+<div id="Image_Pattern" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Image_Pattern_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Pattern_saveb" onclick="saveEditor('Image_Pattern');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Pattern_loadb" onclick="requestCode('Image_Pattern');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Image_Pattern','# STEP 1: USE THE IMAGE LIBRARY*nline*import image*nline**nline*# STEP 2: PICK THE IMAGE*nline*img = image.Image*open**doubleq*beach.jpg*doubleq**close**nline**nline*# STEP 3: SELECT THE DATA*nline*for x in range*open*img.getWidth*open**close**close*:*nline*    for y in range*open*img.getHeight*open**close**close*:*nline**nline*        # STEP 4: GET THE DATA*nline*        p = img.getPixel*open*x, y*close**nline*        r = p.getRed*open**close**nline*        g = p.getGreen*open**close**nline*        b = p.getBlue*open**close**nline**nline*        # STEP 5: CREATE THE COLOR*nline*        newPixel = image.Pixel*open*r, g, b*close**nline**nline*        # STEP 6: CHANGE THE PIXEL*nline*        img.setPixel*open*x, y, newPixel*close**nline**nline*# STEP 7: SHOW THE RESULT*nline*win = image.ImageWin*open**close**nline*img.draw*open*win*close*','1','*doubleq*Important Lines Tour*doubleq*; 2: imgR1-line2; 5: imgR1-line5; 8: imgR1-line8; 9: imgR1-line9; 12: imgR1-line12; 13: imgR1-line13; 14: imgR1-line14; 15: imgR1-line15; 18: imgR1-line18; 21: imgR1-line21; 24-25: imgR1-line24-25;*atype*')"/>
+
+</div>
+<br/>
+<div id="Image_Pattern_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Image_Pattern_code" class="active_code" prefixcode="undefined" lang="python">
+# STEP 1: USE THE IMAGE LIBRARY
+import image
+
+# STEP 2: PICK THE IMAGE
+img = image.Image("beach.jpg")
+
+# STEP 3: SELECT THE DATA
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+
+        # STEP 4: GET THE DATA
+        p = img.getPixel(x, y)
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        # STEP 5: CREATE THE COLOR
+        newPixel = image.Pixel(r, g, b)
+
+        # STEP 6: CHANGE THE PIXEL
+        img.setPixel(x, y, newPixel)
+
+# STEP 7: SHOW THE RESULT
+win = image.ImageWin()
+img.draw(win)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Image_Pattern_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Image_Pattern_suffix" style="display:none">
+</pre><pre id="Image_Pattern_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Image_Pattern)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Image_Pattern_saveb').toggle();
+    $('#Image_Pattern_loadb').toggle();
+}
+if ($("#Image_Pattern").attr("lang") !== "html" && $("#Image_Pattern_code_div").parents(".admonition").length == 0 && $("#Image_Pattern_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Image_Pattern_code_div").offset({
+			left: $("#Image_Pattern .clearfix").offset().left
+		});
+	}
+	$("#Image_Pattern_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Image_Pattern_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Image_Pattern_runb").parent().siblings(".ac_output").show();
+			runit('Image_Pattern',this, undefined);
+			$("#Image_Pattern_runb").on("click", function(){
+				runit('Image_Pattern',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Image_Pattern_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Image_Pattern_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Image_Pattern_runb").on("click", function(){
+		runit('Image_Pattern',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Here are our six steps:</p>
+<ol class="arabic simple">
+<li>STEP 1: USE THE IMAGE LIBRARY.  We need to import the image library.</li>
+<li>STEP 2: PICK THE IMAGE. We pick a particular image from our library by specifying it inside of the parentheses and double quotes.</li>
+<li>STEP 3: SELECT THE DATA. This example selects <em>every</em> pixel, that is &#8220;for all x values in the width of the image&#8221; and &#8220;for all y values in the height of the image&#8221;.</li>
+<li>STEP 4: GET THE DATA.  You could <em>always</em> use the STEP 4 lines just as they are above, but you might be able to make it shorter if you wanted.  If you only needed red and were going to set the green and blue to zero, you don&#8217;t have to get the green and blue.</li>
+<li>STEP 5: CREATE THE COLOR. This is the part that you will most often change.  Here&#8217;s where you create a new color with red, green, and blue components.</li>
+<li>STEP 6: CHANGE THE PIXEL.  Normally, you put the color back at the same x and y coordinates.  But you might change that.</li>
+</ol>
+</div>
+<div class="section" id="changing-step-5-increasing-and-decreasing-color-values">
+<h1>Changing Step 5: Increasing and decreasing color values<a class="headerlink" href="#changing-step-5-increasing-and-decreasing-color-values" title="Permalink to this headline">¶</a></h1>
+<p>First example: Let&#8217;s change STEP 5, so that we decrease the red by 50%.</p>
+
+<div id="cont"></div>
+<div id="Image_Decrease_Red" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Image_Decrease_Red_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Decrease_Red_saveb" onclick="saveEditor('Image_Decrease_Red');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Decrease_Red_loadb" onclick="requestCode('Image_Decrease_Red');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Image_Decrease_Red','# STEP 1: USE THE IMAGE LIBRARY*nline*import image*nline**nline*# STEP 2: PICK THE IMAGE*nline*img = image.Image*open**doubleq*beach.jpg*doubleq**close**nline**nline*# STEP 3: SELECT THE DATA*nline*for x in range*open*img.getWidth*open**close**close*:*nline*    for y in range*open*img.getHeight*open**close**close*:*nline**nline*        # STEP 4: GET THE DATA*nline*        p = img.getPixel*open*x, y*close**nline*        r = p.getRed*open**close**nline*        g = p.getGreen*open**close**nline*        b = p.getBlue*open**close**nline**nline*        # STEP 5: CREATE THE COLOR*nline*        newPixel = image.Pixel*open*r * 0.5, g, b*close**nline**nline*        # STEP 6: CHANGE THE PIXEL*nline*        img.setPixel*open*x, y, newPixel*close**nline**nline*# STEP 7: SHOW THE RESULT*nline*win = image.ImageWin*open**close**nline*img.draw*open*win*close*','1','*doubleq*Important Lines Tour*doubleq*; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 7-9: imgR2-line7-9; 11-15: imgR2-line11-15; 17-18: imgR2-line17-18; 20-21: imgR2-line20-21; 23-25: imgR2-line23-25;*atype*')"/>
+
+</div>
+<br/>
+<div id="Image_Decrease_Red_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Image_Decrease_Red_code" class="active_code" prefixcode="undefined" lang="python">
+# STEP 1: USE THE IMAGE LIBRARY
+import image
+
+# STEP 2: PICK THE IMAGE
+img = image.Image("beach.jpg")
+
+# STEP 3: SELECT THE DATA
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+
+        # STEP 4: GET THE DATA
+        p = img.getPixel(x, y)
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        # STEP 5: CREATE THE COLOR
+        newPixel = image.Pixel(r * 0.5, g, b)
+
+        # STEP 6: CHANGE THE PIXEL
+        img.setPixel(x, y, newPixel)
+
+# STEP 7: SHOW THE RESULT
+win = image.ImageWin()
+img.draw(win)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Image_Decrease_Red_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Image_Decrease_Red_suffix" style="display:none">
+</pre><pre id="Image_Decrease_Red_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Image_Decrease_Red)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Image_Decrease_Red_saveb').toggle();
+    $('#Image_Decrease_Red_loadb').toggle();
+}
+if ($("#Image_Decrease_Red").attr("lang") !== "html" && $("#Image_Decrease_Red_code_div").parents(".admonition").length == 0 && $("#Image_Decrease_Red_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Image_Decrease_Red_code_div").offset({
+			left: $("#Image_Decrease_Red .clearfix").offset().left
+		});
+	}
+	$("#Image_Decrease_Red_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Image_Decrease_Red_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Image_Decrease_Red_runb").parent().siblings(".ac_output").show();
+			runit('Image_Decrease_Red',this, undefined);
+			$("#Image_Decrease_Red_runb").on("click", function(){
+				runit('Image_Decrease_Red',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Image_Decrease_Red_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Image_Decrease_Red_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Image_Decrease_Red_runb").on("click", function(){
+		runit('Image_Decrease_Red',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>We can <em>increase</em> the red in a similar way. Let&#8217;s change STEP 5, so that we increase the red by 150%.</p>
+
+<div id="cont"></div>
+<div id="Image_Increase_Red" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Image_Increase_Red_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Increase_Red_saveb" onclick="saveEditor('Image_Increase_Red');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Increase_Red_loadb" onclick="requestCode('Image_Increase_Red');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Image_Increase_Red','# STEP 1: USE THE IMAGE LIBRARY*nline*import image*nline**nline*# STEP 2: PICK THE IMAGE*nline*img = image.Image*open**doubleq*beach.jpg*doubleq**close**nline**nline*# STEP 3: SELECT THE DATA*nline*for x in range*open*img.getWidth*open**close**close*:*nline*    for y in range*open*img.getHeight*open**close**close*:*nline**nline*        # STEP 4: GET THE DATA*nline*        p = img.getPixel*open*x, y*close**nline*        r = p.getRed*open**close**nline*        g = p.getGreen*open**close**nline*        b = p.getBlue*open**close**nline**nline*        # STEP 5: CREATE THE COLOR*nline*        newPixel = image.Pixel*open*r * 1.5, g, b*close**nline**nline*        # STEP 6: CHANGE THE PIXEL*nline*        img.setPixel*open*x, y, newPixel*close**nline**nline*# STEP 7: SHOW THE RESULT*nline*win = image.ImageWin*open**close**nline*img.draw*open*win*close*','1','*doubleq*Important Lines Tour*doubleq*; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 7-9: imgR2-line7-9; 11-15: imgR2-line11-15; 17-18: imgR3-line17-18; 20-21: imgR2-line20-21; 23-25: imgR2-line23-25;*atype*')"/>
+
+</div>
+<br/>
+<div id="Image_Increase_Red_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Image_Increase_Red_code" class="active_code" prefixcode="undefined" lang="python">
+# STEP 1: USE THE IMAGE LIBRARY
+import image
+
+# STEP 2: PICK THE IMAGE
+img = image.Image("beach.jpg")
+
+# STEP 3: SELECT THE DATA
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+
+        # STEP 4: GET THE DATA
+        p = img.getPixel(x, y)
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        # STEP 5: CREATE THE COLOR
+        newPixel = image.Pixel(r * 1.5, g, b)
+
+        # STEP 6: CHANGE THE PIXEL
+        img.setPixel(x, y, newPixel)
+
+# STEP 7: SHOW THE RESULT
+win = image.ImageWin()
+img.draw(win)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Image_Increase_Red_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Image_Increase_Red_suffix" style="display:none">
+</pre><pre id="Image_Increase_Red_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Image_Increase_Red)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Image_Increase_Red_saveb').toggle();
+    $('#Image_Increase_Red_loadb').toggle();
+}
+if ($("#Image_Increase_Red").attr("lang") !== "html" && $("#Image_Increase_Red_code_div").parents(".admonition").length == 0 && $("#Image_Increase_Red_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Image_Increase_Red_code_div").offset({
+			left: $("#Image_Increase_Red .clearfix").offset().left
+		});
+	}
+	$("#Image_Increase_Red_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Image_Increase_Red_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Image_Increase_Red_runb").parent().siblings(".ac_output").show();
+			runit('Image_Increase_Red',this, undefined);
+			$("#Image_Increase_Red_runb").on("click", function(){
+				runit('Image_Increase_Red',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Image_Increase_Red_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Image_Increase_Red_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Image_Increase_Red_runb").on("click", function(){
+		runit('Image_Increase_Red',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+        <div class='parsons alert alert-warning' id="parsons-221">
+        <div class="parsons-text">csp-11-1: Another way to get a similar effect to increasing the red, is to decrease the green and blue.  Figure out how to do that in the program above and then use that information to drag the code blocks below from the left to the right in the correct order with the correct indention.<br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-221" style="display:none;">import image
+img = image.Image("beach.jpg")
+for x in range(img.getWidth()):\n   for y in range(img.getHeight()):
+      p = img.getPixel(x, y)\nr = p.getRed()\ng = p.getGreen()\nb = p.getBlue()
+      newPixel = image.Pixel(r, g * 0.75, b * 0.75)
+      img.setPixel(x, y, newPixel)
+win = image.ImageWin()\nimg.draw(win)</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-221" class="sortable-code"></div>
+        <div id="parsons-sortableCode-221" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe221" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset221" value="Reset"/>
+        <div id="parsons-message-221"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-221").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-221").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-221");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_221.getHash("#ul-parsons-sortableCode-221");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'11-Image_Decrease_GB'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'11-Image_Decrease_GB'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-221");
+            var trashul = $("#ul-parsons-sortableTrash-221");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_221 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-221',
+		'trashId': 'parsons-sortableTrash-221',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_221.init($pjQ("#parsons-orig-221").text());
+	pp_221.shuffleLines();
+            
+        if(localStorage.getItem('11-Image_Decrease_GB') && localStorage.getItem('11-Image_Decrease_GB-trash')) {
+            try {
+                var solution = localStorage.getItem('11-Image_Decrease_GB');
+                var trash = localStorage.getItem('11-Image_Decrease_GB-trash');
+                pp_221.createHTMLFromHashes(solution,trash);
+                pp_221.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old 11-Image_Decrease_GB state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset221").click(function(event){
+              event.preventDefault();
+              pp_221.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-221");
+            var trashul = $("#ul-parsons-sortableTrash-221");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe221").click(function(event){
+              event.preventDefault();
+              var hash = pp_221.getHash("#ul-parsons-sortableCode-221");
+              localStorage.setItem('11-Image_Decrease_GB',hash);
+              hash = pp_221.getHash("#ul-parsons-sortableTrash-221");
+              localStorage.setItem('11-Image_Decrease_GB-trash',hash);
+            
+            pp_221.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+</div>
+<div class="section" id="changing-step-6-changing-where-we-put-the-colors">
+<h1>Changing Step 6: Changing where we put the colors<a class="headerlink" href="#changing-step-6-changing-where-we-put-the-colors" title="Permalink to this headline">¶</a></h1>
+<p>Now, let&#8217;s change Step 6.  Let&#8217;s change <em>where</em> we put our new color.  Here is a subtle change from our original template &#8211; look at Step 6 and compare it to other programs we have written here.</p>
+
+<div id="cont"></div>
+<div id="Image_Location_Change" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Image_Location_Change_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Location_Change_saveb" onclick="saveEditor('Image_Location_Change');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Location_Change_loadb" onclick="requestCode('Image_Location_Change');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Image_Location_Change','# STEP 1: USE THE IMAGE LIBRARY*nline*import image*nline**nline*# STEP 2: PICK THE IMAGE*nline*img = image.Image*open**doubleq*vangogh.jpg*doubleq**close**nline**nline*# STEP 3: SELECT THE DATA*nline*for x in range*open*img.getWidth*open**close**close*:*nline*    for y in range*open*img.getHeight*open**close**close*:*nline**nline*        # STEP 4: GET THE DATA*nline*        p = img.getPixel*open*x, y*close**nline*        r = p.getRed*open**close**nline*        g = p.getGreen*open**close**nline*        b = p.getBlue*open**close**nline**nline*        # STEP 5: CREATE THE COLOR*nline*        newPixel = image.Pixel*open*r, g, b*close**nline**nline*        # STEP 6: CHANGE THE PIXEL*nline*        img.setPixel*open*y, x, newPixel*close**nline**nline*# STEP 7: SHOW THE RESULT*nline*win = image.ImageWin*open**close**nline*img.draw*open*win*close*','1','*doubleq*Important Lines Tour*doubleq*; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 7-9: imgR2-line7-9; 11-15: imgR2-line11-15; 17-18: imgR4-line17-18; 20-21: imgR4-line20-21; 23-25: imgR2-line23-25;*atype*')"/>
+
+</div>
+<br/>
+<div id="Image_Location_Change_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Image_Location_Change_code" class="active_code" prefixcode="undefined" lang="python">
+# STEP 1: USE THE IMAGE LIBRARY
+import image
+
+# STEP 2: PICK THE IMAGE
+img = image.Image("vangogh.jpg")
+
+# STEP 3: SELECT THE DATA
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+
+        # STEP 4: GET THE DATA
+        p = img.getPixel(x, y)
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        # STEP 5: CREATE THE COLOR
+        newPixel = image.Pixel(r, g, b)
+
+        # STEP 6: CHANGE THE PIXEL
+        img.setPixel(y, x, newPixel)
+
+# STEP 7: SHOW THE RESULT
+win = image.ImageWin()
+img.draw(win)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Image_Location_Change_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Image_Location_Change_suffix" style="display:none">
+</pre><pre id="Image_Location_Change_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Image_Location_Change)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Image_Location_Change_saveb').toggle();
+    $('#Image_Location_Change_loadb').toggle();
+}
+if ($("#Image_Location_Change").attr("lang") !== "html" && $("#Image_Location_Change_code_div").parents(".admonition").length == 0 && $("#Image_Location_Change_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Image_Location_Change_code_div").offset({
+			left: $("#Image_Location_Change .clearfix").offset().left
+		});
+	}
+	$("#Image_Location_Change_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Image_Location_Change_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Image_Location_Change_runb").parent().siblings(".ac_output").show();
+			runit('Image_Location_Change',this, undefined);
+			$("#Image_Location_Change_runb").on("click", function(){
+				runit('Image_Location_Change',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Image_Location_Change_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Image_Location_Change_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Image_Location_Change_runb").on("click", function(){
+		runit('Image_Location_Change',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="11-Image_YX_Q1" class="alert alert-warning">
+            csp-11-2: What happened when we swapped x and y when we stored the color back to the picture?<form name="11-Image_YX_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="11-Image_YX_Q1_opt_a" />
+            <label for= "11-Image_YX_Q1_opt_a">  a) We rotated the image 90 degrees to the right.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="11-Image_YX_Q1_opt_b" />
+            <label for= "11-Image_YX_Q1_opt_b">  b) We mirrored the image around a diagonal line from the top left to the bottom right.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="11-Image_YX_Q1_opt_c" />
+            <label for= "11-Image_YX_Q1_opt_c">  c) We flipped the image horizontally.</label><br />
+            
+            <input type="radio" name="group1" value="d" id="11-Image_YX_Q1_opt_d" />
+            <label for= "11-Image_YX_Q1_opt_d">  d) No change.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('11-Image_YX_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('11-Image_YX_Q1','b',['That would turn the image to the right, but you would still see all the original pixels.', 'The pixels to the left of the diagonal line were copied across a diagonal line like folding paper with paint on it on the diagonal.', 'The pixels would be copied to the same row.', 'Compare this image to the original vangogh.jpg image.'])">Check Me</button>
+            <button class='btn btn-default' id="11-Image_YX_Q1_bcomp" disabled name="compare" onclick="compareAnswers('11-Image_YX_Q1');">Compare Me</button>
+            </form><br />
+            <div id="11-Image_YX_Q1_feedback">
+            </div>
+            </div>
+            <p>This one does a little math with the x and y.</p>
+
+<div id="cont"></div>
+<div id="Image_Flip_Both" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Image_Flip_Both_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Flip_Both_saveb" onclick="saveEditor('Image_Flip_Both');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Flip_Both_loadb" onclick="requestCode('Image_Flip_Both');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Image_Flip_Both','# STEP 1: USE THE IMAGE LIBRARY*nline*import image*nline**nline*# STEP 2: PICK THE IMAGE*nline*img = image.Image*open**doubleq*vangogh.jpg*doubleq**close**nline**nline*# STEP 3: SELECT THE DATA*nline*for x in range*open*img.getWidth*open**close**close*:*nline*    for y in range*open*img.getHeight*open**close**close*:*nline**nline*        # STEP 4: GET THE DATA*nline*        p = img.getPixel*open*x, y*close**nline*        r = p.getRed*open**close**nline*        g = p.getGreen*open**close**nline*        b = p.getBlue*open**close**nline**nline*        # STEP 5: CREATE THE COLOR*nline*        newP = image.Pixel*open*r, g, b*close**nline**nline*        # STEP 6: CHANGE THE PIXEL*nline*        img.setPixel*open*img.getWidth*open**close* - x, img.getHeight*open**close* - y, newP*close**nline**nline*# STEP 7: SHOW THE RESULT*nline*win = image.ImageWin*open**close**nline*img.draw*open*win*close*','1','*doubleq*Important Lines Tour*doubleq*; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 7-9: imgR2-line7-9; 11-15: imgR2-line11-15; 17-18: imgR5-line17-18; 20-21: imgR5-line20-21; 23-25: imgR2-line23-25;*atype*')"/>
+
+</div>
+<br/>
+<div id="Image_Flip_Both_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Image_Flip_Both_code" class="active_code" prefixcode="undefined" lang="python">
+# STEP 1: USE THE IMAGE LIBRARY
+import image
+
+# STEP 2: PICK THE IMAGE
+img = image.Image("vangogh.jpg")
+
+# STEP 3: SELECT THE DATA
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+
+        # STEP 4: GET THE DATA
+        p = img.getPixel(x, y)
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        # STEP 5: CREATE THE COLOR
+        newP = image.Pixel(r, g, b)
+
+        # STEP 6: CHANGE THE PIXEL
+        img.setPixel(img.getWidth() - x, img.getHeight() - y, newP)
+
+# STEP 7: SHOW THE RESULT
+win = image.ImageWin()
+img.draw(win)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Image_Flip_Both_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Image_Flip_Both_suffix" style="display:none">
+</pre><pre id="Image_Flip_Both_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Image_Flip_Both)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Image_Flip_Both_saveb').toggle();
+    $('#Image_Flip_Both_loadb').toggle();
+}
+if ($("#Image_Flip_Both").attr("lang") !== "html" && $("#Image_Flip_Both_code_div").parents(".admonition").length == 0 && $("#Image_Flip_Both_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Image_Flip_Both_code_div").offset({
+			left: $("#Image_Flip_Both .clearfix").offset().left
+		});
+	}
+	$("#Image_Flip_Both_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Image_Flip_Both_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Image_Flip_Both_runb").parent().siblings(".ac_output").show();
+			runit('Image_Flip_Both',this, undefined);
+			$("#Image_Flip_Both_runb").on("click", function(){
+				runit('Image_Flip_Both',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Image_Flip_Both_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Image_Flip_Both_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Image_Flip_Both_runb").on("click", function(){
+		runit('Image_Flip_Both',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+<div class="section" id="changing-step-3-changing-which-data-we-use">
+<h1>Changing Step 3: Changing which data we use<a class="headerlink" href="#changing-step-3-changing-which-data-we-use" title="Permalink to this headline">¶</a></h1>
+<p>We can also change which part of the picture we read and manipulate.</p>
+
+<div id="cont"></div>
+<div id="Image_Negate_Quarter" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Image_Negate_Quarter_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Negate_Quarter_saveb" onclick="saveEditor('Image_Negate_Quarter');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Negate_Quarter_loadb" onclick="requestCode('Image_Negate_Quarter');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Image_Negate_Quarter','# STEP 1: USE THE IMAGE LIBRARY*nline*import image*nline**nline*# STEP 2: PICK THE IMAGE*nline*img = image.Image*open**doubleq*vangogh.jpg*doubleq**close**nline**nline*# STEP 3: SELECT THE DATA*nline*halfWidth = *open*int*close* *open*img.getWidth*open**close* / 2*close**nline*halfHeight = *open*int*close* *open*img.getHeight*open**close* / 2*close**nline*for x in range*open*halfWidth*close*:*nline*    for y in range*open*halfHeight*close*:*nline**nline*        # STEP 4: GET THE DATA*nline*        p = img.getPixel*open*x, y*close**nline*        r = p.getRed*open**close**nline*        g = p.getGreen*open**close**nline*        b = p.getBlue*open**close**nline**nline*        # STEP 5: CREATE THE COLOR*nline*        newPixel = image.Pixel*open*255-r, 255-g, 255-b*close**nline**nline*        # STEP 6: CHANGE THE PIXEL*nline*        img.setPixel*open*x, y, newPixel*close**nline**nline*# STEP 7: SHOW THE RESULT*nline*win = image.ImageWin*open**close**nline*img.draw*open*win*close*','1','*doubleq*Important Lines Tour*doubleq*; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 8: imgR6-line8; 9: imgR6-line9; 10: imgR6-line10; 11: imgR6-line11; 13-17: imgR6-line13-17; 19-20: imgR6-line19-20; 22-23: imgR6-line22-23; 25-27: imgR6-line25-27;*atype*')"/>
+
+</div>
+<br/>
+<div id="Image_Negate_Quarter_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Image_Negate_Quarter_code" class="active_code" prefixcode="undefined" lang="python">
+# STEP 1: USE THE IMAGE LIBRARY
+import image
+
+# STEP 2: PICK THE IMAGE
+img = image.Image("vangogh.jpg")
+
+# STEP 3: SELECT THE DATA
+halfWidth = (int) (img.getWidth() / 2)
+halfHeight = (int) (img.getHeight() / 2)
+for x in range(halfWidth):
+    for y in range(halfHeight):
+
+        # STEP 4: GET THE DATA
+        p = img.getPixel(x, y)
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        # STEP 5: CREATE THE COLOR
+        newPixel = image.Pixel(255-r, 255-g, 255-b)
+
+        # STEP 6: CHANGE THE PIXEL
+        img.setPixel(x, y, newPixel)
+
+# STEP 7: SHOW THE RESULT
+win = image.ImageWin()
+img.draw(win)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Image_Negate_Quarter_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Image_Negate_Quarter_suffix" style="display:none">
+</pre><pre id="Image_Negate_Quarter_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Image_Negate_Quarter)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Image_Negate_Quarter_saveb').toggle();
+    $('#Image_Negate_Quarter_loadb').toggle();
+}
+if ($("#Image_Negate_Quarter").attr("lang") !== "html" && $("#Image_Negate_Quarter_code_div").parents(".admonition").length == 0 && $("#Image_Negate_Quarter_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Image_Negate_Quarter_code_div").offset({
+			left: $("#Image_Negate_Quarter .clearfix").offset().left
+		});
+	}
+	$("#Image_Negate_Quarter_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Image_Negate_Quarter_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Image_Negate_Quarter_runb").parent().siblings(".ac_output").show();
+			runit('Image_Negate_Quarter',this, undefined);
+			$("#Image_Negate_Quarter_runb").on("click", function(){
+				runit('Image_Negate_Quarter',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Image_Negate_Quarter_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Image_Negate_Quarter_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Image_Negate_Quarter_runb").on("click", function(){
+		runit('Image_Negate_Quarter',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>What happens if we skip every other x and y as we manipulate the colors?  Maybe make the green 255 and the blue 0?</p>
+
+<div id="cont"></div>
+<div id="Image_Every_Other" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Image_Every_Other_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Every_Other_saveb" onclick="saveEditor('Image_Every_Other');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Every_Other_loadb" onclick="requestCode('Image_Every_Other');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Image_Every_Other','# STEP 1: USE THE IMAGE LIBRARY*nline*import image*nline**nline*# STEP 2: PICK THE IMAGE*nline*img = image.Image*open**doubleq*vangogh.jpg*doubleq**close**nline**nline*# STEP 3: SELECT THE DATA*nline*for x in range*open*0,img.getWidth*open**close*,2*close*:*nline*    for y in range*open*0,img.getHeight*open**close*,2*close*:*nline**nline*        # STEP 4: GET THE DATA*nline*        p = img.getPixel*open*x, y*close**nline*        r = p.getRed*open**close**nline**nline*        # STEP 5: CREATE THE COLOR*nline*        newPixel = image.Pixel*open*r, 255, 0*close**nline**nline*        # STEP 6: CHANGE THE PIXEL*nline*        img.setPixel*open*x, y, newPixel*close**nline**nline*# STEP 7: SHOW THE RESULT*nline*win = image.ImageWin*open**close**nline*img.draw*open*win*close*','1','*doubleq*Important Lines Tour*doubleq*; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 8: imgR7-line8; 9: imgR7-line9;  11-13: imgR7-line11-13; 15-16: imgR7-line15-16; 18-19: imgR7-line18-19; 21-23: imgR7-line21-23; 25-27:*atype*')"/>
+
+</div>
+<br/>
+<div id="Image_Every_Other_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Image_Every_Other_code" class="active_code" prefixcode="undefined" lang="python">
+# STEP 1: USE THE IMAGE LIBRARY
+import image
+
+# STEP 2: PICK THE IMAGE
+img = image.Image("vangogh.jpg")
+
+# STEP 3: SELECT THE DATA
+for x in range(0,img.getWidth(),2):
+    for y in range(0,img.getHeight(),2):
+
+        # STEP 4: GET THE DATA
+        p = img.getPixel(x, y)
+        r = p.getRed()
+
+        # STEP 5: CREATE THE COLOR
+        newPixel = image.Pixel(r, 255, 0)
+
+        # STEP 6: CHANGE THE PIXEL
+        img.setPixel(x, y, newPixel)
+
+# STEP 7: SHOW THE RESULT
+win = image.ImageWin()
+img.draw(win)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Image_Every_Other_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Image_Every_Other_suffix" style="display:none">
+</pre><pre id="Image_Every_Other_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Image_Every_Other)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Image_Every_Other_saveb').toggle();
+    $('#Image_Every_Other_loadb').toggle();
+}
+if ($("#Image_Every_Other").attr("lang") !== "html" && $("#Image_Every_Other_code_div").parents(".admonition").length == 0 && $("#Image_Every_Other_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Image_Every_Other_code_div").offset({
+			left: $("#Image_Every_Other .clearfix").offset().left
+		});
+	}
+	$("#Image_Every_Other_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Image_Every_Other_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Image_Every_Other_runb").parent().siblings(".ac_output").show();
+			runit('Image_Every_Other',this, undefined);
+			$("#Image_Every_Other_runb").on("click", function(){
+				runit('Image_Every_Other',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Image_Every_Other_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Image_Every_Other_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Image_Every_Other_runb").on("click", function(){
+		runit('Image_Every_Other',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Let&#8217;s try side-to-side copying.</p>
+
+<div id="cont"></div>
+<div id="Image_Copy_Left" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Image_Copy_Left_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Copy_Left_saveb" onclick="saveEditor('Image_Copy_Left');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Copy_Left_loadb" onclick="requestCode('Image_Copy_Left');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Image_Copy_Left','# STEP 1: USE THE IMAGE LIBRARY*nline*import image*nline**nline*# STEP 2: PICK THE IMAGE*nline*img = image.Image*open**doubleq*vangogh.jpg*doubleq**close**nline**nline*# STEP 3: SELECT THE DATA*nline*halfway = *open*int*close* *open*img.getWidth*open**close* / 2*close**nline*for x in range*open*halfway*close*:*nline*    for y in range*open*img.getHeight*open**close**close*:*nline**nline*        # STEP 4: GET THE DATA*nline*        p = img.getPixel*open*x, y*close**nline*        r = p.getRed*open**close**nline*        g = p.getGreen*open**close**nline*        b = p.getBlue*open**close**nline**nline*        # STEP 5: CREATE THE COLOR*nline*        newPixel = image.Pixel*open*r, g, b*close**nline**nline*        # STEP 6: CHANGE THE PIXEL*nline*        img.setPixel*open*halfway + x, y, newPixel*close**nline**nline*# STEP 7: SHOW THE RESULT*nline*win = image.ImageWin*open**close**nline*img.draw*open*win*close*','1','*doubleq*Important Lines Tour*doubleq*; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 8: imgR8-line8; 9: imgR8-line9; 10: imgR8-line10; 12-16: imgR8-line12-16; 18-19: imgR8-line18-19; 21-22: imgR8-line21-22; 24-26: imgR8-line24-26;*atype*')"/>
+
+</div>
+<br/>
+<div id="Image_Copy_Left_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Image_Copy_Left_code" class="active_code" prefixcode="undefined" lang="python">
+# STEP 1: USE THE IMAGE LIBRARY
+import image
+
+# STEP 2: PICK THE IMAGE
+img = image.Image("vangogh.jpg")
+
+# STEP 3: SELECT THE DATA
+halfway = (int) (img.getWidth() / 2)
+for x in range(halfway):
+    for y in range(img.getHeight()):
+
+        # STEP 4: GET THE DATA
+        p = img.getPixel(x, y)
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        # STEP 5: CREATE THE COLOR
+        newPixel = image.Pixel(r, g, b)
+
+        # STEP 6: CHANGE THE PIXEL
+        img.setPixel(halfway + x, y, newPixel)
+
+# STEP 7: SHOW THE RESULT
+win = image.ImageWin()
+img.draw(win)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Image_Copy_Left_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Image_Copy_Left_suffix" style="display:none">
+</pre><pre id="Image_Copy_Left_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Image_Copy_Left)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Image_Copy_Left_saveb').toggle();
+    $('#Image_Copy_Left_loadb').toggle();
+}
+if ($("#Image_Copy_Left").attr("lang") !== "html" && $("#Image_Copy_Left_code_div").parents(".admonition").length == 0 && $("#Image_Copy_Left_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Image_Copy_Left_code_div").offset({
+			left: $("#Image_Copy_Left .clearfix").offset().left
+		});
+	}
+	$("#Image_Copy_Left_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Image_Copy_Left_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Image_Copy_Left_runb").parent().siblings(".ac_output").show();
+			runit('Image_Copy_Left',this, undefined);
+			$("#Image_Copy_Left_runb").on("click", function(){
+				runit('Image_Copy_Left',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Image_Copy_Left_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Image_Copy_Left_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Image_Copy_Left_runb").on("click", function(){
+		runit('Image_Copy_Left',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="11-Image_Mirror_Q1" class="alert alert-warning">
+            csp-11-3: Try it: How would you mirror the image from left-to-right around a vertical line in the middle of the picture?  Try changing line 22 to these.  If you get it right it will look like the women is nose to nose with herself.<form name="11-Image_Mirror_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="11-Image_Mirror_Q1_opt_a" />
+            <label for= "11-Image_Mirror_Q1_opt_a">  a) img.setPixel(halfway - x, y, newPixel)</label><br />
+            
+            <input type="radio" name="group1" value="b" id="11-Image_Mirror_Q1_opt_b" />
+            <label for= "11-Image_Mirror_Q1_opt_b">  b) img.setPixel(x - halfway, y, newPixel)</label><br />
+            
+            <input type="radio" name="group1" value="c" id="11-Image_Mirror_Q1_opt_c" />
+            <label for= "11-Image_Mirror_Q1_opt_c">  c) img.setPixel(img.getWidth() - x, y, newPixel)</label><br />
+            
+            <input type="radio" name="group1" value="d" id="11-Image_Mirror_Q1_opt_d" />
+            <label for= "11-Image_Mirror_Q1_opt_d">  d) img.setPixel(x - img.getWidth(), y, newPixel)</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('11-Image_Mirror_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('11-Image_Mirror_Q1','c',['It does mirror, but only the left half', 'This creates two copies of the left half', 'Yes, it looks like the woman is kissing herself', 'No, no effect.'])">Check Me</button>
+            <button class='btn btn-default' id="11-Image_Mirror_Q1_bcomp" disabled name="compare" onclick="compareAnswers('11-Image_Mirror_Q1');">Compare Me</button>
+            </form><br />
+            <div id="11-Image_Mirror_Q1_feedback">
+            </div>
+            </div>
+            </div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014, Mark Guzdial, Barbara Ericson, and Briana Morrison.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

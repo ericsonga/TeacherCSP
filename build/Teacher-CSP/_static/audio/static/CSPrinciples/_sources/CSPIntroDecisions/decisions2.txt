@@ -1,0 +1,506 @@
+..  Copyright (C)  Mark Guzdial, Barbara Ericson, Briana Morrison
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3 or
+    any later version published by the Free Software Foundation; with
+    Invariant Sections being Forward, Prefaces, and Contributor List,
+    no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license
+    is included in the section entitled "GNU Free Documentation License".
+
+.. |bigteachernote| image:: Figures/apple.jpg
+    :width: 50px
+    :align: top
+    :alt: teacher note
+
+.. 	qnum::
+	:start: 1
+	:prefix: csp-12-
+	
+.. highlight:: python
+   :linenothreshold: 3
+
+
+Making Decisions
+==================
+
+**Learning Objectives:**:
+
+- Write programs that make decisions.
+- Introduce conditional execution with ``if`` statements
+- Give examples of logical expressions and relational operators 
+- Introduce complex conditionals (with ``and``, ``or``, and ``not``)
+
+We have discussed two major abilities that computers have.  Computers can name values.  Computers can repeat steps.  The third major ability that a computer has is the ability to make decisions.  We make decisions all the time.  Before we leave the house we may check to see if it will rain that day, and if it will, we bring an umbrella.
+
+.. figure:: Figures/umbrella.jpg
+    :height: 200px
+    :align: center
+    :alt: Picture of an umbrella
+    :figclass: align-center
+
+    Figure 1: An umbrella in the rain
+
+
+Computers can also make decisions or take action when something is true.  More specifically, (1) a computer can *test data* and (2) a computer can *execute instructions* if that test is true.  The ability to test data and take actions on the result is what allows the computer to deal with input and take action on it (e.g., if the credit card is valid then charge the card), or deal with data from the world around (e.g., if I see a stop sign then stop.).
+
+.. figure:: Figures/stop.jpg
+    :height: 200px
+    :align: center
+    :alt: Picture of a stop sign
+    :figclass: align-center
+
+    Figure 2: Picture of a stop sign
+    
+..	index::
+	single: conditional execution
+	
+The computer's ability to take action (execute some code) when something is true is also called **conditional execution**.  
+
+The ``if`` Statement
+=====================
+..	index::
+	pair: if; statements
+	single: logical expression
+	single: Boolean expression
+	single: Conditional expression
+	
+In Python, we test data and execute instructions if the test is true using an ``if`` statement.  An ``if`` statement includes a **logical expression** which is the 'test.'   A **logical expression** is one that is either true or false.  This is also called a **Boolean expression**.  An example of a **logical expression** is ``x < 3``. The ``if`` statement is followed by a colon ``if x < 3:`` and a **block of code**.  The colon (``:``) at the end of the ``if`` statement is required.  The **block of code**  includes the instructions to execute if the test is true.  The **block of code** includes all the statements that are indented following the ``if`` statement.  If the test is true, execution the statement or statements in the block following the ``if`` will be executed.  If the test isn't true (is false) then execution will skip the block following the if and continue with the next statement following the block after the ``if`` statement.  
+    
+Run the code below with x set to 0 and then change x to 4 and see how the output differs depending on the value of x.   
+    
+.. activecode:: If_Structure
+    :tour_1: "Structural Tour"; 1: c0-line1; 2-3: c0-line2-3; 4: c0-line4;
+
+    x = 0
+    if x < 3:
+       print ("x is less than 3")
+    print ("All done")
+    
+..	index::
+	single: flowchart
+	single: condition
+    
+The figure below is called a **flowchart**.  It shows how flow of the program.  The diamond shape contains the **logical expression** and has shows the path 
+that the execution takes if the logical expression (also called the **condition**) is true as well as the path if the logical expression is false.  Notice that it will only execute the statements in the 
+indented block if the logical expression was true.  If the logical expression was false, execution will skip the code in the indented block and resume with the next statement.
+
+.. figure:: Figures/decision.png
+    :height: 350px
+    :align: center
+    :alt: Flowchart for an if statement
+    :figclass: align-center
+
+    Figure 3: Flow of execution for an if statement
+    
+.. mchoicemf:: 12-If_Structure
+  :answer_a: line 2
+  :answer_b: line 3
+  :answer_c: line 4
+  :correct: c
+  :feedback_a: It won't repeat line 2.  
+  :feedback_b: Line 2 will only execute when x is less than 3.
+  :feedback_c: Execution continues at the next statement beyond the block following the <code>if</code>.
+
+   Given the code below, what line executes after line 2 executes? 
+   
+   :: 
+   
+     x = 4
+     if x < 3:
+        print ("x is less than 3")
+     print ("All done")
+
+Using Multiple ``if`` statements
+====================================
+
+You can use more than one ``if`` statement in your code.  Here's an example of a calculation that uses two ``if`` statements.  Let's compute the total cost of an item where the price is based on the weight of the item.  If the item weighs less than 1 pound then the price is 1.45 a pound.  If the item weighs 1 pound or more the price is 1.15 a pound.
+
+.. activecode:: Price_If
+    :tour_1: "Structural Tour"; 1: c1-line1; 2-3: c1-line2-3; 4-5: c1-line4-5; 6: c1-line6; 7-9: c3f-line7-9;
+    
+    weight = 0.5
+    if weight < 1:
+       price = 1.45
+    if weight >= 1: 
+       price = 1.15
+    total = weight * price
+    print(weight)
+    print(price)
+    print(total)
+
+Edit the code above and change the first line so that ``weight`` has a different value. Run it again and see what changes.  Try it in the codelens as well to see how the different values for weight changes the lines of code that are executed.   
+
+In this second version, we set a ``price`` as a *default*, then change it only on the special condition. Does it work the same as the above example?
+
+.. activecode:: Price_If_Default
+  :tour_1: "Structural Tour"; 1: c2-line1; 2: c2-line2; 3-4: c2-line3-4; 5: c2-line5; 6-8: c3f-line7-9;
+
+  weight = 0.5
+  price = 1.45
+  if weight >= 1: 
+     price = 1.15
+  total = weight * price
+  print(weight)
+  print(price)
+  print(total)
+
+.. mchoicemf:: 12-Price_If_Equivalent
+  :answer_a: No, they're always the same.
+  :answer_b: Yes, they're different if the weight is exactly 1 pound.
+  :answer_c: Yes, they're different if the weight is under 1 pound.
+  :answer_d: Yes, they're different if the weight is over 1 pound.
+  :correct: a
+  :feedback_a: The end result is the same.
+  :feedback_b: If the weight is exactly 1 pound the price will be 1.15 in both programs.
+  :feedback_c: The the weight is under 1 pound the price will be 1.45 in both programs.
+  :feedback_d: If the weight is over 1 pound the price will be 1.15 in both programs.
+
+   Are there values for weight that make the two programs above print different results when the same weight is used in both programs?
+   
+**Mixed up programs**
+
+.. parsonsprob:: 12-Price_By_Weight
+
+   The following program should calculate the total price, but the lines are mixed up.   The price is based on the weight.  Items that weigh less than 2 pounds should cost 1.5.  Items that weight more than 2 pounds should cost 1.3.   Drag the blocks from the left and place them in the correct order on the right.  Be sure to also indent correctly! click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or have the wrong indention.</p>
+   -----
+   weight = 0.5
+   numItems = 5
+   if weight < 2:
+   =====
+      price = 1.50
+   =====
+   if weight >= 2: 
+   =====
+      price = 1.30
+   =====
+   total = weight * price
+   =====
+   print(weight)
+   print(price)
+   print(total)
+   
+Logical Expressions
+====================
+
+The basic form of an ``if`` statement is the word **if** followed by a logical expression, and then a colon.  All the statements that are indented beneath the ``if`` are executed *IF AND ONLY IF* the logical express is ``true``.
+
+Some logical expressions include:
+
++------------+---------------------------------------------------------+
+| Expression | Logical meaning                                         |
++------------+---------------------------------------------------------+
+| a < b      | True if a is less than b                                |
++------------+---------------------------------------------------------+
+| a <= b     | True if a is less than or equal to b                    |
++------------+---------------------------------------------------------+
+| a > b      | True if a is greater than b                             |
++------------+---------------------------------------------------------+
+| a >= b     | True if a is greater than or equal to b                 |
++------------+---------------------------------------------------------+
+| a == b     | True if a is equal to b.                                | 
+|            | (Two equals signs, to distinguish it from assignment)   |
++------------+---------------------------------------------------------+
+| a != b     | True if a is *not* equal to b.                          | 
++------------+---------------------------------------------------------+
+
+
+Complex Conditionals (and, or, and not)
+=========================================
+
+.. 	index::
+	single: and
+	single: or
+	pair: logical operators; and
+	pair: logical operators; or
+	pair: logical operators; not
+	
+We can also use ``and`` and ``or`` to join several expressions together as shown in the table below.  An ``or`` joining two expressions means that if *either* of the expressions is true, the whole expression is true.  An ``and`` used to join two expressions is only true if *both* expressions are true.  A ``not`` negates the logical value that follows it.  If it was true, then a ``not`` changes the result to false.  If it was false, the a ``not`` changes the result to true.
+
+====================        ================
+Expression                  Meaning
+====================        ================
+(a < b) or (c < d)          The whole express is true if a is less than b or c is less than d. 
+--------------------        ----------------
+(a < b) and (c < d)         The whole express is true if a is less than b **AND** *ALSO* c is less than d.  
+--------------------        ----------------
+not a < b                   Only true if a is actually greater than or equal to b.  `not a < b` is the same as `a >= b`.
+====================        ================
+
+A common use of ``and`` is to check that a value is in a range between a minimum value and a maximum value.  For example if you have asked a person to pick a number between 1 and 10 you can check for this using the following.
+
+.. activecode:: Example_With_And
+  :tour_1: "Structural Tour"; 1: and1-line1; 2-3: and1-line2-3; 4: and1-line4;
+
+  x = 3
+  if x >= 1 and x <= 10:
+    print ("x is a number from 1 to 10")
+  print ("All done")
+  
+.. mchoicemf:: 12-and1
+  :answer_a: 1 to 10
+  :answer_b: 0 to 9
+  :answer_c: 1 to 9
+  :correct: c
+  :feedback_a: This would be true if the second expression was x <= 10. 
+  :feedback_b: This would be true if the first logical expression was x >= 0.
+  :feedback_c: The "condition true" will only be printed when x is greater than 0 and less than 10 so this is the range from 1 to 9.
+
+   Given the code below, what describes the values of x that will cause the code to print "condition true"?
+   
+   :: 
+   
+     if x > 0 and x < 10:
+        print ("condition true")
+     print ("All done")
+    
+A common use of ``or`` is to check if either of two conditions are true.  For example, a parent has told a teen that she can go out if she has cleaned her room or finished her homework.  If either of these is true she can go out.  In Python a value of ``0`` means false and any non-zero value is true, but ``1`` is often used for true.  
+
+.. activecode:: Example_With_Or
+  :tour_1: "Structural Tour"; 1: and2-line1; 2: and2-line2; 3-4: and2-line3-4; 5: and2-line5;
+
+  cleanedRoom = 1
+  finishedHomework = 0
+  if cleanedRoom or finishedHomework:
+    print ("You can go out!")
+  print ("All done")
+  
+.. mchoicemf:: 12-or1
+  :answer_a: all values of x
+  :answer_b: 1 to 9
+  :answer_c: 0 to 9
+  :correct: a
+  :feedback_a: This will be true if x is greater than 0 or less than 10.  This covers all possible values of x.  
+  :feedback_b: This would be true if the logical expressions were joined with and instead of or.
+  :feedback_c: This would be true if the logical expressions were jointed with and instead of or and if the first logical expression was x >= 0.
+
+   Given the code below, what describes the values of x that will cause the code to print "condition true"?
+   
+   :: 
+   
+     if x > 0 or x < 10:
+        print ("condition true")
+     print ("All done")
+
+Practice with ``if``
+======================
+
+The program below is broken in a subtle way.  For one value of ``weight``, the ``price`` will not be set to any value, so the calculation of ``total`` will fail with an error that something ``is not defined``.  This is why professional programmers will assign *some* value to a variable like ``price`` at the beginning of the program, so that errors like this won't happen.  Can you figure out the value of ``weight`` that will result in an error?
+
+.. activeCode:: Price_If_Broken
+  :tour_1: "Structural Tour"; 1: c1-line1; 2-3: c1-line2-3; 4-5: c3-line4-5; 6: c1-line6; 7-9: c3f-line7-9;
+
+  weight = 0.5
+  if weight < 1:
+     price = 1.45
+  if weight > 1: 
+     price = 1.15
+  total = weight * price
+  print(weight)
+  print(price)
+  print(total)
+
+Try different values for ``weight`` then answer the below:
+
+.. fillintheblank:: brokenrange
+  :correct: 1$|1\\.[0]*$
+  :blankid: brokenrange1
+ 
+  What value for ``weight`` will result in an error complaining that ``price`` is not defined?  :textfield:`brokenrange1::mini`
+
+It is certainly possible to have multiple ``if`` statements, and each one can match (or not match) the data.  Imagine a more complicated price scheme, where the price is based on the weight, but there is also a 10% discount for buying more then 10 items.
+
+.. activeCode:: Multiple_Ifs
+  :tour_1: "Structural Tour"; 1: c1-line1; 2: c4-line2; 3-4: c1-line2-3; 5-6: c1-line4-5; 7: c1-line6; 8-9: c4-line8-9; 10-12: c3f-line7-9; 
+
+  weight = 0.5
+  numItems = 5
+  if weight < 1:
+     price = 1.45
+  if weight >= 1: 
+     price = 1.15
+  total = weight * price
+  if numItems >= 10:
+     total = total * 0.9
+  print(weight)
+  print(price)
+  print(total)
+
+.. mchoicemf:: 12-Multiple_Ifs
+  :answer_a: $3.45
+  :answer_b: $3.11
+  :answer_c: $3.105
+  :answer_d: $3.10
+  :correct: c
+  :feedback_a: This would be the answer without the 10% discount for buying 10 or more items
+  :feedback_b: Python doesn't automatically round up
+  :feedback_c: This is the actual result.  But, can you pay $3.105?
+  :feedback_d: Python doesn't automatically change $3.105 to $3.10.  
+
+   What is the total for 12 items that weigh 3 pounds?
+   
+.. mchoicemf:: 12-Grade_Ifs
+   :answer_a: A
+   :answer_b: B
+   :answer_c: C
+   :answer_d: D
+   :answer_e: E
+   :correct: d
+   :feedback_a: Notice that each of the first 4 statements start with an if.  What will actually be printed?  Try it.  
+   :feedback_b: Each of the first 4 if statements will execute.
+   :feedback_c: Copy this code to an activecode window and run it.
+   :feedback_d: Each of the first 4 if statements will be executed. So grade will be set to A, then B then C and finally D.  
+   :feedback_e: This will only be true when score is less than 60.   
+
+   What is printed when the following code executes?
+   
+   :: 
+   
+     score = 93
+     if score >= 90: 
+        grade = "A"
+     if score >= 80: 
+        grade = "B"
+     if score >= 70: 
+        grade = "C"
+     if score >= 60: 
+        grade = "D"
+     if score < 60: 
+        grade = "E"
+     print(grade)
+     
+.. mchoicemf:: 12-Logic_Ifs
+   :answer_a: x will always equal 0 after this code executes for any value of x
+   :answer_b: if x is greater than 2, the value in x will be doubled after this code executes
+   :answer_c: if x is greater than 2, x will equal 0 after this code executes
+   :correct: c
+   :feedback_a: If x was set to 1 originally, then it would still equal 1.
+   :feedback_b: What happens in the original when x is greater than 2?  
+   :feedback_c: If x is greater than 2, it will be set to 0.  
+
+   Which of the following is true about the code below?  
+   
+   :: 
+
+     x = 3
+     if (x > 2): 
+        x = x * 2;
+     if (x > 4): 
+        x = 0;
+     print(x)
+     
+
+Using ``if`` and ``else``
+==========================
+
+..	index::
+   	pair: if; else
+
+Most professional programmers would write the following code:
+
+.. activeCode:: Multiple_Ifs_2
+     :tour_1: "Structural Tour"; 1: c1-line1; 2-3: c1-line2-3; 4-5: c1-line4-5; 6: c1-line6; 7-9: c3f-line7-9;
+
+     weight = 0.5
+     if weight < 1:
+        price = 1.45
+     if weight >= 1: 
+        price = 1.15
+     total = weight * price
+     print(weight)
+     print(price)
+     print(total)
+     
+Like this:
+
+.. activeCode:: if_and_else
+     :tour_1: "Structural Tour"; 1: c5-line1; 2-3: c5-line2-3; 4-5: c5-line4-5; 6: c5-line6; 7-9: c3f-line7-9;
+
+     weight = 0.5
+     if weight < 1:
+        price = 1.45
+     else:
+        price = 1.15
+     total = weight * price
+     print(weight)
+     print(price)
+     print(total)
+
+An ``else`` is an additional optional phrase on an ``if`` statement.  IF AND ONLY IF the *test* in the ``if`` is **false** does the block of statements after the ``else`` get executed.  Using an ``if`` with an ``else`` makes sure that *either* the ``if`` block is executed *or* the ``else`` block is executed, but **never** both.  
+
+.. figure:: Figures/ifAndElseFlow.png
+    :height: 350px
+    :align: center
+    :alt: Flowchart for both an if and else
+    :figclass: align-center
+
+    Figure 4: Flow of execution for both an if and else
+    
+**Mixed up programs**
+
+.. parsonsprob:: 12-Even_Odd
+
+   The following program should print out "x is even" if the remainder of x divided by 2 is 0 and "x is odd" otherwise, but the code is mixed up. The ``%`` symbol gives the remainder after the first number is divided by the second number.  Drag the blocks from the left and place them in the correct order on the right.  Be sure to also indent correctly! click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or have the wrong indention.</p>
+   -----
+   x = 92
+   if x % 2 == 0:
+      print("x is even")
+   else: 
+      print("x is odd")
+
+It is easy to write an ``if`` where you want *exactly* one block to execute, but you can accidentally create a "hole" -- a condition when neither block executes.  That's what happened in the example below when the weight is equal to 1 pound.
+
+.. activeCode:: Price_If_Broken2
+     :tour_1: "Structural Tour"; 1: c1-line1; 2-3: c1-line2-3; 4-5: c3-line4-5; 6: c1-line6; 7-9: c3f-line7-9;
+
+     weight = 0.5
+     if weight < 1:
+        price = 1.45
+     if weight > 1: 
+        price = 1.15
+     total = weight * price
+     print(weight)
+     print(price)
+     print(total)
+     
+|bigteachernote| Delaying the ``else``
+==========================================
+
+We don't recommend that you require students to use ``else`` right away.  It actually makes code **much** harder for students to *read*.  Studies show that making the test *explicit* makes it **ten times** easier for beginning students to read programs with ``if`` statements.  Using an ``else`` hides away the condition when the ``else`` block would execute.  Beginning students are having enough trouble just reading the code and making sense of it.  Using an ``else`` hides away clues to how the program is working.
+
+To do a something like an ``else`` using two ``if`` statements, use a `not`.
+
+.. activeCode:: if_and_not_if
+     :tour_1: "Structural Tour"; 1: c1-line1; 2-3: c3-line2-3; 4-5: c6-line4-5; 6: c1-line6; 7-9: c3f-line7-9;
+
+     weight = 0.5
+     if weight < 1:
+        price = 1.45
+     if not weight < 1: 
+        price = 1.15
+     total = weight * price
+     print(weight)
+     print(price)
+     print(total)
+ 
+
+|bigteachernote| Sneak up on ``and`` and ``or``
+======================================================
+
+Students have a difficult time with logical expressions.  It's probably just a matter of less experience with them.  They do a lot with arithmetic expressions, but *expressions whose value is true or false* are much less common in mathematics.
+
+In particular, expressions with *multiple* logical expressions, combined with ``and`` and ``or``, are challenging for students.  There is some research that shows that the more logical expressions in the program, the more difficult (in terms of time to understand it, ability to read or modify the program) it is for students.
+
+Don't ask students to do much with ``and`` and ``or`` to start.  Give them a lot of experience with simple logical expressions, before requiring them to use ``and`` and ``or``.
+
+
+|bigteachernote| Teacher Note: Confusing `while` and `if`
+==========================================================
+
+A ``while`` loop and an ``if`` loop **look** almost the same.  They each have a logical expression, and a block of instructions underneath them.  
+
+Students often get them confused.  Some key distinctions to make to students:
+
+- An ``if`` block executes only once.  It does the test, then executes the instructions indented underneath *once*.
+
+- A ``while`` block executes **repeatedly** *as long as the expression is true*.  The body of the loop can be executed *many* times.
+
+When you show students examples of ``while`` loops, make sure that you choose examples where the body of the loop gets executed several times, to show a difference from ``if``.  When you trace the program, trace more than one iteration through the body of the loop, to emphasize the multiple times.

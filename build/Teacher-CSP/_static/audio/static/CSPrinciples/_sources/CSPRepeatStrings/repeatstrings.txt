@@ -1,0 +1,158 @@
+..  Copyright (C)  Mark Guzdial, Barbara Ericson, Briana Morrison
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3 or
+    any later version published by the Free Software Foundation; with
+    Invariant Sections being Forward, Prefaces, and Contributor List,
+    no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license
+    is included in the section entitled "GNU Free Documentation License".
+
+.. |bigteachernote| image:: Figures/apple.jpg
+    :width: 50px
+    :align: top
+    :alt: teacher note
+    
+.. |audiobutton| image:: Figures/start-audio-tour.png
+    :height: 20px
+    :align: top
+    :alt: audio tour button
+
+.. 	qnum::
+	:start: 1
+	:prefix: csp-9-
+	
+.. highlight:: java
+   :linenothreshold: 4
+
+Using Repetition with Strings
+==============================
+
+..	index::
+	single: assignment
+	pair: strings; assignment
+
+.. index::
+    single: words
+    single: strings
+	single: for loop
+
+Python already has built in the ability to play with words, just like how we played with numbers in the last chapter.  A collection of letters, numbers, and other characters like spaces inside of quotes is called a **string**. A Python ``for`` loop knows how to step through letters, and addition (``+``) appends strings together. What's cool is that the same accumulator pattern works.
+
+Be sure to press the |audiobutton| to get an explanation for how this program works.
+
+.. activecode:: Copy_Words
+    :tour_1: "Lines of code"; 2: strR1-line2; 4: strR1-line4; 6: strR1-line6; 8: strR1-line8; 10: strR1-line10;
+
+    # STEP 1: INITIALIZE ACCUMULATOR 
+    newString = ""
+    # STEP 2: GET DATA
+    phrase = "Rubber baby buggy bumpers."
+    # STEP 3: LOOP THROUGH THE DATA
+    for letter in phrase:
+      # STEP 4: ACCUMULATE
+      newString = newString + letter
+    # STEP 5: PROCESS RESULT
+    print(newString)
+
+Run this program.  Enh, not that interesting, eh?  It just copies all the letters from ``phrase`` to ``newString``.
+
+Reversing Text
+================
+
+Run this next one, and look at how a simple change to the pattern gives a very different result.    Here we'll combine *before* rather than *afterward*, changing only Step 4 (how values are accumulated).
+
+.. activecode:: Copy_Reverse
+    :tour_1: "Lines of code"; 2-3: strR2-line2-3; 5: strR2-line5; 7: strR2-line7; 9: strR2-line9; 10: strR2-line10; 12: strR2-line12; 13: strR2-line13; 14: strR2-line14; 15: strR2-line15;
+	
+    # STEP 1: INITIALIZE ACCUMULATORS
+    newStringA = ""
+    newStringB = ""
+    # STEP 2: GET DATA
+    phrase = "Happy Birthday!"
+    # STEP 3: LOOP THROUGH THE DATA
+    for letter in phrase:
+      # STEP 4: ACCUMULATE
+      newStringA = letter + newStringA
+      newStringB = newStringB + letter
+    # STEP 5: PROCESS RESULT
+    print("Here's the result of using letter + newStringA:")
+    print(newStringA)
+    print("Here's the result of using newStringB + letter:")
+    print(newStringB)
+
+.. mchoicemf:: 9-Copy_Reverse_Q1
+   :answer_a: Because we add each new letter at the <i>end</i> of <code>newStringB</code>.
+   :answer_b: Because <code>newStringA</code> is adding the characters from left to right.
+   :answer_c: Because we called a reverse function.
+   :answer_d: Because the <code>for</code> loop is doing a reversal
+   :correct: a
+   :feedback_a: Each new letter gets added at the end, which creates a reversal.
+   :feedback_b: How would that reverse the other string?
+   :feedback_c: There is no reverse function in this program.
+   :feedback_d: The same <code>for</code> loop is creating both an in-order copy of the string and a reversed order of the string.  The <code>for</code> loop is the same in both cases.
+
+   Why do you think ``newStringB`` has all the letters, but in the reverse order?
+
+Mirroring Text
+===============
+
+What happens if we add the letter to *both* sides of the new string that we're making?
+
+.. activecode:: Copy_Mirror
+    :tour_1: "Lines of code"; 1: strR3-line1; 2: strR3-line2; 3: strR3-line3; 4: strR3-line4; 5: strR3-line5;
+	
+    newString = ""
+    phrase = "This is a test"
+    for letter in phrase:
+      newString = letter + newString + letter
+    print(newString)
+
+Try changing the phrase and see what effects you can generate.
+
+.. mchoicemf:: 9-Copy_Mirror_Q1
+   :answer_a: Make the phrase <code>"Time to panic!"</code>
+   :answer_b: Change the <code>newString</code> in line 1 to <code>"!"</code> instead of <cod>""</code>
+   :answer_c: Change the right hand side of line 4 to <code>letter + "!" + newstring + letter</code>
+   :answer_d: Change the right hand side of line 4 to <code>letter + newstring + "!" + letter</code>
+   :correct: b
+   :feedback_a: That would give us <code>!cinaP ot emiTTime to Panic!</code>.
+   :feedback_b: We can start our accumulator with something in it.
+   :feedback_c: That would give us <code>!!c!i!n!a!P! !o!t! !e!m!i!T!Time to Panic!</code> -- exclamation points between the letters in the first half of the mirror.
+   :feedback_d: That would give us <code>!cinaP ot emiT!T!i!m!e! !t!o! !P!a!n!i!c!!</code> -- exclamation points between the letters in the second half of the mirror.
+
+   Change the mirroring program to mirror the phrase ``"Time to Panic"`` with a single exclamation point in the middle, to make the printed words look like this: ``cinaP ot emiT!Time to Panic``.  How do you do it?
+
+The accumulator doesn't have to be set to be an empty string.  You can put something in the accumulator, and then it will show up in the middle of the mirrored phrase.
+
+.. codelens:: Char_In_Middle
+
+    newString = "!"
+    phrase = "We're off to see the Wizard!"
+    for letter in phrase:
+      newString = letter + newString + letter
+    print(newString)
+
+.. mchoicemf:: 9-Count_Exclamations_Q1
+   :answer_a: One
+   :answer_b: Two
+   :answer_c: Three
+   :answer_d: Four
+   :correct: a
+   :feedback_a: There is just the one in the accumulator to start.
+   :feedback_b: If we just mirrored the string, there would be only two.  But we are mirroring with something in the accumulator.
+   :feedback_c: That is true at the end, but not when letter contains the first letter of <code>"Wizard"</code>
+   :feedback_d: At most, there will be three in <code>newString</code>.
+
+   When the variable ``letter`` contains the ``"W"`` from ``Wizard``, how many exclamation points are in ``newString``?
+
+.. parsonsprob:: 9-Palindrome
+
+   <p>The phrase <code>"A but tuba"</code> is a <b>palindrome</b>.  The letters are the same forward and backward.  The below program generates the output: <code>"abut tub a<=>a but tuba"</code>  Put the lines in the right order with the right indentation.</p>
+   -----
+   newStr = "<=>"
+   phrase = "a but tuba"
+   =====
+   for char in phrase:
+   =====
+     newStr = char + newStr + char
+   =====
+   print(newStr)

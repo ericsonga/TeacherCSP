@@ -1,0 +1,412 @@
+..  Copyright (C)  Mark Guzdial, Barbara Ericson, Briana Morrison
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3 or
+    any later version published by the Free Software Foundation; with
+    Invariant Sections being Forward, Prefaces, and Contributor List,
+    no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license
+    is included in the section entitled "GNU Free Documentation License".
+
+.. |bigteachernote| image:: Figures/apple.jpg
+    :width: 50px
+    :align: top
+    :alt: teacher note
+
+.. 	qnum::
+	:start: 1
+	:prefix: csp-7-
+	
+.. highlight:: java
+   :linenothreshold: 4
+
+	
+Repeating Steps
+=====================================
+
+..	index:
+	single: variable
+	single: index variable
+	single: definite loop
+	pair: statements; for
+
+**Learning Objectives:**:
+
+- Use a *for* loop to repeat code.
+- Use *range* to create a list of numbers
+
+We often have to repeat steps in a process.  If you are making a cake the recipe might say add an ingredient and then stir it 50 times or until the batter is smooth.  You can probably handle stirring the batter 50 times, but what if you had to stir it 1,000 times?  You might want a machine to do that.
+
+.. figure:: Figures/stirCake.jpg
+    :height: 250px
+    :align: center
+    :alt: a cake mix that must be stirred
+    :figclass: align-center
+
+    Figure 1: A cake mix that must be stirred
+    
+..	index::
+	single: loop
+	single: iteration
+
+A computer never gets tired.  It can do the same thing over-and-over without slipping up.  It can execute a program for as long as it has electricity.  So, there must be a way to tell a computer to do things over-and-over.  Computers know how to repeat steps in a program and the way they do this is often called a **loop** or **iteration**.  Have you ever had an **earworm**?  This is when a song gets stuck in your head and keeps repeating as if the song was set to **loop** (repeat after playing).
+
+Repeating with Numbers
+=======================
+
+..	index::
+	single: list
+
+..	index::
+	single: for loop
+	pair: loop; for
+	pair: loop; body
+	pair: loop; indention
+	
+We are going to use a ``for`` loop.  A ``for`` loop will use a variable and make the variable take on each of the values in a **list** of numbers one at a time.  Notice that line 3 in the program below ends with a ``:`` and that line 4 is **indented** so that it starts under the ``r`` in ``for``.  **Indented** means that text on the line has spaces at the beginning of the line so that the text doesn't start right at the left boundary. Both the ``:`` and the indention are required in a loop.  Line 3 is the start of the ``for`` loop and line 4 is the **body** of the loop.  The **body** of the loop is repeated for each value in the list ``thingsToAdd``.   
+
+What is the sum of all the numbers between 1 and 10?  Run the program below to calculate the answer.
+
+.. activecode:: Numbers_Repeat1
+    :tour_1: "Line by line tour"; 1: for1_line1; 2: for1_line2; 3: for1_line3; 4: for1_line4; 5: for1_line5;
+    :tour_2: "High level tour"; 1-2: for1_line1-2; 3-4: for1_line3-4; 5: for1_s_line5;
+	
+    sum = 0  # Start out with nothing
+    thingsToAdd = [1,2,3,4,5,6,7,8,9,10]
+    for number in thingsToAdd:
+      sum = sum + number
+    print(sum)
+    
+.. mchoicemf:: 7-Numbers_Repeat1_Q1
+   :answer_a: It prints the same thing it did before.
+   :answer_b: It prints the value of sum 10 times and sum is different each time it is printed.
+   :answer_c: It prints the same sum 10 times.
+   :answer_d: You get an error.
+   :correct: b
+   :feedback_a: Did you actually try it?
+   :feedback_b: Both lines 4 and 5 are now in the body of the loop and are executed each time through the loop. 
+   :feedback_c: Sum should be changing.  
+   :feedback_d: You can have more than one line in the body of a loop.
+
+   What is printed if you change the program above so that line 5 is also indented the same amount as line 4?
+   
+.. mchoicemf:: 7-Numbers_Repeat1_Q2
+   :answer_a: It prints the same thing it did before.
+   :answer_b: It prints the value of sum 10 times and sum is different each time it is printed.
+   :answer_c: It prints the same sum 10 times.
+   :answer_d: You get an error.
+   :correct: d
+   :feedback_a: Did you actually try it?
+   :feedback_b: Both lines 4 and 5 are not in the loop anymore.
+   :feedback_c: Is the print repeated now? 
+   :feedback_d: You have to have at least one statement in the body of a loop.
+
+   What is printed if you change the program above so that lines 4 and 5 are not indented?
+   
+What is a List?
+=================
+
+A **list** holds items in order. The **list** is specified on line 2 in the program in ActiveCode 1 above as ``[1,2,3,4,5,6,7,8,9,10]``.  A **list** in Python is enclosed in ``[`` and ``]`` and can have values separated by commas.  You probably use **lists** all the time.  People often 
+make a list before they go shopping or a list of things to do.  A **list** has an order and each list item has a position in the list, like the first item in a list or the last item in a list.
+
+.. figure:: Figures/lists.jpg
+    :height: 250px
+    :align: center
+    :alt: a shopping list
+    :figclass: align-center
+
+    Figure 2: A shopping list
+
+When you ran the code above in Numbers_Repeat1 above, did you get 55?  That's the sum of all the numbers from 1 to 10.  Here is the program again.  Run it if you don't remember what it printed before.
+
+.. activecode:: Numbers_Repeat2
+    :tour_1: "Line by line tour"; 1: for1_line1; 2: for1_line2; 3: for1_line3; 4: for1_line4; 5: for1_line5;
+    :tour_2: "High level tour"; 1-2: for1_line1-2; 3-4: for1_line3-4; 5: for1_s_line5;
+	
+    sum = 0  # Start out with nothing
+    thingsToAdd = [1,2,3,4,5,6,7,8,9,10]
+    for number in thingsToAdd:
+      sum = sum + number
+    print(sum)
+
+.. mchoicemf:: 7-Numbers_Repeat2_Q1
+   :answer_a: 55
+   :answer_b: 0
+   :answer_c: 3628800
+   :answer_d: Error - number is too big
+   :correct: c
+   :feedback_a: That's the sum
+   :feedback_b: That's what you get if you leave the sum as 0.  Multipying everything by 0 gets you 0
+   :feedback_c: That's 1*2*3*4*5*6*7*8*9*10
+   :feedback_d: It should actually work
+
+   Now, change the program above to get the product instead of the sum (e.g., replace `+` with `*`, and replace the `0` as the initial value of `sum` to `1`).  What do you get now when you run the program?
+
+|bigteachernote| Teacher Note: Names are Just Words
+======================================================
+Once you change the program above in order to use ``*`` instead of ``+``, you will see that it is still using the name (*variable*) ``sum`` to represent the `product` of all the numbers in ``thingsToAdd``.  The program would be *better* if we used the right name for the variable: ``product`` instead of ``sum`` once we switched to multiplication (``*``) from addition (``+``).  However, the program still *works*.  In the end, the names for the variables are there for the benefit of the *humans*, not the computer.  The computer doesn't care if we name the program `xyzzy1776`.  It will *work* with a bad variable name.  It's just not as readable.  **You should write your programs so that people can understand them, not just computers.** 
+
+Using Better Variable Names
+-----------------------------
+
+Let's write that program again with a better variable name.  We will use ``product`` instead of ``sum`` for the variable name that holds the result of the calculation.  Step through the code below by clicking on the *Forward* button and note what value the variable ``number`` is set to each time through the loop.  Also note how the variable ``product`` changes during the loop.
+
+.. codelens:: Numbers_Product
+	
+    product = 1  # Start out with nothing
+    numbers = [1,2,3,4,5,6,7,8,9,10]
+    for number in numbers:
+      product = product * number
+    print(product)
+    
+.. mchoicemf:: 7-Numbers_Product_Q1
+   :answer_a: 1
+   :answer_b: 2
+   :answer_c: 3
+   :answer_d: 4
+   :answer_e: 10
+   :correct: c
+   :feedback_a: That's the value the first time through the loop
+   :feedback_b: That's the value the second time through the loop
+   :feedback_c: That's the value the third time through the loop
+   :feedback_d: That's the value the fourth time through the loop
+   :feedback_e: That's the value the last time through the loop
+
+   What is the value of number the 3rd time through the loop?
+   
+.. mchoicemf:: 7-Numbers_Product_Q2
+   :answer_a: 6
+   :answer_b: 10
+   :answer_c: 24
+   :answer_d: 120
+   :correct: c
+   :feedback_a: That's the value after the 3rd time through the loop.
+   :feedback_b: That's the value if we were adding up the values rather than multiplying them.
+   :feedback_c: That's the value after the 4th time through the loop.
+   :feedback_d: That's the value after the 5th time through the loop.
+
+   What is the value of product after the 4th time through the loop?
+
+The Range Function
+====================
+
+That long list of values in the variable ``numbers`` (``numbers = [1,2,3,4,5,6,7,8,9,10]``), can also be generated by the ``range`` function.  The ``range`` function can take two ``input`` values.  The first one is the starting value, and the last one is the ending value **BUT**, the range doesn't include that value.  If only *one* value is given as input to ``range``, the list of numbers returned starts with zero.
+
+.. activecode:: Numbers_Range
+	
+    print range(10)
+    print range(1,10)
+    print range(11)
+    print range(1,11)
+
+.. mchoicemf:: Numbers_Range_Q1
+   :answer_a: print range(10)
+   :answer_b: print range(1,10)
+   :answer_c: print range(11)
+   :answer_d: print range(1,11)
+   :correct: d
+   :feedback_a: That includes zero and doesn't include 10: [0,1,2,3,4,5,6,7,8,9]
+   :feedback_b: That doesn't include 10: [1,2,3,4,5,6,7,8,9]
+   :feedback_c: That includes zero: [0,1,2,3,4,5,6,7,8,9,10]
+   :feedback_d: That returns [1,2,3,4,5,6,7,8,9,10]
+
+   Which of the following lines actually gives us the numbers we need to get the product of all numbers from 1 to 10?
+   
+Let's rewrite the program that calculates the product using the ``range`` function to generate the list of numbers as shown below.
+
+.. activecode:: Numbers_Product2
+    :tour_1: "Line by line tour"; 1: for2_line1; 2: for2_line2; 3: for2_line3; 4: for2_line4; 5: for2_line5;
+	
+    product = 1  # Start out with nothing
+    numbers = range(1,11)
+    for number in numbers:
+      product = product * number
+    print(product)
+
+.. mchoicemf:: 7-Numbers_Product_Q3
+   :answer_a: 121645100408832000
+   :answer_b: 3628800
+   :answer_c: 362880
+   :answer_d: 2432902008176640000
+   :correct: d
+   :feedback_a: That is the product of all numbers from 1 to 19 (e.g., you changed the 11 to 20)
+   :feedback_b: That is the product of all numbers from 1 to 10 (e.g., no change at all)
+   :feedback_c: That is the product of all numbers from 1 to 9 (e.g., you changed the 11 to 10)
+   :feedback_d: That is the product of all numbers from 1 to 20 (e.g., you changed the 11 to 21)
+
+   Change ONE number in the above program to tell us the product of all numbers from 1 to 20
+
+There's a Pattern Here!
+=====================================
+`
+There's a pattern in these programs, a pattern that is common when processing data.  We call this the **Accumulator Pattern**.  In the first program above, we *accumulated* the values into the variable ``sum``.  In the last few programs, we *accumulated* a product into the variable ``product``.
+
+Here are the five steps in this pattern.
+
+1. Set the accumulator variable to its initial value.  This is the value we want if there is no data to be processed.
+2. Get all the data to be processed.
+3. Step through all the data using a ``for`` loop so that the variable takes on each value in the data.
+4. Combine each *piece* of the data into the accumulator.
+5. Do something with the result.
+
+Using the Accumulator Pattern
+=====================================
+
+What is the sum of all the numbers between 0 and 100?  We can answer that easily using our pattern.
+
+.. activecode:: Numbers_Sum
+    :tour_1: "Code tour"; 2: accum_line2; 4: accum_line4; 6: accum_line6; 8: accum_line8; 10: accum_line10;
+	
+    # STEP 1: INITIALIZE ACCUMULATOR 
+    sum = 0  # Start out with nothing
+    # STEP 2: GET DATA
+    numbers = range(101)
+    # STEP 3: LOOP THROUGH THE DATA
+    for number in numbers:
+      # STEP 4: ACCUMULATE 
+      sum = sum + number
+    # STEP 5: PROCESS RESULT
+    print(sum)
+    
+.. parsonsprob:: 7-Sum_100
+
+   The following is the correct code for printing the sum of all the odd numbers from 1 to 100 using the accumulator pattern, but it is mixed up. Drag the blocks from the left and put them in the correct order on the right.  <b>Remember that the statements in the body of a loop must be indented!</b>  To indent a block drag it further right. Click the <i>Check Me</i> button to check your solution.</p>
+   -----
+   sum = 0  
+   =====
+   numbers = range(1,100,2)
+   =====
+   for number in numbers:
+   =====
+      sum = sum + number
+   =====
+   print(sum)
+
+The `range` function has one more version that we can use here.  By providing *three* input numbers, we can specify the *start* value, the *ending* value (which is one more than the *last* value), and the *step* -- how much to skip *between* numbers.
+
+.. activecode:: Range_Examples
+
+  print range(10)
+  print range(1,11)
+  print range(0,11,2)
+  print range(1,11,3)
+
+Now let's answer a slightly harder question: What is the sum of all the *even* numbers between 0 and 100?  It's easy with our pattern.
+  
+.. activecode:: Numbers_Sum_Even
+    :tour_1: "Code tour"; 2: accE_line2; 4: accE_line4; 6: accE_line6; 8: accE_line8; 10: accE_line10;
+	
+    # STEP 1: INITIALIZE ACCUMULATOR 
+    sum = 0  # Start out with nothing
+    # STEP 2: GET DATA
+    numbers = range(0,101,2)
+    # STEP 3: LOOP THROUGH THE DATA
+    for number in numbers:
+      # STEP 4: ACCUMULATE 
+      sum = sum + number
+    # STEP 5: PROCESS RESULT
+    print(sum)
+
+.. mchoicemf:: 7-Numbers_Even_Q1
+   :answer_a: Because we started at 0
+   :answer_b: Because we want to include 100
+   :answer_c: Because the computer only understands 1s and 0s
+   :answer_d: Because we're using a step of 2
+   :correct: b
+   :feedback_a: We would want to include 100.
+   :feedback_b: If we stop BEFORE 101, we include 100.
+   :feedback_c: Internally, yes, but in Python, all decimal digits are allowed.
+   :feedback_d: That doesn't really matter.
+
+   Why do we stop at 101 in the above program?
+
+.. mchoicemf:: 7-Numbers_Even_Q2
+   :answer_a: Because if we started with 1, we would get all odd numbers
+   :answer_b: Because all lists start with zero
+   :answer_c: Because we end with 101
+   :correct: a
+   :feedback_a: This gives us [0,2,4,6...98,100].
+   :feedback_b: They don't have to start at 0.  
+   :feedback_c: That is true, but is not relevant here.
+
+   Why do we START with zero?
+
+How do we know what's really going on in this program?  How do we know that *number* is taking on all of the even values from 0 to 100?  One way we can tell is by using a CodeLens on a smaller problem from 0 to 20.  We can step through the program line-by-line, or race to the end by clicking the *Last* button and then step backwards.
+
+.. codelens:: Numbers_Sum_Step
+	
+    # STEP 1: INITIALIZE ACCUMULATOR 
+    sum = 0  # Start out with nothing
+    # STEP 2: GET DATA
+    numbers = range(0,21,2)
+    # STEP 3: LOOP THROUGH THE DATA
+    for number in numbers:
+      # STEP 4: ACCUMULATE
+      sum = sum + number
+    # STEP 5: PROCESS RESULT
+    print(sum)
+
+.. mchoicemf:: 7-Numbers_Add_Odds_Q1
+   :answer_a: Changed the range step from 2 to 3
+   :answer_b: Changed the range end from 101 to 100
+   :answer_c: Changed the range end from 101 to 99
+   :answer_d: Changed the range start from 0 to 1
+   :correct: d
+   :feedback_a: That would give us [0,3,6,9,12...99].
+   :feedback_b: That would give us the even numbers from 0 to 98.
+   :feedback_c: That would give us the even numbers from 0 to 98.
+   :feedback_d: That would give us [1,3,5,...99].
+
+   Change the program above (in ActiveCode 7) to add up all the ODD numbers including up to 99.  You should run it to get 2500. What change did you make to the program?
+   
+.. parsonsprob:: 7-Sum_From_50
+
+   The following is the correct code for printing the sum of all the even numbers from 50 to 100 using the accumulator pattern, but it is mixed up. Drag the blocks from the left and put them in the correct order on the right.  Don't forget to indent blocks in the body of the loop.  Just drag the block further right to indent.  Click the <i>Check Me</i> button to check your solution.</p>
+   -----
+   sum = 0  
+   =====
+   numbers = range(50,101,2)
+   =====
+   for number in numbers:
+   =====
+      sum = sum + number
+   =====
+   print(sum)
+   =====
+   numbers = range(50,100,2) #distractor
+
+|bigteachernote| Teacher Note: Print() is Your Friend
+======================================================
+The goal of this stage of learning about programming is to develop a mental model of how the program works.  Can students look at a program and *predict* what's going to happen?  Can they figure out the values of the variables?  Feel free to insert lots of ``print()`` function calls.  Have students make a prediction about variable values, then insert ``print()`` calls to display the variable values, and run the program to find out whether the prediction is right.  Run this version to see what gets printed.
+
+.. activecode:: Numbers_Sum_Print
+    :tour_1: "Code tour"; 2: accL_line2; 4: accL_line4; 5: accL_line5; 7: accL_line7; 8: accL_line8; 10: accL_line10; 12: accL_line12;
+	
+    # STEP 1: INITIALIZE ACCUMULATOR 
+    sum = 0  # Start out with nothing
+    # STEP 2: GET DATA
+    numbers = range(0,101,2)
+    print("All the numbers:",numbers)
+    # STEP 3: LOOP THROUGH THE DATA
+    for number in numbers:
+      print("Number:",number)
+      # STEP 4: ACCUMULATE
+      sum = sum + number
+    # STEP 5: PROCESS RESULT
+    print(sum)
+    
+.. parsonsprob:: 7-Print-Sum-Evens
+
+   The following is the correct code for printing the value of number and the sum each time through the loop, but it is mixed up. The code should initialize the accumulator, create the list of numbers, and then loop through the list of numbers.  Each time through the loop it should print the value of number, add the value of number to the accumulator, and then print the current sum.  Drag the blocks from the left and put them in the correct order on the right.  Don't forget to indent blocks in the body of the loop.  Just drag the block further right to indent.  Click the <i>Check Me</i> button to check your solution.</p>
+   -----
+   sum = 0  
+   =====
+   numbers = range(0,101,2)
+   =====
+   for number in numbers:
+   =====
+      print("Number:",number)
+   =====
+      sum = sum + number
+   =====
+      print(sum)
+
+

@@ -1,0 +1,228 @@
+..  Copyright (C)  Mark Guzdial, Barbara Ericson, Briana Morrison
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3 or
+    any later version published by the Free Software Foundation; with
+    Invariant Sections being Forward, Prefaces, and Contributor List,
+    no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license
+    is included in the section entitled "GNU Free Documentation License".
+
+.. 	qnum::
+	:start: 1
+	:prefix: csp-15-
+
+Using Decisions with Images
+==============================
+
+	
+.. raw:: html
+
+    <img src="../_static/gal2.jpg" id="gal2.jpg">
+	
+We can create image effects by conditionally executing code.  In the code below we will try to change the color of the women's shirt.  We will clear the red value for any pixel that has a red value greater than 200 and a green value of less than 100 and a blue value of less than 100.   
+
+.. activecode:: Color_Replace
+    :tour_1: "Structural Tour"; 1: id1-line1; 4: id1-line4; 7-8: id1-line7-8; 9: id1-line9; 10-12: id1-line10-12; 15: id1-line15; 18: id1-line18; 21: id1-line21; 23-24: id1-line23-24;
+    :nocodelens:
+
+    import image
+    
+    # CREATE AN IMAGE FROM A FILE
+    img = image.Image("gal2.jpg")
+
+    # LOOP THROUGH ALL PIXELS
+    for x in range(img.getWidth()):
+        for y in range(img.getHeight()):
+            p = img.getPixel(x, y)
+            r = p.getRed()
+            g = p.getGreen()
+            b = p.getBlue()
+          
+            # VALUES FOR THE NEW COLOR
+            if r > 200 and g < 100 and b < 100:
+             
+               # CREATE THE COLOR
+               newPixel = image.Pixel(0, g, b)
+            
+               # CHANGE THE IMAGE
+               img.setPixel(x, y, newPixel)
+            
+    win = image.ImageWin()
+    img.draw(win)
+    
+What happens if we only test if red is greater than 200? Change the code above to try it. 
+
+Can you find values that work well to only change the shirt color and not anything else?  
+
+Remember that white light is a combination of red, green, and blue light with each value at 255 for totally white light.  Try to change just the white background to green.  
+
+Combining Pictures
+====================
+
+We can use a conditional to copy just the non-white pixels from one picture to another picture.  We can take this tiny image of the women and put her by the Eiffel tower in Paris, France.  
+
+.. raw:: html
+
+    <img src="../_static/lady_tiny.png" id="lady_tiny.png">
+    <img src="../_static/eiffel.jpg" id="eiffel.jpg">
+
+.. activecode:: Copy_Non_White
+    :tour_1: "Structural Tour"; 1: id2a-line1; 4-5: id2a-line4-5; 8-9: id2a-line8-9; 10: id2a-line10; 11-13: id2a-line11-13; 16: id2a-line16; 19: id2a-line19; 21-22: id2a-line21-22;
+    :nocodelens:
+
+    import image
+    
+    # CREATE THE IMAGES 
+    img1 = image.Image("lady_tiny.png")
+    img2 = image.Image("eiffel.jpg")
+
+    # LOOP THROUGH ALL THE PIXELS IN IMG1
+    for x in range(img1.getWidth()):
+        for y in range(img1.getHeight()):
+            p1 = img1.getPixel(x, y)
+            r1 = p1.getRed()
+            g1 = p1.getGreen()
+            b1 = p1.getBlue()
+  
+            # CHECK IF THE PIXEL ISN'T WHITE
+            if r1 < 250 and g1 < 250 and b1 < 250:
+            
+               # COPY THE COLOR TO IMG2
+               img2.setPixel(x, y + 130, p1)
+            
+    win = image.ImageWin()
+    img2.draw(win)
+
+
+If and Else with Images
+===========================
+
+..	index::
+	single: sqrt
+	single: square root
+	pair: math; sqrt
+
+What if we want to identify objects in a picture?  For example we might want to find the swan in the following picture. One way to get started looking for an object is to find the points where the color changes substantially from one pixel to the next.  This is called **edge detection** and it is an important step in image processing.  
+
+.. raw:: html
+
+    <img src="../_static/swan.jpg" id="swan.jpg">
+
+To look for substantial color changes calculate the average color for the current pixel and the one to the the right of it. You can calculate the average as the sum of the red, green, and blue values divided by 3 (the number of values).  Then compare the absolute value of the difference in the averages and if it is greater than some amount set the current pixel to black, otherwise set it to white.  This will result in what looks like a simple pencil sketch of the picture.  Try larger and smaller values than 10 in line 21 to see how they change the result.
+
+.. activecode:: Edge_Detection
+    :tour_1: "Structural Tour";  1: id2b-line1; 4: id2b-line4; 7-8: id2b-line7-8; 9: id2b-line9; 10: id2b-line10; 11-13: id2b-line11-13; 14: id2b-line14; 15-17: id2b-line15-17; 18: id2b-line18; 21-22: id2b-line21-22; 23-24: id2b-line23-24; 27: id2b-line27; 29-30: id2b-line29-30;
+    :nocodelens:
+
+    import image
+    
+    # CREATE AN IMAGE FROM A FILE
+    img = image.Image("swan.jpg")
+
+    # LOOP THROUGH ALL BUT LAST COLUMN
+    for x in range(img.getWidth() - 1):
+        for y in range(img.getHeight()):
+            p = img.getPixel(x, y)
+            p2 = img.getPixel(x + 1, y)
+            r1 = p.getRed()
+            g1 = p.getGreen()
+            b1 = p.getBlue()
+            average1 = (r1 + g1 + b1) / 3
+            r2 = p2.getRed()
+            g2 = p2.getGreen()
+            b2 = p2.getBlue()
+            average2 = (r2 + g2 + b2) / 3
+          
+            # VALUES FOR THE NEW COLOR
+            if abs(average2 - average1) > 10:
+               newPixel = image.Pixel(0, 0, 0)
+            else:
+               newPixel = image.Pixel(255, 255, 255)
+            
+            # CHANGE THE IMAGE
+            img.setPixel(x, y, newPixel)
+            
+    win = image.ImageWin()
+    img.draw(win)
+    
+.. mchoicemf:: 15-Edge
+   :answer_a: 0
+   :answer_b: 2
+   :answer_c: 256
+   :answer_d: 16,777,216 (= 256 * 256 * 256) 
+   :correct: b
+   :feedback_a: Black and white are colors.
+   :feedback_b: This image will only have black or white pixels in all columns except the rightmost one.  The pixel colors in the rightmost column will not be changed. 
+   :feedback_c: This would be true if we were only using shades of gray, but we are only using two colors.  
+   :feedback_d: This would be true if we were using all color values, but we are only using black and white.
+   
+   How many different colors will be in our image (except the last column) when we are done?
+
+	
+Multiple If's with Images
+===========================
+
+..	index::
+	single: posterize
+
+We can use multiple if's to reduce the number of colors in an image.  Let's say that if we have a little bit of each of red, green, and blue, we want to make each of them zero.  If we have more, we set them to a mid-range value like 120.  This is called *posterizing* because it reduces all the colors in a picture to a small number of colors -- like the ones you might use if you were making a poster.
+
+.. raw:: html
+
+    <img src="../_static/arch.jpg" id="arch.jpg">
+    
+.. activecode:: Posterize
+    :tour_1: "Structural Tour"; 1: id3-line1; 4: id3-line4; 7-8: id3-line7-8; 9: id3-line9; 11-13: id3-line11-13; 16-17: id3-line16-17; 18-19: id3-line18-19; 20-21: id3-line20-21; 22-23: id3-line22-23; 24-25: id3-line24-25; 26-27: id3-line26-27; 30: id3-line30; 33: id3-line33; 35-36: id3-line35-36;
+    :nocodelens:
+
+    import image
+    
+    # CREATE AN IMAGE FROM A FILE
+    img = image.Image("arch.jpg")
+
+    # LOOP THROUGH ALL PIXELS
+    for x in range(img.getWidth()):
+        for y in range(img.getHeight()):
+            p = img.getPixel(x, y)
+
+            r = p.getRed()
+            g = p.getGreen()
+            b = p.getBlue()
+          
+            # VALUES FOR THE NEW COLOR
+            if r < 120:
+               r = 0
+            if r >= 120:
+               r = 120
+            if g < 120:
+               g = 0
+            if g >= 120:
+               g = 120
+            if b < 120:
+               b = 0
+            if b >= 120:
+               b = 120
+             
+            # CREATE THE COLOR
+            newPixel = image.Pixel(r,g,b)
+            
+            # CHANGE THE IMAGE
+            img.setPixel(x, y, newPixel)
+            
+    win = image.ImageWin()
+    img.draw(win)
+
+.. mchoicemf:: 15-posterize1
+   :answer_a: 8
+   :answer_b: 3
+   :answer_c: 120
+   :answer_d: 16,777,216 (= 256 * 256 * 256) 
+   :correct: a
+   :feedback_a: Two possible values of each of red, green, and blue makes for 8 colors
+   :feedback_b: Two values of each of red, green, and blue is more than 3.
+   :feedback_c: Far fewer
+   :feedback_d: That's the total number of colors possible.  But this code reduces that.
+   
+   How many different colors will be in our image when we are done?
+   
+Rewrite the code for posterizing an image using if and else rather than multiple if's.  Test that it still works correctly.  
+

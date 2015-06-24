@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Lists &mdash; Problem Solving with Algorithms and Data Structures</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
+    <link rel="next" title="Dictionaries" href="Dictionaries.html" />
+    <link rel="prev" title="Performance of Python Data Structures" href="PerformanceofPythonDataStructures.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pythonds';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">Problem Solving with Algorithms and Data Structures</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pythonds/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/initiateGroup' id="joinGroupLink">Join a Study Group</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/schedule' id="groupScheduleLink">Group Schedule</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/newschedule' id="newChapterLink">Schedule New Chapter</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/manageGroup' id="manageGroupLink">Manage Group</a></li>
+			<li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/assignments/index'>Progress Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pythonds/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Lists</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Performance of Python Data Structures" data-toggle="tooltip">
+    <a href="PerformanceofPythonDataStructures.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Dictionaries' data-toggle="tooltip" >
+    <a href="Dictionaries.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="lists">
+<h1>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h1>
+<p>The designers of Python had many choices to make when they implemented
+the list data structure. Each of these choices could have an impact on
+how fast list operations perform. To help them make the right choices
+they looked at the ways that people would most commonly use the list
+data structure and they optimized their implementation of a list so that
+the most common operations were very fast. Of course they also tried to
+make the less common operations fast, but when a tradeoff had to be made
+the performance of a less common operation was often sacrificed in favor
+of the more common operation.</p>
+<p>Two common operations are indexing and assigning to an index position.
+Both of these operations take the same amount of time no matter how
+large the list becomes. When an operation like this is independent of
+the size of the list they are <span class="math">\(O(1)\)</span>.</p>
+<p>Another very common programming task is to grow a list. There are two
+ways to create a longer list.  You can use the append method or the
+concatenation operator. The append method is <span class="math">\(O(1)\)</span>. However,
+the concatenation operator is <span class="math">\(O(k)\)</span> where <span class="math">\(k\)</span> is the
+size of the list that is being concatenated. This is important for you
+to know because it can help you make your own programs more efficient by
+choosing the right tool for the job.</p>
+<p>Let&#8217;s look at four different ways we might generate a list of <tt class="docutils literal"><span class="pre">n</span></tt>
+numbers starting with 0. First we’ll try a <tt class="docutils literal"><span class="pre">for</span></tt> loop and create the
+list by concatenation, then we’ll use append rather than concatenation.
+Next, we’ll try creating the list using list comprehension and finally,
+and perhaps the most obvious way, using the range function wrapped by a
+call to the list constructor. <a class="reference internal" href="#lst-mklist"><em>Listing 3</em></a> shows the code for
+making our list four different ways.</p>
+<p id="lst-mklist"><strong>Listing 3</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test1</span><span class="p">():</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">test2</span><span class="p">():</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test3</span><span class="p">():</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
+
+<span class="k">def</span> <span class="nf">test4</span><span class="p">():</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>To capture the time it takes for each of our functions to execute we
+will use Python’s <tt class="docutils literal"><span class="pre">timeit</span></tt> module. The <tt class="docutils literal"><span class="pre">timeit</span></tt> module is designed
+to allow Python developers to make cross-platform timing measurements by
+running functions in a consistent environment and using timing
+mechanisms that are as similar as possible across operating systems.</p>
+<p>To use <tt class="docutils literal"><span class="pre">timeit</span></tt> you create a <tt class="docutils literal"><span class="pre">Timer</span></tt> object whose parameters are two
+Python statements. The first parameter is a Python statement that you
+want to time; the second parameter is a statement that will run once to
+set up the test. The <tt class="docutils literal"><span class="pre">timeit</span></tt> module will then time how long it takes
+to execute the statement some number of times. By default <tt class="docutils literal"><span class="pre">timeit</span></tt>
+will try to run the statement one million times. When its done it
+returns the time as a floating point value representing the total number
+of seconds. However, since it executes the statement a million times you
+can read the result as the number of microseconds to execute the test
+one time. You can also pass <tt class="docutils literal"><span class="pre">timeit</span></tt> a named parameter called
+<tt class="docutils literal"><span class="pre">number</span></tt> that allows you to specify how many times the test statement
+is executed. The following session shows how long it takes to run each
+of our test functions 1000 times.</p>
+<div class="highlight-python"><div class="highlight"><pre>t1 = Timer(&quot;test1()&quot;, &quot;from __main__ import test1&quot;)
+print(&quot;concat &quot;,t1.timeit(number=1000), &quot;milliseconds&quot;)
+t2 = Timer(&quot;test2()&quot;, &quot;from __main__ import test2&quot;)
+print(&quot;append &quot;,t2.timeit(number=1000), &quot;milliseconds&quot;)
+t3 = Timer(&quot;test3()&quot;, &quot;from __main__ import test3&quot;)
+print(&quot;comprehension &quot;,t3.timeit(number=1000), &quot;milliseconds&quot;)
+t4 = Timer(&quot;test4()&quot;, &quot;from __main__ import test4&quot;)
+print(&quot;list range &quot;,t4.timeit(number=1000), &quot;milliseconds&quot;)
+
+concat  6.54352807999 milliseconds
+append  0.306292057037 milliseconds
+comprehension  0.147661924362 milliseconds
+list range  0.0655000209808 milliseconds
+</pre></div>
+</div>
+<p>In the experiment above the statement that we are timing is the function
+call to <tt class="docutils literal"><span class="pre">test1()</span></tt>, <tt class="docutils literal"><span class="pre">test2()</span></tt>, and so on. The setup statement may
+look very strange to you, so let’s consider it in more detail. You are
+probably very familiar with the <tt class="docutils literal"><span class="pre">from</span></tt>, <tt class="docutils literal"><span class="pre">import</span></tt> statement, but this
+is usually used at the beginning of a Python program file. In this case
+the statement <tt class="docutils literal"><span class="pre">from</span> <span class="pre">__main__</span> <span class="pre">import</span> <span class="pre">test1</span></tt> imports the function
+<tt class="docutils literal"><span class="pre">test1</span></tt> from the <tt class="docutils literal"><span class="pre">__main__</span></tt> namespace into the namespace that
+<tt class="docutils literal"><span class="pre">timeit</span></tt> sets up for the timing experiment. The <tt class="docutils literal"><span class="pre">timeit</span></tt> module does
+this because it wants to run the timing tests in an environment that is
+uncluttered by any stray variables you may have created, that may
+interfere with your function’s performance in some unforeseen way.</p>
+<p>From the experiment above it is clear that the append operation at 0.30
+milliseconds is much faster than concatenation at 6.54 milliseconds. In
+the above experiment we also show the times for two additional methods
+for creating a list; using the list constructor with a call to <tt class="docutils literal"><span class="pre">range</span></tt>
+and a list comprehension. It is interesting to note that the list
+comprehension is twice as fast as a <tt class="docutils literal"><span class="pre">for</span></tt> loop with an <tt class="docutils literal"><span class="pre">append</span></tt>
+operation.</p>
+<p>One final observation about this little experiment is that all of the
+times that you see above include some overhead for actually calling the
+test function, but we can assume that the function call overhead is
+identical in all four cases so we still get a meaningful comparison of
+the operations. So it would not be accurate to say that the
+concatenation operation takes 6.54 milliseconds but rather the
+concatenation test function takes 6.54 milliseconds. As an exercise you
+could test the time it takes to call an empty function and subtract that
+from the numbers above.</p>
+<p>Now that we have seen how performance can be measured concretely you can
+look at <a class="reference internal" href="#tbl-listbigo"><em>Table 2</em></a> to see the Big-O efficiency of all the
+basic list operations. After thinking carefully about
+<a class="reference internal" href="#tbl-listbigo"><em>Table 2</em></a>, you may be wondering about the two different times
+for <tt class="docutils literal"><span class="pre">pop</span></tt>. When <tt class="docutils literal"><span class="pre">pop</span></tt> is called on the end of the list it takes
+<span class="math">\(O(1)\)</span> but when pop is called on the first element in the list
+or anywhere in the middle it is <span class="math">\(O(n)\)</span>. The reason for this lies
+in how Python chooses to implement lists. When an item is taken from the
+front of the list, in Python’s implementation, all the other elements in
+the list are shifted one position closer to the beginning. This may seem
+silly to you now, but if you look at <a class="reference internal" href="#tbl-listbigo"><em>Table 2</em></a> you will see
+that this implementation also allows the index operation to be
+<span class="math">\(O(1)\)</span>. This is a tradeoff that the Python implementors thought
+was a good one.</p>
+<table border="1" class="docutils" id="tbl-listbigo">
+<caption><strong>Table 2: Big-O Efficiency of Python List Operators</strong></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operation</th>
+<th class="head">Big-O Efficiency</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>index []</td>
+<td>O(1)</td>
+</tr>
+<tr class="row-odd"><td>index assignment</td>
+<td>O(1)</td>
+</tr>
+<tr class="row-even"><td>append</td>
+<td>O(1)</td>
+</tr>
+<tr class="row-odd"><td>pop()</td>
+<td>O(1)</td>
+</tr>
+<tr class="row-even"><td>pop(i)</td>
+<td>O(n)</td>
+</tr>
+<tr class="row-odd"><td>insert(i,item)</td>
+<td>O(n)</td>
+</tr>
+<tr class="row-even"><td>del operator</td>
+<td>O(n)</td>
+</tr>
+<tr class="row-odd"><td>iteration</td>
+<td>O(n)</td>
+</tr>
+<tr class="row-even"><td>contains (in)</td>
+<td>O(n)</td>
+</tr>
+<tr class="row-odd"><td>get slice [x:y]</td>
+<td>O(k)</td>
+</tr>
+<tr class="row-even"><td>del slice</td>
+<td>O(n)</td>
+</tr>
+<tr class="row-odd"><td>set slice</td>
+<td>O(n+k)</td>
+</tr>
+<tr class="row-even"><td>reverse</td>
+<td>O(n)</td>
+</tr>
+<tr class="row-odd"><td>concatenate</td>
+<td>O(k)</td>
+</tr>
+<tr class="row-even"><td>sort</td>
+<td>O(n log n)</td>
+</tr>
+<tr class="row-odd"><td>multiply</td>
+<td>O(nk)</td>
+</tr>
+</tbody>
+</table>
+<p>As a way of demonstrating this difference in performance let’s do
+another experiment using the <tt class="docutils literal"><span class="pre">timeit</span></tt> module. Our goal is to be able
+to verify the performance of the <tt class="docutils literal"><span class="pre">pop</span></tt> operation on a list of a known
+size when the program pops from the end of the list, and again when the
+program pops from the beginning of the list. We will also want to
+measure this time for lists of different sizes. What we would expect to
+see is that the time required to pop from the end of the list will stay
+constant even as the list grows in size, while the time to pop from the
+beginning of the list will continue to increase as the list grows.</p>
+<p><a class="reference internal" href="#lst-popmeas"><em>Listing 10</em></a> shows one attempt to measure the difference
+between the two uses of pop. As you can see from this first example,
+popping from the end takes 0.0003 milliseconds, whereas popping from the
+beginning takes 4.82 milliseconds. For a list of two million elements
+this is a factor of 16,000.</p>
+<p>There are a couple of things to notice about <a class="reference internal" href="#lst-popmeas"><em>Listing 4</em></a>. The
+first is the statement <tt class="docutils literal"><span class="pre">from</span> <span class="pre">__main__</span> <span class="pre">import</span> <span class="pre">x</span></tt>. Although we did not
+define a function we do want to be able to use the list object x in our
+test. This approach allows us to time just the single <tt class="docutils literal"><span class="pre">pop</span></tt> statement
+and get the most accurate measure of the time for that single operation.
+Because the timer repeats 1000 times it is also important to point out
+that the list is decreasing in size by 1 each time through the loop. But
+since the initial list is two million elements in size we only reduce
+the overall size by <span class="math">\(0.05\%\)</span></p>
+<p id="lst-popmeas"><strong>Listing 4</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">popzero</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="s">&quot;x.pop(0)&quot;</span><span class="p">,</span>
+                       <span class="s">&quot;from __main__ import x&quot;</span><span class="p">)</span>
+<span class="n">popend</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="s">&quot;x.pop()&quot;</span><span class="p">,</span>
+                      <span class="s">&quot;from __main__ import x&quot;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2000000</span><span class="p">))</span>
+<span class="n">popzero</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="mf">4.8213560581207275</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2000000</span><span class="p">))</span>
+<span class="n">popend</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="mf">0.0003161430358886719</span>
+</pre></div>
+</div>
+<p>While our first test does show that <tt class="docutils literal"><span class="pre">pop(0)</span></tt> is indeed slower than
+<tt class="docutils literal"><span class="pre">pop()</span></tt>, it does not validate the claim that <tt class="docutils literal"><span class="pre">pop(0)</span></tt> is
+<span class="math">\(O(n)\)</span> while <tt class="docutils literal"><span class="pre">pop()</span></tt> is <span class="math">\(O(1)\)</span>. To validate that claim
+we need to look at the performance of both calls over a range of list
+sizes. <a class="reference internal" href="#lst-poplists"><em>Listing 5</em></a> implements this test.</p>
+<p id="lst-poplists"><strong>Listing 5</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">popzero</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="s">&quot;x.pop(0)&quot;</span><span class="p">,</span>
+                <span class="s">&quot;from __main__ import x&quot;</span><span class="p">)</span>
+<span class="n">popend</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="s">&quot;x.pop()&quot;</span><span class="p">,</span>
+               <span class="s">&quot;from __main__ import x&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;pop(0)   pop()&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">,</span><span class="mi">100000001</span><span class="p">,</span><span class="mi">1000000</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="n">pt</span> <span class="o">=</span> <span class="n">popend</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="n">pz</span> <span class="o">=</span> <span class="n">popzero</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%15.5f</span><span class="s">, </span><span class="si">%15.5f</span><span class="s">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">pz</span><span class="p">,</span><span class="n">pt</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="#fig-poptest"><em>Figure 3</em></a> shows the results of our experiment. You can see
+that as the list gets longer and longer the time it takes to <tt class="docutils literal"><span class="pre">pop(0)</span></tt>
+also increases while the time for <tt class="docutils literal"><span class="pre">pop</span></tt> stays very flat. This is
+exactly what we would expect to see for a <span class="math">\(O(n)\)</span> and
+<span class="math">\(O(1)\)</span> algorithm.</p>
+<p>Some sources of error in our little experiment include the fact that
+there are other processes running on the computer as we measure that may
+slow down our code, so even though we try to minimize other things
+happening on the computer there is bound to be some variation in time.
+That is why the loop runs the test one thousand times in the first place
+to statistically gather enough information to make the measurement
+reliable.</p>
+<div class="figure" id="fig-poptest">
+<img alt="../_images/poptime.png" src="../_images/poptime.png" />
+<p class="caption">Figure 3: Comparing the Performance of <tt class="docutils literal"><span class="pre">pop</span></tt> and <tt class="docutils literal"><span class="pre">pop(0)</span></tt></p>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - Performance of Python Data Structures' data-toggle="tooltip">
+    <a href="PerformanceofPythonDataStructures.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="PerformanceofPythonDataStructures.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Dictionaries' data-toggle="tooltip" >
+    <a href="Dictionaries.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="Dictionaries.html" >Next Section - Dictionaries</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014 Brad Miller, David Ranum.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

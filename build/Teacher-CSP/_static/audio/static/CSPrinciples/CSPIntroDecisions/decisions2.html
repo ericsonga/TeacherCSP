@@ -1,0 +1,1951 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Making Decisions &mdash; CS Principles</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="CS Principles" href="../index.html" />
+    <link rel="next" title="Using Decisions with Strings" href="../CSPStringDecisions/decisionStrings.html" />
+    <link rel="prev" title="Using Repetition with Images" href="../CSPRepeatImages/repeatimages.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'CSPrinciples';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS Principles</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/CSPrinciples/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/CSPrinciples/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Making Decisions</a></li>
+<li><a class="reference internal" href="#the-if-statement">The <tt class="docutils literal"><span class="pre">if</span></tt> Statement</a></li>
+<li><a class="reference internal" href="#using-multiple-if-statements">Using Multiple <tt class="docutils literal"><span class="pre">if</span></tt> statements</a></li>
+<li><a class="reference internal" href="#logical-expressions">Logical Expressions</a></li>
+<li><a class="reference internal" href="#complex-conditionals-and-or-and-not">Complex Conditionals (and, or, and not)</a></li>
+<li><a class="reference internal" href="#practice-with-if">Practice with <tt class="docutils literal"><span class="pre">if</span></tt></a></li>
+<li><a class="reference internal" href="#using-if-and-else">Using <tt class="docutils literal"><span class="pre">if</span></tt> and <tt class="docutils literal"><span class="pre">else</span></tt></a></li>
+<li><a class="reference internal" href="#bigteachernote-delaying-the-else"> Delaying the <tt class="docutils literal"><span class="pre">else</span></tt></a></li>
+<li><a class="reference internal" href="#bigteachernote-sneak-up-on-and-and-or"> Sneak up on <tt class="docutils literal"><span class="pre">and</span></tt> and <tt class="docutils literal"><span class="pre">or</span></tt></a></li>
+<li><a class="reference internal" href="#bigteachernote-teacher-note-confusing-while-and-if"> Teacher Note: Confusing <cite>while</cite> and <cite>if</cite></a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Using Repetition with Images" data-toggle="tooltip">
+    <a href="../CSPRepeatImages/repeatimages.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Using Decisions with Strings' data-toggle="tooltip" >
+    <a href="../CSPStringDecisions/decisionStrings.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="making-decisions">
+<h1>Making Decisions<a class="headerlink" href="#making-decisions" title="Permalink to this headline">¶</a></h1>
+<p><strong>Learning Objectives:</strong>:</p>
+<ul class="simple">
+<li>Write programs that make decisions.</li>
+<li>Introduce conditional execution with <tt class="docutils literal"><span class="pre">if</span></tt> statements</li>
+<li>Give examples of logical expressions and relational operators</li>
+<li>Introduce complex conditionals (with <tt class="docutils literal"><span class="pre">and</span></tt>, <tt class="docutils literal"><span class="pre">or</span></tt>, and <tt class="docutils literal"><span class="pre">not</span></tt>)</li>
+</ul>
+<p>We have discussed two major abilities that computers have.  Computers can name values.  Computers can repeat steps.  The third major ability that a computer has is the ability to make decisions.  We make decisions all the time.  Before we leave the house we may check to see if it will rain that day, and if it will, we bring an umbrella.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/umbrella.jpg"><img alt="Picture of an umbrella" src="../_images/umbrella.jpg" style="height: 200px;" /></a>
+<p class="caption">Figure 1: An umbrella in the rain</p>
+</div>
+<p>Computers can also make decisions or take action when something is true.  More specifically, (1) a computer can <em>test data</em> and (2) a computer can <em>execute instructions</em> if that test is true.  The ability to test data and take actions on the result is what allows the computer to deal with input and take action on it (e.g., if the credit card is valid then charge the card), or deal with data from the world around (e.g., if I see a stop sign then stop.).</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/stop.jpg"><img alt="Picture of a stop sign" src="../_images/stop.jpg" style="height: 200px;" /></a>
+<p class="caption">Figure 2: Picture of a stop sign</p>
+</div>
+<p id="index-0">The computer&#8217;s ability to take action (execute some code) when something is true is also called <strong>conditional execution</strong>.</p>
+</div>
+<div class="section" id="the-if-statement">
+<h1>The <tt class="docutils literal"><span class="pre">if</span></tt> Statement<a class="headerlink" href="#the-if-statement" title="Permalink to this headline">¶</a></h1>
+<p id="index-1">In Python, we test data and execute instructions if the test is true using an <tt class="docutils literal"><span class="pre">if</span></tt> statement.  An <tt class="docutils literal"><span class="pre">if</span></tt> statement includes a <strong>logical expression</strong> which is the &#8216;test.&#8217;   A <strong>logical expression</strong> is one that is either true or false.  This is also called a <strong>Boolean expression</strong>.  An example of a <strong>logical expression</strong> is <tt class="docutils literal"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">3</span></tt>. The <tt class="docutils literal"><span class="pre">if</span></tt> statement is followed by a colon <tt class="docutils literal"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">3:</span></tt> and a <strong>block of code</strong>.  The colon (<tt class="docutils literal"><span class="pre">:</span></tt>) at the end of the <tt class="docutils literal"><span class="pre">if</span></tt> statement is required.  The <strong>block of code</strong>  includes the instructions to execute if the test is true.  The <strong>block of code</strong> includes all the statements that are indented following the <tt class="docutils literal"><span class="pre">if</span></tt> statement.  If the test is true, execution the statement or statements in the block following the <tt class="docutils literal"><span class="pre">if</span></tt> will be executed.  If the test isn&#8217;t true (is false) then execution will skip the block following the if and continue with the next statement following the block after the <tt class="docutils literal"><span class="pre">if</span></tt> statement.</p>
+<p>Run the code below with x set to 0 and then change x to 4 and see how the output differs depending on the value of x.</p>
+
+<div id="cont"></div>
+<div id="If_Structure" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="If_Structure_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="If_Structure_saveb" onclick="saveEditor('If_Structure');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="If_Structure_loadb" onclick="requestCode('If_Structure');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('If_Structure','x = 0*nline*if x < 3:*nline*   print *open**doubleq*x is less than 3*doubleq**close**nline*print *open**doubleq*All done*doubleq**close*','1','*doubleq*Structural Tour*doubleq*; 1: c0-line1; 2-3: c0-line2-3; 4: c0-line4;*atype*')"/>
+<button class='btn btn-default' id="If_Structure_vizb" onclick="injectCodelens(this,'If_Structure');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="If_Structure_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="If_Structure_code" class="active_code" prefixcode="undefined" lang="python">
+x = 0
+if x < 3:
+   print ("x is less than 3")
+print ("All done")
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="If_Structure_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="If_Structure_suffix" style="display:none">
+</pre><pre id="If_Structure_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (If_Structure)</span> </p>
+<div id="If_Structure_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#If_Structure_saveb').toggle();
+    $('#If_Structure_loadb').toggle();
+}
+if ($("#If_Structure").attr("lang") !== "html" && $("#If_Structure_code_div").parents(".admonition").length == 0 && $("#If_Structure_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#If_Structure_code_div").offset({
+			left: $("#If_Structure .clearfix").offset().left
+		});
+	}
+	$("#If_Structure_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#If_Structure_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#If_Structure_runb").parent().siblings(".ac_output").show();
+			runit('If_Structure',this, undefined);
+			$("#If_Structure_runb").on("click", function(){
+				runit('If_Structure',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#If_Structure_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#If_Structure_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#If_Structure_runb").on("click", function(){
+		runit('If_Structure',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p id="index-2">The figure below is called a <strong>flowchart</strong>.  It shows how flow of the program.  The diamond shape contains the <strong>logical expression</strong> and has shows the path
+that the execution takes if the logical expression (also called the <strong>condition</strong>) is true as well as the path if the logical expression is false.  Notice that it will only execute the statements in the
+indented block if the logical expression was true.  If the logical expression was false, execution will skip the code in the indented block and resume with the next statement.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/decision.png"><img alt="Flowchart for an if statement" src="../_images/decision.png" style="height: 350px;" /></a>
+<p class="caption">Figure 3: Flow of execution for an if statement</p>
+</div>
+
+            <div id="12-If_Structure" class="alert alert-warning">
+            <p>csp-12-1:  Given the code below, what line executes after line 2 executes?</p>
+<blockquote>
+<div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+   <span class="k">print</span> <span class="p">(</span><span class="s">&quot;x is less than 3&quot;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;All done&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<form name="12-If_Structure_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="12-If_Structure_opt_a" />
+            <label for= "12-If_Structure_opt_a">  a) line 2</label><br />
+            
+            <input type="radio" name="group1" value="b" id="12-If_Structure_opt_b" />
+            <label for= "12-If_Structure_opt_b">  b) line 3</label><br />
+            
+            <input type="radio" name="group1" value="c" id="12-If_Structure_opt_c" />
+            <label for= "12-If_Structure_opt_c">  c) line 4</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('12-If_Structure');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('12-If_Structure','c',['It won\u0027t repeat line 2.', 'Line 2 will only execute when x is less than 3.', 'Execution continues at the next statement beyond the block following the \u003Ccode\u003Eif\u003C/code\u003E.'])">Check Me</button>
+            <button class='btn btn-default' id="12-If_Structure_bcomp" disabled name="compare" onclick="compareAnswers('12-If_Structure');">Compare Me</button>
+            </form><br />
+            <div id="12-If_Structure_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="using-multiple-if-statements">
+<h1>Using Multiple <tt class="docutils literal"><span class="pre">if</span></tt> statements<a class="headerlink" href="#using-multiple-if-statements" title="Permalink to this headline">¶</a></h1>
+<p>You can use more than one <tt class="docutils literal"><span class="pre">if</span></tt> statement in your code.  Here&#8217;s an example of a calculation that uses two <tt class="docutils literal"><span class="pre">if</span></tt> statements.  Let&#8217;s compute the total cost of an item where the price is based on the weight of the item.  If the item weighs less than 1 pound then the price is 1.45 a pound.  If the item weighs 1 pound or more the price is 1.15 a pound.</p>
+
+<div id="cont"></div>
+<div id="Price_If" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Price_If_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Price_If_saveb" onclick="saveEditor('Price_If');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Price_If_loadb" onclick="requestCode('Price_If');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Price_If','weight = 0.5*nline*if weight < 1:*nline*   price = 1.45*nline*if weight >= 1:*nline*   price = 1.15*nline*total = weight * price*nline*print*open*weight*close**nline*print*open*price*close**nline*print*open*total*close*','1','*doubleq*Structural Tour*doubleq*; 1: c1-line1; 2-3: c1-line2-3; 4-5: c1-line4-5; 6: c1-line6; 7-9: c3f-line7-9;*atype*')"/>
+<button class='btn btn-default' id="Price_If_vizb" onclick="injectCodelens(this,'Price_If');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Price_If_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Price_If_code" class="active_code" prefixcode="undefined" lang="python">
+weight = 0.5
+if weight < 1:
+   price = 1.45
+if weight >= 1:
+   price = 1.15
+total = weight * price
+print(weight)
+print(price)
+print(total)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Price_If_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Price_If_suffix" style="display:none">
+</pre><pre id="Price_If_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Price_If)</span> </p>
+<div id="Price_If_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Price_If_saveb').toggle();
+    $('#Price_If_loadb').toggle();
+}
+if ($("#Price_If").attr("lang") !== "html" && $("#Price_If_code_div").parents(".admonition").length == 0 && $("#Price_If_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Price_If_code_div").offset({
+			left: $("#Price_If .clearfix").offset().left
+		});
+	}
+	$("#Price_If_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Price_If_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Price_If_runb").parent().siblings(".ac_output").show();
+			runit('Price_If',this, undefined);
+			$("#Price_If_runb").on("click", function(){
+				runit('Price_If',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Price_If_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Price_If_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Price_If_runb").on("click", function(){
+		runit('Price_If',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Edit the code above and change the first line so that <tt class="docutils literal"><span class="pre">weight</span></tt> has a different value. Run it again and see what changes.  Try it in the codelens as well to see how the different values for weight changes the lines of code that are executed.</p>
+<p>In this second version, we set a <tt class="docutils literal"><span class="pre">price</span></tt> as a <em>default</em>, then change it only on the special condition. Does it work the same as the above example?</p>
+
+<div id="cont"></div>
+<div id="Price_If_Default" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Price_If_Default_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Price_If_Default_saveb" onclick="saveEditor('Price_If_Default');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Price_If_Default_loadb" onclick="requestCode('Price_If_Default');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Price_If_Default','weight = 0.5*nline*price = 1.45*nline*if weight >= 1:*nline*   price = 1.15*nline*total = weight * price*nline*print*open*weight*close**nline*print*open*price*close**nline*print*open*total*close*','1','*doubleq*Structural Tour*doubleq*; 1: c2-line1; 2: c2-line2; 3-4: c2-line3-4; 5: c2-line5; 6-8: c3f-line7-9;*atype*')"/>
+<button class='btn btn-default' id="Price_If_Default_vizb" onclick="injectCodelens(this,'Price_If_Default');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Price_If_Default_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Price_If_Default_code" class="active_code" prefixcode="undefined" lang="python">
+weight = 0.5
+price = 1.45
+if weight >= 1:
+   price = 1.15
+total = weight * price
+print(weight)
+print(price)
+print(total)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Price_If_Default_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Price_If_Default_suffix" style="display:none">
+</pre><pre id="Price_If_Default_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Price_If_Default)</span> </p>
+<div id="Price_If_Default_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Price_If_Default_saveb').toggle();
+    $('#Price_If_Default_loadb').toggle();
+}
+if ($("#Price_If_Default").attr("lang") !== "html" && $("#Price_If_Default_code_div").parents(".admonition").length == 0 && $("#Price_If_Default_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Price_If_Default_code_div").offset({
+			left: $("#Price_If_Default .clearfix").offset().left
+		});
+	}
+	$("#Price_If_Default_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Price_If_Default_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Price_If_Default_runb").parent().siblings(".ac_output").show();
+			runit('Price_If_Default',this, undefined);
+			$("#Price_If_Default_runb").on("click", function(){
+				runit('Price_If_Default',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Price_If_Default_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Price_If_Default_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Price_If_Default_runb").on("click", function(){
+		runit('Price_If_Default',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="12-Price_If_Equivalent" class="alert alert-warning">
+            csp-12-2:  Are there values for weight that make the two programs above print different results when the same weight is used in both programs?<form name="12-Price_If_Equivalent_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="12-Price_If_Equivalent_opt_a" />
+            <label for= "12-Price_If_Equivalent_opt_a">  a) No, they're always the same.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="12-Price_If_Equivalent_opt_b" />
+            <label for= "12-Price_If_Equivalent_opt_b">  b) Yes, they're different if the weight is exactly 1 pound.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="12-Price_If_Equivalent_opt_c" />
+            <label for= "12-Price_If_Equivalent_opt_c">  c) Yes, they're different if the weight is under 1 pound.</label><br />
+            
+            <input type="radio" name="group1" value="d" id="12-Price_If_Equivalent_opt_d" />
+            <label for= "12-Price_If_Equivalent_opt_d">  d) Yes, they're different if the weight is over 1 pound.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('12-Price_If_Equivalent');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('12-Price_If_Equivalent','a',['The end result is the same.', 'If the weight is exactly 1 pound the price will be 1.15 in both programs.', 'The the weight is under 1 pound the price will be 1.45 in both programs.', 'If the weight is over 1 pound the price will be 1.15 in both programs.'])">Check Me</button>
+            <button class='btn btn-default' id="12-Price_If_Equivalent_bcomp" disabled name="compare" onclick="compareAnswers('12-Price_If_Equivalent');">Compare Me</button>
+            </form><br />
+            <div id="12-Price_If_Equivalent_feedback">
+            </div>
+            </div>
+            <p><strong>Mixed up programs</strong></p>
+
+        <div class='parsons alert alert-warning' id="parsons-161">
+        <div class="parsons-text">csp-12-3: The following program should calculate the total price, but the lines are mixed up.   The price is based on the weight.  Items that weigh less than 2 pounds should cost 1.5.  Items that weight more than 2 pounds should cost 1.3.   Drag the blocks from the left and place them in the correct order on the right.  Be sure to also indent correctly! click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or have the wrong indention.</p><br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-161" style="display:none;">weight = 0.5\nnumItems = 5\nif weight < 2:
+   price = 1.50
+if weight >= 2:
+   price = 1.30
+total = weight * price
+print(weight)\nprint(price)\nprint(total)</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-161" class="sortable-code"></div>
+        <div id="parsons-sortableCode-161" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe161" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset161" value="Reset"/>
+        <div id="parsons-message-161"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-161").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-161").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-161");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_161.getHash("#ul-parsons-sortableCode-161");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'12-Price_By_Weight'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'12-Price_By_Weight'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-161");
+            var trashul = $("#ul-parsons-sortableTrash-161");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_161 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-161',
+		'trashId': 'parsons-sortableTrash-161',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_161.init($pjQ("#parsons-orig-161").text());
+	pp_161.shuffleLines();
+            
+        if(localStorage.getItem('12-Price_By_Weight') && localStorage.getItem('12-Price_By_Weight-trash')) {
+            try {
+                var solution = localStorage.getItem('12-Price_By_Weight');
+                var trash = localStorage.getItem('12-Price_By_Weight-trash');
+                pp_161.createHTMLFromHashes(solution,trash);
+                pp_161.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old 12-Price_By_Weight state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset161").click(function(event){
+              event.preventDefault();
+              pp_161.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-161");
+            var trashul = $("#ul-parsons-sortableTrash-161");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe161").click(function(event){
+              event.preventDefault();
+              var hash = pp_161.getHash("#ul-parsons-sortableCode-161");
+              localStorage.setItem('12-Price_By_Weight',hash);
+              hash = pp_161.getHash("#ul-parsons-sortableTrash-161");
+              localStorage.setItem('12-Price_By_Weight-trash',hash);
+            
+            pp_161.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+</div>
+<div class="section" id="logical-expressions">
+<h1>Logical Expressions<a class="headerlink" href="#logical-expressions" title="Permalink to this headline">¶</a></h1>
+<p>The basic form of an <tt class="docutils literal"><span class="pre">if</span></tt> statement is the word <strong>if</strong> followed by a logical expression, and then a colon.  All the statements that are indented beneath the <tt class="docutils literal"><span class="pre">if</span></tt> are executed <em>IF AND ONLY IF</em> the logical express is <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+<p>Some logical expressions include:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Expression</td>
+<td>Logical meaning</td>
+</tr>
+<tr class="row-even"><td>a &lt; b</td>
+<td>True if a is less than b</td>
+</tr>
+<tr class="row-odd"><td>a &lt;= b</td>
+<td>True if a is less than or equal to b</td>
+</tr>
+<tr class="row-even"><td>a &gt; b</td>
+<td>True if a is greater than b</td>
+</tr>
+<tr class="row-odd"><td>a &gt;= b</td>
+<td>True if a is greater than or equal to b</td>
+</tr>
+<tr class="row-even"><td>a == b</td>
+<td>True if a is equal to b.
+(Two equals signs, to distinguish it from assignment)</td>
+</tr>
+<tr class="row-odd"><td>a != b</td>
+<td>True if a is <em>not</em> equal to b.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="complex-conditionals-and-or-and-not">
+<h1>Complex Conditionals (and, or, and not)<a class="headerlink" href="#complex-conditionals-and-or-and-not" title="Permalink to this headline">¶</a></h1>
+<p id="index-3">We can also use <tt class="docutils literal"><span class="pre">and</span></tt> and <tt class="docutils literal"><span class="pre">or</span></tt> to join several expressions together as shown in the table below.  An <tt class="docutils literal"><span class="pre">or</span></tt> joining two expressions means that if <em>either</em> of the expressions is true, the whole expression is true.  An <tt class="docutils literal"><span class="pre">and</span></tt> used to join two expressions is only true if <em>both</em> expressions are true.  A <tt class="docutils literal"><span class="pre">not</span></tt> negates the logical value that follows it.  If it was true, then a <tt class="docutils literal"><span class="pre">not</span></tt> changes the result to false.  If it was false, the a <tt class="docutils literal"><span class="pre">not</span></tt> changes the result to true.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Expression</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>(a &lt; b) or (c &lt; d)</td>
+<td>The whole express is true if a is less than b or c is less than d.</td>
+</tr>
+<tr class="row-odd"><td>(a &lt; b) and (c &lt; d)</td>
+<td>The whole express is true if a is less than b <strong>AND</strong> <em>ALSO</em> c is less than d.</td>
+</tr>
+<tr class="row-even"><td>not a &lt; b</td>
+<td>Only true if a is actually greater than or equal to b.  <cite>not a &lt; b</cite> is the same as <cite>a &gt;= b</cite>.</td>
+</tr>
+</tbody>
+</table>
+<p>A common use of <tt class="docutils literal"><span class="pre">and</span></tt> is to check that a value is in a range between a minimum value and a maximum value.  For example if you have asked a person to pick a number between 1 and 10 you can check for this using the following.</p>
+
+<div id="cont"></div>
+<div id="Example_With_And" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Example_With_And_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Example_With_And_saveb" onclick="saveEditor('Example_With_And');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Example_With_And_loadb" onclick="requestCode('Example_With_And');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Example_With_And','x = 3*nline*if x >= 1 and x <= 10:*nline*  print *open**doubleq*x is a number from 1 to 10*doubleq**close**nline*print *open**doubleq*All done*doubleq**close*','1','*doubleq*Structural Tour*doubleq*; 1: and1-line1; 2-3: and1-line2-3; 4: and1-line4;*atype*')"/>
+<button class='btn btn-default' id="Example_With_And_vizb" onclick="injectCodelens(this,'Example_With_And');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Example_With_And_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Example_With_And_code" class="active_code" prefixcode="undefined" lang="python">
+x = 3
+if x >= 1 and x <= 10:
+  print ("x is a number from 1 to 10")
+print ("All done")
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Example_With_And_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Example_With_And_suffix" style="display:none">
+</pre><pre id="Example_With_And_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Example_With_And)</span> </p>
+<div id="Example_With_And_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Example_With_And_saveb').toggle();
+    $('#Example_With_And_loadb').toggle();
+}
+if ($("#Example_With_And").attr("lang") !== "html" && $("#Example_With_And_code_div").parents(".admonition").length == 0 && $("#Example_With_And_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Example_With_And_code_div").offset({
+			left: $("#Example_With_And .clearfix").offset().left
+		});
+	}
+	$("#Example_With_And_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Example_With_And_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Example_With_And_runb").parent().siblings(".ac_output").show();
+			runit('Example_With_And',this, undefined);
+			$("#Example_With_And_runb").on("click", function(){
+				runit('Example_With_And',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Example_With_And_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Example_With_And_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Example_With_And_runb").on("click", function(){
+		runit('Example_With_And',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="12-and1" class="alert alert-warning">
+            <p>csp-12-4:  Given the code below, what describes the values of x that will cause the code to print &#8220;condition true&#8221;?</p>
+<blockquote>
+<div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+   <span class="k">print</span> <span class="p">(</span><span class="s">&quot;condition true&quot;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;All done&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<form name="12-and1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="12-and1_opt_a" />
+            <label for= "12-and1_opt_a">  a) 1 to 10</label><br />
+            
+            <input type="radio" name="group1" value="b" id="12-and1_opt_b" />
+            <label for= "12-and1_opt_b">  b) 0 to 9</label><br />
+            
+            <input type="radio" name="group1" value="c" id="12-and1_opt_c" />
+            <label for= "12-and1_opt_c">  c) 1 to 9</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('12-and1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('12-and1','c',['This would be true if the second expression was x \u003C\u003D 10.', 'This would be true if the first logical expression was x \u003E\u003D 0.', 'The \u0022condition true\u0022 will only be printed when x is greater than 0 and less than 10 so this is the range from 1 to 9.'])">Check Me</button>
+            <button class='btn btn-default' id="12-and1_bcomp" disabled name="compare" onclick="compareAnswers('12-and1');">Compare Me</button>
+            </form><br />
+            <div id="12-and1_feedback">
+            </div>
+            </div>
+            <p>A common use of <tt class="docutils literal"><span class="pre">or</span></tt> is to check if either of two conditions are true.  For example, a parent has told a teen that she can go out if she has cleaned her room or finished her homework.  If either of these is true she can go out.  In Python a value of <tt class="docutils literal"><span class="pre">0</span></tt> means false and any non-zero value is true, but <tt class="docutils literal"><span class="pre">1</span></tt> is often used for true.</p>
+
+<div id="cont"></div>
+<div id="Example_With_Or" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Example_With_Or_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Example_With_Or_saveb" onclick="saveEditor('Example_With_Or');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Example_With_Or_loadb" onclick="requestCode('Example_With_Or');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Example_With_Or','cleanedRoom = 1*nline*finishedHomework = 0*nline*if cleanedRoom or finishedHomework:*nline*  print *open**doubleq*You can go out!*doubleq**close**nline*print *open**doubleq*All done*doubleq**close*','1','*doubleq*Structural Tour*doubleq*; 1: and2-line1; 2: and2-line2; 3-4: and2-line3-4; 5: and2-line5;*atype*')"/>
+<button class='btn btn-default' id="Example_With_Or_vizb" onclick="injectCodelens(this,'Example_With_Or');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Example_With_Or_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Example_With_Or_code" class="active_code" prefixcode="undefined" lang="python">
+cleanedRoom = 1
+finishedHomework = 0
+if cleanedRoom or finishedHomework:
+  print ("You can go out!")
+print ("All done")
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Example_With_Or_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Example_With_Or_suffix" style="display:none">
+</pre><pre id="Example_With_Or_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Example_With_Or)</span> </p>
+<div id="Example_With_Or_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Example_With_Or_saveb').toggle();
+    $('#Example_With_Or_loadb').toggle();
+}
+if ($("#Example_With_Or").attr("lang") !== "html" && $("#Example_With_Or_code_div").parents(".admonition").length == 0 && $("#Example_With_Or_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Example_With_Or_code_div").offset({
+			left: $("#Example_With_Or .clearfix").offset().left
+		});
+	}
+	$("#Example_With_Or_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Example_With_Or_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Example_With_Or_runb").parent().siblings(".ac_output").show();
+			runit('Example_With_Or',this, undefined);
+			$("#Example_With_Or_runb").on("click", function(){
+				runit('Example_With_Or',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Example_With_Or_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Example_With_Or_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Example_With_Or_runb").on("click", function(){
+		runit('Example_With_Or',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="12-or1" class="alert alert-warning">
+            <p>csp-12-5:  Given the code below, what describes the values of x that will cause the code to print &#8220;condition true&#8221;?</p>
+<blockquote>
+<div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+   <span class="k">print</span> <span class="p">(</span><span class="s">&quot;condition true&quot;</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">&quot;All done&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<form name="12-or1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="12-or1_opt_a" />
+            <label for= "12-or1_opt_a">  a) all values of x</label><br />
+            
+            <input type="radio" name="group1" value="b" id="12-or1_opt_b" />
+            <label for= "12-or1_opt_b">  b) 1 to 9</label><br />
+            
+            <input type="radio" name="group1" value="c" id="12-or1_opt_c" />
+            <label for= "12-or1_opt_c">  c) 0 to 9</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('12-or1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('12-or1','a',['This will be true if x is greater than 0 or less than 10.  This covers all possible values of x.', 'This would be true if the logical expressions were joined with and instead of or.', 'This would be true if the logical expressions were jointed with and instead of or and if the first logical expression was x \u003E\u003D 0.'])">Check Me</button>
+            <button class='btn btn-default' id="12-or1_bcomp" disabled name="compare" onclick="compareAnswers('12-or1');">Compare Me</button>
+            </form><br />
+            <div id="12-or1_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="practice-with-if">
+<h1>Practice with <tt class="docutils literal"><span class="pre">if</span></tt><a class="headerlink" href="#practice-with-if" title="Permalink to this headline">¶</a></h1>
+<p>The program below is broken in a subtle way.  For one value of <tt class="docutils literal"><span class="pre">weight</span></tt>, the <tt class="docutils literal"><span class="pre">price</span></tt> will not be set to any value, so the calculation of <tt class="docutils literal"><span class="pre">total</span></tt> will fail with an error that something <tt class="docutils literal"><span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></tt>.  This is why professional programmers will assign <em>some</em> value to a variable like <tt class="docutils literal"><span class="pre">price</span></tt> at the beginning of the program, so that errors like this won&#8217;t happen.  Can you figure out the value of <tt class="docutils literal"><span class="pre">weight</span></tt> that will result in an error?</p>
+
+<div id="cont"></div>
+<div id="Price_If_Broken" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Price_If_Broken_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Price_If_Broken_saveb" onclick="saveEditor('Price_If_Broken');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Price_If_Broken_loadb" onclick="requestCode('Price_If_Broken');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Price_If_Broken','weight = 0.5*nline*if weight < 1:*nline*   price = 1.45*nline*if weight > 1:*nline*   price = 1.15*nline*total = weight * price*nline*print*open*weight*close**nline*print*open*price*close**nline*print*open*total*close*','1','*doubleq*Structural Tour*doubleq*; 1: c1-line1; 2-3: c1-line2-3; 4-5: c3-line4-5; 6: c1-line6; 7-9: c3f-line7-9;*atype*')"/>
+<button class='btn btn-default' id="Price_If_Broken_vizb" onclick="injectCodelens(this,'Price_If_Broken');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Price_If_Broken_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Price_If_Broken_code" class="active_code" prefixcode="undefined" lang="python">
+weight = 0.5
+if weight < 1:
+   price = 1.45
+if weight > 1:
+   price = 1.15
+total = weight * price
+print(weight)
+print(price)
+print(total)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Price_If_Broken_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Price_If_Broken_suffix" style="display:none">
+</pre><pre id="Price_If_Broken_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Price_If_Broken)</span> </p>
+<div id="Price_If_Broken_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Price_If_Broken_saveb').toggle();
+    $('#Price_If_Broken_loadb').toggle();
+}
+if ($("#Price_If_Broken").attr("lang") !== "html" && $("#Price_If_Broken_code_div").parents(".admonition").length == 0 && $("#Price_If_Broken_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Price_If_Broken_code_div").offset({
+			left: $("#Price_If_Broken .clearfix").offset().left
+		});
+	}
+	$("#Price_If_Broken_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Price_If_Broken_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Price_If_Broken_runb").parent().siblings(".ac_output").show();
+			runit('Price_If_Broken',this, undefined);
+			$("#Price_If_Broken_runb").on("click", function(){
+				runit('Price_If_Broken',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Price_If_Broken_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Price_If_Broken_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Price_If_Broken_runb").on("click", function(){
+		runit('Price_If_Broken',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Try different values for <tt class="docutils literal"><span class="pre">weight</span></tt> then answer the below:</p>
+
+            <div id="brokenrange" class="alert alert-warning">
+            csp-12-6: What value for <tt class="docutils literal"><span class="pre">weight</span></tt> will result in an error complaining that <tt class="docutils literal"><span class="pre">price</span></tt> is not defined?  <input type='text' id='brokenrange1' class="form-control" style="display:inline; width: 60px;" value=""></input>
+            <script>
+            $(document).ready(function(){checkPreviousFIB('brokenrange');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkFIBStorage('brokenrange', 'brokenrange1', '1$|1\\.[0]*$',[], false)">Check Me</button>
+            <button class='btn btn-default' id="brokenrange_bcomp" disabled name="compare" onclick="compareFITBAnswers('brokenrange');">Compare Me</button>
+            <br />
+            <br />
+            <div id="brokenrange_feedback">
+            </div>
+            </div>
+            <p>It is certainly possible to have multiple <tt class="docutils literal"><span class="pre">if</span></tt> statements, and each one can match (or not match) the data.  Imagine a more complicated price scheme, where the price is based on the weight, but there is also a 10% discount for buying more then 10 items.</p>
+
+<div id="cont"></div>
+<div id="Multiple_Ifs" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Multiple_Ifs_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Multiple_Ifs_saveb" onclick="saveEditor('Multiple_Ifs');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Multiple_Ifs_loadb" onclick="requestCode('Multiple_Ifs');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Multiple_Ifs','weight = 0.5*nline*numItems = 5*nline*if weight < 1:*nline*   price = 1.45*nline*if weight >= 1:*nline*   price = 1.15*nline*total = weight * price*nline*if numItems >= 10:*nline*   total = total * 0.9*nline*print*open*weight*close**nline*print*open*price*close**nline*print*open*total*close*','1','*doubleq*Structural Tour*doubleq*; 1: c1-line1; 2: c4-line2; 3-4: c1-line2-3; 5-6: c1-line4-5; 7: c1-line6; 8-9: c4-line8-9; 10-12: c3f-line7-9;*atype*')"/>
+<button class='btn btn-default' id="Multiple_Ifs_vizb" onclick="injectCodelens(this,'Multiple_Ifs');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Multiple_Ifs_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Multiple_Ifs_code" class="active_code" prefixcode="undefined" lang="python">
+weight = 0.5
+numItems = 5
+if weight < 1:
+   price = 1.45
+if weight >= 1:
+   price = 1.15
+total = weight * price
+if numItems >= 10:
+   total = total * 0.9
+print(weight)
+print(price)
+print(total)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Multiple_Ifs_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Multiple_Ifs_suffix" style="display:none">
+</pre><pre id="Multiple_Ifs_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Multiple_Ifs)</span> </p>
+<div id="Multiple_Ifs_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Multiple_Ifs_saveb').toggle();
+    $('#Multiple_Ifs_loadb').toggle();
+}
+if ($("#Multiple_Ifs").attr("lang") !== "html" && $("#Multiple_Ifs_code_div").parents(".admonition").length == 0 && $("#Multiple_Ifs_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Multiple_Ifs_code_div").offset({
+			left: $("#Multiple_Ifs .clearfix").offset().left
+		});
+	}
+	$("#Multiple_Ifs_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Multiple_Ifs_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Multiple_Ifs_runb").parent().siblings(".ac_output").show();
+			runit('Multiple_Ifs',this, undefined);
+			$("#Multiple_Ifs_runb").on("click", function(){
+				runit('Multiple_Ifs',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Multiple_Ifs_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Multiple_Ifs_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Multiple_Ifs_runb").on("click", function(){
+		runit('Multiple_Ifs',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="12-Multiple_Ifs" class="alert alert-warning">
+            csp-12-7:  What is the total for 12 items that weigh 3 pounds?<form name="12-Multiple_Ifs_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="12-Multiple_Ifs_opt_a" />
+            <label for= "12-Multiple_Ifs_opt_a">  a) $3.45</label><br />
+            
+            <input type="radio" name="group1" value="b" id="12-Multiple_Ifs_opt_b" />
+            <label for= "12-Multiple_Ifs_opt_b">  b) $3.11</label><br />
+            
+            <input type="radio" name="group1" value="c" id="12-Multiple_Ifs_opt_c" />
+            <label for= "12-Multiple_Ifs_opt_c">  c) $3.105</label><br />
+            
+            <input type="radio" name="group1" value="d" id="12-Multiple_Ifs_opt_d" />
+            <label for= "12-Multiple_Ifs_opt_d">  d) $3.10</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('12-Multiple_Ifs');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('12-Multiple_Ifs','c',['This would be the answer without the 10% discount for buying 10 or more items', 'Python doesn\u0027t automatically round up', 'This is the actual result.  But, can you pay $3.105?', 'Python doesn\u0027t automatically change $3.105 to $3.10.'])">Check Me</button>
+            <button class='btn btn-default' id="12-Multiple_Ifs_bcomp" disabled name="compare" onclick="compareAnswers('12-Multiple_Ifs');">Compare Me</button>
+            </form><br />
+            <div id="12-Multiple_Ifs_feedback">
+            </div>
+            </div>
+            
+            <div id="12-Grade_Ifs" class="alert alert-warning">
+            <p>csp-12-8: What is printed when the following code executes?</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">score</span> <span class="o">=</span> <span class="mi">93</span>
+<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
+   <span class="n">grade</span> <span class="o">=</span> <span class="s">&quot;A&quot;</span>
+<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">:</span>
+   <span class="n">grade</span> <span class="o">=</span> <span class="s">&quot;B&quot;</span>
+<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
+   <span class="n">grade</span> <span class="o">=</span> <span class="s">&quot;C&quot;</span>
+<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">:</span>
+   <span class="n">grade</span> <span class="o">=</span> <span class="s">&quot;D&quot;</span>
+<span class="k">if</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">:</span>
+   <span class="n">grade</span> <span class="o">=</span> <span class="s">&quot;E&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">grade</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<form name="12-Grade_Ifs_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="12-Grade_Ifs_opt_a" />
+            <label for= "12-Grade_Ifs_opt_a">  a) A</label><br />
+            
+            <input type="radio" name="group1" value="b" id="12-Grade_Ifs_opt_b" />
+            <label for= "12-Grade_Ifs_opt_b">  b) B</label><br />
+            
+            <input type="radio" name="group1" value="c" id="12-Grade_Ifs_opt_c" />
+            <label for= "12-Grade_Ifs_opt_c">  c) C</label><br />
+            
+            <input type="radio" name="group1" value="d" id="12-Grade_Ifs_opt_d" />
+            <label for= "12-Grade_Ifs_opt_d">  d) D</label><br />
+            
+            <input type="radio" name="group1" value="e" id="12-Grade_Ifs_opt_e" />
+            <label for= "12-Grade_Ifs_opt_e">  e) E</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('12-Grade_Ifs');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('12-Grade_Ifs','d',['Notice that each of the first 4 statements start with an if.  What will actually be printed?  Try it.', 'Each of the first 4 if statements will execute.', 'Copy this code to an activecode window and run it.', 'Each of the first 4 if statements will be executed. So grade will be set to A, then B then C and finally D.', 'This will only be true when score is less than 60.'])">Check Me</button>
+            <button class='btn btn-default' id="12-Grade_Ifs_bcomp" disabled name="compare" onclick="compareAnswers('12-Grade_Ifs');">Compare Me</button>
+            </form><br />
+            <div id="12-Grade_Ifs_feedback">
+            </div>
+            </div>
+            
+            <div id="12-Logic_Ifs" class="alert alert-warning">
+            <p>csp-12-9: Which of the following is true about the code below?</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">):</span>
+   <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">):</span>
+   <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<form name="12-Logic_Ifs_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="12-Logic_Ifs_opt_a" />
+            <label for= "12-Logic_Ifs_opt_a">  a) x will always equal 0 after this code executes for any value of x</label><br />
+            
+            <input type="radio" name="group1" value="b" id="12-Logic_Ifs_opt_b" />
+            <label for= "12-Logic_Ifs_opt_b">  b) if x is greater than 2, the value in x will be doubled after this code executes</label><br />
+            
+            <input type="radio" name="group1" value="c" id="12-Logic_Ifs_opt_c" />
+            <label for= "12-Logic_Ifs_opt_c">  c) if x is greater than 2, x will equal 0 after this code executes</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('12-Logic_Ifs');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('12-Logic_Ifs','c',['If x was set to 1 originally, then it would still equal 1.', 'What happens in the original when x is greater than 2?', 'If x is greater than 2, it will be set to 0.'])">Check Me</button>
+            <button class='btn btn-default' id="12-Logic_Ifs_bcomp" disabled name="compare" onclick="compareAnswers('12-Logic_Ifs');">Compare Me</button>
+            </form><br />
+            <div id="12-Logic_Ifs_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="using-if-and-else">
+<h1>Using <tt class="docutils literal"><span class="pre">if</span></tt> and <tt class="docutils literal"><span class="pre">else</span></tt><a class="headerlink" href="#using-if-and-else" title="Permalink to this headline">¶</a></h1>
+<p id="index-4">Most professional programmers would write the following code:</p>
+
+<div id="cont"></div>
+<div id="Multiple_Ifs_2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Multiple_Ifs_2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Multiple_Ifs_2_saveb" onclick="saveEditor('Multiple_Ifs_2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Multiple_Ifs_2_loadb" onclick="requestCode('Multiple_Ifs_2');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Multiple_Ifs_2','weight = 0.5*nline*if weight < 1:*nline*   price = 1.45*nline*if weight >= 1:*nline*   price = 1.15*nline*total = weight * price*nline*print*open*weight*close**nline*print*open*price*close**nline*print*open*total*close*','1','*doubleq*Structural Tour*doubleq*; 1: c1-line1; 2-3: c1-line2-3; 4-5: c1-line4-5; 6: c1-line6; 7-9: c3f-line7-9;*atype*')"/>
+<button class='btn btn-default' id="Multiple_Ifs_2_vizb" onclick="injectCodelens(this,'Multiple_Ifs_2');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Multiple_Ifs_2_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Multiple_Ifs_2_code" class="active_code" prefixcode="undefined" lang="python">
+weight = 0.5
+if weight < 1:
+   price = 1.45
+if weight >= 1:
+   price = 1.15
+total = weight * price
+print(weight)
+print(price)
+print(total)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Multiple_Ifs_2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Multiple_Ifs_2_suffix" style="display:none">
+</pre><pre id="Multiple_Ifs_2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Multiple_Ifs_2)</span> </p>
+<div id="Multiple_Ifs_2_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Multiple_Ifs_2_saveb').toggle();
+    $('#Multiple_Ifs_2_loadb').toggle();
+}
+if ($("#Multiple_Ifs_2").attr("lang") !== "html" && $("#Multiple_Ifs_2_code_div").parents(".admonition").length == 0 && $("#Multiple_Ifs_2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Multiple_Ifs_2_code_div").offset({
+			left: $("#Multiple_Ifs_2 .clearfix").offset().left
+		});
+	}
+	$("#Multiple_Ifs_2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Multiple_Ifs_2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Multiple_Ifs_2_runb").parent().siblings(".ac_output").show();
+			runit('Multiple_Ifs_2',this, undefined);
+			$("#Multiple_Ifs_2_runb").on("click", function(){
+				runit('Multiple_Ifs_2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Multiple_Ifs_2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Multiple_Ifs_2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Multiple_Ifs_2_runb").on("click", function(){
+		runit('Multiple_Ifs_2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Like this:</p>
+
+<div id="cont"></div>
+<div id="if_and_else" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="if_and_else_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="if_and_else_saveb" onclick="saveEditor('if_and_else');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="if_and_else_loadb" onclick="requestCode('if_and_else');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('if_and_else','weight = 0.5*nline*if weight < 1:*nline*   price = 1.45*nline*else:*nline*   price = 1.15*nline*total = weight * price*nline*print*open*weight*close**nline*print*open*price*close**nline*print*open*total*close*','1','*doubleq*Structural Tour*doubleq*; 1: c5-line1; 2-3: c5-line2-3; 4-5: c5-line4-5; 6: c5-line6; 7-9: c3f-line7-9;*atype*')"/>
+<button class='btn btn-default' id="if_and_else_vizb" onclick="injectCodelens(this,'if_and_else');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="if_and_else_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="if_and_else_code" class="active_code" prefixcode="undefined" lang="python">
+weight = 0.5
+if weight < 1:
+   price = 1.45
+else:
+   price = 1.15
+total = weight * price
+print(weight)
+print(price)
+print(total)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="if_and_else_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="if_and_else_suffix" style="display:none">
+</pre><pre id="if_and_else_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (if_and_else)</span> </p>
+<div id="if_and_else_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#if_and_else_saveb').toggle();
+    $('#if_and_else_loadb').toggle();
+}
+if ($("#if_and_else").attr("lang") !== "html" && $("#if_and_else_code_div").parents(".admonition").length == 0 && $("#if_and_else_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#if_and_else_code_div").offset({
+			left: $("#if_and_else .clearfix").offset().left
+		});
+	}
+	$("#if_and_else_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#if_and_else_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#if_and_else_runb").parent().siblings(".ac_output").show();
+			runit('if_and_else',this, undefined);
+			$("#if_and_else_runb").on("click", function(){
+				runit('if_and_else',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#if_and_else_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#if_and_else_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#if_and_else_runb").on("click", function(){
+		runit('if_and_else',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>An <tt class="docutils literal"><span class="pre">else</span></tt> is an additional optional phrase on an <tt class="docutils literal"><span class="pre">if</span></tt> statement.  IF AND ONLY IF the <em>test</em> in the <tt class="docutils literal"><span class="pre">if</span></tt> is <strong>false</strong> does the block of statements after the <tt class="docutils literal"><span class="pre">else</span></tt> get executed.  Using an <tt class="docutils literal"><span class="pre">if</span></tt> with an <tt class="docutils literal"><span class="pre">else</span></tt> makes sure that <em>either</em> the <tt class="docutils literal"><span class="pre">if</span></tt> block is executed <em>or</em> the <tt class="docutils literal"><span class="pre">else</span></tt> block is executed, but <strong>never</strong> both.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/ifAndElseFlow.png"><img alt="Flowchart for both an if and else" src="../_images/ifAndElseFlow.png" style="height: 350px;" /></a>
+<p class="caption">Figure 4: Flow of execution for both an if and else</p>
+</div>
+<p><strong>Mixed up programs</strong></p>
+
+        <div class='parsons alert alert-warning' id="parsons-439">
+        <div class="parsons-text">csp-12-10: The following program should print out "x is even" if the remainder of x divided by 2 is 0 and "x is odd" otherwise, but the code is mixed up. The ``%`` symbol gives the remainder after the first number is divided by the second number.  Drag the blocks from the left and place them in the correct order on the right.  Be sure to also indent correctly! click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or have the wrong indention.</p><br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-439" style="display:none;">x = 92
+if x % 2 == 0:
+   print("x is even")
+else:
+   print("x is odd")</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-439" class="sortable-code"></div>
+        <div id="parsons-sortableCode-439" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe439" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset439" value="Reset"/>
+        <div id="parsons-message-439"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-439").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-439").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-439");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_439.getHash("#ul-parsons-sortableCode-439");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'12-Even_Odd'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'12-Even_Odd'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-439");
+            var trashul = $("#ul-parsons-sortableTrash-439");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_439 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-439',
+		'trashId': 'parsons-sortableTrash-439',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_439.init($pjQ("#parsons-orig-439").text());
+	pp_439.shuffleLines();
+            
+        if(localStorage.getItem('12-Even_Odd') && localStorage.getItem('12-Even_Odd-trash')) {
+            try {
+                var solution = localStorage.getItem('12-Even_Odd');
+                var trash = localStorage.getItem('12-Even_Odd-trash');
+                pp_439.createHTMLFromHashes(solution,trash);
+                pp_439.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old 12-Even_Odd state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset439").click(function(event){
+              event.preventDefault();
+              pp_439.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-439");
+            var trashul = $("#ul-parsons-sortableTrash-439");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe439").click(function(event){
+              event.preventDefault();
+              var hash = pp_439.getHash("#ul-parsons-sortableCode-439");
+              localStorage.setItem('12-Even_Odd',hash);
+              hash = pp_439.getHash("#ul-parsons-sortableTrash-439");
+              localStorage.setItem('12-Even_Odd-trash',hash);
+            
+            pp_439.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+<p>It is easy to write an <tt class="docutils literal"><span class="pre">if</span></tt> where you want <em>exactly</em> one block to execute, but you can accidentally create a &#8220;hole&#8221; &#8211; a condition when neither block executes.  That&#8217;s what happened in the example below when the weight is equal to 1 pound.</p>
+
+<div id="cont"></div>
+<div id="Price_If_Broken2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Price_If_Broken2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Price_If_Broken2_saveb" onclick="saveEditor('Price_If_Broken2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Price_If_Broken2_loadb" onclick="requestCode('Price_If_Broken2');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Price_If_Broken2','weight = 0.5*nline*if weight < 1:*nline*   price = 1.45*nline*if weight > 1:*nline*   price = 1.15*nline*total = weight * price*nline*print*open*weight*close**nline*print*open*price*close**nline*print*open*total*close*','1','*doubleq*Structural Tour*doubleq*; 1: c1-line1; 2-3: c1-line2-3; 4-5: c3-line4-5; 6: c1-line6; 7-9: c3f-line7-9;*atype*')"/>
+<button class='btn btn-default' id="Price_If_Broken2_vizb" onclick="injectCodelens(this,'Price_If_Broken2');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Price_If_Broken2_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Price_If_Broken2_code" class="active_code" prefixcode="undefined" lang="python">
+weight = 0.5
+if weight < 1:
+   price = 1.45
+if weight > 1:
+   price = 1.15
+total = weight * price
+print(weight)
+print(price)
+print(total)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Price_If_Broken2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Price_If_Broken2_suffix" style="display:none">
+</pre><pre id="Price_If_Broken2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Price_If_Broken2)</span> </p>
+<div id="Price_If_Broken2_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Price_If_Broken2_saveb').toggle();
+    $('#Price_If_Broken2_loadb').toggle();
+}
+if ($("#Price_If_Broken2").attr("lang") !== "html" && $("#Price_If_Broken2_code_div").parents(".admonition").length == 0 && $("#Price_If_Broken2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Price_If_Broken2_code_div").offset({
+			left: $("#Price_If_Broken2 .clearfix").offset().left
+		});
+	}
+	$("#Price_If_Broken2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Price_If_Broken2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Price_If_Broken2_runb").parent().siblings(".ac_output").show();
+			runit('Price_If_Broken2',this, undefined);
+			$("#Price_If_Broken2_runb").on("click", function(){
+				runit('Price_If_Broken2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Price_If_Broken2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Price_If_Broken2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Price_If_Broken2_runb").on("click", function(){
+		runit('Price_If_Broken2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+<div class="section" id="bigteachernote-delaying-the-else">
+<h1><a class="reference internal" href="../_images/apple1.jpg"><img alt="teacher note" class="align-top" src="../_images/apple1.jpg" style="width: 50px;" /></a> Delaying the <tt class="docutils literal"><span class="pre">else</span></tt><a class="headerlink" href="#bigteachernote-delaying-the-else" title="Permalink to this headline">¶</a></h1>
+<p>We don&#8217;t recommend that you require students to use <tt class="docutils literal"><span class="pre">else</span></tt> right away.  It actually makes code <strong>much</strong> harder for students to <em>read</em>.  Studies show that making the test <em>explicit</em> makes it <strong>ten times</strong> easier for beginning students to read programs with <tt class="docutils literal"><span class="pre">if</span></tt> statements.  Using an <tt class="docutils literal"><span class="pre">else</span></tt> hides away the condition when the <tt class="docutils literal"><span class="pre">else</span></tt> block would execute.  Beginning students are having enough trouble just reading the code and making sense of it.  Using an <tt class="docutils literal"><span class="pre">else</span></tt> hides away clues to how the program is working.</p>
+<p>To do a something like an <tt class="docutils literal"><span class="pre">else</span></tt> using two <tt class="docutils literal"><span class="pre">if</span></tt> statements, use a <cite>not</cite>.</p>
+
+<div id="cont"></div>
+<div id="if_and_not_if" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="if_and_not_if_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="if_and_not_if_saveb" onclick="saveEditor('if_and_not_if');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="if_and_not_if_loadb" onclick="requestCode('if_and_not_if');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('if_and_not_if','weight = 0.5*nline*if weight < 1:*nline*   price = 1.45*nline*if not weight < 1:*nline*   price = 1.15*nline*total = weight * price*nline*print*open*weight*close**nline*print*open*price*close**nline*print*open*total*close*','1','*doubleq*Structural Tour*doubleq*; 1: c1-line1; 2-3: c3-line2-3; 4-5: c6-line4-5; 6: c1-line6; 7-9: c3f-line7-9;*atype*')"/>
+<button class='btn btn-default' id="if_and_not_if_vizb" onclick="injectCodelens(this,'if_and_not_if');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="if_and_not_if_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="if_and_not_if_code" class="active_code" prefixcode="undefined" lang="python">
+weight = 0.5
+if weight < 1:
+   price = 1.45
+if not weight < 1:
+   price = 1.15
+total = weight * price
+print(weight)
+print(price)
+print(total)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="if_and_not_if_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="if_and_not_if_suffix" style="display:none">
+</pre><pre id="if_and_not_if_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (if_and_not_if)</span> </p>
+<div id="if_and_not_if_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#if_and_not_if_saveb').toggle();
+    $('#if_and_not_if_loadb').toggle();
+}
+if ($("#if_and_not_if").attr("lang") !== "html" && $("#if_and_not_if_code_div").parents(".admonition").length == 0 && $("#if_and_not_if_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#if_and_not_if_code_div").offset({
+			left: $("#if_and_not_if .clearfix").offset().left
+		});
+	}
+	$("#if_and_not_if_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#if_and_not_if_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#if_and_not_if_runb").parent().siblings(".ac_output").show();
+			runit('if_and_not_if',this, undefined);
+			$("#if_and_not_if_runb").on("click", function(){
+				runit('if_and_not_if',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#if_and_not_if_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#if_and_not_if_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#if_and_not_if_runb").on("click", function(){
+		runit('if_and_not_if',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+<div class="section" id="bigteachernote-sneak-up-on-and-and-or">
+<h1><a class="reference internal" href="../_images/apple1.jpg"><img alt="teacher note" class="align-top" src="../_images/apple1.jpg" style="width: 50px;" /></a> Sneak up on <tt class="docutils literal"><span class="pre">and</span></tt> and <tt class="docutils literal"><span class="pre">or</span></tt><a class="headerlink" href="#bigteachernote-sneak-up-on-and-and-or" title="Permalink to this headline">¶</a></h1>
+<p>Students have a difficult time with logical expressions.  It&#8217;s probably just a matter of less experience with them.  They do a lot with arithmetic expressions, but <em>expressions whose value is true or false</em> are much less common in mathematics.</p>
+<p>In particular, expressions with <em>multiple</em> logical expressions, combined with <tt class="docutils literal"><span class="pre">and</span></tt> and <tt class="docutils literal"><span class="pre">or</span></tt>, are challenging for students.  There is some research that shows that the more logical expressions in the program, the more difficult (in terms of time to understand it, ability to read or modify the program) it is for students.</p>
+<p>Don&#8217;t ask students to do much with <tt class="docutils literal"><span class="pre">and</span></tt> and <tt class="docutils literal"><span class="pre">or</span></tt> to start.  Give them a lot of experience with simple logical expressions, before requiring them to use <tt class="docutils literal"><span class="pre">and</span></tt> and <tt class="docutils literal"><span class="pre">or</span></tt>.</p>
+</div>
+<div class="section" id="bigteachernote-teacher-note-confusing-while-and-if">
+<h1><a class="reference internal" href="../_images/apple1.jpg"><img alt="teacher note" class="align-top" src="../_images/apple1.jpg" style="width: 50px;" /></a> Teacher Note: Confusing <cite>while</cite> and <cite>if</cite><a class="headerlink" href="#bigteachernote-teacher-note-confusing-while-and-if" title="Permalink to this headline">¶</a></h1>
+<p>A <tt class="docutils literal"><span class="pre">while</span></tt> loop and an <tt class="docutils literal"><span class="pre">if</span></tt> loop <strong>look</strong> almost the same.  They each have a logical expression, and a block of instructions underneath them.</p>
+<p>Students often get them confused.  Some key distinctions to make to students:</p>
+<ul class="simple">
+<li>An <tt class="docutils literal"><span class="pre">if</span></tt> block executes only once.  It does the test, then executes the instructions indented underneath <em>once</em>.</li>
+<li>A <tt class="docutils literal"><span class="pre">while</span></tt> block executes <strong>repeatedly</strong> <em>as long as the expression is true</em>.  The body of the loop can be executed <em>many</em> times.</li>
+</ul>
+<p>When you show students examples of <tt class="docutils literal"><span class="pre">while</span></tt> loops, make sure that you choose examples where the body of the loop gets executed several times, to show a difference from <tt class="docutils literal"><span class="pre">if</span></tt>.  When you trace the program, trace more than one iteration through the body of the loop, to emphasize the multiple times.</p>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014, Mark Guzdial, Barbara Ericson, and Briana Morrison.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

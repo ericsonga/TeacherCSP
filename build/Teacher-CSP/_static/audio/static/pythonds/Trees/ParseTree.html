@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Parse Tree &mdash; Problem Solving with Algorithms and Data Structures</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
+    <link rel="next" title="Tree Traversals" href="TreeTraversals.html" />
+    <link rel="prev" title="Nodes and References" href="NodesandReferences.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pythonds';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">Problem Solving with Algorithms and Data Structures</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pythonds/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/initiateGroup' id="joinGroupLink">Join a Study Group</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/schedule' id="groupScheduleLink">Group Schedule</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/newschedule' id="newChapterLink">Schedule New Chapter</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/manageGroup' id="manageGroupLink">Manage Group</a></li>
+			<li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/assignments/index'>Progress Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pythonds/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Parse Tree</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Nodes and References" data-toggle="tooltip">
+    <a href="NodesandReferences.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Tree Traversals' data-toggle="tooltip" >
+    <a href="TreeTraversals.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="parse-tree">
+<h1>Parse Tree<a class="headerlink" href="#parse-tree" title="Permalink to this headline">¶</a></h1>
+<p>With the implementation of our tree data structure
+complete, we now look at an example of how a tree can be used to solve
+some real problems. In this section we will look at parse trees. Parse
+trees can be used to represent real-world constructions like sentences or mathematical expressions.</p>
+<div class="figure align-center" id="fig-nlparse">
+<img alt="image" src="../_images/nlParse.png" />
+<p class="caption">Figure 1: A Parse Tree for a Simple Sentence</p>
+</div>
+<p><a class="reference internal" href="#fig-nlparse"><em>Figure 1</em></a> shows the hierarchical structure of a simple
+sentence. Representing a sentence as a tree structure allows us to work
+with the individual parts of the sentence by using subtrees.</p>
+<div class="figure align-center" id="fig-meparse">
+<img alt="image" src="../_images/meParse.png" />
+<p class="caption">Figure 2: Parse Tree for <span class="math">\(((7+3)*(5-2))\)</span></p>
+</div>
+<p>We can also represent a mathematical expression such as
+<span class="math">\(((7 + 3) * (5 - 2))\)</span> as a parse tree, as shown in
+<a class="reference internal" href="#fig-meparse"><em>Figure 2</em></a>. We have already looked at fully parenthesized
+expressions, so what do we know about this expression? We know that
+multiplication has a higher precedence than either addition or
+subtraction. Because of the parentheses, we know that before we can do
+the multiplication we must evaluate the parenthesized addition and
+subtraction expressions. The hierarchy of the tree helps us understand
+the order of evaluation for the whole expression. Before we can evaluate
+the top-level multiplication, we must evaluate the addition and the
+subtraction in the subtrees. The addition, which is the left subtree,
+evaluates to 10. The subtraction, which is the right subtree, evaluates
+to 3. Using the hierarchical structure of trees, we can simply replace
+an entire subtree with one node once we have evaluated the expressions
+in the children. Applying this replacement procedure gives us the
+simplified tree shown in <a class="reference internal" href="#fig-mesimple"><em>Figure 3</em></a>.</p>
+<div class="figure align-center" id="fig-mesimple">
+<img alt="image" src="../_images/meSimple.png" />
+<p class="caption">Figure 3: A Simplified Parse Tree for <span class="math">\(((7+3)*(5-2))\)</span></p>
+</div>
+<p>In the rest of this section we are going to examine parse trees in more
+detail. In particular we will look at</p>
+<ul class="simple">
+<li>How to build a parse tree from a fully parenthesized mathematical
+expression.</li>
+<li>How to evaluate the expression stored in a parse tree.</li>
+<li>How to recover the original mathematical expression from a parse
+tree.</li>
+</ul>
+<p>The first step in building a parse tree is to break up the expression
+string into a list of tokens. There are four different kinds of tokens
+to consider: left parentheses, right parentheses, operators, and
+operands. We know that whenever we read a left parenthesis we are
+starting a new expression, and hence we should create a new tree to
+correspond to that expression. Conversely, whenever we read a right
+parenthesis, we have finished an expression. We also know that operands
+are going to be leaf nodes and children of their operators. Finally, we
+know that every operator is going to have both a left and a right child.</p>
+<p>Using the information from above we can define four rules as follows:</p>
+<ol class="arabic simple">
+<li>If the current token is a <tt class="docutils literal"><span class="pre">'('</span></tt>, add a new node as the left child
+of the current node, and descend to the left child.</li>
+<li>If the current token is in the list <tt class="docutils literal"><span class="pre">['+','-','/','*']</span></tt>, set the
+root value of the current node to the operator represented by the
+current token. Add a new node as the right child of the current node
+and descend to the right child.</li>
+<li>If the current token is a number, set the root value of the current
+node to the number and return to the parent.</li>
+<li>If the current token is a <tt class="docutils literal"><span class="pre">')'</span></tt>, go to the parent of the current
+node.</li>
+</ol>
+<p>Before writing the Python code, let’s look at an example of the rules
+outlined above in action. We will use the expression
+<span class="math">\((3 + (4 * 5))\)</span>. We will parse this expression into the
+following list of character tokens <tt class="docutils literal"><span class="pre">['(',</span> <span class="pre">'3',</span> <span class="pre">'+',</span></tt>
+<tt class="docutils literal"><span class="pre">'(',</span> <span class="pre">'4',</span> <span class="pre">'*',</span> <span class="pre">'5'</span> <span class="pre">,')',')']</span></tt>. Initially we will start out with a
+parse tree that consists of an empty root node. <a class="reference internal" href="#fig-bldexpstep"><em>Figure 4</em></a>
+illustrates the structure and contents of the parse tree, as each new
+token is processed.</p>
+<div class="figure align-center" id="fig-bldexpstep">
+<img alt="image" src="../_images/buildExp1.png" />
+</div>
+<div class="figure align-center">
+<img alt="image" src="../_images/buildExp2.png" />
+</div>
+<div class="figure align-center">
+<img alt="image" src="../_images/buildExp3.png" />
+</div>
+<div class="figure align-center">
+<img alt="image" src="../_images/buildExp4.png" />
+</div>
+<div class="figure align-center">
+<img alt="image" src="../_images/buildExp5.png" />
+</div>
+<div class="figure align-center">
+<img alt="image" src="../_images/buildExp6.png" />
+</div>
+<div class="figure align-center">
+<img alt="image" src="../_images/buildExp7.png" />
+</div>
+<div class="figure align-center">
+<img alt="image" src="../_images/buildExp8.png" />
+<p class="caption">Figure 4: Tracing Parse Tree Construction</p>
+</div>
+<p>Using <a class="reference internal" href="#fig-bldexpstep"><em>Figure 4</em></a>, let’s walk through the example step by
+step:</p>
+<ol class="loweralpha simple">
+<li>Create an empty tree.</li>
+<li>Read ( as the first token. By rule 1, create a new node as the left
+child of the root. Make the current node this new child.</li>
+<li>Read 3 as the next token. By rule 3, set the root value of the
+current node to 3 and go back up the tree to the parent.</li>
+<li>Read + as the next token. By rule 2, set the root value of the
+current node to + and add a new node as the right child. The new
+right child becomes the current node.</li>
+<li>Read a ( as the next token. By rule 1, create a new node as the left
+child of the current node. The new left child becomes the current
+node.</li>
+<li>Read a 4 as the next token. By rule 3, set the value of the current
+node to 4. Make the parent of 4 the current node.</li>
+<li>Read * as the next token. By rule 2, set the root value of the
+current node to * and create a new right child. The new right child
+becomes the current node.</li>
+<li>Read 5 as the next token. By rule 3, set the root value of the
+current node to 5. Make the parent of 5 the current node.</li>
+<li>Read ) as the next token. By rule 4 we make the parent of * the
+current node.</li>
+<li>Read ) as the next token. By rule 4 we make the parent of + the
+current node. At this point there is no parent for + so we are done.</li>
+</ol>
+<p>From the example above, it is clear that we need to keep track of the
+current node as well as the parent of the current node. The tree
+interface provides us with a way to get children of a node, through the
+<tt class="docutils literal"><span class="pre">getLeftChild</span></tt> and <tt class="docutils literal"><span class="pre">getRightChild</span></tt> methods, but how can we keep
+track of the parent? A simple solution to keeping track of parents as we
+traverse the tree is to use a stack. Whenever we want to descend to a
+child of the current node, we first push the current node on the stack.
+When we want to return to the parent of the current node, we pop the
+parent off the stack.</p>
+<p>Using the rules described above, along with the <tt class="docutils literal"><span class="pre">Stack</span></tt> and
+<tt class="docutils literal"><span class="pre">BinaryTree</span></tt> operations, we are now ready to write a Python function
+to create a parse tree. The code for our parse tree builder is presented
+in <a class="reference internal" href="#lst-buildparse"><em>ActiveCode 1</em></a>.</p>
+
+<div id="cont"></div>
+<div id="parsebuild" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="parsebuild_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="parsebuild_saveb" onclick="saveEditor('parsebuild');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="parsebuild_loadb" onclick="requestCode('parsebuild');">Load</button>
+
+</div>
+<br/>
+<div id="parsebuild_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="parsebuild_code" class="active_code" prefixcode="undefined" lang="python">
+from pythonds.basic.stack import Stack
+from pythonds.trees.binaryTree import BinaryTree
+
+def buildParseTree(fpexp):
+    fplist = fpexp.split()
+    pStack = Stack()
+    eTree = BinaryTree('')
+    pStack.push(eTree)
+    currentTree = eTree
+    for i in fplist:
+        if i == '(':
+            currentTree.insertLeft('')
+            pStack.push(currentTree)
+            currentTree = currentTree.getLeftChild()
+        elif i not in ['+', '-', '*', '/', ')']:
+            currentTree.setRootVal(int(i))
+            parent = pStack.pop()
+            currentTree = parent
+        elif i in ['+', '-', '*', '/']:
+            currentTree.setRootVal(i)
+            currentTree.insertRight('')
+            pStack.push(currentTree)
+            currentTree = currentTree.getRightChild()
+        elif i == ')':
+            currentTree = pStack.pop()
+        else:
+            raise ValueError
+    return eTree
+
+pt = buildParseTree("( ( 10 + 5 ) * 3 )")
+pt.postorder()  #defined and explained in the next section
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="parsebuild_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="parsebuild_suffix" style="display:none">
+</pre><pre id="parsebuild_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text">Building a Parse Tree (parsebuild)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#parsebuild_saveb').toggle();
+    $('#parsebuild_loadb').toggle();
+}
+if ($("#parsebuild").attr("lang") !== "html" && $("#parsebuild_code_div").parents(".admonition").length == 0 && $("#parsebuild_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#parsebuild_code_div").offset({
+			left: $("#parsebuild .clearfix").offset().left
+		});
+	}
+	$("#parsebuild_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#parsebuild_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#parsebuild_runb").parent().siblings(".ac_output").show();
+			runit('parsebuild',this, undefined);
+			$("#parsebuild_runb").on("click", function(){
+				runit('parsebuild',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#parsebuild_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#parsebuild_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#parsebuild_runb").on("click", function(){
+		runit('parsebuild',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>The four rules for building a parse tree are coded as the first four
+clauses of the <tt class="docutils literal"><span class="pre">if</span></tt> statement on lines 11, 15,
+19, and 24 of <a class="reference internal" href="#lst-buildparse"><em>ActiveCode 1</em></a>. In each case you
+can see that the code implements the rule, as described above, with a
+few calls to the <tt class="docutils literal"><span class="pre">BinaryTree</span></tt> or <tt class="docutils literal"><span class="pre">Stack</span></tt> methods. The only error
+checking we do in this function is in the <tt class="docutils literal"><span class="pre">else</span></tt> clause where we
+raise a <tt class="docutils literal"><span class="pre">ValueError</span></tt> exception if we get a token from the list that we
+do not recognize.</p>
+<p>Now that we have built a parse tree, what can we do with it? As a first
+example, we will write a function to evaluate the parse tree, returning
+the numerical result. To write this function, we will make use of the
+hierarchical nature of the tree. Look back at <a class="reference internal" href="#fig-meparse"><em>Figure 2</em></a>.
+Recall that we can replace the original tree with the simplified tree
+shown in <a class="reference internal" href="#fig-mesimple"><em>Figure 3</em></a>. This suggests that we can write an
+algorithm that evaluates a parse tree by recursively evaluating each
+subtree.</p>
+<p>As we have done with past recursive algorithms, we will begin the design
+for the recursive evaluation function by identifying the base case. A
+natural base case for recursive algorithms that operate on trees is to
+check for a leaf node. In a parse tree, the leaf nodes will always be
+operands. Since numerical objects like integers and floating points
+require no further interpretation, the <tt class="docutils literal"><span class="pre">evaluate</span></tt> function can simply
+return the value stored in the leaf node. The recursive step that moves
+the function toward the base case is to call <tt class="docutils literal"><span class="pre">evaluate</span></tt> on both the
+left and the right children of the current node. The recursive call
+effectively moves us down the tree, toward a leaf node.</p>
+<p>To put the results of the two recursive calls together, we can simply
+apply the operator stored in the parent node to the results returned
+from evaluating both children. In the example from <a class="reference internal" href="#fig-mesimple"><em>Figure 3</em></a>
+we see that the two children of the root evaluate to themselves, namely
+10 and 3. Applying the multiplication operator gives us a final result
+of 30.</p>
+<p>The code for a recursive <tt class="docutils literal"><span class="pre">evaluate</span></tt> function is shown in
+<a class="reference internal" href="#lst-eval"><em>Listing 1</em></a>. First, we obtain references to the left and the
+right children of the current node. If both the left and right children
+evaluate to <tt class="docutils literal"><span class="pre">None</span></tt>, then we know that the current node is really a
+leaf node. This check is on line 7. If the current node is not
+a leaf node, look up the operator in the current node and apply it to
+the results from recursively evaluating the left and right children.</p>
+<p>To implement the arithmetic, we use a dictionary with the keys <tt class="docutils literal"><span class="pre">'+',</span> <span class="pre">'-',</span> <span class="pre">'*'</span></tt>, and
+<tt class="docutils literal"><span class="pre">'/'</span></tt>. The values stored in the dictionary are functions from Python’s
+operator module. The operator module provides us with the functional
+versions of many commonly used operators. When we look up an operator in
+the dictionary, the corresponding function object is retrieved. Since
+the retrieved object is a function, we can call it in the usual way
+<tt class="docutils literal"><span class="pre">function(param1,param2)</span></tt>. So the lookup <tt class="docutils literal"><span class="pre">opers['+'](2,2)</span></tt> is
+equivalent to <tt class="docutils literal"><span class="pre">operator.add(2,2)</span></tt>.</p>
+<p id="lst-eval"><strong>Listing 1</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">parseTree</span><span class="p">):</span>
+    <span class="n">opers</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;+&#39;</span><span class="p">:</span><span class="n">operator</span><span class="o">.</span><span class="n">add</span><span class="p">,</span> <span class="s">&#39;-&#39;</span><span class="p">:</span><span class="n">operator</span><span class="o">.</span><span class="n">sub</span><span class="p">,</span> <span class="s">&#39;*&#39;</span><span class="p">:</span><span class="n">operator</span><span class="o">.</span><span class="n">mul</span><span class="p">,</span> <span class="s">&#39;/&#39;</span><span class="p">:</span><span class="n">operator</span><span class="o">.</span><span class="n">truediv</span><span class="p">}</span>
+
+    <span class="n">leftC</span> <span class="o">=</span> <span class="n">parseTree</span><span class="o">.</span><span class="n">getLeftChild</span><span class="p">()</span>
+    <span class="n">rightC</span> <span class="o">=</span> <span class="n">parseTree</span><span class="o">.</span><span class="n">getRightChild</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">leftC</span> <span class="ow">and</span> <span class="n">rightC</span><span class="p">:</span>
+        <span class="n">fn</span> <span class="o">=</span> <span class="n">opers</span><span class="p">[</span><span class="n">parseTree</span><span class="o">.</span><span class="n">getRootVal</span><span class="p">()]</span>
+        <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="n">evaluate</span><span class="p">(</span><span class="n">leftC</span><span class="p">),</span><span class="n">evaluate</span><span class="p">(</span><span class="n">rightC</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">parseTree</span><span class="o">.</span><span class="n">getRootVal</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Finally, we will trace the <tt class="docutils literal"><span class="pre">evaluate</span></tt> function on the parse tree we
+created in <a class="reference internal" href="#fig-bldexpstep"><em>Figure 4</em></a>. When we first call <tt class="docutils literal"><span class="pre">evaluate</span></tt>, we
+pass the root of the entire tree as the parameter <tt class="docutils literal"><span class="pre">parseTree</span></tt>. Then we
+obtain references to the left and right children to make sure they
+exist. The recursive call takes place on line 9. We begin
+by looking up the operator in the root of the tree, which is <tt class="docutils literal"><span class="pre">'+'</span></tt>.
+The <tt class="docutils literal"><span class="pre">'+'</span></tt> operator maps to the <tt class="docutils literal"><span class="pre">operator.add</span></tt> function call, which
+takes two parameters. As usual for a Python function call, the first
+thing Python does is to evaluate the parameters that are passed to the
+function. In this case both parameters are recursive function calls to
+our <tt class="docutils literal"><span class="pre">evaluate</span></tt> function. Using left-to-right evaluation, the first
+recursive call goes to the left. In the first recursive call the
+<tt class="docutils literal"><span class="pre">evaluate</span></tt> function is given the left subtree. We find that the node
+has no left or right children, so we are in a leaf node. When we are in
+a leaf node we just return the value stored in the leaf node as the
+result of the evaluation. In this case we return the integer 3.</p>
+<p>At this point we have one parameter evaluated for our top-level call to
+<tt class="docutils literal"><span class="pre">operator.add</span></tt>. But we are not done yet. Continuing the left-to-right
+evaluation of the parameters, we now make a recursive call to evaluate
+the right child of the root. We find that the node has both a left and a
+right child so we look up the operator stored in this node, <tt class="docutils literal"><span class="pre">'*'</span></tt>, and
+call this function using the left and right children as the parameters.
+At this point you can see that both recursive calls will be to leaf
+nodes, which will evaluate to the integers four and five respectively.
+With the two parameters evaluated, we return the result of
+<tt class="docutils literal"><span class="pre">operator.mul(4,5)</span></tt>. At this point we have evaluated the operands for
+the top level <tt class="docutils literal"><span class="pre">'+'</span></tt> operator and all that is left to do is finish the
+call to <tt class="docutils literal"><span class="pre">operator.add(3,20)</span></tt>. The result of the evaluation of the
+entire expression tree for <span class="math">\((3 + (4 * 5))\)</span> is 23.</p>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - Nodes and References' data-toggle="tooltip">
+    <a href="NodesandReferences.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="NodesandReferences.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Tree Traversals' data-toggle="tooltip" >
+    <a href="TreeTraversals.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="TreeTraversals.html" >Next Section - Tree Traversals</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014 Brad Miller, David Ranum.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

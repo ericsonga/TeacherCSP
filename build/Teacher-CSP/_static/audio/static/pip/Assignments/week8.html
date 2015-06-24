@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Week 8: ends March 14, 2014 &mdash; Programs, Information, and People: Interactive Edition</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Programs, Information, and People: Interactive Edition" href="../index.html" />
+    <link rel="next" title="Week 7: ends February 21" href="week7.html" />
+    <link rel="prev" title="Week 9: ends March 21, 2014" href="week9.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pip';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+var _prum = [['id', '521dfcc4abe53d0749000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../toc.html">Programs, Information, and People</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../toc.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pip/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/assignments" id="registerlink">Project Page</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pip/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Week 8: ends March 14, 2014</a><ul>
+<li><a class="reference internal" href="#reading-response-7">Reading Response 7</a></li>
+<li><a class="reference internal" href="#problem-set-7">Problem Set 7</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Week 9: ends March 21, 2014" data-toggle="tooltip">
+    <a href="week9.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Week 7: ends February 21' data-toggle="tooltip" >
+    <a href="week7.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="week-8-ends-march-14-2014">
+<h1>Week 8: ends March 14, 2014<a class="headerlink" href="#week-8-ends-march-14-2014" title="Permalink to this headline">¶</a></h1>
+<p>For this week you have the following graded activities:</p>
+<ol class="arabic">
+<li><p class="first">Do the multiple choice questions and exercises in the textbook chapters, including the ones at the bottom of the chapters, below the glossary. Don&#8217;t forget to click <strong>Save</strong> for each of the exercises.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Before Tuesday&#8217;s class:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="../Installation/installation.html#installation-chap"><em>Installation</em></a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Before Thursday&#8217;s class:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="../Functions/KeywordParams.html#keyword-pararams-chap"><em>Keyword-based parameter passing</em></a></li>
+<li><a class="reference internal" href="../StringFormatting/interpolation.html#print-tuples"><em>Printing and parentheses</em></a></li>
+<li><a class="reference internal" href="../StringFormatting/interpolation.html#interpolation-chap"><em>String interpolation</em></a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+<li><p class="first">Turn in the reading response, by 8 PM the night before your registered section meets.</p>
+<ul class="simple">
+<li>Read <em>The Success of Open Source</em>, Chapter 1</li>
+<li><a class="reference internal" href="#response-7"><em>Reading response 7</em></a></li>
+</ul>
+</li>
+<li><p class="first">Do Problem Set 7:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#problem-set-7"><em>Problem Set 7</em></a></li>
+</ul>
+</li>
+</ol>
+<div class="section" id="reading-response-7">
+<span id="response-7"></span><h2>Reading Response 7<a class="headerlink" href="#reading-response-7" title="Permalink to this headline">¶</a></h2>
+<p>Briefly define open source software in your own words.</p>
+
+<div id="cont"></div>
+<div id="rr_7_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rr_7_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_7_1_saveb" onclick="saveEditor('rr_7_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_7_1_loadb" onclick="requestCode('rr_7_1');">Load</button>
+<button class='btn btn-default' id="rr_7_1_vizb" onclick="injectCodelens(this,'rr_7_1');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rr_7_1_coach_b" onclick="injectCodeCoach('rr_7_1');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rr_7_1_showb" onclick="$('#rr_7_1_code_div').toggle();cm_editors['rr_7_1_code'].refresh();$('#rr_7_1_saveb').toggle();$('#rr_7_1_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rr_7_1')"/>
+
+</div>
+<br/>
+<div id="rr_7_1_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rr_7_1_code" class="active_code" prefixcode="undefined" lang="python">
+# Fill in your response in between the triple quotes
+s = """
+
+"""
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rr_7_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rr_7_1_suffix" style="display:none">
+</pre><pre id="rr_7_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rr_7_1)</span> </p>
+<div id="rr_7_1_codelens_div" style="display:none"></div><div id="rr_7_1_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rr_7_1_saveb').toggle();
+    $('#rr_7_1_loadb').toggle();
+}
+if ($("#rr_7_1").attr("lang") !== "html" && $("#rr_7_1_code_div").parents(".admonition").length == 0 && $("#rr_7_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rr_7_1_code_div").offset({
+			left: $("#rr_7_1 .clearfix").offset().left
+		});
+	}
+	$("#rr_7_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rr_7_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rr_7_1_runb").parent().siblings(".ac_output").show();
+			runit('rr_7_1',this, undefined);
+			$("#rr_7_1_runb").on("click", function(){
+				runit('rr_7_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rr_7_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rr_7_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rr_7_1_runb").on("click", function(){
+		runit('rr_7_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Weber argues that you should be surprised that there is high quality open source software out there and offers some questions/puzzles that he thinks need to be answered in ordered to explain how that has happened. Which of those questions do <em>you</em> think really are puzzling, and which, if any, do you think have obvious answers?</p>
+
+<div id="cont"></div>
+<div id="rr_7_2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rr_7_2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_7_2_saveb" onclick="saveEditor('rr_7_2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_7_2_loadb" onclick="requestCode('rr_7_2');">Load</button>
+<button class='btn btn-default' id="rr_7_2_vizb" onclick="injectCodelens(this,'rr_7_2');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rr_7_2_coach_b" onclick="injectCodeCoach('rr_7_2');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rr_7_2_showb" onclick="$('#rr_7_2_code_div').toggle();cm_editors['rr_7_2_code'].refresh();$('#rr_7_2_saveb').toggle();$('#rr_7_2_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rr_7_2')"/>
+
+</div>
+<br/>
+<div id="rr_7_2_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rr_7_2_code" class="active_code" prefixcode="undefined" lang="python">
+# Fill in your response in between the triple quotes
+s = """
+
+"""
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rr_7_2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rr_7_2_suffix" style="display:none">
+</pre><pre id="rr_7_2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rr_7_2)</span> </p>
+<div id="rr_7_2_codelens_div" style="display:none"></div><div id="rr_7_2_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rr_7_2_saveb').toggle();
+    $('#rr_7_2_loadb').toggle();
+}
+if ($("#rr_7_2").attr("lang") !== "html" && $("#rr_7_2_code_div").parents(".admonition").length == 0 && $("#rr_7_2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rr_7_2_code_div").offset({
+			left: $("#rr_7_2 .clearfix").offset().left
+		});
+	}
+	$("#rr_7_2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rr_7_2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rr_7_2_runb").parent().siblings(".ac_output").show();
+			runit('rr_7_2',this, undefined);
+			$("#rr_7_2_runb").on("click", function(){
+				runit('rr_7_2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rr_7_2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rr_7_2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rr_7_2_runb").on("click", function(){
+		runit('rr_7_2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Was there anything from this chapter you found confusing? If so, what?</p>
+
+<div id="cont"></div>
+<div id="rr_7_3" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rr_7_3_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_7_3_saveb" onclick="saveEditor('rr_7_3');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_7_3_loadb" onclick="requestCode('rr_7_3');">Load</button>
+<button class='btn btn-default' id="rr_7_3_vizb" onclick="injectCodelens(this,'rr_7_3');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rr_7_3_coach_b" onclick="injectCodeCoach('rr_7_3');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rr_7_3_showb" onclick="$('#rr_7_3_code_div').toggle();cm_editors['rr_7_3_code'].refresh();$('#rr_7_3_saveb').toggle();$('#rr_7_3_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rr_7_3')"/>
+
+</div>
+<br/>
+<div id="rr_7_3_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rr_7_3_code" class="active_code" prefixcode="undefined" lang="python">
+# Fill in your response in between the triple quotes
+s = """
+
+"""
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rr_7_3_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rr_7_3_suffix" style="display:none">
+</pre><pre id="rr_7_3_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rr_7_3)</span> </p>
+<div id="rr_7_3_codelens_div" style="display:none"></div><div id="rr_7_3_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rr_7_3_saveb').toggle();
+    $('#rr_7_3_loadb').toggle();
+}
+if ($("#rr_7_3").attr("lang") !== "html" && $("#rr_7_3_code_div").parents(".admonition").length == 0 && $("#rr_7_3_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rr_7_3_code_div").offset({
+			left: $("#rr_7_3 .clearfix").offset().left
+		});
+	}
+	$("#rr_7_3_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rr_7_3_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rr_7_3_runb").parent().siblings(".ac_output").show();
+			runit('rr_7_3',this, undefined);
+			$("#rr_7_3_runb").on("click", function(){
+				runit('rr_7_3',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rr_7_3_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rr_7_3_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rr_7_3_runb").on("click", function(){
+		runit('rr_7_3',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+<div class="section" id="problem-set-7">
+<span id="id1"></span><h2>Problem Set 7<a class="headerlink" href="#problem-set-7" title="Permalink to this headline">¶</a></h2>
+<p>All of the problem set instructions for this week are in the code file ps7/ps7.py.</p>
+<p>At your terminal window, cd to your code directory, then enter the following comands:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">status</span></tt> If your working directory is not &#8220;clean&#8221;, make sure to save and commit all your work.</li>
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">upstream</span> <span class="pre">master</span></tt> to get the latest code from us.</li>
+<li><tt class="docutils literal"><span class="pre">cd</span> <span class="pre">ps7</span></tt>. That will connect you to the subdirectory ps7</li>
+<li><tt class="docutils literal"><span class="pre">ls</span></tt>. You should see ps7.py, test.py, train.txt, and test.txt</li>
+<li>In your text editor, edit ps7.py, which contains instructions on what changes you are supposed to make. In your command prompt, run the code file by typing <tt class="docutils literal"><span class="pre">python</span> <span class="pre">ps7.py</span></tt></li>
+<li>Don&#8217;t forget to finish the workflow by committing your work and pushing it to bitbucket. See <a class="reference internal" href="../Installation/installation.html#git-workflow"><em>Git workflow</em></a></li>
+</ul>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 Paul Resnick, Brad Miller, David Ranum, Created using Runestone Interactive.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

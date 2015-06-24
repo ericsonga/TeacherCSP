@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Prim’s Spanning Tree Algorithm &mdash; Problem Solving with Algorithms and Data Structures</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
+    <link rel="next" title="Summary" href="Summary.html" />
+    <link rel="prev" title="Analysis of Dijkstra’s Algorithm" href="AnalysisofDijkstrasAlgorithm.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pythonds';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">Problem Solving with Algorithms and Data Structures</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pythonds/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/initiateGroup' id="joinGroupLink">Join a Study Group</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/schedule' id="groupScheduleLink">Group Schedule</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/newschedule' id="newChapterLink">Schedule New Chapter</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/manageGroup' id="manageGroupLink">Manage Group</a></li>
+			<li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/assignments/index'>Progress Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pythonds/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Prim’s Spanning Tree Algorithm</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Analysis of Dijkstra’s Algorithm" data-toggle="tooltip">
+    <a href="AnalysisofDijkstrasAlgorithm.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Summary' data-toggle="tooltip" >
+    <a href="Summary.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="prims-spanning-tree-algorithm">
+<h1>Prim’s Spanning Tree Algorithm<a class="headerlink" href="#prims-spanning-tree-algorithm" title="Permalink to this headline">¶</a></h1>
+<p>For our last graph algorithm let’s consider a problem that online game
+designers and Internet radio providers face. The problem is that they
+want to efficiently transfer a piece of information to anyone and
+everyone who may be listening. This is important in gaming so that all
+the players know the very latest position of every other player. This is
+important for Internet radio so that all the listeners that are tuned in
+are getting all the data they need to reconstruct the song they are
+listening to. <a class="reference internal" href="#fig-bcast1"><em>Figure 9</em></a> illustrates the broadcast problem.</p>
+<div class="figure align-center" id="fig-bcast1">
+<img alt="../_images/bcast1.png" src="../_images/bcast1.png" />
+<p class="caption">Figure 9: The Broadcast Problem</p>
+</div>
+<p>There are some brute force solutions to this problem, so let’s look at
+them first to help understand the broadcast problem better. This will
+also help you appreciate the solution that we will propose when we are
+done. To begin, the broadcast host has some information that the
+listeners all need to receive. The simplest solution is for the
+broadcasting host to keep a list of all of the listeners and send
+individual messages to each. In <a class="reference internal" href="#fig-bcast1"><em>Figure 9</em></a> we show a small
+network with a broadcaster and some listeners. Using this first
+approach, four copies of every message would be sent. Assuming that the
+least cost path is used, let’s see how many times each router would
+handle the same message.</p>
+<p>All messages from the broadcaster go through router A, so A sees all
+four copies of every message. Router C sees only one copy of each
+message for its listener. However, routers B and D would see three
+copies of every message since routers B and D are on the cheapest path
+for listeners 1, 2, and 3. When you consider that the broadcast host
+must send hundreds of messages each second for a radio broadcast, that
+is a lot of extra traffic.</p>
+<p>A brute force solution is for the broadcast host to send a single copy
+of the broadcast message and let the routers sort things out. In this
+case, the easiest solution is a strategy called <strong>uncontrolled
+flooding</strong>. The flooding strategy works as follows. Each message starts
+with a time to live (<tt class="docutils literal"><span class="pre">ttl</span></tt>) value set to some number greater than or
+equal to the number of edges between the broadcast host and its most
+distant listener. Each router gets a copy of the message and passes the
+message on to <em>all</em> of its neighboring routers. When the message is
+passed on the <tt class="docutils literal"><span class="pre">ttl</span></tt> is decreased. Each router continues to send copies
+of the message to all its neighbors until the <tt class="docutils literal"><span class="pre">ttl</span></tt> value reaches 0.
+It is easy to convince yourself that uncontrolled flooding generates
+many more unnecessary messages than our first strategy.</p>
+<p>The solution to this problem lies in the construction of a minimum
+weight <strong>spanning tree</strong>. Formally we define the minimum spanning tree
+<span class="math">\(T\)</span> for a graph <span class="math">\(G = (V,E)\)</span> as follows. <span class="math">\(T\)</span> is
+an acyclic subset of <span class="math">\(E\)</span> that connects all the vertices in
+<span class="math">\(V\)</span>. The sum of the weights of the edges in T is minimized.</p>
+<p><a class="reference internal" href="#fig-mst1"><em>Figure 10</em></a> shows a simplified version of the broadcast graph and
+highlights the edges that form a minimum spanning tree for the graph.
+Now to solve our broadcast problem, the broadcast host simply sends a
+single copy of the broadcast message into the network. Each router
+forwards the message to any neighbor that is part of the spanning tree,
+excluding the neighbor that just sent it the message. In this example A
+forwards the message to B. B forwards the message to D and C. D forwards
+the message to E, which forwards it to F, which forwards it to G. No
+router sees more than one copy of any message, and all the listeners
+that are interested see a copy of the message.</p>
+<div class="figure align-center" id="fig-mst1">
+<img alt="../_images/mst1.png" src="../_images/mst1.png" />
+<p class="caption">Figure 10: Minimum Spanning Tree for the Broadcast Graph</p>
+</div>
+<p>The algorithm we will use to solve this problem is called Prim’s
+algorithm. Prim’s algorithm belongs to a family of algorithms called the
+“greedy algorithms” because at each step we will choose the cheapest
+next step. In this case the cheapest next step is to follow the edge
+with the lowest weight. Our last step is to develop Prim’s algorithm.</p>
+<p>The basic idea in constructing a spanning tree is as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>While T is not yet a spanning tree
+   Find an edge that is safe to add to the tree
+   Add the new edge to T
+</pre></div>
+</div>
+<p>The trick is in the step that directs us to “find an edge that is safe.”
+We define a safe edge as any edge that connects a vertex that is in the
+spanning tree to a vertex that is not in the spanning tree. This ensures
+that the tree will always remain a tree and therefore have no cycles.</p>
+<p>The Python code to implement Prim’s algorithm is shown in <a class="reference internal" href="#lst-prims"><em>Listing 2</em></a>. Prim’s algorithm is similar to Dijkstra’s algorithm
+in that they both use a priority queue to select the next vertex to add
+to the growing graph.</p>
+<p><strong>Listing 2</strong></p>
+<div class="highlight-python" id="lst-prims"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pythonds.graphs</span> <span class="kn">import</span> <span class="n">PriorityQueue</span><span class="p">,</span> <span class="n">Graph</span><span class="p">,</span> <span class="n">Vertex</span>
+
+<span class="k">def</span> <span class="nf">prim</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">start</span><span class="p">):</span>
+    <span class="n">pq</span> <span class="o">=</span> <span class="n">PriorityQueue</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
+        <span class="n">v</span><span class="o">.</span><span class="n">setDistance</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">maxsize</span><span class="p">)</span>
+        <span class="n">v</span><span class="o">.</span><span class="n">setPred</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
+    <span class="n">start</span><span class="o">.</span><span class="n">setDistance</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">pq</span><span class="o">.</span><span class="n">buildHeap</span><span class="p">([(</span><span class="n">v</span><span class="o">.</span><span class="n">getDistance</span><span class="p">(),</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">])</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">pq</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">():</span>
+        <span class="n">currentVert</span> <span class="o">=</span> <span class="n">pq</span><span class="o">.</span><span class="n">delMin</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">nextVert</span> <span class="ow">in</span> <span class="n">currentVert</span><span class="o">.</span><span class="n">getConnections</span><span class="p">():</span>
+          <span class="n">newCost</span> <span class="o">=</span> <span class="n">currentVert</span><span class="o">.</span><span class="n">getWeight</span><span class="p">(</span><span class="n">nextVert</span><span class="p">)</span> \
+                  <span class="o">+</span> <span class="n">currentVert</span><span class="o">.</span><span class="n">getDistance</span><span class="p">()</span>
+          <span class="k">if</span> <span class="n">nextVert</span> <span class="ow">in</span> <span class="n">pq</span> <span class="ow">and</span> <span class="n">newCost</span><span class="o">&lt;</span><span class="n">nextVert</span><span class="o">.</span><span class="n">getDistance</span><span class="p">():</span>
+              <span class="n">nextVert</span><span class="o">.</span><span class="n">setPred</span><span class="p">(</span><span class="n">currentVert</span><span class="p">)</span>
+              <span class="n">nextVert</span><span class="o">.</span><span class="n">setDistance</span><span class="p">(</span><span class="n">newCost</span><span class="p">)</span>
+              <span class="n">pq</span><span class="o">.</span><span class="n">decreaseKey</span><span class="p">(</span><span class="n">nextVert</span><span class="p">,</span><span class="n">newCost</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The following sequence of figures (<a class="reference internal" href="#fig-mst1"><em>Figure 11</em></a> through <a class="reference internal" href="#fig-mst1"><em>Figure 17</em></a>) shows the algorithm in operation on our sample
+tree. We begin with the starting vertex as A. The distances to all the
+other vertices are initialized to infinity. Looking at the neighbors of
+A we can update distances to two of the additional vertices B and C
+because the distances to B and C through A are less than infinite. This
+moves B and C to the front of the priority queue. Update the predecessor
+links for B and C by setting them to point to A. It is important to note
+that we have not formally added B or C to the spanning tree yet. A node
+is not considered to be part of the spanning tree until it is removed
+from the priority queue.</p>
+<p>Since B has the smallest distance we look at B next. Examining B’s
+neighbors we see that D and E can be updated. Both D and E get new
+distance values and their predecessor links are updated. Moving on to
+the next node in the priority queue we find C. The only node C is
+adjacent to that is still in the priority queue is F, thus we can update
+the distance to F and adjust F’s position in the priority queue.</p>
+<p>Now we examine the vertices adjacent to node D. We find that we can
+update E and reduce the distance to E from 6 to 4. When we do this we
+change the predecessor link on E to point back to D, thus preparing it
+to be grafted into the spanning tree but in a different location. The
+rest of the algorithm proceeds as you would expect, adding each new node
+to the tree.</p>
+<div class="figure align-center" id="fig-prima">
+<img alt="../_images/prima.png" src="../_images/prima.png" />
+<p class="caption">Figure 11: Tracing Prim’s Algorithm</p>
+</div>
+<div class="figure align-center" id="fig-primb">
+<img alt="../_images/primb.png" src="../_images/primb.png" />
+<p class="caption">Figure 12: Tracing Prim’s Algorithm</p>
+</div>
+<div class="figure align-center" id="fig-primc">
+<img alt="../_images/primc.png" src="../_images/primc.png" />
+<p class="caption">Figure 13: Tracing Prim’s Algorithm</p>
+</div>
+<div class="figure align-center" id="fig-primd">
+<img alt="../_images/primd.png" src="../_images/primd.png" />
+<p class="caption">Figure 14: Tracing Prim’s Algorithm</p>
+</div>
+<div class="figure align-center" id="fig-prime">
+<img alt="../_images/prime.png" src="../_images/prime.png" />
+<p class="caption">Figure 15: Tracing Prim’s Algorithm</p>
+</div>
+<div class="figure align-center" id="fig-primf">
+<img alt="../_images/primf.png" src="../_images/primf.png" />
+<p class="caption">Figure 16: Tracing Prim’s Algorithm</p>
+</div>
+<div class="figure align-center" id="fig-primg">
+<img alt="../_images/primg.png" src="../_images/primg.png" />
+<p class="caption">Figure 17: Tracing Prim’s Algorithm</p>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - Analysis of Dijkstra’s Algorithm' data-toggle="tooltip">
+    <a href="AnalysisofDijkstrasAlgorithm.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="AnalysisofDijkstrasAlgorithm.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Summary' data-toggle="tooltip" >
+    <a href="Summary.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="Summary.html" >Next Section - Summary</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014 Brad Miller, David Ranum.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

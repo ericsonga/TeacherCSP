@@ -31,7 +31,7 @@ Chapter 16 included the following concepts from computing.
 - **Append** - To append means to combine two strings with the characters from the second string following right after the characters in the first string.  In Python you can use the ``+`` operator to append strings.  This is also called **concatenation**.  
 - **For Each Loop** - A for each loop loops executes the body of the loop one time for each element in a collection (a string or list).  
 - **List** - A list holds items in order.  An example of a list is ``[1, 2, 3]``.   
-- **Len** - The ``len`` function returns the number of items in a collection (a string or a list).  
+- **Len** - The ``len`` (length) function returns the number of items in a collection (a string or a list).  
 - **Index** - The index is the position of the item in a list or string.  In Python the first item is at index 0.  
 - **Out of Range Error** - An out of range error will occur if you try to access an item in a list and give it an invalid index.  The first item in a list is at index 0 and the last is at one less than the length.
 - **Range** - The ``range`` function returns a list of numbers.  For example, ``range(3)`` returns the list ``[0, 1, 2]``.  

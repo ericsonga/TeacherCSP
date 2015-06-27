@@ -33,7 +33,7 @@ What is a Computer?
 ..	index::
 	single: program
 	
-A **computer** is a device that can perform actions on data.  The actions are specified by a **program**, which is a sequence of instructions.  A computer doesn't really even have to be electronic.  Did you know that there were female computers?  `The Harvard computers <http://en.wikipedia.org/wiki/Harvard_Computers>`_ were hired to do astronomical calculations.  Computer was a job title, like waiter or doctor.
+A **computer** is a device that can perform actions on input (which is also called data).  The actions are specified by a **program**, which is a sequence of instructions.  A computer doesn't really even have to be electronic.  Did you know that there were female computers?  `The Harvard computers <http://en.wikipedia.org/wiki/Harvard_Computers>`_ were hired to do astronomical calculations.  Computer was a job title, like waiter or doctor.
 
 ..	index::
 	single: Harvard computers

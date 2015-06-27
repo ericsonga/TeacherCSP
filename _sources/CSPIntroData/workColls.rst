@@ -25,7 +25,7 @@ Working with Collections of Data
 
 - Use ``+`` to append strings together.
 - Use ``*`` to create multiples of strings.
-- Introduce the ``len`` function to get the number of characters in a string.
+- Introduce the ``len`` (length) function to get the number of characters in a string.
 - Introduce a list as something that holds items in order.
 - Use an index to get an item from a list.
 - Introduce the out of range error.

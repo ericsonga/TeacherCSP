@@ -39,15 +39,15 @@ Chapter 6 included the following concepts from computing.
 - **Define** - You can define a new procedure or function in Python using the ``def`` keyword.
 - **Execute** - Execute means to **run** or **call** a procedure or function.  
 - **Formal Parameter** - A formal parameter is named input in the definition of a procedure or function.  This is also called a **parameter**.  
-- **Function** - A function is a named set of instructions that returns a result.  An example is the ``abs(num)`` which returns the absolute value of the num.  
+- **Function** - A function is a named set of instructions that *returns a result*.  An example is the ``abs(num)`` which returns the absolute value of the num.  
 - **Library** - A library is a named group of related procedures and functions.  An example is the Turtle library.
 - **Parameter** - A parameter is input to a procedure or function that is named when you define the procedure or function. It will be assigned a value when you call the procedure or function.  This is also called a **formal parameter**.   
-- **Procedure** - A procedure is a named set of instructions that does not return a result, but can cause something to happen like the turtle ``forward(amount)`` procedure. 
+- **Procedure** - A procedure is a named set of instructions that *does not return a result*, but can cause something to happen like the turtle ``forward(amount)`` procedure. 
 - **Run** - To run a procedure or function use the name of the procedure or function in your program.  This is also known as **calling** or **executing** a procedure or function.
 
 .. note::  
 
-   This is the end of chapter 6.  Readers who are part of the teacher study should go to https://www.surveymonkey.com/r/ch5a6-feedback to provide feedback and then continue to the next section which is an exam on chapters 5 and 6.  If you are not part of the study you can skip the exam or take it if you wish.  Remember that you can go to the table of contents by clicking on "CS Principles" in the upper left corner of this window.
+   This is the end of chapter 6.  Readers who are part of the teacher study should go to https://www.surveymonkey.com/r/ch5a6-feedback to provide feedback and then continue to the next section which is an exam on chapters 5 and 6.  If you are not part of the study you can skip the exam or take it if you wish.  Remember that you can go to the table of contents by clicking on "Teacher-CSP" in the upper left corner of this window.
 
    
 

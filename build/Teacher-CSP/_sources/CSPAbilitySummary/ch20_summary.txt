@@ -22,10 +22,12 @@ Chapter 20 included the following concepts from computing.
     single: abstraction
     single: conditional
     single: Halting Problem
+    single: Turing Machine
 
 - **Abstraction** - Abstraction is used to remove unnecessary details.  For example, after you create a procedure or function and test it, you can call it without having to think about how it works.  
 - **Conditional** - A conditional allows for code to be executed when a condition is true.  
 - **Halting Problem** - Alan Turing proved that it is not possible to decide algorithmically whether a given Turing machine will ever halt.
+- **Turing Machine** - A Turing machine is a theoretical computer that can read instructions from a tape and write results to the tape.
 
 .. note::  
 

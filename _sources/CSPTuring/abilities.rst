@@ -17,7 +17,7 @@
 Computer Abilities
 ==================================
 
-In this book, we are going to talk about what a computer can do in terms of the programming language Python.  We are not going to cover *all* of Python.  We are going to describe the four abilities of a computer, the four abilities that cover *everything* that a computer can do.
+In this book, we are going to talk about what a computer can do in terms of the programming language **Python**.  We are not going to cover *all* of Python.  We are going to describe the four abilities of a computer, the four abilities that cover *everything* that a computer can do.
 
 - Computers can remember names for values.  Computers can name *anything*.
 - Computers can repeat steps.

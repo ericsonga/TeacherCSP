@@ -101,7 +101,7 @@ See the video below for a hint on how to solve the next mixed up code problem.
    
 .. parsonsprob:: 6_3_3_Triangle_Procedure
 
-   The following code should define a procedure that draws a triangle, but it may be mixed up and contains extra code.  Drag the needed code to the right side in the correct order.  <b>Remember that the statements in the procedure must be indented!</b>  To indent a block drag it further right. 
+   The following code should define a procedure that draws a triangle, but it may be mixed up *and may contain extra (unused) code*.  Drag the needed code to the right side in the correct order.  <b>Remember that the statements in the procedure must be indented!</b>  To indent a block drag it further right. 
    -----
    def triangle(turtle):
    =====

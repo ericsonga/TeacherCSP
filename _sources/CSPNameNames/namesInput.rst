@@ -42,7 +42,7 @@ What if we want to draw a different size square, like one with a side length of 
   malik = Turtle()    	# create a turtle named malik
   square(malik)      	# draw a square with malik
   
-But, it is somewhat slow to change each of the four ``forward`` statements and we could make a mistake and not set all of them to the same number.  Is there a better way?  What if we create a variable ``size`` and set its value to the amount to move forward?
+But, this means we have to change each of the four ``forward`` statements and we could make a mistake and not set all of them to the same number.  Is there a better way?  What if we create a variable ``size`` and set its value to the amount to move forward?
 
 .. activecode:: Function_Add_Var
   :tour_1: "Important lines tour"; 1-10: sqvar-line1-10; 2: sqvar-line2; 3: sqvar-line3; 4: sqvar-line4; 5-10: sqvar-line5-10; 12-14: sqvar-line12-14; 15: sqvar-line15;
@@ -156,7 +156,7 @@ We can add an additional input to the function that specifies the size of the sq
 	pair: parameters; formal
 	pair: parameters; actual
   
-The inputs that are specified in a function or procedure definition are also called **parameters** or **formal parameters**.  So ``turtle`` and ``size`` are both parameters (formal parameters) in the ``square`` procedure.  Notice that when we call ``square`` we have to specify the actual values for the inputs.  The actual values passed into the function as inputs are called **arguments** or **actual parameters**. In the call ``square(malik, 50)`` both ``malik`` and ``50`` are arguments (actual parameters) to the ``square`` procedure.  
+The inputs that are specified in a function or procedure definition are also called **parameters** or **formal parameters**.  So ``turtle`` and ``size`` are both parameters (formal parameters) in the ``square`` procedure.  Notice that when we call ``square`` we have to specify the actual values for the inputs.  The actual values passed into the function as inputs are called the **arguments** or **actual parameters**. In the call ``square(malik, 50)`` both ``malik`` and ``50`` are arguments (actual parameters) to the ``square`` procedure.  
 
 .. mchoicemf:: 6_4_3_Name_Args_Q1
    :answer_a: turtle and size

@@ -75,8 +75,8 @@ Chapter 3: Names for Numbers
    CSPNameNumbers/misconceptions.rst
    CSPNameNumbers/invoice.rst
    CSPNameNumbers/whyVideo.rst
+   CSPNameNumbers/ch3_exercises.rst
    CSPNameNumbers/ch3_summary.rst
-   
    
 Chapter 4: Names for Strings
 ::::::::::::::::::::::::::::::::::
@@ -85,8 +85,11 @@ Chapter 4: Names for Strings
    :maxdepth: 2
    
    CSPNameStrings/assignNameStr.rst
+   CSPNameStrings/strObjects.rst
+   CSPNameStrings/immutable.rst
    CSPNameStrings/madlib.rst
    CSPNameStrings/whyAudio.rst
+   CSPNameStrings/ch4_exercises.rst
    CSPNameStrings/ch4_summary.rst
    CSPNameStrings/exam3a4.rst
    

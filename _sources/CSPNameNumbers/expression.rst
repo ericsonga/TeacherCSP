@@ -144,5 +144,5 @@ You may not be familiar with the **modulo** (remainder) operator ``%``.  It retu
     Figure 3: Long division showing the whole number result and the remainder
     
 .. note::
-   The result of ``x % y`` when ``x`` is smaller than ``y`` is always ``x``.  The value ``y`` can't go into ``x`` at all, since ``x`` is smaller than ``y``, so the result is just ``x``.  So if you see ``2 % 3`` the result is ``2``.  You can edit the code above to try this for yourself.
+   The result of ``x % y`` when ``x`` is smaller than ``y`` is always ``x``.  The value ``y`` can't go into ``x`` at all, since ``x`` is smaller than ``y``, so the result is just ``x``.  So if you see ``2 % 3`` the result is ``2``.  Edit the code above to try this for yourself.  Change the code to ``result = 2 % 3`` and see what that prints when it is run.
 

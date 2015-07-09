@@ -69,5 +69,5 @@ That is what you are doing when you execute a statement like ``from turtle impor
    :feedback_c: You can use right because of the import, but you can also use others.
    :feedback_d: Yes, you can use all of the turtle stuff from the import, plus the procedure square that was defined.
    
-   Imagine that you add one more line to the above program.  Which procedure can you use safely, because it will have been defined?
+   Imagine that you add one more line to the program above.  Which procedure can you use safely, because it will have been defined?
 

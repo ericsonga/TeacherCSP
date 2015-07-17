@@ -58,3 +58,14 @@ We ran the following code in a form of Python where he could stop the computer e
 
 (We stopped the computer around this point.)
 
+.. mchoicemf:: 8_2_1_While_Inf_NumLines
+		  :answer_a: 1
+		  :answer_b: 2
+		  :answer_c: 3
+		  :correct: b
+		  :feedback_a: All the statements that are indented 4 spaces to the right of the <code>while</code> are part of the body of the loop.
+		  :feedback_b: There are two statements that are indented 4 spaces to the right of the <code>while</code> statement, so there are two statements in the body of this loop.
+		  :feedback_c: There are three lines here total, but not all of them are in the body of the loop.
+
+	   	  How many lines are in the body of the ``while`` loop in shown above?
+

@@ -39,7 +39,7 @@ Compute with Words
 	single: string
 	pair: programming; string
 
-The computer can also compute with words, or more accurately, with **strings** which are sequences of characters.  A **string** is anything we can type between a pair of double quotes (``"Hi"``) or a pair of single quotes (``'Hi'``).  We can "compute" with words using some of the same basic arithmetic operators -- they just mean something different here.  Here we generate silly song lyrics by using ``+`` to combine (append) two strings and ``*`` to repeat strings.
+The computer can also compute with words, or more accurately, with **strings** which are sequences of characters.  We can create a **string** by typing characters between a pair of double quotes (``"Hi"``) or a pair of single quotes (``'Hi'``).  We can "compute" with strings using some of the same basic arithmetic operators -- they just mean something different here.  Here we generate silly song lyrics by using ``+`` to combine (append) two strings and ``*`` to repeat strings.
 
 Underneath the program below, to the right of the *Run* button |runbutton|, you'll see the button to open the audio tour for this program: |audiobutton|.  Click on that button and then click on "Line-by-line Tour" to hear the audio tour.  You can use the provided buttons to pause, play, jump ahead, or go back. 
 

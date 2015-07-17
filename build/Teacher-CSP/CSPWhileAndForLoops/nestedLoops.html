@@ -273,7 +273,10 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Nested For Loops</a></li>
+<li><a class="reference internal" href="#">Nested For Loops</a><ul>
+<li><a class="reference internal" href="#how-many-times-does-the-inner-loop-execute">How Many Times Does the Inner Loop Execute?</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -412,6 +415,217 @@ $(window).resize(function() {
       });
    });
 </script>
+<div class="section" id="how-many-times-does-the-inner-loop-execute">
+<h2>How Many Times Does the Inner Loop Execute?<a class="headerlink" href="#how-many-times-does-the-inner-loop-execute" title="Permalink to this headline">¶</a></h2>
+<p>Try out the following code.  How many <code class="docutils literal"><span class="pre">*</span></code>&#8216;s are printed?  Why do you think it prints that many?  Try changing the start and end values and see what changing those does to the output.</p>
+
+<div id="cont"></div>
+<div id="Nested_Loops_Stars" lang="python" time="" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Nested_Loops_Stars_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Nested_Loops_Stars_saveb" onclick="saveEditor('Nested_Loops_Stars');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Nested_Loops_Stars_loadb" onclick="requestCode('Nested_Loops_Stars');">Load</button>
+<button class='btn btn-default' id="Nested_Loops_Stars_vizb" onclick="injectCodelens(this,'Nested_Loops_Stars');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Nested_Loops_Stars_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Nested_Loops_Stars_code" class="active_code" prefixcode="undefined" lang="python">
+for x in range(0,2):
+    for y in range(0,3):
+        print('*')
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<div id="Nested_Loops_Stars_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
+</div>
+<pre id="Nested_Loops_Stars_suffix" style="display:none">
+</pre><pre id="Nested_Loops_Stars_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Nested_Loops_Stars)</span> </p>
+<div id="Nested_Loops_Stars_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Nested_Loops_Stars_saveb').toggle();
+    $('#Nested_Loops_Stars_loadb').toggle();
+}
+if ($("#Nested_Loops_Stars").attr("lang") !== "html" && $("#Nested_Loops_Stars_code_div").parents(".admonition").length == 0 && $("#Nested_Loops_Stars_code_div").parents("#exercises").length == 0){
+    if ($(window).width() > 975){
+        $("#Nested_Loops_Stars_code_div").offset({
+            left: $("#Nested_Loops_Stars .clearfix").offset().left
+        });
+    }
+    $("#Nested_Loops_Stars_runb").one("click", function(){
+        $({})
+        .queue(function (next) {
+            if ($(window).width() > 975){
+                $("#Nested_Loops_Stars_code_div").animate({
+                    left: 40
+                }, 500, next);
+                if (! Sk.TurtleGraphics ) {
+                    Sk.TurtleGraphics = {};
+                }
+                Sk.TurtleGraphics.height = 320;
+                Sk.TurtleGraphics.width = 320;
+            }
+            else{
+                next();
+            }
+        })
+        .queue(function (next) {
+            $("#Nested_Loops_Stars_runb").parent().siblings(".ac_output").show();
+            runit('Nested_Loops_Stars',this, undefined);
+            $("#Nested_Loops_Stars_runb").on("click", function(){
+                runit('Nested_Loops_Stars',this, undefined);
+            });
+        })
+
+    });
+}
+else{
+    $("#Nested_Loops_Stars_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+    $("#Nested_Loops_Stars_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+    $("#Nested_Loops_Stars_runb").on("click", function(){
+        runit('Nested_Loops_Stars',this, undefined);
+    });
+}
+</script>
+
+</div>
+
+<p>The outer loop executes 2 times and each time the outer loop executes the inner loop executes 3 times so this will print 2 * 3 = 6 stars.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The formula for calculating the number of times the inner loop executes is the number of times the outer loop repeats multiplied by the number of times the inner loop repeats.</p>
+</div>
+
+            <div id="8_5_1_NumStars" class="alert alert-warning">
+            <p>csp-8-5-1: How many times will this loop print a <code class="docutils literal"><span class="pre">*</span></code>?</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="k">for</span> <span class="n">x</span> <span class="n">in</span> <span class="nf">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">3</span><span class="o">):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="n">in</span> <span class="nf">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">4</span><span class="o">):</span>
+        <span class="n">print</span><span class="o">(</span><span class="sc">&#39;*&#39;</span><span class="o">)</span>
+</pre></div>
+</div>
+<form name="8_5_1_NumStars_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="8_5_1_NumStars_opt_a" />
+            <label for= "8_5_1_NumStars_opt_a">  a) 6</label><br />
+            
+            <input type="radio" name="group1" value="b" id="8_5_1_NumStars_opt_b" />
+            <label for= "8_5_1_NumStars_opt_b">  b) 9</label><br />
+            
+            <input type="radio" name="group1" value="c" id="8_5_1_NumStars_opt_c" />
+            <label for= "8_5_1_NumStars_opt_c">  c) 12</label><br />
+            
+            <input type="radio" name="group1" value="d" id="8_5_1_NumStars_opt_d" />
+            <label for= "8_5_1_NumStars_opt_d">  d) 16</label><br />
+            
+            <input type="radio" name="group1" value="e" id="8_5_1_NumStars_opt_e" />
+            <label for= "8_5_1_NumStars_opt_e">  e) 20</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('8_5_1_NumStars');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('8_5_1_NumStars','c',['Remember that the range function will include the start value and all the numbers up to one less than the end value.  So the outer loop will execute 3 times ([0,1,2]).', 'This would be true if they were both range(0,3).  Is that correct?', 'The number of times a nested loop executes is the number of times the outer loop executes (3) times the number of the times the inner loop executes (4) so that is 3 * 4 \u003D 12.', 'This would be true if both were range(0,4).  Is that right?', 'This would be true if the range returned all the numbers from start to end, but it does not.'])">Check Me</button>
+            <button class='btn btn-default' id="8_5_1_NumStars_bcomp" disabled name="compare" onclick="compareAnswers('8_5_1_NumStars');">Compare Me</button>
+            </form><br />
+            <div id="8_5_1_NumStars_feedback">
+            </div>
+            </div>
+            <p>You can add items to a string in the inner loop and then print the strings to make a pattern.</p>
+
+<div id="cont"></div>
+<div id="Nested_Loops_Pattern" lang="python" time="" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Nested_Loops_Pattern_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Nested_Loops_Pattern_saveb" onclick="saveEditor('Nested_Loops_Pattern');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Nested_Loops_Pattern_loadb" onclick="requestCode('Nested_Loops_Pattern');">Load</button>
+<button class='btn btn-default' id="Nested_Loops_Pattern_vizb" onclick="injectCodelens(this,'Nested_Loops_Pattern');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Nested_Loops_Pattern_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Nested_Loops_Pattern_code" class="active_code" prefixcode="undefined" lang="python">
+for x in range(0,2):
+    line = ""
+    for y in range(0,3):
+        line = line + '*'
+    print(line)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<div id="Nested_Loops_Pattern_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
+</div>
+<pre id="Nested_Loops_Pattern_suffix" style="display:none">
+</pre><pre id="Nested_Loops_Pattern_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Nested_Loops_Pattern)</span> </p>
+<div id="Nested_Loops_Pattern_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Nested_Loops_Pattern_saveb').toggle();
+    $('#Nested_Loops_Pattern_loadb').toggle();
+}
+if ($("#Nested_Loops_Pattern").attr("lang") !== "html" && $("#Nested_Loops_Pattern_code_div").parents(".admonition").length == 0 && $("#Nested_Loops_Pattern_code_div").parents("#exercises").length == 0){
+    if ($(window).width() > 975){
+        $("#Nested_Loops_Pattern_code_div").offset({
+            left: $("#Nested_Loops_Pattern .clearfix").offset().left
+        });
+    }
+    $("#Nested_Loops_Pattern_runb").one("click", function(){
+        $({})
+        .queue(function (next) {
+            if ($(window).width() > 975){
+                $("#Nested_Loops_Pattern_code_div").animate({
+                    left: 40
+                }, 500, next);
+                if (! Sk.TurtleGraphics ) {
+                    Sk.TurtleGraphics = {};
+                }
+                Sk.TurtleGraphics.height = 320;
+                Sk.TurtleGraphics.width = 320;
+            }
+            else{
+                next();
+            }
+        })
+        .queue(function (next) {
+            $("#Nested_Loops_Pattern_runb").parent().siblings(".ac_output").show();
+            runit('Nested_Loops_Pattern',this, undefined);
+            $("#Nested_Loops_Pattern_runb").on("click", function(){
+                runit('Nested_Loops_Pattern',this, undefined);
+            });
+        })
+
+    });
+}
+else{
+    $("#Nested_Loops_Pattern_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+    $("#Nested_Loops_Pattern_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+    $("#Nested_Loops_Pattern_runb").on("click", function(){
+        runit('Nested_Loops_Pattern',this, undefined);
+    });
+}
+</script>
+
+</div>
+
+<p>Modify the code above to draw a square of stars.</p>
+</div>
 </div>
 
 

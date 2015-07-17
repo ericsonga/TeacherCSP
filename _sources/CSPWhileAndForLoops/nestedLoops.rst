@@ -50,3 +50,54 @@ In this video, we look at the *execution* of the program -- how it actually work
 
 		   http://ice-web.cc.gatech.edu/ce21/1/static/video/nestedLoopTrace.mov
 		   http://ice-web.cc.gatech.edu/ce21/1/static/video/nestedLoopTrace.webm
+		   
+How Many Times Does the Inner Loop Execute?
+--------------------------------------------
+		   
+Try out the following code.  How many ``*``'s are printed?  Why do you think it prints that many?  Try changing the start and end values and see what changing those does to the output.
+
+.. activecode:: Nested_Loops_Stars
+
+    for x in range(0,2):
+        for y in range(0,3):
+            print('*')
+            
+
+The outer loop executes 2 times and each time the outer loop executes the inner loop executes 3 times so this will print 2 * 3 = 6 stars.  
+
+.. note::
+   The formula for calculating the number of times the inner loop executes is the number of times the outer loop repeats multiplied by the number of times the inner loop repeats.
+		   
+.. mchoicemf:: 8_5_1_NumStars
+   :answer_a: 6
+   :answer_b: 9
+   :answer_c: 12
+   :answer_d: 16
+   :answer_e: 20
+   :correct: c
+   :feedback_a: Remember that the range function will include the start value and all the numbers up to one less than the end value.  So the outer loop will execute 3 times ([0,1,2]).
+   :feedback_b: This would be true if they were both range(0,3).  Is that correct?
+   :feedback_c: The number of times a nested loop executes is the number of times the outer loop executes (3) times the number of the times the inner loop executes (4) so that is 3 * 4 = 12.  
+   :feedback_d: This would be true if both were range(0,4).  Is that right?
+   :feedback_e: This would be true if the range returned all the numbers from start to end, but it does not.
+
+   How many times will this loop print a ``*``?
+   
+   :: 
+      
+       for x in range(0,3):
+           for y in range(0,4):
+               print('*')
+               
+You can add items to a string in the inner loop and then print the strings to make a pattern.  
+               
+.. activecode:: Nested_Loops_Pattern
+
+    for x in range(0,2):
+        line = ""
+        for y in range(0,3):
+            line = line + '*'
+        print(line)
+        
+Modify the code above to draw a square of stars.  
+               

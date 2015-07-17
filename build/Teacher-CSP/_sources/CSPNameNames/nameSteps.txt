@@ -88,6 +88,9 @@ You define a function just like you define a procedure, but it will also ``retur
       
   print(bmi(60,110))
   
+.. note::
+   To return a value from a function use the Python keyword ``return`` followed by the value to return.  
+  
 **Check Your Understanding**
 
 .. mchoicemf:: 6_3_1_Functions_Q2

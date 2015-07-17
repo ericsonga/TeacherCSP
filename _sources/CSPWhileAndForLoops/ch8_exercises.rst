@@ -23,29 +23,27 @@ Chapter 8 Exercises
 
         .. tab:: Question
             
-            Fix lines 1 and 2 below to create the code to add up all the numbers from 1 to 5 and print the sum. 
+            Fix the code below to print a countdown of the numbers from 10 to 0.  
 
             .. activecode:: ch8ex1q
                 :nocodelens:
 
-                sum =    
-                thingsToAdd = 
-                for number in thingsToAdd:
-    	            sum = sum + number
-                print(sum)                
+                counter = 10
+                while Counter > 0:
+                    Print(counter)
+                    counter = Counter + 1                 
 
         .. tab:: Answer
         
-            Set the sum to 0 in line 1.  Create a list ``[1,2,3,4,5]`` in line2.    
+            Change ``Counter`` to ``counter`` everywhere.  Loop while ``counter`` is greater than or equal to 0.  Change the ``Print`` to ``print``.  Change the last line to subtract one rather than add it.
 
             .. activecode:: ch8ex1a
                 :nocodelens:
 
-                sum = 0  # Start out with nothing
-                thingsToAdd = [1,2,3,4,5]
-                for number in thingsToAdd:
-    	            sum = sum + number
-                print(sum) 
+                counter = 10
+                while counter >= 0:
+                    print(counter)
+                    counter = counter - 1  
 
         .. tab:: Discussion
 
@@ -59,33 +57,32 @@ Chapter 8 Exercises
 
         .. tab:: Question
 
-           Change the code below into a function that returns the sum of a list of numbers.  Pass the list of numbers and print the result to test the function.
+           Fix the code below to print a count up from -10 to 0.  
            
            .. activecode::  ch8ex2q
                 :nocodelens:
 
-                sum = 0  # Start out with nothing
-                thingsToAdd = [1,2,3,4,5]
-                for number in thingsToAdd:
-    	            sum = sum + number
-                print(sum) 
+                output = ""
+                x = -10
+                while x < 0
+                    x = x - 1
+                output = output + str(x) + " "
+                print(output)
 
 
         .. tab:: Answer
         
-            Create a function as shown below that takes a list of numbers as input. Return the sum.  Call the function with a list of numbers from 1 to 5 and print the result to test the function.
+            Change the ``while`` to less than or equal zero.  Add a ``:`` at the end.  Change it to ``x = x + 1`` and move it after ``output = output + str(x) + " "``.  Indent the ``output = output + str(x) + " "``.
             
             .. activecode::  ch8ex2a
                 :nocodelens:
                 
-                def sumNums(numList):
-                    sum = 0
-                    for number in numList:
-                        sum = sum + number
-                    return sum
-
-                aList = [1,2,3,4,5]
-                print(sumNums(aList))
+                output = ""
+                x = -10
+                while x <= 0:
+                    output = output + str(x) + " "
+                    x = x + 1
+                print(output)
                 
         .. tab:: Discussion 
 
@@ -99,29 +96,32 @@ Chapter 8 Exercises
 
         .. tab:: Question
 
-           Fill in the missing code on lines 3 and 4 to loop through the list of numbers and calculate the project.  Add a line at the end to print the result.  
+           Finish lines 1 and 5 so that the following code correct prints all the values from -5 to -1.  
         
            .. activecode::  ch8ex3q
                 :nocodelens:
                 
-                product = 1  # Start out with nothing
-                numbers = [1,2,3,4,5]
-                for in numbers:
-    	            product = product *
+                output = 
+                x = -5
+                while x < 0:
+                    output = output + str(x) + " "
+                    x = 
+                print(output)
          
 
         .. tab:: Answer
         
-            Change line 3 to create a variable ``number`` that will take on the next value in the list each time through the loop.  Set ``product`` in line 4 to ``product * number``.  Print the result when the loop has finished.  
+            Change line 1 to set output to the empty string (``""``).  Change line 5 to ``x = x + 1``.
             
             .. activecode::  ch8ex3a
                 :nocodelens:
 
-                product = 1  # Start out with nothing
-                numbers = [1,2,3,4,5]
-                for number in numbers:
-    	            product = product * number
-                print(product)
+                output = ""
+                x = -5
+                while x < 0:
+                    output = output + str(x) + " "
+                    x = x + 1
+                print(output)
                 
 
         .. tab:: Discussion 
@@ -136,32 +136,35 @@ Chapter 8 Exercises
 
         .. tab:: Question
 
-           Modify the code below to create a function that calculates the product of a list of numbers and returns it.  Call the function to test it and print the result.   
+           The code below is supposed to print an estimate of the square root.  But, the indention is wrong on many lines.  Fix it.
            
            .. activecode::  ch8ex4q
                 :nocodelens:
 
-                product = 1  # Start out with 1
-                numbers = [1,2,3,4,5]
-                for number in numbers:
-    	            product = product * number
-                print(product)
+                target = 6
+                    guess = 2
+                guessSquared = guess * guess
+                while abs(target-guessSquared) > 0.01:
+                    closer = target / guess
+                guess = (guess + closer) / 2.0
+                        guessSquared = guess * guess
+                    print("Square root of", target,"is", guess)
           
         .. tab:: Answer
         
-            Define the function and create a parameter to take a list of numbers called ``numbers``.  Print the result of calling the function with a list of numbers.  
+            Don't indent line 2.  Indent line 6 under line 5.  Indent line 7 at the same level as line 5.  Don't indent line 8.
             
             .. activecode::  ch8ex4a
                 :nocodelens:
-
-                def calculateProduct(numbers):
-                    product = 1  # Start out with 1
-                    for number in numbers:
-    	                product = product * number
-                    return(product)
                 
-                numbers = [1,2,3,4,5]
-                print(calculateProduct(numbers))
+                target = 6
+                guess = 2
+                guessSquared = guess * guess
+                while abs(target-guessSquared) > 0.01:
+                    closer = target / guess
+                    guess = (guess + closer) / 2.0
+                    guessSquared = guess * guess
+                print("Square root of", target,"is", guess)
                 
         .. tab:: Discussion 
 
@@ -175,41 +178,26 @@ Chapter 8 Exercises
 
         .. tab:: Question
 
-           Fill in the code below on lines 2, 4, and 6 to correctly add up and print the sum of all the even numbers from 1 to 10 (inclusive).
+           The program below is supposed to print the times tables for 1 to 3, but there are errors.  Fix the errors.
            
            .. activecode::  ch8ex5q
                 :nocodelens:
 
-                # STEP 1: INITIALIZE ACCUMULATOR 
-                sum =   # Start out with nothing
-                # STEP 2: GET DATA
-                numbers = range()
-                # STEP 3: LOOP THROUGH THE DATA
-                for number in numbers:
-    	            # STEP 4: ACCUMULATE
-    	           sum = sum +
-                # STEP 5: PROCESS RESULT
-                print(sum)
+                for x in range(1,3):
+                     for y in range(1,10)
+                         print(str(x) + " * " str(y) + " = " x*y)
 
         .. tab:: Answer
         
-            Initialize the sum to 0.  Create a range from 1 to 11 with a step of 2.  Set the sum to the current value of sum plus the value of number.
+            Change line 1 to end the range at 4.  Change line 2 to end the range at 11 and add the ``:`` at the end.  Fill in the missing ``+`` between strings in line 3 and add ``str(x*y)``.
             
             .. activecode::  ch8ex5a
                 :nocodelens:
 
-                # STEP 1: INITIALIZE ACCUMULATOR 
-                sum = 0  # Start out with nothing
-                # STEP 2: GET DATA
-                numbers = range(1,11,2)
-                # STEP 3: LOOP THROUGH THE DATA
-                for number in numbers:
-    	            # STEP 4: ACCUMULATE
-    	           sum = sum + number
-                # STEP 5: PROCESS RESULT
-                print(sum)
+                for x in range(1,4):
+                     for y in range(1,11):
+                         print(str(x) + " * " + str(y) + " = " + str(x*y))
 
-                
         .. tab:: Discussion 
 
             .. disqus::
@@ -222,44 +210,31 @@ Chapter 8 Exercises
 
         .. tab:: Question
 
-           Define a function to calculate the sum of the even numbers from 0 to the passed number.  Return the sum from the function.  Call the function and print the result.
+           Rewrite the following code to use a while loop instead of a for loop.
            
            .. activecode::  ch8ex6q
                 :nocodelens: 
                 
-                # STEP 1: INITIALIZE ACCUMULATOR 
-                sum = 0  # Start out with nothing
-                # STEP 2: GET DATA
-                numbers = range(0,21,2)
-                # STEP 3: LOOP THROUGH THE DATA
+                product = 1  # Start out with nothing
+                numbers = range(1,11)
                 for number in numbers:
-    	            # STEP 4: ACCUMULATE
-    	           sum = sum + number
-                # STEP 5: PROCESS RESULT
-                print(sum)
+                    product = product * number
+                print(product)
 
         .. tab:: Answer
         
-            Define a function that takes the ``lastNum`` as a parameter.  Get a list of the even numbers between 0 and lastNum using ``range(0,lastNum+1,2)``.  Return the sum.  Call the function and print the result.
+            Change line 2 to create number and set it to 1.  Change line 3 to loop while the number is less than 11.  Add a line before the print statement to increment number.
             
             .. activecode::  ch8ex6a
                 :nocodelens:
                 
-                def sumEvens(lastNum):
-                    # STEP 1: INITIALIZE ACCUMULATOR 
-                    sum = 0  # Start out with nothing
-                    # STEP 2: GET DATA
-                    numbers = range(0,lastNum+1,2)
-                    # STEP 3: LOOP THROUGH THE DATA
-                    for number in numbers:
-    	                # STEP 4: ACCUMULATE
-    	                sum = sum + number
-                    # STEP 5: PROCESS RESULT
-                    return(sum)
-
-                print(sumEvens(20))
+                product = 1  # Start out with nothing
+                number = 1
+                while number < 11:
+                    product = product * number
+                    number = number + 1
+                print(product)
                 
-
         .. tab:: Discussion 
 
             .. disqus::
@@ -272,28 +247,10 @@ Chapter 8 Exercises
 
         .. tab:: Question
 
-           Fix the code below to correctly calculate and return the product of all of the even numbers from 10 to 20. 
+           Rewrite the following code to use a while loop instead of a for loop. 
            
            .. activecode::  ch8ex7q
                 :nocodelens: 
-                
-                # STEP 1: INITIALIZE ACCUMULATOR 
-                product = 0  # init product
-                # STEP 2: GET DATA
-                numbers = range(10,20,2)
-                # STEP 3: LOOP THROUGH THE DATA
-                for number in numbers:
-    	            # STEP 4: ACCUMULATE
-    	           product = product + number
-                # STEP 5: PROCESS RESULT
-                print(product)         
-
-        .. tab:: Answer
-        
-            Change line 2 to initialze ``product`` to 1 instead of 0.  Change line 4 to ``range(10,21,2)``.  Change line 8 to ``product = product * number``. 
-            
-            .. activecode::  ch8ex7a
-                :nocodelens:
                 
                 # STEP 1: INITIALIZE ACCUMULATOR 
                 product = 1  # init product to 1
@@ -304,6 +261,27 @@ Chapter 8 Exercises
     	            # STEP 4: ACCUMULATE
     	           product = product * number
                 # STEP 5: PROCESS RESULT
+                print(product) 
+                        
+
+        .. tab:: Answer
+        
+            Change line 4 to only create and initialize number.  Change line 6 to loop while number is less than 21.  Add a step 5 where the value of number is set to the current value plus 2.
+            
+            .. activecode::  ch8ex7a
+                :nocodelens:
+                
+                # STEP 1: INITIALIZE ACCUMULATOR 
+                product = 1  # init product to 1
+                # STEP 2: INIT THE DATA
+                number = 10
+                # STEP 3: LOOP THROUGH THE DATA
+                while number < 21:
+    	            # STEP 4: ACCUMULATE
+    	            product = product * number
+    	            # STEP 5: change the number
+    	            number = number + 2
+                # STEP 6: PROCESS RESULT
                 print(product) 
                 
         .. tab:: Discussion 
@@ -318,26 +296,43 @@ Chapter 8 Exercises
 
         .. tab:: Question
 
-           Create a procedure to calculate and return the sum of all of the odd numbers from 1 to a passed last number (inclusive).  Call the function to test and it print the result.
+           Modify the code below to create a function that will take numbers as input until you enter a negative number and then will return the average of the numbers.  
            
            .. activecode::  ch8ex8q
                 :nocodelens:
+                
+                sum = 0
+                count = 0
+                message = "Enter an integer or a negative number to stop"
+                value = input(message)
+                while int(value) > 0:
+                    print("You entered " + value)
+                    sum = sum + int(value)
+                    count = count + 1
+                    value = input(message)
+                print("The sum is: " + str(sum) + 
+                      " the average is: " + str(sum / count))
 
         .. tab:: Answer
         
-            Create the procedure and be sure to call it to test it.
+            Define the function.  Return the sum divided by the count.  Call the function and print the result.
             
             .. activecode::  ch8ex8a
                 :nocodelens:
                 
-                def sumOdd(lastNumber):
+                def calculateAverage():
                     sum = 0
-                    numList = range(1,lastNumber+1,2)
-                    for num in numList:
-                        sum = sum + num
-                    return sum
-
-                print(sumOdd(13))
+                    count = 0
+                    message = "Enter an integer or a negative number to stop"
+                    value = input(message)
+                    while int(value) > 0:
+                        print("You entered " + value)
+                        sum = sum + int(value)
+                        count = count + 1
+                        value = input(message)
+                    return(sum / count)
+                    
+                print(calculateAverage())
                 
         .. tab:: Discussion 
 
@@ -351,26 +346,27 @@ Chapter 8 Exercises
 
         .. tab:: Question
 
-           Create a function to calculate and return the product of all of the even numbers from 1 to the passed end number.  Be sure to call the function to test it and print the result.
+           Create a function to calculate and return the sum of all of the even numbers from 1 to the passed input using a while loop.
            
            .. activecode::  ch8ex9q
                 :nocodelens:
 
         .. tab:: Answer
         
-            Create the procedure and be sure to call it to test it.
+            Create the function and be sure to call it to test it.
             
             .. activecode::  ch8ex9a
                 :nocodelens:
                 
-                def calculateProduct(lastNum):
-                    total = 1
-                    numList = range(1, lastNum + 1, 2)
-                    for num in numList:
-                        total = total * num
-                    return total
+                def calculateSum(lastNum):
+                    sum = 0
+                    num = 1
+                    while (num <= lastNum):
+                       sum = sum + num
+                       num = num + 2
+                    return sum
                     
-                print(calculateProduct(8))
+                print(calculateSum(10))
                                 
         .. tab:: Discussion 
 
@@ -384,26 +380,26 @@ Chapter 8 Exercises
 
         .. tab:: Question
 
-           Write a function that will take a list of numbers and return the average.  Remember that the average is the sum of all of the numbers in the list divided by the number of items in the list.  You can get the length of a list using the ``len(list)`` function.
+           Create a procedure to print stars in a square pattern and have it take as input the number of stars on a side.  Use a nested loop to do this.
            
            .. activecode::  ch8ex10q
                :nocodelens:
 
         .. tab:: Answer
         
-            Create the function and be sure to call it to test it.
+            Create the procedure and be sure to call it to test it.
             
             .. activecode::  ch8ex10a
                 :nocodelens:
                 
-                def getAverage(numList):
-                    sum = 0
-                    for num in numList:
-                        sum = sum + num
-                    return sum / len(numList)
-                
-                numberList = [90, 80, 75, 90, 83]
-                print(getAverage(numberList))
+                def printSquare(numStars):
+                    for x in range(0,numStars):
+                        line = ""
+                        for y in range(0,numStars):
+                            line = line + '*'
+                        print(line)
+                    
+                printSquare(6)
                                 
         .. tab:: Discussion 
 

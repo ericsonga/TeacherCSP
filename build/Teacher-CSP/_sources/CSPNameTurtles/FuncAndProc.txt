@@ -21,7 +21,10 @@
 Procedures and Functions
 ================================
 
-We have seen string **functions** like ``lower()`` which returns a new string with all lowercase characters.  **Functions** return a value.  The ``Screen()`` and ``Turtle()`` in the code below both create objects and return them, so they are functions.   You can also have **procedures** which do some action, but don't return anything.  The ``forward(75)`` and ``left(90)`` below are both procedures since they do an action but don't return anything.    
+We have seen string **functions** like ``lower()`` which returns a new string with all lowercase characters.  **Functions** return a value.  The ``Screen()`` and ``Turtle()`` in the code below both create objects and return them, so they are functions.   You can also have **procedures** which do some action, but don't return anything.  The ``forward(75)`` and ``left(90)`` below are both procedures since they do an action, but don't return anything. 
+
+.. note::
+   Some Python books don't make a distinction between procedures and functions and will call both of these functions.  In this book we are using **function** only for named code that returns a value and **procedure** for named code that doesn't return a value.   
    
 .. fillintheblank:: 5_2_1_LetterC
    :correct: ^c$|^C$

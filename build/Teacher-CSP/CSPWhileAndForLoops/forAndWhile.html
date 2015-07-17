@@ -326,15 +326,15 @@
 <h1>Loops - For and While<a class="headerlink" href="#loops-for-and-while" title="Permalink to this headline">¶</a></h1>
 <p><em>Learning Objectives:</em></p>
 <ul class="simple">
-<li>Introduce the concept of a <em>logical expression</em>, which is either true or false.</li>
 <li>Introduce the concept of a <code class="docutils literal"><span class="pre">while</span></code> loop, which will repeat the body of a loop while a logical expression is true.</li>
+<li>Introduce the concept of a <em>logical expression</em>, which is either true or false.</li>
 <li>Introduce the concept of an <em>infinite loop</em>, which is a loop that never ends.</li>
 <li>Compare and contrast <code class="docutils literal"><span class="pre">while</span></code> and <code class="docutils literal"><span class="pre">for</span></code> loops</li>
 </ul>
 <div class="section" id="example-for-loop">
 <h2>Example For Loop<a class="headerlink" href="#example-for-loop" title="Permalink to this headline">¶</a></h2>
-<p>We have been using a <code class="docutils literal"><span class="pre">for</span></code> loop to repeat the <strong>body of a loop</strong> a known number of times.  This is also know as a <strong>definite loop</strong>.  The <strong>body of a loop</strong> is all the statements that follow the <code class="docutils literal"><span class="pre">for</span></code> statement and are indented to the right of it.  Be sure to indent 4 spaces to indicate which statements are part of the body of the loop.</p>
-<p>Before you run the code below try to predict the last value it will print and then answer the question below.</p>
+<p>We have been using a <code class="docutils literal"><span class="pre">for</span></code> loop to repeat the <strong>body of a loop</strong> a known number of times.  The <strong>body of a loop</strong> is all the statements that follow the <code class="docutils literal"><span class="pre">for</span></code> statement and are indented to the right of it.  Be sure to indent 4 spaces to indicate the statements that are part of the body of the loop.</p>
+<p>Before you step through the code in for_counter below, try to predict the last value it will print and then answer the question below.</p>
 
             <div id="8_1_1_For_Counter_Q1" class="alert alert-warning">
             csp-8-1-1: What is the last value that will be printed when the code below executes?<form name="8_1_1_For_Counter_Q1_form" method="get" action="" onsubmit="return false;">
@@ -351,100 +351,62 @@
             <script>
             $(document).ready(function(){checkRadio('8_1_1_For_Counter_Q1');});
             </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('8_1_1_For_Counter_Q1','a',['A range goes from a starting point to one *less* than the ending point. If we want to count to 10, use range(1,11).', 'Try it \u002D\u002D nope, never gets to 10.', 'In fact, it doesn\u0027t even get to 10! Try it.'])">Check Me</button>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('8_1_1_For_Counter_Q1','a',['A range goes from a starting point to one \u003Ci\u003Eless\u003C/i\u003E than the ending point. If we want to count to 10, use range(1,11).', 'The range doesn\u0027t include the end value.  It stops at one before the last value.', 'In fact, it doesn\u0027t even get to 10! Try it.'])">Check Me</button>
             <button class='btn btn-default' id="8_1_1_For_Counter_Q1_bcomp" disabled name="compare" onclick="compareAnswers('8_1_1_For_Counter_Q1');">Compare Me</button>
             </form><br />
             <div id="8_1_1_For_Counter_Q1_feedback">
             </div>
             </div>
-            <p>If we want to print out a count that is increasing by 1, we can do easily do that with a <code class="docutils literal"><span class="pre">for</span></code> loop.  Run the code to see what prints.</p>
+            <p>If we want to print out a count that starts at 1 and increases by 1 each time, we can do easily do that with a <code class="docutils literal"><span class="pre">for</span></code> loop.  Use the <em>Forward</em> button to see how counter takes on a new value each time through the loop.</p>
 
-<div id="cont"></div>
-<div id="for_counter" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="for_counter_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="for_counter_saveb" onclick="saveEditor('for_counter');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="for_counter_loadb" onclick="requestCode('for_counter');">Load</button>
-<button class='btn btn-default' id="for_counter_vizb" onclick="injectCodelens(this,'for_counter');">Show in Codelens</button>
-
+<div class="alert alert-warning cd_section">
+<div id="for_counter"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (for_counter)</span> </p>
 </div>
-<br/>
-<div id="for_counter_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="for_counter_code" class="active_code" prefixcode="undefined" lang="python">
-for counter in range(1,10):
-    print(counter)
-</textarea>
-</div>
+<script type="text/javascript">
+var for_counter_trace = {"code": "for counter in range(1,10):\n    print(counter)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 1}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 1}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 2}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 2}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 3}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 3}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 4}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 4}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 5}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 5}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 6}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 6}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 7}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 7}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 8}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 8}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 9}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n9\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 9}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n9\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 9}, "heap": {}, "line": 1, "event": "return"}]};
+var for_counter_vis;
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="for_counter_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="for_counter_suffix" style="display:none">
-</pre><pre id="for_counter_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (for_counter)</span> </p>
-<div id="for_counter_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#for_counter_saveb').toggle();
-    $('#for_counter_loadb').toggle();
-}
-if ($("#for_counter").attr("lang") !== "html" && $("#for_counter_code_div").parents(".admonition").length == 0 && $("#for_counter_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#for_counter_code_div").offset({
-            left: $("#for_counter .clearfix").offset().left
-        });
+$(document).ready(function() {
+    try {
+        for_counter_vis = new ExecutionVisualizer('for_counter',for_counter_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(for_counter_vis,'for_counter');
+        styleButtons('for_counter');
+        allVisualizers.push(for_counter_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component for_counter_vis" );
+        console.log(e.toString());
     }
-    $("#for_counter_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#for_counter_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#for_counter_runb").parent().siblings(".ac_output").show();
-            runit('for_counter',this, undefined);
-            $("#for_counter_runb").on("click", function(){
-                runit('for_counter',this, undefined);
-            });
-        })
 
+});
+
+$(document).ready(function() {
+    $("#for_counter_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'for_counter'});
     });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
 }
-else{
-    $("#for_counter_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#for_counter_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#for_counter_runb").on("click", function(){
-        runit('for_counter',this, undefined);
-    });
-}
+
+
+$(window).resize(function() {
+    for_counter_vis.redrawConnectors();
+});
 </script>
-
-</div>
-
 </div>
 <div class="section" id="introducing-the-while-loop">
 <h2>Introducing the While Loop<a class="headerlink" href="#introducing-the-while-loop" title="Permalink to this headline">¶</a></h2>
 <p>Another way to repeat statements is the <code class="docutils literal"><span class="pre">while</span></code> loop.  It will repeat the <strong>body of loop</strong> as long as a <strong>logical expression</strong> is true.  The <strong>body of the loop</strong> is the statement or statements that are indented 4 or more spaces to the right of the <code class="docutils literal"><span class="pre">while</span></code> statement.   A <strong>logical expression</strong> is one that is either true or false like <code class="docutils literal"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">3</span></code>.</p>
-<p><code class="docutils literal"><span class="pre">While</span></code> loops are typically used when you don&#8217;t know how many times to execute the loop.  For example, when you play a game you will repeat the game while there isn&#8217;t a winner.  If you ever played musical chairs you walked around the circle of chairs while the music was playing.</p>
-<p>The code below will loop as long as the number that you enter isn&#8217;t negative.  It will add each non negative number to the current sum.  It will print out the average of all of the numbers you have entered.</p>
+<p><code class="docutils literal"><span class="pre">While</span></code> loops are typically used when you don&#8217;t know how many times to execute the loop.  For example, when you play a game you will repeat the game <em>while</em> there isn&#8217;t a winner.  If you ever played musical chairs you walked around the circle of chairs <em>while</em> the music was playing.</p>
+<p>The code below will loop as long as the number that you enter isn&#8217;t negative.  It will add each non negative number to the current sum.  It will print out the sum and average of all of the numbers you have entered.</p>
 
 <div id="cont"></div>
 <div id="while_input" lang="python" time="" class="ac_section alert alert-warning" >
@@ -461,12 +423,15 @@ else{
 <textarea cols="50" rows="12" id="while_input_code" class="active_code" prefixcode="undefined" lang="python">
 sum = 0
 count = 0
-value = input("Type in a value or a negative number to stop")
+message = "Enter an integer or a negative number to stop"
+value = input(message)
 while int(value) > 0:
-    sum = sum + value
+    print("You entered " + value)
+    sum = sum + int(value)
     count = count + 1
-
-print("The average is " + str(sum / count))
+    value = input(message)
+print("The sum is: " + str(sum) +
+      " the average is: " + str(sum / count))
 </textarea>
 </div>
 
@@ -534,24 +499,49 @@ else{
 
 
             <div id="8_1_2_While_Input1" class="alert alert-warning">
-            csp-8-1-2: How many lines are in the body of this <code class="docutils literal"><span class="pre">while</span></code> loop?<form name="8_1_2_While_Input1_form" method="get" action="" onsubmit="return false;">
+            csp-8-1-2: How many lines are in the body of the <code class="docutils literal"><span class="pre">while</span></code> loop in while_input above?<form name="8_1_2_While_Input1_form" method="get" action="" onsubmit="return false;">
             <input type="radio" name="group1" value="a" id="8_1_2_While_Input1_opt_a" />
-            <label for= "8_1_2_While_Input1_opt_a">  a) 1</label><br />
+            <label for= "8_1_2_While_Input1_opt_a">  a) 3</label><br />
             
             <input type="radio" name="group1" value="b" id="8_1_2_While_Input1_opt_b" />
-            <label for= "8_1_2_While_Input1_opt_b">  b) 2</label><br />
+            <label for= "8_1_2_While_Input1_opt_b">  b) 4</label><br />
             
             <input type="radio" name="group1" value="c" id="8_1_2_While_Input1_opt_c" />
-            <label for= "8_1_2_While_Input1_opt_c">  c) 3</label><br />
+            <label for= "8_1_2_While_Input1_opt_c">  c) 5</label><br />
+            
+            <input type="radio" name="group1" value="d" id="8_1_2_While_Input1_opt_d" />
+            <label for= "8_1_2_While_Input1_opt_d">  d) 6</label><br />
             
 
             <script>
             $(document).ready(function(){checkRadio('8_1_2_While_Input1');});
             </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('8_1_2_While_Input1','b',['A loop can have just one statement in the body of the loop, but this one has more than one.', 'There are two statements indented 4 spaces to the right of the \u003Ccode\u003Ewhile\u003C/code\u003E statement, so there are two statements in the body of this loop.', 'Is the \u003Ccode\u003Eprint(message)\u003C/code\u003E line indented 4 spaces to the right of the \u003Ccode\u003Ewhile\u003C/code\u003E? If not it is not part of the body of the loop.'])">Check Me</button>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('8_1_2_While_Input1','b',['All the statements that are indented 4 spaces to the right of the \u003Ccode\u003Ewhile\u003C/code\u003E are part of the body of the loop.', 'There are four statements that are indented 4 spaces to the right of the \u003Ccode\u003Ewhile\u003C/code\u003E statement, so there are four statements in the body of this loop.', 'Is the \u003Ccode\u003Eprint(message)\u003C/code\u003E line indented 4 spaces to the right of the \u003Ccode\u003Ewhile\u003C/code\u003E? If not it is not part of the body of the loop.', 'While line 11 is indented this is just to allow the print statement to take up more than one line.  The print statement is not indented so the body of the loop contains just 4 lines.'])">Check Me</button>
             <button class='btn btn-default' id="8_1_2_While_Input1_bcomp" disabled name="compare" onclick="compareAnswers('8_1_2_While_Input1');">Compare Me</button>
             </form><br />
             <div id="8_1_2_While_Input1_feedback">
+            </div>
+            </div>
+            
+            <div id="8_1_2_While_InputError" class="alert alert-warning">
+            csp-8-1-3: What happens if you enter a negative number as the first input to the code above?<form name="8_1_2_While_InputError_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="8_1_2_While_InputError_opt_a" />
+            <label for= "8_1_2_While_InputError_opt_a">  a) It prints the sum is 0 and the average is 0.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="8_1_2_While_InputError_opt_b" />
+            <label for= "8_1_2_While_InputError_opt_b">  b) It prints a message that it can't divide by 0.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="8_1_2_While_InputError_opt_c" />
+            <label for= "8_1_2_While_InputError_opt_c">  c) There is an error.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('8_1_2_While_InputError');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('8_1_2_While_InputError','c',['Do you see code to do this in the program?', 'This might be nice, but is that what happens?', 'You will get a ZeroDivisionError since you can\u0027t divide by zero.'])">Check Me</button>
+            <button class='btn btn-default' id="8_1_2_While_InputError_bcomp" disabled name="compare" onclick="compareAnswers('8_1_2_While_InputError');">Compare Me</button>
+            </form><br />
+            <div id="8_1_2_While_InputError_feedback">
             </div>
             </div>
             </div>

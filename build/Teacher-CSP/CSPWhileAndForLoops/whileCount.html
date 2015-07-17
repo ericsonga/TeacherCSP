@@ -273,7 +273,10 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Counting with a While Loop</a></li>
+<li><a class="reference internal" href="#">Counting with a While Loop</a><ul>
+<li><a class="reference internal" href="#side-by-side-comparison-of-a-for-loop-and-a-while-loop">Side by Side Comparison of a For Loop and a While Loop</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -320,58 +323,155 @@
   
   <div class="section" id="counting-with-a-while-loop">
 <h1>Counting with a While Loop<a class="headerlink" href="#counting-with-a-while-loop" title="Permalink to this headline">¶</a></h1>
-<p>It&#8217;s easy to have the computer repeat something a specific number of times.  We have done this with a <code class="docutils literal"><span class="pre">for</span></code> loop and a list of numbers or the <code class="docutils literal"><span class="pre">range</span></code> function.  We can also do it with a <code class="docutils literal"><span class="pre">while</span></code> loop.</p>
-<p>For example, we could have a computer count from 1 to 10.  We will use a <code class="docutils literal"><span class="pre">counter</span></code> variable that we will <strong>increment</strong> inside the loop.  <strong>Increment</strong> means increase the value by one.</p>
+<p>It&#8217;s easy to have the computer repeat something a specific number of times.  We have done this with a <code class="docutils literal"><span class="pre">for</span></code> loop and a list of numbers created with the <code class="docutils literal"><span class="pre">range</span></code> function as shown below.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="for_counter"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (for_counter)</span> </p>
+</div>
+<script type="text/javascript">
+var for_counter_trace = {"code": "for counter in range(1,11):\n    print(counter)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 1}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 1}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 2}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 2}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 3}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 3}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 4}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 4}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 5}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 5}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 6}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 6}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 7}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 7}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 8}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 8}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 9}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n9\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 9}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n9\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 10}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 10}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 10}, "heap": {}, "line": 1, "event": "return"}]};
+var for_counter_vis;
+
+$(document).ready(function() {
+    try {
+        for_counter_vis = new ExecutionVisualizer('for_counter',for_counter_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(for_counter_vis,'for_counter');
+        styleButtons('for_counter');
+        allVisualizers.push(for_counter_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component for_counter_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#for_counter_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'for_counter'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    for_counter_vis.redrawConnectors();
+});
+</script>
+<p>We can also do it with a <code class="docutils literal"><span class="pre">while</span></code> loop.</p>
+<p>For example, we could have a computer count up from 1 to 10.  We will use a <code class="docutils literal"><span class="pre">counter</span></code> variable that we will <strong>increment</strong> inside the loop.  <strong>Increment</strong> means increase the value by one.  Note that we continue the loop as long as the <code class="docutils literal"><span class="pre">counter</span></code> is less than the desired last value plus one.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="while_count"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (while_count)</span> </p>
+</div>
+<script type="text/javascript">
+var while_count_trace = {"code": "counter = 1\nwhile counter < 11:\n    print(counter)\n    counter = counter + 1", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 1}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 1}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 1}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 2}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 2}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 2}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 3}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 3}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 3}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 4}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 4}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 4}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 5}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 5}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 5}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 6}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 6}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 6}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 7}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 7}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 7}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 8}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 8}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 8}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 9}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 9}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n9\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 9}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n9\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 10}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n9\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 10}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 10}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 11}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["counter"], "stdout": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n", "func_name": "<module>", "stack_to_render": [], "globals": {"counter": 11}, "heap": {}, "line": 2, "event": "return"}]};
+var while_count_vis;
+
+$(document).ready(function() {
+    try {
+        while_count_vis = new ExecutionVisualizer('while_count',while_count_trace,
+                                    {embeddedMode: true,
+                                    verticalStack: false,
+                                    heightChangeCallback: redrawAllVisualizerArrows,
+                                    codeDivWidth: 500,
+                                    lang : 'py2'
+                                    });
+        attachLoggers(while_count_vis,'while_count');
+        styleButtons('while_count');
+        allVisualizers.push(while_count_vis);
+    } catch (e) {
+        console.log("Failed to Initialize CodeLens component while_count_vis" );
+        console.log(e.toString());
+    }
+
+});
+
+$(document).ready(function() {
+    $("#while_count_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'while_count'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    while_count_vis.redrawConnectors();
+});
+</script>
+<div class="section" id="side-by-side-comparison-of-a-for-loop-and-a-while-loop">
+<h2>Side by Side Comparison of a For Loop and a While Loop<a class="headerlink" href="#side-by-side-comparison-of-a-for-loop-and-a-while-loop" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s look at these loops side by side.  The first line in the <code class="docutils literal"><span class="pre">for</span></code> loop creates the variable <code class="docutils literal"><span class="pre">counter</span></code> and the list of values from 1 to 10.  It then sets <code class="docutils literal"><span class="pre">counter</span></code> equal to 1 and executes the body of the loop.  In the body of the loop it prints the current value of <code class="docutils literal"><span class="pre">counter</span></code> and then changes <code class="docutils literal"><span class="pre">counter</span></code> to the next value in the list.</p>
+<p>The first line of the <code class="docutils literal"><span class="pre">while</span></code> loop creates the variable <code class="docutils literal"><span class="pre">counter</span></code> and sets its value to 1.  The second line tests if the value of <code class="docutils literal"><span class="pre">counter</span></code> is less than 11 and if so it executes the body of the loop.  The body of the loop prints the current value of <code class="docutils literal"><span class="pre">counter</span></code> and then increments the value of <code class="docutils literal"><span class="pre">counter</span></code>.  The loop will stop repeating when <code class="docutils literal"><span class="pre">counter</span></code> is equal to 11.</p>
+<div class="align-center figure" id="id1">
+<img alt="a for loop next to an equivalent while loop" src="../_images/compareWhileAndFor.png" />
+<p class="caption"><span class="caption-text">Figure 1: A for loop and the equivalent while loop</span></p>
+</div>
+<p>Which is the <strong>best</strong> loop to use when you want to execute a loop a known number of times?  Which way uses less code or seems less error prone?  The problem with using a <code class="docutils literal"><span class="pre">while</span></code> loop to repeat code a specific number of times is that you may forget to change the value that you are testing inside the body of the loop and in that case you will have an infinite loop.</p>
+<p>The following code is an attempt to show another way to print the values from 1 to 10.  <strong>However, it currently has an error and is an infinite loop</strong>.  Fix the code below so that it isn&#8217;t an infinite loop.</p>
 
 <div id="cont"></div>
-<div id="while_count" lang="python" time="" class="ac_section alert alert-warning" >
+<div id="while_counter_infinite" lang="python" time="" class="ac_section alert alert-warning" >
 
 <div class="ac_actions">
-<button class='btn btn-success' id="while_count_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="while_count_saveb" onclick="saveEditor('while_count');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="while_count_loadb" onclick="requestCode('while_count');">Load</button>
-<button class='btn btn-default' id="while_count_vizb" onclick="injectCodelens(this,'while_count');">Show in Codelens</button>
+<button class='btn btn-success' id="while_counter_infinite_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="while_counter_infinite_saveb" onclick="saveEditor('while_counter_infinite');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="while_counter_infinite_loadb" onclick="requestCode('while_counter_infinite');">Load</button>
+<button class='btn btn-default' id="while_counter_infinite_vizb" onclick="injectCodelens(this,'while_counter_infinite');">Show in Codelens</button>
 
 </div>
 <br/>
-<div id="while_count_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="while_count_code" class="active_code" prefixcode="undefined" lang="python">
+<div id="while_counter_infinite_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="while_counter_infinite_code" class="active_code" prefixcode="undefined" lang="python">
 counter = 1
 while counter <= 10:
     print(counter)
-    counter = counter + 1
+counter = counter + 1
 </textarea>
 </div>
 
 <div class="ac_output">
 <div style="text-align: center">
-<div id="while_count_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
+<div id="while_counter_infinite_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
 </div>
-<pre id="while_count_suffix" style="display:none">
-</pre><pre id="while_count_pre" class="active_out"></pre>
+<pre id="while_counter_infinite_suffix" style="display:none">
+</pre><pre id="while_counter_infinite_pre" class="active_out"></pre>
 
 </div> <!-- end output --> 
 <div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (while_count)</span> </p>
-<div id="while_count_codelens_div" style="display:none"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (while_counter_infinite)</span> </p>
+<div id="while_counter_infinite_codelens_div" style="display:none"></div>
 <script>
 if ('block' == 'none') {
     // a hack to preserve the inline-block display style. Toggle() will use display: block
     // (instead of inline-block) if the previous display style was 'none'
-    $('#while_count_saveb').toggle();
-    $('#while_count_loadb').toggle();
+    $('#while_counter_infinite_saveb').toggle();
+    $('#while_counter_infinite_loadb').toggle();
 }
-if ($("#while_count").attr("lang") !== "html" && $("#while_count_code_div").parents(".admonition").length == 0 && $("#while_count_code_div").parents("#exercises").length == 0){
+if ($("#while_counter_infinite").attr("lang") !== "html" && $("#while_counter_infinite_code_div").parents(".admonition").length == 0 && $("#while_counter_infinite_code_div").parents("#exercises").length == 0){
     if ($(window).width() > 975){
-        $("#while_count_code_div").offset({
-            left: $("#while_count .clearfix").offset().left
+        $("#while_counter_infinite_code_div").offset({
+            left: $("#while_counter_infinite .clearfix").offset().left
         });
     }
-    $("#while_count_runb").one("click", function(){
+    $("#while_counter_infinite_runb").one("click", function(){
         $({})
         .queue(function (next) {
             if ($(window).width() > 975){
-                $("#while_count_code_div").animate({
+                $("#while_counter_infinite_code_div").animate({
                     left: 40
                 }, 500, next);
                 if (! Sk.TurtleGraphics ) {
@@ -385,20 +485,20 @@ if ($("#while_count").attr("lang") !== "html" && $("#while_count_code_div").pare
             }
         })
         .queue(function (next) {
-            $("#while_count_runb").parent().siblings(".ac_output").show();
-            runit('while_count',this, undefined);
-            $("#while_count_runb").on("click", function(){
-                runit('while_count',this, undefined);
+            $("#while_counter_infinite_runb").parent().siblings(".ac_output").show();
+            runit('while_counter_infinite',this, undefined);
+            $("#while_counter_infinite_runb").on("click", function(){
+                runit('while_counter_infinite',this, undefined);
             });
         })
 
     });
 }
 else{
-    $("#while_count_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#while_count_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#while_count_runb").on("click", function(){
-        runit('while_count',this, undefined);
+    $("#while_counter_infinite_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+    $("#while_counter_infinite_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+    $("#while_counter_infinite_runb").on("click", function(){
+        runit('while_counter_infinite',this, undefined);
     });
 }
 </script>
@@ -406,88 +506,105 @@ else{
 </div>
 
 
-            <div id="8_2_1_While_Counter_Q1" class="alert alert-warning">
-            csp-8-3-1: Why is it important to have <code class="docutils literal"><span class="pre">counter</span> <span class="pre">=</span> <span class="pre">counter</span> <span class="pre">+</span> <span class="pre">1</span></code> inside the loop?<form name="8_2_1_While_Counter_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="8_2_1_While_Counter_Q1_opt_a" />
-            <label for= "8_2_1_While_Counter_Q1_opt_a">  a) It increments the variable counter.</label><br />
+            <div id="8_3_1_While_Counter_Q1" class="alert alert-warning">
+            csp-8-3-1: When the loop in while_counter_infinite has been fixed and has finished repeating, what is the value of counter?<form name="8_3_1_While_Counter_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="8_3_1_While_Counter_Q1_opt_a" />
+            <label for= "8_3_1_While_Counter_Q1_opt_a">  a) 1</label><br />
             
-            <input type="radio" name="group1" value="b" id="8_2_1_While_Counter_Q1_opt_b" />
-            <label for= "8_2_1_While_Counter_Q1_opt_b">  b) Since counter is in the test for the while loop, it has to change or it would be an infinite loop.</label><br />
+            <input type="radio" name="group1" value="b" id="8_3_1_While_Counter_Q1_opt_b" />
+            <label for= "8_3_1_While_Counter_Q1_opt_b">  b) 10</label><br />
             
-
-            <script>
-            $(document).ready(function(){checkRadio('8_2_1_While_Counter_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('8_2_1_While_Counter_Q1','b',['Why is it in the loop?', 'It must change inside the loop for the loop to stop'])">Check Me</button>
-            <button class='btn btn-default' id="8_2_1_While_Counter_Q1_bcomp" disabled name="compare" onclick="compareAnswers('8_2_1_While_Counter_Q1');">Compare Me</button>
-            </form><br />
-            <div id="8_2_1_While_Counter_Q1_feedback">
-            </div>
-            </div>
-            
-            <div id="8_2_2_While_Counter_Q2" class="alert alert-warning">
-            csp-8-3-2: When this program is done, what is the value of counter?<form name="8_2_2_While_Counter_Q2_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="8_2_2_While_Counter_Q2_opt_a" />
-            <label for= "8_2_2_While_Counter_Q2_opt_a">  a) 1</label><br />
-            
-            <input type="radio" name="group1" value="b" id="8_2_2_While_Counter_Q2_opt_b" />
-            <label for= "8_2_2_While_Counter_Q2_opt_b">  b) 10</label><br />
-            
-            <input type="radio" name="group1" value="c" id="8_2_2_While_Counter_Q2_opt_c" />
-            <label for= "8_2_2_While_Counter_Q2_opt_c">  c) 11</label><br />
+            <input type="radio" name="group1" value="c" id="8_3_1_While_Counter_Q1_opt_c" />
+            <label for= "8_3_1_While_Counter_Q1_opt_c">  c) 11</label><br />
             
 
             <script>
-            $(document).ready(function(){checkRadio('8_2_2_While_Counter_Q2');});
+            $(document).ready(function(){checkRadio('8_3_1_While_Counter_Q1');});
             </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('8_2_2_While_Counter_Q2','c',['Counter gets incremented from 1.', 'The last value to be printed is 10.', 'Counter gets incremented to 11 after printing, and then the while loop tests counter, finds counter \u003E 10 and stops.'])">Check Me</button>
-            <button class='btn btn-default' id="8_2_2_While_Counter_Q2_bcomp" disabled name="compare" onclick="compareAnswers('8_2_2_While_Counter_Q2');">Compare Me</button>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('8_3_1_While_Counter_Q1','c',['Counter gets incremented from 1.', 'The last value to be printed is 10.', 'Counter gets incremented to 11 after printing, and then the while loop tests counter, finds counter \u003E 10 and stops.'])">Check Me</button>
+            <button class='btn btn-default' id="8_3_1_While_Counter_Q1_bcomp" disabled name="compare" onclick="compareAnswers('8_3_1_While_Counter_Q1');">Compare Me</button>
             </form><br />
-            <div id="8_2_2_While_Counter_Q2_feedback">
+            <div id="8_3_1_While_Counter_Q1_feedback">
             </div>
             </div>
             
-        <div class='parsons alert alert-warning' id="parsons-56">
+            <div id="8_3_2_NegativeCounter" class="alert alert-warning">
+            <p>csp-8-3-2: What does the following code print?</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">output</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">+</span> <span class="n">str</span><span class="o">(</span><span class="n">x</span><span class="o">)</span> <span class="o">+</span> <span class="s">&quot; &quot;</span>
+<span class="n">print</span><span class="o">(</span><span class="n">output</span><span class="o">)</span>
+</pre></div>
+</td></tr></table></div>
+<form name="8_3_2_NegativeCounter_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="8_3_2_NegativeCounter_opt_a" />
+            <label for= "8_3_2_NegativeCounter_opt_a">  a) 5 4 3 2 1</label><br />
+            
+            <input type="radio" name="group1" value="b" id="8_3_2_NegativeCounter_opt_b" />
+            <label for= "8_3_2_NegativeCounter_opt_b">  b) -5 -4 -3 -2 -1</label><br />
+            
+            <input type="radio" name="group1" value="c" id="8_3_2_NegativeCounter_opt_c" />
+            <label for= "8_3_2_NegativeCounter_opt_c">  c) -4 -3 -2 -1</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('8_3_2_NegativeCounter');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('8_3_2_NegativeCounter','c',['If x starts at \u002D5 how can the first value printed be 5?', 'This would be true if the print statement was before we incremented x.', 'The value of x is incremented before it is printed so the first value printed is \u002D4.'])">Check Me</button>
+            <button class='btn btn-default' id="8_3_2_NegativeCounter_bcomp" disabled name="compare" onclick="compareAnswers('8_3_2_NegativeCounter');">Compare Me</button>
+            </form><br />
+            <div id="8_3_2_NegativeCounter_feedback">
+            </div>
+            </div>
+            
+        <div class='parsons alert alert-warning' id="parsons-98">
         <div class="parsons-text">csp-8-3-3: The following is the correct code for printing a countdown from 10 to 0, but it is mixed up. Drag the blocks from the left and put them in the correct order on the right.  Don't forget to indent blocks in the body of the loop.  Just drag the block to the further right to indent.  Click the <i>Check Me</i> button to check your solution.</p><br /><br /></div>
         <div style="clear:left;"></div>
-        <div id="parsons-orig-56" style="display:none;">counter = 10
+        <div id="parsons-orig-98" style="display:none;">counter = 10
 while counter >= 0:
     print(counter)
     counter = counter - 1</div>
         <div class="sortable-code-container">
-        <div id="parsons-sortableTrash-56" class="sortable-code"></div>
-        <div id="parsons-sortableCode-56" class="sortable-code"></div>
+        <div id="parsons-sortableTrash-98" class="sortable-code"></div>
+        <div id="parsons-sortableCode-98" class="sortable-code"></div>
         <div style="clear:left;"></div>
         </div>
         <div class="parsons-controls">
-        <input type="button" class='btn btn-success' id="checkMe56" value="Check Me"/>
-        <input type="button" class='btn btn-default' id="reset56" value="Reset"/>
-        <div id="parsons-message-56"></div>
+        <input type="button" class='btn btn-success' id="checkMe98" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset98" value="Reset"/>
+        <div id="parsons-message-98"></div>
         </div>
         </div>
 
     <script>
         $pjQ(document).ready(function(){
 
-            $("#parsons-56").not(".sortable-code").not(".parsons-controls").on("click", function(){
+            $("#parsons-98").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
-                    scrollTop: ($("#parsons-56").offset().top - 50)
+                    scrollTop: ($("#parsons-98").offset().top - 50)
                 }, 700);
             }).find(".sortable-code, .parsons-controls").click(function(e) {
                 return false;
                 });
-            var msgBox = $("#parsons-message-56");
+            var msgBox = $("#parsons-message-98");
             msgBox.hide();
         var displayErrors = function (fb) {
             if(fb.errors.length > 0) {
-                    var hash = pp_56.getHash("#ul-parsons-sortableCode-56");
+                    var hash = pp_98.getHash("#ul-parsons-sortableCode-98");
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
-                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'8_2_3_While_Countdown'});
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'8_3_3_While_Countdown'});
 
             } else {
-                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'8_2_3_While_Countdown'});
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'8_3_3_While_Countdown'});
                     msgBox.fadeIn(100);
                     msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
@@ -497,8 +614,8 @@ while counter >= 0:
 
         $(window).load(function() {
             // set min width and height
-            var sortableul = $("#ul-parsons-sortableCode-56");
-            var trashul = $("#ul-parsons-sortableTrash-56");
+            var sortableul = $("#ul-parsons-sortableCode-98");
+            var trashul = $("#ul-parsons-sortableTrash-98");
             var sortableHeight = sortableul.height();
             var sortableWidth = sortableul.width();
             var trashWidth = trashul.width();
@@ -513,35 +630,35 @@ while counter >= 0:
         });
  
 
-        var pp_56 = new ParsonsWidget({
-                'sortableId': 'parsons-sortableCode-56',
-        'trashId': 'parsons-sortableTrash-56',
+        var pp_98 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-98',
+        'trashId': 'parsons-sortableTrash-98',
                 'max_wrong_lines': 1,
                 'solution_label': 'Drop blocks here',
                 'feedback_cb' : displayErrors
         });
-        pp_56.init($pjQ("#parsons-orig-56").text());
-    pp_56.shuffleLines();
+        pp_98.init($pjQ("#parsons-orig-98").text());
+    pp_98.shuffleLines();
             
-        if(localStorage.getItem('8_2_3_While_Countdown') && localStorage.getItem('8_2_3_While_Countdown-trash')) {
+        if(localStorage.getItem('8_3_3_While_Countdown') && localStorage.getItem('8_3_3_While_Countdown-trash')) {
             try {
-                var solution = localStorage.getItem('8_2_3_While_Countdown');
-                var trash = localStorage.getItem('8_2_3_While_Countdown-trash');
-                pp_56.createHTMLFromHashes(solution,trash);
-                pp_56.getFeedback();
+                var solution = localStorage.getItem('8_3_3_While_Countdown');
+                var trash = localStorage.getItem('8_3_3_While_Countdown-trash');
+                pp_98.createHTMLFromHashes(solution,trash);
+                pp_98.getFeedback();
             } catch(err) {
-                var text = "An error occured restoring old 8_2_3_While_Countdown state.  Error: ";
+                var text = "An error occured restoring old 8_3_3_While_Countdown state.  Error: ";
                 console.log(text + err.message);
             }
 
         }
-            $pjQ("#reset56").click(function(event){
+            $pjQ("#reset98").click(function(event){
               event.preventDefault();
-              pp_56.shuffleLines();
+              pp_98.shuffleLines();
             
             // set min width and height
-            var sortableul = $("#ul-parsons-sortableCode-56");
-            var trashul = $("#ul-parsons-sortableTrash-56");
+            var sortableul = $("#ul-parsons-sortableCode-98");
+            var trashul = $("#ul-parsons-sortableTrash-98");
             var sortableHeight = sortableul.height();
             var sortableWidth = sortableul.width();
             var trashWidth = trashul.width();
@@ -555,14 +672,14 @@ while counter >= 0:
               msgBox.hide();
             });
             
-            $pjQ("#checkMe56").click(function(event){
+            $pjQ("#checkMe98").click(function(event){
               event.preventDefault();
-              var hash = pp_56.getHash("#ul-parsons-sortableCode-56");
-              localStorage.setItem('8_2_3_While_Countdown',hash);
-              hash = pp_56.getHash("#ul-parsons-sortableTrash-56");
-              localStorage.setItem('8_2_3_While_Countdown-trash',hash);
+              var hash = pp_98.getHash("#ul-parsons-sortableCode-98");
+              localStorage.setItem('8_3_3_While_Countdown',hash);
+              hash = pp_98.getHash("#ul-parsons-sortableTrash-98");
+              localStorage.setItem('8_3_3_While_Countdown-trash',hash);
             
-            pp_56.getFeedback();
+            pp_98.getFeedback();
             msgBox.fadeIn(100);
             
             });
@@ -573,41 +690,41 @@ while counter >= 0:
     </script>
 
 
-        <div class='parsons alert alert-warning' id="parsons-69">
-        <div class="parsons-text">csp-8-3-4: The following is the correct code for printing the even numbers from 0 to 10, but also some extra code that you won't need. Drag the needed blocks from the left and put them in the correct order on the right.  Don't forget to indent blocks in the body of the loop.  Just drag the block to the further right to indent.  Click the <i>Check Me</i> button to check your solution.</p><br /><br /></div>
+        <div class='parsons alert alert-warning' id="parsons-111">
+        <div class="parsons-text">csp-8-3-4: The following is the correct code for printing the even numbers from 0 to 10, **but it also includes some extra code that you won't need**. Drag the needed blocks from the left and put them in the correct order on the right.  Don't forget to indent blocks in the body of the loop.  Just drag the block to the further right to indent.  Click the <i>Check Me</i> button to check your solution.</p><br /><br /></div>
         <div style="clear:left;"></div>
-        <div id="parsons-orig-69" style="display:none;">counter = 0
+        <div id="parsons-orig-111" style="display:none;">counter = 0
 while counter <= 10:
     print(counter)
     counter = counter + 2
     counter = counter + 1 #distractor</div>
         <div class="sortable-code-container">
-        <div id="parsons-sortableTrash-69" class="sortable-code"></div>
-        <div id="parsons-sortableCode-69" class="sortable-code"></div>
+        <div id="parsons-sortableTrash-111" class="sortable-code"></div>
+        <div id="parsons-sortableCode-111" class="sortable-code"></div>
         <div style="clear:left;"></div>
         </div>
         <div class="parsons-controls">
-        <input type="button" class='btn btn-success' id="checkMe69" value="Check Me"/>
-        <input type="button" class='btn btn-default' id="reset69" value="Reset"/>
-        <div id="parsons-message-69"></div>
+        <input type="button" class='btn btn-success' id="checkMe111" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset111" value="Reset"/>
+        <div id="parsons-message-111"></div>
         </div>
         </div>
 
     <script>
         $pjQ(document).ready(function(){
 
-            $("#parsons-69").not(".sortable-code").not(".parsons-controls").on("click", function(){
+            $("#parsons-111").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
-                    scrollTop: ($("#parsons-69").offset().top - 50)
+                    scrollTop: ($("#parsons-111").offset().top - 50)
                 }, 700);
             }).find(".sortable-code, .parsons-controls").click(function(e) {
                 return false;
                 });
-            var msgBox = $("#parsons-message-69");
+            var msgBox = $("#parsons-message-111");
             msgBox.hide();
         var displayErrors = function (fb) {
             if(fb.errors.length > 0) {
-                    var hash = pp_69.getHash("#ul-parsons-sortableCode-69");
+                    var hash = pp_111.getHash("#ul-parsons-sortableCode-111");
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
@@ -624,8 +741,8 @@ while counter <= 10:
 
         $(window).load(function() {
             // set min width and height
-            var sortableul = $("#ul-parsons-sortableCode-69");
-            var trashul = $("#ul-parsons-sortableTrash-69");
+            var sortableul = $("#ul-parsons-sortableCode-111");
+            var trashul = $("#ul-parsons-sortableTrash-111");
             var sortableHeight = sortableul.height();
             var sortableWidth = sortableul.width();
             var trashWidth = trashul.width();
@@ -640,35 +757,35 @@ while counter <= 10:
         });
  
 
-        var pp_69 = new ParsonsWidget({
-                'sortableId': 'parsons-sortableCode-69',
-        'trashId': 'parsons-sortableTrash-69',
+        var pp_111 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-111',
+        'trashId': 'parsons-sortableTrash-111',
                 'max_wrong_lines': 1,
                 'solution_label': 'Drop blocks here',
                 'feedback_cb' : displayErrors
         });
-        pp_69.init($pjQ("#parsons-orig-69").text());
-    pp_69.shuffleLines();
+        pp_111.init($pjQ("#parsons-orig-111").text());
+    pp_111.shuffleLines();
             
         if(localStorage.getItem('8_2_4_While_Count_Even') && localStorage.getItem('8_2_4_While_Count_Even-trash')) {
             try {
                 var solution = localStorage.getItem('8_2_4_While_Count_Even');
                 var trash = localStorage.getItem('8_2_4_While_Count_Even-trash');
-                pp_69.createHTMLFromHashes(solution,trash);
-                pp_69.getFeedback();
+                pp_111.createHTMLFromHashes(solution,trash);
+                pp_111.getFeedback();
             } catch(err) {
                 var text = "An error occured restoring old 8_2_4_While_Count_Even state.  Error: ";
                 console.log(text + err.message);
             }
 
         }
-            $pjQ("#reset69").click(function(event){
+            $pjQ("#reset111").click(function(event){
               event.preventDefault();
-              pp_69.shuffleLines();
+              pp_111.shuffleLines();
             
             // set min width and height
-            var sortableul = $("#ul-parsons-sortableCode-69");
-            var trashul = $("#ul-parsons-sortableTrash-69");
+            var sortableul = $("#ul-parsons-sortableCode-111");
+            var trashul = $("#ul-parsons-sortableTrash-111");
             var sortableHeight = sortableul.height();
             var sortableWidth = sortableul.width();
             var trashWidth = trashul.width();
@@ -682,14 +799,14 @@ while counter <= 10:
               msgBox.hide();
             });
             
-            $pjQ("#checkMe69").click(function(event){
+            $pjQ("#checkMe111").click(function(event){
               event.preventDefault();
-              var hash = pp_69.getHash("#ul-parsons-sortableCode-69");
+              var hash = pp_111.getHash("#ul-parsons-sortableCode-111");
               localStorage.setItem('8_2_4_While_Count_Even',hash);
-              hash = pp_69.getHash("#ul-parsons-sortableTrash-69");
+              hash = pp_111.getHash("#ul-parsons-sortableTrash-111");
               localStorage.setItem('8_2_4_While_Count_Even-trash',hash);
             
-            pp_69.getFeedback();
+            pp_111.getFeedback();
             msgBox.fadeIn(100);
             
             });
@@ -699,6 +816,7 @@ while counter <= 10:
 
     </script>
 
+</div>
 </div>
 
 

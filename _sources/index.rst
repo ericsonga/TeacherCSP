@@ -100,9 +100,13 @@ Chapter 5: Names for Turtles
    :maxdepth: 2
    
    CSPNameTurtles/names4turtles.rst
+   CSPNameTurtles/FuncAndProc.rst
+   CSPNameTurtles/turtleFAP.rst
+   CSPNameTurtles/multTurtles.rst
    CSPNameTurtles/house.rst
    CSPNameTurtles/changeProg.rst
    CSPNameTurtles/bodySyntonic.rst
+   CSPNameTurtles/ch5_exercises.rst
    CSPNameTurtles/ch5_summary.rst
 
 Chapter 6: Computers can Name Anything
@@ -119,6 +123,7 @@ Chapter 6: Computers can Name Anything
    CSPNameNames/nameSets.rst
    CSPNameNames/imageLib.rst
    CSPNameNames/renameFunctions.rst
+   CSPNameNames/ch6_exercises.rst
    CSPNameNames/ch6_summary.rst
    CSPNameNames/exam5a6.rst
    
@@ -140,6 +145,7 @@ Chapter 7: Computers can Repeat Steps
    CSPRepeatNumbers/range.rst
    CSPRepeatNumbers/accumPattern.rst
    CSPRepeatNumbers/print.rst
+   CSPRepeatNumbers/ch7_exercises.rst
    CSPRepeatNumbers/ch7_summary.rst
    
 Chapter 8: While and For Loops
@@ -148,10 +154,13 @@ Chapter 8: While and For Loops
 .. toctree::
    :maxdepth: 2
    
+   CSPWhileAndForLoops/forAndWhile.rst
    CSPWhileAndForLoops/infinite.rst
    CSPWhileAndForLoops/whileCount.rst
    CSPWhileAndForLoops/while.rst
+   CSPWhileAndForLoops/nestedLoops.rst
    CSPWhileAndForLoops/teacherWhileVSFor.rst
+   CSPWhileAndForLoops/ch8_exercises.rst
    CSPWhileAndForLoops/ch8_summary.rst
    CSPWhileAndForLoops/exam7a8.rst
    

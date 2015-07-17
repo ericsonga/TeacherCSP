@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Chapter 4 - Concept Summary &mdash; Runestone Interactive Overview</title>
+    <title>Chapter 4 - Summary &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -87,7 +87,7 @@
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
     <link rel="next" title="Exam Questions for Chapters 3 and 4" href="exam3a4.html" />
-    <link rel="prev" title="Teacher Note: Why Audio Tours?" href="whyAudio.html" />
+    <link rel="prev" title="Chapter 4 Exercises" href="ch4_exercises.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -101,7 +101,7 @@
   eBookConfig.loginRequired = true;
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
-  eBookConfig.useRunestoneServices = false;
+  eBookConfig.useRunestoneServices = true;
   eBookConfig.python3 = false;
 </script>
 
@@ -273,7 +273,10 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Chapter 4 - Concept Summary</a></li>
+<li><a class="reference internal" href="#">Chapter 4 - Summary</a><ul>
+<li><a class="reference internal" href="#summary-of-string-functions">Summary of String Functions</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -281,8 +284,8 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter -  Teacher Note: Why Audio Tours?" data-toggle="tooltip">
-    <a href="whyAudio.html" >
+  <li id="relations-prev" title="Previous Chapter - Chapter 4 Exercises" data-toggle="tooltip">
+    <a href="ch4_exercises.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -318,31 +321,46 @@
 
 <div class="container" id="main-content">
   
-  <div class="section" id="chapter-4-concept-summary">
-<h1>Chapter 4 - Concept Summary<a class="headerlink" href="#chapter-4-concept-summary" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="chapter-4-summary">
+<h1>Chapter 4 - Summary<a class="headerlink" href="#chapter-4-summary" title="Permalink to this headline">¶</a></h1>
 <p>Chapter 4 included the following concepts from computing.</p>
 <ul class="simple" id="index-0">
 <li><strong>Append</strong> - You can add two strings together using the <code class="docutils literal"><span class="pre">+</span></code> symbol.  This is also called <strong>concatenate</strong>.</li>
+<li><strong>Capitalize</strong> - The capitalize function returns a new string with the first character capitalized.</li>
 <li><strong>Concatenate</strong> - You can use <code class="docutils literal"><span class="pre">+</span></code> to concatenate (append) two strings like this <code class="docutils literal"><span class="pre">string3</span> <span class="pre">=</span> <span class="pre">string1</span> <span class="pre">+</span> <span class="pre">string2</span></code>.  This will create a new string called <code class="docutils literal"><span class="pre">string3</span></code> with all the characters from the first string, <code class="docutils literal"><span class="pre">string1</span></code>, followed by all the characters in the second string, <code class="docutils literal"><span class="pre">string2</span></code>.</li>
-<li><strong>Immutable</strong> - Immutable means that it does not change.  Strings are immutable in Python.  When you do something that appears to change a string, it will actually return a new string.</li>
+<li><strong>Function</strong> - A function returns a value.  Function can take input as well, but don&#8217;t have to.  An example is the string <code class="docutils literal"><span class="pre">lower()</span></code> function that returns a string with all lowercase letters.</li>
+<li><strong>Immutable</strong> - Immutable means that it does not change.  Strings are immutable in Python.  When you call a function that appears to change a string, it will actually return a new string.</li>
+<li><strong>Index</strong> - An index is a number associated with the position of a character in a string.  In Python the first character in a string is at index 0.</li>
 <li><strong>Object</strong> - An object can have behavior (things it can do).  For example a turtle object can go forward a specified amount. Strings and turtles are objects in Python.</li>
-<li><strong>String</strong> - A string is a sequence of characters.  You specify a string as characters inside a pair of single or double quotes.</li>
+<li><strong>String</strong> - A string is a sequence of characters.  You specify a string as characters inside a pair of single, double, or triple quotes.</li>
+<li><strong>Substring</strong> -  A substring is a part of a string.  One substring of &#8220;Hi there&#8221; would be &#8220;Hi&#8221;.</li>
+</ul>
+<div class="section" id="summary-of-string-functions">
+<h2>Summary of String Functions<a class="headerlink" href="#summary-of-string-functions" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">Chapter 4 also included the following string functions.</p>
+<ul class="simple">
+<li><strong>append</strong> - You can add two strings together using the <code class="docutils literal"><span class="pre">+</span></code> symbol.  This is also called <strong>concatenate</strong>.  The result of <code class="docutils literal"><span class="pre">&quot;Happy&quot;</span> <span class="pre">+</span> <span class="pre">&quot;</span> <span class="pre">Birthday&quot;</span></code> is <code class="docutils literal"><span class="pre">&quot;Happy</span> <span class="pre">Birthday&quot;</span></code>.</li>
+<li><strong>find</strong> - The find function takes a string as input and returns the <strong>index</strong> of the first occurence of that string in the string the function is called on. The code <code class="docutils literal"><span class="pre">&quot;goodbye&quot;.find('bye')</span></code> returns 4.</li>
+<li><strong>len</strong> - The len function that can take a string as input and returns the number of characters in the string including any spaces.  For example <code class="docutils literal"><span class="pre">len(&quot;Hi</span> <span class="pre">there&quot;)</span></code> will return 8.</li>
+<li><strong>lower</strong> - The lower string function returns a new string with only lowercase letters. For example <code class="docutils literal"><span class="pre">&quot;ALL</span> <span class="pre">CAPS&quot;.lower()</span></code> returns <code class="docutils literal"><span class="pre">&quot;all</span> <span class="pre">caps&quot;</span></code>.</li>
+<li><strong>slice</strong> - You can get part of a string which is also called a <strong>substring</strong> using [start] or [start:end] which will return a substring of the current string starting at the given start position and if an end position is given ending at the character before the end position.  For example <code class="docutils literal"><span class="pre">&quot;out&quot;[1]</span></code> will return <code class="docutils literal"><span class="pre">&quot;u&quot;</span></code> and <code class="docutils literal"><span class="pre">&quot;otter&quot;[2:5]</span></code> returns <code class="docutils literal"><span class="pre">&quot;ter&quot;</span></code>.</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This is the end of chapter 4.   Readers who are part of the teacher study should go to <a class="reference external" href="https://www.surveymonkey.com/r/ch3a4-feedback">https://www.surveymonkey.com/r/ch3a4-feedback</a> to give us feedback about these chapters and then continue to the next section which is an exam on chapters 3 and 4.  If you are not part of the study you can skip the exam or take it if you wish.  Remember that you can go to the table of contents by clicking on &#8220;Teacher-CSP&#8221; in the upper left corner of this window.</p>
 </div>
 </div>
+</div>
 
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section -  Teacher Note: Why Audio Tours?' data-toggle="tooltip">
-    <a href="whyAudio.html" >
+  <li id="relations-prev" class="navLink" title='Previous Section - Chapter 4 Exercises' data-toggle="tooltip">
+    <a href="ch4_exercises.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
-  <a class="navLinkBg" id="navLinkBgLeft"  href="whyAudio.html" ></a>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="ch4_exercises.html" ></a>
   
   <li id="relations-next" class="navLink" title='Next Section - Exam Questions for Chapters 3 and 4' data-toggle="tooltip" >
     <a href="exam3a4.html" >

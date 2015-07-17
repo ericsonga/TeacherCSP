@@ -10,10 +10,10 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-7-7-
+	:prefix: csp-7-8-
 
 
-Chapter 7 - Concept Summary
+Chapter 7 - Summary
 ============================
 
 Chapter 7 included the following concepts from computing.
@@ -37,4 +37,4 @@ Chapter 7 included the following concepts from computing.
 - **List** - A list holds a sequence of items in order.  An example of a list in Python is ``[1, 2, 3]``.
 - **Loop** - A loop tells the computer to repeat a statement or set of statements. 
 - **Print** - The ``print`` statement in Python will print the value of the items passed to it.  
-- **Range** - The ``range`` function in Python returns a list of consecutive values.  It can take one or two values.  If given one value it returns a list with the numbers from 0 up to and not including the passed number.  If given two numbers it returns a list including the first number and then up to but not including the second number.  For example, ``range(1,4)`` returns the list ``[1, 2, 3]``.
+- **Range** - The ``range`` function in Python returns a list of consecutive values.  If the range function is passed one value it returns a list with the numbers from 0 up to and not including the passed number.  For example, ``range(5)`` returns a list of ``[0,1,2,3,4]``.  If the range function is passed two numbers separated by a comma it returns a list including the first number and then up to but not including the second number.  For example, ``range(1,4)`` returns the list ``[1, 2, 3]``.  If it is passed three values ``range(start,end,step)`` it returns all the numbers from start to one less than end changing by step.  For example, ``range(0,10,2)`` returns ``[0,2,4,6,8]``. 

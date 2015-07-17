@@ -86,8 +86,8 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
-    <link rel="next" title="Teacher Note: for loops are more natural" href="teacherWhileVSFor.html" />
-    <link rel="prev" title="Loops that Count" href="whileCount.html" />
+    <link rel="next" title="Nested For Loops" href="nestedLoops.html" />
+    <link rel="prev" title="Counting with a While Loop" href="whileCount.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -101,7 +101,7 @@
   eBookConfig.loginRequired = true;
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
-  eBookConfig.useRunestoneServices = false;
+  eBookConfig.useRunestoneServices = true;
   eBookConfig.python3 = false;
 </script>
 
@@ -281,14 +281,14 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Loops that Count" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Counting with a While Loop" data-toggle="tooltip">
     <a href="whileCount.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter -  Teacher Note: for loops are more natural' data-toggle="tooltip" >
-    <a href="teacherWhileVSFor.html" >
+  <li id="relations-next" title='Next Chapter - Nested For Loops' data-toggle="tooltip" >
+    <a href="nestedLoops.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -320,7 +320,7 @@
   
   <div class="section" id="looping-when-we-don-t-know-when-we-ll-stop">
 <h1>Looping When We Don&#8217;t Know When We&#8217;ll Stop<a class="headerlink" href="#looping-when-we-don-t-know-when-we-ll-stop" title="Permalink to this headline">¶</a></h1>
-<p>Now, how do we get the computer to do something only so many times, or until something happens that we want to happen?  We have to construct programs so that all the parts together make the logical expression true <em>until</em> we want it to be false.</p>
+<p>While loops are typically used when you don&#8217;t know how many times the loop needs to repeat.  It will repeat as long as a condition is true.</p>
 <p>Let&#8217;s say that we want to find the square root of a number.  For some square roots, you&#8217;re never going to be exact.  Let&#8217;s say that we want to find a square root that, when multiplied by itself, is within <cite>0.01</cite> of the square we want.  How do we do it?  There&#8217;s a really old process that we can apply here.</p>
 <ol class="arabic simple">
 <li>Start by guessing <cite>2</cite>.</li>
@@ -422,7 +422,7 @@ else{
 
 
             <div id="8_3_1_Square_Root_Q1" class="alert alert-warning">
-            csp-8-3-1:  What would happen if we didn&#8217;t compute <code class="docutils literal"><span class="pre">guessSquared</span></code> before the <code class="docutils literal"><span class="pre">while</span></code> loop?<form name="8_3_1_Square_Root_Q1_form" method="get" action="" onsubmit="return false;">
+            csp-8-4-1:  What would happen if we didn&#8217;t compute <code class="docutils literal"><span class="pre">guessSquared</span></code> before the <code class="docutils literal"><span class="pre">while</span></code> loop?<form name="8_3_1_Square_Root_Q1_form" method="get" action="" onsubmit="return false;">
             <input type="radio" name="group1" value="a" id="8_3_1_Square_Root_Q1_opt_a" />
             <label for= "8_3_1_Square_Root_Q1_opt_a">  a) No error, since we compute it inside the loop.</label><br />
             
@@ -468,7 +468,7 @@ else{
 </script>
 
             <div id="8_3_2_Count_Loops_Q1" class="alert alert-warning">
-            csp-8-3-2:  How many times do we execute the body of the loop when <code class="docutils literal"><span class="pre">target</span> <span class="pre">=</span> <span class="pre">6</span></code> (in the video)?<form name="8_3_2_Count_Loops_Q1_form" method="get" action="" onsubmit="return false;">
+            csp-8-4-2:  How many times do we execute the body of the loop when <code class="docutils literal"><span class="pre">target</span> <span class="pre">=</span> <span class="pre">6</span></code> (in the video)?<form name="8_3_2_Count_Loops_Q1_form" method="get" action="" onsubmit="return false;">
             <input type="radio" name="group1" value="a" id="8_3_2_Count_Loops_Q1_opt_a" />
             <label for= "8_3_2_Count_Loops_Q1_opt_a">  a) Just once.</label><br />
             
@@ -497,19 +497,19 @@ else{
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Loops that Count' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Counting with a While Loop' data-toggle="tooltip">
     <a href="whileCount.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="whileCount.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section -  Teacher Note: for loops are more natural' data-toggle="tooltip" >
-    <a href="teacherWhileVSFor.html" >
+  <li id="relations-next" class="navLink" title='Next Section - Nested For Loops' data-toggle="tooltip" >
+    <a href="nestedLoops.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="teacherWhileVSFor.html" >Next Section -  Teacher Note: for loops are more natural</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="nestedLoops.html" >Next Section - Nested For Loops</a>
 
 <script type="text/javascript">
 

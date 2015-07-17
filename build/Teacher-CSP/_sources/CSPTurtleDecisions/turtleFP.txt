@@ -53,6 +53,7 @@ pendown     None          Puts down the turtles tail so that it draws when it mo
 penup       None          Picks up the turtles tail so that it doesn't draw when it moves
 pensize     width         Sets the width of the pen for drawing
 right       angle         Turns the turtle clockwise by the specified angle
+setheading  angle         Turns the turtle to face the given heading.  East is 0, north is 90, west is 180, and south is 270. 
 shape       shapename     Should be 'arrow', 'classic', 'turtle', or 'circle'
 stamp       None          Leaves an impression of a turtle shape at the current location
 Turtle      None          Creates and returns a new turtle object

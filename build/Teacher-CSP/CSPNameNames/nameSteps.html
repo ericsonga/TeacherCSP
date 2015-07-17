@@ -101,7 +101,7 @@
   eBookConfig.loginRequired = true;
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
-  eBookConfig.useRunestoneServices = false;
+  eBookConfig.useRunestoneServices = true;
   eBookConfig.python3 = false;
 </script>
 
@@ -273,7 +273,10 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Naming Sets of Steps</a></li>
+<li><a class="reference internal" href="#">Naming Sets of Steps</a><ul>
+<li><a class="reference internal" href="#defining-a-function">Defining a Function</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -512,6 +515,95 @@ else{
 <p class="first admonition-title">Note</p>
 <p class="last">Notice that we defined the turtle procedure <code class="docutils literal"><span class="pre">def</span> <span class="pre">square</span> <span class="pre">(turtle):</span></code> in the code above before we tried to call it <code class="docutils literal"><span class="pre">square(malik)</span></code>.  This is required in Python, but not in some other programming languages.</p>
 </div>
+<div class="section" id="defining-a-function">
+<h2>Defining a Function<a class="headerlink" href="#defining-a-function" title="Permalink to this headline">¶</a></h2>
+<p>You define a function just like you define a procedure, but it will also <code class="docutils literal"><span class="pre">return</span></code> a value as shown below.</p>
+
+<div id="cont"></div>
+<div id="def_function" lang="python" time="" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="def_function_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="def_function_saveb" onclick="saveEditor('def_function');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="def_function_loadb" onclick="requestCode('def_function');">Load</button>
+
+</div>
+<br/>
+<div id="def_function_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="def_function_code" class="active_code" prefixcode="undefined" lang="python">
+def bmi(height, weight):
+    heightSquared = height * height
+    BMI = weight / heightSquared
+    BMImetric = BMI * 703
+    return BMImetric
+
+print(bmi(60,110))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<div id="def_function_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
+</div>
+<pre id="def_function_suffix" style="display:none">
+</pre><pre id="def_function_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (def_function)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#def_function_saveb').toggle();
+    $('#def_function_loadb').toggle();
+}
+if ($("#def_function").attr("lang") !== "html" && $("#def_function_code_div").parents(".admonition").length == 0 && $("#def_function_code_div").parents("#exercises").length == 0){
+    if ($(window).width() > 975){
+        $("#def_function_code_div").offset({
+            left: $("#def_function .clearfix").offset().left
+        });
+    }
+    $("#def_function_runb").one("click", function(){
+        $({})
+        .queue(function (next) {
+            if ($(window).width() > 975){
+                $("#def_function_code_div").animate({
+                    left: 40
+                }, 500, next);
+                if (! Sk.TurtleGraphics ) {
+                    Sk.TurtleGraphics = {};
+                }
+                Sk.TurtleGraphics.height = 320;
+                Sk.TurtleGraphics.width = 320;
+            }
+            else{
+                next();
+            }
+        })
+        .queue(function (next) {
+            $("#def_function_runb").parent().siblings(".ac_output").show();
+            runit('def_function',this, undefined);
+            $("#def_function_runb").on("click", function(){
+                runit('def_function',this, undefined);
+            });
+        })
+
+    });
+}
+else{
+    $("#def_function_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+    $("#def_function_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+    $("#def_function_runb").on("click", function(){
+        runit('def_function',this, undefined);
+    });
+}
+</script>
+
+</div>
+
+<p><strong>Check Your Understanding</strong></p>
 
             <div id="6_3_1_Functions_Q2" class="alert alert-warning">
             csp-6-3-1: Is <code class="docutils literal"><span class="pre">abs</span></code> a procedure or a function?<form name="6_3_1_Functions_Q2_form" method="get" action="" onsubmit="return false;">
@@ -575,39 +667,39 @@ else{
    });
 </script>
 
-        <div class='parsons alert alert-warning' id="parsons-102">
-        <div class="parsons-text">csp-6-3-3: The following code should define a procedure that draws a triangle, but it may be mixed up *and may contain extra (unused) code*.  Drag the needed code to the right side in the correct order.  <b>Remember that the statements in the procedure must be indented!</b>  To indent a block drag it further right.<br /><br /></div>
+        <div class='parsons alert alert-warning' id="parsons-120">
+        <div class="parsons-text">csp-6-3-3: The following code should define a procedure that draws a triangle, but it may be mixed up <i>and may contain extra (unused) code</i>.  Drag the needed code to the right side in the correct order.  <b>Remember that the statements in the procedure must be indented!</b>  To indent a block drag it further right.<br /><br /></div>
         <div style="clear:left;"></div>
-        <div id="parsons-orig-102" style="display:none;">def triangle(turtle):
+        <div id="parsons-orig-120" style="display:none;">def triangle(turtle):
     turtle.left(60)\nturtle.forward(100)\nturtle.right(120)\nturtle.forward(100)\nturtle.right(120)\nturtle.forward(100)\nturtle.right(120)
     endDef #distractor</div>
         <div class="sortable-code-container">
-        <div id="parsons-sortableTrash-102" class="sortable-code"></div>
-        <div id="parsons-sortableCode-102" class="sortable-code"></div>
+        <div id="parsons-sortableTrash-120" class="sortable-code"></div>
+        <div id="parsons-sortableCode-120" class="sortable-code"></div>
         <div style="clear:left;"></div>
         </div>
         <div class="parsons-controls">
-        <input type="button" class='btn btn-success' id="checkMe102" value="Check Me"/>
-        <input type="button" class='btn btn-default' id="reset102" value="Reset"/>
-        <div id="parsons-message-102"></div>
+        <input type="button" class='btn btn-success' id="checkMe120" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset120" value="Reset"/>
+        <div id="parsons-message-120"></div>
         </div>
         </div>
 
     <script>
         $pjQ(document).ready(function(){
 
-            $("#parsons-102").not(".sortable-code").not(".parsons-controls").on("click", function(){
+            $("#parsons-120").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
-                    scrollTop: ($("#parsons-102").offset().top - 50)
+                    scrollTop: ($("#parsons-120").offset().top - 50)
                 }, 700);
             }).find(".sortable-code, .parsons-controls").click(function(e) {
                 return false;
                 });
-            var msgBox = $("#parsons-message-102");
+            var msgBox = $("#parsons-message-120");
             msgBox.hide();
         var displayErrors = function (fb) {
             if(fb.errors.length > 0) {
-                    var hash = pp_102.getHash("#ul-parsons-sortableCode-102");
+                    var hash = pp_120.getHash("#ul-parsons-sortableCode-120");
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
@@ -624,8 +716,8 @@ else{
 
         $(window).load(function() {
             // set min width and height
-            var sortableul = $("#ul-parsons-sortableCode-102");
-            var trashul = $("#ul-parsons-sortableTrash-102");
+            var sortableul = $("#ul-parsons-sortableCode-120");
+            var trashul = $("#ul-parsons-sortableTrash-120");
             var sortableHeight = sortableul.height();
             var sortableWidth = sortableul.width();
             var trashWidth = trashul.width();
@@ -640,35 +732,35 @@ else{
         });
  
 
-        var pp_102 = new ParsonsWidget({
-                'sortableId': 'parsons-sortableCode-102',
-        'trashId': 'parsons-sortableTrash-102',
+        var pp_120 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-120',
+        'trashId': 'parsons-sortableTrash-120',
                 'max_wrong_lines': 1,
                 'solution_label': 'Drop blocks here',
                 'feedback_cb' : displayErrors
         });
-        pp_102.init($pjQ("#parsons-orig-102").text());
-    pp_102.shuffleLines();
+        pp_120.init($pjQ("#parsons-orig-120").text());
+    pp_120.shuffleLines();
             
         if(localStorage.getItem('6_3_3_Triangle_Procedure') && localStorage.getItem('6_3_3_Triangle_Procedure-trash')) {
             try {
                 var solution = localStorage.getItem('6_3_3_Triangle_Procedure');
                 var trash = localStorage.getItem('6_3_3_Triangle_Procedure-trash');
-                pp_102.createHTMLFromHashes(solution,trash);
-                pp_102.getFeedback();
+                pp_120.createHTMLFromHashes(solution,trash);
+                pp_120.getFeedback();
             } catch(err) {
                 var text = "An error occured restoring old 6_3_3_Triangle_Procedure state.  Error: ";
                 console.log(text + err.message);
             }
 
         }
-            $pjQ("#reset102").click(function(event){
+            $pjQ("#reset120").click(function(event){
               event.preventDefault();
-              pp_102.shuffleLines();
+              pp_120.shuffleLines();
             
             // set min width and height
-            var sortableul = $("#ul-parsons-sortableCode-102");
-            var trashul = $("#ul-parsons-sortableTrash-102");
+            var sortableul = $("#ul-parsons-sortableCode-120");
+            var trashul = $("#ul-parsons-sortableTrash-120");
             var sortableHeight = sortableul.height();
             var sortableWidth = sortableul.width();
             var trashWidth = trashul.width();
@@ -682,14 +774,14 @@ else{
               msgBox.hide();
             });
             
-            $pjQ("#checkMe102").click(function(event){
+            $pjQ("#checkMe120").click(function(event){
               event.preventDefault();
-              var hash = pp_102.getHash("#ul-parsons-sortableCode-102");
+              var hash = pp_120.getHash("#ul-parsons-sortableCode-120");
               localStorage.setItem('6_3_3_Triangle_Procedure',hash);
-              hash = pp_102.getHash("#ul-parsons-sortableTrash-102");
+              hash = pp_120.getHash("#ul-parsons-sortableTrash-120");
               localStorage.setItem('6_3_3_Triangle_Procedure-trash',hash);
             
-            pp_102.getFeedback();
+            pp_120.getFeedback();
             msgBox.fadeIn(100);
             
             });
@@ -699,6 +791,7 @@ else{
 
     </script>
 
+</div>
 </div>
 
 

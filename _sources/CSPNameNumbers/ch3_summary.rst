@@ -13,7 +13,7 @@
 	:prefix: csp-3-12-
 
 
-Chapter 3 - Concept Summary
+Chapter 3 - Summary
 ============================
 
 Chapter 3 included the following concepts from computing.

@@ -101,7 +101,7 @@
   eBookConfig.loginRequired = true;
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
-  eBookConfig.useRunestoneServices = false;
+  eBookConfig.useRunestoneServices = true;
   eBookConfig.python3 = false;
 </script>
 
@@ -331,9 +331,9 @@
 <p id="index-0">Turtles can do more than go forward, turn left, and turn right.  The table below lists turtle functions and procedures.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="12%" />
-<col width="12%" />
-<col width="76%" />
+<col width="8%" />
+<col width="8%" />
+<col width="83%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Name</th>
@@ -378,23 +378,27 @@
 <td>angle</td>
 <td>Turns the turtle clockwise by the specified angle</td>
 </tr>
-<tr class="row-odd"><td>shape</td>
+<tr class="row-odd"><td>setheading</td>
+<td>angle</td>
+<td>Turns the turtle to face the given heading.  East is 0, north is 90, west is 180, and south is 270.</td>
+</tr>
+<tr class="row-even"><td>shape</td>
 <td>shapename</td>
 <td>Should be &#8216;arrow&#8217;, &#8216;classic&#8217;, &#8216;turtle&#8217;, or &#8216;circle&#8217;</td>
 </tr>
-<tr class="row-even"><td>stamp</td>
+<tr class="row-odd"><td>stamp</td>
 <td>None</td>
 <td>Leaves an impression of a turtle shape at the current location</td>
 </tr>
-<tr class="row-odd"><td>Turtle</td>
+<tr class="row-even"><td>Turtle</td>
 <td>None</td>
 <td>Creates and returns a new turtle object</td>
 </tr>
-<tr class="row-even"><td>xcor</td>
+<tr class="row-odd"><td>xcor</td>
 <td>None</td>
 <td>Returns the x value of the turtle&#8217;s position</td>
 </tr>
-<tr class="row-odd"><td>ycor</td>
+<tr class="row-even"><td>ycor</td>
 <td>None</td>
 <td>Returns the y values of the turtle&#8217;s position</td>
 </tr>

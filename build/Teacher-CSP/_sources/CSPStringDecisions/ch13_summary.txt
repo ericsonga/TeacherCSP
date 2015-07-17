@@ -13,7 +13,7 @@
 	:prefix: csp-13-5-
 
 
-Chapter 13 - Concept Summary
+Chapter 13 - Summary
 ============================
 
 Chapter 13 included the following concepts from computing.

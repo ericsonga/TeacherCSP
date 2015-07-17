@@ -13,7 +13,7 @@
 	:prefix: csp-9-4-
 
 
-Chapter 9 - Concept Summary
+Chapter 9 - Summary
 ============================
 
 Chapter 9 included the following concepts from computing.

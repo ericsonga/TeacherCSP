@@ -38,20 +38,23 @@ Assign a Name to a String
 	single: string
 	pair: strings; assignment
 	single: function
+	single: concatenate
+	single: append
 
 *Learning Objectives:*
 
-- Create a variable that can store text (a string)
-- Introduce the ``input`` function and the concept of a function.  
+- Create a variable that can store text (a string) 
 - Add (append or concatenate) strings together to create new strings
+- Introduce the ``input`` function and the concept of a function. 
 - Convert a number into a string to concatenate it to another string
-- Use dot-notation to invoke functions on objects
+- Use dot-notation to invoke functions on string objects
+- Introduce some string functions like ``lower``, ``capitalize``, ``len``, and ``find``.
 - Show that strings are immutable (don't change)
 
 Concatenating (Appending) Strings 
 -----------------------------------
 
-Computers can use names to represent *anything*.  In the last chapter we saw that we can name numbers (declare a variable and set its value to a number) and then do calculations using the names for the numbers.  We can also name **strings** and do calculations with their names, too.  A **string** is a sequence of characters enclosed in a pair of single or double quotes like ``'Hi'`` or ``"How are you?"``.  What does it mean to do a calculation on a string?  Well, Python uses the ``+`` symbol to concatenate strings as shown below.
+Computers can use names to represent *anything*.  In the last chapter we saw that we can name numbers (declare a variable and set its value to a number) and then do calculations using the names for the numbers.  We can also name **strings** and do calculations with their names, too.  A **string** is a sequence of characters enclosed in a pair of single, double, or triple quotes like ``'Hi'``, ``"How are you?"``, or ``'''Why can't you do that?'''``.  What does it mean to do a calculation on a string?  Well, Python uses the ``+`` symbol to **concatenate** strings as shown below.  **Concatenate** means to create a new string with all the characters in the first string followed by all of the characters in the second string.  This is also called **appending** strings together.  
 
 .. activecode:: String_Assign
    :tour_1: "Line-by-line Tour"; 1: sa1-line1; 2: sa1-line2; 3: sa1-line3; 4: sa1-line4; 
@@ -83,7 +86,7 @@ Try to run the example below.  It should give you errors.  Can you fix the error
    print(fullName)
    
 .. note::
-   A string is a sequence of characters enclosed in a pair of single or double quotes.  If you start a string with a single quote you must end it with a single quote.  If you start a string with a double quote you must end it with a double quote.  You must use the ``+`` operator to append strings together.
+   A string is a sequence of characters enclosed in a pair of single, double, or triple quotes.  If you start a string with a single quote you must end it with a single quote.  If you start a string with a double quote you must end it with a double quote.  You must use the ``+`` operator to append strings together.
    
 We can use the ``input`` **function** in Python to get your first and last name and then print your full name.  A **function** can take input and returns some value.  
    

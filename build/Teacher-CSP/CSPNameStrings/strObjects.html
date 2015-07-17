@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Strings are Objects &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/livecode.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
+    <link rel="next" title="Strings are Immutable" href="immutable.html" />
+    <link rel="prev" title="Assign a Name to a String" href="assignNameStr.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'Teacher-CSP';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = true;
+  eBookConfig.python3 = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">Teacher-CSP</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/initiateGroup' id="joinGroupLink">Join a Study Group</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/schedule' id="groupScheduleLink">Group Schedule</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/newschedule' id="newChapterLink">Schedule New Chapter</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/manageGroup' id="manageGroupLink">Manage Group</a></li>
+			<li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/assignments/index'>Progress Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/Teacher-CSP/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Strings are Objects</a><ul>
+<li><a class="reference internal" href="#getting-part-of-a-string">Getting Part of a String</a></li>
+<li><a class="reference internal" href="#some-other-string-functions">Some Other String Functions</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Assign a Name to a String" data-toggle="tooltip">
+    <a href="assignNameStr.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Strings are Immutable' data-toggle="tooltip" >
+    <a href="immutable.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="strings-are-objects">
+<h1>Strings are Objects<a class="headerlink" href="#strings-are-objects" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">Strings are objects in Python which means that there is a set of built-in functions that you can use to manipulate strings.  You use <strong>dot-notation</strong> to invoke the functions on a string object such as <code class="docutils literal"><span class="pre">sentence.lower()</span></code>.  The function <code class="docutils literal"><span class="pre">lower()</span></code> returns a new string with all of the characters in the original string set to lowercase.  The function <code class="docutils literal"><span class="pre">capitalize()</span></code> will return a new string with the first letter of the string capitalized.</p>
+
+<div id="cont"></div>
+<div id="String_Methods2" lang="python" time="" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="String_Methods2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Methods2_saveb" onclick="saveEditor('String_Methods2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Methods2_loadb" onclick="requestCode('String_Methods2');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('String_Methods2','sentence = *doubleq*THIS IS A TEST*doubleq**nline*better = sentence.lower*open**close**nline*print*open*better*close**nline*betterStill = better.capitalize*open**close* + *doubleq*.*doubleq**nline*print*open*betterStill*close*','1','*doubleq*Line-by-line Tour*doubleq*; 1: str2-line1; 2: str2-line2; 3: str2-line3; 4: str2-line4; 5: str2-line5;*atype*')"/>
+
+</div>
+<br/>
+<div id="String_Methods2_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="String_Methods2_code" class="active_code" prefixcode="undefined" lang="python">
+sentence = "THIS IS A TEST"
+better = sentence.lower()
+print(better)
+betterStill = better.capitalize() + "."
+print(betterStill)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<div id="String_Methods2_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
+</div>
+<pre id="String_Methods2_suffix" style="display:none">
+</pre><pre id="String_Methods2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (String_Methods2)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#String_Methods2_saveb').toggle();
+    $('#String_Methods2_loadb').toggle();
+}
+if ($("#String_Methods2").attr("lang") !== "html" && $("#String_Methods2_code_div").parents(".admonition").length == 0 && $("#String_Methods2_code_div").parents("#exercises").length == 0){
+    if ($(window).width() > 975){
+        $("#String_Methods2_code_div").offset({
+            left: $("#String_Methods2 .clearfix").offset().left
+        });
+    }
+    $("#String_Methods2_runb").one("click", function(){
+        $({})
+        .queue(function (next) {
+            if ($(window).width() > 975){
+                $("#String_Methods2_code_div").animate({
+                    left: 40
+                }, 500, next);
+                if (! Sk.TurtleGraphics ) {
+                    Sk.TurtleGraphics = {};
+                }
+                Sk.TurtleGraphics.height = 320;
+                Sk.TurtleGraphics.width = 320;
+            }
+            else{
+                next();
+            }
+        })
+        .queue(function (next) {
+            $("#String_Methods2_runb").parent().siblings(".ac_output").show();
+            runit('String_Methods2',this, undefined);
+            $("#String_Methods2_runb").on("click", function(){
+                runit('String_Methods2',this, undefined);
+            });
+        })
+
+    });
+}
+else{
+    $("#String_Methods2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+    $("#String_Methods2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+    $("#String_Methods2_runb").on("click", function(){
+        runit('String_Methods2',this, undefined);
+    });
+}
+</script>
+
+</div>
+
+<div class="section" id="getting-part-of-a-string">
+<h2>Getting Part of a String<a class="headerlink" href="#getting-part-of-a-string" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">A string has characters in a sequence.  Each character is at a position or <strong>index</strong> which starts with 0 as shown below.  An <strong>index</strong> is a number associated with a position in a collection of values like a string.</p>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../_images/stringIndicies.png"><img alt="a string with the position (index) shown above each character" src="../_images/stringIndicies.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: A string with the position (index) shown above each character</span></p>
+</div>
+<p>A slice with one value returns a new string with just the character at that position in the string.</p>
+
+<div id="cont"></div>
+<div id="String_Slice1" lang="python" time="" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="String_Slice1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Slice1_saveb" onclick="saveEditor('String_Slice1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Slice1_loadb" onclick="requestCode('String_Slice1');">Load</button>
+
+</div>
+<br/>
+<div id="String_Slice1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="String_Slice1_code" class="active_code" prefixcode="undefined" lang="python">
+sentence = "This is a test"
+s1 = sentence[1]
+print(s1)
+s2 = sentence[5]
+print(s2)
+s3 = sentence[8]
+print(s3)
+s4 = sentence[10]
+print(s4)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<div id="String_Slice1_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
+</div>
+<pre id="String_Slice1_suffix" style="display:none">
+</pre><pre id="String_Slice1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (String_Slice1)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#String_Slice1_saveb').toggle();
+    $('#String_Slice1_loadb').toggle();
+}
+if ($("#String_Slice1").attr("lang") !== "html" && $("#String_Slice1_code_div").parents(".admonition").length == 0 && $("#String_Slice1_code_div").parents("#exercises").length == 0){
+    if ($(window).width() > 975){
+        $("#String_Slice1_code_div").offset({
+            left: $("#String_Slice1 .clearfix").offset().left
+        });
+    }
+    $("#String_Slice1_runb").one("click", function(){
+        $({})
+        .queue(function (next) {
+            if ($(window).width() > 975){
+                $("#String_Slice1_code_div").animate({
+                    left: 40
+                }, 500, next);
+                if (! Sk.TurtleGraphics ) {
+                    Sk.TurtleGraphics = {};
+                }
+                Sk.TurtleGraphics.height = 320;
+                Sk.TurtleGraphics.width = 320;
+            }
+            else{
+                next();
+            }
+        })
+        .queue(function (next) {
+            $("#String_Slice1_runb").parent().siblings(".ac_output").show();
+            runit('String_Slice1',this, undefined);
+            $("#String_Slice1_runb").on("click", function(){
+                runit('String_Slice1',this, undefined);
+            });
+        })
+
+    });
+}
+else{
+    $("#String_Slice1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+    $("#String_Slice1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+    $("#String_Slice1_runb").on("click", function(){
+        runit('String_Slice1',this, undefined);
+    });
+}
+</script>
+
+</div>
+
+<div class="align-center figure" id="id2">
+<a class="reference internal image-reference" href="../_images/stringIndicies.png"><img alt="a string with the position (index) shown above each character" src="../_images/stringIndicies.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Figure 2: A string with the position (index) shown above each character</span></p>
+</div>
+<p>A slice with two values specified with a <code class="docutils literal"><span class="pre">:</span></code> between them returns a new string with the characters from the given start position to the one before the given end position.</p>
+
+<div id="cont"></div>
+<div id="String_Slice2" lang="python" time="" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="String_Slice2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Slice2_saveb" onclick="saveEditor('String_Slice2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Slice2_loadb" onclick="requestCode('String_Slice2');">Load</button>
+
+</div>
+<br/>
+<div id="String_Slice2_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="String_Slice2_code" class="active_code" prefixcode="undefined" lang="python">
+sentence = "This is a test"
+s1 = sentence[1:3]
+print(s1)
+s2 = sentence[5:7]
+print(s2)
+s3 = sentence[8:11]
+print(s3)
+s4 = sentence[10:14]
+print(s4)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<div id="String_Slice2_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
+</div>
+<pre id="String_Slice2_suffix" style="display:none">
+</pre><pre id="String_Slice2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (String_Slice2)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#String_Slice2_saveb').toggle();
+    $('#String_Slice2_loadb').toggle();
+}
+if ($("#String_Slice2").attr("lang") !== "html" && $("#String_Slice2_code_div").parents(".admonition").length == 0 && $("#String_Slice2_code_div").parents("#exercises").length == 0){
+    if ($(window).width() > 975){
+        $("#String_Slice2_code_div").offset({
+            left: $("#String_Slice2 .clearfix").offset().left
+        });
+    }
+    $("#String_Slice2_runb").one("click", function(){
+        $({})
+        .queue(function (next) {
+            if ($(window).width() > 975){
+                $("#String_Slice2_code_div").animate({
+                    left: 40
+                }, 500, next);
+                if (! Sk.TurtleGraphics ) {
+                    Sk.TurtleGraphics = {};
+                }
+                Sk.TurtleGraphics.height = 320;
+                Sk.TurtleGraphics.width = 320;
+            }
+            else{
+                next();
+            }
+        })
+        .queue(function (next) {
+            $("#String_Slice2_runb").parent().siblings(".ac_output").show();
+            runit('String_Slice2',this, undefined);
+            $("#String_Slice2_runb").on("click", function(){
+                runit('String_Slice2',this, undefined);
+            });
+        })
+
+    });
+}
+else{
+    $("#String_Slice2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+    $("#String_Slice2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+    $("#String_Slice2_runb").on("click", function(){
+        runit('String_Slice2',this, undefined);
+    });
+}
+</script>
+
+</div>
+
+<p><strong>Check Your Understanding</strong></p>
+
+            <div id="4_2_1_Slice" class="alert alert-warning">
+            <p>csp-4-2-1: What will be printed when the following executes?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">str</span> <span class="o">=</span> <span class="s">&quot;This is the end&quot;</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="4_2_1_Slice_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="4_2_1_Slice_opt_a" />
+            <label for= "4_2_1_Slice_opt_a">  a) This is the end</label><br />
+            
+            <input type="radio" name="group1" value="b" id="4_2_1_Slice_opt_b" />
+            <label for= "4_2_1_Slice_opt_b">  b) This</label><br />
+            
+            <input type="radio" name="group1" value="c" id="4_2_1_Slice_opt_c" />
+            <label for= "4_2_1_Slice_opt_c">  c) his</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('4_2_1_Slice');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('4_2_1_Slice','c',['This would be true if we were printing the value of str and we hand\u0027t changed it on line 2.', 'This would be true if the first position was 1 and the substring included the character at the end position, but the first character in a string is at position 0 and the substring won\u0027t include the character at the last position.', 'This will return a string that starts at position 1 and ends at position 3.'])">Check Me</button>
+            <button class='btn btn-default' id="4_2_1_Slice_bcomp" disabled name="compare" onclick="compareAnswers('4_2_1_Slice');">Compare Me</button>
+            </form><br />
+            <div id="4_2_1_Slice_feedback">
+            </div>
+            </div>
+            
+            <div id="4_2_2_Slice2" class="alert alert-warning">
+            <p>csp-4-2-2: What will be printed when the following executes?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">str</span> <span class="o">=</span> <span class="s">&quot;This is the end&quot;</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="4_2_2_Slice2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="4_2_2_Slice2_opt_a" />
+            <label for= "4_2_2_Slice2_opt_a">  a) i</label><br />
+            
+            <input type="radio" name="group1" value="b" id="4_2_2_Slice2_opt_b" />
+            <label for= "4_2_2_Slice2_opt_b">  b) s</label><br />
+            
+            <input type="radio" name="group1" value="c" id="4_2_2_Slice2_opt_c" />
+            <label for= "4_2_2_Slice2_opt_c">  c) is the end</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('4_2_2_Slice2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('4_2_2_Slice2','a',['This will print the character at position 5 in the string which is i.  Remember that the first character is at position 0.', 'This would be true if the first character was at position 1 instead of 0.', 'This would be true if it returned from the given position to the end of the string, but that isn\u0027t what it does.'])">Check Me</button>
+            <button class='btn btn-default' id="4_2_2_Slice2_bcomp" disabled name="compare" onclick="compareAnswers('4_2_2_Slice2');">Compare Me</button>
+            </form><br />
+            <div id="4_2_2_Slice2_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="some-other-string-functions">
+<h2>Some Other String Functions<a class="headerlink" href="#some-other-string-functions" title="Permalink to this headline">¶</a></h2>
+<p id="index-2">The <code class="docutils literal"><span class="pre">len(string)</span></code> function takes a string as input and returns the number of characters in the string including spaces.</p>
+
+<div id="cont"></div>
+<div id="String_Length" lang="python" time="" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="String_Length_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Length_saveb" onclick="saveEditor('String_Length');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Length_loadb" onclick="requestCode('String_Length');">Load</button>
+
+</div>
+<br/>
+<div id="String_Length_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="String_Length_code" class="active_code" prefixcode="undefined" lang="python">
+sentence = "This is a test"
+length = len(sentence)
+print(length)
+sentence = "Hi"
+length = len(sentence)
+print(length)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<div id="String_Length_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
+</div>
+<pre id="String_Length_suffix" style="display:none">
+</pre><pre id="String_Length_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (String_Length)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#String_Length_saveb').toggle();
+    $('#String_Length_loadb').toggle();
+}
+if ($("#String_Length").attr("lang") !== "html" && $("#String_Length_code_div").parents(".admonition").length == 0 && $("#String_Length_code_div").parents("#exercises").length == 0){
+    if ($(window).width() > 975){
+        $("#String_Length_code_div").offset({
+            left: $("#String_Length .clearfix").offset().left
+        });
+    }
+    $("#String_Length_runb").one("click", function(){
+        $({})
+        .queue(function (next) {
+            if ($(window).width() > 975){
+                $("#String_Length_code_div").animate({
+                    left: 40
+                }, 500, next);
+                if (! Sk.TurtleGraphics ) {
+                    Sk.TurtleGraphics = {};
+                }
+                Sk.TurtleGraphics.height = 320;
+                Sk.TurtleGraphics.width = 320;
+            }
+            else{
+                next();
+            }
+        })
+        .queue(function (next) {
+            $("#String_Length_runb").parent().siblings(".ac_output").show();
+            runit('String_Length',this, undefined);
+            $("#String_Length_runb").on("click", function(){
+                runit('String_Length',this, undefined);
+            });
+        })
+
+    });
+}
+else{
+    $("#String_Length_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+    $("#String_Length_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+    $("#String_Length_runb").on("click", function(){
+        runit('String_Length',this, undefined);
+    });
+}
+</script>
+
+</div>
+
+<p id="index-3">The <code class="docutils literal"><span class="pre">find(string)</span></code> function takes a string as input and returns the index where that string is found in the current string. If the string isn&#8217;t found it returns -1.</p>
+
+<div id="cont"></div>
+<div id="String_Find" lang="python" time="" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="String_Find_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Find_saveb" onclick="saveEditor('String_Find');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Find_loadb" onclick="requestCode('String_Find');">Load</button>
+
+</div>
+<br/>
+<div id="String_Find_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="String_Find_code" class="active_code" prefixcode="undefined" lang="python">
+sentence = "This is a test"
+pos = sentence.find("is")
+print(pos)
+pos = sentence.find("love")
+print(pos)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<div id="String_Find_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
+</div>
+<pre id="String_Find_suffix" style="display:none">
+</pre><pre id="String_Find_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (String_Find)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#String_Find_saveb').toggle();
+    $('#String_Find_loadb').toggle();
+}
+if ($("#String_Find").attr("lang") !== "html" && $("#String_Find_code_div").parents(".admonition").length == 0 && $("#String_Find_code_div").parents("#exercises").length == 0){
+    if ($(window).width() > 975){
+        $("#String_Find_code_div").offset({
+            left: $("#String_Find .clearfix").offset().left
+        });
+    }
+    $("#String_Find_runb").one("click", function(){
+        $({})
+        .queue(function (next) {
+            if ($(window).width() > 975){
+                $("#String_Find_code_div").animate({
+                    left: 40
+                }, 500, next);
+                if (! Sk.TurtleGraphics ) {
+                    Sk.TurtleGraphics = {};
+                }
+                Sk.TurtleGraphics.height = 320;
+                Sk.TurtleGraphics.width = 320;
+            }
+            else{
+                next();
+            }
+        })
+        .queue(function (next) {
+            $("#String_Find_runb").parent().siblings(".ac_output").show();
+            runit('String_Find',this, undefined);
+            $("#String_Find_runb").on("click", function(){
+                runit('String_Find',this, undefined);
+            });
+        })
+
+    });
+}
+else{
+    $("#String_Find_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+    $("#String_Find_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+    $("#String_Find_runb").on("click", function(){
+        runit('String_Find',this, undefined);
+    });
+}
+</script>
+
+</div>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The <code class="docutils literal"><span class="pre">find</span></code> function will return the first position it finds the given string in.  Notice that above it printed 2 which means it found the &#8220;is&#8221; in &#8220;This&#8221; first.</p>
+<p class="last"><strong>Check your understanding</strong></p>
+</div>
+
+            <div id="4_2_3_stringLen" class="alert alert-warning">
+            <p>csp-4-2-3: Given the following code segment, what will be printed?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">street</span> <span class="o">=</span> <span class="s">&quot;125 Main Street&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">street</span><span class="p">))</span>
+</pre></div>
+</div>
+<form name="4_2_3_stringLen_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="4_2_3_stringLen_opt_a" />
+            <label for= "4_2_3_stringLen_opt_a">  a) 13</label><br />
+            
+            <input type="radio" name="group1" value="b" id="4_2_3_stringLen_opt_b" />
+            <label for= "4_2_3_stringLen_opt_b">  b) 15</label><br />
+            
+            <input type="radio" name="group1" value="c" id="4_2_3_stringLen_opt_c" />
+            <label for= "4_2_3_stringLen_opt_c">  c) 10</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('4_2_3_stringLen');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('4_2_3_stringLen','b',['Don\u0027t forget to include the spaces in the count.', 'The len function returns the number of elements in the string including spaces.', 'This would be true if the len function only returned the number of alphabetic characters, but it includes all including spaces.'])">Check Me</button>
+            <button class='btn btn-default' id="4_2_3_stringLen_bcomp" disabled name="compare" onclick="compareAnswers('4_2_3_stringLen');">Compare Me</button>
+            </form><br />
+            <div id="4_2_3_stringLen_feedback">
+            </div>
+            </div>
+            
+            <div id="4_2_4_Find" class="alert alert-warning">
+            <p>csp-4-2-4: What will be printed when the following executes?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nb">str</span> <span class="o">=</span> <span class="s">&quot;His shirt is red&quot;</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;is&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="4_2_4_Find_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="4_2_4_Find_opt_a" />
+            <label for= "4_2_4_Find_opt_a">  a) 1</label><br />
+            
+            <input type="radio" name="group1" value="b" id="4_2_4_Find_opt_b" />
+            <label for= "4_2_4_Find_opt_b">  b) 9</label><br />
+            
+            <input type="radio" name="group1" value="c" id="4_2_4_Find_opt_c" />
+            <label for= "4_2_4_Find_opt_c">  c) 10</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('4_2_4_Find');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('4_2_4_Find','a',['The find function returns the index of the first position that contains the given string.', 'This would be true if it was pos \u003D str.find(\u0022 is\u0022).', 'This would be true if it was pos \u003D str.find(\u0022 is\u0022) and the first position was 1, but it is 0.'])">Check Me</button>
+            <button class='btn btn-default' id="4_2_4_Find_bcomp" disabled name="compare" onclick="compareAnswers('4_2_4_Find');">Compare Me</button>
+            </form><br />
+            <div id="4_2_4_Find_feedback">
+            </div>
+            </div>
+            </div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - Assign a Name to a String' data-toggle="tooltip">
+    <a href="assignNameStr.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="assignNameStr.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Strings are Immutable' data-toggle="tooltip" >
+    <a href="immutable.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="immutable.html" >Next Section - Strings are Immutable</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 barb.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

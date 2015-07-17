@@ -192,7 +192,8 @@ The inputs that are specified in a function or procedure definition are also cal
    -----
    from turtle import *    
    =====
-   space = Screen()    		
+   space = Screen() 
+   =====   		
    imani = Turtle()   		
    =====
    square(imani, 75)

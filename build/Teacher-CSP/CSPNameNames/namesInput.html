@@ -101,7 +101,7 @@
   eBookConfig.loginRequired = true;
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
-  eBookConfig.useRunestoneServices = false;
+  eBookConfig.useRunestoneServices = true;
   eBookConfig.python3 = false;
 </script>
 
@@ -772,7 +772,8 @@ square(imani, 25)      # draw a square with size 25
         <div class="parsons-text">csp-6-4-4: The following code assumes that a procedure square has been defined that takes a size.  The code should create a turtle and then use it to draw a square, move forward, and draw a second square as shown at left, <img src="../_static/SquareForwardSquare.png" width="150" align="left" hspace="10" vspace="5"/> but the lines are mixed up.  Drag the lines into the correct order on the right.<br /><br /></div>
         <div style="clear:left;"></div>
         <div id="parsons-orig-189" style="display:none;">from turtle import *
-space = Screen()\nimani = Turtle()
+space = Screen()
+imani = Turtle()
 square(imani, 75)
 imani.forward(100)
 square(imani, 50)</div>

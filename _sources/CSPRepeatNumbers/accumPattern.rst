@@ -50,29 +50,16 @@ What is the sum of all the numbers between 0 and 100?  We can answer that easily
     	sum = sum + number
     # STEP 5: PROCESS RESULT
     print(sum)
-    
-.. parsonsprob:: 7_5_1_Sum_100
 
-   The following is the correct code for printing the sum of all the odd numbers from 1 to 100 using the accumulator pattern, but it is mixed up. Drag the blocks from the left and put them in the correct order on the right.  <b>Remember that the statements in the body of a loop must be indented!</b>  To indent a block drag it further right. Click the <i>Check Me</i> button to check your solution.</p>
-   -----
-   sum = 0  
-   =====
-   numbers = range(1,100,2)
-   =====
-   for number in numbers:
-   =====
-       sum = sum + number
-   =====
-   print(sum)
-
-The `range` function has one more version that we can use here.  By providing *three* input numbers, we can specify the *start* value, the *ending* value (which is one more than the *last* value), and the *step* -- how much to skip *between* numbers.
+The ``range`` function has one more version that we can use here.  By providing *three* input numbers, we can specify the *start* value, the *ending* value (which is one more than the *last* value), and the *step* -- how much to change *between* numbers.
 
 .. activecode:: Range_Examples
 
-  print range(10)
-  print range(1,11)
+  print range(1,11,1)
   print range(0,11,2)
   print range(1,11,3)
+  print range(5,50,5)
+  print range(10,1,-1)
 
 Now let's answer a slightly harder question: What is the sum of all the *even* numbers between 0 and 100?  It's easy with our pattern.
   
@@ -90,7 +77,7 @@ Now let's answer a slightly harder question: What is the sum of all the *even* n
     # STEP 5: PROCESS RESULT
     print(sum)
 
-.. mchoicemf:: 7_5_2_Numbers_Even_Q1
+.. mchoicemf:: 7_5_1_Numbers_Even_Q1
    :answer_a: Because we started at 0
    :answer_b: Because we want to include 100
    :answer_c: Because the computer only understands 1s and 0s
@@ -103,7 +90,7 @@ Now let's answer a slightly harder question: What is the sum of all the *even* n
 
    Why do we stop at 101 in the above program?
 
-.. mchoicemf:: 7_5_3_Numbers_Even_Q2
+.. mchoicemf:: 7_5_2_Numbers_Even_Q2
    :answer_a: Because if we started with 1, we would get all odd numbers
    :answer_b: Because all lists start with zero
    :answer_c: Because we end with 101
@@ -128,6 +115,20 @@ How do we know what's really going on in this program?  How do we know that *num
     	sum = sum + number
     # STEP 5: PROCESS RESULT
     print(sum)
+    
+.. parsonsprob:: 7_5_3_Sum_100
+
+   The following is the correct code for printing the sum of all the odd numbers from 1 to 100 using the accumulator pattern, but it is mixed up. Drag the blocks from the left and put them in the correct order on the right.  <b>Remember that the statements in the body of a loop must be indented!</b>  To indent a block drag it further right. Click the <i>Check Me</i> button to check your solution.</p>
+   -----
+   sum = 0  
+   =====
+   numbers = range(1,101,2)
+   =====
+   for number in numbers:
+   =====
+       sum = sum + number
+   =====
+   print(sum)
 
 .. mchoicemf:: 7_5_4_Numbers_Add_Odds_Q1
    :answer_a: Changed the range step from 2 to 3

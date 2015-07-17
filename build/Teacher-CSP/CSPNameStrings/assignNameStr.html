@@ -86,8 +86,8 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
-    <link rel="next" title="Making a MadLib story" href="madlib.html" />
-    <link rel="prev" title="Chapter 3 - Concept Summary" href="../CSPNameNumbers/ch3_summary.html" />
+    <link rel="next" title="Strings are Objects" href="strObjects.html" />
+    <link rel="prev" title="Chapter 3 - Summary" href="../CSPNameNumbers/ch3_summary.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -101,7 +101,7 @@
   eBookConfig.loginRequired = true;
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
-  eBookConfig.useRunestoneServices = false;
+  eBookConfig.useRunestoneServices = true;
   eBookConfig.python3 = false;
 </script>
 
@@ -274,9 +274,8 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Assign a Name to a String</a><ul>
+<li><a class="reference internal" href="#concatenating-appending-strings">Concatenating (Appending) Strings</a></li>
 <li><a class="reference internal" href="#concatenating-strings-and-numbers">Concatenating Strings and Numbers</a></li>
-<li><a class="reference internal" href="#strings-are-objects">Strings are Objects</a></li>
-<li><a class="reference internal" href="#strings-are-immutable">Strings are Immutable</a></li>
 </ul>
 </li>
 </ul>
@@ -286,14 +285,14 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Chapter 3 - Concept Summary" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Chapter 3 - Summary" data-toggle="tooltip">
     <a href="../CSPNameNumbers/ch3_summary.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Making a MadLib story' data-toggle="tooltip" >
-    <a href="madlib.html" >
+  <li id="relations-next" title='Next Chapter - Strings are Objects' data-toggle="tooltip" >
+    <a href="strObjects.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -329,11 +328,15 @@
 <ul class="simple">
 <li>Create a variable that can store text (a string)</li>
 <li>Add (append or concatenate) strings together to create new strings</li>
+<li>Introduce the <code class="docutils literal"><span class="pre">input</span></code> function and the concept of a function.</li>
 <li>Convert a number into a string to concatenate it to another string</li>
-<li>Use dot-notation to invoke functions on objects</li>
+<li>Use dot-notation to invoke functions on string objects</li>
+<li>Introduce some string functions like <code class="docutils literal"><span class="pre">lower</span></code>, <code class="docutils literal"><span class="pre">capitalize</span></code>, <code class="docutils literal"><span class="pre">len</span></code>, and <code class="docutils literal"><span class="pre">find</span></code>.</li>
 <li>Show that strings are immutable (don&#8217;t change)</li>
 </ul>
-<p>Computers can use names to represent <em>anything</em>.  In the last chapter we saw that we can name numbers (declare a variable and set its value to a number) and then do calculations using the names for the numbers.  We can also name strings and do calculations with their names, too.  What does it mean to do a calculation on a string?  Well, Python uses the <code class="docutils literal"><span class="pre">+</span></code> symbol to concatenate strings as shown below.</p>
+<div class="section" id="concatenating-appending-strings">
+<h2>Concatenating (Appending) Strings<a class="headerlink" href="#concatenating-appending-strings" title="Permalink to this headline">¶</a></h2>
+<p>Computers can use names to represent <em>anything</em>.  In the last chapter we saw that we can name numbers (declare a variable and set its value to a number) and then do calculations using the names for the numbers.  We can also name <strong>strings</strong> and do calculations with their names, too.  A <strong>string</strong> is a sequence of characters enclosed in a pair of single, double, or triple quotes like <code class="docutils literal"><span class="pre">'Hi'</span></code>, <code class="docutils literal"><span class="pre">&quot;How</span> <span class="pre">are</span> <span class="pre">you?&quot;</span></code>, or <code class="docutils literal"><span class="pre">'''Why</span> <span class="pre">can't</span> <span class="pre">you</span> <span class="pre">do</span> <span class="pre">that?'''</span></code>.  What does it mean to do a calculation on a string?  Well, Python uses the <code class="docutils literal"><span class="pre">+</span></code> symbol to <strong>concatenate</strong> strings as shown below.  <strong>Concatenate</strong> means to create a new string with all the characters in the first string followed by all of the characters in the second string.  This is also called <strong>appending</strong> strings together.</p>
 
 <div id="cont"></div>
 <div id="String_Assign" lang="python" time="" class="ac_section alert alert-warning" >
@@ -420,9 +423,266 @@ else{
 
 </div>
 
+<p>Now try running this slightly different example.</p>
+
+<div id="cont"></div>
+<div id="String_Assign2" lang="python" time="" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="String_Assign2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Assign2_saveb" onclick="saveEditor('String_Assign2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Assign2_loadb" onclick="requestCode('String_Assign2');">Load</button>
+<button class='btn btn-default' id="String_Assign2_vizb" onclick="injectCodelens(this,'String_Assign2');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="String_Assign2_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="String_Assign2_code" class="active_code" prefixcode="undefined" lang="python">
+first = 'Jorge'
+last = "Garcia"
+fullName = first + last
+print(fullName)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<div id="String_Assign2_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
+</div>
+<pre id="String_Assign2_suffix" style="display:none">
+</pre><pre id="String_Assign2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (String_Assign2)</span> </p>
+<div id="String_Assign2_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#String_Assign2_saveb').toggle();
+    $('#String_Assign2_loadb').toggle();
+}
+if ($("#String_Assign2").attr("lang") !== "html" && $("#String_Assign2_code_div").parents(".admonition").length == 0 && $("#String_Assign2_code_div").parents("#exercises").length == 0){
+    if ($(window).width() > 975){
+        $("#String_Assign2_code_div").offset({
+            left: $("#String_Assign2 .clearfix").offset().left
+        });
+    }
+    $("#String_Assign2_runb").one("click", function(){
+        $({})
+        .queue(function (next) {
+            if ($(window).width() > 975){
+                $("#String_Assign2_code_div").animate({
+                    left: 40
+                }, 500, next);
+                if (! Sk.TurtleGraphics ) {
+                    Sk.TurtleGraphics = {};
+                }
+                Sk.TurtleGraphics.height = 320;
+                Sk.TurtleGraphics.width = 320;
+            }
+            else{
+                next();
+            }
+        })
+        .queue(function (next) {
+            $("#String_Assign2_runb").parent().siblings(".ac_output").show();
+            runit('String_Assign2',this, undefined);
+            $("#String_Assign2_runb").on("click", function(){
+                runit('String_Assign2',this, undefined);
+            });
+        })
+
+    });
+}
+else{
+    $("#String_Assign2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+    $("#String_Assign2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+    $("#String_Assign2_runb").on("click", function(){
+        runit('String_Assign2',this, undefined);
+    });
+}
+</script>
+
+</div>
+
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Blank spaces are not automatically added when you append two strings.  If you want a blank space in between two strings then put it there explicitly using a string with just a space in it <code class="docutils literal"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code> as shown above.</p>
+<p class="last">Blank spaces are not automatically added when you append two strings.  If you want a blank space in between two strings then put it there explicitly using a string with just a space in it <code class="docutils literal"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code> as shown in ActiveCode1.</p>
+</div>
+<p>Try to run the example below.  It should give you errors.  Can you fix the errors?</p>
+
+<div id="cont"></div>
+<div id="String_Assign3" lang="python" time="" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="String_Assign3_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Assign3_saveb" onclick="saveEditor('String_Assign3');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Assign3_loadb" onclick="requestCode('String_Assign3');">Load</button>
+<button class='btn btn-default' id="String_Assign3_vizb" onclick="injectCodelens(this,'String_Assign3');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="String_Assign3_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="String_Assign3_code" class="active_code" prefixcode="undefined" lang="python">
+first = 'Jorge"
+last = 'Garcia"
+fullName = first " " last
+print(fullName)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<div id="String_Assign3_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
+</div>
+<pre id="String_Assign3_suffix" style="display:none">
+</pre><pre id="String_Assign3_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (String_Assign3)</span> </p>
+<div id="String_Assign3_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#String_Assign3_saveb').toggle();
+    $('#String_Assign3_loadb').toggle();
+}
+if ($("#String_Assign3").attr("lang") !== "html" && $("#String_Assign3_code_div").parents(".admonition").length == 0 && $("#String_Assign3_code_div").parents("#exercises").length == 0){
+    if ($(window).width() > 975){
+        $("#String_Assign3_code_div").offset({
+            left: $("#String_Assign3 .clearfix").offset().left
+        });
+    }
+    $("#String_Assign3_runb").one("click", function(){
+        $({})
+        .queue(function (next) {
+            if ($(window).width() > 975){
+                $("#String_Assign3_code_div").animate({
+                    left: 40
+                }, 500, next);
+                if (! Sk.TurtleGraphics ) {
+                    Sk.TurtleGraphics = {};
+                }
+                Sk.TurtleGraphics.height = 320;
+                Sk.TurtleGraphics.width = 320;
+            }
+            else{
+                next();
+            }
+        })
+        .queue(function (next) {
+            $("#String_Assign3_runb").parent().siblings(".ac_output").show();
+            runit('String_Assign3',this, undefined);
+            $("#String_Assign3_runb").on("click", function(){
+                runit('String_Assign3',this, undefined);
+            });
+        })
+
+    });
+}
+else{
+    $("#String_Assign3_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+    $("#String_Assign3_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+    $("#String_Assign3_runb").on("click", function(){
+        runit('String_Assign3',this, undefined);
+    });
+}
+</script>
+
+</div>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A string is a sequence of characters enclosed in a pair of single, double, or triple quotes.  If you start a string with a single quote you must end it with a single quote.  If you start a string with a double quote you must end it with a double quote.  You must use the <code class="docutils literal"><span class="pre">+</span></code> operator to append strings together.</p>
+</div>
+<p>We can use the <code class="docutils literal"><span class="pre">input</span></code> <strong>function</strong> in Python to get your first and last name and then print your full name.  A <strong>function</strong> can take input and returns some value.</p>
+
+<div id="cont"></div>
+<div id="String_Input" lang="python" time="" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="String_Input_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Input_saveb" onclick="saveEditor('String_Input');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Input_loadb" onclick="requestCode('String_Input');">Load</button>
+<button class='btn btn-default' id="String_Input_vizb" onclick="injectCodelens(this,'String_Input');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="String_Input_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="String_Input_code" class="active_code" prefixcode="undefined" lang="python">
+first = input("What is your first name?")
+last = input("What is your last name?")
+fullName = first + " " + last
+print("Your full name is " + fullName)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<div id="String_Input_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
+</div>
+<pre id="String_Input_suffix" style="display:none">
+</pre><pre id="String_Input_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (String_Input)</span> </p>
+<div id="String_Input_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#String_Input_saveb').toggle();
+    $('#String_Input_loadb').toggle();
+}
+if ($("#String_Input").attr("lang") !== "html" && $("#String_Input_code_div").parents(".admonition").length == 0 && $("#String_Input_code_div").parents("#exercises").length == 0){
+    if ($(window).width() > 975){
+        $("#String_Input_code_div").offset({
+            left: $("#String_Input .clearfix").offset().left
+        });
+    }
+    $("#String_Input_runb").one("click", function(){
+        $({})
+        .queue(function (next) {
+            if ($(window).width() > 975){
+                $("#String_Input_code_div").animate({
+                    left: 40
+                }, 500, next);
+                if (! Sk.TurtleGraphics ) {
+                    Sk.TurtleGraphics = {};
+                }
+                Sk.TurtleGraphics.height = 320;
+                Sk.TurtleGraphics.width = 320;
+            }
+            else{
+                next();
+            }
+        })
+        .queue(function (next) {
+            $("#String_Input_runb").parent().siblings(".ac_output").show();
+            runit('String_Input',this, undefined);
+            $("#String_Input_runb").on("click", function(){
+                runit('String_Input',this, undefined);
+            });
+        })
+
+    });
+}
+else{
+    $("#String_Input_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+    $("#String_Input_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+    $("#String_Input_runb").on("click", function(){
+        runit('String_Input',this, undefined);
+    });
+}
+</script>
+
+</div>
+
 </div>
 <div class="section" id="concatenating-strings-and-numbers">
 <h2>Concatenating Strings and Numbers<a class="headerlink" href="#concatenating-strings-and-numbers" title="Permalink to this headline">¶</a></h2>
@@ -606,335 +866,60 @@ else{
 
 </div>
 
-</div>
-<div class="section" id="strings-are-objects">
-<h2>Strings are Objects<a class="headerlink" href="#strings-are-objects" title="Permalink to this headline">¶</a></h2>
-<p id="index-1">Strings are objects in Python which means that there is a set of built-in functions that you can use to manipulate strings.  You use <strong>dot-notation</strong> to invoke the functions on a string object such as <code class="docutils literal"><span class="pre">sentence.lower()</span></code>.  The function <code class="docutils literal"><span class="pre">lower()</span></code> returns a new string with all of the characters in the original string set to lowercase.  The function <code class="docutils literal"><span class="pre">capitalize()</span></code> will capitalize the first letter of the string.</p>
+<p><strong>Check your understanding</strong></p>
 
-<div id="cont"></div>
-<div id="String_Methods2" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="String_Methods2_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Methods2_saveb" onclick="saveEditor('String_Methods2');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Methods2_loadb" onclick="requestCode('String_Methods2');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('String_Methods2','sentence = *doubleq*THIS IS A TEST*doubleq**nline*better = sentence.lower*open**close**nline*print*open*better*close**nline*betterStill = better.capitalize*open**close* + *doubleq*.*doubleq**nline*print*open*betterStill*close*','1','*doubleq*Line-by-line Tour*doubleq*; 1: str2-line1; 2: str2-line2; 3: str2-line3; 4: str2-line4; 5: str2-line5;*atype*')"/>
-
-</div>
-<br/>
-<div id="String_Methods2_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="String_Methods2_code" class="active_code" prefixcode="undefined" lang="python">
-sentence = "THIS IS A TEST"
-better = sentence.lower()
-print(better)
-betterStill = better.capitalize() + "."
-print(betterStill)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="String_Methods2_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="String_Methods2_suffix" style="display:none">
-</pre><pre id="String_Methods2_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (String_Methods2)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#String_Methods2_saveb').toggle();
-    $('#String_Methods2_loadb').toggle();
-}
-if ($("#String_Methods2").attr("lang") !== "html" && $("#String_Methods2_code_div").parents(".admonition").length == 0 && $("#String_Methods2_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#String_Methods2_code_div").offset({
-            left: $("#String_Methods2 .clearfix").offset().left
-        });
-    }
-    $("#String_Methods2_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#String_Methods2_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#String_Methods2_runb").parent().siblings(".ac_output").show();
-            runit('String_Methods2',this, undefined);
-            $("#String_Methods2_runb").on("click", function(){
-                runit('String_Methods2',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#String_Methods2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#String_Methods2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#String_Methods2_runb").on("click", function(){
-        runit('String_Methods2',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div>
-<div class="section" id="strings-are-immutable">
-<h2>Strings are Immutable<a class="headerlink" href="#strings-are-immutable" title="Permalink to this headline">¶</a></h2>
-<p id="index-2">Even though you can manipulate a string to create a new string the original string is <strong>immutable</strong> which means that it doesn&#8217;t change.  Notice that after you execute the code below the string stored in the variable <code class="docutils literal"><span class="pre">sentence</span></code> hasn&#8217;t changed.</p>
-
-<div id="cont"></div>
-<div id="String_Immutable" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="String_Immutable_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Immutable_saveb" onclick="saveEditor('String_Immutable');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Immutable_loadb" onclick="requestCode('String_Immutable');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('String_Immutable','sentence = *doubleq*THIS IS A TEST*doubleq**nline*better = sentence.lower*open**close**nline*print*open*better*close**nline*betterStill = better.capitalize*open**close* + *doubleq*.*doubleq**nline*print*open*betterStill*close**nline*print*open*sentence*close*','1','*doubleq*Line-by-line Tour*doubleq*; 1: str2-line1; 2: str2-line2; 3: str2-line3; 4: str2-line4; 5: str2-line5; 6: str2-line6;*atype*')"/>
-<button class='btn btn-default' id="String_Immutable_vizb" onclick="injectCodelens(this,'String_Immutable');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="String_Immutable_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="String_Immutable_code" class="active_code" prefixcode="undefined" lang="python">
-sentence = "THIS IS A TEST"
-better = sentence.lower()
-print(better)
-betterStill = better.capitalize() + "."
-print(betterStill)
-print(sentence)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="String_Immutable_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="String_Immutable_suffix" style="display:none">
-</pre><pre id="String_Immutable_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (String_Immutable)</span> </p>
-<div id="String_Immutable_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#String_Immutable_saveb').toggle();
-    $('#String_Immutable_loadb').toggle();
-}
-if ($("#String_Immutable").attr("lang") !== "html" && $("#String_Immutable_code_div").parents(".admonition").length == 0 && $("#String_Immutable_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#String_Immutable_code_div").offset({
-            left: $("#String_Immutable .clearfix").offset().left
-        });
-    }
-    $("#String_Immutable_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#String_Immutable_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#String_Immutable_runb").parent().siblings(".ac_output").show();
-            runit('String_Immutable',this, undefined);
-            $("#String_Immutable_runb").on("click", function(){
-                runit('String_Immutable',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#String_Immutable_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#String_Immutable_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#String_Immutable_runb").on("click", function(){
-        runit('String_Immutable',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-<p>While the strings themselves can&#8217;t be changed you can change the value of a variable. This throws away the original string and sets the variable&#8217;s value to the new string.</p>
-
-<div id="cont"></div>
-<div id="String_Reassign" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="String_Reassign_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Reassign_saveb" onclick="saveEditor('String_Reassign');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Reassign_loadb" onclick="requestCode('String_Reassign');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('String_Reassign','sentence = *doubleq*THIS IS A TEST*doubleq**nline*print*open*sentence*close**nline*sentence = *doubleq*Hi there*doubleq**nline*print*open*sentence*close*','1','*doubleq*Line-by-line Tour*doubleq*; 1: sa2-line1; 2: sa2-line3; 3: sa2-line2; 4: sa2-line3;*atype*')"/>
-<button class='btn btn-default' id="String_Reassign_vizb" onclick="injectCodelens(this,'String_Reassign');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="String_Reassign_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="String_Reassign_code" class="active_code" prefixcode="undefined" lang="python">
-sentence = "THIS IS A TEST"
-print(sentence)
-sentence = "Hi there"
-print(sentence)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="String_Reassign_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="String_Reassign_suffix" style="display:none">
-</pre><pre id="String_Reassign_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (String_Reassign)</span> </p>
-<div id="String_Reassign_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#String_Reassign_saveb').toggle();
-    $('#String_Reassign_loadb').toggle();
-}
-if ($("#String_Reassign").attr("lang") !== "html" && $("#String_Reassign_code_div").parents(".admonition").length == 0 && $("#String_Reassign_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#String_Reassign_code_div").offset({
-            left: $("#String_Reassign .clearfix").offset().left
-        });
-    }
-    $("#String_Reassign_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#String_Reassign_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#String_Reassign_runb").parent().siblings(".ac_output").show();
-            runit('String_Reassign',this, undefined);
-            $("#String_Reassign_runb").on("click", function(){
-                runit('String_Reassign',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#String_Reassign_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#String_Reassign_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#String_Reassign_runb").on("click", function(){
-        runit('String_Reassign',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="4_1_1_s1" class="alert alert-warning">
-            <p>csp-4-1-1: Given the following code segment, what is the value of the string s1 after these are executed?</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">s1</span> <span class="o">=</span> <span class="s">&quot;xy&quot;</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span>
-<span class="n">s1</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span> <span class="o">+</span> <span class="s">&quot;z&quot;</span>
+            <div id="4_1_1_stringVsValue" class="alert alert-warning">
+            <p>csp-4-1-1: Given the following code segment, what will be printed?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">street</span> <span class="o">=</span> <span class="s">&quot;125 Main Street&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;The address is &quot;</span> <span class="o">+</span> <span class="s">&quot;street&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<form name="4_1_1_s1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="4_1_1_s1_opt_a" />
-            <label for= "4_1_1_s1_opt_a">  a) xyz</label><br />
+<form name="4_1_1_stringVsValue_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="4_1_1_stringVsValue_opt_a" />
+            <label for= "4_1_1_stringVsValue_opt_a">  a) The address is street</label><br />
             
-            <input type="radio" name="group1" value="b" id="4_1_1_s1_opt_b" />
-            <label for= "4_1_1_s1_opt_b">  b) xyxyz</label><br />
+            <input type="radio" name="group1" value="b" id="4_1_1_stringVsValue_opt_b" />
+            <label for= "4_1_1_stringVsValue_opt_b">  b) The address is 125 Main Street</label><br />
             
-            <input type="radio" name="group1" value="c" id="4_1_1_s1_opt_c" />
-            <label for= "4_1_1_s1_opt_c">  c) xy xy z</label><br />
-            
-            <input type="radio" name="group1" value="d" id="4_1_1_s1_opt_d" />
-            <label for= "4_1_1_s1_opt_d">  d) xy z</label><br />
-            
-            <input type="radio" name="group1" value="e" id="4_1_1_s1_opt_e" />
-            <label for= "4_1_1_s1_opt_e">  e) z</label><br />
+            <input type="radio" name="group1" value="c" id="4_1_1_stringVsValue_opt_c" />
+            <label for= "4_1_1_stringVsValue_opt_c">  c) It won't execute</label><br />
             
 
             <script>
-            $(document).ready(function(){checkRadio('4_1_1_s1');});
+            $(document).ready(function(){checkRadio('4_1_1_stringVsValue');});
             </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('4_1_1_s1','b',['s1 will equal \u0022xy\u0022 plus another \u0022xy\u0022 then z at the end.', 's1 contains the original value, plus itself, plus \u0022z\u0022', 'No spaces are added during concatenation.', 'No spaces are added during concatenation, and an additional \u0022xy\u0022 should be included at the beginning.', 's1 was set to \u0022xy\u0022 initially, so the final answer will be \u0022xyxyz\u0022'])">Check Me</button>
-            <button class='btn btn-default' id="4_1_1_s1_bcomp" disabled name="compare" onclick="compareAnswers('4_1_1_s1');">Compare Me</button>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('4_1_1_stringVsValue','a',['Since street is in double quotes it will print the string street rather than the value of the variable street.', 'This would be true if it was print(\u0022The address is \u0022 + street)', 'While this isn\u0027t printing what we probably want it to, it will print something.'])">Check Me</button>
+            <button class='btn btn-default' id="4_1_1_stringVsValue_bcomp" disabled name="compare" onclick="compareAnswers('4_1_1_stringVsValue');">Compare Me</button>
             </form><br />
-            <div id="4_1_1_s1_feedback">
+            <div id="4_1_1_stringVsValue_feedback">
             </div>
             </div>
             
-            <div id="4_1_2_s2" class="alert alert-warning">
-            <p>csp-4-1-2: What is the value of s1 after the following code executes?</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">s1</span> <span class="o">=</span> <span class="s">&quot;HEY&quot;</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-<span class="n">s3</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+            <div id="4_1_2_noSpace" class="alert alert-warning">
+            <p>csp-4-1-2: What will be printed when the following executes?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">street</span> <span class="o">=</span> <span class="s">&quot;125 Main Street&quot;</span>
+<span class="n">cityState</span> <span class="o">=</span> <span class="s">&quot;Atlanta, GA&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">street</span> <span class="o">+</span> <span class="s">&quot;,&quot;</span> <span class="o">+</span> <span class="n">cityState</span><span class="p">)</span>
 </pre></div>
 </div>
-<form name="4_1_2_s2_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="4_1_2_s2_opt_a" />
-            <label for= "4_1_2_s2_opt_a">  a) Hey</label><br />
+<form name="4_1_2_noSpace_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="4_1_2_noSpace_opt_a" />
+            <label for= "4_1_2_noSpace_opt_a">  a) 125 Main Street, Atlanta, GA</label><br />
             
-            <input type="radio" name="group1" value="b" id="4_1_2_s2_opt_b" />
-            <label for= "4_1_2_s2_opt_b">  b) hey</label><br />
+            <input type="radio" name="group1" value="b" id="4_1_2_noSpace_opt_b" />
+            <label for= "4_1_2_noSpace_opt_b">  b) 125 Main Street,Atlanta, GA</label><br />
             
-            <input type="radio" name="group1" value="c" id="4_1_2_s2_opt_c" />
-            <label for= "4_1_2_s2_opt_c">  c) HEY</label><br />
+            <input type="radio" name="group1" value="c" id="4_1_2_noSpace_opt_c" />
+            <label for= "4_1_2_noSpace_opt_c">  c) 125 Main Street Atlanta, GA</label><br />
             
 
             <script>
-            $(document).ready(function(){checkRadio('4_1_2_s2');});
+            $(document).ready(function(){checkRadio('4_1_2_noSpace');});
             </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('4_1_2_s2','c',['This would be correct if we had asked what the value of s3 was. What is the value of s1?', 'This would be true if we asked what the value of s2 was after the code executes.  What is the value of s1?', 'Strings are immutable, meaning they don\u0027t change.  Any function that changes a string returns a new string.  So s1 never changes unless you set it to a different string.'])">Check Me</button>
-            <button class='btn btn-default' id="4_1_2_s2_bcomp" disabled name="compare" onclick="compareAnswers('4_1_2_s2');">Compare Me</button>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('4_1_2_noSpace','b',['This would be true if it was street + \u0022, \u0022.', 'There isn\u0027t a space after the comma and one isn\u0027t added automatically.', 'What about the comma?'])">Check Me</button>
+            <button class='btn btn-default' id="4_1_2_noSpace_bcomp" disabled name="compare" onclick="compareAnswers('4_1_2_noSpace');">Compare Me</button>
             </form><br />
-            <div id="4_1_2_s2_feedback">
+            <div id="4_1_2_noSpace_feedback">
             </div>
             </div>
             </div>
@@ -943,19 +928,19 @@ else{
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Chapter 3 - Concept Summary' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Chapter 3 - Summary' data-toggle="tooltip">
     <a href="../CSPNameNumbers/ch3_summary.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="../CSPNameNumbers/ch3_summary.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - Making a MadLib story' data-toggle="tooltip" >
-    <a href="madlib.html" >
+  <li id="relations-next" class="navLink" title='Next Section - Strings are Objects' data-toggle="tooltip" >
+    <a href="strObjects.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="madlib.html" >Next Section - Making a MadLib story</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="strObjects.html" >Next Section - Strings are Objects</a>
 
 <script type="text/javascript">
 

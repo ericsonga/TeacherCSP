@@ -13,7 +13,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-5-2-
+	:prefix: csp-5-5-
 	
 .. highlight:: java
    :linenothreshold: 4
@@ -58,7 +58,7 @@ Let's imagine going on to make another partial square along the slope, to create
 
 .. image:: Figures/turtle-house.png
 
-.. parsonsprob:: 5_2_1_Turtle_House
+.. parsonsprob:: 5_5_1_Turtle_House
 
    Align the program pieces below to make the house and chimney figure above.  Draw the square first for the main part of the house, next draw the roof, and finally draw the chimney.
    -----

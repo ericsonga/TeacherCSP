@@ -13,7 +13,7 @@
 	:prefix: csp-14-6-
 
 
-Chapter 14 - Concept Summary
+Chapter 14 - Summary
 ============================
 
 Chapter 14 included the following concepts from computing.

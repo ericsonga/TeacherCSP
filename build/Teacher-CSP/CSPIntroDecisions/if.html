@@ -101,7 +101,7 @@
   eBookConfig.loginRequired = true;
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
-  eBookConfig.useRunestoneServices = false;
+  eBookConfig.useRunestoneServices = true;
   eBookConfig.python3 = false;
 </script>
 
@@ -320,7 +320,7 @@
   
   <div class="section" id="the-if-statement">
 <h1>The if Statement<a class="headerlink" href="#the-if-statement" title="Permalink to this headline">¶</a></h1>
-<p id="index-0">In Python, we test data and execute instructions if the test is true using an <code class="docutils literal"><span class="pre">if</span></code> statement.  An <code class="docutils literal"><span class="pre">if</span></code> statement includes a <strong>logical expression</strong> which is the &#8216;test.&#8217;   A <strong>logical expression</strong> is one that is either true or false.  This is also called a <strong>Boolean expression</strong>.  An example of a <strong>logical expression</strong> is <code class="docutils literal"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">3</span></code>. The <code class="docutils literal"><span class="pre">if</span></code> statement is followed by a colon <code class="docutils literal"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">3:</span></code> and a <strong>block of code</strong>.  The colon (<code class="docutils literal"><span class="pre">:</span></code>) at the end of the <code class="docutils literal"><span class="pre">if</span></code> statement is required.  The <strong>block of code</strong>  includes the instructions to execute if the test is true.  The <strong>block of code</strong> includes all the statements that are indented following the <code class="docutils literal"><span class="pre">if</span></code> statement.  If the test is true, execution the statement or statements in the block following the <code class="docutils literal"><span class="pre">if</span></code> will be executed.  If the test isn&#8217;t true (is false) then execution will skip the block following the if and continue with the next statement following the block after the <code class="docutils literal"><span class="pre">if</span></code> statement.</p>
+<p id="index-0">In Python, we test data and execute instructions if the test is true using an <code class="docutils literal"><span class="pre">if</span></code> statement.  An <code class="docutils literal"><span class="pre">if</span></code> statement includes a <strong>logical expression</strong> which is the &#8216;test.&#8217;   A <strong>logical expression</strong> is one that is either true or false.  This is also called a <strong>Boolean expression</strong>.  An example of a <strong>logical expression</strong> is <code class="docutils literal"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">3</span></code>. The <code class="docutils literal"><span class="pre">if</span></code> statement is followed by a colon <code class="docutils literal"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">3:</span></code> and a <strong>block of code</strong>.  The colon (<code class="docutils literal"><span class="pre">:</span></code>) at the end of the <code class="docutils literal"><span class="pre">if</span></code> statement is required.  The <strong>block of code</strong>  includes the instructions to execute if the test is true.  The <strong>block of code</strong> includes all the statements that are indented following the <code class="docutils literal"><span class="pre">if</span></code> statement.  If the test is true, execute the statement or statements in the block following the <code class="docutils literal"><span class="pre">if</span></code> will be executed.  If the test isn&#8217;t true (is false) then execution will skip the block following the if and continue with the next statement following the block after the <code class="docutils literal"><span class="pre">if</span></code> statement.</p>
 <p>Run the code below with x set to 0 and then change x to 4 and see how the output differs depending on the value of x.</p>
 
 <div id="cont"></div>
@@ -408,7 +408,7 @@ else{
 
 </div>
 
-<p id="index-1">The figure below is called a <strong>flowchart</strong>.  It shows the execution paths for a program.  The diamond shape contains the <strong>logical expression</strong> and has shows the path
+<p id="index-1">The figure below is called a <strong>flowchart</strong>.  It shows the execution paths for a program.  The diamond shape contains the <strong>logical expression</strong> and shows the path
 that the execution takes if the logical expression (also called the <strong>condition</strong>) is true as well as the path if the logical expression is false.  Notice that it will only execute the statements in the
 indented block if the logical expression was true.  If the logical expression was false, execution will skip the code in the indented block and resume with the next statement.</p>
 <div class="align-center figure" id="id1">

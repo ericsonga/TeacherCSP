@@ -101,7 +101,7 @@
   eBookConfig.loginRequired = true;
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
-  eBookConfig.useRunestoneServices = false;
+  eBookConfig.useRunestoneServices = true;
   eBookConfig.python3 = false;
 </script>
 
@@ -322,8 +322,8 @@
 <h1>Summary of Expression Types<a class="headerlink" href="#summary-of-expression-types" title="Permalink to this headline">¶</a></h1>
 <table border="1" class="docutils">
 <colgroup>
-<col width="12%" />
-<col width="88%" />
+<col width="11%" />
+<col width="89%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td>Expression</td>
@@ -336,7 +336,7 @@
 <td>Multiplication, the result is 12</td>
 </tr>
 <tr class="row-even"><td>1 / 3</td>
-<td>Integer division, the result is 0 in typical Python environments, but 0.333333333333 here</td>
+<td>Integer division, the result is 0 in older Python environments, but 0.333333333333 in Python 3</td>
 </tr>
 <tr class="row-odd"><td>2.0 / 4.0</td>
 <td>Division, the result is 0.5, since you are using decimal numbers in the calculation</td>
@@ -368,7 +368,7 @@
             <script>
             $(document).ready(function(){checkRadio('3_3_1_intDiv_Q1');});
             </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('3_3_1_intDiv_Q1','c',['If the two values are both integers (whole numbers) you will normally get an integer (whole number) result in most Python environments.  But, since in the eBook we translate the Python to JavaScript it gives a decimal result.', 'This would be correct if the result was rounded up before the values after the decimal point were thrown away, but it does not do this.', 'While this isn\u0027t the what most Pyton development environments would return, in this book we are translating the Python to JavaScript so it will give a decimal result.', 'This would be correct if it was \u003Ccode\u003E1 / 4\u003C/code\u003E, \u003Ccode\u003E1.0 / 4\u003C/code\u003E, or \u003Ccode\u003E1 / 4.0\u003C/code\u003E'])">Check Me</button>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('3_3_1_intDiv_Q1','c',['If the two values are both integers (whole numbers) you will normally get an integer (whole number) result in older Python environments.  But, this book is using Python 3 so you get a decimal result.', 'This would be correct if the result was rounded up before the values after the decimal point were thrown away, but it does not do this.', 'While this isn\u0027t the what older Pyton development environments would return, in this book we are using Python 3 so it returns a decimal result.', 'This would be correct if it was \u003Ccode\u003E1 / 4\u003C/code\u003E, \u003Ccode\u003E1.0 / 4\u003C/code\u003E, or \u003Ccode\u003E1 / 4.0\u003C/code\u003E'])">Check Me</button>
             <button class='btn btn-default' id="3_3_1_intDiv_Q1_bcomp" disabled name="compare" onclick="compareAnswers('3_3_1_intDiv_Q1');">Compare Me</button>
             </form><br />
             <div id="3_3_1_intDiv_Q1_feedback">

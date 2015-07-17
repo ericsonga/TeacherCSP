@@ -13,7 +13,7 @@
 	:prefix: csp-10-5-
 
 
-Chapter 10 - Concept Summary
+Chapter 10 - Summary
 ============================
 
 Chapter 10 included the following concepts from computing.

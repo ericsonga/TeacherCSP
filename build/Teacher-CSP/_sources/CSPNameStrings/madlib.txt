@@ -28,7 +28,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-4-2-
+	:prefix: csp-4-4-
 
 Making a MadLib story
 ===================================
@@ -56,7 +56,7 @@ You might have done MadLib stories when you were a kid.  You provide some pieces
    print(ending)
 
 
-.. mchoicemf:: 4_2_1_Story1_Q1
+.. mchoicemf:: 4_4_1_Story1_Q1
    :answer_a: realEnding = firstName + " called the police who took the witch away."
    :answer_b: print(firstName + " called the police who took the witch away.")
    :answer_c: print("Pat called the police who took the witch away.")
@@ -90,7 +90,7 @@ You might have done MadLib stories when you were a kid.  You provide some pieces
    print(next3)
    print(ending)
    
-.. mchoicemf:: 4_2_2_Story2_Q1
+.. mchoicemf:: 4_4_2_Story2_Q1
    :answer_a: Yes
    :answer_b: No
    :correct: a
@@ -117,7 +117,7 @@ You might have done MadLib stories when you were a kid.  You provide some pieces
      ending = "But " + firstName + " was smart and avoided the wicked witch."
      print(ending)
      
-.. mchoicemf:: 4_2_3_StringVsVariableName
+.. mchoicemf:: 4_4_3_StringVsVariableName
    :answer_a: Mali is Mali
    :answer_b: Mali is 5
    :answer_c: 5 is Mali
@@ -138,7 +138,7 @@ You might have done MadLib stories when you were a kid.  You provide some pieces
 .. Note::
    When you print a string (a sequence of characters in a pair of single or double quotes) in Python it will print the exact characters in the string.  When you print a variable it will print the value of that variable.
      
-.. parsonsprob:: 4_2_4_Poem
+.. parsonsprob:: 4_4_4_Poem
 
    Put the blocks below into the correct order to print a twist on a famous poem.   
    -----
@@ -150,7 +150,7 @@ You might have done MadLib stories when you were a kid.  You provide some pieces
    =====
    print("And so is Sue.")
      
-.. parsonsprob:: 4_2_5_Story
+.. parsonsprob:: 4_4_5_Story
 
    Put the blocks below into the correct order to declare the variables and then print the following story. One day Jay went shopping.  He wanted to buy shoes.  But, he didn't like any.  So, Jay went home. 
    -----

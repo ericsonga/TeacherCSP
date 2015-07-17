@@ -18,8 +18,8 @@
 .. highlight:: java
    :linenothreshold: 4
 
-Naming Sets of Procedures
-==========================
+Naming Sets of Procedures and Functions
+=========================================
 
 So far we've seen names for values, like variables that hold strings and numbers.  We've also seen how to name (*define*) functions or procedures and use additional names to store the inputs to those functions or procedures.
 

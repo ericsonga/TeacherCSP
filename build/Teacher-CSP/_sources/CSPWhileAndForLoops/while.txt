@@ -13,7 +13,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-8-3-
+	:prefix: csp-8-4-
 	
 .. highlight:: java
    :linenothreshold: 4
@@ -22,7 +22,7 @@
 Looping When We Don't Know When We'll Stop
 ============================================
 
-Now, how do we get the computer to do something only so many times, or until something happens that we want to happen?  We have to construct programs so that all the parts together make the logical expression true *until* we want it to be false.
+While loops are typically used when you don't know how many times the loop needs to repeat.  It will repeat as long as a condition is true.  
 
 Let's say that we want to find the square root of a number.  For some square roots, you're never going to be exact.  Let's say that we want to find a square root that, when multiplied by itself, is within `0.01` of the square we want.  How do we do it?  There's a really old process that we can apply here.
 

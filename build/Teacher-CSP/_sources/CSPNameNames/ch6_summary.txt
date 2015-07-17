@@ -10,10 +10,10 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-6-9-
+	:prefix: csp-6-8-
 
 
-Chapter 6 - Concept Summary
+Chapter 6 - Summary
 ============================
 
 Chapter 6 included the following concepts from computing.

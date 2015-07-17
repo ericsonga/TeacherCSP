@@ -87,7 +87,7 @@
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
     <link rel="next" title="Changing Turtle Programs" href="changeProg.html" />
-    <link rel="prev" title="Assign a Name to a Turtle" href="names4turtles.html" />
+    <link rel="prev" title="Single and Multiple Turtles" href="multTurtles.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -101,7 +101,7 @@
   eBookConfig.loginRequired = true;
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
-  eBookConfig.useRunestoneServices = false;
+  eBookConfig.useRunestoneServices = true;
   eBookConfig.python3 = false;
 </script>
 
@@ -281,8 +281,8 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Assign a Name to a Turtle" data-toggle="tooltip">
-    <a href="names4turtles.html" >
+  <li id="relations-prev" title="Previous Chapter - Single and Multiple Turtles" data-toggle="tooltip">
+    <a href="multTurtles.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -433,7 +433,7 @@ else{
 <img alt="../_images/turtle-house.png" src="../_images/turtle-house.png" />
 
         <div class='parsons alert alert-warning' id="parsons-61">
-        <div class="parsons-text">csp-5-2-1: Align the program pieces below to make the house and chimney figure above.  Draw the square first for the main part of the house, next draw the roof, and finally draw the chimney.<br /><br /></div>
+        <div class="parsons-text">csp-5-5-1: Align the program pieces below to make the house and chimney figure above.  Draw the square first for the main part of the house, next draw the roof, and finally draw the chimney.<br /><br /></div>
         <div style="clear:left;"></div>
         <div id="parsons-orig-61" style="display:none;">from turtle import *\nspace = Screen()\nbob = Turtle()
 # Make a square\nbob.forward(100)\nbob.right(90)\nbob.forward(100)\nbob.right(90)\nbob.forward(100)\nbob.right(90)\nbob.forward(100)
@@ -471,10 +471,10 @@ else{
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
-                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'5_2_1_Turtle_House'});
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'5_5_1_Turtle_House'});
 
             } else {
-                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'5_2_1_Turtle_House'});
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'5_5_1_Turtle_House'});
                     msgBox.fadeIn(100);
                     msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
@@ -510,14 +510,14 @@ else{
         pp_61.init($pjQ("#parsons-orig-61").text());
     pp_61.shuffleLines();
             
-        if(localStorage.getItem('5_2_1_Turtle_House') && localStorage.getItem('5_2_1_Turtle_House-trash')) {
+        if(localStorage.getItem('5_5_1_Turtle_House') && localStorage.getItem('5_5_1_Turtle_House-trash')) {
             try {
-                var solution = localStorage.getItem('5_2_1_Turtle_House');
-                var trash = localStorage.getItem('5_2_1_Turtle_House-trash');
+                var solution = localStorage.getItem('5_5_1_Turtle_House');
+                var trash = localStorage.getItem('5_5_1_Turtle_House-trash');
                 pp_61.createHTMLFromHashes(solution,trash);
                 pp_61.getFeedback();
             } catch(err) {
-                var text = "An error occured restoring old 5_2_1_Turtle_House state.  Error: ";
+                var text = "An error occured restoring old 5_5_1_Turtle_House state.  Error: ";
                 console.log(text + err.message);
             }
 
@@ -545,9 +545,9 @@ else{
             $pjQ("#checkMe61").click(function(event){
               event.preventDefault();
               var hash = pp_61.getHash("#ul-parsons-sortableCode-61");
-              localStorage.setItem('5_2_1_Turtle_House',hash);
+              localStorage.setItem('5_5_1_Turtle_House',hash);
               hash = pp_61.getHash("#ul-parsons-sortableTrash-61");
-              localStorage.setItem('5_2_1_Turtle_House-trash',hash);
+              localStorage.setItem('5_5_1_Turtle_House-trash',hash);
             
             pp_61.getFeedback();
             msgBox.fadeIn(100);
@@ -564,12 +564,12 @@ else{
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Assign a Name to a Turtle' data-toggle="tooltip">
-    <a href="names4turtles.html" >
+  <li id="relations-prev" class="navLink" title='Previous Section - Single and Multiple Turtles' data-toggle="tooltip">
+    <a href="multTurtles.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
-  <a class="navLinkBg" id="navLinkBgLeft"  href="names4turtles.html" ></a>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="multTurtles.html" ></a>
   
   <li id="relations-next" class="navLink" title='Next Section - Changing Turtle Programs' data-toggle="tooltip" >
     <a href="changeProg.html" >

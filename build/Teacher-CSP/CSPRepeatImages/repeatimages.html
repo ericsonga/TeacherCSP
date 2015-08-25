@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -335,21 +351,7 @@
 <img src="../_static/arch.jpg" id="arch.jpg"><p>Each pixel has a color associated with it: An amount of redness, an amount of greenness, and an amount of blueness.
 Let&#8217;s remove the red from this picture.  Now, there are lot of lines in the program below, but fortunately, you can ignore most of them. The Audio Tour explains the important lines.  Press <a class="reference internal" href="../_images/start-audio-tour2.png"><img alt="audio tour button" class="align-top" src="../_images/start-audio-tour2.png" style="height: 20px;" /></a> to hear the audio tour explanation.  When you run this program it may take several minutes to show the changed picture.</p>
 
-<div id="cont"></div>
-<div id="Image_Remove_Red" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Image_Remove_Red_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Remove_Red_saveb" onclick="saveEditor('Image_Remove_Red');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Remove_Red_loadb" onclick="requestCode('Image_Remove_Red');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Image_Remove_Red','from image import **nline**nline*# CREATE AN IMAGE FROM A FILE*nline*img = Image*open**doubleq*arch.jpg*doubleq**close**nline**nline*# LOOP THROUGH THE PIXELS*nline*pixelList = img.getPixels*open**close**nline*for p in pixelList:*nline**nline*    # SET THE RED TO 0*nline*    p.setRed*open*0*close**nline**nline*    # UPDATE THE IMAGE*nline*    img.updatePixel*open*p*close**nline**nline*# SHOW THE RESULT*nline*win = ImageWin*open*img.getWidth*open**close*,img.getHeight*open**close**close**nline*img.draw*open*win*close*','1','*doubleq*Important Lines Tour*doubleq*; 1: timg3-line1; 4: timg3-line4; 7-8: timg3-line7-8; 11: timg3-line11; 14: timg3-line14; 17-18: timg3-line17-18;*atype*')"/>
-
-</div>
-<br/>
-<div id="Image_Remove_Red_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Image_Remove_Red_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Image_Remove_Red data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Important Lines Tour*doubleq*; 1: timg3-line1; 4: timg3-line4; 7-8: timg3-line7-8; 11: timg3-line11; 14: timg3-line14; 17-18: timg3-line17-18;*atype*'     >
 from image import *
 
 # CREATE AN IMAGE FROM A FILE
@@ -368,71 +370,7 @@ for p in pixelList:
 # SHOW THE RESULT
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Image_Remove_Red_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Image_Remove_Red_suffix" style="display:none">
-</pre><pre id="Image_Remove_Red_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Image_Remove_Red)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Image_Remove_Red_saveb').toggle();
-    $('#Image_Remove_Red_loadb').toggle();
-}
-if ($("#Image_Remove_Red").attr("lang") !== "html" && $("#Image_Remove_Red_code_div").parents(".admonition").length == 0 && $("#Image_Remove_Red_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Image_Remove_Red_code_div").offset({
-            left: $("#Image_Remove_Red .clearfix").offset().left
-        });
-    }
-    $("#Image_Remove_Red_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Image_Remove_Red_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Image_Remove_Red_runb").parent().siblings(".ac_output").show();
-            runit('Image_Remove_Red',this, undefined);
-            $("#Image_Remove_Red_runb").on("click", function(){
-                runit('Image_Remove_Red',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Image_Remove_Red_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Image_Remove_Red_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Image_Remove_Red_runb").on("click", function(){
-        runit('Image_Remove_Red',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>The program above can take several minutes to execute on the <code class="docutils literal"><span class="pre">arch.jpg</span></code> picture.  But we&#8217;re not stuck using just the arch image.  We can use smaller images which will execute more quickly.</p>
 </div>
 <div class="section" id="a-library-of-images">
@@ -479,7 +417,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

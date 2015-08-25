@@ -28,19 +28,19 @@ Complex Conditionals (and, or, and not)
 	pair: logical operators; or
 	pair: logical operators; not
 	
-We can also use ``and`` and ``or`` to join several expressions together as shown in the table below.  An ``or`` joining two expressions means that if *either* of the expressions is true, the whole expression is true.  An ``and`` used to join two expressions is only true if *both* expressions are true.  A ``not`` negates the logical value that follows it.  If it was true, then a ``not`` changes the result to false.  If it was false, the a ``not`` changes the result to true.
+We can also use ``and`` and ``or`` to join several logical expressions together as shown in the table below.  An ``or`` joining two expressions means that if *either* of the expressions is true, the whole expression is true.  An ``and`` used to join two expressions is only true if *both* expressions are true.  A ``not`` negates the logical value that follows it.  If it was true, then a ``not`` changes the result to false.  If it was false, the ``not`` changes the result to true.
 
 ====================        ================
 Expression                  Meaning
 ====================        ================
-(a < b) or (c < d)          The whole express is true if a is less than b or c is less than d. 
+(a < b) or (c < d)          The whole expression is true if a is less than b or c is less than d. 
 --------------------        ----------------
-(a < b) and (c < d)         The whole express is true if a is less than b **AND** *ALSO* c is less than d.  
+(a < b) and (c < d)         The whole expression is true if a is less than b **AND** *ALSO* c is less than d.  
 --------------------        ----------------
-not a < b                   Only true if a is actually greater than or equal to b.  `not a < b` is the same as `a >= b`.
+not a < b                   Only true if a is actually greater than or equal to b.  The logical expression ``not a < b`` is the same as ``a >= b``.
 ====================        ================
 
-A common use of ``and`` is to check that a value is in a range between a minimum value and a maximum value.  For example if you have asked a person to pick a number between 1 and 10 you can check for this using the following.
+A common use of ``and`` is to check that a value is in a range between a minimum value and a maximum value.  For example, if you have asked a person to pick a number between 1 and 10 you can check for this using the following.
 
 .. activecode:: Example_With_And
   :tour_1: "Structural Tour"; 1: and1-line1; 2-3: and1-line2-3; 4: and1-line4;
@@ -67,7 +67,7 @@ A common use of ``and`` is to check that a value is in a range between a minimum
          print ("condition true")
      print ("All done")
     
-A common use of ``or`` is to check if either of two conditions are true.  For example, a parent has told a teen that she can go out if she has cleaned her room or finished her homework.  If either of these is true she can go out.  In Python a value of ``0`` means false and any non-zero value is true, but ``1`` is often used for true.  
+A common use of ``or`` is to check if either one of two conditions are true.  For example, a parent has told a teen that she can go out if she has cleaned her room or finished her homework.  If either of these is true she can go out.  In Python a value of ``0`` means false and any non-zero value is true, but ``1`` is often used for true.  
 
 .. activecode:: Example_With_Or
   :tour_1: "Structural Tour"; 1: and2-line1; 2: and2-line2; 3-4: and2-line3-4; 5: and2-line5;

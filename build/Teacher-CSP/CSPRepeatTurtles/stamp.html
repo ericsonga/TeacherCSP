@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -86,7 +101,7 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
-    <link rel="next" title="Chapter 10 - Summary" href="ch10_summary.html" />
+    <link rel="next" title="Chapter 10 Exercises" href="ch10_exercises.html" />
     <link rel="prev" title="Making Patterns within Patterns" href="patterns.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -287,8 +303,8 @@
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Chapter 10 - Summary' data-toggle="tooltip" >
-    <a href="ch10_summary.html" >
+  <li id="relations-next" title='Next Chapter - Chapter 10 Exercises' data-toggle="tooltip" >
+    <a href="ch10_exercises.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -324,98 +340,20 @@
 <p>A turtle can also <strong>stamp</strong> a copy of itself on the screen (turtle drawing area), and this will remain after the turtle has moved somewhere else.  Do this with the <code class="docutils literal"><span class="pre">stamp</span></code> procedure.  Stamping works even when the pen is up.  You can ask the turtle to pick up the pen using the <code class="docutils literal"><span class="pre">up</span></code> procedure as shown below.  When the pen is up the turtle will not draw a line when it moves.</p>
 <p>Here is an example that shows off these new features.</p>
 
-<div id="cont"></div>
-<div id="stampex" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="stampex_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="stampex_saveb" onclick="saveEditor('stampex');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="stampex_loadb" onclick="requestCode('stampex');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('stampex','from turtle import **nline*space = Screen*open**close**nline*tess = Turtle*open**close**nline*tess.pencolor*open**doubleq*blue*doubleq**close**nline*tess.shape*open**doubleq*turtle*doubleq**close**nline**nline*print*open*range*open*5, 60, 2*close**close**nline*tess.up*open**close*                     # ask tess to pick up her pen*nline*for size in range*open*5, 60, 2*close*:  # start with size = 5 and grow by 2*nline*    tess.stamp*open**close*                # leave an impression on the canvas*nline*    tess.forward*open*size*close*          # move tess along*nline*    tess.right*open*24*close*              # and turn her','1','*doubleq*Line-by-line Tour*doubleq*; 1: stamp1-line1; 2: stamp1-line2; 3: stamp1-line3; 4: stamp1-line4; 5: stamp1-line5; 7: stamp1-line7; 8: stamp1-line8; 9: stamp1-line9; 10: stamp1-line10; 11: stamp1-line11; 12: stamp1-line12;*atype*')"/>
-
-</div>
-<br/>
-<div id="stampex_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="stampex_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=stampex data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Line-by-line Tour*doubleq*; 1: stamp1-line1; 2: stamp1-line2; 3: stamp1-line3; 4: stamp1-line4; 5: stamp1-line5; 7: stamp1-line7; 8: stamp1-line8; 9: stamp1-line9; 10: stamp1-line10; 11: stamp1-line11; 12: stamp1-line12;*atype*'     >
 from turtle import *
 space = Screen()
 tess = Turtle()
-tess.pencolor("blue")
+tess.color("blue")
 tess.shape("turtle")
 
 print(range(5, 60, 2))
-tess.up()                     # ask tess to pick up her pen
+tess.penup()                  # ask tess to pick up her pen
 for size in range(5, 60, 2):  # start with size = 5 and grow by 2
     tess.stamp()                # leave an impression on the canvas
     tess.forward(size)          # move tess along
     tess.right(24)              # and turn her
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="stampex_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="stampex_suffix" style="display:none">
-</pre><pre id="stampex_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (stampex)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#stampex_saveb').toggle();
-    $('#stampex_loadb').toggle();
-}
-if ($("#stampex").attr("lang") !== "html" && $("#stampex_code_div").parents(".admonition").length == 0 && $("#stampex_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#stampex_code_div").offset({
-            left: $("#stampex .clearfix").offset().left
-        });
-    }
-    $("#stampex_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#stampex_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#stampex_runb").parent().siblings(".ac_output").show();
-            runit('stampex',this, undefined);
-            $("#stampex_runb").on("click", function(){
-                runit('stampex',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#stampex_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#stampex_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#stampex_runb").on("click", function(){
-        runit('stampex',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>The list of integers shown under the picture above is created by printing the <code class="docutils literal"><span class="pre">range(5,60,2)</span></code> result.  This shows you the distances used to move the turtle forward each time through the <code class="docutils literal"><span class="pre">for</span></code> loop.</p>
 <p>All except one of the shapes you see on the screen here are copies of the turtle shape created by <code class="docutils literal"><span class="pre">stamp</span></code>.  But the program still only has <em>one</em> turtle instance &#8212; can you figure out which one is the real tess?  (Hint: if you&#8217;re
 not sure, write a new line of code after the <code class="docutils literal"><span class="pre">for</span></code> loop to change tess&#8217; color, or to put her pen down and draw a line, or to change her shape, etc.)</p>
@@ -445,7 +383,7 @@ for size in range(3):
 
     <script>
         $pjQ(document).ready(function(){
-
+            var rb = new RunestoneBase();
             $("#parsons-46").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
                     scrollTop: ($("#parsons-46").offset().top - 50)
@@ -461,10 +399,10 @@ for size in range(3):
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
-                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'10_4_1_turtle-stamp'});
+                    rb.logBookEvent({'event':'parsons', 'act':hash, 'div_id':'10_4_1_turtle-stamp'});
 
             } else {
-                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'10_4_1_turtle-stamp'});
+                    rb.logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'10_4_1_turtle-stamp'});
                     msgBox.fadeIn(100);
                     msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
@@ -573,7 +511,7 @@ for size in range(10):
 
     <script>
         $pjQ(document).ready(function(){
-
+            var rb = new RunestoneBase();
             $("#parsons-66").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
                     scrollTop: ($("#parsons-66").offset().top - 50)
@@ -589,10 +527,10 @@ for size in range(10):
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
-                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'10_4_2_turtle-circle'});
+                    rb.logBookEvent({'event':'parsons', 'act':hash, 'div_id':'10_4_2_turtle-circle'});
 
             } else {
-                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'10_4_2_turtle-circle'});
+                    rb.logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'10_4_2_turtle-circle'});
                     msgBox.fadeIn(100);
                     msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
@@ -689,12 +627,12 @@ for size in range(10):
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="patterns.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - Chapter 10 - Summary' data-toggle="tooltip" >
-    <a href="ch10_summary.html" >
+  <li id="relations-next" class="navLink" title='Next Section - Chapter 10 Exercises' data-toggle="tooltip" >
+    <a href="ch10_exercises.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="ch10_summary.html" >Next Section - Chapter 10 - Summary</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="ch10_exercises.html" >Next Section - Chapter 10 Exercises</a>
 
 <script type="text/javascript">
 
@@ -707,7 +645,10 @@ for size in range(10):
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

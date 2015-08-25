@@ -1,19 +1,17 @@
 .. qnum::
-   :prefix: 13-6-
+   :prefix: 13-7-
    :start: 1
    
 Exam Questions for Chapters 12 and 13
 -------------------------------------
 
-The following questions test what you have learned in chapters 12 to 13. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  Hover over the clock icon to see how much time you have spent on the exam, but you have unlimited time.  Click on the "Submit Answers" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
+The following questions test what you have learned in chapters 12 to 13. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  It will show how much time you have used, but you have unlimited time.  Click on the "Submit answers" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
 
 You will not be able to change your answers after you hit the "Submit Answers" button.
 
-.. startexam:: timed_Test
-    :showtitle: Exam Not Started
-    :hidetitle: Currently Taking Exam
+.. timed:: ch12a13ex
     
-    .. exammchoicemf:: e12a13_1
+    .. mchoice:: e12a13_1
        :answer_a: 5 to 20
        :answer_b: 6 to 20
        :answer_c: 5 to 19
@@ -32,7 +30,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
               print ("condition true")
           print ("All done")
            
-    .. exammchoicemf:: e12a13_2
+    .. mchoice:: e12a13_2
        :answer_a: A
        :answer_b: B
        :answer_c: C
@@ -62,7 +60,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
               grade = "E"
           print(grade)
           
-    .. exammchoicemf:: e12a13_3
+    .. mchoice:: e12a13_3
        :answer_a: 3
        :answer_b: 25
        :answer_c: 45
@@ -88,7 +86,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           if num >= 20 and num <= 30:
               print("You will ace a test.")
               
-    .. exammchoicemf:: e12a13_4
+    .. mchoice:: e12a13_4
        :answer_a: I
        :answer_b: II
        :answer_c: III
@@ -118,7 +116,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
                else:
                    x = x * 2
                    
-    .. exammchoicemf:: e12a13_5
+    .. mchoice:: e12a13_5
        :answer_a: A
        :answer_b: B
        :answer_c: C
@@ -146,7 +144,6 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           else 
               grade = "E"
      
-             
-    .. finishexam:: timed_Test
+
 
    

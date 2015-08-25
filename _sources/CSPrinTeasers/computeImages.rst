@@ -62,7 +62,7 @@ Pixels are quite small.  Even this small picture below has 180 columns and 240 r
     
     Figure 2: Picture of an arch from Oxford, England
     
-.. mchoicemf:: 1_5_1_Image_Q1
+.. mchoice:: 1_5_1_Image_Q1
    :answer_a: From left to right
    :answer_b: From right to left
    :answer_c: From top to bottom
@@ -125,7 +125,7 @@ The lines that are important are under the comments (lines that start with a ``#
     win = ImageWin(img.getWidth(),img.getHeight())
     img.draw(win)
     
-.. mchoicemf:: 1_5_2_Image_Black
+.. mchoice:: 1_5_2_Image_Black
    :answer_a: You still see the picture, but it is all in shades of gray.  
    :answer_b: The picture is all white.
    :answer_c: The picture is all black.

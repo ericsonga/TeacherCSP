@@ -28,7 +28,7 @@ We now know the pattern for creating any polygon.  We can wrap that pattern in a
    The outer ``for`` loop in the code below on line 8 executes 20 times and the inner ``for`` loop on line 13 executes 5 times *for each* of the outer loop values, 5 times when the outer loop value is 0, 5 times when the outer loop value is 1, 5 times when the outer loop value is 2, and so on.  The inner loop is executed a total of 20 * 5 = 100 times.  The turtle can take a long time to finish drawing this pattern.  Normally code in the browser is limited to only running in 10 seconds or less.  But, we can use the ``sys`` library (short for system) ``setExecutionLimit(milliseconds)`` procedure which will let the code run for up to the specified number of milliseconds.  One second is 1,000 milliseconds, so 50,0000 milliseconds is 50 seconds.  
 
 .. activecode:: Turtle_Spirograph1
-    :tour_1: "Lines of code"; 1-2: tr3-line1-2; 3: tr3-line3; 4: tr3-line4; 5: tr3-line5; 6: tr3-line6; 8: tr3-line8; 9: tr3-line9; 10: tr3-line10; 13: tr3-line13; 14: tr3-line14; 15: tr3-line15;
+    :tour_1: "Lines of code"; 1-2: tr3-1-line1-2; 3: tr3-1-line3; 4: tr3-1-line4; 5: tr3-1-line5; 6: tr3-1-line6; 8: tr3-1-line8; 9: tr3-1-line9; 10: tr3-1-line10; 13: tr3-1-line13; 14: tr3-1-line14; 15: tr3-1-line15;
     :nocodelens:
 	
     from turtle import *     # use the turtle library
@@ -50,7 +50,7 @@ We now know the pattern for creating any polygon.  We can wrap that pattern in a
 By setting the pen color differently, we can distinguish the part that draws the shape, from the part that draws *between* the shapes.
 
 .. activecode:: Turtle_Spirograph2
-    :tour_1: "Lines of code"; 1-2: tr3-line1-2; 3: tr3-line3; 4: tr3-line4; 5: tr3-line5; 6: tr3-line6; 8: tr3-line8; 9: ts2-line9; 10: ts2-line10; 11: ts2-line11; 12: ts2-line12; 15: ts2-line15; 16: ts2-line16; 17: ts2-line17; 
+    :tour_1: "Lines of code"; 1-2: tr3-1-line1-2; 3: tr3-1-line3; 4: tr3-1-line4; 5: tr3-1-line5; 6: tr3-1-line6; 8: tr3-1-line8; 9: ts2-line9; 10: ts2-line10; 11: ts2-line11; 12: ts2-line12; 15: ts2-line15; 16: ts2-line16; 17: ts2-line17; 
     :nocodelens:
 	
     from turtle import *     # use the turtle library
@@ -61,10 +61,10 @@ By setting the pen color differently, we can distinguish the part that draws the
     zoe.setheading(90)       # point zoe due north
     
     for repeats in range(20):   # 20 times to draw the pattern
-      	zoe.pencolor("green")     # set the color to green
+      	zoe.color("green")      # set the color to green
       	zoe.forward(10)           # Offset the shapes a bit
       	zoe.right(18)             # And turn each one a bit
-      	zoe.pencolor("red")       # set the color to red
+      	zoe.color("red")          # set the color to red
       
      	# This part makes a pentagon
       	for sides in range(5):    # repeat 5 times
@@ -87,14 +87,14 @@ You can use the coloring to help figure out the correct order of the lines below
    =====
    for repeats in range(20):
    =====
-       mateo.pencolor("red")
+       mateo.color("red")
        mateo.forward(10)
        mateo.left(18)
       
    =====
        for sides in range(3):
    =====
-           mateo.pencolor("blue")
+           mateo.color("blue")
            mateo.forward(50) 
            mateo.right(120)
          

@@ -23,7 +23,7 @@ Chapter 6 Exercises
 
         .. tab:: Question
             
-            There are errors in the following code.  Fix it to work correctly without errors.  
+            There are errors in the indention in the following code.  Fix it to work correctly without errors.  
 
             .. activecode:: ch6ex1q
                 :nocodelens:
@@ -77,7 +77,7 @@ Chapter 6 Exercises
 
         .. tab:: Question
 
-           There are errors in the following code.  Fix the errors so that it runs.  
+           There are 2 errors in the following code.  Fix the errors so that it runs.  
            
            .. activecode::  ch6ex2q
                 :nocodelens:
@@ -132,7 +132,7 @@ Chapter 6 Exercises
 
         .. tab:: Question
 
-           The following code has errors.  Fix the errors so that the code runs. 
+           The following code has 4 errors.  Fix the errors so that the code runs. 
         
            .. activecode::  ch6ex3q
                 :nocodelens:
@@ -158,7 +158,7 @@ Chapter 6 Exercises
 
         .. tab:: Answer
         
-            You must change the ``Malik`` to ``malik``.  Remember that Python is case sensitive.
+            You must change the ``Malik`` to ``malik`` on the calls to square.  Remember that Python is case sensitive.
             
             .. activecode::  ch6ex3a
                 :nocodelens:
@@ -195,7 +195,7 @@ Chapter 6 Exercises
 
         .. tab:: Question
 
-           The following code has errors.  Fix the code to run. 
+           The following code has three lines that need to be changed.  Fix the code to run correctly. 
            
            .. activecode::  ch6ex4q
                 :nocodelens:

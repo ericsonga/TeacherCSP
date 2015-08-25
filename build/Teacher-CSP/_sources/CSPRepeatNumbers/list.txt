@@ -104,7 +104,7 @@ Let's write that program again with a better variable name.  We will use ``produ
    
 .. parsonsprob:: 7_3_4_Average
 
-   The following program calculates the average of a list of numbers, but the code is mixed up.  First initialize the sum to 0.  Then create the list of numbers.  Loop through the list and each time add the current number to the sum.  Return the sum divided by the number of items in the list.  <b>Don't forget that you must indent the lines that are repeated in the loop</b>.
+   The following program calculates the average of a list of numbers, but the code is mixed up.  First initialize the sum to 0.  Then create the list of numbers.  Loop through the list and each time add the current number to the sum.  Print the sum divided by the number of items in the list.  <b>Don't forget that you must indent the lines that are repeated in the loop</b>.
    -----
    sum = 0
    numbers = [90, 80, 75, 90, 83]

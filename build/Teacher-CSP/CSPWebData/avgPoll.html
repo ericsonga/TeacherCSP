@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -323,12 +339,8 @@
 <p>This time, we take every PM 2.5 value and add them all together, and we also increment a count for each value, so we can compute an average.</p>
 <p>This program uses the same data file that we have been using, but if you want to see <strong>all</strong> of the data click on the <em>Show</em> button below.  Once it appears, you can hide it again by clicking on the <em>Hide</em> button.</p>
 
-    <button type='button' id='pol_Data6_show' class='btn btn-default reveal_button' style='margin-bottom:10px;' onclick="$(this).hide();$('#pol_Data6').show();$('#pol_Data6_hide').show();$('#pol_Data6').find('.CodeMirror').each(function(i, el){el.CodeMirror.refresh();});">
-        Show
-    </button>
-    <button type='button' id='pol_Data6_hide' class='btn btn-default reveal_button' onclick="$(this).hide();$('#pol_Data6').hide();$('#pol_Data6_show').show();" style='display:none'>Hide</button>
-    <div id='pol_Data6' style='display:none'>
-<pre id="uspoll.txt">
+    <div data-component="reveal" id="pol_Data6"   data-showtitle="Show" data-hidetitle="Hide">
+    <pre id="uspoll.txt">
 Aberdeen, SD :13 :8
 Adrian, MI :15 :9
 Akron, OH :18 :11
@@ -710,22 +722,8 @@ Yuba City, CA :12 :7
 Yuma, AZ :14 :9
 </pre>
     </div>
-
-<div id="cont"></div>
-<div id="average25" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="average25_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="average25_saveb" onclick="saveEditor('average25');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="average25_loadb" onclick="requestCode('average25');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('average25','inFile = open*open**doubleq*uspoll.txt*doubleq*,*doubleq*r*doubleq**close**nline*lines = inFile.readlines*open**close**nline*inFile.close*open**close**nline**nline*total25 = 0*nline*count = 1.0*nline*for line in lines:*nline*    values = line.split*open**doubleq*:*doubleq**close**nline*    new25 = float*open*values[2]*close**nline*    total25 = total25 + new25*nline*    count = count + 1*nline**nline*print*open**doubleq*Average PM 2.5 value is *doubleq*,total25/count*close*','1','*doubleq*Structural tour*doubleq*; 1-3: web5-line1-3; 5-6: web5-line5-6; 7: web5-line7; 8: web5-line8; 9: web5-line9; 10: web5-line10; 11: web5-line11; 13: web5-line13;*atype*')"/>
-
-</div>
-<br/>
-<div id="average25_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="average25_code" class="active_code" prefixcode="undefined" lang="python">
+    
+<pre data-component="activecode" id=average25 data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Structural tour*doubleq*; 1-3: web5-line1-3; 5-6: web5-line5-6; 7: web5-line7; 8: web5-line8; 9: web5-line9; 10: web5-line10; 11: web5-line11; 13: web5-line13;*atype*'     >
 inFile = open("uspoll.txt","r")
 lines = inFile.readlines()
 inFile.close()
@@ -739,85 +737,10 @@ for line in lines:
     count = count + 1
 
 print("Average PM 2.5 value is ",total25/count)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="average25_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="average25_suffix" style="display:none">
-</pre><pre id="average25_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (average25)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#average25_saveb').toggle();
-    $('#average25_loadb').toggle();
-}
-if ($("#average25").attr("lang") !== "html" && $("#average25_code_div").parents(".admonition").length == 0 && $("#average25_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#average25_code_div").offset({
-            left: $("#average25 .clearfix").offset().left
-        });
-    }
-    $("#average25_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#average25_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#average25_runb").parent().siblings(".ac_output").show();
-            runit('average25',this, undefined);
-            $("#average25_runb").on("click", function(){
-                runit('average25',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#average25_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#average25_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#average25_runb").on("click", function(){
-        runit('average25',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>Now, replace the lines that start with <code class="docutils literal"><span class="pre">#</span></code> below to write the code to get the average PM 10 value:</p>
 
-<div id="cont"></div>
-<div id="average10" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="average10_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="average10_saveb" onclick="saveEditor('average10');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="average10_loadb" onclick="requestCode('average10');">Load</button>
-
-</div>
-<br/>
-<div id="average10_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="average10_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=average10 data-lang="python"    data-timelimit=25000   data-audio=''     >
 inFile = open("uspoll.txt","r")
 lines = inFile.readlines()
 inFile.close()
@@ -831,71 +754,7 @@ for line in lines:
     count = count + 1
 
 print("Average PM 10 value is ",total10/count)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="average10_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="average10_suffix" style="display:none">
-</pre><pre id="average10_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (average10)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#average10_saveb').toggle();
-    $('#average10_loadb').toggle();
-}
-if ($("#average10").attr("lang") !== "html" && $("#average10_code_div").parents(".admonition").length == 0 && $("#average10_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#average10_code_div").offset({
-            left: $("#average10 .clearfix").offset().left
-        });
-    }
-    $("#average10_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#average10_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#average10_runb").parent().siblings(".ac_output").show();
-            runit('average10',this, undefined);
-            $("#average10_runb").on("click", function(){
-                runit('average10',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#average10_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#average10_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#average10_runb").on("click", function(){
-        runit('average10',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 </div>
 
 
@@ -926,7 +785,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

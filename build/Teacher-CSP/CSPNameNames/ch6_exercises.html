@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -321,32 +337,10 @@
   <div class="section" id="chapter-6-exercises">
 <h1>Chapter 6 Exercises<a class="headerlink" href="#chapter-6-exercises" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic">
-<li><div id='ch6ex1t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch6ex1t-Question'><span>Question</span></a>
-</li>
+<li><div id='ch6ex1t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>There are errors in the indention in the following code.  Fix it to work correctly without errors.</p>
 
-<li>
-    <a data-toggle='tab' href='#ch6ex1t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch6ex1t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch6ex1t-Question'><p>There are errors in the following code.  Fix it to work correctly without errors.</p>
-
-<div id="cont"></div>
-<div id="ch6ex1q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex1q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex1q_saveb" onclick="saveEditor('ch6ex1q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex1q_loadb" onclick="requestCode('ch6ex1q');">Load</button>
-
-</div>
-<br/>
-<div id="ch6ex1q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex1q_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch6ex1q data-lang="python"    data-timelimit=25000   data-audio=''     >
 def square(turtle):
 turtle.forward(100)
 turtle.right(90)
@@ -361,85 +355,11 @@ from turtle import *    # use the turtle library
 space = Screen()        # create a turtle screen
 malik = Turtle()        # create a turtle named malik
 square(malik)           # draw a square with malik
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>The lines following the defintion of the square procedure needed to be indented by 4 spaces as shown below.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex1q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex1q_suffix" style="display:none">
-</pre><pre id="ch6ex1q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex1q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex1q_saveb').toggle();
-    $('#ch6ex1q_loadb').toggle();
-}
-if ($("#ch6ex1q").attr("lang") !== "html" && $("#ch6ex1q_code_div").parents(".admonition").length == 0 && $("#ch6ex1q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex1q_code_div").offset({
-            left: $("#ch6ex1q .clearfix").offset().left
-        });
-    }
-    $("#ch6ex1q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex1q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex1q_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex1q',this, undefined);
-            $("#ch6ex1q_runb").on("click", function(){
-                runit('ch6ex1q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex1q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex1q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex1q_runb").on("click", function(){
-        runit('ch6ex1q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex1t-Answer'><p>The lines following the defintion of the square procedure needed to be indented by 4 spaces as shown below.</p>
-
-<div id="cont"></div>
-<div id="ch6ex1a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex1a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex1a_saveb" onclick="saveEditor('ch6ex1a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex1a_loadb" onclick="requestCode('ch6ex1a');">Load</button>
-
-</div>
-<br/>
-<div id="ch6ex1a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex1a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch6ex1a data-lang="python"    data-timelimit=25000   data-audio=''     >
 def square(turtle):
     turtle.forward(100)
     turtle.right(90)
@@ -454,72 +374,9 @@ from turtle import *    # use the turtle library
 space = Screen()        # create a turtle screen
 malik = Turtle()        # create a turtle named malik
 square(malik)           # draw a square with malik
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex1a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex1a_suffix" style="display:none">
-</pre><pre id="ch6ex1a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex1a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex1a_saveb').toggle();
-    $('#ch6ex1a_loadb').toggle();
-}
-if ($("#ch6ex1a").attr("lang") !== "html" && $("#ch6ex1a_code_div").parents(".admonition").length == 0 && $("#ch6ex1a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex1a_code_div").offset({
-            left: $("#ch6ex1a .clearfix").offset().left
-        });
-    }
-    $("#ch6ex1a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex1a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex1a_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex1a',this, undefined);
-            $("#ch6ex1a_runb").on("click", function(){
-                runit('ch6ex1a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex1a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex1a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex1a_runb").on("click", function(){
-        runit('ch6ex1a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex1t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch6ex1q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -556,56 +413,14 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch6ex1q']").attr('data-disqus-identifier', 'teachercsp_ch6ex1q_' + eBookConfig.course);
 </script>
-</div></div>
-    </div>
-    <script type='text/javascript'>
-        $('#ch6ex1t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
-
-        // activate the first tab
-        var el = $('#ch6ex1t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch6ex1t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
-</li>
-<li><div id='ch6ex2t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch6ex2t-Question'><span>Question</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch6ex2t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch6ex2t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch6ex2t-Question'><p>There are errors in the following code.  Fix the errors so that it runs.</p>
-
-<div id="cont"></div>
-<div id="ch6ex2q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex2q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex2q_saveb" onclick="saveEditor('ch6ex2q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex2q_loadb" onclick="requestCode('ch6ex2q');">Load</button>
-
 </div>
-<br/>
-<div id="ch6ex2q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex2q_code" class="active_code" prefixcode="undefined" lang="python">
+    </div>
+
+</li>
+<li><div id='ch6ex2t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>There are 2 errors in the following code.  Fix the errors so that it runs.</p>
+
+<pre data-component="activecode" id=ch6ex2q data-lang="python"    data-timelimit=25000   data-audio=''     >
 def square(turtle)
     turtle.forward(100)
     turtle.right(90)
@@ -620,85 +435,11 @@ from turtle import *    # use the turtle library
 space = Screen()        # create a turtle screen
 malik = Turtle()        # create a turtle named malik
 square()                # draw a square with malik
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>There must be a <code class="docutils literal"><span class="pre">:</span></code> at the end of the procedure definition.  You also have to pass malik to the square procedure as shown below.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex2q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex2q_suffix" style="display:none">
-</pre><pre id="ch6ex2q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex2q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex2q_saveb').toggle();
-    $('#ch6ex2q_loadb').toggle();
-}
-if ($("#ch6ex2q").attr("lang") !== "html" && $("#ch6ex2q_code_div").parents(".admonition").length == 0 && $("#ch6ex2q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex2q_code_div").offset({
-            left: $("#ch6ex2q .clearfix").offset().left
-        });
-    }
-    $("#ch6ex2q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex2q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex2q_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex2q',this, undefined);
-            $("#ch6ex2q_runb").on("click", function(){
-                runit('ch6ex2q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex2q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex2q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex2q_runb").on("click", function(){
-        runit('ch6ex2q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex2t-Answer'><p>There must be a <code class="docutils literal"><span class="pre">:</span></code> at the end of the procedure definition.  You also have to pass malik to the square procedure as shown below.</p>
-
-<div id="cont"></div>
-<div id="ch6ex2a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex2a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex2a_saveb" onclick="saveEditor('ch6ex2a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex2a_loadb" onclick="requestCode('ch6ex2a');">Load</button>
-
-</div>
-<br/>
-<div id="ch6ex2a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex2a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch6ex2a data-lang="python"    data-timelimit=25000   data-audio=''     >
 def square(turtle):
     turtle.forward(100)
     turtle.right(90)
@@ -713,72 +454,9 @@ from turtle import *    # use the turtle library
 space = Screen()        # create a turtle screen
 malik = Turtle()        # create a turtle named malik
 square(malik)           # draw a square with malik
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex2a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex2a_suffix" style="display:none">
-</pre><pre id="ch6ex2a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex2a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex2a_saveb').toggle();
-    $('#ch6ex2a_loadb').toggle();
-}
-if ($("#ch6ex2a").attr("lang") !== "html" && $("#ch6ex2a_code_div").parents(".admonition").length == 0 && $("#ch6ex2a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex2a_code_div").offset({
-            left: $("#ch6ex2a .clearfix").offset().left
-        });
-    }
-    $("#ch6ex2a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex2a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex2a_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex2a',this, undefined);
-            $("#ch6ex2a_runb").on("click", function(){
-                runit('ch6ex2a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex2a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex2a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex2a_runb").on("click", function(){
-        runit('ch6ex2a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex2t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch6ex2q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -815,56 +493,14 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch6ex2q']").attr('data-disqus-identifier', 'teachercsp_ch6ex2q_' + eBookConfig.course);
 </script>
-</div></div>
-    </div>
-    <script type='text/javascript'>
-        $('#ch6ex2t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
-
-        // activate the first tab
-        var el = $('#ch6ex2t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch6ex2t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
-</li>
-<li><div id='ch6ex3t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch6ex3t-Question'><span>Question</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch6ex3t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch6ex3t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch6ex3t-Question'><p>The following code has errors.  Fix the errors so that the code runs.</p>
-
-<div id="cont"></div>
-<div id="ch6ex3q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex3q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex3q_saveb" onclick="saveEditor('ch6ex3q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex3q_loadb" onclick="requestCode('ch6ex3q');">Load</button>
-
 </div>
-<br/>
-<div id="ch6ex3q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex3q_code" class="active_code" prefixcode="undefined" lang="python">
+    </div>
+
+</li>
+<li><div id='ch6ex3t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>The following code has 4 errors.  Fix the errors so that the code runs.</p>
+
+<pre data-component="activecode" id=ch6ex3q data-lang="python"    data-timelimit=25000   data-audio=''     >
 def square(turtle,size):
     turtle.forward(size)
     turtle.right(90)
@@ -883,85 +519,11 @@ square(Malik, 100)      # draw a square of size 100
 square(Malik, 75)       # draw a square of size 75
 square(Malik, 50)       # draw a square of size 50
 square(Malik, 25)       # draw a square of size 25
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>You must change the <code class="docutils literal"><span class="pre">Malik</span></code> to <code class="docutils literal"><span class="pre">malik</span></code> on the calls to square.  Remember that Python is case sensitive.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex3q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex3q_suffix" style="display:none">
-</pre><pre id="ch6ex3q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex3q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex3q_saveb').toggle();
-    $('#ch6ex3q_loadb').toggle();
-}
-if ($("#ch6ex3q").attr("lang") !== "html" && $("#ch6ex3q_code_div").parents(".admonition").length == 0 && $("#ch6ex3q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex3q_code_div").offset({
-            left: $("#ch6ex3q .clearfix").offset().left
-        });
-    }
-    $("#ch6ex3q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex3q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex3q_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex3q',this, undefined);
-            $("#ch6ex3q_runb").on("click", function(){
-                runit('ch6ex3q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex3q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex3q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex3q_runb").on("click", function(){
-        runit('ch6ex3q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex3t-Answer'><p>You must change the <code class="docutils literal"><span class="pre">Malik</span></code> to <code class="docutils literal"><span class="pre">malik</span></code>.  Remember that Python is case sensitive.</p>
-
-<div id="cont"></div>
-<div id="ch6ex3a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex3a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex3a_saveb" onclick="saveEditor('ch6ex3a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex3a_loadb" onclick="requestCode('ch6ex3a');">Load</button>
-
-</div>
-<br/>
-<div id="ch6ex3a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex3a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch6ex3a data-lang="python"    data-timelimit=25000   data-audio=''     >
 def square(turtle,size):
     turtle.forward(size)
     turtle.right(90)
@@ -980,72 +542,9 @@ square(malik, 100)      # draw a square of size 100
 square(malik, 75)       # draw a square of size 75
 square(malik, 50)       # draw a square of size 50
 square(malik, 25)       # draw a square of size 25
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex3a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex3a_suffix" style="display:none">
-</pre><pre id="ch6ex3a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex3a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex3a_saveb').toggle();
-    $('#ch6ex3a_loadb').toggle();
-}
-if ($("#ch6ex3a").attr("lang") !== "html" && $("#ch6ex3a_code_div").parents(".admonition").length == 0 && $("#ch6ex3a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex3a_code_div").offset({
-            left: $("#ch6ex3a .clearfix").offset().left
-        });
-    }
-    $("#ch6ex3a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex3a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex3a_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex3a',this, undefined);
-            $("#ch6ex3a_runb").on("click", function(){
-                runit('ch6ex3a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex3a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex3a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex3a_runb").on("click", function(){
-        runit('ch6ex3a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex3t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch6ex3q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -1082,56 +581,14 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch6ex3q']").attr('data-disqus-identifier', 'teachercsp_ch6ex3q_' + eBookConfig.course);
 </script>
-</div></div>
-    </div>
-    <script type='text/javascript'>
-        $('#ch6ex3t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
-
-        // activate the first tab
-        var el = $('#ch6ex3t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch6ex3t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
-</li>
-<li><div id='ch6ex4t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch6ex4t-Question'><span>Question</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch6ex4t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch6ex4t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch6ex4t-Question'><p>The following code has errors.  Fix the code to run.</p>
-
-<div id="cont"></div>
-<div id="ch6ex4q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex4q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex4q_saveb" onclick="saveEditor('ch6ex4q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex4q_loadb" onclick="requestCode('ch6ex4q');">Load</button>
-
 </div>
-<br/>
-<div id="ch6ex4q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex4q_code" class="active_code" prefixcode="undefined" lang="python">
+    </div>
+
+</li>
+<li><div id='ch6ex4t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>The following code has three lines that need to be changed.  Fix the code to run correctly.</p>
+
+<pre data-component="activecode" id=ch6ex4q data-lang="python"    data-timelimit=25000   data-audio=''     >
 def square(turtle,size):
     turtle.forward(size)
     turtle.right(90)
@@ -1150,85 +607,11 @@ square(100, malik)      # draw a square of size 100
 square(malik)               # draw a square of size 75
 square(50)          # draw a square of size 50
 square(malik, 25)       # draw a square of size 25
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>You have to pass the turtle first and then the size separated by a <code class="docutils literal"><span class="pre">,</span></code>.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex4q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex4q_suffix" style="display:none">
-</pre><pre id="ch6ex4q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex4q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex4q_saveb').toggle();
-    $('#ch6ex4q_loadb').toggle();
-}
-if ($("#ch6ex4q").attr("lang") !== "html" && $("#ch6ex4q_code_div").parents(".admonition").length == 0 && $("#ch6ex4q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex4q_code_div").offset({
-            left: $("#ch6ex4q .clearfix").offset().left
-        });
-    }
-    $("#ch6ex4q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex4q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex4q_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex4q',this, undefined);
-            $("#ch6ex4q_runb").on("click", function(){
-                runit('ch6ex4q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex4q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex4q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex4q_runb").on("click", function(){
-        runit('ch6ex4q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex4t-Answer'><p>You have to pass the turtle first and then the size separated by a <code class="docutils literal"><span class="pre">,</span></code>.</p>
-
-<div id="cont"></div>
-<div id="ch6ex4a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex4a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex4a_saveb" onclick="saveEditor('ch6ex4a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex4a_loadb" onclick="requestCode('ch6ex4a');">Load</button>
-
-</div>
-<br/>
-<div id="ch6ex4a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex4a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch6ex4a data-lang="python"    data-timelimit=25000   data-audio=''     >
 def square(turtle,size):
     turtle.forward(size)
     turtle.right(90)
@@ -1247,72 +630,9 @@ square(malik, 100)      # draw a square of size 100
 square(malik, 75)       # draw a square of size 75
 square(malik, 50)       # draw a square of size 50
 square(malik, 25)       # draw a square of size 25
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex4a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex4a_suffix" style="display:none">
-</pre><pre id="ch6ex4a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex4a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex4a_saveb').toggle();
-    $('#ch6ex4a_loadb').toggle();
-}
-if ($("#ch6ex4a").attr("lang") !== "html" && $("#ch6ex4a_code_div").parents(".admonition").length == 0 && $("#ch6ex4a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex4a_code_div").offset({
-            left: $("#ch6ex4a .clearfix").offset().left
-        });
-    }
-    $("#ch6ex4a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex4a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex4a_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex4a',this, undefined);
-            $("#ch6ex4a_runb").on("click", function(){
-                runit('ch6ex4a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex4a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex4a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex4a_runb").on("click", function(){
-        runit('ch6ex4a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex4t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch6ex4q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -1349,56 +669,14 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch6ex4q']").attr('data-disqus-identifier', 'teachercsp_ch6ex4q_' + eBookConfig.course);
 </script>
-</div></div>
-    </div>
-    <script type='text/javascript'>
-        $('#ch6ex4t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
-
-        // activate the first tab
-        var el = $('#ch6ex4t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch6ex4t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
-</li>
-<li><div id='ch6ex5t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch6ex5t-Question'><span>Question</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch6ex5t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch6ex5t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch6ex5t-Question'><p>Change the square procedure below to take a size parameter and go forward by the specified size each time.</p>
-
-<div id="cont"></div>
-<div id="ch6ex5q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex5q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex5q_saveb" onclick="saveEditor('ch6ex5q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex5q_loadb" onclick="requestCode('ch6ex5q');">Load</button>
-
 </div>
-<br/>
-<div id="ch6ex5q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex5q_code" class="active_code" prefixcode="undefined" lang="python">
+    </div>
+
+</li>
+<li><div id='ch6ex5t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Change the square procedure below to take a size parameter and go forward by the specified size each time.</p>
+
+<pre data-component="activecode" id=ch6ex5q data-lang="python"    data-timelimit=25000   data-audio=''     >
 def square(turtle):
     turtle.forward(100)
     turtle.right(90)
@@ -1413,85 +691,11 @@ from turtle import *    # use the turtle library
 space = Screen()        # create a turtle screen
 malik = Turtle()        # create a turtle named malik
 square(malik)           # draw a square with malik
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Add the <code class="docutils literal"><span class="pre">size</span></code> parameter to the procedure defintion and be sure to add a value for the size when you call the procedure as well.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex5q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex5q_suffix" style="display:none">
-</pre><pre id="ch6ex5q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex5q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex5q_saveb').toggle();
-    $('#ch6ex5q_loadb').toggle();
-}
-if ($("#ch6ex5q").attr("lang") !== "html" && $("#ch6ex5q_code_div").parents(".admonition").length == 0 && $("#ch6ex5q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex5q_code_div").offset({
-            left: $("#ch6ex5q .clearfix").offset().left
-        });
-    }
-    $("#ch6ex5q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex5q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex5q_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex5q',this, undefined);
-            $("#ch6ex5q_runb").on("click", function(){
-                runit('ch6ex5q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex5q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex5q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex5q_runb").on("click", function(){
-        runit('ch6ex5q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex5t-Answer'><p>Add the <code class="docutils literal"><span class="pre">size</span></code> parameter to the procedure defintion and be sure to add a value for the size when you call the procedure as well.</p>
-
-<div id="cont"></div>
-<div id="ch6ex5a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex5a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex5a_saveb" onclick="saveEditor('ch6ex5a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex5a_loadb" onclick="requestCode('ch6ex5a');">Load</button>
-
-</div>
-<br/>
-<div id="ch6ex5a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex5a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch6ex5a data-lang="python"    data-timelimit=25000   data-audio=''     >
 def square(turtle, size):
     turtle.forward(size)
     turtle.right(90)
@@ -1506,72 +710,9 @@ from turtle import *    # use the turtle library
 space = Screen()        # create a turtle screen
 malik = Turtle()        # create a turtle named malik
 square(malik,50)       # draw a square with malik
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex5a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex5a_suffix" style="display:none">
-</pre><pre id="ch6ex5a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex5a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex5a_saveb').toggle();
-    $('#ch6ex5a_loadb').toggle();
-}
-if ($("#ch6ex5a").attr("lang") !== "html" && $("#ch6ex5a_code_div").parents(".admonition").length == 0 && $("#ch6ex5a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex5a_code_div").offset({
-            left: $("#ch6ex5a .clearfix").offset().left
-        });
-    }
-    $("#ch6ex5a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex5a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex5a_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex5a',this, undefined);
-            $("#ch6ex5a_runb").on("click", function(){
-                runit('ch6ex5a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex5a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex5a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex5a_runb").on("click", function(){
-        runit('ch6ex5a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex5t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch6ex5q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -1608,213 +749,34 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch6ex5q']").attr('data-disqus-identifier', 'teachercsp_ch6ex5q_' + eBookConfig.course);
 </script>
-</div></div>
-    </div>
-    <script type='text/javascript'>
-        $('#ch6ex5t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
-
-        // activate the first tab
-        var el = $('#ch6ex5t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch6ex5t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
-</li>
-<li><div id='ch6ex6t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch6ex6t-Question'><span>Question</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch6ex6t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch6ex6t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch6ex6t-Question'><p>Change the code below to create a function that calculates the cost of a trip.  It will takes as input the <code class="docutils literal"><span class="pre">miles</span></code>, <code class="docutils literal"><span class="pre">milesPerGallon</span></code>, and <code class="docutils literal"><span class="pre">pricePerGallon</span></code> and will return the cost of the trip.</p>
-
-<div id="cont"></div>
-<div id="ch6ex6q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex6q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex6q_saveb" onclick="saveEditor('ch6ex6q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex6q_loadb" onclick="requestCode('ch6ex6q');">Load</button>
-
 </div>
-<br/>
-<div id="ch6ex6q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex6q_code" class="active_code" prefixcode="undefined" lang="python">
+    </div>
+
+</li>
+<li><div id='ch6ex6t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Change the code below to create a function that calculates the cost of a trip.  It will takes as input the <code class="docutils literal"><span class="pre">miles</span></code>, <code class="docutils literal"><span class="pre">milesPerGallon</span></code>, and <code class="docutils literal"><span class="pre">pricePerGallon</span></code> and will return the cost of the trip.</p>
+
+<pre data-component="activecode" id=ch6ex6q data-lang="python"    data-timelimit=25000   data-audio=''     >
 miles = 500
 milesPerGallon = 26
 numGallons = miles / milesPerGallon
 pricePerGallon = 3.45
 total = numGallons * pricePerGallon
 print(total)
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Add a function definition that takes as parameters <code class="docutils literal"><span class="pre">miles</span></code>, <code class="docutils literal"><span class="pre">milesPerGallon</span></code>, and <code class="docutils literal"><span class="pre">pricePerGallon</span></code>.  Don&#8217;t forget to call the function to test it.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex6q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex6q_suffix" style="display:none">
-</pre><pre id="ch6ex6q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex6q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex6q_saveb').toggle();
-    $('#ch6ex6q_loadb').toggle();
-}
-if ($("#ch6ex6q").attr("lang") !== "html" && $("#ch6ex6q_code_div").parents(".admonition").length == 0 && $("#ch6ex6q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex6q_code_div").offset({
-            left: $("#ch6ex6q .clearfix").offset().left
-        });
-    }
-    $("#ch6ex6q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex6q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex6q_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex6q',this, undefined);
-            $("#ch6ex6q_runb").on("click", function(){
-                runit('ch6ex6q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex6q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex6q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex6q_runb").on("click", function(){
-        runit('ch6ex6q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex6t-Answer'><p>Add a function definition that takes as parameters <code class="docutils literal"><span class="pre">miles</span></code>, <code class="docutils literal"><span class="pre">milesPerGallon</span></code>, and <code class="docutils literal"><span class="pre">pricePerGallon</span></code>.  Don&#8217;t forget to call the function to test it.</p>
-
-<div id="cont"></div>
-<div id="ch6ex6a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex6a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex6a_saveb" onclick="saveEditor('ch6ex6a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex6a_loadb" onclick="requestCode('ch6ex6a');">Load</button>
-
-</div>
-<br/>
-<div id="ch6ex6a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex6a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch6ex6a data-lang="python"    data-timelimit=25000   data-audio=''     >
 def costOfTrip(miles, milesPerGallon, pricePerGallon):
     numGallons = miles / milesPerGallon
     total = numGallons * pricePerGallon
     return(total)
 
 print("The cost of the trip is " + str(costOfTrip(500,26,3.45)))
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex6a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex6a_suffix" style="display:none">
-</pre><pre id="ch6ex6a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex6a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex6a_saveb').toggle();
-    $('#ch6ex6a_loadb').toggle();
-}
-if ($("#ch6ex6a").attr("lang") !== "html" && $("#ch6ex6a_code_div").parents(".admonition").length == 0 && $("#ch6ex6a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex6a_code_div").offset({
-            left: $("#ch6ex6a .clearfix").offset().left
-        });
-    }
-    $("#ch6ex6a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex6a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex6a_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex6a',this, undefined);
-            $("#ch6ex6a_runb").on("click", function(){
-                runit('ch6ex6a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex6a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex6a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex6a_runb").on("click", function(){
-        runit('ch6ex6a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex6t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch6ex6q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -1851,213 +813,34 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch6ex6q']").attr('data-disqus-identifier', 'teachercsp_ch6ex6q_' + eBookConfig.course);
 </script>
-</div></div>
-    </div>
-    <script type='text/javascript'>
-        $('#ch6ex6t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
-
-        // activate the first tab
-        var el = $('#ch6ex6t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch6ex6t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
-</li>
-<li><div id='ch6ex7t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch6ex7t-Question'><span>Question</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch6ex7t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch6ex7t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch6ex7t-Question'><p>Change the code below to create a function to return the number of miles you can drive.  It will take as input the <code class="docutils literal"><span class="pre">tankCapacity</span></code>, <code class="docutils literal"><span class="pre">theAmountLeft</span></code>, and the <code class="docutils literal"><span class="pre">milesPerGallon</span></code>.</p>
-
-<div id="cont"></div>
-<div id="ch6ex7q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex7q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex7q_saveb" onclick="saveEditor('ch6ex7q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex7q_loadb" onclick="requestCode('ch6ex7q');">Load</button>
-
 </div>
-<br/>
-<div id="ch6ex7q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex7q_code" class="active_code" prefixcode="undefined" lang="python">
+    </div>
+
+</li>
+<li><div id='ch6ex7t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Change the code below to create a function to return the number of miles you can drive.  It will take as input the <code class="docutils literal"><span class="pre">tankCapacity</span></code>, <code class="docutils literal"><span class="pre">theAmountLeft</span></code>, and the <code class="docutils literal"><span class="pre">milesPerGallon</span></code>.</p>
+
+<pre data-component="activecode" id=ch6ex7q data-lang="python"    data-timelimit=25000   data-audio=''     >
 tankCapacity = 10
 amountLeft = 0.25
 numGallons = tankCapacity * amountLeft
 milesPerGallon = 32
 numMiles = numGallons * milesPerGallon
 print(numMiles)
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Add a function definition that takes as parameters <code class="docutils literal"><span class="pre">tankCapacity</span></code>,``amountLeft``, and <code class="docutils literal"><span class="pre">milesPerGallon</span></code>.  Be sure to call the function to test it.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex7q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex7q_suffix" style="display:none">
-</pre><pre id="ch6ex7q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex7q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex7q_saveb').toggle();
-    $('#ch6ex7q_loadb').toggle();
-}
-if ($("#ch6ex7q").attr("lang") !== "html" && $("#ch6ex7q_code_div").parents(".admonition").length == 0 && $("#ch6ex7q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex7q_code_div").offset({
-            left: $("#ch6ex7q .clearfix").offset().left
-        });
-    }
-    $("#ch6ex7q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex7q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex7q_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex7q',this, undefined);
-            $("#ch6ex7q_runb").on("click", function(){
-                runit('ch6ex7q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex7q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex7q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex7q_runb").on("click", function(){
-        runit('ch6ex7q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex7t-Answer'><p>Add a function definition that takes as parameters <code class="docutils literal"><span class="pre">tankCapacity</span></code>,``amountLeft``, and <code class="docutils literal"><span class="pre">milesPerGallon</span></code>.  Be sure to call the function to test it.</p>
-
-<div id="cont"></div>
-<div id="ch6ex7a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex7a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex7a_saveb" onclick="saveEditor('ch6ex7a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex7a_loadb" onclick="requestCode('ch6ex7a');">Load</button>
-
-</div>
-<br/>
-<div id="ch6ex7a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex7a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch6ex7a data-lang="python"    data-timelimit=25000   data-audio=''     >
 def calcNumMiles(tankCapacity,amountLeft, milesPerGallon):
     numGallons = tankCapacity * amountLeft
     numMiles = numGallons * milesPerGallon
     return(numMiles)
 
 print("The number of miles you can go is " + str(calcNumMiles(10,0.25,32)))
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex7a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex7a_suffix" style="display:none">
-</pre><pre id="ch6ex7a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex7a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex7a_saveb').toggle();
-    $('#ch6ex7a_loadb').toggle();
-}
-if ($("#ch6ex7a").attr("lang") !== "html" && $("#ch6ex7a_code_div").parents(".admonition").length == 0 && $("#ch6ex7a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex7a_code_div").offset({
-            left: $("#ch6ex7a .clearfix").offset().left
-        });
-    }
-    $("#ch6ex7a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex7a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex7a_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex7a',this, undefined);
-            $("#ch6ex7a_runb").on("click", function(){
-                runit('ch6ex7a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex7a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex7a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex7a_runb").on("click", function(){
-        runit('ch6ex7a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex7t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch6ex7q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -2094,137 +877,21 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch6ex7q']").attr('data-disqus-identifier', 'teachercsp_ch6ex7q_' + eBookConfig.course);
 </script>
-</div></div>
+</div>
     </div>
-    <script type='text/javascript'>
-        $('#ch6ex7t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
 
-        // activate the first tab
-        var el = $('#ch6ex7t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch6ex7t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
 </li>
-<li><div id='ch6ex8t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch6ex8t-Question'><span>Question</span></a>
-</li>
+<li><div id='ch6ex8t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Create a procedure to draw a rectangle and call it.  Be sure to take the <code class="docutils literal"><span class="pre">width</span></code> and <code class="docutils literal"><span class="pre">height</span></code> of the rectangle as input to the procedure.</p>
 
-<li>
-    <a data-toggle='tab' href='#ch6ex8t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch6ex8t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch6ex8t-Question'><p>Create a procedure to draw a rectangle and call it.  Be sure to take the <code class="docutils literal"><span class="pre">width</span></code> and <code class="docutils literal"><span class="pre">height</span></code> of the rectangle as input to the procedure.</p>
-
-<div id="cont"></div>
-<div id="ch6ex8q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex8q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex8q_saveb" onclick="saveEditor('ch6ex8q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex8q_loadb" onclick="requestCode('ch6ex8q');">Load</button>
-
-</div>
-<br/>
-<div id="ch6ex8q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex8q_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch6ex8q data-lang="python"    data-timelimit=25000   data-audio=''     >
 
 
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Create the procedure and be sure to call it to test it.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex8q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex8q_suffix" style="display:none">
-</pre><pre id="ch6ex8q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex8q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex8q_saveb').toggle();
-    $('#ch6ex8q_loadb').toggle();
-}
-if ($("#ch6ex8q").attr("lang") !== "html" && $("#ch6ex8q_code_div").parents(".admonition").length == 0 && $("#ch6ex8q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex8q_code_div").offset({
-            left: $("#ch6ex8q .clearfix").offset().left
-        });
-    }
-    $("#ch6ex8q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex8q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex8q_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex8q',this, undefined);
-            $("#ch6ex8q_runb").on("click", function(){
-                runit('ch6ex8q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex8q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex8q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex8q_runb").on("click", function(){
-        runit('ch6ex8q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex8t-Answer'><p>Create the procedure and be sure to call it to test it.</p>
-
-<div id="cont"></div>
-<div id="ch6ex8a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex8a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex8a_saveb" onclick="saveEditor('ch6ex8a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex8a_loadb" onclick="requestCode('ch6ex8a');">Load</button>
-
-</div>
-<br/>
-<div id="ch6ex8a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex8a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch6ex8a data-lang="python"    data-timelimit=25000   data-audio=''     >
 def rectangle(turtle, width, height):
     turtle.forward(width)
     turtle.right(90)
@@ -2238,72 +905,9 @@ from turtle import *    # use the turtle library
 space = Screen()        # create a turtle screen
 malik = Turtle()        # create a turtle named malik
 rectangle(malik, 100, 80)    # draw a rectangle with malik
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex8a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex8a_suffix" style="display:none">
-</pre><pre id="ch6ex8a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex8a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex8a_saveb').toggle();
-    $('#ch6ex8a_loadb').toggle();
-}
-if ($("#ch6ex8a").attr("lang") !== "html" && $("#ch6ex8a_code_div").parents(".admonition").length == 0 && $("#ch6ex8a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex8a_code_div").offset({
-            left: $("#ch6ex8a .clearfix").offset().left
-        });
-    }
-    $("#ch6ex8a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex8a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex8a_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex8a',this, undefined);
-            $("#ch6ex8a_runb").on("click", function(){
-                runit('ch6ex8a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex8a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex8a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex8a_runb").on("click", function(){
-        runit('ch6ex8a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex8t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch6ex8q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -2340,137 +944,21 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch6ex8q']").attr('data-disqus-identifier', 'teachercsp_ch6ex8q_' + eBookConfig.course);
 </script>
-</div></div>
+</div>
     </div>
-    <script type='text/javascript'>
-        $('#ch6ex8t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
 
-        // activate the first tab
-        var el = $('#ch6ex8t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch6ex8t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
 </li>
-<li><div id='ch6ex9t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch6ex9t-Question'><span>Question</span></a>
-</li>
+<li><div id='ch6ex9t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Create a procedure to draw a triangle and call it.  Be sure to take the size of the triangle as input to the procedure.</p>
 
-<li>
-    <a data-toggle='tab' href='#ch6ex9t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch6ex9t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch6ex9t-Question'><p>Create a procedure to draw a triangle and call it.  Be sure to take the size of the triangle as input to the procedure.</p>
-
-<div id="cont"></div>
-<div id="ch6ex9q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex9q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex9q_saveb" onclick="saveEditor('ch6ex9q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex9q_loadb" onclick="requestCode('ch6ex9q');">Load</button>
-
-</div>
-<br/>
-<div id="ch6ex9q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex9q_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch6ex9q data-lang="python"    data-timelimit=25000   data-audio=''     >
 
 
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Create the procedure and be sure to call it to test it.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex9q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex9q_suffix" style="display:none">
-</pre><pre id="ch6ex9q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex9q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex9q_saveb').toggle();
-    $('#ch6ex9q_loadb').toggle();
-}
-if ($("#ch6ex9q").attr("lang") !== "html" && $("#ch6ex9q_code_div").parents(".admonition").length == 0 && $("#ch6ex9q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex9q_code_div").offset({
-            left: $("#ch6ex9q .clearfix").offset().left
-        });
-    }
-    $("#ch6ex9q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex9q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex9q_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex9q',this, undefined);
-            $("#ch6ex9q_runb").on("click", function(){
-                runit('ch6ex9q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex9q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex9q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex9q_runb").on("click", function(){
-        runit('ch6ex9q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex9t-Answer'><p>Create the procedure and be sure to call it to test it.</p>
-
-<div id="cont"></div>
-<div id="ch6ex9a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex9a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex9a_saveb" onclick="saveEditor('ch6ex9a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex9a_loadb" onclick="requestCode('ch6ex9a');">Load</button>
-
-</div>
-<br/>
-<div id="ch6ex9a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex9a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch6ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
 def triangle(turtle, size):
     turtle.left(60)
     turtle.forward(size)
@@ -2483,72 +971,9 @@ from turtle import *    # use the turtle library
 space = Screen()        # create a turtle screen
 malik = Turtle()        # create a turtle named malik
 triangle(malik, 100)    # draw a triangle with malik
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex9a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex9a_suffix" style="display:none">
-</pre><pre id="ch6ex9a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex9a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex9a_saveb').toggle();
-    $('#ch6ex9a_loadb').toggle();
-}
-if ($("#ch6ex9a").attr("lang") !== "html" && $("#ch6ex9a_code_div").parents(".admonition").length == 0 && $("#ch6ex9a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex9a_code_div").offset({
-            left: $("#ch6ex9a .clearfix").offset().left
-        });
-    }
-    $("#ch6ex9a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex9a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex9a_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex9a',this, undefined);
-            $("#ch6ex9a_runb").on("click", function(){
-                runit('ch6ex9a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex9a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex9a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex9a_runb").on("click", function(){
-        runit('ch6ex9a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex9t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch6ex9q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -2585,137 +1010,21 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch6ex9q']").attr('data-disqus-identifier', 'teachercsp_ch6ex9q_' + eBookConfig.course);
 </script>
-</div></div>
+</div>
     </div>
-    <script type='text/javascript'>
-        $('#ch6ex9t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
 
-        // activate the first tab
-        var el = $('#ch6ex9t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch6ex9t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
 </li>
-<li><div id='ch6ex10t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch6ex10t-Question'><span>Question</span></a>
-</li>
+<li><div id='ch6ex10t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write the code below to create a procedure that prints a mad lib.  You can ask the user for input and then pass that input into the procedure.</p>
 
-<li>
-    <a data-toggle='tab' href='#ch6ex10t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch6ex10t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch6ex10t-Question'><p>Write the code below to create a procedure that prints a mad lib.  You can ask the user for input and then pass that input into the procedure.</p>
-
-<div id="cont"></div>
-<div id="ch6ex10q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex10q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex10q_saveb" onclick="saveEditor('ch6ex10q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex10q_loadb" onclick="requestCode('ch6ex10q');">Load</button>
-
-</div>
-<br/>
-<div id="ch6ex10q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex10q_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch6ex10q data-lang="python"    data-timelimit=25000   data-audio=''     >
 
 
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Create the procedure and be sure to call it to test it.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex10q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex10q_suffix" style="display:none">
-</pre><pre id="ch6ex10q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex10q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex10q_saveb').toggle();
-    $('#ch6ex10q_loadb').toggle();
-}
-if ($("#ch6ex10q").attr("lang") !== "html" && $("#ch6ex10q_code_div").parents(".admonition").length == 0 && $("#ch6ex10q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex10q_code_div").offset({
-            left: $("#ch6ex10q .clearfix").offset().left
-        });
-    }
-    $("#ch6ex10q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex10q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex10q_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex10q',this, undefined);
-            $("#ch6ex10q_runb").on("click", function(){
-                runit('ch6ex10q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex10q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex10q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex10q_runb").on("click", function(){
-        runit('ch6ex10q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex10t-Answer'><p>Create the procedure and be sure to call it to test it.</p>
-
-<div id="cont"></div>
-<div id="ch6ex10a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch6ex10a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex10a_saveb" onclick="saveEditor('ch6ex10a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch6ex10a_loadb" onclick="requestCode('ch6ex10a');">Load</button>
-
-</div>
-<br/>
-<div id="ch6ex10a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch6ex10a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch6ex10a data-lang="python"    data-timelimit=25000   data-audio=''     >
 def printMadLib(place,verb,action,color,animal):
     print("Once upon a time in " + place + ", I was " +
           verb + "ing and I " + action + " because a " +
@@ -2727,72 +1036,9 @@ action = input("Enter an action.")
 color = input("Enter your favorite color.")
 animal = input("What is your favorite animal?")
 printMadLib(place,verb,action,color,animal)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch6ex10a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch6ex10a_suffix" style="display:none">
-</pre><pre id="ch6ex10a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch6ex10a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch6ex10a_saveb').toggle();
-    $('#ch6ex10a_loadb').toggle();
-}
-if ($("#ch6ex10a").attr("lang") !== "html" && $("#ch6ex10a_code_div").parents(".admonition").length == 0 && $("#ch6ex10a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch6ex10a_code_div").offset({
-            left: $("#ch6ex10a .clearfix").offset().left
-        });
-    }
-    $("#ch6ex10a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch6ex10a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch6ex10a_runb").parent().siblings(".ac_output").show();
-            runit('ch6ex10a',this, undefined);
-            $("#ch6ex10a_runb").on("click", function(){
-                runit('ch6ex10a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch6ex10a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch6ex10a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch6ex10a_runb").on("click", function(){
-        runit('ch6ex10a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch6ex10t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch6ex10q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -2829,29 +1075,9 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch6ex10q']").attr('data-disqus-identifier', 'teachercsp_ch6ex10q_' + eBookConfig.course);
 </script>
-</div></div>
+</div>
     </div>
-    <script type='text/javascript'>
-        $('#ch6ex10t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
 
-        // activate the first tab
-        var el = $('#ch6ex10t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch6ex10t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
 </li>
 </ol>
 </div>
@@ -2884,7 +1110,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

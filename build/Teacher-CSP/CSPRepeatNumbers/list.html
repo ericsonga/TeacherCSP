@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -332,117 +348,26 @@ make a list before they go shopping or a list of things to do.  A <strong>list</
 </div>
 <p>When you ran the code in the last section, did you get 55?  That&#8217;s the sum of all the numbers from 1 to 10.  Here is the program again.  Run it if you don&#8217;t remember what it printed before.</p>
 
-<div id="cont"></div>
-<div id="Numbers_Repeat2" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Numbers_Repeat2_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Repeat2_saveb" onclick="saveEditor('Numbers_Repeat2');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Repeat2_loadb" onclick="requestCode('Numbers_Repeat2');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Numbers_Repeat2','sum = 0  # Start out with nothing*nline*thingsToAdd = [1,2,3,4,5,6,7,8,9,10]*nline*for number in thingsToAdd:*nline*    sum = sum + number*nline*print*open*sum*close*','2','*doubleq*Line by line tour*doubleq*; 1: for1_line1; 2: for1_line2; 3: for1_line3; 4: for1_line4; 5: for1_line5;*atype**doubleq*High level tour*doubleq*; 1-2: for1_line1-2; 3-4: for1_line3-4; 5: for1_s_line5;*atype*')"/>
-<button class='btn btn-default' id="Numbers_Repeat2_vizb" onclick="injectCodelens(this,'Numbers_Repeat2');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="Numbers_Repeat2_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Numbers_Repeat2_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Numbers_Repeat2 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Line by line tour*doubleq*; 1: for1_line1; 2: for1_line2; 3: for1_line3; 4: for1_line4; 5: for1_line5;*atype**doubleq*High level tour*doubleq*; 1-2: for1_line1-2; 3-4: for1_line3-4; 5: for1_s_line5;*atype*'     >
 sum = 0  # Start out with nothing
 thingsToAdd = [1,2,3,4,5,6,7,8,9,10]
 for number in thingsToAdd:
     sum = sum + number
 print(sum)
-</textarea>
-</div>
+</pre>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Numbers_Repeat2_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Numbers_Repeat2_suffix" style="display:none">
-</pre><pre id="Numbers_Repeat2_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Numbers_Repeat2)</span> </p>
-<div id="Numbers_Repeat2_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Numbers_Repeat2_saveb').toggle();
-    $('#Numbers_Repeat2_loadb').toggle();
-}
-if ($("#Numbers_Repeat2").attr("lang") !== "html" && $("#Numbers_Repeat2_code_div").parents(".admonition").length == 0 && $("#Numbers_Repeat2_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Numbers_Repeat2_code_div").offset({
-            left: $("#Numbers_Repeat2 .clearfix").offset().left
-        });
-    }
-    $("#Numbers_Repeat2_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Numbers_Repeat2_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Numbers_Repeat2_runb").parent().siblings(".ac_output").show();
-            runit('Numbers_Repeat2',this, undefined);
-            $("#Numbers_Repeat2_runb").on("click", function(){
-                runit('Numbers_Repeat2',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Numbers_Repeat2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Numbers_Repeat2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Numbers_Repeat2_runb").on("click", function(){
-        runit('Numbers_Repeat2',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="7_3_1_Numbers_Repeat2_Q1" class="alert alert-warning">
-            csp-7-3-1: Now, change the program above to get the product instead of the sum (e.g., replace <cite>+</cite> with <cite>*</cite>, and replace the <cite>0</cite> as the initial value of <cite>sum</cite> to <cite>1</cite>).  What do you get now when you run the program?<form name="7_3_1_Numbers_Repeat2_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="7_3_1_Numbers_Repeat2_Q1_opt_a" />
-            <label for= "7_3_1_Numbers_Repeat2_Q1_opt_a">  a) 55</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="7_3_1_Numbers_Repeat2_Q1">
+            csp-7-3-1: Now, change the program above to get the product instead of the sum (e.g., replace <cite>+</cite> with <cite>*</cite>, and replace the <cite>0</cite> as the initial value of <cite>sum</cite> to <cite>1</cite>).  What do you get now when you run the program?
+            <li data-component="answer"  id="7_3_1_Numbers_Repeat2_Q1_opt_a">55</li><li data-component="feedback" id="7_3_1_Numbers_Repeat2_Q1_opt_a">That's the sum</li>
             
-            <input type="radio" name="group1" value="b" id="7_3_1_Numbers_Repeat2_Q1_opt_b" />
-            <label for= "7_3_1_Numbers_Repeat2_Q1_opt_b">  b) 0</label><br />
+            <li data-component="answer"  id="7_3_1_Numbers_Repeat2_Q1_opt_b">0</li><li data-component="feedback" id="7_3_1_Numbers_Repeat2_Q1_opt_b">That's what you get if you leave the sum as 0.  Multipying everything by 0 gets you 0</li>
             
-            <input type="radio" name="group1" value="c" id="7_3_1_Numbers_Repeat2_Q1_opt_c" />
-            <label for= "7_3_1_Numbers_Repeat2_Q1_opt_c">  c) 3628800</label><br />
+            <li data-component="answer" data-correct id="7_3_1_Numbers_Repeat2_Q1_opt_c">3628800</li><li data-component="feedback" id="7_3_1_Numbers_Repeat2_Q1_opt_c">That's 1*2*3*4*5*6*7*8*9*10</li>
             
-            <input type="radio" name="group1" value="d" id="7_3_1_Numbers_Repeat2_Q1_opt_d" />
-            <label for= "7_3_1_Numbers_Repeat2_Q1_opt_d">  d) Error - number is too big</label><br />
+            <li data-component="answer"  id="7_3_1_Numbers_Repeat2_Q1_opt_d">Error - number is too big</li><li data-component="feedback" id="7_3_1_Numbers_Repeat2_Q1_opt_d">It should actually work</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('7_3_1_Numbers_Repeat2_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7_3_1_Numbers_Repeat2_Q1','c',['That\u0027s the sum', 'That\u0027s what you get if you leave the sum as 0.  Multipying everything by 0 gets you 0', 'That\u0027s 1*2*3*4*5*6*7*8*9*10', 'It should actually work'])">Check Me</button>
-            <button class='btn btn-default' id="7_3_1_Numbers_Repeat2_Q1_bcomp" disabled name="compare" onclick="compareAnswers('7_3_1_Numbers_Repeat2_Q1');">Compare Me</button>
-            </form><br />
-            <div id="7_3_1_Numbers_Repeat2_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             </div>
 <div class="section" id="bigteachernote-teacher-note-names-are-just-words">
 <h1><a class="reference internal" href="../_images/apple7.jpg"><img alt="teacher note" class="align-top" src="../_images/apple7.jpg" style="width: 50px;" /></a> Teacher Note: Names are Just Words<a class="headerlink" href="#bigteachernote-teacher-note-names-are-just-words" title="Permalink to this headline">¶</a></h1>
@@ -494,61 +419,36 @@ $(window).resize(function() {
 });
 </script>
 
-            <div id="7_3_2_Numbers_Product_Q1" class="alert alert-warning">
-            csp-7-3-2: What is the value of number the 3rd time through the loop?<form name="7_3_2_Numbers_Product_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="7_3_2_Numbers_Product_Q1_opt_a" />
-            <label for= "7_3_2_Numbers_Product_Q1_opt_a">  a) 1</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="7_3_2_Numbers_Product_Q1">
+            csp-7-3-2: What is the value of number the 3rd time through the loop?
+            <li data-component="answer"  id="7_3_2_Numbers_Product_Q1_opt_a">1</li><li data-component="feedback" id="7_3_2_Numbers_Product_Q1_opt_a">That's the value the first time through the loop</li>
             
-            <input type="radio" name="group1" value="b" id="7_3_2_Numbers_Product_Q1_opt_b" />
-            <label for= "7_3_2_Numbers_Product_Q1_opt_b">  b) 2</label><br />
+            <li data-component="answer"  id="7_3_2_Numbers_Product_Q1_opt_b">2</li><li data-component="feedback" id="7_3_2_Numbers_Product_Q1_opt_b">That's the value the second time through the loop</li>
             
-            <input type="radio" name="group1" value="c" id="7_3_2_Numbers_Product_Q1_opt_c" />
-            <label for= "7_3_2_Numbers_Product_Q1_opt_c">  c) 3</label><br />
+            <li data-component="answer" data-correct id="7_3_2_Numbers_Product_Q1_opt_c">3</li><li data-component="feedback" id="7_3_2_Numbers_Product_Q1_opt_c">That's the value the third time through the loop</li>
             
-            <input type="radio" name="group1" value="d" id="7_3_2_Numbers_Product_Q1_opt_d" />
-            <label for= "7_3_2_Numbers_Product_Q1_opt_d">  d) 4</label><br />
+            <li data-component="answer"  id="7_3_2_Numbers_Product_Q1_opt_d">4</li><li data-component="feedback" id="7_3_2_Numbers_Product_Q1_opt_d">That's the value the fourth time through the loop</li>
             
-            <input type="radio" name="group1" value="e" id="7_3_2_Numbers_Product_Q1_opt_e" />
-            <label for= "7_3_2_Numbers_Product_Q1_opt_e">  e) 10</label><br />
+            <li data-component="answer"  id="7_3_2_Numbers_Product_Q1_opt_e">10</li><li data-component="feedback" id="7_3_2_Numbers_Product_Q1_opt_e">That's the value the last time through the loop</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('7_3_2_Numbers_Product_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7_3_2_Numbers_Product_Q1','c',['That\u0027s the value the first time through the loop', 'That\u0027s the value the second time through the loop', 'That\u0027s the value the third time through the loop', 'That\u0027s the value the fourth time through the loop', 'That\u0027s the value the last time through the loop'])">Check Me</button>
-            <button class='btn btn-default' id="7_3_2_Numbers_Product_Q1_bcomp" disabled name="compare" onclick="compareAnswers('7_3_2_Numbers_Product_Q1');">Compare Me</button>
-            </form><br />
-            <div id="7_3_2_Numbers_Product_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             
-            <div id="7_3_3_Numbers_Product_Q2" class="alert alert-warning">
-            csp-7-3-3: What is the value of product after the 4th time through the loop?<form name="7_3_3_Numbers_Product_Q2_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="7_3_3_Numbers_Product_Q2_opt_a" />
-            <label for= "7_3_3_Numbers_Product_Q2_opt_a">  a) 6</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="7_3_3_Numbers_Product_Q2">
+            csp-7-3-3: What is the value of product after the 4th time through the loop?
+            <li data-component="answer"  id="7_3_3_Numbers_Product_Q2_opt_a">6</li><li data-component="feedback" id="7_3_3_Numbers_Product_Q2_opt_a">That's the value after the 3rd time through the loop.</li>
             
-            <input type="radio" name="group1" value="b" id="7_3_3_Numbers_Product_Q2_opt_b" />
-            <label for= "7_3_3_Numbers_Product_Q2_opt_b">  b) 10</label><br />
+            <li data-component="answer"  id="7_3_3_Numbers_Product_Q2_opt_b">10</li><li data-component="feedback" id="7_3_3_Numbers_Product_Q2_opt_b">That's the value if we were adding up the values rather than multiplying them.</li>
             
-            <input type="radio" name="group1" value="c" id="7_3_3_Numbers_Product_Q2_opt_c" />
-            <label for= "7_3_3_Numbers_Product_Q2_opt_c">  c) 24</label><br />
+            <li data-component="answer" data-correct id="7_3_3_Numbers_Product_Q2_opt_c">24</li><li data-component="feedback" id="7_3_3_Numbers_Product_Q2_opt_c">That's the value after the 4th time through the loop.</li>
             
-            <input type="radio" name="group1" value="d" id="7_3_3_Numbers_Product_Q2_opt_d" />
-            <label for= "7_3_3_Numbers_Product_Q2_opt_d">  d) 120</label><br />
+            <li data-component="answer"  id="7_3_3_Numbers_Product_Q2_opt_d">120</li><li data-component="feedback" id="7_3_3_Numbers_Product_Q2_opt_d">That's the value after the 5th time through the loop.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('7_3_3_Numbers_Product_Q2');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7_3_3_Numbers_Product_Q2','c',['That\u0027s the value after the 3rd time through the loop.', 'That\u0027s the value if we were adding up the values rather than multiplying them.', 'That\u0027s the value after the 4th time through the loop.', 'That\u0027s the value after the 5th time through the loop.'])">Check Me</button>
-            <button class='btn btn-default' id="7_3_3_Numbers_Product_Q2_bcomp" disabled name="compare" onclick="compareAnswers('7_3_3_Numbers_Product_Q2');">Compare Me</button>
-            </form><br />
-            <div id="7_3_3_Numbers_Product_Q2_feedback">
-            </div>
-            </div>
+            </ul>
             
         <div class='parsons alert alert-warning' id="parsons-105">
-        <div class="parsons-text">csp-7-3-4: The following program calculates the average of a list of numbers, but the code is mixed up.  First initialize the sum to 0.  Then create the list of numbers.  Loop through the list and each time add the current number to the sum.  Return the sum divided by the number of items in the list.  <b>Don't forget that you must indent the lines that are repeated in the loop</b>.<br /><br /></div>
+        <div class="parsons-text">csp-7-3-4: The following program calculates the average of a list of numbers, but the code is mixed up.  First initialize the sum to 0.  Then create the list of numbers.  Loop through the list and each time add the current number to the sum.  Print the sum divided by the number of items in the list.  <b>Don't forget that you must indent the lines that are repeated in the loop</b>.<br /><br /></div>
         <div style="clear:left;"></div>
         <div id="parsons-orig-105" style="display:none;">sum = 0
 numbers = [90, 80, 75, 90, 83]
@@ -569,7 +469,7 @@ print(sum / 5)</div>
 
     <script>
         $pjQ(document).ready(function(){
-
+            var rb = new RunestoneBase();
             $("#parsons-105").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
                     scrollTop: ($("#parsons-105").offset().top - 50)
@@ -585,10 +485,10 @@ print(sum / 5)</div>
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
-                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'7_3_4_Average'});
+                    rb.logBookEvent({'event':'parsons', 'act':hash, 'div_id':'7_3_4_Average'});
 
             } else {
-                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'7_3_4_Average'});
+                    rb.logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'7_3_4_Average'});
                     msgBox.fadeIn(100);
                     msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
@@ -704,7 +604,10 @@ print(sum / 5)</div>
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

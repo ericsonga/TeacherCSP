@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -323,166 +339,46 @@
 <p>The <code class="docutils literal"><span class="pre">split</span></code> function does exactly that.  It takes as input the character to split on, then returns a <em>list</em> with pieces.  The pieces can then be <em>indexed</em>.</p>
 <p>Try running this program.</p>
 
-<div id="cont"></div>
-<div id="firstsplit" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="firstsplit_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="firstsplit_saveb" onclick="saveEditor('firstsplit');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="firstsplit_loadb" onclick="requestCode('firstsplit');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('firstsplit','input = *doubleq*Pat,Smith,girl,65 Elm Street,eat*doubleq**nline*pieces = input.split*open**doubleq*,*doubleq**close**nline*print*open*pieces*close**nline*print*open**doubleq*First name is:*doubleq**close**nline*print*open*pieces[0]*close*','1','*doubleq*Line by line tour*doubleq*; 1: StP1-line1; 2: StP1-line2; 3: StP1-line3; 4: StP1-line4; 5: StP1-line5;*atype*')"/>
-<button class='btn btn-default' id="firstsplit_vizb" onclick="injectCodelens(this,'firstsplit');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="firstsplit_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="firstsplit_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=firstsplit data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Line by line tour*doubleq*; 1: StP1-line1; 2: StP1-line2; 3: StP1-line3; 4: StP1-line4; 5: StP1-line5;*atype*'     >
 input = "Pat,Smith,girl,65 Elm Street,eat"
 pieces = input.split(",")
 print(pieces)
 print("First name is:")
 print(pieces[0])
-</textarea>
-</div>
+</pre>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="firstsplit_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="firstsplit_suffix" style="display:none">
-</pre><pre id="firstsplit_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (firstsplit)</span> </p>
-<div id="firstsplit_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#firstsplit_saveb').toggle();
-    $('#firstsplit_loadb').toggle();
-}
-if ($("#firstsplit").attr("lang") !== "html" && $("#firstsplit_code_div").parents(".admonition").length == 0 && $("#firstsplit_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#firstsplit_code_div").offset({
-            left: $("#firstsplit .clearfix").offset().left
-        });
-    }
-    $("#firstsplit_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#firstsplit_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#firstsplit_runb").parent().siblings(".ac_output").show();
-            runit('firstsplit',this, undefined);
-            $("#firstsplit_runb").on("click", function(){
-                runit('firstsplit',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#firstsplit_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#firstsplit_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#firstsplit_runb").on("click", function(){
-        runit('firstsplit',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="17_3_1_question_firstsplit" class="alert alert-warning">
-            csp-17-3-1: What do you think we would get if we executed <code class="docutils literal"><span class="pre">print(pieces[3])</span></code><form name="17_3_1_question_firstsplit_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="17_3_1_question_firstsplit_opt_a" />
-            <label for= "17_3_1_question_firstsplit_opt_a">  a) Smith</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="17_3_1_question_firstsplit">
+            csp-17-3-1: What do you think we would get if we executed <code class="docutils literal"><span class="pre">print(pieces[3])</span></code>
+            <li data-component="answer"  id="17_3_1_question_firstsplit_opt_a">Smith</li><li data-component="feedback" id="17_3_1_question_firstsplit_opt_a">That's pieces[1].</li>
             
-            <input type="radio" name="group1" value="b" id="17_3_1_question_firstsplit_opt_b" />
-            <label for= "17_3_1_question_firstsplit_opt_b">  b) girl</label><br />
+            <li data-component="answer"  id="17_3_1_question_firstsplit_opt_b">girl</li><li data-component="feedback" id="17_3_1_question_firstsplit_opt_b">That's pieces[2]</li>
             
-            <input type="radio" name="group1" value="c" id="17_3_1_question_firstsplit_opt_c" />
-            <label for= "17_3_1_question_firstsplit_opt_c">  c) 65 Elm Street</label><br />
+            <li data-component="answer" data-correct id="17_3_1_question_firstsplit_opt_c">65 Elm Street</li><li data-component="feedback" id="17_3_1_question_firstsplit_opt_c">The address is at position 3 in the resulting list.</li>
             
-            <input type="radio" name="group1" value="d" id="17_3_1_question_firstsplit_opt_d" />
-            <label for= "17_3_1_question_firstsplit_opt_d">  d) eat</label><br />
+            <li data-component="answer"  id="17_3_1_question_firstsplit_opt_d">eat</li><li data-component="feedback" id="17_3_1_question_firstsplit_opt_d">That's pieces[4]</li>
             
-            <input type="radio" name="group1" value="e" id="17_3_1_question_firstsplit_opt_e" />
-            <label for= "17_3_1_question_firstsplit_opt_e">  e) We would get an error</label><br />
+            <li data-component="answer"  id="17_3_1_question_firstsplit_opt_e">We would get an error</li><li data-component="feedback" id="17_3_1_question_firstsplit_opt_e">Why would this cause an error?  We can use indices to get the element at an index in a list.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('17_3_1_question_firstsplit');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('17_3_1_question_firstsplit','c',['That\u0027s pieces[1].', 'That\u0027s pieces[2]', 'The address is at position 3 in the resulting list.', 'That\u0027s pieces[4]', 'Why would this cause an error?  We can use indices to get the element at an index in a list.'])">Check Me</button>
-            <button class='btn btn-default' id="17_3_1_question_firstsplit_bcomp" disabled name="compare" onclick="compareAnswers('17_3_1_question_firstsplit');">Compare Me</button>
-            </form><br />
-            <div id="17_3_1_question_firstsplit_feedback">
-            </div>
-            </div>
+            </ul>
             
-            <div id="17_3_2_question_firstsplit2" class="alert alert-warning">
-            csp-17-3-2: What do you think we would get if we executed <code class="docutils literal"><span class="pre">print(pieces[5])</span></code><form name="17_3_2_question_firstsplit2_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="17_3_2_question_firstsplit2_opt_a" />
-            <label for= "17_3_2_question_firstsplit2_opt_a">  a) Smith</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="17_3_2_question_firstsplit2">
+            csp-17-3-2: What do you think we would get if we executed <code class="docutils literal"><span class="pre">print(pieces[5])</span></code>
+            <li data-component="answer"  id="17_3_2_question_firstsplit2_opt_a">Smith</li><li data-component="feedback" id="17_3_2_question_firstsplit2_opt_a">That's pieces[1].</li>
             
-            <input type="radio" name="group1" value="b" id="17_3_2_question_firstsplit2_opt_b" />
-            <label for= "17_3_2_question_firstsplit2_opt_b">  b) girl</label><br />
+            <li data-component="answer"  id="17_3_2_question_firstsplit2_opt_b">girl</li><li data-component="feedback" id="17_3_2_question_firstsplit2_opt_b">That's pieces[2].</li>
             
-            <input type="radio" name="group1" value="c" id="17_3_2_question_firstsplit2_opt_c" />
-            <label for= "17_3_2_question_firstsplit2_opt_c">  c) 65 Elm Street</label><br />
+            <li data-component="answer"  id="17_3_2_question_firstsplit2_opt_c">65 Elm Street</li><li data-component="feedback" id="17_3_2_question_firstsplit2_opt_c">That's pieces[3].</li>
             
-            <input type="radio" name="group1" value="d" id="17_3_2_question_firstsplit2_opt_d" />
-            <label for= "17_3_2_question_firstsplit2_opt_d">  d) eat</label><br />
+            <li data-component="answer"  id="17_3_2_question_firstsplit2_opt_d">eat</li><li data-component="feedback" id="17_3_2_question_firstsplit2_opt_d">That's pieces[4].</li>
             
-            <input type="radio" name="group1" value="e" id="17_3_2_question_firstsplit2_opt_e" />
-            <label for= "17_3_2_question_firstsplit2_opt_e">  e) We would get an error</label><br />
+            <li data-component="answer" data-correct id="17_3_2_question_firstsplit2_opt_e">We would get an error</li><li data-component="feedback" id="17_3_2_question_firstsplit2_opt_e">The error happens because that index is past the end of the list.  The last item is at index 4.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('17_3_2_question_firstsplit2');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('17_3_2_question_firstsplit2','e',['That\u0027s pieces[1].', 'That\u0027s pieces[2].', 'That\u0027s pieces[3].', 'That\u0027s pieces[4].', 'The error happens because that index is past the end of the list.  The last item is at index 4.'])">Check Me</button>
-            <button class='btn btn-default' id="17_3_2_question_firstsplit2_bcomp" disabled name="compare" onclick="compareAnswers('17_3_2_question_firstsplit2');">Compare Me</button>
-            </form><br />
-            <div id="17_3_2_question_firstsplit2_feedback">
-            </div>
-            </div>
+            </ul>
             <p>The code below is the first activecode modified to use the <code class="docutils literal"><span class="pre">split</span></code> function to assign the values to the variables.</p>
 
-<div id="cont"></div>
-<div id="madlib1_split" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="madlib1_split_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="madlib1_split_saveb" onclick="saveEditor('madlib1_split');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="madlib1_split_loadb" onclick="requestCode('madlib1_split');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('madlib1_split','input = *doubleq*Pat,Smith,girl,65 Elm Street,eat*doubleq**nline*pieces = input.split*open**doubleq*,*doubleq**close**nline*firstName = pieces[0]*nline*lastName = pieces[1]*nline*gender = pieces[2]*nline*address = pieces[3]*nline*verb = pieces[4]*nline*start = *doubleq*Once there was a *doubleq* + gender + *doubleq* named *doubleq* + firstName + *doubleq*.*doubleq**nline*next1 = *doubleq*A good *doubleq* + gender + *doubleq* living at *doubleq* + address + *doubleq*.*doubleq**nline*next2 = *doubleq*One day, a wicked witch came to the *doubleq* + lastName + *doubleq* house.*doubleq**nline*next3 = *doubleq*The wicked witch was planning to *doubleq* + verb + *doubleq* *doubleq* + firstName + *doubleq*!*doubleq**nline*ending = *doubleq*But *doubleq* + firstName + *doubleq* was smart and avoided the wicked witch.*doubleq**nline*print*open*start*close**nline*print*open*next1*close**nline*print*open*next2*close**nline*print*open*next3*close**nline*print*open*ending*close*','1','*doubleq*Structural tour*doubleq*; 1: StP1-line1; 2: StP1-line2; 3-7: StP2-line3-7; 8-12: StP2-line8-12; 13-17: StP2-line13-17;*atype*')"/>
-<button class='btn btn-default' id="madlib1_split_vizb" onclick="injectCodelens(this,'madlib1_split');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="madlib1_split_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="madlib1_split_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=madlib1_split data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Structural tour*doubleq*; 1: StP1-line1; 2: StP1-line2; 3-7: StP2-line3-7; 8-12: StP2-line8-12; 13-17: StP2-line13-17;*atype*'     >
 input = "Pat,Smith,girl,65 Elm Street,eat"
 pieces = input.split(",")
 firstName = pieces[0]
@@ -500,89 +396,10 @@ print(next1)
 print(next2)
 print(next3)
 print(ending)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="madlib1_split_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="madlib1_split_suffix" style="display:none">
-</pre><pre id="madlib1_split_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (madlib1_split)</span> </p>
-<div id="madlib1_split_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#madlib1_split_saveb').toggle();
-    $('#madlib1_split_loadb').toggle();
-}
-if ($("#madlib1_split").attr("lang") !== "html" && $("#madlib1_split_code_div").parents(".admonition").length == 0 && $("#madlib1_split_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#madlib1_split_code_div").offset({
-            left: $("#madlib1_split .clearfix").offset().left
-        });
-    }
-    $("#madlib1_split_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#madlib1_split_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#madlib1_split_runb").parent().siblings(".ac_output").show();
-            runit('madlib1_split',this, undefined);
-            $("#madlib1_split_runb").on("click", function(){
-                runit('madlib1_split',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#madlib1_split_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#madlib1_split_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#madlib1_split_runb").on("click", function(){
-        runit('madlib1_split',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>This makes it easy to change all of the data, by changing only one line as shown below.</p>
 
-<div id="cont"></div>
-<div id="madlib1_split2" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="madlib1_split2_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="madlib1_split2_saveb" onclick="saveEditor('madlib1_split2');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="madlib1_split2_loadb" onclick="requestCode('madlib1_split2');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('madlib1_split2','input = *doubleq*Abe,Brown,boy,1313 Maple Lane,trick*doubleq**nline*pieces = input.split*open**doubleq*,*doubleq**close**nline*firstName = pieces[0]*nline*lastName = pieces[1]*nline*gender = pieces[2]*nline*address = pieces[3]*nline*verb = pieces[4]*nline*start = *doubleq*Once there was a *doubleq* + gender + *doubleq* named *doubleq* + firstName + *doubleq*.*doubleq**nline*next1 = *doubleq*A good *doubleq* + gender + *doubleq* living at *doubleq* + address + *doubleq*.*doubleq**nline*next2 = *doubleq*One day, a wicked witch came to the *doubleq* + lastName + *doubleq* house.*doubleq**nline*next3 = *doubleq*The wicked witch was planning to *doubleq* + verb + *doubleq* *doubleq* + firstName + *doubleq*!*doubleq**nline*ending = *doubleq*But *doubleq* + firstName + *doubleq* was smart and avoided the wicked witch.*doubleq**nline*print*open*start*close**nline*print*open*next1*close**nline*print*open*next2*close**nline*print*open*next3*close**nline*print*open*ending*close*','1','*doubleq*Structural tour*doubleq*; 1: StP3-line1; 2: StP1-line2; 3-7: StP2-line3-7; 8-12: StP2-line8-12; 13-17: StP2-line13-17;*atype*')"/>
-<button class='btn btn-default' id="madlib1_split2_vizb" onclick="injectCodelens(this,'madlib1_split2');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="madlib1_split2_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="madlib1_split2_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=madlib1_split2 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Structural tour*doubleq*; 1: StP3-line1; 2: StP1-line2; 3-7: StP2-line3-7; 8-12: StP2-line8-12; 13-17: StP2-line13-17;*atype*'     >
 input = "Abe,Brown,boy,1313 Maple Lane,trick"
 pieces = input.split(",")
 firstName = pieces[0]
@@ -600,71 +417,7 @@ print(next1)
 print(next2)
 print(next3)
 print(ending)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="madlib1_split2_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="madlib1_split2_suffix" style="display:none">
-</pre><pre id="madlib1_split2_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (madlib1_split2)</span> </p>
-<div id="madlib1_split2_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#madlib1_split2_saveb').toggle();
-    $('#madlib1_split2_loadb').toggle();
-}
-if ($("#madlib1_split2").attr("lang") !== "html" && $("#madlib1_split2_code_div").parents(".admonition").length == 0 && $("#madlib1_split2_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#madlib1_split2_code_div").offset({
-            left: $("#madlib1_split2 .clearfix").offset().left
-        });
-    }
-    $("#madlib1_split2_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#madlib1_split2_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#madlib1_split2_runb").parent().siblings(".ac_output").show();
-            runit('madlib1_split2',this, undefined);
-            $("#madlib1_split2_runb").on("click", function(){
-                runit('madlib1_split2',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#madlib1_split2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#madlib1_split2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#madlib1_split2_runb").on("click", function(){
-        runit('madlib1_split2',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 </div>
 
 
@@ -695,7 +448,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

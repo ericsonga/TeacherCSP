@@ -41,7 +41,7 @@ We already made turtles draw squares.  We told our turtle to go forward and turn
     	alisha.forward(100)        	# move forward by 100 units
       	alisha.right(90)           	# turn by 90 degrees
 
-.. mchoicemf:: 10_1_1_Turtle_For_Q1
+.. mchoice:: 10_1_1_Turtle_For_Q1
    :answer_a: [0,1,2,3]
    :answer_b: [0,1,2]
    :answer_c: [2,3,4,5]

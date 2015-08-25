@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -322,22 +338,7 @@
 <h1>Out of Range Error<a class="headerlink" href="#out-of-range-error" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">If you try to access an index that isn&#8217;t in the collection, you get an error <strong>index out of range</strong>.  That means that you have tried to access an item past the end of the list. Try running the example below to see what that error looks like.</p>
 
-<div id="cont"></div>
-<div id="Index_Error" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Index_Error_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Index_Error_saveb" onclick="saveEditor('Index_Error');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Index_Error_loadb" onclick="requestCode('Index_Error');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Index_Error','items = [2,4,6,8]*nline*print*open**doubleq*The number of items is*doubleq*, len*open*items*close**close**nline*items[0]=*doubleq*First item*doubleq**nline*items[1] = items[0]*nline*items[2] = items[2] + 1*nline*items[4] = *doubleq*Last item*doubleq**nline*print*open*items*close*','1','*doubleq*Line by Line Tour*doubleq*; 1: lst1-line1; 2: lst1-line2; 3: lst1-line3; 4: lst1-line4; 5: lst1-line5; 6: lst1-line6; 7: lst1-line7;*atype*')"/>
-<button class='btn btn-default' id="Index_Error_vizb" onclick="injectCodelens(this,'Index_Error');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="Index_Error_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Index_Error_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Index_Error data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Line by Line Tour*doubleq*; 1: lst1-line1; 2: lst1-line2; 3: lst1-line3; 4: lst1-line4; 5: lst1-line5; 6: lst1-line6; 7: lst1-line7;*atype*'     >
 items = [2,4,6,8]
 print("The number of items is", len(items))
 items[0]="First item"
@@ -345,264 +346,34 @@ items[1] = items[0]
 items[2] = items[2] + 1
 items[4] = "Last item"
 print(items)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Index_Error_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Index_Error_suffix" style="display:none">
-</pre><pre id="Index_Error_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Index_Error)</span> </p>
-<div id="Index_Error_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Index_Error_saveb').toggle();
-    $('#Index_Error_loadb').toggle();
-}
-if ($("#Index_Error").attr("lang") !== "html" && $("#Index_Error_code_div").parents(".admonition").length == 0 && $("#Index_Error_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Index_Error_code_div").offset({
-            left: $("#Index_Error .clearfix").offset().left
-        });
-    }
-    $("#Index_Error_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Index_Error_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Index_Error_runb").parent().siblings(".ac_output").show();
-            runit('Index_Error',this, undefined);
-            $("#Index_Error_runb").on("click", function(){
-                runit('Index_Error',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Index_Error_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Index_Error_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Index_Error_runb").on("click", function(){
-        runit('Index_Error',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>What would the programmer who wrote <code class="docutils literal"><span class="pre">items[4]</span> <span class="pre">=</span> <span class="pre">&quot;Last</span> <span class="pre">item&quot;</span></code> be trying to do?  Maybe he or she was trying to <em>add</em> an additional item to the list.</p>
 
-            <div id="16_4_1_AddItem" class="alert alert-warning">
-            csp-16-4-1: Which of these line or lines <em>would</em> actually add &#8220;Last item&#8221; to the end of the <code class="docutils literal"><span class="pre">items</span></code> list? (Hint: Go ahead and try them above!)  Select all that work.<form name="16_4_1_AddItem_form" method="get" action="" onsubmit="return false;">
-            <input type="checkbox" name="group1" value="a" id="16_4_1_AddItem_opt_a" />
-            <label for= "16_4_1_AddItem_opt_a">  a) items.append("Last item")</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="16_4_1_AddItem">
+            csp-16-4-1: Which of these line or lines <em>would</em> actually add &#8220;Last item&#8221; to the end of the <code class="docutils literal"><span class="pre">items</span></code> list? (Hint: Go ahead and try them above!)  Select all that work.
+            <li data-component="answer" data-correct id="16_4_1_AddItem_opt_a">items.append("Last item")</li><li data-component="feedback" id="16_4_1_AddItem_opt_a">Yes -- append is a *method* that lists understand.</li>
             
-            <input type="checkbox" name="group1" value="b" id="16_4_1_AddItem_opt_b" />
-            <label for= "16_4_1_AddItem_opt_b">  b) items = items + ["Last item"]</label><br />
+            <li data-component="answer" data-correct id="16_4_1_AddItem_opt_b">items = items + ["Last item"]</li><li data-component="feedback" id="16_4_1_AddItem_opt_b">Yup, we know that we can add two lists together, and that's what we're doing here.</li>
             
-            <input type="checkbox" name="group1" value="c" id="16_4_1_AddItem_opt_c" />
-            <label for= "16_4_1_AddItem_opt_c">  c) items.addIndex(4)</label><br />
+            <li data-component="answer"  id="16_4_1_AddItem_opt_c">items.addIndex(4)</li><li data-component="feedback" id="16_4_1_AddItem_opt_c">That does not actually work.  A programmer could add the ability for lists to understand addIndex, though.</li>
             
-            <input type="checkbox" name="group1" value="d" id="16_4_1_AddItem_opt_d" />
-            <label for= "16_4_1_AddItem_opt_d">  d) items = items + "Last item"</label><br />
+            <li data-component="answer"  id="16_4_1_AddItem_opt_d">items = items + "Last item"</li><li data-component="feedback" id="16_4_1_AddItem_opt_d">No, you would get an error because you cannot add a list (items) to a string (Last item)</li>
             
-            <script>
-            $(document).ready(function(){checkMultipleSelect('16_4_1_AddItem');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMAStorage('16_4_1_AddItem','a,b',['Yes \u002D\u002D append is a *method* that lists understand.', 'Yup, we know that we can add two lists together, and that\u0027s what we\u0027re doing here.', 'That does not actually work.  A programmer could add the ability for lists to understand addIndex, though.', 'No, you would get an error because you cannot add a list (items) to a string (Last item)'])">Check Me</button>
-            <button class='btn btn-default' id="16_4_1_AddItem_bcomp" disabled name="compare" onclick="compareAnswers('16_4_1_AddItem');">Compare Me</button>
-            </form><br />
-            <div id="16_4_1_AddItem_feedback">
-            </div>
-            </div>
+
+            </ul>
             <p>Whatever the length of the collection (the number of items in the collection), the highest valid <em>index</em> is one <em>less</em> than the length.  (Since the first item in the collection is index <cite>0</cite>.)  You have probably figured out why the <cite>range</cite> in the <cite>for</cite> loop stops at one less than the last value.  If you access the <code class="docutils literal"><span class="pre">range</span></code> based on the <code class="docutils literal"><span class="pre">len</span></code> of the collection, you get exactly the right thing. We want to be able to do something like this:</p>
 
-<div id="cont"></div>
-<div id="Range_Len" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Range_Len_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Range_Len_saveb" onclick="saveEditor('Range_Len');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Range_Len_loadb" onclick="requestCode('Range_Len');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Range_Len','myString = *doubleq*Hello*doubleq**nline*for index in range*open*0,len*open*myString*close**close*:*nline*    print*open*myString[index]*close*','1','*doubleq*Line by Line Tour*doubleq*; 1: lst2-line1; 2: lst2-line2; 3: lst2-line3;*atype*')"/>
-<button class='btn btn-default' id="Range_Len_vizb" onclick="injectCodelens(this,'Range_Len');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="Range_Len_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Range_Len_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Range_Len data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Line by Line Tour*doubleq*; 1: lst2-line1; 2: lst2-line2; 3: lst2-line3;*atype*'     >
 myString = "Hello"
 for index in range(0,len(myString)):
     print(myString[index])
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Range_Len_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Range_Len_suffix" style="display:none">
-</pre><pre id="Range_Len_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Range_Len)</span> </p>
-<div id="Range_Len_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Range_Len_saveb').toggle();
-    $('#Range_Len_loadb').toggle();
-}
-if ($("#Range_Len").attr("lang") !== "html" && $("#Range_Len_code_div").parents(".admonition").length == 0 && $("#Range_Len_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Range_Len_code_div").offset({
-            left: $("#Range_Len .clearfix").offset().left
-        });
-    }
-    $("#Range_Len_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Range_Len_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Range_Len_runb").parent().siblings(".ac_output").show();
-            runit('Range_Len',this, undefined);
-            $("#Range_Len_runb").on("click", function(){
-                runit('Range_Len',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Range_Len_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Range_Len_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Range_Len_runb").on("click", function(){
-        runit('Range_Len',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p><strong>Programming Challenge</strong>: Complete the program below to print out each item in the list <code class="docutils literal"><span class="pre">myList</span></code>, one per line.  The code is very similar to the code above for printing each character in a string.</p>
 
-<div id="cont"></div>
-<div id="All_Items" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="All_Items_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="All_Items_saveb" onclick="saveEditor('All_Items');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="All_Items_loadb" onclick="requestCode('All_Items');">Load</button>
-<button class='btn btn-default' id="All_Items_vizb" onclick="injectCodelens(this,'All_Items');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="All_Items_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="All_Items_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=All_Items data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
 myList = ["this",1,"can","do", 2]
 # You fill in here
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="All_Items_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="All_Items_suffix" style="display:none">
-</pre><pre id="All_Items_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (All_Items)</span> </p>
-<div id="All_Items_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#All_Items_saveb').toggle();
-    $('#All_Items_loadb').toggle();
-}
-if ($("#All_Items").attr("lang") !== "html" && $("#All_Items_code_div").parents(".admonition").length == 0 && $("#All_Items_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#All_Items_code_div").offset({
-            left: $("#All_Items .clearfix").offset().left
-        });
-    }
-    $("#All_Items_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#All_Items_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#All_Items_runb").parent().siblings(".ac_output").show();
-            runit('All_Items',this, undefined);
-            $("#All_Items_runb").on("click", function(){
-                runit('All_Items',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#All_Items_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#All_Items_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#All_Items_runb").on("click", function(){
-        runit('All_Items',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 </div>
 
 
@@ -633,7 +404,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

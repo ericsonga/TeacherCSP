@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -320,84 +336,39 @@
   
   <div class="section" id="exam-questions-for-chapters-14-and-15">
 <h1>Exam Questions for Chapters 14 and 15<a class="headerlink" href="#exam-questions-for-chapters-14-and-15" title="Permalink to this headline">¶</a></h1>
-<p>The following questions test what you have learned in chapters 14 and 15. Click the &#8220;Start&#8221; button when you are ready to begin the exam.  Click the &#8220;Pause&#8221; button to pause the exam (you will not be able to see the questions when the exam is paused).  Hover over the clock icon to see how much time you have spent on the exam, but you have unlimited time.  Click on the &#8220;Submit Answers&#8221; button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.</p>
+<p>The following questions test what you have learned in chapters 14 and 15. Click the &#8220;Start&#8221; button when you are ready to begin the exam.  Click the &#8220;Pause&#8221; button to pause the exam (you will not be able to see the questions when the exam is paused).  It will show how much time you have used, but you have unlimited time. Click on the &#8220;Submit answers&#8221; button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.</p>
 <p>You will not be able to change your answers after you hit the &#8220;Submit Answers&#8221; button.</p>
 
-           <div id="startWrapper">
-		    <p id="timeOutput"></p>
-		    </div>
-		    
-		    <div id="controls" style="text-align: center;">
-			<button class='btn btn-inverse' id ="examButton" onclick="handleExamButtonClick()">Start</button>
-	        </div>
-            <div id='timed_Test' style='display:none'>
+    <ul data-component="timedAssessment"  id="ch14a15ex"  >
+    
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e14a15_1">
+            15-7-1: Which of the following expressions gives you 3 possible results for all values of y?
+            <li data-component="answer"  id="e14a15_1_opt_a">y % 1</li><li data-component="feedback" id="e14a15_1_opt_a">Since every value is evenly divisible by 1 this will always return 0.</li>
             
-            <div id="e14a15_1" class="alert alert-warning">
-            15-5-1: Which of the following expressions gives you 3 possible results for all values of y?
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e14a15_1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e14a15_1_opt_a" />
-            <label for= "e14a15_1_opt_a">  a) y % 1</label><br />
-	        <div id= "e14a15_1_eachFeedback_a"></div>
+            <li data-component="answer"  id="e14a15_1_opt_b">y % 2</li><li data-component="feedback" id="e14a15_1_opt_b">This will return two possible values 0 if even and 1 if odd.</li>
             
-            <input type="radio" name="group1" value="b" id="e14a15_1_opt_b" />
-            <label for= "e14a15_1_opt_b">  b) y % 2</label><br />
-	        <div id= "e14a15_1_eachFeedback_b"></div>
+            <li data-component="answer" data-correct id="e14a15_1_opt_c">y % 3</li><li data-component="feedback" id="e14a15_1_opt_c">This will return 0, 1, or 2.</li>
             
-            <input type="radio" name="group1" value="c" id="e14a15_1_opt_c" />
-            <label for= "e14a15_1_opt_c">  c) y % 3</label><br />
-	        <div id= "e14a15_1_eachFeedback_c"></div>
-            
-            <input type="radio" name="group1" value="d" id="e14a15_1_opt_d" />
-            <label for= "e14a15_1_opt_d">  d) y % 4</label><br />
-	        <div id= "e14a15_1_eachFeedback_d"></div>
+            <li data-component="answer"  id="e14a15_1_opt_d">y % 4</li><li data-component="feedback" id="e14a15_1_opt_d">This will return 0, 1, 2, or 3.</li>
             
 
-            <script>
-		    populateArrays('e14a15_1','c',['Since every value is evenly divisible by 1 this will always return 0.', 'This will return two possible values 0 if even and 1 if odd.', 'This will return 0, 1, or 2.', 'This will return 0, 1, 2, or 3.']);
-            $(document).ready(function(){checkExamRadio('e14a15_1');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e14a15_1_feedback">
-            </div>
-            </div>
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e14a15_2">
+            15-7-2: Which of the following statements actually changes the image?
+            <li data-component="answer"  id="e14a15_2_opt_a">newPixel = image.Pixel(r, g, b)</li><li data-component="feedback" id="e14a15_2_opt_a">This creates a new pixel with the given red, green, and blue values.</li>
             
-            <div id="e14a15_2" class="alert alert-warning">
-            15-5-2: Which of the following statements actually changes the image?
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e14a15_2_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e14a15_2_opt_a" />
-            <label for= "e14a15_2_opt_a">  a) newPixel = image.Pixel(r, g, b)</label><br />
-	        <div id= "e14a15_2_eachFeedback_a"></div>
+            <li data-component="answer" data-correct id="e14a15_2_opt_b">img.setPixel(x, y, newPixel)</li><li data-component="feedback" id="e14a15_2_opt_b">This updates the pixel values in the image at x and y with the colors in the pixel.</li>
             
-            <input type="radio" name="group1" value="b" id="e14a15_2_opt_b" />
-            <label for= "e14a15_2_opt_b">  b) img.setPixel(x, y, newPixel)</label><br />
-	        <div id= "e14a15_2_eachFeedback_b"></div>
+            <li data-component="answer"  id="e14a15_2_opt_c">p = img.getPixel(x, y)</li><li data-component="feedback" id="e14a15_2_opt_c">This gets the pixel at the given x and y location.</li>
             
-            <input type="radio" name="group1" value="c" id="e14a15_2_opt_c" />
-            <label for= "e14a15_2_opt_c">  c) p = img.getPixel(x, y)</label><br />
-	        <div id= "e14a15_2_eachFeedback_c"></div>
-            
-            <input type="radio" name="group1" value="d" id="e14a15_2_opt_d" />
-            <label for= "e14a15_2_opt_d">  d) win = ImageWin(img.getWidth(), img.getHeight())</label><br />
-	        <div id= "e14a15_2_eachFeedback_d"></div>
+            <li data-component="answer"  id="e14a15_2_opt_d">win = ImageWin(img.getWidth(), img.getHeight())</li><li data-component="feedback" id="e14a15_2_opt_d">This creates a window that can be used to display the image.</li>
             
 
-            <script>
-		    populateArrays('e14a15_2','b',['This creates a new pixel with the given red, green, and blue values.', 'This updates the pixel values in the image at x and y with the colors in the pixel.', 'This gets the pixel at the given x and y location.', 'This creates a window that can be used to display the image.']);
-            $(document).ready(function(){checkExamRadio('e14a15_2');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e14a15_2_feedback">
-            </div>
-            </div>
-            
-            <div id="e14a15_3" class="alert alert-warning">
-            <p>15-5-3: What does the following code do to the image?</p>
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e14a15_3">
+            <p>15-7-3: What does the following code do to the image?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">image</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c"># CREATE AN IMAGE FROM A FILE</span>
@@ -430,38 +401,19 @@
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e14a15_3_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e14a15_3_opt_a" />
-            <label for= "e14a15_3_opt_a">  a) The program removes all the red from the image</label><br />
-	        <div id= "e14a15_3_eachFeedback_a"></div>
+            <li data-component="answer"  id="e14a15_3_opt_a">The program removes all the red from the image</li><li data-component="feedback" id="e14a15_3_opt_a">This would be true if the red was always set to 0.</li>
             
-            <input type="radio" name="group1" value="b" id="e14a15_3_opt_b" />
-            <label for= "e14a15_3_opt_b">  b) The program changes all the red pixels to a single color</label><br />
-	        <div id= "e14a15_3_eachFeedback_b"></div>
+            <li data-component="answer"  id="e14a15_3_opt_b">The program changes all the red pixels to a single color</li><li data-component="feedback" id="e14a15_3_opt_b">This would be true if the red was always set to the same value.</li>
             
-            <input type="radio" name="group1" value="c" id="e14a15_3_opt_c" />
-            <label for= "e14a15_3_opt_c">  c) The program changes all the pixels to have some red</label><br />
-	        <div id= "e14a15_3_eachFeedback_c"></div>
+            <li data-component="answer"  id="e14a15_3_opt_c">The program changes all the pixels to have some red</li><li data-component="feedback" id="e14a15_3_opt_c">If r is less than 120 the red is removed (set to 0).</li>
             
-            <input type="radio" name="group1" value="d" id="e14a15_3_opt_d" />
-            <label for= "e14a15_3_opt_d">  d) The program changes the image to only have 3 values of red</label><br />
-	        <div id= "e14a15_3_eachFeedback_d"></div>
+            <li data-component="answer" data-correct id="e14a15_3_opt_d">The program changes the image to only have 3 values of red</li><li data-component="feedback" id="e14a15_3_opt_d">The red will be sets to 0, 200, or 255.</li>
             
 
-            <script>
-		    populateArrays('e14a15_3','d',['This would be true if the red was always set to 0.', 'This would be true if the red was always set to the same value.', 'If r is less than 120 the red is removed (set to 0).', 'The red will be sets to 0, 200, or 255.']);
-            $(document).ready(function(){checkExamRadio('e14a15_3');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e14a15_3_feedback">
-            </div>
-            </div>
-            
-            <div id="e14a15_4" class="alert alert-warning">
-            <p>15-5-4: What does the following code draw?</p>
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e14a15_4">
+            <p>15-7-4: What does the following code draw?</p>
 <div class="highlight-python"><div class="highlight"><pre>from turtle import *
 space = Screen()
 height = space.window_height()
@@ -482,102 +434,31 @@ sue.forward(height)
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e14a15_4_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e14a15_4_opt_a" />
-            <label for= "e14a15_4_opt_a">  a) Vertical stripes that alternate between red and black and start with red.</label><br />
-	        <div id= "e14a15_4_eachFeedback_a"></div>
+            <li data-component="answer" data-correct id="e14a15_4_opt_a">Vertical stripes that alternate between red and black and start with red.</li><li data-component="feedback" id="e14a15_4_opt_a">Sue turns left 90 so the stipes are vertical.  The first element in range(5) is 0 so the stripes start with red.</li>
             
-            <input type="radio" name="group1" value="b" id="e14a15_4_opt_b" />
-            <label for= "e14a15_4_opt_b">  b) Vertical stripes that alternate between black and red and start with black.</label><br />
-	        <div id= "e14a15_4_eachFeedback_b"></div>
+            <li data-component="answer"  id="e14a15_4_opt_b">Vertical stripes that alternate between black and red and start with black.</li><li data-component="feedback" id="e14a15_4_opt_b">This would be true if the color was set to black when index is even and red when index is odd.</li>
             
-            <input type="radio" name="group1" value="c" id="e14a15_4_opt_c" />
-            <label for= "e14a15_4_opt_c">  c) Horizontal stripes that alternate between red and black and start with red.</label><br />
-	        <div id= "e14a15_4_eachFeedback_c"></div>
+            <li data-component="answer"  id="e14a15_4_opt_c">Horizontal stripes that alternate between red and black and start with red.</li><li data-component="feedback" id="e14a15_4_opt_c">This would be true if sue didn't turn left 90 degrees at the start.</li>
             
-            <input type="radio" name="group1" value="d" id="e14a15_4_opt_d" />
-            <label for= "e14a15_4_opt_d">  d) Horizontal stripes that alternate between black and red and start with black.</label><br />
-	        <div id= "e14a15_4_eachFeedback_d"></div>
+            <li data-component="answer"  id="e14a15_4_opt_d">Horizontal stripes that alternate between black and red and start with black.</li><li data-component="feedback" id="e14a15_4_opt_d">This would be true if sue didn't turn left 90 degrees at the start and if the color was set to black when the index is even and red when it is odd.</li>
             
 
-            <script>
-		    populateArrays('e14a15_4','a',['Sue turns left 90 so the stipes are vertical.  The first element in range(5) is 0 so the stripes start with red.', 'This would be true if the color was set to black when index is even and red when index is odd.', 'This would be true if sue didn\u0027t turn left 90 degrees at the start.', 'This would be true if sue didn\u0027t turn left 90 degrees at the start and if the color was set to black when the index is even and red when it is odd.']);
-            $(document).ready(function(){checkExamRadio('e14a15_4');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e14a15_4_feedback">
-            </div>
-            </div>
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e14a15_5">
+            15-7-5: What does random.randrange(10,20) return?
+            <li data-component="answer"  id="e14a15_5_opt_a">A random value between 10 and 20</li><li data-component="feedback" id="e14a15_5_opt_a">This would be true if it was random.randrange(10,21)</li>
             
-            <div id="e14a15_5" class="alert alert-warning">
-            15-5-5: What does random.randrange(10,20) return?
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e14a15_5_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e14a15_5_opt_a" />
-            <label for= "e14a15_5_opt_a">  a) A random value between 10 and 20</label><br />
-	        <div id= "e14a15_5_eachFeedback_a"></div>
+            <li data-component="answer"  id="e14a15_5_opt_b">A random value between 11 and 19</li><li data-component="feedback" id="e14a15_5_opt_b">This would be true if it was random.randrange(11,20)</li>
             
-            <input type="radio" name="group1" value="b" id="e14a15_5_opt_b" />
-            <label for= "e14a15_5_opt_b">  b) A random value between 11 and 19</label><br />
-	        <div id= "e14a15_5_eachFeedback_b"></div>
+            <li data-component="answer"  id="e14a15_5_opt_c">A random value between 11 and 20</li><li data-component="feedback" id="e14a15_5_opt_c">This would be true if it was random.randrange(11,21)</li>
             
-            <input type="radio" name="group1" value="c" id="e14a15_5_opt_c" />
-            <label for= "e14a15_5_opt_c">  c) A random value between 11 and 20</label><br />
-	        <div id= "e14a15_5_eachFeedback_c"></div>
-            
-            <input type="radio" name="group1" value="d" id="e14a15_5_opt_d" />
-            <label for= "e14a15_5_opt_d">  d) A random value between 10 and 19</label><br />
-	        <div id= "e14a15_5_eachFeedback_d"></div>
+            <li data-component="answer" data-correct id="e14a15_5_opt_d">A random value between 10 and 19</li><li data-component="feedback" id="e14a15_5_opt_d">The randrange function returns a random value between the first parameter value and one less than the second parameter value.</li>
             
 
-            <script>
-		    populateArrays('e14a15_5','d',['This would be true if it was random.randrange(10,21)', 'This would be true if it was random.randrange(11,20)', 'This would be true if it was random.randrange(11,21)', 'The randrange function returns a random value between the first parameter value and one less than the second parameter value.']);
-            $(document).ready(function(){checkExamRadio('e14a15_5');});
-            </script>
-            
- 
-            </form><br />
-            <div id="e14a15_5_feedback">
-            </div>
-            </div>
-            
-
-            
-	
-	<div style="text-align: center;">
-	<button class='btn btn-inverse' id ="finish" onclick="checkExam()">Submit Answers</button>
-	</div>
-	<script>
-	    
-	    $(document).ready(function() {
-	      $("#results").hide();
-	      checkIfFinished()
-	    });
-	</script>
-
-
-            
-            </div>
-            <p id="results"></p>
- 
-            
-            <script>
-			   var time = 0;
-			   var change = 1;
-		       showTime(0);
-            </script>
-            
-            <script>
-			   var showFeedback = 1;
-            </script>
-            
-            <script>
-			   var showResult = 1;
-            </script>
-            </div>
+            </ul>
+            </ul>
+    </div>
 
 
   
@@ -607,7 +488,10 @@ sue.forward(height)
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

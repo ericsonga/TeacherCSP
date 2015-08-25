@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="_static/video.css" type="text/css" />
     <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="_static/activecode.js"></script>
     <script type="text/javascript" src="_static/skulpt.min.js"></script>
     <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
     <script type="text/javascript" src="_static/animationbase.js"></script>
-    <script type="text/javascript" src="_static/assess.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
     <script type="text/javascript" src="_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="_static/pytutor.js"></script>
     <script type="text/javascript" src="_static/codelens.js"></script>
-    <script type="text/javascript" src="_static/bookfuncs.js"></script>
     <script type="text/javascript" src="_static/skulpt.min.js"></script>
     <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
     <script type="text/javascript" src="_static/livecode.js"></script>
     <script type="text/javascript" src="_static/clike.js"></script>
     <script type="text/javascript" src="_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="_static/parsons.js"></script>
     <script type="text/javascript" src="_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
     <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="_static/jquery-fix.js"></script>
@@ -101,7 +116,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -199,7 +214,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
@@ -221,6 +236,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -244,7 +260,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -500,7 +516,10 @@
 <li class="toctree-l1"><a class="reference internal" href="CSPRepeatNumbers/accumPattern.html#using-the-accumulator-pattern">Using the Accumulator Pattern</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPRepeatNumbers/print.html"> Teacher Note: Print() is Your Friend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPRepeatNumbers/ch7_exercises.html">Chapter 7 Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CSPRepeatNumbers/ch7_summary.html">Chapter 7 - Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatNumbers/ch7_summary.html">Chapter 7 - Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPRepeatNumbers/ch7_summary.html#summary-of-python-keywords-and-functions">Summary of Python Keywords and Functions</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -525,7 +544,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="CSPWhileAndForLoops/teacherWhileVSFor.html"> Teacher Note: for loops are more natural</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPWhileAndForLoops/ch8_exercises.html">Chapter 8 Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CSPWhileAndForLoops/ch8_summary.html">Chapter 8 - Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWhileAndForLoops/ch8_summary.html">Chapter 8 - Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPWhileAndForLoops/ch8_summary.html#summary-of-python-keywords-and-functions">Summary of Python Keywords and Functions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="CSPWhileAndForLoops/exam7a8.html">Exam Questions for Chapters 7 and 8</a></li>
 </ul>
 </div>
@@ -537,7 +559,12 @@
 <li class="toctree-l1"><a class="reference internal" href="CSPRepeatStrings/repeatstrings.html">Using Repetition with Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPRepeatStrings/reverse.html">Reversing Text</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPRepeatStrings/mirror.html">Mirroring Text</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CSPRepeatStrings/ch9_summary.html">Chapter 9 - Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatStrings/modify.html">Modifying Text</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatStrings/ch9_exercises.html">Chapter 9 Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatStrings/ch9_summary.html">Chapter 9 - Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPRepeatStrings/ch9_summary.html#summary-of-python-keywords-and-functions">Summary of Python Keywords and Functions</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -550,7 +577,12 @@
 <li class="toctree-l1"><a class="reference internal" href="CSPRepeatTurtles/turtleGeom.html#total-turtle-trip-theorem">Total Turtle Trip Theorem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPRepeatTurtles/patterns.html">Making Patterns within Patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPRepeatTurtles/stamp.html">The Turtle Stamp Procedure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CSPRepeatTurtles/ch10_summary.html">Chapter 10 - Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatTurtles/ch10_exercises.html">Chapter 10 Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatTurtles/ch10_summary.html">Chapter 10 - Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPRepeatTurtles/ch10_summary.html#summary-of-python-keywords-and-functions">Summary of Python Keywords and Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CSPRepeatTurtles/ch10_summary.html#summary-of-turtle-functions-and-procedures">Summary of Turtle Functions and Procedures</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -565,6 +597,7 @@
 <li class="toctree-l1"><a class="reference internal" href="CSPRepeatImages/changeColor.html">Changing Step 5: Increasing and decreasing color values</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPRepeatImages/changeColorLoc.html">Changing Step 6: Changing where we put the colors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPRepeatImages/changeData.html">Changing Step 3: Changing which data we use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatImages/ch11_exercises.html">Chapter 11 Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPRepeatImages/ch11_summary.html">Chapter 11 - Summary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPRepeatImages/exam9t11.html">Exam Questions for Chapters 9 to 11</a></li>
 </ul>
@@ -591,6 +624,7 @@
 <li class="toctree-l1"><a class="reference internal" href="CSPIntroDecisions/decTeacherNotes.html"> Delaying the else</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPIntroDecisions/decTeacherNotes.html#bigteachernote-sneak-up-on-and-and-or"> Sneak up on and and or</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPIntroDecisions/decTeacherNotes.html#bigteachernote-teacher-note-confusing-while-and-if"> Teacher Note: Confusing while and if</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroDecisions/ch12_exercises.html">Chapter 12 Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPIntroDecisions/ch12_summary.html">Chapter 12 - Summary</a></li>
 </ul>
 </div>
@@ -603,6 +637,7 @@
 <li class="toctree-l1"><a class="reference internal" href="CSPStringDecisions/input.html">Interactive Stories with Input</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPStringDecisions/fortuneTeller.html">Fortune Teller</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPStringDecisions/elif.html">Using elif for more options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPStringDecisions/ch13_exercises.html">Chapter 13 Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPStringDecisions/ch13_summary.html">Chapter 13 - Summary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPStringDecisions/exam12a13.html">Exam Questions for Chapters 12 and 13</a></li>
 </ul>
@@ -617,6 +652,7 @@
 <li class="toctree-l1"><a class="reference internal" href="CSPTurtleDecisions/oddEven.html">Detecting Odd and Even</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPTurtleDecisions/random.html">Using Random Numbers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPTurtleDecisions/collisions.html">Avoiding Collisions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPTurtleDecisions/ch14_exercises.html">Chapter 14 Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPTurtleDecisions/ch14_summary.html">Chapter 14 - Summary</a></li>
 </ul>
 </div>
@@ -629,6 +665,7 @@
 <li class="toctree-l1"><a class="reference internal" href="CSPImageDecisions/combineImages.html">Combining Pictures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPImageDecisions/imageIfElse.html">If and Else with Images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPImageDecisions/imageMultIf.html">Multiple If&#8217;s with Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPImageDecisions/ch15_exercises.html">Chapter 15 Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPImageDecisions/ch15_summary.html">Chapter 15 - Concept Summary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CSPImageDecisions/exam14a15.html">Exam Questions for Chapters 14 and 15</a></li>
 </ul>
@@ -740,7 +777,10 @@
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -322,21 +338,7 @@
 <h1>Single and Multiple Turtles<a class="headerlink" href="#single-and-multiple-turtles" title="Permalink to this headline">¶</a></h1>
 <p>You may remember this example as well.</p>
 
-<div id="cont"></div>
-<div id="Turtle_Names1" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Turtle_Names1_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_Names1_saveb" onclick="saveEditor('Turtle_Names1');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_Names1_loadb" onclick="requestCode('Turtle_Names1');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Turtle_Names1','from turtle import *        # use the turtle library*nline*space = Screen*open**close*            # create a turtle screen *open*space*close**nline*zari = Turtle*open**close*             # create a turtle named zari*nline*zari.setheading*open*90*close*         # Point due north*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*90*close*              # turn by 90 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*90*close*              # turn by 90 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*90*close*              # turn by 90 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*90*close*              # turn by 90 degrees','1','*doubleq*Line-by-line Tour*doubleq*; 1: t1-line1; 2: t1-line2; 3: t1-line3; 4: t1-line4; 5: t1-line5; 6: t1-line6; 7: t1-for100-1; 8: t1-right90-1; 9: t1-for100-2; 10: t1-right90-2; 11: t1-for100-3; 12: t1-right90-3;*atype*')"/>
-
-</div>
-<br/>
-<div id="Turtle_Names1_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Turtle_Names1_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Turtle_Names1 data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Line-by-line Tour*doubleq*; 1: t1-line1; 2: t1-line2; 3: t1-line3; 4: t1-line4; 5: t1-line5; 6: t1-line6; 7: t1-for100-1; 8: t1-right90-1; 9: t1-for100-2; 10: t1-right90-2; 11: t1-for100-3; 12: t1-right90-3;*atype*'     >
 from turtle import *        # use the turtle library
 space = Screen()            # create a turtle screen (space)
 zari = Turtle()             # create a turtle named zari
@@ -349,100 +351,21 @@ zari.forward(100)           # tell zari to move forward by 100 units
 zari.right(90)              # turn by 90 degrees
 zari.forward(100)           # tell zari to move forward by 100 units
 zari.right(90)              # turn by 90 degrees
-</textarea>
-</div>
+</pre>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Turtle_Names1_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Turtle_Names1_suffix" style="display:none">
-</pre><pre id="Turtle_Names1_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Turtle_Names1)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Turtle_Names1_saveb').toggle();
-    $('#Turtle_Names1_loadb').toggle();
-}
-if ($("#Turtle_Names1").attr("lang") !== "html" && $("#Turtle_Names1_code_div").parents(".admonition").length == 0 && $("#Turtle_Names1_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Turtle_Names1_code_div").offset({
-            left: $("#Turtle_Names1 .clearfix").offset().left
-        });
-    }
-    $("#Turtle_Names1_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Turtle_Names1_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Turtle_Names1_runb").parent().siblings(".ac_output").show();
-            runit('Turtle_Names1',this, undefined);
-            $("#Turtle_Names1_runb").on("click", function(){
-                runit('Turtle_Names1',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Turtle_Names1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Turtle_Names1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Turtle_Names1_runb").on("click", function(){
-        runit('Turtle_Names1',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="5_4_1_triangle" class="alert alert-warning">
-            csp-5-4-1: What shape will the program below draw when you click on the <em>Run</em> button? <input type='text' id='triBlank' class="form-control" style="display:inline; width: 150px;" value=""></input>
-            <script>
-            $(document).ready(function(){checkPreviousFIB('5_4_1_triangle');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkFIBStorage('5_4_1_triangle', 'triBlank', '^triangle$|^Triangle$|^TRIANGLE$',[['.*', 'Try to follow the directions as if you are the turtle']], false)">Check Me</button>
-            <button class='btn btn-default' id="5_4_1_triangle_bcomp" disabled name="compare" onclick="compareFITBAnswers('5_4_1_triangle');">Compare Me</button>
-            <br />
-            <br />
-            <div id="5_4_1_triangle_feedback">
-            </div>
-            </div>
+        <p data-component="fillintheblank" data-casei="false" id="5_4_1_triangle_fill">
             
-<div id="cont"></div>
-<div id="Turtle_Names2" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Turtle_Names2_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_Names2_saveb" onclick="saveEditor('Turtle_Names2');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_Names2_loadb" onclick="requestCode('Turtle_Names2');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Turtle_Names2','from turtle import *        # use the turtle library*nline*space = Screen*open**close*            # create a turtle screen *open*space*close**nline*zari = Turtle*open**close*             # create a turtle named zari*nline*zari.setheading*open*90*close*         # Point due north*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*120*close*             # turn right by 120 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*120*close*             # turn right by 120 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*120*close*             # turn right by 120 degrees','1','*doubleq*Line-by-line Tour*doubleq*; 1: tri-line1; 2: tri-line2; 3: tri-line3; 4: tri-line4; 5: tri-line5; 6: tri-line6; 7: tri-line7; 8: tri-line8; 9: tri-line9; 10: tri-line10;*atype*')"/>
-
-</div>
-<br/>
-<div id="Turtle_Names2_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Turtle_Names2_code" class="active_code" prefixcode="undefined" lang="python">
+        <span data-blank>
+            What shape will the program below draw when you click on the Run button?
+        <span data-feedback="regex" style="display: none" id="5_4_1_triangle_feedback1">.*</span>
+        <span data-feedback="text" style="display: none" for="5_4_1_triangle_feedback1">Try to follow the directions as if you are the turtle</span>
+            
+        <span data-answer style="display: none" id="5_4_1_triangle_answer">^triangle$|^Triangle$|^TRIANGLE$</span>
+        </span>
+        
+        </p>
+            
+<pre data-component="activecode" id=Turtle_Names2 data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Line-by-line Tour*doubleq*; 1: tri-line1; 2: tri-line2; 3: tri-line3; 4: tri-line4; 5: tri-line5; 6: tri-line6; 7: tri-line7; 8: tri-line8; 9: tri-line9; 10: tri-line10;*atype*'     >
 from turtle import *        # use the turtle library
 space = Screen()            # create a turtle screen (space)
 zari = Turtle()             # create a turtle named zari
@@ -453,88 +376,10 @@ zari.forward(100)           # tell zari to move forward by 100 units
 zari.right(120)             # turn right by 120 degrees
 zari.forward(100)           # tell zari to move forward by 100 units
 zari.right(120)             # turn right by 120 degrees
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Turtle_Names2_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Turtle_Names2_suffix" style="display:none">
-</pre><pre id="Turtle_Names2_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Turtle_Names2)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Turtle_Names2_saveb').toggle();
-    $('#Turtle_Names2_loadb').toggle();
-}
-if ($("#Turtle_Names2").attr("lang") !== "html" && $("#Turtle_Names2_code_div").parents(".admonition").length == 0 && $("#Turtle_Names2_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Turtle_Names2_code_div").offset({
-            left: $("#Turtle_Names2 .clearfix").offset().left
-        });
-    }
-    $("#Turtle_Names2_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Turtle_Names2_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Turtle_Names2_runb").parent().siblings(".ac_output").show();
-            runit('Turtle_Names2',this, undefined);
-            $("#Turtle_Names2_runb").on("click", function(){
-                runit('Turtle_Names2',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Turtle_Names2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Turtle_Names2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Turtle_Names2_runb").on("click", function(){
-        runit('Turtle_Names2',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>This works because <code class="docutils literal"><span class="pre">zari</span></code> is a turtle, and each statement gets executed, one right after the other.  If we introduce another turtle and another name, it doesn&#8217;t work the same</p>
 
-<div id="cont"></div>
-<div id="Two_Turtles" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Two_Turtles_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Two_Turtles_saveb" onclick="saveEditor('Two_Turtles');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Two_Turtles_loadb" onclick="requestCode('Two_Turtles');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Two_Turtles','from turtle import *        # use the turtle library*nline*space = Screen*open**close*            # create a turtle screen *open*space*close**nline*zari = Turtle*open**close*             # create a turtle named zari*nline*zari.setheading*open*90*close*         # Point due north*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*120*close*             # turn right by 120 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*120*close*             # turn right by 120 degrees*nline*chad = Turtle*open**close*             # create a new turtle named chad*nline*chad.color*open**doubleq*orange*doubleq**close*        # change the color chad*singleq*s draws with*nline*chad.forward*open*100*close*           # tell chad to move forward by 100 units*nline*chad.right*open*120*close*             # turn chad by 120 degrees','1','*doubleq*Line-by-line Tour*doubleq*; 1: tt-line1; 2: tt-line2; 3: tt-line3; 4: tt-line4; 5: tt-line5; 6: tt-line6; 7: tt-line7; 8: tt-line8; 9: tt-line9; 10: tt-line10; 11: tt-line11; 12: tt-line12;*atype*')"/>
-
-</div>
-<br/>
-<div id="Two_Turtles_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Two_Turtles_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Two_Turtles data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Line-by-line Tour*doubleq*; 1: tt-line1; 2: tt-line2; 3: tt-line3; 4: tt-line4; 5: tt-line5; 6: tt-line6; 7: tt-line7; 8: tt-line8; 9: tt-line9; 10: tt-line10; 11: tt-line11; 12: tt-line12;*atype*'     >
 from turtle import *        # use the turtle library
 space = Screen()            # create a turtle screen (space)
 zari = Turtle()             # create a turtle named zari
@@ -547,116 +392,52 @@ chad = Turtle()             # create a new turtle named chad
 chad.color("orange")        # change the color chad's draws with
 chad.forward(100)           # tell chad to move forward by 100 units
 chad.right(120)             # turn chad by 120 degrees
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Two_Turtles_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Two_Turtles_suffix" style="display:none">
-</pre><pre id="Two_Turtles_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Two_Turtles)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Two_Turtles_saveb').toggle();
-    $('#Two_Turtles_loadb').toggle();
-}
-if ($("#Two_Turtles").attr("lang") !== "html" && $("#Two_Turtles_code_div").parents(".admonition").length == 0 && $("#Two_Turtles_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Two_Turtles_code_div").offset({
-            left: $("#Two_Turtles .clearfix").offset().left
-        });
-    }
-    $("#Two_Turtles_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Two_Turtles_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Two_Turtles_runb").parent().siblings(".ac_output").show();
-            runit('Two_Turtles',this, undefined);
-            $("#Two_Turtles_runb").on("click", function(){
-                runit('Two_Turtles',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Two_Turtles_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Two_Turtles_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Two_Turtles_runb").on("click", function(){
-        runit('Two_Turtles',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>Every turtle object has its own attributes like its current position and color.  So, when we created chad his position was different from zari&#8217;s.  Turtles start off in the center of the drawing space when they are first created.</p>
 <p><strong>Mixed up programs</strong></p>
 
-        <div class='parsons alert alert-warning' id="parsons-88">
-        <div class="parsons-text">csp-5-4-2: The following program has one turtle, "jamal", draw a capital L in blue and then another, "tina", draw a line to the west in orange as shown to the left, <img src="../_static/TwoTurtles1.png" width="150" align="left" hspace="10" vspace="5" />.  The program should do all set-up, have "jamal" draw the L, and then have "tina" draw the line.   Finally, it should set the window to close when the user clicks in it.<br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.</p><br /><br /></div>
+        <div class='parsons alert alert-warning' id="parsons-89">
+        <div class="parsons-text">csp-5-4-1: The following program has one turtle, "jamal", draw a capital L in blue and then another, "tina", draw a line to the west in orange as shown to the left, <img src="../_static/TwoTurtles1.png" width="150" align="left" hspace="10" vspace="5" />.  The program should do all set-up, have "jamal" draw the L, and then have "tina" draw the line.   Finally, it should set the window to close when the user clicks in it.<br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.</p><br /><br /></div>
         <div style="clear:left;"></div>
-        <div id="parsons-orig-88" style="display:none;">import turtle\nwn = turtle.Screen()
+        <div id="parsons-orig-89" style="display:none;">from turtle import *\nwn = turtle.Screen()
 jamal = turtle.Turtle()\njamal.pensize(10)\njamal.color("blue")\njamal.right(90)\njamal.forward(150)
 jamal.left(90)\njamal.forward(75)
 tina = turtle.Turtle()\ntina.pensize(10)\ntina.color("orange")\ntina.left(180)\ntina.forward(75)
 wn.exitonclick()</div>
         <div class="sortable-code-container">
-        <div id="parsons-sortableTrash-88" class="sortable-code"></div>
-        <div id="parsons-sortableCode-88" class="sortable-code"></div>
+        <div id="parsons-sortableTrash-89" class="sortable-code"></div>
+        <div id="parsons-sortableCode-89" class="sortable-code"></div>
         <div style="clear:left;"></div>
         </div>
         <div class="parsons-controls">
-        <input type="button" class='btn btn-success' id="checkMe88" value="Check Me"/>
-        <input type="button" class='btn btn-default' id="reset88" value="Reset"/>
-        <div id="parsons-message-88"></div>
+        <input type="button" class='btn btn-success' id="checkMe89" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset89" value="Reset"/>
+        <div id="parsons-message-89"></div>
         </div>
         </div>
 
     <script>
         $pjQ(document).ready(function(){
-
-            $("#parsons-88").not(".sortable-code").not(".parsons-controls").on("click", function(){
+            var rb = new RunestoneBase();
+            $("#parsons-89").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
-                    scrollTop: ($("#parsons-88").offset().top - 50)
+                    scrollTop: ($("#parsons-89").offset().top - 50)
                 }, 700);
             }).find(".sortable-code, .parsons-controls").click(function(e) {
                 return false;
                 });
-            var msgBox = $("#parsons-message-88");
+            var msgBox = $("#parsons-message-89");
             msgBox.hide();
         var displayErrors = function (fb) {
             if(fb.errors.length > 0) {
-                    var hash = pp_88.getHash("#ul-parsons-sortableCode-88");
+                    var hash = pp_89.getHash("#ul-parsons-sortableCode-89");
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
-                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'5_4_2_JandT'});
+                    rb.logBookEvent({'event':'parsons', 'act':hash, 'div_id':'5_4_2_JandT'});
 
             } else {
-                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'5_4_2_JandT'});
+                    rb.logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'5_4_2_JandT'});
                     msgBox.fadeIn(100);
                     msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
@@ -666,8 +447,8 @@ wn.exitonclick()</div>
 
         $(window).load(function() {
             // set min width and height
-            var sortableul = $("#ul-parsons-sortableCode-88");
-            var trashul = $("#ul-parsons-sortableTrash-88");
+            var sortableul = $("#ul-parsons-sortableCode-89");
+            var trashul = $("#ul-parsons-sortableTrash-89");
             var sortableHeight = sortableul.height();
             var sortableWidth = sortableul.width();
             var trashWidth = trashul.width();
@@ -682,35 +463,35 @@ wn.exitonclick()</div>
         });
  
 
-        var pp_88 = new ParsonsWidget({
-                'sortableId': 'parsons-sortableCode-88',
-        'trashId': 'parsons-sortableTrash-88',
+        var pp_89 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-89',
+        'trashId': 'parsons-sortableTrash-89',
                 'max_wrong_lines': 1,
                 'solution_label': 'Drop blocks here',
                 'feedback_cb' : displayErrors
         });
-        pp_88.init($pjQ("#parsons-orig-88").text());
-    pp_88.shuffleLines();
+        pp_89.init($pjQ("#parsons-orig-89").text());
+    pp_89.shuffleLines();
             
         if(localStorage.getItem('5_4_2_JandT') && localStorage.getItem('5_4_2_JandT-trash')) {
             try {
                 var solution = localStorage.getItem('5_4_2_JandT');
                 var trash = localStorage.getItem('5_4_2_JandT-trash');
-                pp_88.createHTMLFromHashes(solution,trash);
-                pp_88.getFeedback();
+                pp_89.createHTMLFromHashes(solution,trash);
+                pp_89.getFeedback();
             } catch(err) {
                 var text = "An error occured restoring old 5_4_2_JandT state.  Error: ";
                 console.log(text + err.message);
             }
 
         }
-            $pjQ("#reset88").click(function(event){
+            $pjQ("#reset89").click(function(event){
               event.preventDefault();
-              pp_88.shuffleLines();
+              pp_89.shuffleLines();
             
             // set min width and height
-            var sortableul = $("#ul-parsons-sortableCode-88");
-            var trashul = $("#ul-parsons-sortableTrash-88");
+            var sortableul = $("#ul-parsons-sortableCode-89");
+            var trashul = $("#ul-parsons-sortableTrash-89");
             var sortableHeight = sortableul.height();
             var sortableWidth = sortableul.width();
             var trashWidth = trashul.width();
@@ -724,14 +505,14 @@ wn.exitonclick()</div>
               msgBox.hide();
             });
             
-            $pjQ("#checkMe88").click(function(event){
+            $pjQ("#checkMe89").click(function(event){
               event.preventDefault();
-              var hash = pp_88.getHash("#ul-parsons-sortableCode-88");
+              var hash = pp_89.getHash("#ul-parsons-sortableCode-89");
               localStorage.setItem('5_4_2_JandT',hash);
-              hash = pp_88.getHash("#ul-parsons-sortableTrash-88");
+              hash = pp_89.getHash("#ul-parsons-sortableTrash-89");
               localStorage.setItem('5_4_2_JandT-trash',hash);
             
-            pp_88.getFeedback();
+            pp_89.getFeedback();
             msgBox.fadeIn(100);
             
             });
@@ -742,49 +523,49 @@ wn.exitonclick()</div>
     </script>
 
 
-        <div class='parsons alert alert-warning' id="parsons-112">
-        <div class="parsons-text">csp-5-4-3: The following program has one turtle, "jamal", draw a line to the north in blue and then another, "tina", draw a line to the east in orange as shown to the left, <img src="../_static/TwoTurtlesL.png" width="150" align="left" hspace="10" vspace="5" />.  The program should import the turtle module, get the window to draw on, create the turtle "jamal", have it draw a line to the north, then create the turtle "tina", and have it draw a line to the east.  Finally, it should set the window to close when the user clicks in it.<br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.</p><br /><br /></div>
+        <div class='parsons alert alert-warning' id="parsons-113">
+        <div class="parsons-text">csp-5-4-2: The following program has one turtle, "jamal", draw a line to the north in blue and then another, "tina", draw a line to the east in orange as shown to the left, <img src="../_static/TwoTurtlesL.png" width="150" align="left" hspace="10" vspace="5" />.  The program should import the turtle module, get the window to draw on, create the turtle "jamal", have it draw a line to the north, then create the turtle "tina", and have it draw a line to the east.  Finally, it should set the window to close when the user clicks in it.<br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.</p><br /><br /></div>
         <div style="clear:left;"></div>
-        <div id="parsons-orig-112" style="display:none;">import turtle
+        <div id="parsons-orig-113" style="display:none;">from turtle import *
 wn = turtle.Screen()
 jamal = turtle.Turtle()\njamal.color("blue")\njamal.pensize(10)
 jamal.left(90)\njamal.forward(150)
 tina = turtle.Turtle()\ntina.pensize(10)\ntina.color("orange")\ntina.forward(150)
 wn.exitonclick()</div>
         <div class="sortable-code-container">
-        <div id="parsons-sortableTrash-112" class="sortable-code"></div>
-        <div id="parsons-sortableCode-112" class="sortable-code"></div>
+        <div id="parsons-sortableTrash-113" class="sortable-code"></div>
+        <div id="parsons-sortableCode-113" class="sortable-code"></div>
         <div style="clear:left;"></div>
         </div>
         <div class="parsons-controls">
-        <input type="button" class='btn btn-success' id="checkMe112" value="Check Me"/>
-        <input type="button" class='btn btn-default' id="reset112" value="Reset"/>
-        <div id="parsons-message-112"></div>
+        <input type="button" class='btn btn-success' id="checkMe113" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset113" value="Reset"/>
+        <div id="parsons-message-113"></div>
         </div>
         </div>
 
     <script>
         $pjQ(document).ready(function(){
-
-            $("#parsons-112").not(".sortable-code").not(".parsons-controls").on("click", function(){
+            var rb = new RunestoneBase();
+            $("#parsons-113").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
-                    scrollTop: ($("#parsons-112").offset().top - 50)
+                    scrollTop: ($("#parsons-113").offset().top - 50)
                 }, 700);
             }).find(".sortable-code, .parsons-controls").click(function(e) {
                 return false;
                 });
-            var msgBox = $("#parsons-message-112");
+            var msgBox = $("#parsons-message-113");
             msgBox.hide();
         var displayErrors = function (fb) {
             if(fb.errors.length > 0) {
-                    var hash = pp_112.getHash("#ul-parsons-sortableCode-112");
+                    var hash = pp_113.getHash("#ul-parsons-sortableCode-113");
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
-                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'5_4_3_JandT2'});
+                    rb.logBookEvent({'event':'parsons', 'act':hash, 'div_id':'5_4_3_JandT2'});
 
             } else {
-                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'5_4_3_JandT2'});
+                    rb.logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'5_4_3_JandT2'});
                     msgBox.fadeIn(100);
                     msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
@@ -794,8 +575,8 @@ wn.exitonclick()</div>
 
         $(window).load(function() {
             // set min width and height
-            var sortableul = $("#ul-parsons-sortableCode-112");
-            var trashul = $("#ul-parsons-sortableTrash-112");
+            var sortableul = $("#ul-parsons-sortableCode-113");
+            var trashul = $("#ul-parsons-sortableTrash-113");
             var sortableHeight = sortableul.height();
             var sortableWidth = sortableul.width();
             var trashWidth = trashul.width();
@@ -810,35 +591,35 @@ wn.exitonclick()</div>
         });
  
 
-        var pp_112 = new ParsonsWidget({
-                'sortableId': 'parsons-sortableCode-112',
-        'trashId': 'parsons-sortableTrash-112',
+        var pp_113 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-113',
+        'trashId': 'parsons-sortableTrash-113',
                 'max_wrong_lines': 1,
                 'solution_label': 'Drop blocks here',
                 'feedback_cb' : displayErrors
         });
-        pp_112.init($pjQ("#parsons-orig-112").text());
-    pp_112.shuffleLines();
+        pp_113.init($pjQ("#parsons-orig-113").text());
+    pp_113.shuffleLines();
             
         if(localStorage.getItem('5_4_3_JandT2') && localStorage.getItem('5_4_3_JandT2-trash')) {
             try {
                 var solution = localStorage.getItem('5_4_3_JandT2');
                 var trash = localStorage.getItem('5_4_3_JandT2-trash');
-                pp_112.createHTMLFromHashes(solution,trash);
-                pp_112.getFeedback();
+                pp_113.createHTMLFromHashes(solution,trash);
+                pp_113.getFeedback();
             } catch(err) {
                 var text = "An error occured restoring old 5_4_3_JandT2 state.  Error: ";
                 console.log(text + err.message);
             }
 
         }
-            $pjQ("#reset112").click(function(event){
+            $pjQ("#reset113").click(function(event){
               event.preventDefault();
-              pp_112.shuffleLines();
+              pp_113.shuffleLines();
             
             // set min width and height
-            var sortableul = $("#ul-parsons-sortableCode-112");
-            var trashul = $("#ul-parsons-sortableTrash-112");
+            var sortableul = $("#ul-parsons-sortableCode-113");
+            var trashul = $("#ul-parsons-sortableTrash-113");
             var sortableHeight = sortableul.height();
             var sortableWidth = sortableul.width();
             var trashWidth = trashul.width();
@@ -852,14 +633,14 @@ wn.exitonclick()</div>
               msgBox.hide();
             });
             
-            $pjQ("#checkMe112").click(function(event){
+            $pjQ("#checkMe113").click(function(event){
               event.preventDefault();
-              var hash = pp_112.getHash("#ul-parsons-sortableCode-112");
+              var hash = pp_113.getHash("#ul-parsons-sortableCode-113");
               localStorage.setItem('5_4_3_JandT2',hash);
-              hash = pp_112.getHash("#ul-parsons-sortableTrash-112");
+              hash = pp_113.getHash("#ul-parsons-sortableTrash-113");
               localStorage.setItem('5_4_3_JandT2-trash',hash);
             
-            pp_112.getFeedback();
+            pp_113.getFeedback();
             msgBox.fadeIn(100);
             
             });
@@ -899,7 +680,10 @@ wn.exitonclick()</div>
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

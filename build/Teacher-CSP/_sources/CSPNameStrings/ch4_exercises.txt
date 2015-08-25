@@ -23,7 +23,7 @@ Chapter 4 Exercises
 
         .. tab:: Question
             
-            There are errors in the following code.  Fix it to print correctly without errors.  
+            There are 3 errors in the following code.  Fix it to print correctly without errors.  
 
             .. activecode:: ch4ex1q
                 :nocodelens:
@@ -57,7 +57,7 @@ Chapter 4 Exercises
 
         .. tab:: Question
 
-           There are errors in the following code.  Fix it to print correctly without errors.  
+           There is 1 error in the following code.  Fix it to print correctly without errors.  
            
            .. activecode::  ch4ex2q
                :nocodelens:
@@ -91,7 +91,7 @@ Chapter 4 Exercises
 
         .. tab:: Question
 
-           There are errors in the following code.  Fix it to print correctly without errors.  
+           There are 3 errors in the following code.  Fix it to print correctly without errors.  
         
            .. activecode::  ch4ex3q
                :nocodelens:
@@ -126,7 +126,7 @@ Chapter 4 Exercises
 
         .. tab:: Question
 
-           Modify line 6 to also print a string explaining the value being printed.  Include the funds value in the string.
+           Modify line 6 to print: "The number of miles you can drive on 25 dollars is 273.97260274."
            
            .. activecode::  ch4ex4q
                :nocodelens:
@@ -141,7 +141,7 @@ Chapter 4 Exercises
 
         .. tab:: Answer
         
-            Change line 6 to include strings that explain the value that was calculated.  Be sure to use ``str(num)`` to convert a number to a string.
+            See line 6 below.  Be sure to use ``str(num)`` to convert a number to a string.
             
             .. activecode::  ch4ex4a
                 :nocodelens:
@@ -166,7 +166,7 @@ Chapter 4 Exercises
 
         .. tab:: Question
 
-           Modify line 6 to print out a string explaining the value that is printed.  Include the price of the wings, the number of people, and the amount each person has to spend.
+           Modify line 6 to print: "You can order 40.0 wings when you have 5 people who can each spend 4 dollars and wings cost 0.5 each."
            
            .. activecode::  ch4ex5q
                 :nocodelens:
@@ -207,7 +207,7 @@ Chapter 4 Exercises
 
         .. tab:: Question
 
-           Combine lines 4 and 5 in the code below to print how many hours and minutes 270 minutes is.  
+           Combine lines 4 and 5 in the code below to print: "270 is 4.0 hours and 30 minutes."
            
            .. activecode::  ch4ex6q
                 :nocodelens:
@@ -244,7 +244,7 @@ Chapter 4 Exercises
 
         .. tab:: Question
 
-           Complete the calculations on lines 2 and 4 and enter the items to be printed on line 5 to print the number of miles you can drive if you have a 10 gallon gas tank and are down to a quarter of a tank of gas and your car gets 32 miles per gallon.
+           Complete the calculations on lines 2 and 4 and enter the items to be printed on line 5 to print the number of miles you can drive if you have a 10 gallon gas tank and are down to a quarter of a tank of gas and your car gets 32 miles per gallon.  It should print: "You can go 80.0 miles."
            
            .. activecode::  ch4ex7q
                 :nocodelens:
@@ -281,7 +281,7 @@ Chapter 4 Exercises
 
         .. tab:: Question
 
-           Write the code to get a color as input and print it out in all lowercase letters.  This can be helpful when you want to check for a particular color and want to compare the values with them both all lowercase.
+           Write the code to get a color as input and print out the given color in all lowercase letters.  This can be helpful when you want to check for a particular color and want to compare the values with them both all lowercase.
            
            .. activecode::  ch4ex8q
                 :nocodelens:
@@ -309,7 +309,7 @@ Chapter 4 Exercises
 
         .. tab:: Question
 
-           Write the code below to calculate and print how many months it will take to save $200 if you earn $20 a week.
+           Write the code below to calculate and print how many months it will take to save $200 if you earn $20 a week.  It should print: "It will take 2.5 months to earn 200 if you make 20 dollars a week."
            
            .. activecode::  ch4ex9q
                 :nocodelens:

@@ -109,7 +109,7 @@ Summary of Expression Types
    :feedback_a: This would be correct if it was <code>6 % 2</code>.  
    :feedback_b: This would be correct if it was some odd number divided by 2, but it is not.
    :feedback_c: 6 goes into 2 zero times with 2 left over.  
-   :feedback_d: If you have a larger number divided by a smaller number the remainder is always the smaller number. 
+   :feedback_d: If you have a smaller number divided by a larger number the remainder is always the smaller number. 
 
    What is the result of ``2 % 6``?
 

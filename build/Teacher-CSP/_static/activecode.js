@@ -1,887 +1,506 @@
-var elem; // current audio element playing
-var currIndex; // current index
-var len; // current length of audio files for tour
-var buttonCount; // number of audio tour buttons
-var aname; // the audio file name
-var ahash; // hash of the audio file name to the lines to highlight
-var theDivid; // div id 
-var afile; // file name for audio
-var playing = false; // flag to say if playing or not
-var tourName;
+/**
+ * Created by bmiller on 3/19/15.
+ */
 
-String.prototype.replaceAll = function (target, replacement) {
-    return this.split(target).join(replacement);
-};
 
-// function to display the audio tours
-var createAudioTourHTML = function (divid, code, bnum, audio_text) {
+var edList = {};
 
-    // Replacing has been done here to make sure special characters in the code are displayed correctly
-    code = code.replaceAll("*doubleq*", "\"");
-    code = code.replaceAll("*singleq*", "'");
-    code = code.replaceAll("*open*", "(");
-    code = code.replaceAll("*close*", ")");
-    code = code.replaceAll("*nline*", "<br/>");
-    var codeArray = code.split("<br/>");
+ActiveCode.prototype = new RunestoneBase();
 
-    var audio_hash = new Array();
-    var bval = new Array();
-    var atype = audio_text.replaceAll("*doubleq*", "\"");
-    var audio_type = atype.split("*atype*");
-    for (var i = 0; i < audio_type.length - 1; i++) {
-        audio_hash[i] = audio_type[i];
-        var aword = audio_type[i].split(";");
-        bval.push(aword[0]);
+// separate into constructor and init
+
+function ActiveCode(opts) {
+    if (opts) {
+        this.init(opts);
+        }
     }
 
-    var first = "<pre><div id='" + divid + "_l1'>" + "1.   " + codeArray[0] + "</div>";
-    num_lines = codeArray.length;
-    for (var i = 1; i < num_lines; i++) {
-        if (i < 9) {
-            first = first + "<div id='" + divid + "_l" + (i + 1) + "'>" + (i + 1) + ".   " + codeArray[i] + "</div>";
+ActiveCode.prototype.init = function(opts) {
+    RunestoneBase.apply( this, arguments );  // call parent constructor
+    var suffStart = -1;
+    var orig = opts.orig;
+    this.useRunestoneServices = opts.useRunestoneServices;
+    this.python3 = opts.python3;
+    this.origElem = orig;
+    this.divid = orig.id;
+    this.code = $(orig).text() || "\n\n\n\n\n";
+    this.language = $(orig).data('lang');
+    this.timelimit = $(orig).data('timelimit');
+    this.includes = $(orig).data('include');
+    this.hidecode = $(orig).data('hidecode');
+    this.runButton = null;
+    this.saveButton = null;
+    this.loadButton = null;
+    this.outerDiv = null;
+    this.output = null; // create pre for output
+    this.graphics = null; // create div for turtle graphics
+    this.codecoach = null;
+    this.codelens = null;
+
+    if(this.includes !== undefined) {
+        this.includes = this.includes.split(/\s+/);
+    }
+
+    suffStart = this.code.indexOf('====');
+    if (suffStart > -1) {
+        this.suffix = this.code.substring(suffStart+5);
+        this.code = this.code.substring(0,suffStart);
+    }
+
+    this.createEditor();
+    this.createOutput();
+    this.createControls();
+    if ($(orig).data('caption')) {
+        this.caption = $(orig).data('caption');
+    } else {
+        this.caption = ""
+    }
+    this.addCaption();
+
+    if ($(orig).data('autorun')) {
+        $(document).ready(this.runProg.bind(this));
+    }
+};
+
+ActiveCode.prototype.createEditor = function (index) {
+    var newdiv = document.createElement('div');
+    $(newdiv).addClass("ac_section alert alert-warning");
+    var codeDiv = document.createElement("div");
+    $(codeDiv).addClass("ac_code_div col-md-12");
+    this.codeDiv = codeDiv;
+    newdiv.id = this.divid;
+    newdiv.lang = this.language;
+    this.outerDiv = newdiv;
+
+    $(this.origElem).replaceWith(newdiv);
+    newdiv.appendChild(codeDiv);
+    var editor = CodeMirror(codeDiv, {value: this.code, lineNumbers: true, mode: newdiv.lang});
+
+    // Make the editor resizable
+    $(editor.getWrapperElement()).resizable({
+        resize: function() {
+            editor.setSize($(this).width(), $(this).height());
+            editor.refresh();
         }
-        else if (i < 99) {
-            first = first + "<div id='" + divid + "_l" + (i + 1) + "'>" + (i + 1) + ".  " + codeArray[i] + "</div>";
+    });
+
+    // give the user a visual cue that they have changed but not saved
+    editor.on('change', (function () {
+        if (editor.acEditEvent == false || editor.acEditEvent === undefined) {
+            $(editor.getWrapperElement()).css('border-top', '2px solid #b43232');
+            $(editor.getWrapperElement()).css('border-bottom', '2px solid #b43232');
+            this.logBookEvent({'event': 'activecode', 'act': 'edit', 'div_id': this.divid});
+    }
+        editor.acEditEvent = true;
+        }).bind(this));  // use bind to preserve *this* inside the on handler.
+
+    this.editor = editor;
+    if (this.hidecode) {
+        $(this.codeDiv).css("display","none");
+    }
+};
+
+ActiveCode.prototype.createControls = function () {
+    var ctrlDiv = document.createElement("div");
+    $(ctrlDiv).addClass("ac_actions");
+
+    // Run
+    var butt = document.createElement("button");
+    $(butt).text("Run");
+    $(butt).addClass("btn btn-success");
+    ctrlDiv.appendChild(butt);
+    this.runButton = butt;
+    $(butt).click(this.runProg.bind(this));
+
+    // Save
+    if (this.useRunestoneServices) {
+        butt = document.createElement("button");
+        $(butt).addClass("ac_opt btn btn-default");
+        $(butt).text("Save");
+        $(butt).css("margin-left", "10px");
+        this.saveButton = butt;
+        this.saveButton.onclick = this.saveEditor.bind(this);
+        ctrlDiv.appendChild(butt);
+        if (this.hidecode) {
+            $(butt).css("display", "none")
+        }
+    }
+    // Load
+    if (this.useRunestoneServices) {
+        butt = document.createElement("button");
+        $(butt).addClass("ac_opt btn btn-default");
+        $(butt).text("Load");
+        $(butt).css("margin-left", "10px");
+        this.loadButton = butt;
+        this.loadButton.onclick = this.loadEditor.bind(this);
+        ctrlDiv.appendChild(butt);
+        if (this.hidecode) {
+            $(butt).css("display", "none")
+        }
+    }
+    if ($(this.origElem).data('gradebutton')) {
+        butt = document.createElement("button");
+        $(butt).addClass("ac_opt btn btn-default");
+        $(butt).text("Show Feedback");
+        $(butt).css("margin-left","10px");
+        this.gradeButton = butt;
+        ctrlDiv.appendChild(butt);
+        $(butt).click(this.createGradeSummary.bind(this))
+    }
+    // Show/Hide Code
+    if (this.hidecode) {
+        butt = document.createElement("button");
+        $(butt).addClass("ac_opt btn btn-default");
+        $(butt).text("Show/Hide Code");
+        $(butt).css("margin-left", "10px");
+        this.showHideButt = butt;
+        ctrlDiv.appendChild(butt);
+        $(butt).click( (function() { $(this.codeDiv).toggle();
+        $(this.loadButton).toggle();
+        $(this.saveButton).toggle();
+        }).bind(this));
+    }
+
+    // CodeLens
+    if ($(this.origElem).data("codelens")) {
+        butt = document.createElement("button");
+        $(butt).addClass("ac_opt btn btn-default");
+        $(butt).text("Show CodeLens");
+        $(butt).css("margin-left", "10px");
+        this.clButton = butt;
+        ctrlDiv.appendChild(butt);
+        $(butt).click(this.showCodelens.bind(this));
+    }
+    // CodeCoach
+    if (this.useRunestoneServices && $(this.origElem).data("coach")) {
+        butt = document.createElement("button");
+        $(butt).addClass("ac_opt btn btn-default");
+        $(butt).text("Code Coach");
+        $(butt).css("margin-left", "10px");
+        this.coachButton = butt;
+        ctrlDiv.appendChild(butt);
+        $(butt).click(this.showCodeCoach.bind(this));
+    }
+
+    // Audio Tour
+    if ($(this.origElem).data("audio")) {
+        butt = document.createElement("button");
+        $(butt).addClass("ac_opt btn btn-default");
+        $(butt).text("Audio Tour");
+        $(butt).css("margin-left", "10px");
+        this.atButton = butt;
+        ctrlDiv.appendChild(butt);
+        $(butt).click((function() {new AudioTour(this.divid, this.editor.getValue(), 1, $(this.origElem).data("audio"))}).bind(this));
+    }
+
+    $(this.outerDiv).prepend(ctrlDiv);
+
+};
+
+ActiveCode.prototype.createOutput = function () {
+    // Create a parent div with two elements:  pre for standard output and a div
+    // to hold turtle graphics output.  We use a div in case the turtle changes from
+    // using a canvas to using some other element like svg in the future.
+    var outDiv = document.createElement("div");
+    $(outDiv).addClass("ac_output col-md-6");
+    this.outDiv = outDiv;
+    this.output = document.createElement('pre');
+    $(this.output).css("visibility","hidden");
+
+    this.graphics = document.createElement('div');
+    this.graphics.id = this.divid + "_graphics";
+    $(this.graphics).addClass("ac-canvas");
+    // This bit of magic adds an event which waits for a canvas child to be created on our
+    // newly created div.  When a canvas child is added we add a new class so that the visible
+    // canvas can be styled in CSS.  Which a the moment means just adding a border.
+    $(this.graphics).on("DOMNodeInserted", 'canvas', (function(e) {
+        $(this.graphics).addClass("visible-ac-canvas")
+    }).bind(this));
+
+    outDiv.appendChild(this.output);
+    outDiv.appendChild(this.graphics);
+    this.outerDiv.appendChild(outDiv);
+
+    clearDiv = document.createElement("div");
+    $(clearDiv).css("clear","both");  // needed to make parent div resize properly
+    this.outerDiv.appendChild(clearDiv);
+
+
+    var lensDiv = document.createElement("div");
+    $(lensDiv).addClass("col-md-6");
+    $(lensDiv).css("display","none");
+    this.codelens = lensDiv;
+    this.outerDiv.appendChild(lensDiv);
+
+    clearDiv = document.createElement("div");
+    $(clearDiv).css("clear","both");  // needed to make parent div resize properly
+    this.outerDiv.appendChild(clearDiv);
+
+};
+
+ActiveCode.prototype.disableSaveLoad = function() {
+    $(this.saveButton).addClass('disabled');
+    $(this.saveButton).attr('title','Login to save your code');
+    $(this.loadButton).addClass('disabled');
+    $(this.loadButton).attr('title','Login to load your code');
+};
+
+ActiveCode.prototype.addCaption = function() {
+    //someElement.parentNode.insertBefore(newElement, someElement.nextSibling);
+    var capDiv = document.createElement('p');
+    $(capDiv).html(this.caption + " (" + this.divid + ")");
+    $(capDiv).addClass("ac_caption");
+    $(capDiv).addClass("ac_caption_text");
+
+    this.outerDiv.parentNode.insertBefore(capDiv, this.outerDiv.nextSibling);
+};
+
+ActiveCode.prototype.saveEditor = function () {
+    var res;
+    var saveSuccess = function(data, status, whatever) {
+        if (data.redirect) {
+            alert("Did not save!  It appears you are not logged in properly")
+        } else if (data == "") {
+            alert("Error:  Program not saved");
         }
         else {
-            first = first + "<div id='" + divid + "_l" + (i + 1) + "'>" + (i + 1) + ". " + codeArray[i] + "</div>";
-        }
-    }
-    first = first + "</pre>"
-
-    //laying out the HTML content
-
-    var bcount = 0;
-    var html_string = "<div class='modal-lightsout'></div><div class='modal-profile'><h3>Take an audio tour!</h3><div class='modal-close-profile'></div><p id='windowcode'></p><p id='" + divid + "_audiocode'></p>";
-    html_string += "<p id='status'></p>";
-    html_string += "<input type='image' src='../_static/first.png' width='25' id='first_audio' name='first_audio' title='Play first audio in tour' alt='Play first audio in tour' disabled/>" + "<input type='image' src='../_static/prev.png' width='25' id='prev_audio' name='prev_audio' title='Play previous audio in tour' alt='Play previous audio in tour' disabled/>" + "<input type='image' src='../_static/pause.png' width='25' id='pause_audio' name='pause_audio' title='Pause current audio' alt='Pause current audio' disabled/><input type='image' src='../_static/next.png' width ='25' id='next_audio' name='next_audio' title='Play next audio in tour' alt='Play next audio in tour' disabled/><input type='image' src='../_static/last.png' width ='25' id='last_audio' name='last_audio' title='Play last audio in tour' alt='Play last audio in tour' disabled/><br/>";
-    for (var i = 0; i < audio_type.length - 1; i++) {
-        html_string += "<input type='button' style='margin-right:5px;' class='btn btn-default btn-sm' id='button_audio_" + i + "' name='button_audio_" + i + "' value=" + bval[i] + " />";
-        bcount++;
-    }
-    //html_string += "<p id='hightest'></p><p id='hightest1'></p><br/><br/><p id='test'></p><br/><p id='audi'></p></div>";
-    html_string += "</div>";
-
-    $('#cont').html(html_string);
-    $('#windowcode').html(first);
-
-    // Position modal box 
-    $.fn.center = function () {
-        this.css("position", "absolute");
-        // y position
-        this.css("top", ($(window).scrollTop() + $(navbar).height() + 10 + "px"));
-        // show window on the left so that you can see the output from the code still
-        this.css("left", ($(window).scrollLeft() + "px"));
-        return this;
-    }
-
-    $(".modal-profile").center();
-    $('.modal-profile').fadeIn("slow");
-    //$('.modal-lightsout').css("height", $(document).height());
-    $('.modal-lightsout').fadeTo("slow", .5);
-    $('.modal-close-profile').show();
-
-    // closes modal box once close link is clicked, or if the lights out divis clicked
-    $('.modal-close-profile, .modal-lightsout').click(function () {
-        if (playing) {
-            elem.pause();
-        }
-        //log change to db
-        logBookEvent({'event': 'Audio', 'change': 'closeWindow', 'div_id': divid});
-        $('.modal-profile').fadeOut("slow");
-        $('.modal-lightsout').fadeOut("slow");
-    });
-
-    // Accommodate buttons for a maximum of five tours 
-
-    $('#' + 'button_audio_0').click(function () {
-        tour(divid, audio_hash[0], bcount);
-    });
-    $('#' + 'button_audio_1').click(function () {
-        tour(divid, audio_hash[1], bcount);
-    });
-    $('#' + 'button_audio_2').click(function () {
-        tour(divid, audio_hash[2], bcount);
-    });
-    $('#' + 'button_audio_3').click(function () {
-        tour(divid, audio_hash[3], bcount);
-    });
-    $('#' + 'button_audio_4').click(function () {
-        tour(divid, audio_hash[4], bcount);
-    });
-
-    // handle the click to go to the next audio
-    $('#first_audio').click(function () {
-        firstAudio();
-    });
-
-    // handle the click to go to the next audio
-    $('#prev_audio').click(function () {
-        prevAudio();
-    });
-
-    // handle the click to pause or play the audio
-    $('#pause_audio').click(function () {
-        pauseAndPlayAudio();
-    });
-
-    // handle the click to go to the next audio
-    $('#next_audio').click(function () {
-        nextAudio();
-    });
-
-    // handle the click to go to the next audio
-    $('#last_audio').click(function () {
-        lastAudio();
-    });
-
-    // make the image buttons look disabled
-    $("#first_audio").css('opacity', 0.25);
-    $("#prev_audio").css('opacity', 0.25);
-    $("#pause_audio").css('opacity', 0.25);
-    $("#next_audio").css('opacity', 0.25);
-    $("#last_audio").css('opacity', 0.25);
-
-};
-
-var tour = function (divid, audio_type, bcount) {
-    // set globals
-    buttonCount = bcount;
-    theDivid = divid;
-
-    // enable prev, pause/play and next buttons and make visible
-    $('#first_audio').removeAttr('disabled');
-    $('#prev_audio').removeAttr('disabled');
-    $('#pause_audio').removeAttr('disabled');
-    $('#next_audio').removeAttr('disabled');
-    $('#last_audio').removeAttr('disabled');
-    $("#first_audio").css('opacity', 1.0);
-    $("#prev_audio").css('opacity', 1.0);
-    $("#pause_audio").css('opacity', 1.0);
-    $("#next_audio").css('opacity', 1.0);
-    $("#last_audio").css('opacity', 1.0);
-
-    // disable tour buttons
-    for (var i = 0; i < bcount; i++)
-        $('#button_audio_' + i).attr('disabled', 'disabled');
-
-    var atype = audio_type.split(";");
-    var name = atype[0].replaceAll("\"", " ");
-    tourName = name;
-    $('#status').html("Starting the " + name);
-
-    //log tour type to db
-    logBookEvent({'event': 'Audio', 'act': name, 'div_id': divid});
-
-    var max = atype.length;
-    var str = "";
-    ahash = new Array();
-    aname = new Array();
-    for (i = 1; i < max - 1; i++) {
-        var temp = atype[i].split(":");
-        var temp_line = temp[0];
-        var temp_aname = temp[1];
-
-        var akey = temp_aname.substring(1, temp_aname.length);
-        var lnums = temp_line.substring(1, temp_line.length);
-
-        //alert("akey:"+akey+"lnum:"+lnums);
-
-        // str+="<audio id="+akey+" preload='auto'><source src='http://ice-web.cc.gatech.edu/ce21/audio/"+
-        // akey+".mp3' type='audio/mpeg'><source src='http://ice-web.cc.gatech.edu/ce21/audio/"+akey+
-        // ".ogg' type='audio/ogg'>Your browser does not support the audio tag</audio>";
-        str += "<audio id=" + akey + " preload='auto' ><source src='../_static/audio/" + akey +
-            ".wav' type='audio/wav'><source src='../_static/audio/" +
-            akey + ".mp3' type='audio/mpeg'><br />Your browser does not support the audio tag</audio>";
-        ahash[akey] = lnums;
-        aname.push(akey);
-    }
-    var ahtml = "#" + divid + "_audiocode";
-    $(ahtml).html(str); // set the html to the audio tags
-    len = aname.length; // set the number of audio file in the tour
-
-    // start at the first audio
-    currIndex = 0;
-
-    // play the first audio in the tour
-    playCurrIndexAudio();
-};
-
-function handlePlaying() {
-
-    // if playing audio pause it 
-    if (playing) {
-
-        elem.pause();
-
-        // unbind current ended
-        $('#' + afile).unbind('ended');
-
-        // unhighlight the prev lines
-        unhighlightLines(theDivid, ahash[aname[currIndex]]);
-    }
-
-}
-
-var firstAudio = function () {
-
-    // if audio is playing handle it
-    handlePlaying();
-
-    //log change to db
-    logBookEvent({'event': 'Audio', 'act': 'first', 'div_id': theDivid});
-
-
-    // move to the first audio
-    currIndex = 0;
-
-    // start at the first audio
-    playCurrIndexAudio();
-
-};
-
-var prevAudio = function () {
-
-    // if there is a previous audio
-    if (currIndex > 0) {
-
-        // if audio is playing handle it
-        handlePlaying();
-
-        //log change to db
-        logBookEvent({'event': 'Audio', 'act': 'prev', 'div_id': theDivid});
-
-
-        // move to previous to the current (but the current index has moved to the next)
-        currIndex = currIndex - 1;
-
-        // start at the prev audio
-        playCurrIndexAudio();
-    }
-
-};
-
-var nextAudio = function () {
-
-    // if audio is playing handle it
-    handlePlaying();
-
-    //log change to db
-    logBookEvent({'event': 'Audio', 'act': 'next', 'div_id': theDivid});
-
-    // if not at the end
-    if (currIndex < (len - 1)) {
-        // start at the next audio
-        currIndex = currIndex + 1;
-        playCurrIndexAudio();
-    }
-    else if (currIndex == (len - 1)) {
-        handleTourEnd();
-    }
-};
-
-var lastAudio = function () {
-
-    // if audio is playing handle it
-    handlePlaying();
-
-    //log change to db
-    logBookEvent({'event': 'Audio', 'act': 'last', 'div_id': theDivid});
-
-    // move to the last audio
-    currIndex = len - 1;
-
-    // start at last
-    playCurrIndexAudio();
-
-};
-
-// play the audio at the current index
-var playCurrIndexAudio = function () {
-
-    // set playing to false
-    playing = false;
-
-    // play the current audio and highlight the lines
-    playaudio(currIndex, aname, theDivid, ahash);
-
-};
-
-// handle the end of the tour
-var handleTourEnd = function () {
-
-    $('#status').html(" The " + tourName + " Ended");
-
-    // disable the prev, pause/play, and next buttons and make them more invisible
-    $('#first_audio').attr('disabled', 'disabled');
-    $('#prev_audio').attr('disabled', 'disabled');
-    $('#pause_audio').attr('disabled', 'disabled');
-    $('#next_audio').attr('disabled', 'disabled');
-    $('#last_audio').attr('disabled', 'disabled');
-    $("#first_audio").css('opacity', 0.25);
-    $("#prev_audio").css('opacity', 0.25);
-    $("#pause_audio").css('opacity', 0.25);
-    $("#next_audio").css('opacity', 0.25);
-    $("#last_audio").css('opacity', 0.25);
-
-    // enable the tour buttons
-    for (var j = 0; j < buttonCount; j++)
-        $('#button_audio_' + j).removeAttr('disabled');
-};
-
-// only call this one after the first time
-var outerAudio = function () {
-
-    // unbind ended
-    $('#' + afile).unbind('ended');
-
-    // set playing to false
-    playing = false;
-
-    // unhighlight previous lines from the last audio
-    unhighlightLines(theDivid, ahash[aname[currIndex]]);
-
-    // increment the currIndex to point to the next one
-    currIndex++;
-
-    // if the end of the tour reset the buttons
-    if (currIndex == len) {
-        handleTourEnd();
-    }
-
-    // else not done yet so play the next audio
-    else {
-
-        // play the audio at the current index
-        playCurrIndexAudio();
-    }
-};
-
-// play the audio now that it is ready
-var playWhenReady = function (afile, divid, ahash) {
-
-    // unbind current
-    $('#' + afile).unbind('canplaythrough');
-    //console.log("in playWhenReady " + elem.duration);
-
-    $('#status').html("Playing the " + tourName);
-    elem.currentTime = 0;
-    highlightLines(divid, ahash[afile]);
-    $('#' + afile).bind('ended', function () {
-        outerAudio();
-    });
-    playing = true;
-    elem.play();
-
-};
-
-
-// play the audio at the specified index i and set the duration and highlight the lines
-var playaudio = function (i, aname, divid, ahash) {
-    afile = aname[i];
-    elem = document.getElementById(afile);
-
-    // if this isn't ready to play yet - no duration yet then wait
-    //console.log("in playaudio " + elem.duration);
-    if (isNaN(elem.duration) || elem.duration == 0) {
-
-        // set the status
-        $('#status').html("Loading audio.  Please wait.  If it doesn't start soon close this window (click on the red X) and try again");
-        $('#' + afile).bind('canplaythrough', function () {
-             playWhenReady(afile, divid, ahash);
-        });
-    }
-    // otherwise it is ready so play it
-    else {
-      playWhenReady(afile, divid, ahash);
-    }
-};
-
-// pause if playing and play if paused
-var pauseAndPlayAudio = function () {
-    var btn = document.getElementById('pause_audio');
-
-    // if paused and clicked then continue from current
-    if (elem.paused) {
-        // calcualte the time left to play in milliseconds
-        counter = (elem.duration - elem.currentTime) * 1000;
-        elem.play(); // start the audio from current spot
-        document.getElementById("pause_audio").src = "../_static/pause.png";
-        document.getElementById("pause_audio").title = "Pause current audio";
-        //log change to db
-        logBookEvent({'event': 'Audio', 'act': 'play', 'div_id': theDivid});
-    }
-
-    // if audio was playing pause it
-    else if (playing) {
-        elem.pause(); // pause the audio
-        document.getElementById("pause_audio").src = "../_static/play.png";
-        document.getElementById("pause_audio").title = "Play paused audio";
-        //log change to db
-        logBookEvent({'event': 'Audio', 'act': 'pause', 'div_id': theDivid});
-    }
-
-};
-
-// process the lines
-var processLines = function (divid, lnum, color) {
-    var comma = lnum.split(",");
-
-    if (comma.length > 1) {
-        for (i = 0; i < comma.length; i++) {
-            setBackroundForLines(divid, comma[i], color);
-        }
-    }
-    else {
-        setBackroundForLines(divid, lnum, color);
-    }
-};
-
-// unhighlight the lines - set the background back to transparent
-var unhighlightLines = function (divid, lnum) {
-    processLines(divid, lnum, 'transparent');
-};
-
-// highlight the lines - set the background to a yellow color
-var highlightLines = function (divid, lnum) {
-    processLines(divid, lnum, '#ffff99');
-};
-
-// set the background to the passed color
-var setBackroundForLines = function (divid, lnum, color) {
-    var hyphen = lnum.split("-");
-
-    // if a range of lines
-    if (hyphen.length > 1) {
-        var start = parseInt(hyphen[0]);
-        var end = parseInt(hyphen[1]) + 1;
-        for (var k = start; k < end; k++) {
-            //alert(k);
-            var str = "#" + divid + "_l" + k;
-            if ($(str).text() != "") {
-                $(str).css('background-color', color);
-            }
-            //$(str).effect("highlight",{},(dur*1000)+4500);
-        }
-    }
-    else {
-        //alert(lnum);
-        var str = "#" + divid + "_l" + lnum;
-        $(str).css('background-color', color);
-        //$(str).effect("highlight",{},(dur*1000)+4500);
-    }
-};
-
-
-function showChange(ed, b) {
-    if (ed.acEditEvent == false || ed.acEditEvent === undefined) {
-        $('#' + ed.parentDiv + ' .CodeMirror').css('border-top', '2px solid #b43232');
-        $('#' + ed.parentDiv + ' .CodeMirror').css('border-bottom', '2px solid #b43232');
-    }
-    ed.acEditEvent = true;
-}
-
-cm_editors = {};
-
-function pyStr(x) {
-    if (x instanceof Array) {
-        return '[' + x.join(", ") + ']';
-    } else {
-        return x
-    }
-}
-
-function outf(text) {
-    var mypre = document.getElementById(Sk.pre);
-    // bnm python 3
-    x = text;
-    if (x.charAt(0) == '(') {
-        x = x.slice(1, -1);
-        x = '[' + x + ']';
-        try {
-            var xl = eval(x);
-            xl = xl.map(pyStr);
-            x = xl.join(' ');
-        } catch (err) {
-        }
-    }
-    text = x;
-    text = text.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, "<br/>");
-    mypre.innerHTML = mypre.innerHTML + text;
-}
-
-
-JSoutput = function (a) {
-
-    var str = "["
-
-    if (typeof(a) == "object" && a.length) {
-
-        for (var i = 0; i < a.length; i++)
-
-            if (typeof(a[i]) == "object" && a[i].length) {
-
-                str += (i == 0 ? "" : " ") + "["
-
-                for (var j = 0; j < a[i].length; j++)
-
-                    str += a[i][j] + (j == a[i].length - 1 ?
-
-                        "]" + (i == a.length - 1 ? "]" : ",") + "\n" : ", ");
-
+            var acid = eval(data)[0];
+            if (acid.indexOf("ERROR:") == 0) {
+                alert(acid);
             } else {
-                str += a[i] + (i == a.length - 1 ? "]" : ", ");
-            }
+                // use a tooltip to provide some success feedback
+                var save_btn = $(this.saveButton);
+                save_btn.attr('title', 'Saved your code.');
+                opts = {
+                    'trigger': 'manual',
+                    'placement': 'bottom',
+                    'delay': { show: 100, hide: 500}
+                };
+                save_btn.tooltip(opts);
+                save_btn.tooltip('show');
+                setTimeout(function () {
+                    save_btn.tooltip('destroy')
+                }, 4000);
 
-    } else {
-        try {
-            str = JSON.stringify(a);
-        } catch (e) {
-            str = a;
+                $('#' + acid + ' .CodeMirror').css('border-top', '2px solid #aaa');
+                $('#' + acid + ' .CodeMirror').css('border-bottom', '2px solid #aaa');
+            }
+        }
+    }.bind(this);
+
+    var data = {acid: this.divid, code: this.editor.getValue()};
+    data.lang = this.language;
+    if (data.code.match(/^\s+$/)) {
+        res = confirm("You are about to save an empty program, this will overwrite a previously saved program.  Continue?");
+        if (! res) {
+            return;
         }
     }
-    return str;
-
-}
-
-
-write = function (str) {
-
-    var outnode = document.getElementById(Sk.pre);
-
-    outnode.innerHTML += JSoutput(str);
-
-}
-
-
-writeln = function (str) {
-
-    if (!str) {
-        str = "";
-    }
-
-    var outnode = document.getElementById(Sk.pre);
-
-    outnode.innerHTML += JSoutput(str) + "<br />";
-
-}
-
-
-var keymap = {
-    "Ctrl-Enter": function (editor) {
-        runit(editor.parentDiv);
-        $("#" + editor.parentDiv).children('.ac_output').show();
-    },
-    "Tab": "indentMore",
-    "Shift-Tab": "indentLess"
-}
-
-
-function createEditors() {
-    var edList = new Array();
-    edList = document.getElementsByClassName("active_code");
-    for (var i = 0; i < edList.length; i++) {
-        newEdId = edList[i].id;
-        var includes = edList[i].getAttribute('prefixcode');
-        var lang = edList[i].getAttribute('lang') || "python";
-        var first_line = 1;
-        if (includes !== "undefined") {
-            includes = eval(includes)
-            for (var j in includes) {
-                var edinclude = document.getElementById(includes[j] + '_code')
-                first_line = first_line + edinclude.textContent.match(/\n/g).length + 1;
-            }
-        } else {
-            first_line = 1;
-        }
-        var theMode = {name: 'python', version: 2, singleLineStringErrors: false};
-        if (lang == 'html') {
-            theMode = {name: 'htmlmixed'};
-        } else if (lang == 'java') {
-            theMode = {name: 'text/x-java'};
-        }
-        cm_editors[newEdId] = CodeMirror.fromTextArea(edList[i], {
-                mode: theMode,
-                lineNumbers: true,
-                firstLineNumber: first_line,
-                indentUnit: 4,
-                indentWithTabs: false,
-                matchBrackets: true,
-                autoMatchParens: true,
-                extraKeys: keymap
-            }
-        );
-        cm_editors[newEdId].on('change', showChange);
-        cm_editors[newEdId].parentDiv = edList[i].parentNode.parentNode.id;
-        //requestCode(edList[i].parentNode.id) // populate with user's code
-    }
-
-    // allow ActiveCode editors to be dynamically resized by user
-    $('.CodeMirror').each(function (_, cmNode) {
-        $(cmNode).resizable({
-            resize: function () {
-                cmNode.CodeMirror.setSize($(this).width(), $(this).height());
-                cmNode.CodeMirror.refresh();
-            }
-        });
+    $(document).ajaxError(function (e, jqhxr, settings, exception) {
+        alert("Request Failed for" + settings.url)
     });
-}
-
-function builtinRead(x) {
-    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined) {
-        throw "File not found: '" + x + "'";
+    jQuery.post(eBookConfig.ajaxURL + 'saveprog', data, saveSuccess);
+    if (this.editor.acEditEvent) {
+        this.logBookEvent({'event': 'activecode', 'act': 'edit', 'div_id': this.divid}); // Log the run event
+        this.editor.acEditEvent = false;
     }
-    return Sk.builtinFiles["files"][x];
-}
+    this.logBookEvent({'event': 'activecode', 'act': 'save', 'div_id': this.divid}); // Log the run event
 
-function createActiveCode(divid, suppliedSource, sid, language) {
-    var edNode;
-    var acblockid;
-    if (sid !== undefined) {
-        acblockid = divid + "_" + sid;
-    } else {
-        acblockid = divid;
-    }
+};
 
-    edNode = document.getElementById(acblockid);
-    edNode.lang = edNode.lang || 'python'
-    if (language !== undefined && language !== "None") {
-        edNode.lang = language;
-    }
-    if (edNode.children.length == 0) {
-        //edNode.style.display = 'none';
-        edNode.style.backgroundColor = "white";
-        var editor;
-        editor = CodeMirror(edNode, {
-            mode: {
-                name: "python",
-                version: 2,
-                singleLineStringErrors: false
-            },
-            lineNumbers: true,
-            indentUnit: 4,
-            tabMode: "indent",
-            matchBrackets: true,
-            autoMatchParens: true,
-            extraKeys: keymap
-        });
+ActiveCode.prototype.loadEditor = function () {
 
-        editor.setSize(null, 250);
+    var loadEditor = (function (data, status, whatever) {
+        // function called when contents of database are returned successfully
+        var res = eval(data)[0];
 
-
-        var myRun = function () {
-            runit(acblockid);
-        };
-        var mySave = function () {
-            saveEditor(divid);
-        };
-        var myLoad = function () {
-            requestCode(divid, sid);
-        };
-        cm_editors[acblockid + "_code"] = editor;
-        editor.parentDiv = acblockid;
-        var runButton = document.createElement("button");
-        runButton.appendChild(document.createTextNode('Run'));
-        runButton.className = runButton.className + ' btn btn-success';
-        runButton.onclick = myRun;
-        edNode.appendChild(runButton);
-        edNode.appendChild(document.createElement('br'));
-        if (sid === undefined) { // We don't need load and save buttons for grading
-            if (isLoggedIn() == true) {
-                var saveButton = document.createElement("input");
-                saveButton.setAttribute('type', 'button');
-                saveButton.setAttribute('value', 'Save');
-                saveButton.className = saveButton.className + ' btn btn-default';
-                saveButton.onclick = mySave;
-                edNode.appendChild(saveButton);
-
-                var loadButton = document.createElement("input");
-                loadButton.setAttribute('type', 'button');
-                loadButton.setAttribute('value', 'Load');
-                loadButton.className = loadButton.className + ' btn btn-default';
-                loadButton.onclick = myLoad;
-                edNode.appendChild(loadButton);
-            } else {
-                var saveButton = document.createElement("input");
-                saveButton.setAttribute('type', 'button');
-                saveButton.setAttribute('value', 'Save');
-                saveButton.className = saveButton.className + ' btn btn-default disabled';
-                saveButton.setAttribute('data-toggle', 'tooltip');
-                saveButton.setAttribute('title', 'Register or log in to save your code');
-                edNode.appendChild(saveButton);
-                $jqTheme(saveButton).tooltip({
-                    'selector': '',
-                    'placement': 'bottom'
-                });
-
-                var loadButton = document.createElement("input");
-                loadButton.setAttribute('type', 'button');
-                loadButton.setAttribute('value', 'Load');
-                loadButton.className = loadButton.className + ' btn btn-default disabled';
-                loadButton.setAttribute('data-toggle', 'tooltip');
-                loadButton.setAttribute('title', 'Register or log in to load your saved code');
-                edNode.appendChild(loadButton);
-                $jqTheme(loadButton).tooltip({
-                    'selector': '',
-                    'placement': 'bottom'
-                });
-            }
-        }
-        edNode.appendChild(document.createElement('br'));
-        var newCanvas = edNode.appendChild(document.createElement("div"));
-        newCanvas.id = acblockid + "_canvas";
-        newCanvas.height = 400;
-        newCanvas.width = 400;
-        newCanvas.style.border = '2px solid black';
-        newCanvas.style.display = 'block';
-        var newPre = edNode.appendChild(document.createElement("pre"));
-        newPre.id = acblockid + "_pre";
-        newPre.className = "active_out";
-
-        myLoad();
-        if (!suppliedSource) {
-            suppliedSource = '\n\n\n\n\n';
-        }
-        if (!editor.getValue()) {
-            suppliedSource = suppliedSource.replace(new RegExp('%22', 'g'), '"');
-            suppliedSource = suppliedSource.replace(new RegExp('%27', 'g'), "'");
-            editor.setValue(suppliedSource);
-        }
-        editor.refresh()
-    }
-}
-
-function runit(myDiv, theButton, includes, suffix) {
-    //var prog = document.getElementById(myDiv + "_code").value;
-
-    Sk.divid = myDiv;
-    $(theButton).attr('disabled', 'disabled');
-    Sk.isTurtleProgram = false;
-    if (theButton !== undefined) {
-        Sk.runButton = theButton;
-    }
-    $("#" + myDiv + "_errinfo").remove();
-    $("#" + myDiv + "_coach_div").hide();
-
-    var editor = cm_editors[myDiv + "_code"];
-    if (editor.acEditEvent) {
-        logBookEvent({'event': 'activecode', 'act': 'edit', 'div_id': myDiv}); // Log the edit event
-        editor.acEditEvent = false;
-    }
-    var prog = "";
-    var text = "";
-    if (includes !== undefined) {
-        // iterate over the includes, in-order prepending to prog
-        for (var x in includes) {
-            text = cm_editors[includes[x] + "_code"].getValue();
-            prog = prog + text + "\n"
-        }
-    }
-    prog = prog + editor.getValue();
-
-    var suffix;
-    suffix = $('#' + myDiv + '_suffix').text() || '';
-
-    prog = prog + '\n' + suffix;
-
-    var mypre = document.getElementById(myDiv + "_pre");
-    if (mypre) {
-        mypre.innerHTML = '';
-    }
-    Sk.canvas = myDiv + "_canvas";
-    Sk.pre = myDiv + "_pre";
-    var can = document.getElementById(Sk.canvas);
-    (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = Sk.canvas;
-
-    // The following lines reset the canvas so that each time the run button
-    // is pressed the turtle(s) get a clean canvas.
-    if (can) {
-        can.width = can.width;
-        if (Sk.tg) {
-            Sk.tg.canvasInit = false;
-            Sk.tg.turtleList = [];
-        }
-    }
-    var timelimit = $("#" + myDiv).attr("time")
-    // set execLimit in milliseconds  -- for student projects set this to
-    // 25 seconds -- just less than Chrome's own timer.
-    if (prog.indexOf('ontimer') > -1 ||
-        prog.indexOf('onclick') > -1 ||
-        prog.indexOf('onkey') > -1 ||
-        prog.indexOf('setDelay') > -1) {
-        Sk.execLimit = null;
-    } else {
-        if (timelimit === "off") {
-            Sk.execLimit = null;
-        } else if (timelimit) {
-            Sk.execLimit = timelimit;
+        if (res.source) {
+            this.editor.setValue(res.source);
+            setTimeout(function() {
+                this.editor.refresh();
+            }.bind(this),500);
+            $(this.loadButton).tooltip({'placement': 'bottom',
+                             'title': "Loaded your saved code.",
+                             'trigger': 'manual'
+                            });
         } else {
-            Sk.execLimit = 25000;
+            $(this.loadButton).tooltip({'placement': 'bottom',
+                             'title': "No saved code.",
+                             'trigger': 'manual'
+                            });
         }
+        $(this.loadButton).tooltip('show');
+        setTimeout(function () {
+            $(this.loadButton).tooltip('destroy')
+        }.bind(this), 4000);
+    }).bind(this);
+
+    var data = {acid: this.divid};
+    if (this.sid !== undefined) {
+        data['sid'] = sid;
     }
-    // configure Skulpt output function, and module reader
-    Sk.configure({
-        output: outf,
-        read: builtinRead,
-        python3: true,
-        imageProxy: 'http://image.runestone.academy:8080/320x'
+    this.logBookEvent({'event': 'activecode', 'act': 'load', 'div_id': this.divid}); // Log the run event
+    jQuery.get(eBookConfig.ajaxURL + 'getprog', data, loadEditor);
+
+};
+
+ActiveCode.prototype.createGradeSummary = function () {
+    // get grade and comments for this assignment
+    // get summary of all grades for this student
+    // display grades in modal window
+    var showGradeSummary = function (data, status, whatever) {
+        var report = eval(data)[0];
+        // check for report['message']
+        if (report['grade']) {
+            body = "<h4>Grade Report</h4>" +
+                   "<p>This assignment: " + report['grade'] + "</p>" +
+                   "<p>" + report['comment'] + "</p>" +
+                   "<p>Number of graded assignments: " + report['count'] + "</p>" +
+                   "<p>Average score: " +  report['avg'] + "</p>"
+
+        } else {
+            body = "<h4>You must be Logged in to see your grade</h4>";
+        }
+        var html = '<div class="modal fade">' +
+            '  <div class="modal-dialog compare-modal">' +
+            '    <div class="modal-content">' +
+            '      <div class="modal-header">' +
+            '        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +
+            '        <h4 class="modal-title">Assignment Feedback</h4>' +
+            '      </div>' +
+            '      <div class="modal-body">' +
+            body +
+            '      </div>' +
+            '    </div>' +
+            '  </div>' +
+            '</div>';
+
+        el = $(html);
+        el.modal();
+    };
+    var data = {'div_id': this.divid};
+    jQuery.get(eBookConfig.ajaxURL + 'getassignmentgrade', data, showGradeSummary);
+};
+
+ActiveCode.prototype.hideCodelens = function (button, div_id) {
+    this.codelens.style.display = 'none'
+};
+
+ActiveCode.prototype.showCodelens = function () {
+
+    if (this.codelens.style.display == 'none') {
+        this.codelens.style.display = 'block';
+        this.clButton.innerText = "Hide Codelens";
+    } else {
+        this.codelens.style.display = "none";
+        this.clButton.innerText = "Show in Codelens";
+        return;
+    }
+
+    var cl = this.codelens.firstChild;
+    if (cl) {
+        div.removeChild(cl)
+    }
+    var code = this.editor.getValue();
+    var myVars = {};
+    myVars.code = code;
+    myVars.origin = "opt-frontend.js";
+    myVars.cumulative = false;
+    myVars.heapPrimitives = false;
+    myVars.drawParentPointers = false;
+    myVars.textReferences = false;
+    myVars.showOnlyOutputs = false;
+    myVars.rawInputLstJSON = JSON.stringify([]);
+    if (this.python3) {
+        myVars.py = 3;
+    } else {
+        myVars.py = 2;
+    }
+    myVars.curInstr = 0;
+    myVars.codeDivWidth = 350;
+    myVars.codeDivHeight = 400;
+    var srcURL = '//pythontutor.com/iframe-embed.html';
+    var embedUrlStr = $.param.fragment(srcURL, myVars, 2 /* clobber all */);
+    var myIframe = document.createElement('iframe');
+    myIframe.setAttribute("id", this.divid + '_codelens');
+    myIframe.setAttribute("width", "800");
+    myIframe.setAttribute("height", "500");
+    myIframe.setAttribute("style", "display:block");
+    myIframe.style.background = '#fff';
+    //myIframe.setAttribute("src",srcURL)
+    myIframe.src = embedUrlStr;
+    this.codelens.appendChild(myIframe);
+    this.logBookEvent({
+        'event': 'codelens',
+        'act': 'view',
+        'div_id': this.divid
     });
-    var lang = document.getElementById(myDiv).lang;
-    try {
-        if (lang === 'python') {
-            var myPromise = Sk.misceval.asyncToPromise(function () {
-                return Sk.importMainWithBody("<stdin>", false, prog, true);
-            });
-            myPromise.then(function (mod) {
-            }, function (err) {
-                logRunEvent({'div_id': myDiv, 'code': prog, 'errinfo': err.toString()}); // Log the run event
-                addErrorMessage(err, myDiv)
-            });
-        } else if (lang === 'javascript') {
-            eval(prog);
-        } else {
-            // html
-            $('#' + myDiv + '_iframe').remove();
-            $('#' + myDiv + '_htmlout').show();
-            $('#' + myDiv + '_htmlout').append('<iframe class="activehtml" id="' + myDiv + '_iframe" srcdoc="' +
-                prog.replace(/"/g, "'") + '">' + '</iframe>');
-        }
-        logRunEvent({'div_id': myDiv, 'code': prog, 'errinfo': 'success'}); // Log the run event
-    } catch (e) {
-        logRunEvent({'div_id': myDiv, 'code': prog, 'errinfo': e.toString()}); // Log the run event
-        //alert(e);
-        addErrorMessage(e, myDiv)
-    }
-    if (!Sk.isTurtleProgram) {
-        $(theButton).removeAttr('disabled');
-    }
-    if (typeof(allVisualizers) != "undefined") {
-        $.each(allVisualizers, function (i, e) {
-            e.redrawConnectors();
-        });
-    }
-}
 
-function addErrorMessage(err, myDiv) {
-    var errHead = $('<h3>').html('Error')
-    var divEl = document.getElementById(myDiv)
-    var eContainer = divEl.appendChild(document.createElement('div'))
-    eContainer.className = 'error alert alert-danger';
-    eContainer.id = myDiv + '_errinfo';
-    eContainer.appendChild(errHead[0]);
-    var errText = eContainer.appendChild(document.createElement('pre'))
-    var errString = err.toString()
-    var to = errString.indexOf(":")
+};
+
+// <iframe id="%(divid)s_codelens" width="800" height="500" style="display:block"src="#">
+// </iframe>
+
+
+ActiveCode.prototype.showCodeCoach = function (div_id) {
+    var myIframe;
+    var srcURL;
+    var cl;
+    if (this.codecoach === null) {
+        this.codecoach = document.createElement("div");
+        this.codecoach.style.display = 'block'
+    }
+
+    cl = this.codecoach.firstChild;
+    if (cl) {
+        this.codecoach.removeChild(cl)
+    }
+
+    srcURL = eBookConfig.app + '/admin/diffviewer?divid=' + div_id;
+    myIframe = document.createElement('iframe');
+    myIframe.setAttribute("id", div_id + '_coach');
+    myIframe.setAttribute("width", "800px");
+    myIframe.setAttribute("height", "500px");
+    myIframe.setAttribute("style", "display:block");
+    myIframe.style.background = '#fff';
+    myIframe.style.width = "100%";
+    myIframe.src = srcURL;
+    this.codecoach.appendChild(myIframe);
+    logBookEvent({
+        'event': 'coach',
+        'act': 'view',
+        'div_id': this.divid
+    });
+};
+
+
+ActiveCode.prototype.toggleEditorVisibility = function () {
+
+};
+
+ActiveCode.prototype.addErrorMessage = function (err) {
+    //logRunEvent({'div_id': this.divid, 'code': this.prog, 'errinfo': err.toString()}); // Log the run event
+    var errHead = $('<h3>').html('Error');
+    this.eContainer = this.outerDiv.appendChild(document.createElement('div'));
+    this.eContainer.className = 'error alert alert-danger';
+    this.eContainer.id = this.divid + '_errinfo';
+    this.eContainer.appendChild(errHead[0]);
+    var errText = this.eContainer.appendChild(document.createElement('pre'));
+    var errString = err.toString();
+    var to = errString.indexOf(":");
     var errName = errString.substring(0, to);
     errText.innerHTML = errString;
-    $(eContainer).append('<h3>Description</h3>');
-    var errDesc = eContainer.appendChild(document.createElement('p'));
+    $(this.eContainer).append('<h3>Description</h3>');
+    var errDesc = this.eContainer.appendChild(document.createElement('p'));
     errDesc.innerHTML = errorText[errName];
-    $(eContainer).append('<h3>To Fix</h3>');
-    var errFix = eContainer.appendChild(document.createElement('p'));
+    $(this.eContainer).append('<h3>To Fix</h3>');
+    var errFix = this.eContainer.appendChild(document.createElement('p'));
     errFix.innerHTML = errorText[errName + 'Fix'];
     var moreInfo = '../ErrorHelp/' + errName.toLowerCase() + '.html';
-}
+    //console.log("Runtime Error: " + err.toString());
+};
+
+
 
 var errorText = {};
 
@@ -923,185 +542,962 @@ errorText.NotImplementedError = "This error occurs when you try to use a builtin
 errorText.NotImplementedErrorFix = "For now the only way to fix this is to not use the function.  There may be workarounds.  If you really need this builtin function then file a bug report and tell us how you are trying to use the function.";
 
 
-function saveSuccess(data, status, whatever) {
-    if (data.redirect) {
-        alert("Did not save!  It appears you are not logged in properly")
-    } else if (data == "") {
-        alert("Error:  Program not saved");
+
+
+ActiveCode.prototype.setTimeLimit = function (timer) {
+    var timelimit = this.timeLimit;
+    if (timer !== undefined ) {
+        timelimit = timer
+    }
+    // set execLimit in milliseconds  -- for student projects set this to
+    // 25 seconds -- just less than Chrome's own timer.
+    if (this.code.indexOf('ontimer') > -1 ||
+        this.code.indexOf('onclick') > -1 ||
+        this.code.indexOf('onkey') > -1  ||
+        this.code.indexOf('setDelay') > -1 ) {
+        Sk.execLimit = null;
+    } else {
+        if (timelimit === "off") {
+            Sk.execLimit = null;
+        } else if (timelimit) {
+            Sk.execLimit = timelimit;
+        } else {
+            Sk.execLimit = 25000;
+    }
+    }
+
+};
+
+ActiveCode.prototype.builtinRead = function (x) {
+        if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+            throw "File not found: '" + x + "'";
+        return Sk.builtinFiles["files"][x];
+};
+
+ActiveCode.prototype.outputfun = function(text) {
+    // bnm python 3
+    pyStr = function(x) {
+        if (x instanceof Array) {
+            return '[' + x.join(", ") + ']';
+        } else {
+            return x
+        }
+    }
+
+    var x = text;
+    if (! this.python3 ) {
+        if (x.charAt(0) == '(') {
+            x = x.slice(1, -1);
+            x = '[' + x + ']';
+            try {
+                var xl = eval(x);
+                xl = xl.map(pyStr);
+                x = xl.join(' ');
+            } catch (err) {
+            }
+        }
+    }
+    $(this.output).css("visibility","visible");
+    text = x;
+    text = text.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, "<br/>");
+        $(this.output).append(text);
+    };
+
+ActiveCode.prototype.buildProg = function() {
+    // assemble code from prefix, suffix, and editor for running.
+    var pretext;
+    var prog = this.editor.getValue();
+    if (this.includes !== undefined) {
+        // iterate over the includes, in-order prepending to prog
+        pretext = "";
+        for (var x=0; x < this.includes.length; x++) {
+            pretext = pretext + edList[this.includes[x]].editor.getValue();
+            }
+        prog = pretext + prog
+    }
+
+    if(this.suffix) {
+        prog = prog + this.suffix;
+}
+
+    return prog;
+};
+
+ActiveCode.prototype.runProg = function() {
+        var prog = this.buildProg();
+
+        $(this.output).text('');
+
+        $(this.eContainer).remove();
+        Sk.configure({output : this.outputfun.bind(this),
+              read   : this.builtinRead,
+              python3: this.python3,
+              imageProxy : 'http://image.runestone.academy:8080/320x'
+        });
+        Sk.divid = this.divid;
+        this.setTimeLimit();
+        (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = this.graphics;
+        Sk.canvas = this.graphics.id; //todo: get rid of this here and in image
+        $(this.runButton).attr('disabled', 'disabled');
+        $(this.codeDiv).switchClass("col-md-12","col-md-6",{duration:500,queue:false});
+        $(this.outDiv).show({duration:700,queue:false});
+        var myPromise = Sk.misceval.asyncToPromise(function() {
+
+            return Sk.importMainWithBody("<stdin>", false, prog, true);
+        });
+
+        myPromise.then((function(mod) { // success
+            $(this.runButton).removeAttr('disabled');
+            this.logRunEvent({'div_id': this.divid, 'code': prog, 'errinfo': 'success'}); // Log the run event
+        }).bind(this),
+            (function(err) {  // fail
+            $(this.runButton).removeAttr('disabled');
+            this.addErrorMessage(err)
+                }).bind(this));
+
+        if (typeof(allVisualizers) != "undefined") {
+            $.each(allVisualizers, function (i, e) {
+                e.redrawConnectors();
+                });
+            }
+
+    };
+
+
+
+
+JSActiveCode.prototype = new ActiveCode();
+
+function JSActiveCode(opts) {
+    if (opts) {
+        this.init(opts)
+        }
+    }
+
+JSActiveCode.prototype.init = function(opts) {
+    ActiveCode.prototype.init.apply(this,arguments)
+    }
+
+JSActiveCode.prototype.outputfun = function (a) {
+    $(this.output).css("visibility","visible");
+    var str = "[";
+    if (typeof(a) == "object" && a.length) {
+        for (var i = 0; i < a.length; i++)
+            if (typeof(a[i]) == "object" && a[i].length) {
+                str += (i == 0 ? "" : " ") + "[";
+                for (var j = 0; j < a[i].length; j++)
+                    str += a[i][j] + (j == a[i].length - 1 ?
+                    "]" + (i == a.length - 1 ? "]" : ",") + "\n" : ", ");
+            } else str += a[i] + (i == a.length - 1 ? "]" : ", ");
+        } else {
+    try {
+            str = JSON.stringify(a);
+    } catch (e) {
+            str = a;
+    }
+    }
+    return str;
+};
+
+JSActiveCode.prototype.runProg = function() {
+    var _this = this;
+    var prog = this.buildProg();
+
+    var write = function(str) {
+        _this.output.innerHTML += _this.outputfun(str);
+    };
+
+    var writeln = function(str) {
+        if (!str) str="";
+        _this.output.innerHTML += _this.outputfun(str)+"<br />";
+            };
+
+    $(this.output).text('');
+    $(this.codeDiv).switchClass("col-md-12","col-md-6",{duration:500,queue:false});
+    $(this.outDiv).show({duration:700,queue:false});
+
+    try {
+        eval(prog)
+    } catch(e) {
+        this.addErrorMessage(e);
+    }
+
+};
+
+HTMLActiveCode.prototype = new ActiveCode();
+
+function HTMLActiveCode (opts) {
+    if (opts) {
+        this.init(opts);
+    }
+}
+
+HTMLActiveCode.prototype.runProg = function () {
+    var prog = this.buildProg();
+
+//    $('#'+myDiv+'_iframe').remove();
+//    $('#'+myDiv+'_htmlout').show();
+//    $('#'+myDiv+'_htmlout').append('<iframe class="activehtml" id="' + myDiv + '_iframe" srcdoc="' +
+//        prog.replace(/"/g,"'") + '">' + '</iframe>');
+    $(this.output).text('');
+    $(this.codeDiv).switchClass("col-md-12","col-md-6",{duration:500,queue:false});
+    $(this.outDiv).show({duration:700,queue:false});
+
+    this.output.srcdoc = prog;
+};
+
+HTMLActiveCode.prototype.init = function(opts) {
+    ActiveCode.prototype.init.apply(this,arguments);
+    this.code = $('<textarea />').html(this.origElem.innerHTML).text();
+    this.editor.setValue(this.code);
+        };
+
+HTMLActiveCode.prototype.createOutput = function () {
+    var outDiv = document.createElement("div");
+    $(outDiv).addClass("ac_output col-md-6");
+    this.outDiv = outDiv;
+    this.output = document.createElement('iframe');
+    $(this.output).css("background-color","white");
+    $(this.output).css("position","relative");
+    $(this.output).css("height","400px");
+    $(this.output).css("width","100%");
+    outDiv.appendChild(this.output);
+    this.outerDiv.appendChild(outDiv);
+
+    clearDiv = document.createElement("div");
+    $(clearDiv).css("clear","both");  // needed to make parent div resize properly
+    this.outerDiv.appendChild(clearDiv);
+
+};
+
+
+String.prototype.replaceAll = function (target, replacement) {
+    return this.split(target).join(replacement);
+};
+
+AudioTour.prototype = new RunestoneBase();
+
+// function to display the audio tours
+function AudioTour (divid, code, bnum, audio_text) {
+    this.elem = null; // current audio element playing
+    this.currIndex; // current index
+    this.len; // current length of audio files for tour
+    this.buttonCount; // number of audio tour buttons
+    this.aname; // the audio file name
+    this.ahash; // hash of the audio file name to the lines to highlight
+    this.theDivid; // div id
+    this.afile; // file name for audio
+    this.playing = false; // flag to say if playing or not
+    this.tourName;
+
+    // Replacing has been done here to make sure special characters in the code are displayed correctly
+    code = code.replaceAll("*doubleq*", "\"");
+    code = code.replaceAll("*singleq*", "'");
+    code = code.replaceAll("*open*", "(");
+    code = code.replaceAll("*close*", ")");
+    code = code.replaceAll("*nline*", "<br/>");
+    var codeArray = code.split("\n");
+
+    var audio_hash = new Array();
+    var bval = new Array();
+    var atype = audio_text.replaceAll("*doubleq*", "\"");
+    var audio_type = atype.split("*atype*");
+    for (var i = 0; i < audio_type.length - 1; i++) {
+        audio_hash[i] = audio_type[i];
+        var aword = audio_type[i].split(";");
+        bval.push(aword[0]);
+    }
+
+    var first = "<pre><div id='" + divid + "_l1'>" + "1.   " + codeArray[0] + "</div>";
+    num_lines = codeArray.length;
+    for (var i = 1; i < num_lines; i++) {
+        if (i < 9) {
+            first = first + "<div id='" + divid + "_l" + (i + 1) + "'>" + (i + 1) + ".   " + codeArray[i] + "</div>";
+        }
+        else if (i < 99) {
+            first = first + "<div id='" + divid + "_l" + (i + 1) + "'>" + (i + 1) + ".  " + codeArray[i] + "</div>";
+        }
+        else {
+            first = first + "<div id='" + divid + "_l" + (i + 1) + "'>" + (i + 1) + ". " + codeArray[i] + "</div>";
+        }
+    }
+    first = first + "</pre>";
+
+    //laying out the HTML content
+
+    var bcount = 0;
+    var html_string = "<div class='modal-lightsout'></div><div class='modal-profile'><h3>Take an audio tour!</h3><div class='modal-close-profile'></div><p id='windowcode'></p><p id='" + divid + "_audiocode'></p>";
+    html_string += "<p id='status'></p>";
+    html_string += "<input type='image' src='../_static/first.png' width='25' id='first_audio' name='first_audio' title='Play first audio in tour' alt='Play first audio in tour' onerror=\"this.onerror=null;this.src='_static/first.png'\" disabled/>" +
+                   "<input type='image' src='../_static/prev.png' width='25' id='prev_audio' name='prev_audio' title='Play previous audio in tour' alt='Play previous audio in tour' onerror=\"this.onerror=null;this.src='_static/prev.png'\" disabled/>" +
+                   "<input type='image' src='../_static/pause.png' width='25' id='pause_audio' name='pause_audio' title='Pause current audio' alt='Pause current audio' onerror=\"this.onerror=null;this.src='_static/pause.png'\" disabled/>" + "" +
+                   "<input type='image' src='../_static/next.png' width ='25' id='next_audio' name='next_audio' title='Play next audio in tour' alt='Play next audio in tour' onerror=\"this.onerror=null;this.src='_static/next.png'\" disabled/>" +
+                   "<input type='image' src='../_static/last.png' width ='25' id='last_audio' name='last_audio' title='Play last audio in tour' alt='Play last audio in tour' onerror=\"this.onerror=null;this.src='_static/last.png'\" disabled/><br/>";
+    for (var i = 0; i < audio_type.length - 1; i++) {
+        html_string += "<input type='button' style='margin-right:5px;' class='btn btn-default btn-sm' id='button_audio_" + i + "' name='button_audio_" + i + "' value=" + bval[i] + " />";
+        bcount++;
+    }
+    //html_string += "<p id='hightest'></p><p id='hightest1'></p><br/><br/><p id='test'></p><br/><p id='audi'></p></div>";
+    html_string += "</div>";
+
+    var tourdiv = document.createElement('div');
+    document.body.appendChild(tourdiv);
+    $(tourdiv).html(html_string);
+    $('#windowcode').html(first);
+
+    // Position modal box
+    $.fn.center = function () {
+        this.css("position", "absolute");
+        // y position
+        this.css("top", ($(window).scrollTop() + $(navbar).height() + 10 + "px"));
+        // show window on the left so that you can see the output from the code still
+        this.css("left", ($(window).scrollLeft() + "px"));
+        return this;
+    };
+
+    $(".modal-profile").center();
+    $('.modal-profile').fadeIn("slow");
+    //$('.modal-lightsout').css("height", $(document).height());
+    $('.modal-lightsout').fadeTo("slow", .5);
+    $('.modal-close-profile').show();
+
+    // closes modal box once close link is clicked, or if the lights out divis clicked
+    $('.modal-close-profile, .modal-lightsout').click( (function () {
+        if (this.playing) {
+            this.elem.pause();
+        }
+        //log change to db
+        this.logBookEvent({'event': 'Audio', 'act': 'closeWindow', 'div_id': divid});
+        $('.modal-profile').fadeOut("slow");
+        $('.modal-lightsout').fadeOut("slow");
+        document.body.removeChild(tourdiv);
+    }).bind(this));
+
+    // Accommodate buttons for a maximum of five tours
+
+    $('#' + 'button_audio_0').click((function () {
+        this.tour(divid, audio_hash[0], bcount);
+    }).bind(this));
+    $('#' + 'button_audio_1').click((function () {
+        this.tour(divid, audio_hash[1], bcount);
+    }).bind(this));
+    $('#' + 'button_audio_2').click((function () {
+        this.tour(divid, audio_hash[2], bcount);
+    }).bind(this));
+    $('#' + 'button_audio_3').click((function () {
+        this.tour(divid, audio_hash[3], bcount);
+    }).bind(this));
+    $('#' + 'button_audio_4').click((function () {
+        this.tour(divid, audio_hash[4], bcount);
+    }).bind(this));
+
+    // handle the click to go to the next audio
+    $('#first_audio').click((function () {
+        this.firstAudio();
+    }).bind(this));
+
+    // handle the click to go to the next audio
+    $('#prev_audio').click((function () {
+        this.prevAudio();
+    }).bind(this));
+
+    // handle the click to pause or play the audio
+    $('#pause_audio').click((function () {
+        this.pauseAndPlayAudio();
+    }).bind(this));
+
+    // handle the click to go to the next audio
+    $('#next_audio').click((function () {
+        this.nextAudio();
+    }).bind(this));
+
+    // handle the click to go to the next audio
+    $('#last_audio').click((function () {
+        this.lastAudio();
+    }).bind(this));
+
+    // make the image buttons look disabled
+    $("#first_audio").css('opacity', 0.25);
+    $("#prev_audio").css('opacity', 0.25);
+    $("#pause_audio").css('opacity', 0.25);
+    $("#next_audio").css('opacity', 0.25);
+    $("#last_audio").css('opacity', 0.25);
+
+}
+
+AudioTour.prototype.tour = function (divid, audio_type, bcount) {
+    // set globals
+    this.buttonCount = bcount;
+    this.theDivid = divid;
+
+    // enable prev, pause/play and next buttons and make visible
+    $('#first_audio').removeAttr('disabled');
+    $('#prev_audio').removeAttr('disabled');
+    $('#pause_audio').removeAttr('disabled');
+    $('#next_audio').removeAttr('disabled');
+    $('#last_audio').removeAttr('disabled');
+    $("#first_audio").css('opacity', 1.0);
+    $("#prev_audio").css('opacity', 1.0);
+    $("#pause_audio").css('opacity', 1.0);
+    $("#next_audio").css('opacity', 1.0);
+    $("#last_audio").css('opacity', 1.0);
+
+    // disable tour buttons
+    for (var i = 0; i < bcount; i++)
+        $('#button_audio_' + i).attr('disabled', 'disabled');
+
+    var atype = audio_type.split(";");
+    var name = atype[0].replaceAll("\"", " ");
+    this.tourName = name;
+    $('#status').html("Starting the " + name);
+
+    //log tour type to db
+    this.logBookEvent({'event': 'Audio', 'act': name, 'div_id': divid});
+
+    var max = atype.length;
+    var str = "";
+    this.ahash = new Array();
+    this.aname = new Array();
+    for (i = 1; i < max - 1; i++) {
+        var temp = atype[i].split(":");
+        var temp_line = temp[0];
+        var temp_aname = temp[1];
+
+        var akey = temp_aname.substring(1, temp_aname.length);
+        var lnums = temp_line.substring(1, temp_line.length);
+
+        //alert("akey:"+akey+"lnum:"+lnums);
+
+        // str+="<audio id="+akey+" preload='auto'><source src='http://ice-web.cc.gatech.edu/ce21/audio/"+
+        // akey+".mp3' type='audio/mpeg'><source src='http://ice-web.cc.gatech.edu/ce21/audio/"+akey+
+        // ".ogg' type='audio/ogg'>Your browser does not support the audio tag</audio>";
+        str += "<audio id=" + akey + " preload='auto' >";
+        str += "<source src='../_static/audio/" + akey + ".wav' type='audio/wav'>";
+        str += "<source src='../_static/audio/" + akey + ".mp3' type='audio/mpeg'>";
+        str += "<source src='_static/audio/" + akey + ".wav' type='audio/wav'>";
+        str += "<source src='_static/audio/" + akey + ".mp3' type='audio/mpeg'>";
+        str +=  "<br />Your browser does not support the audio tag</audio>";
+        this.ahash[akey] = lnums;
+        this.aname.push(akey);
+    }
+    var ahtml = "#" + divid + "_audiocode";
+    $(ahtml).html(str); // set the html to the audio tags
+    this.len = this.aname.length; // set the number of audio file in the tour
+
+    // start at the first audio
+    this.currIndex = 0;
+
+    // play the first audio in the tour
+    this.playCurrIndexAudio();
+};
+
+AudioTour.prototype.handlePlaying = function() {
+
+    // if this.playing audio pause it
+    if (this.playing) {
+
+        this.elem.pause();
+
+        // unbind current ended
+        $('#' + this.afile).unbind('ended');
+
+        // unhighlight the prev lines
+        this.unhighlightLines(this.theDivid, this.ahash[this.aname[this.currIndex]]);
+    }
+
+};
+
+AudioTour.prototype.firstAudio = function () {
+
+    // if audio is this.playing handle it
+    this.handlePlaying();
+
+    //log change to db
+    this.logBookEvent({'event': 'Audio', 'act': 'first', 'div_id': this.theDivid});
+
+
+    // move to the first audio
+    this.currIndex = 0;
+
+    // start at the first audio
+    this.playCurrIndexAudio();
+
+};
+
+AudioTour.prototype.prevAudio = function () {
+
+    // if there is a previous audio
+    if (this.currIndex > 0) {
+
+        // if audio is this.playing handle it
+        this.handlePlaying();
+
+        //log change to db
+        this.logBookEvent({'event': 'Audio', 'act': 'prev', 'div_id': this.theDivid});
+
+
+        // move to previous to the current (but the current index has moved to the next)
+        this.currIndex = this.currIndex - 1;
+
+        // start at the prev audio
+        this.playCurrIndexAudio();
+    }
+
+};
+
+AudioTour.prototype.nextAudio = function () {
+
+    // if audio is this.playing handle it
+    this.handlePlaying();
+
+    //log change to db
+    this.logBookEvent({'event': 'Audio', 'act': 'next', 'div_id': this.theDivid});
+
+    // if not at the end
+    if (this.currIndex < (this.len - 1)) {
+        // start at the next audio
+        this.currIndex = this.currIndex + 1;
+        this.playCurrIndexAudio();
+    }
+    else if (this.currIndex == (this.len - 1)) {
+        this.handleTourEnd();
+    }
+};
+
+AudioTour.prototype.lastAudio = function () {
+
+    // if audio is this.playing handle it
+    this.handlePlaying();
+
+    //log change to db
+    this.logBookEvent({'event': 'Audio', 'act': 'last', 'div_id': this.theDivid});
+
+    // move to the last audio
+    this.currIndex = this.len - 1;
+
+    // start at last
+    this.playCurrIndexAudio();
+
+};
+
+// play the audio at the current index
+AudioTour.prototype.playCurrIndexAudio = function () {
+
+    // set this.playing to false
+    this.playing = false;
+
+    // play the current audio and highlight the lines
+    this.playaudio(this.currIndex, this.aname, this.theDivid, this.ahash);
+
+};
+
+// handle the end of the tour
+AudioTour.prototype.handleTourEnd = function () {
+
+    $('#status').html(" The " + this.tourName + " Ended");
+
+    // disable the prev, pause/play, and next buttons and make them more invisible
+    $('#first_audio').attr('disabled', 'disabled');
+    $('#prev_audio').attr('disabled', 'disabled');
+    $('#pause_audio').attr('disabled', 'disabled');
+    $('#next_audio').attr('disabled', 'disabled');
+    $('#last_audio').attr('disabled', 'disabled');
+    $("#first_audio").css('opacity', 0.25);
+    $("#prev_audio").css('opacity', 0.25);
+    $("#pause_audio").css('opacity', 0.25);
+    $("#next_audio").css('opacity', 0.25);
+    $("#last_audio").css('opacity', 0.25);
+
+    // enable the tour buttons
+    for (var j = 0; j < this.buttonCount; j++)
+        $('#button_audio_' + j).removeAttr('disabled');
+};
+
+// only call this one after the first time
+AudioTour.prototype.outerAudio = function () {
+
+    // unbind ended
+    $('#' + this.afile).unbind('ended');
+
+    // set this.playing to false
+    this.playing = false;
+
+    // unhighlight previous lines from the last audio
+    this.unhighlightLines(this.theDivid, this.ahash[this.aname[this.currIndex]]);
+
+    // increment the this.currIndex to point to the next one
+    this.currIndex++;
+
+    // if the end of the tour reset the buttons
+    if (this.currIndex == this.len) {
+        this.handleTourEnd();
+    }
+
+    // else not done yet so play the next audio
+    else {
+
+        // play the audio at the current index
+        this.playCurrIndexAudio();
+    }
+};
+
+// play the audio now that it is ready
+AudioTour.prototype.playWhenReady = function (afile, divid, ahash) {
+    // unbind current
+    $('#' + afile).unbind('canplaythrough');
+    //console.log("in playWhenReady " + elem.duration);
+
+    $('#status').html("Playing the " + this.tourName);
+    this.elem.currentTime = 0;
+    this.highlightLines(divid, ahash[afile]);
+    $('#' + afile).bind('ended', (function () {
+        this.outerAudio();
+    }).bind(this));
+    this.playing = true;
+    this.elem.play();
+
+};
+
+
+// play the audio at the specified index i and set the duration and highlight the lines
+AudioTour.prototype.playaudio = function (i, aname, divid, ahash) {
+    this.afile = aname[i];
+    this.elem = document.getElementById(this.afile);
+
+    // if this isn't ready to play yet - no duration yet then wait
+    //console.log("in playaudio " + elem.duration);
+    if (isNaN(this.elem.duration) || this.elem.duration == 0) {
+        // set the status
+        $('#status').html("Loading audio.  Please wait.   If it doesn't start soon close this window (click on the red X) and try again");
+        $('#' + this.afile).bind('canplaythrough', (function () {
+            this.playWhenReady(this.afile, divid, ahash);
+        }).bind(this));
+    }
+    // otherwise it is ready so play it
+    else {
+        this.playWhenReady(this.afile, divid, ahash);
+    }
+};
+
+// pause if this.playing and play if paused
+AudioTour.prototype.pauseAndPlayAudio = function () {
+    var btn = document.getElementById('pause_audio');
+
+    // if paused and clicked then continue from current
+    if (this.elem.paused) {
+        // calcualte the time left to play in milliseconds
+        counter = (this.elem.duration - this.elem.currentTime) * 1000;
+        this.elem.play(); // start the audio from current spot
+        document.getElementById("pause_audio").src = "../_static/pause.png";
+        document.getElementById("pause_audio").title = "Pause current audio";
+        //log change to db
+        this.logBookEvent({'event': 'Audio', 'act': 'play', 'div_id': this.theDivid});
+    }
+
+    // if audio was this.playing pause it
+    else if (this.playing) {
+        this.elem.pause(); // pause the audio
+        document.getElementById("pause_audio").src = "../_static/play.png";
+        document.getElementById("pause_audio").title = "Play paused audio";
+        //log change to db
+        this.logBookEvent({'event': 'Audio', 'act': 'pause', 'div_id': this.theDivid});
+    }
+
+};
+
+// process the lines
+AudioTour.prototype.processLines = function (divid, lnum, color) {
+    var comma = lnum.split(",");
+
+    if (comma.length > 1) {
+        for (i = 0; i < comma.length; i++) {
+            this.setBackgroundForLines(divid, comma[i], color);
+        }
     }
     else {
-        var acid = eval(data)[0];
-        if (acid.indexOf("ERROR:") == 0) {
-            alert(acid);
-        } else {
-            // use a tooltip to provide some success feedback
-            var save_btn = $("#" + acid + "_saveb");
-            save_btn.attr('title', 'Saved your code.');
-            opts = {
-                'trigger': 'manual',
-                'placement': 'bottom',
-                'delay': {show: 100, hide: 500}
-            };
-            save_btn.tooltip(opts);
-            save_btn.tooltip('show');
-            setTimeout(function () {
-                save_btn.tooltip('destroy')
-            }, 4000);
+        this.setBackgroundForLines(divid, lnum, color);
+    }
+};
 
-            $('#' + acid + ' .CodeMirror').css('border-top', '2px solid #aaa');
-            $('#' + acid + ' .CodeMirror').css('border-bottom', '2px solid #aaa');
+// unhighlight the lines - set the background back to transparent
+AudioTour.prototype.unhighlightLines = function (divid, lnum) {
+    this.processLines(divid, lnum, 'transparent');
+};
+
+// highlight the lines - set the background to a yellow color
+AudioTour.prototype.highlightLines = function (divid, lnum) {
+    this.processLines(divid, lnum, '#ffff99');
+};
+
+// set the background to the passed color
+AudioTour.prototype.setBackgroundForLines = function (divid, lnum, color) {
+    var hyphen = lnum.split("-");
+
+    // if a range of lines
+    if (hyphen.length > 1) {
+        var start = parseInt(hyphen[0]);
+        var end = parseInt(hyphen[1]) + 1;
+        for (var k = start; k < end; k++) {
+            //alert(k);
+            var str = "#" + divid + "_l" + k;
+            if ($(str).text() != "") {
+                $(str).css('background-color', color);
+            }
+            //$(str).effect("highlight",{},(dur*1000)+4500);
         }
     }
-}
-
-function saveEditor(divName) {
-    // get editor from div name
-    var editor = cm_editors[divName + "_code"];
-    var data = {acid: divName, code: editor.getValue()};
-    data.lang = $('#' + divName).attr('lang');
-    $(document).ajaxError(function (e, jqhxr, settings, exception) {
-        alert("Request Failed for" + settings.url)
-    });
-    jQuery.post(eBookConfig.ajaxURL + 'saveprog', data, saveSuccess);
-    if (editor.acEditEvent) {
-        logBookEvent({'event': 'activecode', 'act': 'edit', 'div_id': divName}); // Log the run event
-        editor.acEditEvent = false;
+    else {
+        //alert(lnum);
+        var str = "#" + divid + "_l" + lnum;
+        $(str).css('background-color', color);
+        //$(str).effect("highlight",{},(dur*1000)+4500);
     }
-    logBookEvent({'event': 'activecode', 'act': 'save', 'div_id': divName}); // Log the run event
+};
 
-}
+//
+//
 
-function requestCode(divName, sid) {
-    var editor = cm_editors[divName + "_code"];
+LiveCode.prototype = new ActiveCode();
 
-    var data = {acid: divName};
-    if (sid !== undefined) {
-        data['sid'] = sid;
-    }
-    logBookEvent({'event': 'activecode', 'act': 'load', 'div_id': divName}); // Log the run event
-    jQuery.get(eBookConfig.ajaxURL + 'getprog', data, loadEditor);
-}
-
-function loadEditor(data, status, whatever) {
-    // function called when contents of database are returned successfully
-    var res = eval(data)[0];
-    var editor;
-    if (res.sid) {
-        editor = cm_editors[res.acid + "_" + res.sid + "_code"];
-    } else {
-        editor = cm_editors[res.acid + "_code"];
-    }
-
-    var loadbtn = $("#" + res.acid + "_loadb");
-    if (res.source) {
-        editor.setValue(res.source);
-        loadbtn.tooltip({
-            'placement': 'bottom',
-            'title': "Loaded your saved code.",
-            'trigger': 'manual'
-        });
-    } else {
-        loadbtn.tooltip({
-            'placement': 'bottom',
-            'title': "No saved code.",
-            'trigger': 'manual'
-        });
-    }
-    loadbtn.tooltip('show');
-    setTimeout(function () {
-        loadbtn.tooltip('destroy')
-    }, 4000);
-}
-
-function disableAcOpt() {
-    $jqTheme('button.ac_opt').each(function (index, value) {
-        value.className = value.className + ' disabled';
-        $jqTheme(value).attr('onclick', 'return false;');
-        $jqTheme(value).attr('data-toggle', 'tooltip');
-        if ($jqTheme(value).text() == 'Save') {
-            $jqTheme(value).attr('title', 'Register or log in to save your code');
-        } else if ($jqTheme(value).text() == 'Load') {
-            $jqTheme(value).attr('title', 'Register or log in to load your saved code');
-        } else if ($jqTheme(value).text() == 'Code Coach') {
-            $jqTheme(value).attr('title', 'Register or log in to use Code Coach');
+function LiveCode(opts) {
+    if (opts) {
+        this.init(opts)
         }
-        $jqTheme(value).tooltip({
-            'selector': '',
-            'delay': {show: 100, hide: 50},
-            'placement': 'bottom',
-            'animation': true
-        });
-    });
-}
+    }
 
-/* Listen for changes to/addition of a div containing unittest results
- (which are generated by Skulpt) and add some nice styles to it*/
-function styleUnittestResults() {
-    $(document).on("DOMNodeInserted", '.unittest-results', function (ev) {
-        // select the target node
-        var unittest_results_target = ev.target;
-        // create an observer instance
-        var observer = new MutationObserver(function (mutations) {
-            $(mutations).each(function () {
-                if (this.type == "attributes") {
-                    var target = $(this.target);
-                    // apply the .alert classes
-                    if (target.text().indexOf("Fail") === -1) {
-                        target.removeClass('alert-danger');
-                        target.addClass('alert alert-success');
-                    } else if (target.text().indexOf('Fail') >= 0) {
-                        target.removeClass('alert-success');
-                        target.addClass('alert alert-danger');
-                    }
-                    // add the progress bar indicating the percent of tests passed
-                    var paragraph = target.find('p');
-                    var result_text = paragraph.text().split(" ");
-                    var pct = '';
-                    $(result_text).each(function () {
-                        if (this.indexOf("%") !== -1) {
-                            pct = this;
-                            var html = 'You passed:' +
-                                '<div class="progress unittest-results-progress">';
-                            if (pct == '100.0%') {
-                                html += '  <div class="progress-bar progress-bar-success" style="width:' + pct + ';">';
-                            } else {
-                                html += '  <div class="progress-bar progress-bar-warning" style="width:' + pct + ';">';
-                            }
-                            html += pct +
-                                '  </div>' +
-                                '</div>';
-                            paragraph.html(html);
-                        }
-                    });
-                }
-            });
-        });
-        // configuration of the observer:
-        var config = {
-            attributes: true,
-            attributeFilter: ['style'],
-            childList: true,
-            characterData: true,
-            subtree: false
+LiveCode.prototype.init = function(opts) {
+    ActiveCode.prototype.init.apply(this,arguments);
+
+    var orig = opts.orig;
+    this.stdin = $(orig).data('stdin');
+    this.datafile = $(orig).data('datafile');
+    this.sourcefile = $(orig).data('sourcefile');
+
+    this.API_KEY = "67033pV7eUUvqo07OJDIV8UZ049aLEK1";
+    this.USE_API_KEY = true;
+    this.JOBE_SERVER = 'http://jobe2.cosc.canterbury.ac.nz';
+    this.resource = '/jobe/index.php/restapi/runs/';
+    this.div2id = {};
+    if (this.stdin) {
+        this.createInputElement();
+    }
+    this.createErrorOutput();
+    };
+
+LiveCode.prototype.outputfun = function (a) {};
+
+LiveCode.prototype.createInputElement = function () {
+
+    var label = document.createElement('label');
+    label.for = this.divid + "_stdin";
+    $(label).text("Input for Program");
+    var input = document.createElement('input');
+    input.id = this.divid + "_stdin";
+    input.type = "text";
+    input.size = "35";
+    input.value = this.stdin;
+    this.outerDiv.appendChild(label);
+    this.outerDiv.appendChild(input);
+    this.stdin_el = input;
+};
+
+LiveCode.prototype.createErrorOutput = function () {
+
+};
+
+LiveCode.prototype.runProg = function() {
+        var xhr, stdin;
+        var runspec = {};
+        var data, host, source, editor;
+        var sfilemap = {java: '', cpp: 'test.cpp', c: 'test.c', python3: 'test.py', python2: 'test.py'};
+
+        xhr = new XMLHttpRequest();
+        source = this.editor.getValue();
+
+        if (this.stdin) {
+            stdin = $(this.stdin_el).val();
+        }
+
+        if (! this.sourcefile ) {
+            this.sourcefile = sfilemap[this.language];
+        }
+
+        runspec = {
+            language_id: this.language,
+            sourcecode: source,
+            sourcefilename: this.sourcefile
         };
-        // pass in the target node, as well as the observer options
-        observer.observe($(unittest_results_target).get(0), config);
-    });
+
+
+        if (stdin) {
+            runspec.input = stdin
+        }
+
+        if (this.datafile) {
+            runspec['file_list'] = [[this.div2id[datafile],datafile]];
+        }
+        data = JSON.stringify({'run_spec': runspec});
+        host = this.JOBE_SERVER + this.resource;
+
+        var odiv = this.output;
+        $(this.runButton).attr('disabled', 'disabled');
+        $(this.codeDiv).switchClass("col-md-12","col-md-6",{duration:500,queue:false});
+        $(this.outDiv).show({duration:700,queue:false});
+        $(this.errDiv).remove();
+        $(this.output).css("visibility","visible");
+
+        xhr.open("POST", host, true);
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+        xhr.setRequestHeader('Accept', 'application/json');
+        xhr.setRequestHeader('X-API-KEY', this.API_KEY);
+
+        xhr.onload = (function () {
+            var logresult;
+            $(this.runButton).removeAttr('disabled');
+            try {
+                var result = JSON.parse(xhr.responseText);
+            } catch (e) {
+                result = {};
+                result.outcome = -1;
+            }
+
+            if (result.outcome === 15) {
+                logresult = 'success';
+            } else {
+                logresult = result.outcome;
+            }
+            this.logRunEvent({'div_id': this.divid, 'code': source, 'errinfo': logresult, 'event':'livecode'});
+            switch (result.outcome) {
+                case 15:
+                    $(odiv).html(result.stdout.replace(/\n/g, "<br>"));
+                    break;
+                case 11: // compiler error
+                    $(odiv).html("There were errors compiling your code. See below.");
+                    this.addJobeErrorMessage(result.cmpinfo);
+                    break;
+                case 12:  // run time error
+                    $(odiv).html(result.stdout.replace(/\n/g, "<br>"));
+                    if (result.stderr) {
+                        this.addJobeErrorMessage(result.stderr);
+                    }
+                    break;
+                case 13:  // time limit
+                    $(odiv).html(result.stdout.replace(/\n/g, "<br>"));
+                    this.addJobeErrorMessage("Time Limit Exceeded on your program");
+                    break;
+                default:
+                    if(result.stderr) {
+                        $(odiv).html(result.stderr.replace(/\n/g, "<br>"));
+                    } else {
+                        this.addJobeErrorMessage("A server error occurred: " + xhr.status + " " + xhr.statusText);
+                    }
+            }
+
+            // todo: handle server busy and timeout errors too
+        }).bind(this);
+
+        ///$("#" + divid + "_errinfo").remove();
+        $(this.output).html("Compiling and Running your Code Now...");
+
+        xhr.onerror = function () {
+            this.addJobeErrorMessage("Error communicating with the server.");
+            $(this.runButton).removeAttr('disabled');
+        };
+
+        xhr.send(data);
+    };
+LiveCode.prototype.addJobeErrorMessage = function (err) {
+        var errHead = $('<h3>').html('Error');
+        var eContainer = this.outerDiv.appendChild(document.createElement('div'));
+        this.errDiv = eContainer;
+        eContainer.className = 'error alert alert-danger';
+        eContainer.id = this.divid + '_errinfo';
+        eContainer.appendChild(errHead[0]);
+        var errText = eContainer.appendChild(document.createElement('pre'));
+        errText.innerHTML = err;
+    };
+
+
+LiveCode.prototype.pushDataFile = function (datadiv) {
+
+        var file_id = 'runestone'+Math.floor(Math.random()*100000);
+        var contents = $(document.getElementById(datadiv)).text();
+        var contentsb64 = btoa(contents);
+        var data = JSON.stringify({ 'file_contents' : contentsb64 });
+        var resource = '/jobe/index.php/restapi/files/' + file_id;
+        var host = JOBE_SERVER + resource;
+        var xhr = new XMLHttpRequest();
+
+        if (this.div2id[datadiv] === undefined ) {
+            this.div2id[datadiv] = file_id;
+
+            xhr.open("PUT", host, true);
+            xhr.setRequestHeader('Content-type', 'application/json');
+            xhr.setRequestHeader('Accept', 'text/plain');
+            xhr.setRequestHeader('X-API-KEY', API_KEY);
+
+            xhr.onload = function () {
+                console.log("successfully sent file " + xhr.responseText);
+            };
+
+            xhr.onerror = function () {
+                console.log("error sending file" + xhr.responseText);
+            };
+
+            xhr.send(data)
+        }
+    };
+
+ACFactory = {};
+
+ACFactory.createActiveCode = function (orig, lang) {
+    var opts = {'orig' : orig, 'useRunestoneServices': eBookConfig.useRunestoneServices, 'python3' : eBookConfig.python3 };
+    if (lang === "javascript") {
+        return new JSActiveCode(opts);
+    } else if (lang === 'htmlmixed') {
+        return new HTMLActiveCode(opts);
+    } else if (['java', 'cpp', 'c', 'python3', 'python2'].indexOf(lang) > -1) {
+        return new LiveCode(opts);
+    } else {   // default is python
+        return new ActiveCode(opts);
+    }
+
 }
 
-function createScratchActivecode() {
-    /* set up the scratch Activecode editor in the search menu */
+// used by web2py controller(s)
+ACFactory.addActiveCodeToDiv = function(outerdiv, acdiv, sid, initialcode, language) {
+    var  thepre, newac;
+    $("#"+acdiv).empty();
+    thepre = document.createElement("pre");
+    thepre['data-component'] = "activecode";
+    thepre.id = acdiv;
+    $(thepre).data('lang', language);
+    $("#"+acdiv).append(thepre);
+    var opts = {'orig' : thepre, 'useRunestoneServices': true };
 
+    newac = ACFactory.createActiveCode(thepre,language);
+    savediv = newac.divid;
+    newac.divid = outerdiv;
+    newac.loadEditor();
+    newac.divid = savediv;
+    newac.editor.setSize(500,300);
+};
+
+ACFactory.createScratchActivecode = function() {
+    /* set up the scratch Activecode editor in the search menu */
     // use the URL to assign a divid - each page should have a unique Activecode block id.
     // Remove everything from the URL but the course and page name
+    // todo:  this could probably be eliminated and simply moved to the template file
     var divid = document.URL.split('#')[0];
-    divid = divid.substr(divid.lastIndexOf('/')+1);
-    divid = eBookConfig.course + divid;
+    if (divid.indexOf('static') > -1) {
+        divid = divid.split('static')[1];
+    } else {
+        divid = divid.split('/');
+        divid = divid.slice(-2).join("");
+    }
     divid = divid.split('?')[0];  // remove any query string (e.g ?lastPosition)
     divid = divid.replaceAll('/', '').replace('.html', '');
-    divid = divid.replaceAll(':','');
-    eBookConfig.scratchId = divid;
-
+    eBookConfig.scratchDiv = divid;
     // generate the HTML
     var html = '<div id="ac_modal_' + divid + '" class="modal fade">' +
         '  <div class="modal-dialog scratch-ac-modal">' +
@@ -1111,27 +1507,11 @@ function createScratchActivecode() {
         '        <h4 class="modal-title">Scratch ActiveCode</h4>' +
         '      </div> ' +
         '      <div class="modal-body">' +
-        '        <div id="' + divid + '" lang="python">' +
-        '          <div id="' + divid + '_code_div" style="display: block">' +
-        '            <textarea cols="50" rows="12" lang="python" id="' + divid + '_code" class="active_code">\n\n\n\n\n</textarea>' +
-        '          </div>' +
-        '          <p class="ac_caption"><span class="ac_caption_text">Scratch Editor</span> </p>' +
-
-        '          <button class="btn btn-success" id="' + divid + '_runb" onclick="runit(\'' + divid + '\',this, undefined);">Run</button>' +
-
-        '          <div id="cont"></div>' +
-
-        '          <button class="ac_opt btn btn-default" style="display: inline-block" id="' + divid + '_saveb" onclick="saveEditor(\'' + divid + '\');">Save</button>' +
-        '          <button class="ac_opt btn btn-default" style="display: inline-block" id="' + divid + '_loadb" onclick="requestCode(\'' + divid + '\');">Load</button>' +
-
-        '          <div style="text-align: center">' +
-        '            <div id="' + divid + '_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: block; text-align: center"></canvas>' +
-        '          </div>' +
-        '          <pre id="' + divid + '_suffix" style="display:none">' +
-        '          </pre>' +
-        '          <pre id="' + divid + '_pre" class="active_out">' +
-        '          </pre>' +
-        '        </div>' +
+        '      <pre data-component="activecode" id="' + divid + '">' +
+        '<br />   ' +
+        '<br />   ' +
+        '<br />   ' +
+        '      </pre>' +
         '      </div>' +
         '    </div>' +
         '  </div>' +
@@ -1146,111 +1526,43 @@ function createScratchActivecode() {
         });
     });
 
-    $(document).bind('keypress', '\\', function (evt) {
-        toggleScratchActivecode();
-        return false;
-    });
-}
+    //$(document).bind('keypress', '\\', function(evt) {
+    //    ACFactory.toggleScratchActivecode();
+    //    return false;
+    //});
+};
 
-function toggleScratchActivecode() {
-//    var divid = "ac_modal_" + document.URL.split('#')[0].split('static')[1].split('?')[0].replaceAll('/', '').replace('.html', '');
-    var divid = "ac_modal_" + eBookConfig.scratchId;
+
+ACFactory.toggleScratchActivecode = function () {
+    var divid = "ac_modal_" + eBookConfig.scratchDiv;
     var div = $("#" + divid);
 
     div.modal('toggle');
 
-}
+};
 
-
-function hideCodelens(button, div_id) {
-    var div = document.getElementById(div_id + '_codelens_div')
-    div.style.display = 'none'
-
-}
-
-function injectCodelens(button, div_id) {
-    var div = document.getElementById(div_id + '_codelens_div')
-    if (div.style.display == 'none') {
-        div.style.display = 'block';
-        button.innerText = "Hide Codelens";
-    } else {
-        div.style.display = "none";
-        button.innerText = "Show in Codelens";
-        return;
-    }
-
-    var cl = document.getElementById(div_id + '_codelens')
-    if (cl) {
-        div.removeChild(cl)
-    }
-    var editor = cm_editors[div_id + "_code"]
-    var code = editor.getValue()
-    var myVars = {}
-    myVars.code = code
-    myVars.origin = "opt-frontend.js"
-    myVars.cumulative = false
-    myVars.heapPrimitives = false
-    myVars.drawParentPointers = false
-    myVars.textReferences = false
-    myVars.showOnlyOutputs = false
-    myVars.rawInputLstJSON = JSON.stringify([])
-    myVars.py = 2
-    myVars.curInstr = 0
-    myVars.codeDivWidth = 350
-    myVars.codeDivHeight = 400
-    var srcURL = '//pythontutor.com/iframe-embed.html'
-    var embedUrlStr = $.param.fragment(srcURL, myVars, 2 /* clobber all */)
-    var myIframe = document.createElement('iframe')
-    myIframe.setAttribute("id", div_id + '_codelens')
-    myIframe.setAttribute("width", "800")
-    myIframe.setAttribute("height", "500")
-    myIframe.setAttribute("style", "display:block")
-    myIframe.style.background = '#fff'
-    //myIframe.setAttribute("src",srcURL)
-    myIframe.src = embedUrlStr
-    div.appendChild(myIframe)
-    logBookEvent({
-        'event': 'codelens',
-        'act': 'view',
-        'div_id': div_id
+$(document).ready(function() {
+    ACFactory.createScratchActivecode();
+    $('[data-component=activecode]').each( function(index ) {
+        edList[this.id] = ACFactory.createActiveCode(this, $(this).data('lang'));
     });
-
-}
-
-// <iframe id="%(divid)s_codelens" width="800" height="500" style="display:block"src="#">
-// </iframe>
-
-
-function injectCodeCoach(div_id) {
-    var myIframe;
-    var srcURL;
-    var cl;
-    var div = document.getElementById(div_id + '_coach_div')
-    div.style.display = 'block'
-    cl = document.getElementById(div_id + '_coach')
-    if (cl) {
-        div.removeChild(cl)
+    if (loggedout) {
+        for (k in edList) {
+            edList[k].disableSaveLoad();
+        }
     }
 
-    srcURL = eBookConfig.app + '/admin/diffviewer?divid=' + div_id;
-    myIframe = document.createElement('iframe');
-    myIframe.setAttribute("id", div_id + '_coach');
-    myIframe.setAttribute("width", "800px");
-    myIframe.setAttribute("height", "500px");
-    myIframe.setAttribute("style", "display:block");
-    myIframe.style.background = '#fff';
-    myIframe.style.width = "100%"
-    //myIframe.setAttribute("src",srcURL)
-    myIframe.src = srcURL;
-    div.appendChild(myIframe);
-    logBookEvent({
-        'event': 'coach',
-        'act': 'view',
-        'div_id': div_id
-    });
-}
+});
 
-
-$(document).ready(createEditors);
-$(document).ready(createScratchActivecode);
-$(document).ready(styleUnittestResults);
+// This seems a bit hacky and possibly brittle, but its hard to know how long it will take to
+// figure out the login/logout status of the user.  Sometimes its immediate, and sometimes its
+// long.  So to be safe we'll do it both ways..
+var loggedout;
+$(document).bind("runestone:logout",function() { loggedout=true;});
+$(document).bind("runestone:logout",function() {
+    for (k in edList) {
+        if (edList.hasOwnProperty(k)) {
+            edList[k].disableSaveLoad();
+        }
+    }
+});

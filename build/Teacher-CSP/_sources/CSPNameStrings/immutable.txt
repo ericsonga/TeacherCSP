@@ -51,7 +51,7 @@ Even though you can manipulate a string to create a new string the original stri
 While the strings themselves can't be changed you can change the value of a variable. This throws away the original string and sets the variable's value to the new string.   
 
 .. activecode:: String_Reassign
-   :tour_1: "Line-by-line Tour"; 1: sa2-line1; 2: sa2-line3; 3: sa2-line2; 4: sa2-line3;
+   :tour_1: "Line-by-line Tour"; 1: sa2-line1; 2: sa2-line3; 3: sa2-line2; 4: str2-line6;
    
    sentence = "THIS IS A TEST"
    print(sentence)

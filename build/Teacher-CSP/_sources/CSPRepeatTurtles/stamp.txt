@@ -26,11 +26,11 @@ Here is an example that shows off these new features.
    from turtle import *
    space = Screen()
    tess = Turtle()
-   tess.pencolor("blue")
+   tess.color("blue")
    tess.shape("turtle")
 
    print(range(5, 60, 2))
-   tess.up()                     # ask tess to pick up her pen 
+   tess.penup()                  # ask tess to pick up her pen 
    for size in range(5, 60, 2):  # start with size = 5 and grow by 2
        tess.stamp()                # leave an impression on the canvas
        tess.forward(size)          # move tess along

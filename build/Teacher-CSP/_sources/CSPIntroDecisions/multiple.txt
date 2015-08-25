@@ -60,7 +60,7 @@ In this second version, we set a ``price`` as a *default*, then change it only o
   :correct: a
   :feedback_a: The end result is the same.
   :feedback_b: If the weight is exactly 1 pound the price will be 1.15 in both programs.
-  :feedback_c: The the weight is under 1 pound the price will be 1.45 in both programs.
+  :feedback_c: If the weight is under 1 pound the price will be 1.45 in both programs.
   :feedback_d: If the weight is over 1 pound the price will be 1.15 in both programs.
 
    Are there values for weight that make the two programs above print different results when the same weight is used in both programs?
@@ -69,7 +69,7 @@ In this second version, we set a ``price`` as a *default*, then change it only o
 
 .. parsonsprob:: 12_3_2_Price_By_Weight
 
-   The following program should calculate the total price, but the lines are mixed up.   The price is based on the weight.  Items that weigh less than 2 pounds should cost 1.5.  Items that weight more than 2 pounds should cost 1.3.   Drag the blocks from the left and place them in the correct order on the right.  Be sure to also indent correctly! click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or have the wrong indention.</p>
+   The following program should calculate the total price, but the lines are mixed up.   The price is based on the weight.  Items that weigh less than 2 pounds should cost 1.5.  Items that weigh more than 2 pounds should cost 1.3.   Drag the blocks from the left and place them in the correct order on the right.  Be sure to also indent correctly! Click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or have the wrong indention.</p>
    -----
    weight = 0.5
    numItems = 5

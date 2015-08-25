@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -320,20 +336,13 @@
   
   <div class="section" id="exam-questions-for-chapters-7-and-8">
 <h1>Exam Questions for Chapters 7 and 8<a class="headerlink" href="#exam-questions-for-chapters-7-and-8" title="Permalink to this headline">¶</a></h1>
-<p>The following questions test what you have learned in chapters 7 and 8. Click the &#8220;Start&#8221; button when you are ready to begin the exam.  Click the &#8220;Pause&#8221; button to pause the exam (you will not be able to see the questions when the exam is paused).  Hover over the clock icon to see how much time you have spent on the exam, but you have unlimited time.  Click on the &#8220;Submit Answers&#8221; button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.</p>
+<p>The following questions test what you have learned in chapters 7 and 8. Click the &#8220;Start&#8221; button when you are ready to begin the exam.  Click the &#8220;Pause&#8221; button to pause the exam (you will not be able to see the questions when the exam is paused).  It will show how much time you have used, but you have unlimited time.  Click on the &#8220;Submit Answers&#8221; button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.</p>
 <p>You will not be able to change your answers after you hit the &#8220;Submit Answers&#8221; button.</p>
 
-           <div id="startWrapper">
-		    <p id="timeOutput"></p>
-		    </div>
-		    
-		    <div id="controls" style="text-align: center;">
-			<button class='btn btn-inverse' id ="examButton" onclick="handleExamButtonClick()">Start</button>
-	        </div>
-            <div id='timed_Test' style='display:none'>
-            
-            <div id="e7a8_1" class="alert alert-warning">
-            <p>8-9-1: What is the last line to be printed when the following code is run?</p>
+    <ul data-component="timedAssessment"  id="ch7a8ex"  >
+    
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e7a8_1">
+            <p>8-9-1: What is the last thing printed when the following code is run?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
     <span class="k">print</span> <span class="p">(</span><span class="s">&quot;Number: &quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
@@ -341,37 +350,18 @@
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e7a8_1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e7a8_1_opt_a" />
-            <label for= "e7a8_1_opt_a">  a) Number: 10</label><br />
-	        <div id= "e7a8_1_eachFeedback_a"></div>
+            <li data-component="answer" data-correct id="e7a8_1_opt_a">Number: 10</li><li data-component="feedback" id="e7a8_1_opt_a">Since this while loop continues while number is less than or equal to 10 the last time in the loop it will print Number: 10.</li>
             
-            <input type="radio" name="group1" value="b" id="e7a8_1_opt_b" />
-            <label for= "e7a8_1_opt_b">  b) Number: number</label><br />
-	        <div id= "e7a8_1_eachFeedback_b"></div>
+            <li data-component="answer"  id="e7a8_1_opt_b">Number: number</li><li data-component="feedback" id="e7a8_1_opt_b">This would be true if it was print ("Number: ", "number").  But since there are no quotes around number it will print the value of number.</li>
             
-            <input type="radio" name="group1" value="c" id="e7a8_1_opt_c" />
-            <label for= "e7a8_1_opt_c">  c) Number: 0</label><br />
-	        <div id= "e7a8_1_eachFeedback_c"></div>
+            <li data-component="answer"  id="e7a8_1_opt_c">Number: 0</li><li data-component="feedback" id="e7a8_1_opt_c">While number is set to 0 to start it increments each time inside the loop.</li>
             
-            <input type="radio" name="group1" value="d" id="e7a8_1_opt_d" />
-            <label for= "e7a8_1_opt_d">  d) Number: 11</label><br />
-	        <div id= "e7a8_1_eachFeedback_d"></div>
+            <li data-component="answer"  id="e7a8_1_opt_d">Number: 11</li><li data-component="feedback" id="e7a8_1_opt_d">This would be true if the print statement was after number was incremented by 1, but it is before.</li>
             
 
-            <script>
-		    populateArrays('e7a8_1','a',['Since this while loop continues while number is less than or equal to 10 the last time in the loop it will print Number: 10.', 'This would be true if it was print (\u0022Number: \u0022, \u0022number\u0022).  But since there are no quotes around number it will print the value of number.', 'While number is set to 0 to start it increments each time inside the loop.', 'This would be true if the print statement was after number was incremented by 1, but it is before.']);
-            $(document).ready(function(){checkExamRadio('e7a8_1');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e7a8_1_feedback">
-            </div>
-            </div>
-            
-            <div id="e7a8_2" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e7a8_2">
             <p>8-9-2: When the following code is run, how many times is hello printed?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">helloArray</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">helloArray</span><span class="p">:</span>
@@ -379,37 +369,18 @@
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e7a8_2_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e7a8_2_opt_a" />
-            <label for= "e7a8_2_opt_a">  a) 1</label><br />
-	        <div id= "e7a8_2_eachFeedback_a"></div>
+            <li data-component="answer"  id="e7a8_2_opt_a">1</li><li data-component="feedback" id="e7a8_2_opt_a">This would be true if the print was outside of the loop, but it is in the loop.</li>
             
-            <input type="radio" name="group1" value="b" id="e7a8_2_opt_b" />
-            <label for= "e7a8_2_opt_b">  b) 2</label><br />
-	        <div id= "e7a8_2_eachFeedback_b"></div>
+            <li data-component="answer"  id="e7a8_2_opt_b">2</li><li data-component="feedback" id="e7a8_2_opt_b">This would be true if it was range(1,3)</li>
             
-            <input type="radio" name="group1" value="c" id="e7a8_2_opt_c" />
-            <label for= "e7a8_2_opt_c">  c) 3</label><br />
-	        <div id= "e7a8_2_eachFeedback_c"></div>
+            <li data-component="answer" data-correct id="e7a8_2_opt_c">3</li><li data-component="feedback" id="e7a8_2_opt_c">The range(1,4) returns a list with the values 1, 2, and 3.  So this will print hello 3 times.</li>
             
-            <input type="radio" name="group1" value="d" id="e7a8_2_opt_d" />
-            <label for= "e7a8_2_opt_d">  d) 4</label><br />
-	        <div id= "e7a8_2_eachFeedback_d"></div>
+            <li data-component="answer"  id="e7a8_2_opt_d">4</li><li data-component="feedback" id="e7a8_2_opt_d">This would be true if it was range(1,5).  Remember that it includes the first value and ends before the second value.</li>
             
 
-            <script>
-		    populateArrays('e7a8_2','c',['This would be true if the print was outside of the loop, but it is in the loop.', 'This would be true if it was range(1,3)', 'The range(1,4) returns a list with the values 1, 2, and 3.  So this will print hello 3 times.', 'This would be true if it was range(1,5).  Remember that it includes the first value and ends before the second value.']);
-            $(document).ready(function(){checkExamRadio('e7a8_2');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e7a8_2_feedback">
-            </div>
-            </div>
-            
-            <div id="e7a8_3" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e7a8_3">
             <p>8-9-3: What is the result of executing the following code?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">number</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="k">while</span> <span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
@@ -419,37 +390,18 @@
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e7a8_3_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e7a8_3_opt_a" />
-            <label for= "e7a8_3_opt_a">  a) The program will loop indefinitely</label><br />
-	        <div id= "e7a8_3_eachFeedback_a"></div>
+            <li data-component="answer" data-correct id="e7a8_3_opt_a">The program will loop indefinitely</li><li data-component="feedback" id="e7a8_3_opt_a">This code loops while number is less than or equal to 5 and number only increments if it is less than 5 and it is originally set to 5 so number never changes.</li>
             
-            <input type="radio" name="group1" value="b" id="e7a8_3_opt_b" />
-            <label for= "e7a8_3_opt_b">  b) The value of number will be printed exactly 1 time</label><br />
-	        <div id= "e7a8_3_eachFeedback_b"></div>
+            <li data-component="answer"  id="e7a8_3_opt_b">The value of number will be printed exactly 1 time</li><li data-component="feedback" id="e7a8_3_opt_b">This would be true if it was if number <= 5.</li>
             
-            <input type="radio" name="group1" value="c" id="e7a8_3_opt_c" />
-            <label for= "e7a8_3_opt_c">  c) The while loop will never get executed</label><br />
-	        <div id= "e7a8_3_eachFeedback_c"></div>
+            <li data-component="answer"  id="e7a8_3_opt_c">The while loop will never get executed</li><li data-component="feedback" id="e7a8_3_opt_c">This would be true if number was set to a number larger than 5 to start.</li>
             
-            <input type="radio" name="group1" value="d" id="e7a8_3_opt_d" />
-            <label for= "e7a8_3_opt_d">  d) The value of number will be printed exactly 5 times</label><br />
-	        <div id= "e7a8_3_eachFeedback_d"></div>
+            <li data-component="answer"  id="e7a8_3_opt_d">The value of number will be printed exactly 5 times</li><li data-component="feedback" id="e7a8_3_opt_d">This would be true if number was set to 1 to start.</li>
             
 
-            <script>
-		    populateArrays('e7a8_3','a',['This code loops while number is less than or equal to 5 and number only increments if it is less than 5 and it is originally set to 5 so number never changes.', 'This would be true if it was if number \u003C\u003D 5.', 'This would be true if number was set to a number larger than 5 to start.', 'This would be true if number was set to 1 to start.']);
-            $(document).ready(function(){checkExamRadio('e7a8_3');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e7a8_3_feedback">
-            </div>
-            </div>
-            
-            <div id="e7a8_4" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e7a8_4">
             <p>8-9-4: What will be printed by the following code when it executes?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
@@ -460,37 +412,18 @@
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e7a8_4_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e7a8_4_opt_a" />
-            <label for= "e7a8_4_opt_a">  a) 4</label><br />
-	        <div id= "e7a8_4_eachFeedback_a"></div>
+            <li data-component="answer"  id="e7a8_4_opt_a">4</li><li data-component="feedback" id="e7a8_4_opt_a">This would be true if it was sum = sum + 1</li>
             
-            <input type="radio" name="group1" value="b" id="e7a8_4_opt_b" />
-            <label for= "e7a8_4_opt_b">  b) 0</label><br />
-	        <div id= "e7a8_4_eachFeedback_b"></div>
+            <li data-component="answer"  id="e7a8_4_opt_b">0</li><li data-component="feedback" id="e7a8_4_opt_b">This would be true if sum never changed, but each time through the loop number is added to the current sum.</li>
             
-            <input type="radio" name="group1" value="c" id="e7a8_4_opt_c" />
-            <label for= "e7a8_4_opt_c">  c) 7</label><br />
-	        <div id= "e7a8_4_eachFeedback_c"></div>
+            <li data-component="answer"  id="e7a8_4_opt_c">7</li><li data-component="feedback" id="e7a8_4_opt_c">This would be true if it printed the number.</li>
             
-            <input type="radio" name="group1" value="d" id="e7a8_4_opt_d" />
-            <label for= "e7a8_4_opt_d">  d) 16</label><br />
-	        <div id= "e7a8_4_eachFeedback_d"></div>
+            <li data-component="answer" data-correct id="e7a8_4_opt_d">16</li><li data-component="feedback" id="e7a8_4_opt_d">This adds up the numbers in values and prints the sum.</li>
             
 
-            <script>
-		    populateArrays('e7a8_4','d',['This would be true if it was sum \u003D sum + 1', 'This would be true if sum never changed, but each time through the loop number is added to the current sum.', 'This would be true if it printed the number.', 'This adds up the numbers in values and prints the sum.']);
-            $(document).ready(function(){checkExamRadio('e7a8_4');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e7a8_4_feedback">
-            </div>
-            </div>
-            
-            <div id="e7a8_5" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e7a8_5">
             <p>8-9-5: What will the following code print?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
@@ -501,70 +434,18 @@
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e7a8_5_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e7a8_5_opt_a" />
-            <label for= "e7a8_5_opt_a">  a) 12</label><br />
-	        <div id= "e7a8_5_eachFeedback_a"></div>
+            <li data-component="answer"  id="e7a8_5_opt_a">12</li><li data-component="feedback" id="e7a8_5_opt_a">This would be true if counter started off with a value of 0.</li>
             
-            <input type="radio" name="group1" value="b" id="e7a8_5_opt_b" />
-            <label for= "e7a8_5_opt_b">  b) 9</label><br />
-	        <div id= "e7a8_5_eachFeedback_b"></div>
+            <li data-component="answer" data-correct id="e7a8_5_opt_b">9</li><li data-component="feedback" id="e7a8_5_opt_b">This loop executes 3 times.  After the first loop sum = 1 and counter = 3, after the second loop sum = 4 and counter = 5, and after the third loop sum = 9 and counter = 7.</li>
             
-            <input type="radio" name="group1" value="c" id="e7a8_5_opt_c" />
-            <label for= "e7a8_5_opt_c">  c) 7</label><br />
-	        <div id= "e7a8_5_eachFeedback_c"></div>
+            <li data-component="answer"  id="e7a8_5_opt_c">7</li><li data-component="feedback" id="e7a8_5_opt_c">This is the value of counter, but this code prints the value of sum.</li>
             
-            <input type="radio" name="group1" value="d" id="e7a8_5_opt_d" />
-            <label for= "e7a8_5_opt_d">  d) 8</label><br />
-	        <div id= "e7a8_5_eachFeedback_d"></div>
+            <li data-component="answer"  id="e7a8_5_opt_d">8</li><li data-component="feedback" id="e7a8_5_opt_d">This would be the value of counter after the loop if counter started at 0.</li>
             
 
-            <script>
-		    populateArrays('e7a8_5','b',['This would be true if counter started off with a value of 0.', 'This loop executes 3 times.  After the first loop sum \u003D 1 and counter \u003D 3, after the second loop sum \u003D 4 and counter \u003D 5, and after the third loop sum \u003D 9 and counter \u003D 7.', 'This is the value of counter, but this code prints the value of sum.', 'This would be the value of counter after the loop if counter started at 0.']);
-            $(document).ready(function(){checkExamRadio('e7a8_5');});
-            </script>
-            
- 
-            </form><br />
-            <div id="e7a8_5_feedback">
-            </div>
-            </div>
-            
-
-            
-	
-	<div style="text-align: center;">
-	<button class='btn btn-inverse' id ="finish" onclick="checkExam()">Submit Answers</button>
-	</div>
-	<script>
-	    
-	    $(document).ready(function() {
-	      $("#results").hide();
-	      checkIfFinished()
-	    });
-	</script>
-
-
-            
-            </div>
-            <p id="results"></p>
- 
-            
-            <script>
-			   var time = 0;
-			   var change = 1;
-		       showTime(0);
-            </script>
-            
-            <script>
-			   var showFeedback = 1;
-            </script>
-            
-            <script>
-			   var showResult = 1;
-            </script>
-            </div>
+            </ul>
+            </ul>
+    </div>
 
 
   
@@ -594,7 +475,10 @@
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

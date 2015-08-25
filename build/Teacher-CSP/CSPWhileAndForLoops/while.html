@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -331,22 +347,7 @@
 </ol>
 <p>Here&#8217;s a program that does exactly that.  Try different <cite>target</cite> values, and see how good it is at computing square roots.</p>
 
-<div id="cont"></div>
-<div id="Square_Root" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Square_Root_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Square_Root_saveb" onclick="saveEditor('Square_Root');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Square_Root_loadb" onclick="requestCode('Square_Root');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Square_Root','target = 6*nline*guess = 2*nline*guessSquared = guess * guess*nline*while abs*open*target-guessSquared*close* > 0.01:*nline*    closer = target / guess*nline*    guess = *open*guess + closer*close* / 2.0*nline*    guessSquared = guess * guess*nline*print*open**doubleq*Square root of*doubleq*, target,*doubleq*is*doubleq*, guess*close*','1','*doubleq*Line by line tour*doubleq*; 1: sqR_line1; 2: sqR_line2; 3: sqR_line3; 4: sqR_line4; 5: sqR_line5; 6: sqR_line6; 7: sqR_line7; 8: sqR_line8;*atype*')"/>
-<button class='btn btn-default' id="Square_Root_vizb" onclick="injectCodelens(this,'Square_Root');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="Square_Root_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Square_Root_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Square_Root data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Line by line tour*doubleq*; 1: sqR_line1; 2: sqR_line2; 3: sqR_line3; 4: sqR_line4; 5: sqR_line5; 6: sqR_line6; 7: sqR_line7; 8: sqR_line8;*atype*'     >
 target = 6
 guess = 2
 guessSquared = guess * guess
@@ -355,93 +356,18 @@ while abs(target-guessSquared) > 0.01:
     guess = (guess + closer) / 2.0
     guessSquared = guess * guess
 print("Square root of", target,"is", guess)
-</textarea>
-</div>
+</pre>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Square_Root_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Square_Root_suffix" style="display:none">
-</pre><pre id="Square_Root_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Square_Root)</span> </p>
-<div id="Square_Root_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Square_Root_saveb').toggle();
-    $('#Square_Root_loadb').toggle();
-}
-if ($("#Square_Root").attr("lang") !== "html" && $("#Square_Root_code_div").parents(".admonition").length == 0 && $("#Square_Root_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Square_Root_code_div").offset({
-            left: $("#Square_Root .clearfix").offset().left
-        });
-    }
-    $("#Square_Root_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Square_Root_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Square_Root_runb").parent().siblings(".ac_output").show();
-            runit('Square_Root',this, undefined);
-            $("#Square_Root_runb").on("click", function(){
-                runit('Square_Root',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Square_Root_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Square_Root_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Square_Root_runb").on("click", function(){
-        runit('Square_Root',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="8_4_1_Square_Root_Q1" class="alert alert-warning">
-            csp-8-4-1:  What would happen if we didn&#8217;t compute <code class="docutils literal"><span class="pre">guessSquared</span></code> before the <code class="docutils literal"><span class="pre">while</span></code> loop?<form name="8_4_1_Square_Root_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="8_4_1_Square_Root_Q1_opt_a" />
-            <label for= "8_4_1_Square_Root_Q1_opt_a">  a) No error, since we compute it inside the loop.</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="8_4_1_Square_Root_Q1">
+            csp-8-4-1:  What would happen if we didn&#8217;t compute <code class="docutils literal"><span class="pre">guessSquared</span></code> before the <code class="docutils literal"><span class="pre">while</span></code> loop?
+            <li data-component="answer"  id="8_4_1_Square_Root_Q1_opt_a">No error, since we compute it inside the loop.</li><li data-component="feedback" id="8_4_1_Square_Root_Q1_opt_a">We have to compute it before, or abs(target-guessSquared) > 0.01 would be an error.</li>
             
-            <input type="radio" name="group1" value="b" id="8_4_1_Square_Root_Q1_opt_b" />
-            <label for= "8_4_1_Square_Root_Q1_opt_b">  b) We would get an error.</label><br />
+            <li data-component="answer" data-correct id="8_4_1_Square_Root_Q1_opt_b">We would get an error.</li><li data-component="feedback" id="8_4_1_Square_Root_Q1_opt_b">A variable has to be declared (created) before it is used.</li>
             
-            <input type="radio" name="group1" value="c" id="8_4_1_Square_Root_Q1_opt_c" />
-            <label for= "8_4_1_Square_Root_Q1_opt_c">  c) We need the one before the while loop, but not the one afterward.</label><br />
+            <li data-component="answer"  id="8_4_1_Square_Root_Q1_opt_c">We need the one before the while loop, but not the one afterward.</li><li data-component="feedback" id="8_4_1_Square_Root_Q1_opt_c">We need both.  The one before sets up the test.  The one inside the loop lets us update guessSquared.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('8_4_1_Square_Root_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('8_4_1_Square_Root_Q1','b',['We have to compute it before, or abs(target\u002DguessSquared) \u003E 0.01 would be an error.', 'A variable has to be declared (created) before it is used.', 'We need both.  The one before sets up the test.  The one inside the loop lets us update guessSquared.'])">Check Me</button>
-            <button class='btn btn-default' id="8_4_1_Square_Root_Q1_bcomp" disabled name="compare" onclick="compareAnswers('8_4_1_Square_Root_Q1');">Compare Me</button>
-            </form><br />
-            <div id="8_4_1_Square_Root_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             <p>Let&#8217;s say that you wanted to figure out the square root of 6.  How many times would the body of the <code class="docutils literal"><span class="pre">while</span></code> loop be executed?  We could figure it out by tracing the program.</p>
 <div id="trace-squareroot" class="video_popup" >
 <video controls preload="none"  poster="../_static/squareRootTrace.png">
@@ -452,48 +378,37 @@ else{
 </div>
 <script>
    jQuery(function($) {
+      var rb = new RunestoneBase();
       $('#trace-squareroot_thumb').click(function(e) {
          $('#trace-squareroot').show();
          $('#trace-squareroot_thumb').hide();
-         logBookEvent({'event':'video','act':'play','div_id': 'trace-squareroot'});
+         rb.logBookEvent({'event':'video','act':'play','div_id': 'trace-squareroot'});
          // Log the run event
       });
       $('#trace-squareroot video').one("click", function(){
         this.play();
       });
       $('#trace-squareroot video').one("play", function(){
-        logBookEvent({'event':'video','act':'play','div_id': 'trace-squareroot'});
+        rb.logBookEvent({'event':'video','act':'play','div_id': 'trace-squareroot'});
       });
    });
 </script>
 
-            <div id="8_4_2_Count_Loops_Q1" class="alert alert-warning">
-            csp-8-4-2:  How many times do we execute the test <code class="docutils literal"><span class="pre">abs(target-guessSquared)</span> <span class="pre">&gt;</span> <span class="pre">0.01</span></code> when <code class="docutils literal"><span class="pre">target</span> <span class="pre">=</span> <span class="pre">6</span></code> (in the video)?<form name="8_4_2_Count_Loops_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="8_4_2_Count_Loops_Q1_opt_a" />
-            <label for= "8_4_2_Count_Loops_Q1_opt_a">  a) Just once.</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="8_4_2_Count_Loops_Q1">
+            csp-8-4-2:  How many times do we execute the test <code class="docutils literal"><span class="pre">abs(target-guessSquared)</span> <span class="pre">&gt;</span> <span class="pre">0.01</span></code> when <code class="docutils literal"><span class="pre">target</span> <span class="pre">=</span> <span class="pre">6</span></code> (in the video)?
+            <li data-component="answer"  id="8_4_2_Count_Loops_Q1_opt_a">Just once.</li><li data-component="feedback" id="8_4_2_Count_Loops_Q1_opt_a">The first time we do the test, guess is 2, and 2 * 2 is 4, and 6 - 4 is 2 which is greater than 0.01.</li>
             
-            <input type="radio" name="group1" value="b" id="8_4_2_Count_Loops_Q1_opt_b" />
-            <label for= "8_4_2_Count_Loops_Q1_opt_b">  b) Twice.</label><br />
+            <li data-component="answer"  id="8_4_2_Count_Loops_Q1_opt_b">Twice.</li><li data-component="feedback" id="8_4_2_Count_Loops_Q1_opt_b">The second time we do the test, guess is 2.5 (average of 3 and 2). But, 2.5 * 2.5 = 6.25 which is still more than 0.01 away from 6.</li>
             
-            <input type="radio" name="group1" value="c" id="8_4_2_Count_Loops_Q1_opt_c" />
-            <label for= "8_4_2_Count_Loops_Q1_opt_c">  c) Three times.</label><br />
+            <li data-component="answer" data-correct id="8_4_2_Count_Loops_Q1_opt_c">Three times.</li><li data-component="feedback" id="8_4_2_Count_Loops_Q1_opt_c">The third time we do the test, guess is 2.45 which is 6.0025 when squared.  This is less than 0.01 away from 6.  So test executes 3 times.</li>
             
-            <input type="radio" name="group1" value="d" id="8_4_2_Count_Loops_Q1_opt_d" />
-            <label for= "8_4_2_Count_Loops_Q1_opt_d">  d) Four times</label><br />
+            <li data-component="answer"  id="8_4_2_Count_Loops_Q1_opt_d">Four times</li><li data-component="feedback" id="8_4_2_Count_Loops_Q1_opt_d">We don't get to a fourth time.  Guess is 2, then 2.5, then 2.45 at which point the test fails and and the loop stops.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('8_4_2_Count_Loops_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('8_4_2_Count_Loops_Q1','c',['The first time we do the test, guess is 2, and 2 * 2 is 4, and 6 \u002D 4 is 2 which is greater than 0.01.', 'The second time we do the test, guess is 2.5 (average of 3 and 2). But, 2.5 * 2.5 \u003D 6.25 which is still more than 0.01 away from 6.', 'The third time we do the test, guess is 2.45 which is 6.0025 when squared.  This is less than 0.01 away from 6.  So test executes 3 times.', 'We don\u0027t get to a fourth time.  Guess is 2, then 2.5, then 2.45 at which point the test fails and and the loop stops.'])">Check Me</button>
-            <button class='btn btn-default' id="8_4_2_Count_Loops_Q1_bcomp" disabled name="compare" onclick="compareAnswers('8_4_2_Count_Loops_Q1');">Compare Me</button>
-            </form><br />
-            <div id="8_4_2_Count_Loops_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             <p>How about the square root of 25?  How about 2,356?  It&#8217;s difficult to know ahead of time how many times the loop will execute.  That&#8217;s where the <code class="docutils literal"><span class="pre">while</span></code> loop really shines, when you can specify an end condition (or rather, a <em>continue</em> condition).</p>
 
-            <div id="8_4_3_Var1Var2" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="8_4_3_Var1Var2">
             <p>csp-8-4-3: What are the values of var1 and var2 that are printed when the following code executes?</p>
 <div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -508,29 +423,17 @@ else{
 <span class="n">print</span><span class="o">(</span><span class="s">&quot;var1: &quot;</span> <span class="o">+</span> <span class="n">str</span><span class="o">(</span><span class="n">var1</span><span class="o">)</span> <span class="o">+</span> <span class="s">&quot; var2 &quot;</span> <span class="o">+</span> <span class="n">str</span><span class="o">(</span><span class="n">var2</span><span class="o">))</span>
 </pre></div>
 </td></tr></table></div>
-<form name="8_4_3_Var1Var2_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="8_4_3_Var1Var2_opt_a" />
-            <label for= "8_4_3_Var1Var2_opt_a">  a) var1 = -2, var2 = 0</label><br />
+
+            <li data-component="answer"  id="8_4_3_Var1Var2_opt_a">var1 = -2, var2 = 0</li><li data-component="feedback" id="8_4_3_Var1Var2_opt_a">These are the initial value, but they change during the loop</li>
             
-            <input type="radio" name="group1" value="b" id="8_4_3_Var1Var2_opt_b" />
-            <label for= "8_4_3_Var1Var2_opt_b">  b) var1 = 0, var2 = -2</label><br />
+            <li data-component="answer" data-correct id="8_4_3_Var1Var2_opt_b">var1 = 0, var2 = -2</li><li data-component="feedback" id="8_4_3_Var1Var2_opt_b">This loop will execute two times so var1 will be 0 and var2 will be -2 after the loop finishes.</li>
             
-            <input type="radio" name="group1" value="c" id="8_4_3_Var1Var2_opt_c" />
-            <label for= "8_4_3_Var1Var2_opt_c">  c) var1 = 0, var2 = -1</label><br />
+            <li data-component="answer"  id="8_4_3_Var1Var2_opt_c">var1 = 0, var2 = -1</li><li data-component="feedback" id="8_4_3_Var1Var2_opt_c">This would be true if the loop stopped executing as soon as var1 was equal to 0, but that isn't what happens.  The body of the loop will finish executing before the value of var1 is tested again.</li>
             
-            <input type="radio" name="group1" value="d" id="8_4_3_Var1Var2_opt_d" />
-            <label for= "8_4_3_Var1Var2_opt_d">  d) This is an infinite loop so it will never print anything.</label><br />
+            <li data-component="answer"  id="8_4_3_Var1Var2_opt_d">This is an infinite loop so it will never print anything.</li><li data-component="feedback" id="8_4_3_Var1Var2_opt_d">This would be true if it was <code>var1 = var1 - 1</code></li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('8_4_3_Var1Var2');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('8_4_3_Var1Var2','b',['These are the initial value, but they change during the loop', 'This loop will execute two times so var1 will be 0 and var2 will be \u002D2 after the loop finishes.', 'This would be true if the loop stopped executing as soon as var1 was equal to 0, but that isn\u0027t what happens.  The body of the loop will finish executing before the value of var1 is tested again.', 'This would be true if it was \u003Ccode\u003Evar1 \u003D var1 \u002D 1\u003C/code\u003E'])">Check Me</button>
-            <button class='btn btn-default' id="8_4_3_Var1Var2_bcomp" disabled name="compare" onclick="compareAnswers('8_4_3_Var1Var2');">Compare Me</button>
-            </form><br />
-            <div id="8_4_3_Var1Var2_feedback">
-            </div>
-            </div>
+            </ul>
             </div>
 
 
@@ -561,7 +464,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

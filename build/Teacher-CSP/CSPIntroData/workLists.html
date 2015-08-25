@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -377,27 +393,16 @@ $(window).resize(function() {
 </div>
 <p>We use square brackets to access items of the list, e.g., <code class="docutils literal"><span class="pre">myList[0]</span></code> will always return the first item in the list.</p>
 
-            <div id="16_3_1_lastIndex" class="alert alert-warning">
-            csp-16-3-1: What is the value of the last index in the list <code class="docutils literal"><span class="pre">myFirstList</span></code>?<form name="16_3_1_lastIndex_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="16_3_1_lastIndex_opt_a" />
-            <label for= "16_3_1_lastIndex_opt_a">  a) 1</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="16_3_1_lastIndex">
+            csp-16-3-1: What is the value of the last index in the list <code class="docutils literal"><span class="pre">myFirstList</span></code>?
+            <li data-component="answer"  id="16_3_1_lastIndex_opt_a">1</li><li data-component="feedback" id="16_3_1_lastIndex_opt_a">This is the index of the second item in the list.</li>
             
-            <input type="radio" name="group1" value="b" id="16_3_1_lastIndex_opt_b" />
-            <label for= "16_3_1_lastIndex_opt_b">  b) 2</label><br />
+            <li data-component="answer" data-correct id="16_3_1_lastIndex_opt_b">2</li><li data-component="feedback" id="16_3_1_lastIndex_opt_b">This is the index of the last item in this list since it contains 3 items and the first index is 0.</li>
             
-            <input type="radio" name="group1" value="c" id="16_3_1_lastIndex_opt_c" />
-            <label for= "16_3_1_lastIndex_opt_c">  c) 3</label><br />
+            <li data-component="answer"  id="16_3_1_lastIndex_opt_c">3</li><li data-component="feedback" id="16_3_1_lastIndex_opt_c">The length of the list is 3, but the first index is 0 so the 3rd item is at index 2.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('16_3_1_lastIndex');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('16_3_1_lastIndex','b',['This is the index of the second item in the list.', 'This is the index of the last item in this list since it contains 3 items and the first index is 0.', 'The length of the list is 3, but the first index is 0 so the 3rd item is at index 2.'])">Check Me</button>
-            <button class='btn btn-default' id="16_3_1_lastIndex_bcomp" disabled name="compare" onclick="compareAnswers('16_3_1_lastIndex');">Compare Me</button>
-            </form><br />
-            <div id="16_3_1_lastIndex_feedback">
-            </div>
-            </div>
+            </ul>
             <p>You can access individual items of a list just like they were variables.  Using <code class="docutils literal"><span class="pre">list[index]</span></code> on the right side of an assignment returns the value at that index in the list. Using <code class="docutils literal"><span class="pre">list[index]</span></code> on the left side of an assignment statement changes the value at that index in the list.</p>
 
 <div class="alert alert-warning cd_section">
@@ -443,30 +448,18 @@ $(window).resize(function() {
 });
 </script>
 
-            <div id="16_3_2_ItemsAsVariablesQ" class="alert alert-warning">
-            csp-16-3-2: Of the four items in the list named <code class="docutils literal"><span class="pre">items</span></code>, which one is not changed in the program above?<form name="16_3_2_ItemsAsVariablesQ_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="16_3_2_ItemsAsVariablesQ_opt_a" />
-            <label for= "16_3_2_ItemsAsVariablesQ_opt_a">  a) items[0]</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="16_3_2_ItemsAsVariablesQ">
+            csp-16-3-2: Of the four items in the list named <code class="docutils literal"><span class="pre">items</span></code>, which one is not changed in the program above?
+            <li data-component="answer"  id="16_3_2_ItemsAsVariablesQ_opt_a">items[0]</li><li data-component="feedback" id="16_3_2_ItemsAsVariablesQ_opt_a">Originally, items[0] was 2, but then we set it to the string: First item</li>
             
-            <input type="radio" name="group1" value="b" id="16_3_2_ItemsAsVariablesQ_opt_b" />
-            <label for= "16_3_2_ItemsAsVariablesQ_opt_b">  b) items[1]</label><br />
+            <li data-component="answer"  id="16_3_2_ItemsAsVariablesQ_opt_b">items[1]</li><li data-component="feedback" id="16_3_2_ItemsAsVariablesQ_opt_b">We set items[1] to be the same as items[0]: First item</li>
             
-            <input type="radio" name="group1" value="c" id="16_3_2_ItemsAsVariablesQ_opt_c" />
-            <label for= "16_3_2_ItemsAsVariablesQ_opt_c">  c) items[2]</label><br />
+            <li data-component="answer"  id="16_3_2_ItemsAsVariablesQ_opt_c">items[2]</li><li data-component="feedback" id="16_3_2_ItemsAsVariablesQ_opt_c">We increment items[2]</li>
             
-            <input type="radio" name="group1" value="d" id="16_3_2_ItemsAsVariablesQ_opt_d" />
-            <label for= "16_3_2_ItemsAsVariablesQ_opt_d">  d) items[3]</label><br />
+            <li data-component="answer" data-correct id="16_3_2_ItemsAsVariablesQ_opt_d">items[3]</li><li data-component="feedback" id="16_3_2_ItemsAsVariablesQ_opt_d">The value at items[3] doesn't change.  It still equals 8.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('16_3_2_ItemsAsVariablesQ');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('16_3_2_ItemsAsVariablesQ','d',['Originally, items[0] was 2, but then we set it to the string: First item', 'We set items[1] to be the same as items[0]: First item', 'We increment items[2]', 'The value at items[3] doesn\u0027t change.  It still equals 8.'])">Check Me</button>
-            <button class='btn btn-default' id="16_3_2_ItemsAsVariablesQ_bcomp" disabled name="compare" onclick="compareAnswers('16_3_2_ItemsAsVariablesQ');">Compare Me</button>
-            </form><br />
-            <div id="16_3_2_ItemsAsVariablesQ_feedback">
-            </div>
-            </div>
+            </ul>
             </div>
 
 
@@ -497,7 +490,10 @@ $(window).resize(function() {
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

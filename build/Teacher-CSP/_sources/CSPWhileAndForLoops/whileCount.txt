@@ -39,6 +39,37 @@ For example, we could have a computer count up from 1 to 10.  We will use a ``co
        print(counter)
        counter = counter + 1
        
+.. mchoicemf:: 8_3_1_While_Count_Q1
+   :answer_a: 1
+   :answer_b: 10
+   :answer_c: 11
+   :correct: c
+   :feedback_a: Counter is incremented each time the loop executes.
+   :feedback_b: The last value to be printed is 10.  But, the counter is incremented after the current value is printed.
+   :feedback_c: Counter gets incremented to 11 after printing, and then the while loop tests counter, finds counter is not less than 11 and then continues after the body of the loop.
+
+   What is the value of counter after the loop finishes executing?
+   
+.. mchoicemf:: 8_3_2_NegativeCounter
+   :answer_a: 5 4 3 2 1
+   :answer_b: -5 -4 -3 -2 -1
+   :answer_c: -4 -3 -2 -1
+   :correct: c
+   :feedback_a: If x starts at -5 how can the first value printed be 5?
+   :feedback_b: This would be true if the print statement was before we incremented x.
+   :feedback_c: The value of x is incremented before it is printed so the first value printed is -4.  
+
+   What does the following code print?
+   
+   :: 
+      
+      output = ""
+      x = -5
+      while x < 0:
+          x = x + 1
+          output = output + str(x) + " "
+      print(output)
+       
 Side by Side Comparison of a For Loop and a While Loop
 -------------------------------------------------------
        
@@ -63,37 +94,6 @@ The following code is an attempt to show another way to print the values from 1 
    while counter <= 10:
        print(counter)
    counter = counter + 1
-
-.. mchoicemf:: 8_3_1_While_Counter_Q1
-   :answer_a: 1
-   :answer_b: 10
-   :answer_c: 11
-   :correct: c
-   :feedback_a: Counter gets incremented from 1.
-   :feedback_b: The last value to be printed is 10.
-   :feedback_c: Counter gets incremented to 11 after printing, and then the while loop tests counter, finds counter > 10 and stops.
-
-   When the loop in while_counter_infinite has been fixed and has finished repeating, what is the value of counter?
-   	  
-.. mchoicemf:: 8_3_2_NegativeCounter
-   :answer_a: 5 4 3 2 1
-   :answer_b: -5 -4 -3 -2 -1
-   :answer_c: -4 -3 -2 -1
-   :correct: c
-   :feedback_a: If x starts at -5 how can the first value printed be 5?
-   :feedback_b: This would be true if the print statement was before we incremented x.
-   :feedback_c: The value of x is incremented before it is printed so the first value printed is -4.  
-
-   What does the following code print?
-   
-   :: 
-      
-      output = ""
-      x = -5
-      while x < 0:
-          x = x + 1
-          output = output + str(x) + " "
-      print(output)
    	
 .. parsonsprob:: 8_3_3_While_Countdown
 
@@ -110,7 +110,7 @@ The following code is an attempt to show another way to print the values from 1 
 	
 .. parsonsprob:: 8_2_4_While_Count_Even
 
-   The following is the correct code for printing the even numbers from 0 to 10, **but it also includes some extra code that you won't need**. Drag the needed blocks from the left and put them in the correct order on the right.  Don't forget to indent blocks in the body of the loop.  Just drag the block to the further right to indent.  Click the <i>Check Me</i> button to check your solution.</p>
+   The following is the correct code for printing the even numbers from 0 to 10, <b>but it also includes some extra code that you won't need</b>. Drag the needed blocks from the left and put them in the correct order on the right.  Don't forget to indent blocks in the body of the loop.  Just drag the block to the further right to indent.  Click the <i>Check Me</i> button to check your solution.</p>
    -----
    counter = 0
    =====

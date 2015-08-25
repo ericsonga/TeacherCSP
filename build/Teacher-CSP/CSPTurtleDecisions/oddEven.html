@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -323,21 +339,7 @@
 <p id="index-0">One common thing to do with conditionals is to check if a number is odd or even.  If a number is evenly divisible by 2 with no remainder, then it is even.  You can calculate the remainder with the <strong>modulo</strong> operator <code class="docutils literal"><span class="pre">%</span></code> like this <code class="docutils literal"><span class="pre">num</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">0</span></code>.  If a number divided by 2 leaves a remainder of 1, then the number is odd.  You can check for this using <code class="docutils literal"><span class="pre">num</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">1</span></code>.  The code below uses two <code class="docutils literal"><span class="pre">if</span></code> statements to check if the current value of <code class="docutils literal"><span class="pre">y</span></code> is even or odd.  It uses this to draw two alternating color stripes.</p>
 <p>The code below uses the <code class="docutils literal"><span class="pre">window_width()</span></code> function of the <code class="docutils literal"><span class="pre">Screen</span></code> object that returns the width of the Screen (drawing area). There is also a <code class="docutils literal"><span class="pre">window_height()</span></code> function that returns the height of the Screen (drawing area).</p>
 
-<div id="cont"></div>
-<div id="td_stripes" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="td_stripes_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="td_stripes_saveb" onclick="saveEditor('td_stripes');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="td_stripes_loadb" onclick="requestCode('td_stripes');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('td_stripes','from turtle import *             # use the turtle library*nline*from sys import *                # use the system library*nline*setExecutionLimit*open*100000*close*        # let this take up to 100 seconds*nline*space = Screen*open**close*                 # create a turtle screen *open*space*close**nline**nline*width = space.window_width*open**close*     # get the width of the screen *open*space*close**nline*maxX = width / 2                 # set the max x value to half the width*nline**nline*sue = Turtle*open**close*                   # create a turtle named sue*nline*sue.pensize*open*10*close*                  # set the pen width*nline**nline*for y in range*open*5*close*:               # repeat 5 times*nline*    sue.penup*open**close*                      # pick up the pen*nline*    if y % 2 == 0:                   # if even row*nline*            sue.color*open**singleq*red*singleq**close*                 # set the color to red*nline*    if y % 2 == 1:                   # if odd row*nline*            sue.color*open**singleq*black*singleq**close*               # set the color to black*nline*    sue.goto*open*-1 * maxX,y * 10*close*       # move to the next row*nline*    sue.pendown*open**close*                    # put the pen down*nline*    sue.forward*open*width*close*               # move forward by the width','1','*doubleq*Structural Tour*doubleq*; 1-4: td2a-line1-4; 6-7: td2a-line6-7; 9-10: td2a-line9-10; 12: td2a-line12; 13: td2a-line13; 14-15: td2a-line14-15; 16-17: td2a-line16-17; 18: td2a-line18; 19: td2a-line19; 20: td2a-line20;*atype*')"/>
-
-</div>
-<br/>
-<div id="td_stripes_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="td_stripes_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=td_stripes data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Structural Tour*doubleq*; 1-4: td2a-line1-4; 6-7: td2a-line6-7; 9-10: td2a-line9-10; 12: td2a-line12; 13: td2a-line13; 14-15: td2a-line14-15; 16-17: td2a-line16-17; 18: td2a-line18; 19: td2a-line19; 20: td2a-line20;*atype*'     >
 from turtle import *             # use the turtle library
 from sys import *                # use the system library
 setExecutionLimit(100000)        # let this take up to 100 seconds
@@ -352,110 +354,36 @@ sue.pensize(10)                  # set the pen width
 for y in range(5):               # repeat 5 times
     sue.penup()                      # pick up the pen
     if y % 2 == 0:                   # if even row
-            sue.color('red')                 # set the color to red
+        sue.color('red')                 # set the color to red
     if y % 2 == 1:                   # if odd row
-            sue.color('black')               # set the color to black
+        sue.color('black')               # set the color to black
     sue.goto(-1 * maxX,y * 10)       # move to the next row
     sue.pendown()                    # put the pen down
     sue.forward(width)               # move forward by the width
-</textarea>
-</div>
+</pre>
+<p>This code calculates <code class="docutils literal"><span class="pre">maxX</span></code> as half the width of the drawing space.  This is used to determine the x value for the left side of the window.  The left side is at <code class="docutils literal"><span class="pre">-1</span> <span class="pre">*</span> <span class="pre">maxX</span></code> since the window uses the cartesian coordinate system with (0,0) as the center of the window.</p>
+<p>For more information on what this code is doing listen to the audio tour.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="td_stripes_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="td_stripes_suffix" style="display:none">
-</pre><pre id="td_stripes_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (td_stripes)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#td_stripes_saveb').toggle();
-    $('#td_stripes_loadb').toggle();
-}
-if ($("#td_stripes").attr("lang") !== "html" && $("#td_stripes_code_div").parents(".admonition").length == 0 && $("#td_stripes_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#td_stripes_code_div").offset({
-            left: $("#td_stripes .clearfix").offset().left
-        });
-    }
-    $("#td_stripes_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#td_stripes_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#td_stripes_runb").parent().siblings(".ac_output").show();
-            runit('td_stripes',this, undefined);
-            $("#td_stripes_runb").on("click", function(){
-                runit('td_stripes',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#td_stripes_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#td_stripes_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#td_stripes_runb").on("click", function(){
-        runit('td_stripes',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="14_3_1_finish_stripes" class="alert alert-warning">
-            csp-14-3-1: What value should you use as the parameter for the range function in line 12 to fill the top half of the drawing space with stripes?  The height of the space is 320.<form name="14_3_1_finish_stripes_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="14_3_1_finish_stripes_opt_a" />
-            <label for= "14_3_1_finish_stripes_opt_a">  a) 10</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="14_3_1_finish_stripes">
+            csp-14-3-1: What value should you use as the parameter for the range function in line 12 to fill the top half of the drawing space with stripes?  The height of the space is 320.
+            <li data-component="answer"  id="14_3_1_finish_stripes_opt_a">10</li><li data-component="feedback" id="14_3_1_finish_stripes_opt_a">This will stop before filling the top half of the space. Try it.</li>
             
-            <input type="radio" name="group1" value="b" id="14_3_1_finish_stripes_opt_b" />
-            <label for= "14_3_1_finish_stripes_opt_b">  b) 16</label><br />
+            <li data-component="answer"  id="14_3_1_finish_stripes_opt_b">16</li><li data-component="feedback" id="14_3_1_finish_stripes_opt_b">The turtle starts at the middle of height and draws 5 pixels below it and 5 pixels above it, so this leaves 5 pixels at the top that need to be filled.</li>
             
-            <input type="radio" name="group1" value="c" id="14_3_1_finish_stripes_opt_c" />
-            <label for= "14_3_1_finish_stripes_opt_c">  c) 17</label><br />
+            <li data-component="answer" data-correct id="14_3_1_finish_stripes_opt_c">17</li><li data-component="feedback" id="14_3_1_finish_stripes_opt_c">The height of the top half is 160 and each stripe is a height of 10 so 16 nearly does it, but 17 fills the entire area.  The turtle starts in the middle of the space so the first row has 5 pixels above the middle and 5 below.</li>
             
-            <input type="radio" name="group1" value="d" id="14_3_1_finish_stripes_opt_d" />
-            <label for= "14_3_1_finish_stripes_opt_d">  d) 32</label><br />
+            <li data-component="answer"  id="14_3_1_finish_stripes_opt_d">32</li><li data-component="feedback" id="14_3_1_finish_stripes_opt_d">This would fill more than the top half.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('14_3_1_finish_stripes');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('14_3_1_finish_stripes','c',['This will stop before filling the top half of the space. Try it.', 'The turtle starts at the middle of height and draws 5 pixels below it and 5 pixels above it, so this leaves 5 pixels at the top that need to be filled.', 'The height of the top half is 160 and each stripe is a height of 10 so 16 nearly does it, but 17 fills the entire area.  The turtle starts in the middle of the space so the first row has 5 pixels above the middle and 5 below.', 'This would fill more than the top half.'])">Check Me</button>
-            <button class='btn btn-default' id="14_3_1_finish_stripes_bcomp" disabled name="compare" onclick="compareAnswers('14_3_1_finish_stripes');">Compare Me</button>
-            </form><br />
-            <div id="14_3_1_finish_stripes_feedback">
-            </div>
-            </div>
+            </ul>
             <p>Try to change the code above to use an <code class="docutils literal"><span class="pre">else</span></code> instead of the second <code class="docutils literal"><span class="pre">if</span></code> and yet still have the same result.
 Try to change the code above to use both an <code class="docutils literal"><span class="pre">elif</span></code> and <code class="docutils literal"><span class="pre">else</span></code> to draw three different colored stripes in a repeated pattern.  You can use <code class="docutils literal"><span class="pre">y</span> <span class="pre">%</span> <span class="pre">3</span></code> for three different conditions.</p>
 <p><strong>Mixed up programs</strong></p>
 
-        <div class='parsons alert alert-warning' id="parsons-70">
+        <div class='parsons alert alert-warning' id="parsons-74">
         <div class="parsons-text">csp-14-3-2: The following program should draw vertical color stipes alternating between red and black, but the code is mixed up.  Drag the block from left to right and place them in the correct order with the correct indention.<br /><br /></div>
         <div style="clear:left;"></div>
-        <div id="parsons-orig-70" style="display:none;">from turtle import *\nspace = Screen()\nheight = space.window_height()
+        <div id="parsons-orig-74" style="display:none;">from turtle import *\nspace = Screen()\nheight = space.window_height()
 maxY = height / 2\nsue = Turtle()\nsue.pensize(10)\nsue.left(90)
 for index in range(5):
     sue.penup()
@@ -465,39 +393,39 @@ for index in range(5):
         sue.color('black')
     sue.goto(index * 10, -1 * maxY)\nsue.pendown()\nsue.forward(height)</div>
         <div class="sortable-code-container">
-        <div id="parsons-sortableTrash-70" class="sortable-code"></div>
-        <div id="parsons-sortableCode-70" class="sortable-code"></div>
+        <div id="parsons-sortableTrash-74" class="sortable-code"></div>
+        <div id="parsons-sortableCode-74" class="sortable-code"></div>
         <div style="clear:left;"></div>
         </div>
         <div class="parsons-controls">
-        <input type="button" class='btn btn-success' id="checkMe70" value="Check Me"/>
-        <input type="button" class='btn btn-default' id="reset70" value="Reset"/>
-        <div id="parsons-message-70"></div>
+        <input type="button" class='btn btn-success' id="checkMe74" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset74" value="Reset"/>
+        <div id="parsons-message-74"></div>
         </div>
         </div>
 
     <script>
         $pjQ(document).ready(function(){
-
-            $("#parsons-70").not(".sortable-code").not(".parsons-controls").on("click", function(){
+            var rb = new RunestoneBase();
+            $("#parsons-74").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
-                    scrollTop: ($("#parsons-70").offset().top - 50)
+                    scrollTop: ($("#parsons-74").offset().top - 50)
                 }, 700);
             }).find(".sortable-code, .parsons-controls").click(function(e) {
                 return false;
                 });
-            var msgBox = $("#parsons-message-70");
+            var msgBox = $("#parsons-message-74");
             msgBox.hide();
         var displayErrors = function (fb) {
             if(fb.errors.length > 0) {
-                    var hash = pp_70.getHash("#ul-parsons-sortableCode-70");
+                    var hash = pp_74.getHash("#ul-parsons-sortableCode-74");
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
-                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'14_3_2_vert_stripes'});
+                    rb.logBookEvent({'event':'parsons', 'act':hash, 'div_id':'14_3_2_vert_stripes'});
 
             } else {
-                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'14_3_2_vert_stripes'});
+                    rb.logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'14_3_2_vert_stripes'});
                     msgBox.fadeIn(100);
                     msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
@@ -507,8 +435,8 @@ for index in range(5):
 
         $(window).load(function() {
             // set min width and height
-            var sortableul = $("#ul-parsons-sortableCode-70");
-            var trashul = $("#ul-parsons-sortableTrash-70");
+            var sortableul = $("#ul-parsons-sortableCode-74");
+            var trashul = $("#ul-parsons-sortableTrash-74");
             var sortableHeight = sortableul.height();
             var sortableWidth = sortableul.width();
             var trashWidth = trashul.width();
@@ -523,35 +451,35 @@ for index in range(5):
         });
  
 
-        var pp_70 = new ParsonsWidget({
-                'sortableId': 'parsons-sortableCode-70',
-        'trashId': 'parsons-sortableTrash-70',
+        var pp_74 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-74',
+        'trashId': 'parsons-sortableTrash-74',
                 'max_wrong_lines': 1,
                 'solution_label': 'Drop blocks here',
                 'feedback_cb' : displayErrors
         });
-        pp_70.init($pjQ("#parsons-orig-70").text());
-    pp_70.shuffleLines();
+        pp_74.init($pjQ("#parsons-orig-74").text());
+    pp_74.shuffleLines();
             
         if(localStorage.getItem('14_3_2_vert_stripes') && localStorage.getItem('14_3_2_vert_stripes-trash')) {
             try {
                 var solution = localStorage.getItem('14_3_2_vert_stripes');
                 var trash = localStorage.getItem('14_3_2_vert_stripes-trash');
-                pp_70.createHTMLFromHashes(solution,trash);
-                pp_70.getFeedback();
+                pp_74.createHTMLFromHashes(solution,trash);
+                pp_74.getFeedback();
             } catch(err) {
                 var text = "An error occured restoring old 14_3_2_vert_stripes state.  Error: ";
                 console.log(text + err.message);
             }
 
         }
-            $pjQ("#reset70").click(function(event){
+            $pjQ("#reset74").click(function(event){
               event.preventDefault();
-              pp_70.shuffleLines();
+              pp_74.shuffleLines();
             
             // set min width and height
-            var sortableul = $("#ul-parsons-sortableCode-70");
-            var trashul = $("#ul-parsons-sortableTrash-70");
+            var sortableul = $("#ul-parsons-sortableCode-74");
+            var trashul = $("#ul-parsons-sortableTrash-74");
             var sortableHeight = sortableul.height();
             var sortableWidth = sortableul.width();
             var trashWidth = trashul.width();
@@ -565,14 +493,14 @@ for index in range(5):
               msgBox.hide();
             });
             
-            $pjQ("#checkMe70").click(function(event){
+            $pjQ("#checkMe74").click(function(event){
               event.preventDefault();
-              var hash = pp_70.getHash("#ul-parsons-sortableCode-70");
+              var hash = pp_74.getHash("#ul-parsons-sortableCode-74");
               localStorage.setItem('14_3_2_vert_stripes',hash);
-              hash = pp_70.getHash("#ul-parsons-sortableTrash-70");
+              hash = pp_74.getHash("#ul-parsons-sortableTrash-74");
               localStorage.setItem('14_3_2_vert_stripes-trash',hash);
             
-            pp_70.getFeedback();
+            pp_74.getFeedback();
             msgBox.fadeIn(100);
             
             });
@@ -612,7 +540,10 @@ for index in range(5):
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

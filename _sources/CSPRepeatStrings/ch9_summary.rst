@@ -10,7 +10,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-9-4-
+	:prefix: csp-9-6-
 
 
 Chapter 9 - Summary
@@ -25,9 +25,15 @@ Chapter 9 included the following concepts from computing.
     single: range
 	single: string
 
-- **Accumulator Pattern** - The accumulator pattern is a set of steps that processes a list of values.  One example of an accumulator pattern is the code to sum a list of numbers.  
-- **For Loop** - A ``for`` loop is a programming statement that tells the computer to repeat a statement or a set of statements. It is used to repeat a loop a specific number of times.
+- **Accumulator Pattern** - The accumulator pattern is a set of steps that processes a list of values.  One example of an accumulator pattern is the code to reverse the characters in a string.
 - **Palindrome** - A palindrome has the same letters if you read it from left to right as it does if you read it from right to left.  An example is ``"A but tuba"``.  
-- **Print** - The ``print`` statement in Python will print the value of the items passed to it.  
-- **Range** - The ``range`` function in Python returns a list of consecutive values.  It can take one or two values.  If given one value it returns a list with the numbers from 0 up to and not including the passed number.  If given two numbers it returns a list including the first number and then up to but not including the second number.  For example, ``range(1,4)`` returns the list ``[1, 2, 3]``.
 - **String** - A string is a collection of letters, numbers, and other characters like spaces inside of a pair of single or double quotes.
+
+Summary of Python Keywords and Functions
+-------------------------------------------- 
+
+- **def** - The ``def`` keyword is used to define a procedure or function in Python.  The line must also end with a ``:`` and the body of the procedure or function must be indented 4 spaces.
+- **for** - A ``for`` loop is a programming statement that tells the computer to repeat a statement or a set of statements. It is one type of loop. 
+- **print** - The ``print`` statement in Python will print the value of the items passed to it.  
+- **range** - The ``range`` function in Python returns a list of consecutive values.  If the range function is passed one value it returns a list with the numbers from 0 up to and not including the passed number.  For example, ``range(5)`` returns a list of ``[0,1,2,3,4]``.  If the range function is passed two numbers separated by a comma it returns a list including the first number and then up to but not including the second number.  For example, ``range(1,4)`` returns the list ``[1, 2, 3]``.  If it is passed three values ``range(start,end,step)`` it returns all the numbers from start to one less than end changing by step.  For example, ``range(0,10,2)`` returns ``[0,2,4,6,8]``.
+- **while** - A ``while`` loop is a programming statement that tells the computer to repeat a statement or a set of statements. It repeats the **body of the loop** while a **logical expression** is true.

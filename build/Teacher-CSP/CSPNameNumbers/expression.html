@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -327,101 +343,22 @@
 <h1>Expressions<a class="headerlink" href="#expressions" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">The <em>right hand</em> side of the assignment statement doesn&#8217;t have to be a value.  It can be <em>an arithmetic expression</em>, like <code class="docutils literal"><span class="pre">2*2</span></code>.  The expression will be evaluated and the result from the expression will be stored in the variable.</p>
 
-            <div id="3_2_1_Mult" class="alert alert-warning">
-            csp-3-2-1: What will be printed when you click on the <em>Run</em> button in the code below? <input type='text' id='multBlank' class="form-control" style="display:inline; width: 90px;" value=""></input>
-            <script>
-            $(document).ready(function(){checkPreviousFIB('3_2_1_Mult');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkFIBStorage('3_2_1_Mult', 'multBlank', '^4$',[['.*', 'Did you actually run the program?']], false)">Check Me</button>
-            <button class='btn btn-default' id="3_2_1_Mult_bcomp" disabled name="compare" onclick="compareFITBAnswers('3_2_1_Mult');">Compare Me</button>
-            <br />
-            <br />
-            <div id="3_2_1_Mult_feedback">
-            </div>
-            </div>
+        <p data-component="fillintheblank" data-casei="false" id="3_2_1_Mult_fill">
             
-<div id="cont"></div>
-<div id="Expression_Mult" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Expression_Mult_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Expression_Mult_saveb" onclick="saveEditor('Expression_Mult');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Expression_Mult_loadb" onclick="requestCode('Expression_Mult');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Expression_Mult','result = 2 * 2*nline*print*open*result*close*','1','*doubleq*Line-by-line Tour*doubleq*; 1: ex1-line1; 2: ex1-line2;*atype*')"/>
-
-</div>
-<br/>
-<div id="Expression_Mult_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Expression_Mult_code" class="active_code" prefixcode="undefined" lang="python">
+        <span data-blank>
+            What will be printed when you click on the Run button in the code below?
+        <span data-feedback="regex" style="display: none" id="3_2_1_Mult_feedback1">.*</span>
+        <span data-feedback="text" style="display: none" for="3_2_1_Mult_feedback1">Did you actually run the program?</span>
+            
+        <span data-answer style="display: none" id="3_2_1_Mult_answer">^4$</span>
+        </span>
+        
+        </p>
+            
+<pre data-component="activecode" id=Expression_Mult data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Line-by-line Tour*doubleq*; 1: ex1-line1; 2: ex1-line2;*atype*'     >
 result = 2 * 2
 print(result)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Expression_Mult_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Expression_Mult_suffix" style="display:none">
-</pre><pre id="Expression_Mult_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Expression_Mult)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Expression_Mult_saveb').toggle();
-    $('#Expression_Mult_loadb').toggle();
-}
-if ($("#Expression_Mult").attr("lang") !== "html" && $("#Expression_Mult_code_div").parents(".admonition").length == 0 && $("#Expression_Mult_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Expression_Mult_code_div").offset({
-            left: $("#Expression_Mult .clearfix").offset().left
-        });
-    }
-    $("#Expression_Mult_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Expression_Mult_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Expression_Mult_runb").parent().siblings(".ac_output").show();
-            runit('Expression_Mult',this, undefined);
-            $("#Expression_Mult_runb").on("click", function(){
-                runit('Expression_Mult',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Expression_Mult_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Expression_Mult_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Expression_Mult_runb").on("click", function(){
-        runit('Expression_Mult',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <div class="section" id="bigteachernote-teacher-note-assignment-dyslexia">
 <h2><a class="reference internal" href="../_images/apple3.jpg"><img alt="teacher note" class="align-top" src="../_images/apple3.jpg" style="width: 50px;" /></a> Teacher Note: Assignment Dyslexia<a class="headerlink" href="#bigteachernote-teacher-note-assignment-dyslexia" title="Permalink to this headline">¶</a></h2>
 <p id="index-1">Some students will write the expression on the left side of the <code class="docutils literal"><span class="pre">=</span></code> and the variable name on the right side (<code class="docutils literal"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">a</span></code>).  This is called assignment dyslexia and will result in an error.  The variable name <em>always</em> has to be on the left side of the <code class="docutils literal"><span class="pre">=</span></code> in an assignment.</p>
@@ -430,101 +367,22 @@ else{
 <h2>Integer Division<a class="headerlink" href="#integer-division" title="Permalink to this headline">¶</a></h2>
 <p id="index-2">You can use all the standard mathematical symbols.</p>
 
-            <div id="3_2_2_Div" class="alert alert-warning">
-            csp-3-2-2: What will be printed when you click on the <em>Run</em> button in the code below? <input type='text' id='divBlank' class="form-control" style="display:inline; width: 150px;" value=""></input>
-            <script>
-            $(document).ready(function(){checkPreviousFIB('3_2_2_Div');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkFIBStorage('3_2_2_Div', 'divBlank', '^0.333333333333$',[['.*', 'Did you actually run the program?']], false)">Check Me</button>
-            <button class='btn btn-default' id="3_2_2_Div_bcomp" disabled name="compare" onclick="compareFITBAnswers('3_2_2_Div');">Compare Me</button>
-            <br />
-            <br />
-            <div id="3_2_2_Div_feedback">
-            </div>
-            </div>
+        <p data-component="fillintheblank" data-casei="false" id="3_2_2_Div_fill">
             
-<div id="cont"></div>
-<div id="Expression_Div" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Expression_Div_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Expression_Div_saveb" onclick="saveEditor('Expression_Div');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Expression_Div_loadb" onclick="requestCode('Expression_Div');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Expression_Div','result = 1 / 3*nline*print*open*result*close*','1','*doubleq*Line-by-line Tour*doubleq*; 1: ex2-line1; 2: ex1-line2;*atype*')"/>
-
-</div>
-<br/>
-<div id="Expression_Div_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Expression_Div_code" class="active_code" prefixcode="undefined" lang="python">
+        <span data-blank>
+            What will be printed when you click on the Run button in the code below?
+        <span data-feedback="regex" style="display: none" id="3_2_2_Div_feedback1">.*</span>
+        <span data-feedback="text" style="display: none" for="3_2_2_Div_feedback1">Did you actually run the program?</span>
+            
+        <span data-answer style="display: none" id="3_2_2_Div_answer">^0.333333333333$</span>
+        </span>
+        
+        </p>
+            
+<pre data-component="activecode" id=Expression_Div data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Line-by-line Tour*doubleq*; 1: ex2-line1; 2: ex1-line2;*atype*'     >
 result = 1 / 3
 print(result)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Expression_Div_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Expression_Div_suffix" style="display:none">
-</pre><pre id="Expression_Div_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Expression_Div)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Expression_Div_saveb').toggle();
-    $('#Expression_Div_loadb').toggle();
-}
-if ($("#Expression_Div").attr("lang") !== "html" && $("#Expression_Div_code_div").parents(".admonition").length == 0 && $("#Expression_Div_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Expression_Div_code_div").offset({
-            left: $("#Expression_Div .clearfix").offset().left
-        });
-    }
-    $("#Expression_Div_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Expression_Div_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Expression_Div_runb").parent().siblings(".ac_output").show();
-            runit('Expression_Div',this, undefined);
-            $("#Expression_Div_runb").on("click", function(){
-                runit('Expression_Div',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Expression_Div_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Expression_Div_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Expression_Div_runb").on("click", function(){
-        runit('Expression_Div',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This book is using Python 3.0 which returns a decimal value from an integer calculation like <code class="docutils literal"><span class="pre">1</span> <span class="pre">/</span> <span class="pre">3</span></code>.  If we had executed <code class="docutils literal"><span class="pre">1</span> <span class="pre">/</span> <span class="pre">3</span></code> in an older Python development environment it would have printed <code class="docutils literal"><span class="pre">0</span></code> instead.  In many languages if you are only using integers in calculations (whole numbers - like -3,65, -39028, 602939) the result will also be an integer and the factional part (part after the decimal point) is thrown away. In those environments it is important to use decimal values (like <code class="docutils literal"><span class="pre">1.0</span> <span class="pre">/</span> <span class="pre">2</span></code>, <code class="docutils literal"><span class="pre">1</span> <span class="pre">/</span> <span class="pre">2.0</span></code>, or <code class="docutils literal"><span class="pre">1.0</span> <span class="pre">/</span> <span class="pre">2.0</span></code>) if you want a decimal result.</p>
@@ -534,101 +392,22 @@ else{
 <h2>Modulo<a class="headerlink" href="#modulo" title="Permalink to this headline">¶</a></h2>
 <p id="index-3">There are also some symbols that may be used in ways that you don&#8217;t expect.</p>
 
-            <div id="3_2_3_Mod" class="alert alert-warning">
-            csp-3-2-3: What will be printed when you click on the <em>Run</em> button in the code below? <input type='text' id='modBlank' class="form-control" style="display:inline; width: 90px;" value=""></input>
-            <script>
-            $(document).ready(function(){checkPreviousFIB('3_2_3_Mod');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkFIBStorage('3_2_3_Mod', 'modBlank', '^0$',[['.*', 'Did you actually run the program?']], false)">Check Me</button>
-            <button class='btn btn-default' id="3_2_3_Mod_bcomp" disabled name="compare" onclick="compareFITBAnswers('3_2_3_Mod');">Compare Me</button>
-            <br />
-            <br />
-            <div id="3_2_3_Mod_feedback">
-            </div>
-            </div>
+        <p data-component="fillintheblank" data-casei="false" id="3_2_3_Mod_fill">
             
-<div id="cont"></div>
-<div id="Expression_Mod" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Expression_Mod_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Expression_Mod_saveb" onclick="saveEditor('Expression_Mod');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Expression_Mod_loadb" onclick="requestCode('Expression_Mod');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Expression_Mod','result = 4 % 2*nline*print*open*result*close*','1','*doubleq*Line-by-line Tour*doubleq*; 1: ex3-line1; 2: ex1-line2;*atype*')"/>
-
-</div>
-<br/>
-<div id="Expression_Mod_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Expression_Mod_code" class="active_code" prefixcode="undefined" lang="python">
+        <span data-blank>
+            What will be printed when you click on the Run button in the code below?
+        <span data-feedback="regex" style="display: none" id="3_2_3_Mod_feedback1">.*</span>
+        <span data-feedback="text" style="display: none" for="3_2_3_Mod_feedback1">Did you actually run the program?</span>
+            
+        <span data-answer style="display: none" id="3_2_3_Mod_answer">^0$</span>
+        </span>
+        
+        </p>
+            
+<pre data-component="activecode" id=Expression_Mod data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Line-by-line Tour*doubleq*; 1: ex3-line1; 2: ex1-line2;*atype*'     >
 result = 4 % 2
 print(result)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Expression_Mod_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Expression_Mod_suffix" style="display:none">
-</pre><pre id="Expression_Mod_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Expression_Mod)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Expression_Mod_saveb').toggle();
-    $('#Expression_Mod_loadb').toggle();
-}
-if ($("#Expression_Mod").attr("lang") !== "html" && $("#Expression_Mod_code_div").parents(".admonition").length == 0 && $("#Expression_Mod_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Expression_Mod_code_div").offset({
-            left: $("#Expression_Mod .clearfix").offset().left
-        });
-    }
-    $("#Expression_Mod_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Expression_Mod_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Expression_Mod_runb").parent().siblings(".ac_output").show();
-            runit('Expression_Mod',this, undefined);
-            $("#Expression_Mod_runb").on("click", function(){
-                runit('Expression_Mod',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Expression_Mod_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Expression_Mod_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Expression_Mod_runb").on("click", function(){
-        runit('Expression_Mod',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>You may not be familiar with the <strong>modulo</strong> (remainder) operator <code class="docutils literal"><span class="pre">%</span></code>.  It returns the remainder when you divide the first number by the second.  You probably did this long ago when you were learning long division.  In the case of <code class="docutils literal"><span class="pre">4</span> <span class="pre">%</span> <span class="pre">2</span></code>, <code class="docutils literal"><span class="pre">2</span></code> goes into <code class="docutils literal"><span class="pre">4</span></code> two times with a remainder of <code class="docutils literal"><span class="pre">0</span></code>.  The result of <code class="docutils literal"><span class="pre">5</span> <span class="pre">%</span> <span class="pre">2</span></code> would be <code class="docutils literal"><span class="pre">1</span></code> since <code class="docutils literal"><span class="pre">2</span></code> goes into <code class="docutils literal"><span class="pre">5</span></code>, two times with a remainder of <code class="docutils literal"><span class="pre">1</span></code>. In fact you can check if the result of <code class="docutils literal"><span class="pre">X</span> <span class="pre">%</span> <span class="pre">2</span></code> is equal to <code class="docutils literal"><span class="pre">1</span></code> to see if <code class="docutils literal"><span class="pre">X</span></code> is odd and if the result of <code class="docutils literal"><span class="pre">X</span> <span class="pre">%</span> <span class="pre">2</span></code> is equal to <code class="docutils literal"><span class="pre">0</span></code> then <code class="docutils literal"><span class="pre">X</span></code> is even.</p>
 <div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="../_images/mod-py.png"><img alt="../_images/mod-py.png" src="../_images/mod-py.png" style="width: 150px;" /></a>
@@ -669,7 +448,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

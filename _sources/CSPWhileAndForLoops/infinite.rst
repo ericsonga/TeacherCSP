@@ -40,7 +40,7 @@ Since ``1`` will always be equal to ``1``, the two ``print`` statements will jus
 .. note::
    The expression ``1 == 1`` tests if 1 is equal to 1.  Remember that ``x = 3`` sets the value of x to 3, it doesn't test if x is equal to 3.  To do that use ``x == 3``.  
 
-We ran the following code in a form of Python where he could stop the computer easily:
+We ran the following code in a form of Python where we could stop the computer easily:
 
 .. sourcecode:: python
 
@@ -55,17 +55,17 @@ We ran the following code in a form of Python where he could stop the computer e
 	Forever
 	Looping
 	Forever
-
+	
 (We stopped the computer around this point.)
 
 .. mchoicemf:: 8_2_1_While_Inf_NumLines
-		  :answer_a: 1
-		  :answer_b: 2
-		  :answer_c: 3
-		  :correct: b
-		  :feedback_a: All the statements that are indented 4 spaces to the right of the <code>while</code> are part of the body of the loop.
-		  :feedback_b: There are two statements that are indented 4 spaces to the right of the <code>while</code> statement, so there are two statements in the body of this loop.
-		  :feedback_c: There are three lines here total, but not all of them are in the body of the loop.
+   :answer_a: 1
+   :answer_b: 2
+   :answer_c: 3
+   :correct: b
+   :feedback_a: All the statements that are indented 4 spaces to the right of the <code>while</code> are part of the body of the loop.
+   :feedback_b: There are two statements that are indented 4 spaces to the right of the <code>while</code> statement, so there are two statements in the body of this loop.
+   :feedback_c: There are three lines here total, but not all of them are in the body of the loop.
 
-	   	  How many lines are in the body of the ``while`` loop in shown above?
+   How many lines are in the body of the ``while`` loop in shown above?
 

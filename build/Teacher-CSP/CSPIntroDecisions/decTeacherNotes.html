@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -86,7 +101,7 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
-    <link rel="next" title="Chapter 12 - Summary" href="ch12_summary.html" />
+    <link rel="next" title="Chapter 12 Exercises" href="ch12_exercises.html" />
     <link rel="prev" title="Using if and else" href="ifAndElse.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -289,8 +305,8 @@
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Chapter 12 - Summary' data-toggle="tooltip" >
-    <a href="ch12_summary.html" >
+  <li id="relations-next" title='Next Chapter - Chapter 12 Exercises' data-toggle="tooltip" >
+    <a href="ch12_exercises.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -325,22 +341,7 @@
 <p>We don&#8217;t recommend that you require students to use <code class="docutils literal"><span class="pre">else</span></code> right away.  It actually makes code <strong>much</strong> harder for students to <em>read</em>.  Using an <code class="docutils literal"><span class="pre">else</span></code> hides away the condition when the <code class="docutils literal"><span class="pre">else</span></code> block would execute.  Beginning students are having enough trouble just reading the code and making sense of it.  Using an <code class="docutils literal"><span class="pre">else</span></code> hides away clues to how the program is working.  Studies show that making the test <em>explicit</em> makes it <strong>ten times</strong> easier for beginning students to read programs with <code class="docutils literal"><span class="pre">if</span></code> statements.</p>
 <p>To do a something like an <code class="docutils literal"><span class="pre">else</span></code> using two <code class="docutils literal"><span class="pre">if</span></code> statements, use a <cite>not</cite>.</p>
 
-<div id="cont"></div>
-<div id="if_and_not_if" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="if_and_not_if_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="if_and_not_if_saveb" onclick="saveEditor('if_and_not_if');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="if_and_not_if_loadb" onclick="requestCode('if_and_not_if');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('if_and_not_if','weight = 0.5*nline*if weight < 1:*nline*    price = 1.45*nline*if not weight < 1:*nline*    price = 1.15*nline*total = weight * price*nline*print*open*weight*close**nline*print*open*price*close**nline*print*open*total*close*','1','*doubleq*Structural Tour*doubleq*; 1: c1-line1; 2-3: c3-line2-3; 4-5: c6-line4-5; 6: c1-line6; 7-9: c3f-line7-9;*atype*')"/>
-<button class='btn btn-default' id="if_and_not_if_vizb" onclick="injectCodelens(this,'if_and_not_if');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="if_and_not_if_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="if_and_not_if_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=if_and_not_if data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Structural Tour*doubleq*; 1: c1-line1; 2-3: c3-line2-3; 4-5: c6-line4-5; 6: c1-line6; 7-9: c3f-line7-9;*atype*'     >
 weight = 0.5
 if weight < 1:
     price = 1.45
@@ -350,71 +351,7 @@ total = weight * price
 print(weight)
 print(price)
 print(total)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="if_and_not_if_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="if_and_not_if_suffix" style="display:none">
-</pre><pre id="if_and_not_if_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (if_and_not_if)</span> </p>
-<div id="if_and_not_if_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#if_and_not_if_saveb').toggle();
-    $('#if_and_not_if_loadb').toggle();
-}
-if ($("#if_and_not_if").attr("lang") !== "html" && $("#if_and_not_if_code_div").parents(".admonition").length == 0 && $("#if_and_not_if_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#if_and_not_if_code_div").offset({
-            left: $("#if_and_not_if .clearfix").offset().left
-        });
-    }
-    $("#if_and_not_if_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#if_and_not_if_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#if_and_not_if_runb").parent().siblings(".ac_output").show();
-            runit('if_and_not_if',this, undefined);
-            $("#if_and_not_if_runb").on("click", function(){
-                runit('if_and_not_if',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#if_and_not_if_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#if_and_not_if_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#if_and_not_if_runb").on("click", function(){
-        runit('if_and_not_if',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 </div>
 <div class="section" id="bigteachernote-sneak-up-on-and-and-or">
 <h1><a class="reference internal" href="../_images/apple1.jpg"><img alt="teacher note" class="align-top" src="../_images/apple1.jpg" style="width: 50px;" /></a> Sneak up on and and or<a class="headerlink" href="#bigteachernote-sneak-up-on-and-and-or" title="Permalink to this headline">¶</a></h1>
@@ -424,13 +361,13 @@ else{
 </div>
 <div class="section" id="bigteachernote-teacher-note-confusing-while-and-if">
 <h1><a class="reference internal" href="../_images/apple1.jpg"><img alt="teacher note" class="align-top" src="../_images/apple1.jpg" style="width: 50px;" /></a> Teacher Note: Confusing while and if<a class="headerlink" href="#bigteachernote-teacher-note-confusing-while-and-if" title="Permalink to this headline">¶</a></h1>
-<p>A <code class="docutils literal"><span class="pre">while</span></code> loop and an <code class="docutils literal"><span class="pre">if</span></code> loop <strong>look</strong> almost the same.  They each have a logical expression, and a block of instructions underneath them.</p>
+<p>A <code class="docutils literal"><span class="pre">while</span></code> loop and an <code class="docutils literal"><span class="pre">if</span></code> block <strong>look</strong> almost the same.  They each have a logical expression, and a block of instructions underneath them.</p>
 <p>Students often get them confused.  Some key distinctions to make to students:</p>
 <ul class="simple">
 <li>An <code class="docutils literal"><span class="pre">if</span></code> block executes only once.  It does the test, then executes the instructions indented underneath <em>once</em>.</li>
 <li>A <code class="docutils literal"><span class="pre">while</span></code> block executes <strong>repeatedly</strong> <em>as long as the expression is true</em>.  The body of the loop can be executed <em>many</em> times.</li>
 </ul>
-<p>When you show students examples of <code class="docutils literal"><span class="pre">while</span></code> loops, make sure that you choose examples where the body of the loop gets executed several times, to show a difference from <code class="docutils literal"><span class="pre">if</span></code>.  When you trace the program, trace more than one iteration through the body of the loop, to emphasize the multiple times.</p>
+<p>When you show students examples of <code class="docutils literal"><span class="pre">while</span></code> loops, make sure that you choose examples where the body of the loop gets executed several times, to show the difference between <code class="docutils literal"><span class="pre">while</span></code> loops and an <code class="docutils literal"><span class="pre">if</span></code> block.  When you trace the program, trace more than one iteration through the body of the loop, to emphasize the multiple times.</p>
 </div>
 
 
@@ -443,12 +380,12 @@ else{
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="ifAndElse.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - Chapter 12 - Summary' data-toggle="tooltip" >
-    <a href="ch12_summary.html" >
+  <li id="relations-next" class="navLink" title='Next Section - Chapter 12 Exercises' data-toggle="tooltip" >
+    <a href="ch12_exercises.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="ch12_summary.html" >Next Section - Chapter 12 - Summary</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="ch12_exercises.html" >Next Section - Chapter 12 Exercises</a>
 
 <script type="text/javascript">
 
@@ -461,7 +398,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

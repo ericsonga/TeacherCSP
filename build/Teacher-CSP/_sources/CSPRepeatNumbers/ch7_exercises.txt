@@ -23,7 +23,7 @@ Chapter 7 Exercises
 
         .. tab:: Question
             
-            Fix lines 1 and 2 below to create the code to add up all the numbers from 1 to 5 and print the sum. 
+            Complete lines 1 and 2 below to create the code to add up all the numbers from 1 to 5 and print the sum. 
 
             .. activecode:: ch7ex1q
                 :nocodelens:

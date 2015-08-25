@@ -72,7 +72,7 @@ Since the outer loop changes the  x (the column) and the inner loop changes the 
     for x in range(img.getWidth()):
     	for y in range(img.getHeight()):
         
-			# STEP 4: GET THE DATA
+            # STEP 4: GET THE DATA
             p = img.getPixel(x, y)
             
             # STEP 5: MODIFY THE COLOR

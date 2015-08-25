@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -322,12 +338,8 @@
 <h1>What&#8217;s the largest pollution values?<a class="headerlink" href="#what-s-the-largest-pollution-values" title="Permalink to this headline">¶</a></h1>
 <p>This program uses the same data file that we have been using, but if you want to see <strong>all</strong> of the data click on the <em>Show</em> button below.  Once it appears, you can hide it again by clicking on the <em>Hide</em> button.</p>
 
-    <button type='button' id='pol_Data4_show' class='btn btn-default reveal_button' style='margin-bottom:10px;' onclick="$(this).hide();$('#pol_Data4').show();$('#pol_Data4_hide').show();$('#pol_Data4').find('.CodeMirror').each(function(i, el){el.CodeMirror.refresh();});">
-        Show
-    </button>
-    <button type='button' id='pol_Data4_hide' class='btn btn-default reveal_button' onclick="$(this).hide();$('#pol_Data4').hide();$('#pol_Data4_show').show();" style='display:none'>Hide</button>
-    <div id='pol_Data4' style='display:none'>
-<pre id="uspoll.txt">
+    <div data-component="reveal" id="pol_Data4"   data-showtitle="Show" data-hidetitle="Hide">
+    <pre id="uspoll.txt">
 Aberdeen, SD :13 :8
 Adrian, MI :15 :9
 Akron, OH :18 :11
@@ -709,23 +721,9 @@ Yuba City, CA :12 :7
 Yuma, AZ :14 :9
 </pre>
     </div>
-<p>One of the interesting questions to explore is, &#8220;Which city has the worst pollution?&#8221; The program below figures that out for the PM 2.5 value.  It will read all the data in, then set <code class="docutils literal"><span class="pre">max25</span></code> (the maximum PM 2.5 value) to zero.  It will then loop through all the city data and if the current pollution (in <code class="docutils literal"><span class="pre">new25</span></code>) is greater than <code class="docutils literal"><span class="pre">max25</span></code>, it will save that value in <code class="docutils literal"><span class="pre">max25</span></code> and save that city name as <code class="docutils literal"><span class="pre">maxCity</span></code>.  We need the <code class="docutils literal"><span class="pre">float</span></code> function to convert the string into a number that we can compare.</p>
+    <p>One of the interesting questions to explore is, &#8220;Which city has the worst pollution?&#8221; The program below figures that out for the PM 2.5 value.  It will read all the data in, then set <code class="docutils literal"><span class="pre">max25</span></code> (the maximum PM 2.5 value) to zero.  It will then loop through all the city data and if the current pollution (in <code class="docutils literal"><span class="pre">new25</span></code>) is greater than <code class="docutils literal"><span class="pre">max25</span></code>, it will save that value in <code class="docutils literal"><span class="pre">max25</span></code> and save that city name as <code class="docutils literal"><span class="pre">maxCity</span></code>.  We need the <code class="docutils literal"><span class="pre">float</span></code> function to convert the string into a number that we can compare.</p>
 
-<div id="cont"></div>
-<div id="max25" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="max25_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="max25_saveb" onclick="saveEditor('max25');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="max25_loadb" onclick="requestCode('max25');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('max25','inFile = open*open**doubleq*uspoll.txt*doubleq*,*doubleq*r*doubleq**close**nline*lines = inFile.readlines*open**close**nline*inFile.close*open**close**nline**nline*maxCity = *singleq**singleq**nline*max25 = 0 # initialize max25*nline*for line in lines:*nline*    values = line.split*open**doubleq*:*doubleq**close**nline*    new25 = float*open*values[2]*close* # get the current value*nline*    if new25 > max25:*nline*        maxCity = values[0]*nline*        max25 = new25 # save the new maximum*nline*print*open**doubleq*Largest PM 2.5 value is *doubleq*,max25,*doubleq* in *doubleq*,maxCity*close*','1','*doubleq*Structural tour*doubleq*; 1: web3-line1; 2: web3-line2; 3: web3-line3; 5: web3-line5; 6: web3-line6; 7: web3-line7; 8: web3-line8; 9: web3-line9; 10: web3-line10; 11: web3-line11; 12: web3-line12; 13: web3-line13;*atype*')"/>
-
-</div>
-<br/>
-<div id="max25_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="max25_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=max25 data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Structural tour*doubleq*; 1: web3-line1; 2: web3-line2; 3: web3-line3; 5: web3-line5; 6: web3-line6; 7: web3-line7; 8: web3-line8; 9: web3-line9; 10: web3-line10; 11: web3-line11; 12: web3-line12; 13: web3-line13;*atype*'     >
 inFile = open("uspoll.txt","r")
 lines = inFile.readlines()
 inFile.close()
@@ -739,207 +737,40 @@ for line in lines:
         maxCity = values[0]
         max25 = new25 # save the new maximum
 print("Largest PM 2.5 value is ",max25," in ",maxCity)
-</textarea>
-</div>
+</pre>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="max25_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="max25_suffix" style="display:none">
-</pre><pre id="max25_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (max25)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#max25_saveb').toggle();
-    $('#max25_loadb').toggle();
-}
-if ($("#max25").attr("lang") !== "html" && $("#max25_code_div").parents(".admonition").length == 0 && $("#max25_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#max25_code_div").offset({
-            left: $("#max25 .clearfix").offset().left
-        });
-    }
-    $("#max25_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#max25_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#max25_runb").parent().siblings(".ac_output").show();
-            runit('max25',this, undefined);
-            $("#max25_runb").on("click", function(){
-                runit('max25',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#max25_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#max25_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#max25_runb").on("click", function(){
-        runit('max25',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="18_4_3_max10" class="alert alert-warning">
-            csp-18-4-1: Which of the following would return the value of the PM 10 pollution instead at line 9?<form name="18_4_3_max10_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="18_4_3_max10_opt_a" />
-            <label for= "18_4_3_max10_opt_a">  a) new10 = float(values[0])</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="18_4_3_max10">
+            csp-18-4-1: Which of the following would return the value of the PM 10 pollution instead at line 9?
+            <li data-component="answer"  id="18_4_3_max10_opt_a">new10 = float(values[0])</li><li data-component="feedback" id="18_4_3_max10_opt_a">This would get the city and state.</li>
             
-            <input type="radio" name="group1" value="b" id="18_4_3_max10_opt_b" />
-            <label for= "18_4_3_max10_opt_b">  b) new10 = float(values[1])</label><br />
+            <li data-component="answer" data-correct id="18_4_3_max10_opt_b">new10 = float(values[1])</li><li data-component="feedback" id="18_4_3_max10_opt_b">This gets the value of PM 10.</li>
             
-            <input type="radio" name="group1" value="c" id="18_4_3_max10_opt_c" />
-            <label for= "18_4_3_max10_opt_c">  c) new10 = float(values[2])</label><br />
+            <li data-component="answer"  id="18_4_3_max10_opt_c">new10 = float(values[2])</li><li data-component="feedback" id="18_4_3_max10_opt_c">This gets the value of PM 2.5.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('18_4_3_max10');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('18_4_3_max10','b',['This would get the city and state.', 'This gets the value of PM 10.', 'This gets the value of PM 2.5.'])">Check Me</button>
-            <button class='btn btn-default' id="18_4_3_max10_bcomp" disabled name="compare" onclick="compareAnswers('18_4_3_max10');">Compare Me</button>
-            </form><br />
-            <div id="18_4_3_max10_feedback">
-            </div>
-            </div>
-            <div id='tab_max_pol' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#tab_max_pol-Max_Polution_10_Exercise'><span>Max_Polution_10_Exercise</span></a>
-</li>
+            </ul>
+            <div id='tab_max_pol' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Max_Polution_10_Exercise" >
+<p>Replace the lines that start with a comment (a <code class="docutils literal"><span class="pre">#</span></code>) below to find the city with the highest PM 10 pollution.  If you have trouble solving this, you can look at the other tab which shows a solution.</p>
 
-<li>
-    <a data-toggle='tab' href='#tab_max_pol-Max_Polution_10_Answer'><span>Max_Polution_10_Answer</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='tab_max_pol-Max_Polution_10_Exercise'><p>Replace the lines that start with a comment (a <code class="docutils literal"><span class="pre">#</span></code>) below to find the city with the highest PM 10 pollution.  If you have trouble solving this, you can look at the other tab which shows a solution.</p>
-
-<div id="cont"></div>
-<div id="max10" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="max10_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="max10_saveb" onclick="saveEditor('max10');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="max10_loadb" onclick="requestCode('max10');">Load</button>
-
-</div>
-<br/>
-<div id="max10_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="max10_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=max10 data-lang="python"    data-timelimit=25000   data-audio=''     >
 inFile = open("uspoll.txt","r")
 lines = inFile.readlines()
 inFile.close()
 
- maxCity = ''
- # initialize max10 here
- for line in lines:
-     values = line.split(":")
-     # set the value for new10 to be the current PM 10 value
-     if new10 > max10:
-         maxCity = values[0]
-         # save the new maximum
- print("Largest PM 10 value is ",max10," in ",maxCity)
-</textarea>
-</div>
+maxCity = ''
+# initialize max10 here
+for line in lines:
+    values = line.split(":")
+    # set the value for new10 to be the current PM 10 value
+    if new10 > max10:
+        maxCity = values[0]
+        # save the new maximum
+print("Largest PM 10 value is ",max10," in ",maxCity)
+</pre>
+</div><div data-component="tab" data-tabname="Max_Polution_10_Answer" >
+<p>Change the lines that start with a comment (a <code class="docutils literal"><span class="pre">#</span></code>) below to find the city with the highest PM 10 pollution.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="max10_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="max10_suffix" style="display:none">
-</pre><pre id="max10_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (max10)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#max10_saveb').toggle();
-    $('#max10_loadb').toggle();
-}
-if ($("#max10").attr("lang") !== "html" && $("#max10_code_div").parents(".admonition").length == 0 && $("#max10_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#max10_code_div").offset({
-            left: $("#max10 .clearfix").offset().left
-        });
-    }
-    $("#max10_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#max10_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#max10_runb").parent().siblings(".ac_output").show();
-            runit('max10',this, undefined);
-            $("#max10_runb").on("click", function(){
-                runit('max10',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#max10_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#max10_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#max10_runb").on("click", function(){
-        runit('max10',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='tab_max_pol-Max_Polution_10_Answer'><p>Change the lines that start with a comment (a <code class="docutils literal"><span class="pre">#</span></code>) below to find the city with the highest PM 10 pollution.</p>
-
-<div id="cont"></div>
-<div id="max10_answer" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="max10_answer_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="max10_answer_saveb" onclick="saveEditor('max10_answer');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="max10_answer_loadb" onclick="requestCode('max10_answer');">Load</button>
-
-</div>
-<br/>
-<div id="max10_answer_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="max10_answer_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=max10_answer data-lang="python"    data-timelimit=25000   data-audio=''     >
 inFile = open("uspoll.txt","r")
 lines = inFile.readlines()
 inFile.close()
@@ -953,116 +784,21 @@ for line in lines:
         maxCity = values[0]
         max10 = new10  # save the new maximum
 print("Largest PM 10 value is ",max10," in ",maxCity)
-</textarea>
+</pre>
 </div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="max10_answer_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="max10_answer_suffix" style="display:none">
-</pre><pre id="max10_answer_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (max10_answer)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#max10_answer_saveb').toggle();
-    $('#max10_answer_loadb').toggle();
-}
-if ($("#max10_answer").attr("lang") !== "html" && $("#max10_answer_code_div").parents(".admonition").length == 0 && $("#max10_answer_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#max10_answer_code_div").offset({
-            left: $("#max10_answer .clearfix").offset().left
-        });
-    }
-    $("#max10_answer_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#max10_answer_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#max10_answer_runb").parent().siblings(".ac_output").show();
-            runit('max10_answer',this, undefined);
-            $("#max10_answer_runb").on("click", function(){
-                runit('max10_answer',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#max10_answer_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#max10_answer_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#max10_answer_runb").on("click", function(){
-        runit('max10_answer',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div></div>
     </div>
-    <script type='text/javascript'>
-        $('#tab_max_pol .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
 
-        // activate the first tab
-        var el = $('#tab_max_pol .nav-tabs a')[0];
-        $(el).tab('show');
 
-        $('#tab_max_pol .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
-
-            <div id="18_4_3_max10_max25_q" class="alert alert-warning">
-            csp-18-4-2: Which of the following is true about the cities with the maximum PM 2.5 and PM 10 values?<form name="18_4_3_max10_max25_q_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="18_4_3_max10_max25_q_opt_a" />
-            <label for= "18_4_3_max10_max25_q_opt_a">  a) The same city has the maximum value for both PM 2.5 and PM 10.</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="18_4_3_max10_max25_q">
+            csp-18-4-2: Which of the following is true about the cities with the maximum PM 2.5 and PM 10 values?
+            <li data-component="answer" data-correct id="18_4_3_max10_max25_q_opt_a">The same city has the maximum value for both PM 2.5 and PM 10.</li><li data-component="feedback" id="18_4_3_max10_max25_q_opt_a">Fresno, CA is the worst for both.</li>
             
-            <input type="radio" name="group1" value="b" id="18_4_3_max10_max25_q_opt_b" />
-            <label for= "18_4_3_max10_max25_q_opt_b">  b) Different cities have the maximums, but they are in the same state.</label><br />
+            <li data-component="answer"  id="18_4_3_max10_max25_q_opt_b">Different cities have the maximums, but they are in the same state.</li><li data-component="feedback" id="18_4_3_max10_max25_q_opt_b">Check that are using values[1] to find the worst PM 10.</li>
             
-            <input type="radio" name="group1" value="c" id="18_4_3_max10_max25_q_opt_c" />
-            <label for= "18_4_3_max10_max25_q_opt_c">  c) Different cities in different states have the maximum values.</label><br />
+            <li data-component="answer"  id="18_4_3_max10_max25_q_opt_c">Different cities in different states have the maximum values.</li><li data-component="feedback" id="18_4_3_max10_max25_q_opt_c">You did not actually run and change the program, did you?</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('18_4_3_max10_max25_q');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('18_4_3_max10_max25_q','a',['Fresno, CA is the worst for both.', 'Check that are using values[1] to find the worst PM 10.', 'You did not actually run and change the program, did you?'])">Check Me</button>
-            <button class='btn btn-default' id="18_4_3_max10_max25_q_bcomp" disabled name="compare" onclick="compareAnswers('18_4_3_max10_max25_q');">Compare Me</button>
-            </form><br />
-            <div id="18_4_3_max10_max25_q_feedback">
-            </div>
-            </div>
+            </ul>
             </div>
 
 
@@ -1093,7 +829,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

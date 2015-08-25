@@ -40,6 +40,8 @@ We can generate random numbers in Python using the ``randrange`` function in the
        	randX = random.randrange(minX, maxX)
        	randY = random.randrange(minY, maxY)
        	jaz.goto(randX,randY)
+       	
+Can you modify the code above to use 3 different colors?  You can use ``num % 3`` to give you 3 possible results.  
        
 .. mchoicemf:: 14_4_1_randrange1
    :answer_a: randX = random.randrange(minX, maxX)

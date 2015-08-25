@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -320,58 +336,32 @@
   
   <div class="section" id="exam-questions-for-chapters-12-and-13">
 <h1>Exam Questions for Chapters 12 and 13<a class="headerlink" href="#exam-questions-for-chapters-12-and-13" title="Permalink to this headline">¶</a></h1>
-<p>The following questions test what you have learned in chapters 12 to 13. Click the &#8220;Start&#8221; button when you are ready to begin the exam.  Click the &#8220;Pause&#8221; button to pause the exam (you will not be able to see the questions when the exam is paused).  Hover over the clock icon to see how much time you have spent on the exam, but you have unlimited time.  Click on the &#8220;Submit Answers&#8221; button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.</p>
+<p>The following questions test what you have learned in chapters 12 to 13. Click the &#8220;Start&#8221; button when you are ready to begin the exam.  Click the &#8220;Pause&#8221; button to pause the exam (you will not be able to see the questions when the exam is paused).  It will show how much time you have used, but you have unlimited time.  Click on the &#8220;Submit answers&#8221; button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.</p>
 <p>You will not be able to change your answers after you hit the &#8220;Submit Answers&#8221; button.</p>
 
-           <div id="startWrapper">
-		    <p id="timeOutput"></p>
-		    </div>
-		    
-		    <div id="controls" style="text-align: center;">
-			<button class='btn btn-inverse' id ="examButton" onclick="handleExamButtonClick()">Start</button>
-	        </div>
-            <div id='timed_Test' style='display:none'>
-            
-            <div id="e12a13_1" class="alert alert-warning">
-            <p>13-6-1: Given the code below, what describes the values of x that will cause the code to print &#8220;condition true&#8221;?</p>
+    <ul data-component="timedAssessment"  id="ch12a13ex"  >
+    
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e12a13_1">
+            <p>13-7-1: Given the code below, what describes the values of x that will cause the code to print &#8220;condition true&#8221;?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
     <span class="k">print</span> <span class="p">(</span><span class="s">&quot;condition true&quot;</span><span class="p">)</span>
 <span class="k">print</span> <span class="p">(</span><span class="s">&quot;All done&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e12a13_1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e12a13_1_opt_a" />
-            <label for= "e12a13_1_opt_a">  a) 5 to 20</label><br />
-	        <div id= "e12a13_1_eachFeedback_a"></div>
+            <li data-component="answer"  id="e12a13_1_opt_a">5 to 20</li><li data-component="feedback" id="e12a13_1_opt_a">This would be true if it was if x >= 5 and x <= 20:</li>
             
-            <input type="radio" name="group1" value="b" id="e12a13_1_opt_b" />
-            <label for= "e12a13_1_opt_b">  b) 6 to 20</label><br />
-	        <div id= "e12a13_1_eachFeedback_b"></div>
+            <li data-component="answer"  id="e12a13_1_opt_b">6 to 20</li><li data-component="feedback" id="e12a13_1_opt_b">This would be true if it was if x > 5 and x <= 20:</li>
             
-            <input type="radio" name="group1" value="c" id="e12a13_1_opt_c" />
-            <label for= "e12a13_1_opt_c">  c) 5 to 19</label><br />
-	        <div id= "e12a13_1_eachFeedback_c"></div>
+            <li data-component="answer" data-correct id="e12a13_1_opt_c">5 to 19</li><li data-component="feedback" id="e12a13_1_opt_c">It will print "condition true" when x is greater than or equal to 5 and less than 20.</li>
             
-            <input type="radio" name="group1" value="d" id="e12a13_1_opt_d" />
-            <label for= "e12a13_1_opt_d">  d) 6 to 19</label><br />
-	        <div id= "e12a13_1_eachFeedback_d"></div>
+            <li data-component="answer"  id="e12a13_1_opt_d">6 to 19</li><li data-component="feedback" id="e12a13_1_opt_d">This would be true if it was if x > 5 and x < 20:</li>
             
 
-            <script>
-		    populateArrays('e12a13_1','c',['This would be true if it was if x \u003E\u003D 5 and x \u003C\u003D 20:', 'This would be true if it was if x \u003E 5 and x \u003C\u003D 20:', 'It will print \u0022condition true\u0022 when x is greater than or equal to 5 and less than 20.', 'This would be true if it was if x \u003E 5 and x \u003C 20:']);
-            $(document).ready(function(){checkExamRadio('e12a13_1');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e12a13_1_feedback">
-            </div>
-            </div>
-            
-            <div id="e12a13_2" class="alert alert-warning">
-            <p>13-6-2: What is printed when the following code executes?</p>
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e12a13_2">
+            <p>13-7-2: What is printed when the following code executes?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">score</span> <span class="o">=</span> <span class="mi">88</span>
 <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
     <span class="n">grade</span> <span class="o">=</span> <span class="s">&quot;A&quot;</span>
@@ -387,42 +377,21 @@
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e12a13_2_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e12a13_2_opt_a" />
-            <label for= "e12a13_2_opt_a">  a) A</label><br />
-	        <div id= "e12a13_2_eachFeedback_a"></div>
+            <li data-component="answer"  id="e12a13_2_opt_a">A</li><li data-component="feedback" id="e12a13_2_opt_a">This would be true if the score was greater than or equal to 90</li>
             
-            <input type="radio" name="group1" value="b" id="e12a13_2_opt_b" />
-            <label for= "e12a13_2_opt_b">  b) B</label><br />
-	        <div id= "e12a13_2_eachFeedback_b"></div>
+            <li data-component="answer" data-correct id="e12a13_2_opt_b">B</li><li data-component="feedback" id="e12a13_2_opt_b">Since the score is less than 90 and greater than or equal to 80 "B" will print.</li>
             
-            <input type="radio" name="group1" value="c" id="e12a13_2_opt_c" />
-            <label for= "e12a13_2_opt_c">  c) C</label><br />
-	        <div id= "e12a13_2_eachFeedback_c"></div>
+            <li data-component="answer"  id="e12a13_2_opt_c">C</li><li data-component="feedback" id="e12a13_2_opt_c">This would be true if the score was less than 80 and greater than or equal to 70.</li>
             
-            <input type="radio" name="group1" value="d" id="e12a13_2_opt_d" />
-            <label for= "e12a13_2_opt_d">  d) D</label><br />
-	        <div id= "e12a13_2_eachFeedback_d"></div>
+            <li data-component="answer"  id="e12a13_2_opt_d">D</li><li data-component="feedback" id="e12a13_2_opt_d">This would be true if the score was less than 70 and greater than or equal to 60.</li>
             
-            <input type="radio" name="group1" value="e" id="e12a13_2_opt_e" />
-            <label for= "e12a13_2_opt_e">  e) E</label><br />
-	        <div id= "e12a13_2_eachFeedback_e"></div>
+            <li data-component="answer"  id="e12a13_2_opt_e">E</li><li data-component="feedback" id="e12a13_2_opt_e">This would be true if the score was less than 60.</li>
             
 
-            <script>
-		    populateArrays('e12a13_2','b',['This would be true if the score was greater than or equal to 90', 'Since the score is less than 90 and greater than or equal to 80 \u0022B\u0022 will print.', 'This would be true if the score was less than 80 and greater than or equal to 70.', 'This would be true if the score was less than 70 and greater than or equal to 60.', 'This would be true if the score was less than 60.']);
-            $(document).ready(function(){checkExamRadio('e12a13_2');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e12a13_2_feedback">
-            </div>
-            </div>
-            
-            <div id="e12a13_3" class="alert alert-warning">
-            <p>13-6-3: For what value of num will the following print only &#8220;You will meet a new friend.&#8221;?</p>
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e12a13_3">
+            <p>13-7-3: For what value of num will the following print only &#8220;You will meet a new friend.&#8221;?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="ow">or</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">&quot;You will get a treat.&quot;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">or</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -436,38 +405,19 @@
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e12a13_3_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e12a13_3_opt_a" />
-            <label for= "e12a13_3_opt_a">  a) 3</label><br />
-	        <div id= "e12a13_3_eachFeedback_a"></div>
+            <li data-component="answer"  id="e12a13_3_opt_a">3</li><li data-component="feedback" id="e12a13_3_opt_a">This will print several things.</li>
             
-            <input type="radio" name="group1" value="b" id="e12a13_3_opt_b" />
-            <label for= "e12a13_3_opt_b">  b) 25</label><br />
-	        <div id= "e12a13_3_eachFeedback_b"></div>
+            <li data-component="answer"  id="e12a13_3_opt_b">25</li><li data-component="feedback" id="e12a13_3_opt_b">This will only print "You will ace a test"</li>
             
-            <input type="radio" name="group1" value="c" id="e12a13_3_opt_c" />
-            <label for= "e12a13_3_opt_c">  c) 45</label><br />
-	        <div id= "e12a13_3_eachFeedback_c"></div>
+            <li data-component="answer" data-correct id="e12a13_3_opt_c">45</li><li data-component="feedback" id="e12a13_3_opt_c">This will only print "You will meet a new friend"</li>
             
-            <input type="radio" name="group1" value="d" id="e12a13_3_opt_d" />
-            <label for= "e12a13_3_opt_d">  d) 10</label><br />
-	        <div id= "e12a13_3_eachFeedback_d"></div>
+            <li data-component="answer"  id="e12a13_3_opt_d">10</li><li data-component="feedback" id="e12a13_3_opt_d">This will only print "You will catch a cold"</li>
             
 
-            <script>
-		    populateArrays('e12a13_3','c',['This will print several things.', 'This will only print \u0022You will ace a test\u0022', 'This will only print \u0022You will meet a new friend\u0022', 'This will only print \u0022You will catch a cold\u0022']);
-            $(document).ready(function(){checkExamRadio('e12a13_3');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e12a13_3_feedback">
-            </div>
-            </div>
-            
-            <div id="e12a13_4" class="alert alert-warning">
-            <p>13-6-4: Which of the following is equivalent to the code segment below?</p>
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e12a13_4">
+            <p>13-7-4: Which of the following is equivalent to the code segment below?</p>
 <div class="highlight-python"><div class="highlight"><pre>if x &gt; 2:
     x = x * 2
 if x &gt; 4:
@@ -485,38 +435,19 @@ IV.  if x &gt; 2:
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e12a13_4_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e12a13_4_opt_a" />
-            <label for= "e12a13_4_opt_a">  a) I</label><br />
-	        <div id= "e12a13_4_eachFeedback_a"></div>
+            <li data-component="answer"  id="e12a13_4_opt_a">I</li><li data-component="feedback" id="e12a13_4_opt_a">This would always set x to 0 but if x was 1 in the original code it would not change.</li>
             
-            <input type="radio" name="group1" value="b" id="e12a13_4_opt_b" />
-            <label for= "e12a13_4_opt_b">  b) II</label><br />
-	        <div id= "e12a13_4_eachFeedback_b"></div>
+            <li data-component="answer"  id="e12a13_4_opt_b">II</li><li data-component="feedback" id="e12a13_4_opt_b">If x is greater than 4 it is reset to 0 in the original code.</li>
             
-            <input type="radio" name="group1" value="c" id="e12a13_4_opt_c" />
-            <label for= "e12a13_4_opt_c">  c) III</label><br />
-	        <div id= "e12a13_4_eachFeedback_c"></div>
+            <li data-component="answer" data-correct id="e12a13_4_opt_c">III</li><li data-component="feedback" id="e12a13_4_opt_c">Anytime x is greater than 2 it will be set to 0 in the original code.</li>
             
-            <input type="radio" name="group1" value="d" id="e12a13_4_opt_d" />
-            <label for= "e12a13_4_opt_d">  d) IV</label><br />
-	        <div id= "e12a13_4_eachFeedback_d"></div>
+            <li data-component="answer"  id="e12a13_4_opt_d">IV</li><li data-component="feedback" id="e12a13_4_opt_d">What if x is negative in the original code?</li>
             
 
-            <script>
-		    populateArrays('e12a13_4','c',['This would always set x to 0 but if x was 1 in the original code it would not change.', 'If x is greater than 4 it is reset to 0 in the original code.', 'Anytime x is greater than 2 it will be set to 0 in the original code.', 'What if x is negative in the original code?']);
-            $(document).ready(function(){checkExamRadio('e12a13_4');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e12a13_4_feedback">
-            </div>
-            </div>
-            
-            <div id="e12a13_5" class="alert alert-warning">
-            <p>13-6-5: What is the value of grade when the following code executes and score is 93?</p>
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e12a13_5">
+            <p>13-7-5: What is the value of grade when the following code executes and score is 93?</p>
 <div class="highlight-python"><div class="highlight"><pre>if score &gt;= 90:
     grade = &quot;A&quot;
 if score &gt;= 80:
@@ -530,74 +461,20 @@ else
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e12a13_5_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e12a13_5_opt_a" />
-            <label for= "e12a13_5_opt_a">  a) A</label><br />
-	        <div id= "e12a13_5_eachFeedback_a"></div>
+            <li data-component="answer"  id="e12a13_5_opt_a">A</li><li data-component="feedback" id="e12a13_5_opt_a">This would be true if the 2nd - 4th if were elif instead.</li>
             
-            <input type="radio" name="group1" value="b" id="e12a13_5_opt_b" />
-            <label for= "e12a13_5_opt_b">  b) B</label><br />
-	        <div id= "e12a13_5_eachFeedback_b"></div>
+            <li data-component="answer"  id="e12a13_5_opt_b">B</li><li data-component="feedback" id="e12a13_5_opt_b">This would be true if the score was 83 and the 2nd - 4th if were elif instead.</li>
             
-            <input type="radio" name="group1" value="c" id="e12a13_5_opt_c" />
-            <label for= "e12a13_5_opt_c">  c) C</label><br />
-	        <div id= "e12a13_5_eachFeedback_c"></div>
+            <li data-component="answer"  id="e12a13_5_opt_c">C</li><li data-component="feedback" id="e12a13_5_opt_c">This would be true if the score was 73 and the 2nd - 4th if were elif instead.</li>
             
-            <input type="radio" name="group1" value="d" id="e12a13_5_opt_d" />
-            <label for= "e12a13_5_opt_d">  d) D</label><br />
-	        <div id= "e12a13_5_eachFeedback_d"></div>
+            <li data-component="answer" data-correct id="e12a13_5_opt_d">D</li><li data-component="feedback" id="e12a13_5_opt_d">Since it is true that 93 is greater than 60 this will set grade to "D"</li>
             
-            <input type="radio" name="group1" value="e" id="e12a13_5_opt_e" />
-            <label for= "e12a13_5_opt_e">  e) E</label><br />
-	        <div id= "e12a13_5_eachFeedback_e"></div>
+            <li data-component="answer"  id="e12a13_5_opt_e">E</li><li data-component="feedback" id="e12a13_5_opt_e">This would be true if score was less than 60.</li>
             
 
-            <script>
-		    populateArrays('e12a13_5','d',['This would be true if the 2nd \u002D 4th if were elif instead.', 'This would be true if the score was 83 and the 2nd \u002D 4th if were elif instead.', 'This would be true if the score was 73 and the 2nd \u002D 4th if were elif instead.', 'Since it is true that 93 is greater than 60 this will set grade to \u0022D\u0022', 'This would be true if score was less than 60.']);
-            $(document).ready(function(){checkExamRadio('e12a13_5');});
-            </script>
-            
- 
-            </form><br />
-            <div id="e12a13_5_feedback">
-            </div>
-            </div>
-            
-
-            
-	
-	<div style="text-align: center;">
-	<button class='btn btn-inverse' id ="finish" onclick="checkExam()">Submit Answers</button>
-	</div>
-	<script>
-	    
-	    $(document).ready(function() {
-	      $("#results").hide();
-	      checkIfFinished()
-	    });
-	</script>
-
-
-            
-            </div>
-            <p id="results"></p>
- 
-            
-            <script>
-			   var time = 0;
-			   var change = 1;
-		       showTime(0);
-            </script>
-            
-            <script>
-			   var showFeedback = 1;
-            </script>
-            
-            <script>
-			   var showResult = 1;
-            </script>
-            </div>
+            </ul>
+            </ul>
+    </div>
 
 
   
@@ -627,7 +504,10 @@ else
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

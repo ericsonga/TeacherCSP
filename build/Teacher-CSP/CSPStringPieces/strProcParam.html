@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -322,22 +338,7 @@
 <h1>Creating a Procedure with Parameters<a class="headerlink" href="#creating-a-procedure-with-parameters" title="Permalink to this headline">¶</a></h1>
 <p>Is there another way to handle this, rather than creating a string and then splitting it into pieces?  We can create a procedure with parameters and then pass in the input values when we call the procedure as shown below.</p>
 
-<div id="cont"></div>
-<div id="madlib_function" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="madlib_function_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="madlib_function_saveb" onclick="saveEditor('madlib_function');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="madlib_function_loadb" onclick="requestCode('madlib_function');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('madlib_function','def witchStory *open*firstName, lastName, gender, address, verb*close*:*nline*    start = *doubleq*Once there was a *doubleq* + gender + *doubleq* named *doubleq* + firstName + *doubleq*.*doubleq**nline*    next1 = *doubleq*A good *doubleq* + gender + *doubleq* living at *doubleq* + address + *doubleq*.*doubleq**nline*    next2 = *doubleq*One day, a wicked witch came to the *doubleq* + lastName + *doubleq* house.*doubleq**nline*    next3 = *doubleq*The wicked witch was planning to *doubleq* + verb + *doubleq* *doubleq* + firstName + *doubleq*!*doubleq**nline*    ending = *doubleq*But *doubleq* + firstName + *doubleq* was smart and avoided the wicked witch.*doubleq**nline*    print*open*start*close**nline*    print*open*next1*close**nline*    print*open*next2*close**nline*    print*open*next3*close**nline*    print*open*ending*close**nline**nline*witchStory*open**doubleq*Abe*doubleq*, *doubleq*Brown*doubleq*, *doubleq*boy*doubleq*, *doubleq*1313 Maple Lane*doubleq*, *doubleq*trick*doubleq**close*','1','*doubleq*Structural tour*doubleq*; 1: Stf1-line1; 2: Stf1-line2; 3: Stf1-line3; 4: Stf1-line4; 5: Stf1-line5; 6: Stf1-line6; 7-11: Stf1-line7-11; 13: Stf1-line13;*atype*')"/>
-<button class='btn btn-default' id="madlib_function_vizb" onclick="injectCodelens(this,'madlib_function');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="madlib_function_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="madlib_function_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=madlib_function data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Structural tour*doubleq*; 1: Stf1-line1; 2: Stf1-line2; 3: Stf1-line3; 4: Stf1-line4; 5: Stf1-line5; 6: Stf1-line6; 7-11: Stf1-line7-11; 13: Stf1-line13;*atype*'     >
 def witchStory (firstName, lastName, gender, address, verb):
     start = "Once there was a " + gender + " named " + firstName + "."
     next1 = "A good " + gender + " living at " + address + "."
@@ -351,104 +352,27 @@ def witchStory (firstName, lastName, gender, address, verb):
     print(ending)
 
 witchStory("Abe", "Brown", "boy", "1313 Maple Lane", "trick")
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="madlib_function_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="madlib_function_suffix" style="display:none">
-</pre><pre id="madlib_function_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (madlib_function)</span> </p>
-<div id="madlib_function_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#madlib_function_saveb').toggle();
-    $('#madlib_function_loadb').toggle();
-}
-if ($("#madlib_function").attr("lang") !== "html" && $("#madlib_function_code_div").parents(".admonition").length == 0 && $("#madlib_function_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#madlib_function_code_div").offset({
-            left: $("#madlib_function .clearfix").offset().left
-        });
-    }
-    $("#madlib_function_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#madlib_function_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#madlib_function_runb").parent().siblings(".ac_output").show();
-            runit('madlib_function',this, undefined);
-            $("#madlib_function_runb").on("click", function(){
-                runit('madlib_function',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#madlib_function_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#madlib_function_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#madlib_function_runb").on("click", function(){
-        runit('madlib_function',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>Creating a procedure with parameters makes it easy to customize the madlib stories without having to split a string.  The <code class="docutils literal"><span class="pre">split</span></code> function is very useful when you read data from a file or from a website.</p>
 
-            <div id="17_4_1_madlib_proc1" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="17_4_1_madlib_proc1">
             <p>csp-17-4-1: What would be the value of <code class="docutils literal"><span class="pre">lastName</span></code> in <code class="docutils literal"><span class="pre">witchStory</span></code> given the following call to the procedure?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">witchStory</span><span class="p">(</span><span class="s">&quot;Emily&quot;</span><span class="p">,</span> <span class="s">&quot;Smith&quot;</span><span class="p">,</span> <span class="s">&quot;girl&quot;</span><span class="p">,</span> <span class="s">&quot;2783 Main Street&quot;</span><span class="p">,</span> <span class="s">&quot;smell&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<form name="17_4_1_madlib_proc1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="17_4_1_madlib_proc1_opt_a" />
-            <label for= "17_4_1_madlib_proc1_opt_a">  a) Emily</label><br />
+
+            <li data-component="answer"  id="17_4_1_madlib_proc1_opt_a">Emily</li><li data-component="feedback" id="17_4_1_madlib_proc1_opt_a">That is the value of firstName.</li>
             
-            <input type="radio" name="group1" value="b" id="17_4_1_madlib_proc1_opt_b" />
-            <label for= "17_4_1_madlib_proc1_opt_b">  b) Smith</label><br />
+            <li data-component="answer" data-correct id="17_4_1_madlib_proc1_opt_b">Smith</li><li data-component="feedback" id="17_4_1_madlib_proc1_opt_b">That is the value of lastName.</li>
             
-            <input type="radio" name="group1" value="c" id="17_4_1_madlib_proc1_opt_c" />
-            <label for= "17_4_1_madlib_proc1_opt_c">  c) girl</label><br />
+            <li data-component="answer"  id="17_4_1_madlib_proc1_opt_c">girl</li><li data-component="feedback" id="17_4_1_madlib_proc1_opt_c">That is the value of gender.</li>
             
-            <input type="radio" name="group1" value="d" id="17_4_1_madlib_proc1_opt_d" />
-            <label for= "17_4_1_madlib_proc1_opt_d">  d) 2783 Main Street</label><br />
+            <li data-component="answer"  id="17_4_1_madlib_proc1_opt_d">2783 Main Street</li><li data-component="feedback" id="17_4_1_madlib_proc1_opt_d">That is the value of address.</li>
             
-            <input type="radio" name="group1" value="e" id="17_4_1_madlib_proc1_opt_e" />
-            <label for= "17_4_1_madlib_proc1_opt_e">  e) smell</label><br />
+            <li data-component="answer"  id="17_4_1_madlib_proc1_opt_e">smell</li><li data-component="feedback" id="17_4_1_madlib_proc1_opt_e">That is the value of verb.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('17_4_1_madlib_proc1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('17_4_1_madlib_proc1','b',['That is the value of firstName.', 'That is the value of lastName.', 'That is the value of gender.', 'That is the value of address.', 'That is the value of verb.'])">Check Me</button>
-            <button class='btn btn-default' id="17_4_1_madlib_proc1_bcomp" disabled name="compare" onclick="compareAnswers('17_4_1_madlib_proc1');">Compare Me</button>
-            </form><br />
-            <div id="17_4_1_madlib_proc1_feedback">
-            </div>
-            </div>
+            </ul>
             </div>
 
 
@@ -479,7 +403,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

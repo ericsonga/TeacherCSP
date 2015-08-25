@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -323,91 +339,12 @@
 <p id="index-0">In Python, we test data and execute instructions if the test is true using an <code class="docutils literal"><span class="pre">if</span></code> statement.  An <code class="docutils literal"><span class="pre">if</span></code> statement includes a <strong>logical expression</strong> which is the &#8216;test.&#8217;   A <strong>logical expression</strong> is one that is either true or false.  This is also called a <strong>Boolean expression</strong>.  An example of a <strong>logical expression</strong> is <code class="docutils literal"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">3</span></code>. The <code class="docutils literal"><span class="pre">if</span></code> statement is followed by a colon <code class="docutils literal"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">3:</span></code> and a <strong>block of code</strong>.  The colon (<code class="docutils literal"><span class="pre">:</span></code>) at the end of the <code class="docutils literal"><span class="pre">if</span></code> statement is required.  The <strong>block of code</strong>  includes the instructions to execute if the test is true.  The <strong>block of code</strong> includes all the statements that are indented following the <code class="docutils literal"><span class="pre">if</span></code> statement.  If the test is true, execute the statement or statements in the block following the <code class="docutils literal"><span class="pre">if</span></code> will be executed.  If the test isn&#8217;t true (is false) then execution will skip the block following the if and continue with the next statement following the block after the <code class="docutils literal"><span class="pre">if</span></code> statement.</p>
 <p>Run the code below with x set to 0 and then change x to 4 and see how the output differs depending on the value of x.</p>
 
-<div id="cont"></div>
-<div id="If_Structure" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="If_Structure_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="If_Structure_saveb" onclick="saveEditor('If_Structure');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="If_Structure_loadb" onclick="requestCode('If_Structure');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('If_Structure','x = 0*nline*if x < 3:*nline*    print *open**doubleq*x is less than 3*doubleq**close**nline*print *open**doubleq*All done*doubleq**close*','1','*doubleq*Structural Tour*doubleq*; 1: c0-line1; 2-3: c0-line2-3; 4: c0-line4;*atype*')"/>
-<button class='btn btn-default' id="If_Structure_vizb" onclick="injectCodelens(this,'If_Structure');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="If_Structure_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="If_Structure_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=If_Structure data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Structural Tour*doubleq*; 1: c0-line1; 2-3: c0-line2-3; 4: c0-line4;*atype*'     >
 x = 0
 if x < 3:
     print ("x is less than 3")
 print ("All done")
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="If_Structure_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="If_Structure_suffix" style="display:none">
-</pre><pre id="If_Structure_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (If_Structure)</span> </p>
-<div id="If_Structure_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#If_Structure_saveb').toggle();
-    $('#If_Structure_loadb').toggle();
-}
-if ($("#If_Structure").attr("lang") !== "html" && $("#If_Structure_code_div").parents(".admonition").length == 0 && $("#If_Structure_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#If_Structure_code_div").offset({
-            left: $("#If_Structure .clearfix").offset().left
-        });
-    }
-    $("#If_Structure_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#If_Structure_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#If_Structure_runb").parent().siblings(".ac_output").show();
-            runit('If_Structure',this, undefined);
-            $("#If_Structure_runb").on("click", function(){
-                runit('If_Structure',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#If_Structure_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#If_Structure_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#If_Structure_runb").on("click", function(){
-        runit('If_Structure',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p id="index-1">The figure below is called a <strong>flowchart</strong>.  It shows the execution paths for a program.  The diamond shape contains the <strong>logical expression</strong> and shows the path
 that the execution takes if the logical expression (also called the <strong>condition</strong>) is true as well as the path if the logical expression is false.  Notice that it will only execute the statements in the
 indented block if the logical expression was true.  If the logical expression was false, execution will skip the code in the indented block and resume with the next statement.</p>
@@ -416,7 +353,7 @@ indented block if the logical expression was true.  If the logical expression wa
 <p class="caption"><span class="caption-text">Figure 3: Flow of execution for an if statement</span></p>
 </div>
 
-            <div id="12_2_1_If_Structure" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="12_2_1_If_Structure">
             <p>csp-12-2-1:  Given the code below, what line executes after line 2 executes?</p>
 <blockquote>
 <div><div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -429,26 +366,13 @@ indented block if the logical expression was true.  If the logical expression wa
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<form name="12_2_1_If_Structure_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="12_2_1_If_Structure_opt_a" />
-            <label for= "12_2_1_If_Structure_opt_a">  a) line 2</label><br />
+
+            <li data-component="answer"  id="12_2_1_If_Structure_opt_a">line 3</li><li data-component="feedback" id="12_2_1_If_Structure_opt_a">Line 3 will only execute when x is less than 3.</li>
             
-            <input type="radio" name="group1" value="b" id="12_2_1_If_Structure_opt_b" />
-            <label for= "12_2_1_If_Structure_opt_b">  b) line 3</label><br />
-            
-            <input type="radio" name="group1" value="c" id="12_2_1_If_Structure_opt_c" />
-            <label for= "12_2_1_If_Structure_opt_c">  c) line 4</label><br />
+            <li data-component="answer" data-correct id="12_2_1_If_Structure_opt_b">line 4</li><li data-component="feedback" id="12_2_1_If_Structure_opt_b">Execution continues at the next statement beyond the block following the <code>if</code> when the logical expression is false.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('12_2_1_If_Structure');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('12_2_1_If_Structure','c',['It won\u0027t repeat line 2.', 'Line 2 will only execute when x is less than 3.', 'Execution continues at the next statement beyond the block following the \u003Ccode\u003Eif\u003C/code\u003E.'])">Check Me</button>
-            <button class='btn btn-default' id="12_2_1_If_Structure_bcomp" disabled name="compare" onclick="compareAnswers('12_2_1_If_Structure');">Compare Me</button>
-            </form><br />
-            <div id="12_2_1_If_Structure_feedback">
-            </div>
-            </div>
+            </ul>
             </div>
 
 
@@ -479,7 +403,10 @@ indented block if the logical expression was true.  If the logical expression wa
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

@@ -35,7 +35,7 @@ Here are the five steps in this pattern.
 Using the Accumulator Pattern
 =====================================
 
-What is the sum of all the numbers between 0 and 100?  We can answer that easily using our pattern.
+What is the sum of all the numbers between 1 and 100?  We can answer that easily using our pattern.
 
 .. activecode:: Numbers_Sum
     :tour_1: "Code tour"; 2: accum_line2; 4: accum_line4; 6: accum_line6; 8: accum_line8; 10: accum_line10;
@@ -43,7 +43,7 @@ What is the sum of all the numbers between 0 and 100?  We can answer that easily
     # STEP 1: INITIALIZE ACCUMULATOR 
     sum = 0  # Start out with nothing
     # STEP 2: GET DATA
-    numbers = range(101)
+    numbers = range(1,101)
     # STEP 3: LOOP THROUGH THE DATA
     for number in numbers:
     	# STEP 4: ACCUMULATE 
@@ -55,11 +55,11 @@ The ``range`` function has one more version that we can use here.  By providing 
 
 .. activecode:: Range_Examples
 
-  print range(1,11,1)
-  print range(0,11,2)
-  print range(1,11,3)
-  print range(5,50,5)
-  print range(10,1,-1)
+  print(range(1,11,1))
+  print(range(0,11,2))
+  print(range(1,11,3))
+  print(range(5,50,5))
+  print(range(10,1,-1))
 
 Now let's answer a slightly harder question: What is the sum of all the *even* numbers between 0 and 100?  It's easy with our pattern.
   
@@ -145,7 +145,7 @@ How do we know what's really going on in this program?  How do we know that *num
    
 .. parsonsprob:: 7_5_5_Sum_From_50
 
-   The following is the correct code for printing the sum of all the even numbers from 50 to 100 using the accumulator pattern, but it is mixed up. Drag the blocks from the left and put them in the correct order on the right.  Don't forget to indent blocks in the body of the loop.  Just drag the block further right to indent.  Click the <i>Check Me</i> button to check your solution.</p>
+   The following is the correct code for printing the sum of all the even numbers from 50 to 100 using the accumulator pattern, but it is mixed up and <b>contains one extra block</b>. Drag the required blocks from the left and put them in the correct order on the right.  Don't forget to indent blocks in the body of the loop.  Just drag the block further right to indent.  Click the <i>Check Me</i> button to check your solution.</p>
    -----
    sum = 0  
    =====

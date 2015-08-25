@@ -92,6 +92,17 @@ We can use a conditional to copy just the non-white pixels from one picture to a
           win = ImageWin(img2.getWidth(),img2.getHeight())
           img2.draw(win)
           
+    .. tab:: Discussion
+
+       .. disqus::
+           :shortname: cslearn4u
+           :identifier: teachercsp_ch15combine
+          
+    Below is a selection of images that you can use in the programs in this section.
+
+    
+
+          
 Here are a couple of other pictures that we can also use.  The first is apple.jpg and the second is gal2.jpg.  The apple is 500 wide by 334 high and gal2 is 248 wide by 240 high.
 
 .. raw:: html

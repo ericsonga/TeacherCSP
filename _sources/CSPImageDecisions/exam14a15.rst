@@ -1,19 +1,17 @@
 .. qnum::
-   :prefix: 15-5-
+   :prefix: 15-7-
    :start: 1
    
 Exam Questions for Chapters 14 and 15
 -------------------------------------
 
-The following questions test what you have learned in chapters 14 and 15. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  Hover over the clock icon to see how much time you have spent on the exam, but you have unlimited time.  Click on the "Submit Answers" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
+The following questions test what you have learned in chapters 14 and 15. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  It will show how much time you have used, but you have unlimited time. Click on the "Submit answers" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
 
 You will not be able to change your answers after you hit the "Submit Answers" button.
 
-.. startexam:: timed_Test
-    :showtitle: Exam Not Started
-    :hidetitle: Currently Taking Exam
+.. timed:: ch14a15ex
     
-    .. exammchoicemf:: e14a15_1
+    .. mchoice:: e14a15_1
        :answer_a: y % 1
        :answer_b: y % 2
        :answer_c: y % 3
@@ -26,7 +24,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
 
        Which of the following expressions gives you 3 possible results for all values of y?
            
-    .. exammchoicemf:: e14a15_2
+    .. mchoice:: e14a15_2
        :answer_a: newPixel = image.Pixel(r, g, b)
        :answer_b: img.setPixel(x, y, newPixel)
        :answer_c: p = img.getPixel(x, y)
@@ -39,7 +37,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
 
        Which of the following statements actually changes the image?
        
-    .. exammchoicemf:: e14a15_3
+    .. mchoice:: e14a15_3
        :answer_a: The program removes all the red from the image
        :answer_b: The program changes all the red pixels to a single color
        :answer_c: The program changes all the pixels to have some red
@@ -84,7 +82,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           win = ImageWin()
           img.draw(win)
               
-    .. exammchoicemf:: e14a15_4
+    .. mchoice:: e14a15_4
        :answer_a: Vertical stripes that alternate between red and black and start with red.
        :answer_b: Vertical stripes that alternate between black and red and start with black.
        :answer_c: Horizontal stripes that alternate between red and black and start with red.
@@ -117,7 +115,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           sue.pendown()             
           sue.forward(height)
                    
-    .. exammchoicemf:: e14a15_5
+    .. mchoice:: e14a15_5
        :answer_a: A random value between 10 and 20 
        :answer_b: A random value between 11 and 19 
        :answer_c: A random value between 11 and 20 
@@ -129,7 +127,6 @@ You will not be able to change your answers after you hit the "Submit Answers" b
        :feedback_d: The randrange function returns a random value between the first parameter value and one less than the second parameter value.
 
        What does random.randrange(10,20) return?
-             
-    .. finishexam:: timed_Test
+
 
    

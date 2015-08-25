@@ -75,7 +75,7 @@ Change the ``??`` in line 7 below to the amount to turn each time to draw a 12 s
       	mia.forward(40)       	# move forward by 40 units
       	mia.right(??)          	# change ?? to the amount to turn
 
-.. mchoicemf:: 10_2_1_Turtle_Dodecagon_Q1
+.. mchoice:: 10_2_1_Turtle_Dodecagon_Q1
    :answer_a: 15
    :answer_b: 30
    :answer_c: 12

@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -329,98 +345,20 @@ We are working with a virtual turtle, an idea that dates back to the 1960&#8217;
 <p id="index-0">Today, we can play with virtual turtles in a fully-graphical and non-robotic way. Below is a Python program that first reads in a <strong>library</strong> that contains the code to let us work with turtles (<code class="docutils literal"><span class="pre">from</span> <span class="pre">turtle</span> <span class="pre">import</span> <span class="pre">*</span></code>). Then it creates a <strong>Screen</strong>, a space on the page for the turtle to move in and draw on (<code class="docutils literal"><span class="pre">space</span> <span class="pre">=</span> <span class="pre">Screen()</span></code>).  Next it creates a turtle named <code class="docutils literal"><span class="pre">alex</span></code> (<code class="docutils literal"><span class="pre">alex</span> <span class="pre">=</span> <span class="pre">Turtle()</span></code>), then has <code class="docutils literal"><span class="pre">alex</span></code> move around on the screen (<code class="docutils literal"><span class="pre">alex.forward(150)</span></code>) and when it moves it will draw. The part of any line that starts with a  <code class="docutils literal"><span class="pre">#</span></code> character is called a <strong>comment</strong>.  Python and the computer ignores everything from the <code class="docutils literal"><span class="pre">#</span></code> character to the end of the line.   <strong>Comments</strong> explain what we&#8217;re doing in the programs and are intended to be read by people, not computers.</p>
 <p>Try clicking the <a class="reference internal" href="../_images/run-button2.png"><img alt="run button" class="align-top" src="../_images/run-button2.png" style="height: 20px;" /></a> button below to see what the following program does.</p>
 
-<div id="cont"></div>
-<div id="Turtle_1" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Turtle_1_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_1_saveb" onclick="saveEditor('Turtle_1');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_1_loadb" onclick="requestCode('Turtle_1');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Turtle_1','from turtle import *        # use the turtle library*nline*space = Screen*open**close*            # create a turtle space*nline*alex = Turtle*open**close*             # create a turtle named alex*nline*alex.forward*open*150*close*           # move forward by 150 units*nline*alex.left*open*90*close*               # turn by 90 degrees*nline*alex.forward*open*75*close*            # move forward by 75 units','1','*doubleq*Line-by-line Tour*doubleq*; 1: first-turtle-line-1; 2: first-turtle-line-2; 3: first-turtle-line-3; 4: first-turtle-line-4; 5: first-turtle-line-5; 6: first-turtle-line-6;*atype*')"/>
-
-</div>
-<br/>
-<div id="Turtle_1_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Turtle_1_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Turtle_1 data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Line-by-line Tour*doubleq*; 1: first-turtle-line-1; 2: first-turtle-line-2; 3: first-turtle-line-3; 4: first-turtle-line-4; 5: first-turtle-line-5; 6: first-turtle-line-6;*atype*'     >
 from turtle import *        # use the turtle library
 space = Screen()            # create a turtle space
 alex = Turtle()             # create a turtle named alex
 alex.forward(150)           # move forward by 150 units
 alex.left(90)               # turn by 90 degrees
 alex.forward(75)            # move forward by 75 units
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Turtle_1_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Turtle_1_suffix" style="display:none">
-</pre><pre id="Turtle_1_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Turtle_1)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Turtle_1_saveb').toggle();
-    $('#Turtle_1_loadb').toggle();
-}
-if ($("#Turtle_1").attr("lang") !== "html" && $("#Turtle_1_code_div").parents(".admonition").length == 0 && $("#Turtle_1_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Turtle_1_code_div").offset({
-            left: $("#Turtle_1 .clearfix").offset().left
-        });
-    }
-    $("#Turtle_1_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Turtle_1_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Turtle_1_runb").parent().siblings(".ac_output").show();
-            runit('Turtle_1',this, undefined);
-            $("#Turtle_1_runb").on("click", function(){
-                runit('Turtle_1',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Turtle_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Turtle_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Turtle_1_runb").on("click", function(){
-        runit('Turtle_1',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <div class="admonition note" id="index-1">
 <p class="first admonition-title">Note</p>
 <p class="last">Notice that we tell <code class="docutils literal"><span class="pre">alex</span></code> what to do in the code above using <strong>dot notation</strong>: <code class="docutils literal"><span class="pre">alex.forward(150)</span></code>,     <code class="docutils literal"><span class="pre">alex.left(90)</span></code>, and <code class="docutils literal"><span class="pre">alex.forward(75)</span></code>.  That is how you communicate with a turtle.  You use the name of the turtle followed by a <code class="docutils literal"><span class="pre">.</span></code> and then what you want it to do.</p>
 </div>
 
-            <div id="1_4_1_Turtle_Q1" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="1_4_1_Turtle_Q1">
             <p>csp-1-4-1: Which direction will alex move when the code below executes?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">space</span> <span class="o">=</span> <span class="n">Screen</span><span class="p">()</span>
@@ -428,59 +366,32 @@ else{
 <span class="n">alex</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
-<form name="1_4_1_Turtle_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="1_4_1_Turtle_Q1_opt_a" />
-            <label for= "1_4_1_Turtle_Q1_opt_a">  a) North</label><br />
+
+            <li data-component="answer"  id="1_4_1_Turtle_Q1_opt_a">North</li><li data-component="feedback" id="1_4_1_Turtle_Q1_opt_a">Check which way alex moved first</li>
             
-            <input type="radio" name="group1" value="b" id="1_4_1_Turtle_Q1_opt_b" />
-            <label for= "1_4_1_Turtle_Q1_opt_b">  b) West</label><br />
+            <li data-component="answer"  id="1_4_1_Turtle_Q1_opt_b">West</li><li data-component="feedback" id="1_4_1_Turtle_Q1_opt_b">Check which way alex moved first</li>
             
-            <input type="radio" name="group1" value="c" id="1_4_1_Turtle_Q1_opt_c" />
-            <label for= "1_4_1_Turtle_Q1_opt_c">  c) South</label><br />
+            <li data-component="answer"  id="1_4_1_Turtle_Q1_opt_c">South</li><li data-component="feedback" id="1_4_1_Turtle_Q1_opt_c">Check which way alex moved first</li>
             
-            <input type="radio" name="group1" value="d" id="1_4_1_Turtle_Q1_opt_d" />
-            <label for= "1_4_1_Turtle_Q1_opt_d">  d) East</label><br />
+            <li data-component="answer" data-correct id="1_4_1_Turtle_Q1_opt_d">East</li><li data-component="feedback" id="1_4_1_Turtle_Q1_opt_d">Turtles start off facing east by default</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('1_4_1_Turtle_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('1_4_1_Turtle_Q1','d',['Check which way alex moved first', 'Check which way alex moved first', 'Check which way alex moved first', 'Turtles start off facing east by default'])">Check Me</button>
-            <button class='btn btn-default' id="1_4_1_Turtle_Q1_bcomp" disabled name="compare" onclick="compareAnswers('1_4_1_Turtle_Q1');">Compare Me</button>
-            </form><br />
-            <div id="1_4_1_Turtle_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             <p>Just by going forward, backward, left, and right, we can have a turtle draw a shape.</p>
 
-            <div id="1_4_2_Shape" class="alert alert-warning">
-            csp-1-4-2: What shape will the program below draw when you click on the <em>Run</em> button? <input type='text' id='shapeBlank' class="form-control" style="display:inline; width: 150px;" value=""></input>
-            <script>
-            $(document).ready(function(){checkPreviousFIB('1_4_2_Shape');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkFIBStorage('1_4_2_Shape', 'shapeBlank', '^square$|^Square$|^SQUARE$',[['.*', 'Did you actually run the program?']], false)">Check Me</button>
-            <button class='btn btn-default' id="1_4_2_Shape_bcomp" disabled name="compare" onclick="compareFITBAnswers('1_4_2_Shape');">Compare Me</button>
-            <br />
-            <br />
-            <div id="1_4_2_Shape_feedback">
-            </div>
-            </div>
+        <p data-component="fillintheblank" data-casei="false" id="1_4_2_Shape_fill">
             
-<div id="cont"></div>
-<div id="Turtle_2" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Turtle_2_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_2_saveb" onclick="saveEditor('Turtle_2');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_2_loadb" onclick="requestCode('Turtle_2');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Turtle_2','from turtle import *        # use the turtle library*nline*space = Screen*open**close*            # create a turtle screen *open*space*close**nline*zari = Turtle*open**close*             # create a turtle named zari*nline*zari.setheading*open*90*close*         # Point due north*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*90*close*              # turn by 90 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*90*close*              # turn by 90 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*90*close*              # turn by 90 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*90*close*              # turn by 90 degrees','1','*doubleq*Line-by-line Tour*doubleq*; 1: t1-line1; 2: t1-line2; 3: t1-line3; 4: t1-line4; 5: t1-line5; 6: t1-line6; 7: t1-for100-1; 8: t1-right90-1; 9: t1-for100-2; 10: t1-right90-2; 11: t1-for100-3; 12: t1-right90-3;*atype*')"/>
-
-</div>
-<br/>
-<div id="Turtle_2_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Turtle_2_code" class="active_code" prefixcode="undefined" lang="python">
+        <span data-blank>
+            What shape will the program below draw when you click on the Run button?
+        <span data-feedback="regex" style="display: none" id="1_4_2_Shape_feedback1">.*</span>
+        <span data-feedback="text" style="display: none" for="1_4_2_Shape_feedback1">Did you actually run the program?</span>
+            
+        <span data-answer style="display: none" id="1_4_2_Shape_answer">^square$|^Square$|^SQUARE$</span>
+        </span>
+        
+        </p>
+            
+<pre data-component="activecode" id=Turtle_2 data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Line-by-line Tour*doubleq*; 1: t1-line1; 2: t1-line2; 3: t1-line3; 4: t1-line4; 5: t1-line5; 6: t1-line6; 7: t1-for100-1; 8: t1-right90-1; 9: t1-for100-2; 10: t1-right90-2; 11: t1-for100-3; 12: t1-right90-3;*atype*'     >
 from turtle import *        # use the turtle library
 space = Screen()            # create a turtle screen (space)
 zari = Turtle()             # create a turtle named zari
@@ -493,71 +404,7 @@ zari.forward(100)           # tell zari to move forward by 100 units
 zari.right(90)              # turn by 90 degrees
 zari.forward(100)           # tell zari to move forward by 100 units
 zari.right(90)              # turn by 90 degrees
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Turtle_2_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Turtle_2_suffix" style="display:none">
-</pre><pre id="Turtle_2_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Turtle_2)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Turtle_2_saveb').toggle();
-    $('#Turtle_2_loadb').toggle();
-}
-if ($("#Turtle_2").attr("lang") !== "html" && $("#Turtle_2_code_div").parents(".admonition").length == 0 && $("#Turtle_2_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Turtle_2_code_div").offset({
-            left: $("#Turtle_2 .clearfix").offset().left
-        });
-    }
-    $("#Turtle_2_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Turtle_2_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Turtle_2_runb").parent().siblings(".ac_output").show();
-            runit('Turtle_2',this, undefined);
-            $("#Turtle_2_runb").on("click", function(){
-                runit('Turtle_2',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Turtle_2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Turtle_2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Turtle_2_runb").on("click", function(){
-        runit('Turtle_2',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 </div>
 
 
@@ -588,7 +435,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

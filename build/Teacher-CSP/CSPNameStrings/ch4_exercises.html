@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -321,185 +337,26 @@
   <div class="section" id="chapter-4-exercises">
 <h1>Chapter 4 Exercises<a class="headerlink" href="#chapter-4-exercises" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic">
-<li><div id='ch4ex1t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch4ex1t-Question'><span>Question</span></a>
-</li>
+<li><div id='ch4ex1t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>There are 3 errors in the following code.  Fix it to print correctly without errors.</p>
 
-<li>
-    <a data-toggle='tab' href='#ch4ex1t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch4ex1t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch4ex1t-Question'><p>There are errors in the following code.  Fix it to print correctly without errors.</p>
-
-<div id="cont"></div>
-<div id="ch4ex1q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex1q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex1q_saveb" onclick="saveEditor('ch4ex1q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex1q_loadb" onclick="requestCode('ch4ex1q');">Load</button>
-
-</div>
-<br/>
-<div id="ch4ex1q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex1q_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch4ex1q data-lang="python"    data-timelimit=25000   data-audio=''     >
 color = "red'
 name = 'Carly'
 print("Your name is " + name +
       and your favorite color is" + color + ".")
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Change <code class="docutils literal"><span class="pre">&quot;red'</span></code> to <code class="docutils literal"><span class="pre">&quot;red&quot;</span></code>.  Add an <code class="docutils literal"><span class="pre">&quot;</span></code> before <code class="docutils literal"><span class="pre">and</span> <span class="pre">your</span> <span class="pre">favorite</span></code>.  Add a space after <code class="docutils literal"><span class="pre">is</span></code>.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex1q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex1q_suffix" style="display:none">
-</pre><pre id="ch4ex1q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex1q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex1q_saveb').toggle();
-    $('#ch4ex1q_loadb').toggle();
-}
-if ($("#ch4ex1q").attr("lang") !== "html" && $("#ch4ex1q_code_div").parents(".admonition").length == 0 && $("#ch4ex1q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex1q_code_div").offset({
-            left: $("#ch4ex1q .clearfix").offset().left
-        });
-    }
-    $("#ch4ex1q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex1q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex1q_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex1q',this, undefined);
-            $("#ch4ex1q_runb").on("click", function(){
-                runit('ch4ex1q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex1q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex1q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex1q_runb").on("click", function(){
-        runit('ch4ex1q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex1t-Answer'><p>Change <code class="docutils literal"><span class="pre">&quot;red'</span></code> to <code class="docutils literal"><span class="pre">&quot;red&quot;</span></code>.  Add an <code class="docutils literal"><span class="pre">&quot;</span></code> before <code class="docutils literal"><span class="pre">and</span> <span class="pre">your</span> <span class="pre">favorite</span></code>.  Add a space after <code class="docutils literal"><span class="pre">is</span></code>.</p>
-
-<div id="cont"></div>
-<div id="ch4ex1a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex1a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex1a_saveb" onclick="saveEditor('ch4ex1a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex1a_loadb" onclick="requestCode('ch4ex1a');">Load</button>
-
-</div>
-<br/>
-<div id="ch4ex1a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex1a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch4ex1a data-lang="python"    data-timelimit=25000   data-audio=''     >
 color = "red"
 name = 'Carly'
 print("Your name is " + name +
       " and your favorite color is " + color + ".")
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex1a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex1a_suffix" style="display:none">
-</pre><pre id="ch4ex1a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex1a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex1a_saveb').toggle();
-    $('#ch4ex1a_loadb').toggle();
-}
-if ($("#ch4ex1a").attr("lang") !== "html" && $("#ch4ex1a_code_div").parents(".admonition").length == 0 && $("#ch4ex1a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex1a_code_div").offset({
-            left: $("#ch4ex1a .clearfix").offset().left
-        });
-    }
-    $("#ch4ex1a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex1a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex1a_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex1a',this, undefined);
-            $("#ch4ex1a_runb").on("click", function(){
-                runit('ch4ex1a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex1a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex1a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex1a_runb").on("click", function(){
-        runit('ch4ex1a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex1t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch4ex1q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -536,209 +393,30 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch4ex1q']").attr('data-disqus-identifier', 'teachercsp_ch4ex1q_' + eBookConfig.course);
 </script>
-</div></div>
-    </div>
-    <script type='text/javascript'>
-        $('#ch4ex1t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
-
-        // activate the first tab
-        var el = $('#ch4ex1t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch4ex1t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
-</li>
-<li><div id='ch4ex2t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch4ex2t-Question'><span>Question</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch4ex2t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch4ex2t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch4ex2t-Question'><p>There are errors in the following code.  Fix it to print correctly without errors.</p>
-
-<div id="cont"></div>
-<div id="ch4ex2q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex2q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex2q_saveb" onclick="saveEditor('ch4ex2q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex2q_loadb" onclick="requestCode('ch4ex2q');">Load</button>
-
 </div>
-<br/>
-<div id="ch4ex2q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex2q_code" class="active_code" prefixcode="undefined" lang="python">
+    </div>
+
+</li>
+<li><div id='ch4ex2t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>There is 1 error in the following code.  Fix it to print correctly without errors.</p>
+
+<pre data-component="activecode" id=ch4ex2q data-lang="python"    data-timelimit=25000   data-audio=''     >
 age = 5
 name = 'Carly'
 print("Your name is" + name +
       "and your age is" + age + ".")
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Change <code class="docutils literal"><span class="pre">age</span></code> to <code class="docutils literal"><span class="pre">str(age)</span></code>.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex2q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex2q_suffix" style="display:none">
-</pre><pre id="ch4ex2q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex2q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex2q_saveb').toggle();
-    $('#ch4ex2q_loadb').toggle();
-}
-if ($("#ch4ex2q").attr("lang") !== "html" && $("#ch4ex2q_code_div").parents(".admonition").length == 0 && $("#ch4ex2q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex2q_code_div").offset({
-            left: $("#ch4ex2q .clearfix").offset().left
-        });
-    }
-    $("#ch4ex2q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex2q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex2q_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex2q',this, undefined);
-            $("#ch4ex2q_runb").on("click", function(){
-                runit('ch4ex2q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex2q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex2q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex2q_runb").on("click", function(){
-        runit('ch4ex2q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex2t-Answer'><p>Change <code class="docutils literal"><span class="pre">age</span></code> to <code class="docutils literal"><span class="pre">str(age)</span></code>.</p>
-
-<div id="cont"></div>
-<div id="ch4ex2a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex2a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex2a_saveb" onclick="saveEditor('ch4ex2a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex2a_loadb" onclick="requestCode('ch4ex2a');">Load</button>
-
-</div>
-<br/>
-<div id="ch4ex2a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex2a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch4ex2a data-lang="python"    data-timelimit=25000   data-audio=''     >
 age = 5
 name = 'Carly'
 print("Your name is " + name +
       " and your age is " + str(age) + ".")
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex2a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex2a_suffix" style="display:none">
-</pre><pre id="ch4ex2a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex2a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex2a_saveb').toggle();
-    $('#ch4ex2a_loadb').toggle();
-}
-if ($("#ch4ex2a").attr("lang") !== "html" && $("#ch4ex2a_code_div").parents(".admonition").length == 0 && $("#ch4ex2a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex2a_code_div").offset({
-            left: $("#ch4ex2a .clearfix").offset().left
-        });
-    }
-    $("#ch4ex2a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex2a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex2a_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex2a',this, undefined);
-            $("#ch4ex2a_runb").on("click", function(){
-                runit('ch4ex2a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex2a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex2a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex2a_runb").on("click", function(){
-        runit('ch4ex2a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex2t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch4ex2q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -775,206 +453,30 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch4ex2q']").attr('data-disqus-identifier', 'teachercsp_ch4ex2q_' + eBookConfig.course);
 </script>
-</div></div>
-    </div>
-    <script type='text/javascript'>
-        $('#ch4ex2t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
-
-        // activate the first tab
-        var el = $('#ch4ex2t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch4ex2t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
-</li>
-<li><div id='ch4ex3t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch4ex3t-Question'><span>Question</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch4ex3t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch4ex3t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch4ex3t-Question'><p>There are errors in the following code.  Fix it to print correctly without errors.</p>
-
-<div id="cont"></div>
-<div id="ch4ex3q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex3q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex3q_saveb" onclick="saveEditor('ch4ex3q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex3q_loadb" onclick="requestCode('ch4ex3q');">Load</button>
-
 </div>
-<br/>
-<div id="ch4ex3q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex3q_code" class="active_code" prefixcode="undefined" lang="python">
+    </div>
+
+</li>
+<li><div id='ch4ex3t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>There are 3 errors in the following code.  Fix it to print correctly without errors.</p>
+
+<pre data-component="activecode" id=ch4ex3q data-lang="python"    data-timelimit=25000   data-audio=''     >
 age = input("How old are you?")
 name = input ("What is your first name?")
 print ("Your name is " + Name
        " and you are "  age "years old.")
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Change <code class="docutils literal"><span class="pre">Name</span></code> to <code class="docutils literal"><span class="pre">name</span></code>.  Add a <code class="docutils literal"><span class="pre">+</span></code> at the end of line 3.  Add a <code class="docutils literal"><span class="pre">+</span></code> before and after <code class="docutils literal"><span class="pre">age</span></code> in line 4.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex3q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex3q_suffix" style="display:none">
-</pre><pre id="ch4ex3q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex3q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex3q_saveb').toggle();
-    $('#ch4ex3q_loadb').toggle();
-}
-if ($("#ch4ex3q").attr("lang") !== "html" && $("#ch4ex3q_code_div").parents(".admonition").length == 0 && $("#ch4ex3q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex3q_code_div").offset({
-            left: $("#ch4ex3q .clearfix").offset().left
-        });
-    }
-    $("#ch4ex3q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex3q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex3q_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex3q',this, undefined);
-            $("#ch4ex3q_runb").on("click", function(){
-                runit('ch4ex3q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex3q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex3q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex3q_runb").on("click", function(){
-        runit('ch4ex3q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex3t-Answer'><p>Change <code class="docutils literal"><span class="pre">Name</span></code> to <code class="docutils literal"><span class="pre">name</span></code>.  Add a <code class="docutils literal"><span class="pre">+</span></code> at the end of line 3.  Add a <code class="docutils literal"><span class="pre">+</span></code> before and after <code class="docutils literal"><span class="pre">age</span></code> in line 4.</p>
-
-<div id="cont"></div>
-<div id="ch4ex3a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex3a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex3a_saveb" onclick="saveEditor('ch4ex3a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex3a_loadb" onclick="requestCode('ch4ex3a');">Load</button>
-<button class='btn btn-default' id="ch4ex3a_vizb" onclick="injectCodelens(this,'ch4ex3a');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="ch4ex3a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex3a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch4ex3a data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
 age = input("How old are you?")
 name = input ("What is your first name?")
 print ("Your name is " + name +
        " and you are "  + age + " years old.")
-</textarea>
-</div>
-
-<div class="ac_output"><pre id="ch4ex3a_suffix" style="display:none">
-</pre><pre id="ch4ex3a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex3a)</span> </p>
-<div id="ch4ex3a_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex3a_saveb').toggle();
-    $('#ch4ex3a_loadb').toggle();
-}
-if ($("#ch4ex3a").attr("lang") !== "html" && $("#ch4ex3a_code_div").parents(".admonition").length == 0 && $("#ch4ex3a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex3a_code_div").offset({
-            left: $("#ch4ex3a .clearfix").offset().left
-        });
-    }
-    $("#ch4ex3a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex3a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex3a_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex3a',this, undefined);
-            $("#ch4ex3a_runb").on("click", function(){
-                runit('ch4ex3a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex3a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex3a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex3a_runb").on("click", function(){
-        runit('ch4ex3a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex3t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch4ex3q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -1011,141 +513,25 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch4ex3q']").attr('data-disqus-identifier', 'teachercsp_ch4ex3q_' + eBookConfig.course);
 </script>
-</div></div>
-    </div>
-    <script type='text/javascript'>
-        $('#ch4ex3t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
-
-        // activate the first tab
-        var el = $('#ch4ex3t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch4ex3t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
-</li>
-<li><div id='ch4ex4t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch4ex4t-Question'><span>Question</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch4ex4t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch4ex4t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch4ex4t-Question'><p>Modify line 6 to also print a string explaining the value being printed.  Include the funds value in the string.</p>
-
-<div id="cont"></div>
-<div id="ch4ex4q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex4q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex4q_saveb" onclick="saveEditor('ch4ex4q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex4q_loadb" onclick="requestCode('ch4ex4q');">Load</button>
-
 </div>
-<br/>
-<div id="ch4ex4q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex4q_code" class="active_code" prefixcode="undefined" lang="python">
+    </div>
+
+</li>
+<li><div id='ch4ex4t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Modify line 6 to print: &#8220;The number of miles you can drive on 25 dollars is 273.97260274.&#8221;</p>
+
+<pre data-component="activecode" id=ch4ex4q data-lang="python"    data-timelimit=25000   data-audio=''     >
 funds = 25
 milesPerGallon = 40
 pricePerGallon = 3.65
 numGallons = funds / pricePerGallon
 numMiles = milesPerGallon * numGallons
 print(numMiles)
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>See line 6 below.  Be sure to use <code class="docutils literal"><span class="pre">str(num)</span></code> to convert a number to a string.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex4q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex4q_suffix" style="display:none">
-</pre><pre id="ch4ex4q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex4q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex4q_saveb').toggle();
-    $('#ch4ex4q_loadb').toggle();
-}
-if ($("#ch4ex4q").attr("lang") !== "html" && $("#ch4ex4q_code_div").parents(".admonition").length == 0 && $("#ch4ex4q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex4q_code_div").offset({
-            left: $("#ch4ex4q .clearfix").offset().left
-        });
-    }
-    $("#ch4ex4q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex4q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex4q_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex4q',this, undefined);
-            $("#ch4ex4q_runb").on("click", function(){
-                runit('ch4ex4q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex4q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex4q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex4q_runb").on("click", function(){
-        runit('ch4ex4q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex4t-Answer'><p>Change line 6 to include strings that explain the value that was calculated.  Be sure to use <code class="docutils literal"><span class="pre">str(num)</span></code> to convert a number to a string.</p>
-
-<div id="cont"></div>
-<div id="ch4ex4a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex4a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex4a_saveb" onclick="saveEditor('ch4ex4a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex4a_loadb" onclick="requestCode('ch4ex4a');">Load</button>
-
-</div>
-<br/>
-<div id="ch4ex4a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex4a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch4ex4a data-lang="python"    data-timelimit=25000   data-audio=''     >
 funds = 25
 milesPerGallon = 40
 pricePerGallon = 3.65
@@ -1153,72 +539,9 @@ numGallons = funds / pricePerGallon
 numMiles = milesPerGallon * numGallons
 print("The number of miles you can drive on " +
        str(funds) + " dollars is " + str(numMiles) + ".")
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex4a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex4a_suffix" style="display:none">
-</pre><pre id="ch4ex4a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex4a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex4a_saveb').toggle();
-    $('#ch4ex4a_loadb').toggle();
-}
-if ($("#ch4ex4a").attr("lang") !== "html" && $("#ch4ex4a_code_div").parents(".admonition").length == 0 && $("#ch4ex4a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex4a_code_div").offset({
-            left: $("#ch4ex4a .clearfix").offset().left
-        });
-    }
-    $("#ch4ex4a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex4a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex4a_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex4a',this, undefined);
-            $("#ch4ex4a_runb").on("click", function(){
-                runit('ch4ex4a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex4a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex4a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex4a_runb").on("click", function(){
-        runit('ch4ex4a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex4t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch4ex4q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -1255,141 +578,25 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch4ex4q']").attr('data-disqus-identifier', 'teachercsp_ch4ex4q_' + eBookConfig.course);
 </script>
-</div></div>
-    </div>
-    <script type='text/javascript'>
-        $('#ch4ex4t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
-
-        // activate the first tab
-        var el = $('#ch4ex4t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch4ex4t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
-</li>
-<li><div id='ch4ex5t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch4ex5t-Question'><span>Question</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch4ex5t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch4ex5t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch4ex5t-Question'><p>Modify line 6 to print out a string explaining the value that is printed.  Include the price of the wings, the number of people, and the amount each person has to spend.</p>
-
-<div id="cont"></div>
-<div id="ch4ex5q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex5q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex5q_saveb" onclick="saveEditor('ch4ex5q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex5q_loadb" onclick="requestCode('ch4ex5q');">Load</button>
-
 </div>
-<br/>
-<div id="ch4ex5q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex5q_code" class="active_code" prefixcode="undefined" lang="python">
+    </div>
+
+</li>
+<li><div id='ch4ex5t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Modify line 6 to print: &#8220;You can order 40.0 wings when you have 5 people who can each spend 4 dollars and wings cost 0.5 each.&#8221;</p>
+
+<pre data-component="activecode" id=ch4ex5q data-lang="python"    data-timelimit=25000   data-audio=''     >
 numPeople = 5
 amountPerPerson = 4
 price = 0.5
 total = numPeople * amountPerPerson
 numWings =  total / price
 print(numWings)
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Change line 6 to include strings that explain the value that was calculated.  Be sure to use <code class="docutils literal"><span class="pre">str(num)</span></code> to convert a number to a string.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex5q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex5q_suffix" style="display:none">
-</pre><pre id="ch4ex5q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex5q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex5q_saveb').toggle();
-    $('#ch4ex5q_loadb').toggle();
-}
-if ($("#ch4ex5q").attr("lang") !== "html" && $("#ch4ex5q_code_div").parents(".admonition").length == 0 && $("#ch4ex5q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex5q_code_div").offset({
-            left: $("#ch4ex5q .clearfix").offset().left
-        });
-    }
-    $("#ch4ex5q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex5q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex5q_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex5q',this, undefined);
-            $("#ch4ex5q_runb").on("click", function(){
-                runit('ch4ex5q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex5q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex5q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex5q_runb").on("click", function(){
-        runit('ch4ex5q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex5t-Answer'><p>Change line 6 to include strings that explain the value that was calculated.  Be sure to use <code class="docutils literal"><span class="pre">str(num)</span></code> to convert a number to a string.</p>
-
-<div id="cont"></div>
-<div id="ch4ex5a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex5a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex5a_saveb" onclick="saveEditor('ch4ex5a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex5a_loadb" onclick="requestCode('ch4ex5a');">Load</button>
-
-</div>
-<br/>
-<div id="ch4ex5a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex5a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch4ex5a data-lang="python"    data-timelimit=25000   data-audio=''     >
 numPeople = 5
 amountPerPerson = 4
 price = 0.5
@@ -1399,72 +606,9 @@ print("You can order " + str(numWings) + " wings" +
       " when you have " + str(numPeople) + " people" +
       " who can each spend " + str(amountPerPerson) + " dollars" +
       " and wings cost " + str(price) + " each.")
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex5a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex5a_suffix" style="display:none">
-</pre><pre id="ch4ex5a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex5a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex5a_saveb').toggle();
-    $('#ch4ex5a_loadb').toggle();
-}
-if ($("#ch4ex5a").attr("lang") !== "html" && $("#ch4ex5a_code_div").parents(".admonition").length == 0 && $("#ch4ex5a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex5a_code_div").offset({
-            left: $("#ch4ex5a .clearfix").offset().left
-        });
-    }
-    $("#ch4ex5a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex5a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex5a_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex5a',this, undefined);
-            $("#ch4ex5a_runb").on("click", function(){
-                runit('ch4ex5a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex5a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex5a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex5a_runb").on("click", function(){
-        runit('ch4ex5a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex5t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch4ex5q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -1501,214 +645,35 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch4ex5q']").attr('data-disqus-identifier', 'teachercsp_ch4ex5q_' + eBookConfig.course);
 </script>
-</div></div>
-    </div>
-    <script type='text/javascript'>
-        $('#ch4ex5t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
-
-        // activate the first tab
-        var el = $('#ch4ex5t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch4ex5t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
-</li>
-<li><div id='ch4ex6t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch4ex6t-Question'><span>Question</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch4ex6t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch4ex6t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch4ex6t-Question'><p>Combine lines 4 and 5 in the code below to print how many hours and minutes 270 minutes is.</p>
-
-<div id="cont"></div>
-<div id="ch4ex6q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex6q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex6q_saveb" onclick="saveEditor('ch4ex6q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex6q_loadb" onclick="requestCode('ch4ex6q');">Load</button>
-
 </div>
-<br/>
-<div id="ch4ex6q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex6q_code" class="active_code" prefixcode="undefined" lang="python">
+    </div>
+
+</li>
+<li><div id='ch4ex6t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Combine lines 4 and 5 in the code below to print: &#8220;270 is 4.0 hours and 30 minutes.&#8221;</p>
+
+<pre data-component="activecode" id=ch4ex6q data-lang="python"    data-timelimit=25000   data-audio=''     >
 totalMinutes = 270
 numMinutes = totalMinutes % 60
 numHours = (totalMinutes - numMinutes) / 60
 print(numHours)
 print(numMinutes)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex6q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex6q_suffix" style="display:none">
-</pre><pre id="ch4ex6q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex6q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex6q_saveb').toggle();
-    $('#ch4ex6q_loadb').toggle();
-}
-if ($("#ch4ex6q").attr("lang") !== "html" && $("#ch4ex6q_code_div").parents(".admonition").length == 0 && $("#ch4ex6q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex6q_code_div").offset({
-            left: $("#ch4ex6q .clearfix").offset().left
-        });
-    }
-    $("#ch4ex6q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex6q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex6q_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex6q',this, undefined);
-            $("#ch4ex6q_runb").on("click", function(){
-                runit('ch4ex6q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex6q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex6q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex6q_runb").on("click", function(){
-        runit('ch4ex6q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex6t-Answer'><p>Combine lines 4 and 5 and use <code class="docutils literal"><span class="pre">+</span></code> to append strings.  Use <code class="docutils literal"><span class="pre">str(num)</span></code> to convert a number to a string so that it can be appended.</p>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Combine lines 4 and 5 and use <code class="docutils literal"><span class="pre">+</span></code> to append strings.  Use <code class="docutils literal"><span class="pre">str(num)</span></code> to convert a number to a string so that it can be appended.</p>
 <blockquote>
 <div>
-<div id="cont"></div>
-<div id="ch4ex6a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex6a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex6a_saveb" onclick="saveEditor('ch4ex6a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex6a_loadb" onclick="requestCode('ch4ex6a');">Load</button>
-
-</div>
-<br/>
-<div id="ch4ex6a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex6a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch4ex6a data-lang="python"    data-timelimit=25000   data-audio=''     >
 totalMinutes = 270
 numMinutes = totalMinutes % 60
 numHours = (totalMinutes - numMinutes) / 60
 print(str(totalMinutes) + " is " +
       str(numHours) + " hours and " +
       str(numMinutes) + " minutes.")
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex6a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex6a_suffix" style="display:none">
-</pre><pre id="ch4ex6a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex6a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex6a_saveb').toggle();
-    $('#ch4ex6a_loadb').toggle();
-}
-if ($("#ch4ex6a").attr("lang") !== "html" && $("#ch4ex6a_code_div").parents(".admonition").length == 0 && $("#ch4ex6a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex6a_code_div").offset({
-            left: $("#ch4ex6a .clearfix").offset().left
-        });
-    }
-    $("#ch4ex6a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex6a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex6a_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex6a',this, undefined);
-            $("#ch4ex6a_runb").on("click", function(){
-                runit('ch4ex6a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex6a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex6a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex6a_runb").on("click", function(){
-        runit('ch4ex6a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 </div></blockquote>
-</div><div class='tab-pane' id='ch4ex6t-Discussion'><script type="text/javascript">
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch4ex6q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -1745,211 +710,32 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch4ex6q']").attr('data-disqus-identifier', 'teachercsp_ch4ex6q_' + eBookConfig.course);
 </script>
-</div></div>
-    </div>
-    <script type='text/javascript'>
-        $('#ch4ex6t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
-
-        // activate the first tab
-        var el = $('#ch4ex6t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch4ex6t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
-</li>
-<li><div id='ch4ex7t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch4ex7t-Question'><span>Question</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch4ex7t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch4ex7t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch4ex7t-Question'><p>Complete the calculations on lines 2 and 4 and enter the items to be printed on line 5 to print the number of miles you can drive if you have a 10 gallon gas tank and are down to a quarter of a tank of gas and your car gets 32 miles per gallon.</p>
-
-<div id="cont"></div>
-<div id="ch4ex7q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex7q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex7q_saveb" onclick="saveEditor('ch4ex7q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex7q_loadb" onclick="requestCode('ch4ex7q');">Load</button>
-
 </div>
-<br/>
-<div id="ch4ex7q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex7q_code" class="active_code" prefixcode="undefined" lang="python">
+    </div>
+
+</li>
+<li><div id='ch4ex7t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Complete the calculations on lines 2 and 4 and enter the items to be printed on line 5 to print the number of miles you can drive if you have a 10 gallon gas tank and are down to a quarter of a tank of gas and your car gets 32 miles per gallon.  It should print: &#8220;You can go 80.0 miles.&#8221;</p>
+
+<pre data-component="activecode" id=ch4ex7q data-lang="python"    data-timelimit=25000   data-audio=''     >
 tankCapacity = 10
 numGallons =
 milesPerGallon = 32
 numMiles =
 print()
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Calculate <code class="docutils literal"><span class="pre">numGallons</span></code> as <code class="docutils literal"><span class="pre">tankCapacity</span> <span class="pre">*</span> <span class="pre">0.25</span></code>.  Calculate <code class="docutils literal"><span class="pre">numMiles</span></code> as <code class="docutils literal"><span class="pre">numGallons</span> <span class="pre">*</span> <span class="pre">milesPerGallon</span></code>.  Use concatenation to print out an explanation and the value.  Be sure to use <code class="docutils literal"><span class="pre">str(num)</span></code> to convert a number to a string before you concatenate it.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex7q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex7q_suffix" style="display:none">
-</pre><pre id="ch4ex7q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex7q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex7q_saveb').toggle();
-    $('#ch4ex7q_loadb').toggle();
-}
-if ($("#ch4ex7q").attr("lang") !== "html" && $("#ch4ex7q_code_div").parents(".admonition").length == 0 && $("#ch4ex7q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex7q_code_div").offset({
-            left: $("#ch4ex7q .clearfix").offset().left
-        });
-    }
-    $("#ch4ex7q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex7q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex7q_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex7q',this, undefined);
-            $("#ch4ex7q_runb").on("click", function(){
-                runit('ch4ex7q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex7q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex7q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex7q_runb").on("click", function(){
-        runit('ch4ex7q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex7t-Answer'><p>Calculate <code class="docutils literal"><span class="pre">numGallons</span></code> as <code class="docutils literal"><span class="pre">tankCapacity</span> <span class="pre">*</span> <span class="pre">0.25</span></code>.  Calculate <code class="docutils literal"><span class="pre">numMiles</span></code> as <code class="docutils literal"><span class="pre">numGallons</span> <span class="pre">*</span> <span class="pre">milesPerGallon</span></code>.  Use concatenation to print out an explanation and the value.  Be sure to use <code class="docutils literal"><span class="pre">str(num)</span></code> to convert a number to a string before you concatenate it.</p>
-
-<div id="cont"></div>
-<div id="ch4ex7a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex7a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex7a_saveb" onclick="saveEditor('ch4ex7a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex7a_loadb" onclick="requestCode('ch4ex7a');">Load</button>
-
-</div>
-<br/>
-<div id="ch4ex7a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex7a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch4ex7a data-lang="python"    data-timelimit=25000   data-audio=''     >
 tankCapacity = 10
 numGallons = tankCapacity * 0.25
 milesPerGallon = 32
 numMiles = numGallons * milesPerGallon
 print("You can go " + str(numMiles) + " miles.")
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex7a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex7a_suffix" style="display:none">
-</pre><pre id="ch4ex7a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex7a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex7a_saveb').toggle();
-    $('#ch4ex7a_loadb').toggle();
-}
-if ($("#ch4ex7a").attr("lang") !== "html" && $("#ch4ex7a_code_div").parents(".admonition").length == 0 && $("#ch4ex7a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex7a_code_div").offset({
-            left: $("#ch4ex7a .clearfix").offset().left
-        });
-    }
-    $("#ch4ex7a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex7a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex7a_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex7a',this, undefined);
-            $("#ch4ex7a_runb").on("click", function(){
-                runit('ch4ex7a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex7a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex7a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex7a_runb").on("click", function(){
-        runit('ch4ex7a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex7t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch4ex7q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -1986,206 +772,27 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch4ex7q']").attr('data-disqus-identifier', 'teachercsp_ch4ex7q_' + eBookConfig.course);
 </script>
-</div></div>
+</div>
     </div>
-    <script type='text/javascript'>
-        $('#ch4ex7t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
 
-        // activate the first tab
-        var el = $('#ch4ex7t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch4ex7t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
 </li>
-<li><div id='ch4ex8t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch4ex8t-Question'><span>Question</span></a>
-</li>
+<li><div id='ch4ex8t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write the code to get a color as input and print out the given color in all lowercase letters.  This can be helpful when you want to check for a particular color and want to compare the values with them both all lowercase.</p>
 
-<li>
-    <a data-toggle='tab' href='#ch4ex8t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch4ex8t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch4ex8t-Question'><p>Write the code to get a color as input and print it out in all lowercase letters.  This can be helpful when you want to check for a particular color and want to compare the values with them both all lowercase.</p>
-
-<div id="cont"></div>
-<div id="ch4ex8q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex8q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex8q_saveb" onclick="saveEditor('ch4ex8q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex8q_loadb" onclick="requestCode('ch4ex8q');">Load</button>
-
-</div>
-<br/>
-<div id="ch4ex8q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex8q_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch4ex8q data-lang="python"    data-timelimit=25000   data-audio=''     >
 
 
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Use <code class="docutils literal"><span class="pre">input(&quot;message&quot;)</span></code> to get the color.  Use the <code class="docutils literal"><span class="pre">lower()</span></code> function to get the string as all lowercase letters.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex8q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex8q_suffix" style="display:none">
-</pre><pre id="ch4ex8q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex8q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex8q_saveb').toggle();
-    $('#ch4ex8q_loadb').toggle();
-}
-if ($("#ch4ex8q").attr("lang") !== "html" && $("#ch4ex8q_code_div").parents(".admonition").length == 0 && $("#ch4ex8q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex8q_code_div").offset({
-            left: $("#ch4ex8q .clearfix").offset().left
-        });
-    }
-    $("#ch4ex8q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex8q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex8q_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex8q',this, undefined);
-            $("#ch4ex8q_runb").on("click", function(){
-                runit('ch4ex8q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex8q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex8q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex8q_runb").on("click", function(){
-        runit('ch4ex8q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex8t-Answer'><p>Use <code class="docutils literal"><span class="pre">input(&quot;message&quot;)</span></code> to get the color.  Use the <code class="docutils literal"><span class="pre">lower()</span></code> function to get the string as all lowercase letters.</p>
-
-<div id="cont"></div>
-<div id="ch4ex8a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex8a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex8a_saveb" onclick="saveEditor('ch4ex8a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex8a_loadb" onclick="requestCode('ch4ex8a');">Load</button>
-
-</div>
-<br/>
-<div id="ch4ex8a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex8a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch4ex8a data-lang="python"    data-timelimit=25000   data-audio=''     >
 color = input("Enter an color.")
 colorLower = color.lower()
 print("The color is " + colorLower)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex8a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex8a_suffix" style="display:none">
-</pre><pre id="ch4ex8a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex8a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex8a_saveb').toggle();
-    $('#ch4ex8a_loadb').toggle();
-}
-if ($("#ch4ex8a").attr("lang") !== "html" && $("#ch4ex8a_code_div").parents(".admonition").length == 0 && $("#ch4ex8a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex8a_code_div").offset({
-            left: $("#ch4ex8a .clearfix").offset().left
-        });
-    }
-    $("#ch4ex8a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex8a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex8a_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex8a',this, undefined);
-            $("#ch4ex8a_runb").on("click", function(){
-                runit('ch4ex8a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex8a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex8a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex8a_runb").on("click", function(){
-        runit('ch4ex8a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex8t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch4ex8q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -2222,137 +829,21 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch4ex8q']").attr('data-disqus-identifier', 'teachercsp_ch4ex8q_' + eBookConfig.course);
 </script>
-</div></div>
+</div>
     </div>
-    <script type='text/javascript'>
-        $('#ch4ex8t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
 
-        // activate the first tab
-        var el = $('#ch4ex8t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch4ex8t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
 </li>
-<li><div id='ch4ex9t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch4ex9t-Question'><span>Question</span></a>
-</li>
+<li><div id='ch4ex9t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write the code below to calculate and print how many months it will take to save $200 if you earn $20 a week.  It should print: &#8220;It will take 2.5 months to earn 200 if you make 20 dollars a week.&#8221;</p>
 
-<li>
-    <a data-toggle='tab' href='#ch4ex9t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch4ex9t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch4ex9t-Question'><p>Write the code below to calculate and print how many months it will take to save $200 if you earn $20 a week.</p>
-
-<div id="cont"></div>
-<div id="ch4ex9q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex9q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex9q_saveb" onclick="saveEditor('ch4ex9q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex9q_loadb" onclick="requestCode('ch4ex9q');">Load</button>
-
-</div>
-<br/>
-<div id="ch4ex9q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex9q_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch4ex9q data-lang="python"    data-timelimit=25000   data-audio=''     >
 
 
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Name each of the values.  Calculate the <code class="docutils literal"><span class="pre">totalWeeks</span></code> it will take and the <code class="docutils literal"><span class="pre">months</span></code> and print the information.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex9q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex9q_suffix" style="display:none">
-</pre><pre id="ch4ex9q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex9q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex9q_saveb').toggle();
-    $('#ch4ex9q_loadb').toggle();
-}
-if ($("#ch4ex9q").attr("lang") !== "html" && $("#ch4ex9q_code_div").parents(".admonition").length == 0 && $("#ch4ex9q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex9q_code_div").offset({
-            left: $("#ch4ex9q .clearfix").offset().left
-        });
-    }
-    $("#ch4ex9q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex9q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex9q_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex9q',this, undefined);
-            $("#ch4ex9q_runb").on("click", function(){
-                runit('ch4ex9q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex9q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex9q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex9q_runb").on("click", function(){
-        runit('ch4ex9q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex9t-Answer'><p>Name each of the values.  Calculate the <code class="docutils literal"><span class="pre">totalWeeks</span></code> it will take and the <code class="docutils literal"><span class="pre">months</span></code> and print the information.</p>
-
-<div id="cont"></div>
-<div id="ch4ex9a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex9a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex9a_saveb" onclick="saveEditor('ch4ex9a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex9a_loadb" onclick="requestCode('ch4ex9a');">Load</button>
-
-</div>
-<br/>
-<div id="ch4ex9a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex9a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch4ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
 goal = 200
 weeklyEarning = 20
 totalWeeks = goal / weeklyEarning
@@ -2360,72 +851,9 @@ months = totalWeeks / 4
 print("It will take " + str(months) + " months to earn " +
        str(goal) + " if you make " + str(weeklyEarning) +
        " dollars a week.")
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex9a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex9a_suffix" style="display:none">
-</pre><pre id="ch4ex9a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex9a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex9a_saveb').toggle();
-    $('#ch4ex9a_loadb').toggle();
-}
-if ($("#ch4ex9a").attr("lang") !== "html" && $("#ch4ex9a_code_div").parents(".admonition").length == 0 && $("#ch4ex9a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex9a_code_div").offset({
-            left: $("#ch4ex9a .clearfix").offset().left
-        });
-    }
-    $("#ch4ex9a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex9a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex9a_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex9a',this, undefined);
-            $("#ch4ex9a_runb").on("click", function(){
-                runit('ch4ex9a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex9a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex9a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex9a_runb").on("click", function(){
-        runit('ch4ex9a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex9t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch4ex9q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -2462,137 +890,21 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch4ex9q']").attr('data-disqus-identifier', 'teachercsp_ch4ex9q_' + eBookConfig.course);
 </script>
-</div></div>
+</div>
     </div>
-    <script type='text/javascript'>
-        $('#ch4ex9t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
 
-        // activate the first tab
-        var el = $('#ch4ex9t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch4ex9t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
 </li>
-<li><div id='ch4ex10t' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#ch4ex10t-Question'><span>Question</span></a>
-</li>
+<li><div id='ch4ex10t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write the code below to gather at least 3 inputs and output a mad lib (which will use the input to tell a silly story).</p>
 
-<li>
-    <a data-toggle='tab' href='#ch4ex10t-Answer'><span>Answer</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#ch4ex10t-Discussion'><span>Discussion</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='ch4ex10t-Question'><p>Write the code below to gather at least 3 inputs and output a mad lib (which will use the input to tell a silly story).</p>
-
-<div id="cont"></div>
-<div id="ch4ex10q" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex10q_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex10q_saveb" onclick="saveEditor('ch4ex10q');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex10q_loadb" onclick="requestCode('ch4ex10q');">Load</button>
-
-</div>
-<br/>
-<div id="ch4ex10q_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex10q_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch4ex10q data-lang="python"    data-timelimit=25000   data-audio=''     >
 
 
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Use <code class="docutils literal"><span class="pre">input(&quot;message&quot;)</span></code> to get the input.  Use string concatenation to print the mad lib.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex10q_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex10q_suffix" style="display:none">
-</pre><pre id="ch4ex10q_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex10q)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex10q_saveb').toggle();
-    $('#ch4ex10q_loadb').toggle();
-}
-if ($("#ch4ex10q").attr("lang") !== "html" && $("#ch4ex10q_code_div").parents(".admonition").length == 0 && $("#ch4ex10q_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex10q_code_div").offset({
-            left: $("#ch4ex10q .clearfix").offset().left
-        });
-    }
-    $("#ch4ex10q_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex10q_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex10q_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex10q',this, undefined);
-            $("#ch4ex10q_runb").on("click", function(){
-                runit('ch4ex10q',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex10q_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex10q_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex10q_runb").on("click", function(){
-        runit('ch4ex10q',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex10t-Answer'><p>Use <code class="docutils literal"><span class="pre">input(&quot;message&quot;)</span></code> to get the input.  Use string concatenation to print the mad lib.</p>
-
-<div id="cont"></div>
-<div id="ch4ex10a" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="ch4ex10a_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex10a_saveb" onclick="saveEditor('ch4ex10a');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="ch4ex10a_loadb" onclick="requestCode('ch4ex10a');">Load</button>
-
-</div>
-<br/>
-<div id="ch4ex10a_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="ch4ex10a_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=ch4ex10a data-lang="python"    data-timelimit=25000   data-audio=''     >
 place = input("Enter the name of a place.")
 verb = input("Enter a verb.")
 action = input("Enter an action.")
@@ -2601,72 +913,9 @@ animal = input("What is your favorite animal?")
 print("Once upon a time in " + place + ", I was " +
       verb + "ing and I " + action + " because a " +
       color + " " + animal + " was also " + verb + "ing.")
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="ch4ex10a_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="ch4ex10a_suffix" style="display:none">
-</pre><pre id="ch4ex10a_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (ch4ex10a)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#ch4ex10a_saveb').toggle();
-    $('#ch4ex10a_loadb').toggle();
-}
-if ($("#ch4ex10a").attr("lang") !== "html" && $("#ch4ex10a_code_div").parents(".admonition").length == 0 && $("#ch4ex10a_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#ch4ex10a_code_div").offset({
-            left: $("#ch4ex10a .clearfix").offset().left
-        });
-    }
-    $("#ch4ex10a_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#ch4ex10a_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#ch4ex10a_runb").parent().siblings(".ac_output").show();
-            runit('ch4ex10a',this, undefined);
-            $("#ch4ex10a_runb").on("click", function(){
-                runit('ch4ex10a',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#ch4ex10a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#ch4ex10a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#ch4ex10a_runb").on("click", function(){
-        runit('ch4ex10a',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='ch4ex10t-Discussion'><script type="text/javascript">
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
     function teachercsp_ch4ex10q_disqus(source) { 
         if (window.DISQUS) {
 
@@ -2703,29 +952,9 @@ else{
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch4ex10q']").attr('data-disqus-identifier', 'teachercsp_ch4ex10q_' + eBookConfig.course);
 </script>
-</div></div>
+</div>
     </div>
-    <script type='text/javascript'>
-        $('#ch4ex10t .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
 
-        // activate the first tab
-        var el = $('#ch4ex10t .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#ch4ex10t .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
 </li>
 </ol>
 </div>
@@ -2758,7 +987,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

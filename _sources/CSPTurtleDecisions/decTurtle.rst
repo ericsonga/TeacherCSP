@@ -44,8 +44,11 @@ Here's an example of conditional execution (using an ``if`` statement) with a tu
       	    jaz.penup()                # pick up the pen
       	    jaz.goto(-1 * maxX,jaz.ycor() - 100)  # move left & down
       	    jaz.pendown()              # put the pen down
+      	    
+This code calculates ``maxX`` as half the ``width`` since the drawing area uses the cartesian coordinate system with (0,0) as the center.  Since the ``width`` is 400 the ``maxX`` is 200.  We move the turtle to ``-1 * maxX`` which is -200.  When the turtle's x coordinate is greater than or equal to the maxX, which means it is at the right edge, then we move the turtle back to the left edge and down 100.
+
+For more information on what this code does listen to the audio tour.  
   
-       
 .. mchoicemf:: 14_2_1_finish_pattern
    :answer_a: 12
    :answer_b: 14

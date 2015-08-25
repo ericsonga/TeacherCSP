@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -335,117 +351,27 @@
 <p id="index-0">Names can be more than numbers and strings.  They can also be turtles or &#8220;screens&#8221; (a space on the page where a turtle can draw).  You can also call things like turtles and screens <strong>objects</strong>.  <strong>Objects</strong> in programming are the things that do the action in a program.  Objects can have attributes and behavior.  An example of an attribute is a position and an example of a behavior is the ability to go forward.</p>
 <p>We have seen the example below once before.  It allows us to use the <code class="docutils literal"><span class="pre">turtle</span></code> library, creates a <code class="docutils literal"><span class="pre">space</span></code> for a turtle object to draw on, creates a <code class="docutils literal"><span class="pre">turtle</span></code> object and names it <code class="docutils literal"><span class="pre">alex</span></code>, asks <code class="docutils literal"><span class="pre">alex</span></code> to go forward by 150 pixels, asks <code class="docutils literal"><span class="pre">alex</span></code> to turn left 90 degrees, and asks <code class="docutils literal"><span class="pre">alex</span></code> to go forward 75 pixels.</p>
 
-<div id="cont"></div>
-<div id="Turtle_1_Again" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Turtle_1_Again_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_1_Again_saveb" onclick="saveEditor('Turtle_1_Again');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_1_Again_loadb" onclick="requestCode('Turtle_1_Again');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Turtle_1_Again','from turtle import *        # use the turtle library*nline*space = Screen*open**close*            # create a turtle space*nline*alex = Turtle*open**close*             # create a turtle named alex*nline*alex.forward*open*150*close*           # move forward by 150 units*nline*alex.left*open*90*close*               # turn by 90 degrees*nline*alex.forward*open*75*close*            # move forward by 75 units','1','*doubleq*Line-by-line Tour*doubleq*; 1: first-turtle-line-1; 2: first-turtle-line-2; 3: first-turtle-line-3; 4: first-turtle-line-4; 5: first-turtle-line-5; 6: first-turtle-line-6;*atype*')"/>
-
-</div>
-<br/>
-<div id="Turtle_1_Again_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Turtle_1_Again_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Turtle_1_Again data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Line-by-line Tour*doubleq*; 1: first-turtle-line-1; 2: first-turtle-line-2; 3: first-turtle-line-3; 4: first-turtle-line-4; 5: first-turtle-line-5; 6: first-turtle-line-6;*atype*'     >
 from turtle import *        # use the turtle library
 space = Screen()            # create a turtle space
 alex = Turtle()             # create a turtle named alex
 alex.forward(150)           # move forward by 150 units
 alex.left(90)               # turn by 90 degrees
 alex.forward(75)            # move forward by 75 units
-</textarea>
-</div>
+</pre>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Turtle_1_Again_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Turtle_1_Again_suffix" style="display:none">
-</pre><pre id="Turtle_1_Again_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Turtle_1_Again)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Turtle_1_Again_saveb').toggle();
-    $('#Turtle_1_Again_loadb').toggle();
-}
-if ($("#Turtle_1_Again").attr("lang") !== "html" && $("#Turtle_1_Again_code_div").parents(".admonition").length == 0 && $("#Turtle_1_Again_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Turtle_1_Again_code_div").offset({
-            left: $("#Turtle_1_Again .clearfix").offset().left
-        });
-    }
-    $("#Turtle_1_Again_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Turtle_1_Again_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Turtle_1_Again_runb").parent().siblings(".ac_output").show();
-            runit('Turtle_1_Again',this, undefined);
-            $("#Turtle_1_Again_runb").on("click", function(){
-                runit('Turtle_1_Again',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Turtle_1_Again_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Turtle_1_Again_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Turtle_1_Again_runb").on("click", function(){
-        runit('Turtle_1_Again',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="5_1_1_Turtle_Dir_Q1" class="alert alert-warning">
-            csp-5-1-1: Which way does a turtle face when it is first created?<form name="5_1_1_Turtle_Dir_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="5_1_1_Turtle_Dir_Q1_opt_a" />
-            <label for= "5_1_1_Turtle_Dir_Q1_opt_a">  a) North</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="5_1_1_Turtle_Dir_Q1">
+            csp-5-1-1: Which way does a turtle face when it is first created?
+            <li data-component="answer"  id="5_1_1_Turtle_Dir_Q1_opt_a">North</li><li data-component="feedback" id="5_1_1_Turtle_Dir_Q1_opt_a">The turtles in some of the examples faced north because of the <code>setheading(90)</code> instruction. Which way does chad move first?</li>
             
-            <input type="radio" name="group1" value="b" id="5_1_1_Turtle_Dir_Q1_opt_b" />
-            <label for= "5_1_1_Turtle_Dir_Q1_opt_b">  b) South</label><br />
+            <li data-component="answer"  id="5_1_1_Turtle_Dir_Q1_opt_b">South</li><li data-component="feedback" id="5_1_1_Turtle_Dir_Q1_opt_b">Which way does chad first move in the example above?  North is at the top of the page.</li>
             
-            <input type="radio" name="group1" value="c" id="5_1_1_Turtle_Dir_Q1_opt_c" />
-            <label for= "5_1_1_Turtle_Dir_Q1_opt_c">  c) East</label><br />
+            <li data-component="answer" data-correct id="5_1_1_Turtle_Dir_Q1_opt_c">East</li><li data-component="feedback" id="5_1_1_Turtle_Dir_Q1_opt_c">Turtles start off facing east which is toward the right side of the page.</li>
             
-            <input type="radio" name="group1" value="d" id="5_1_1_Turtle_Dir_Q1_opt_d" />
-            <label for= "5_1_1_Turtle_Dir_Q1_opt_d">  d) West</label><br />
+            <li data-component="answer"  id="5_1_1_Turtle_Dir_Q1_opt_d">West</li><li data-component="feedback" id="5_1_1_Turtle_Dir_Q1_opt_d">Which way does chad first move in the example above?   North is at the top of the page.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('5_1_1_Turtle_Dir_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('5_1_1_Turtle_Dir_Q1','c',['The turtles in some of the examples faced north because of the \u003Ccode\u003Esetheading(90)\u003C/code\u003E instruction. Which way does chad move first?', 'Which way does chad first move in the example above?  North is at the top of the page.', 'Turtles start off facing east which is toward the right side of the page.', 'Which way does chad first move in the example above?   North is at the top of the page.'])">Check Me</button>
-            <button class='btn btn-default' id="5_1_1_Turtle_Dir_Q1_bcomp" disabled name="compare" onclick="compareAnswers('5_1_1_Turtle_Dir_Q1');">Compare Me</button>
-            </form><br />
-            <div id="5_1_1_Turtle_Dir_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             <div class="section" id="what-does-a-left-turn-of-90-mean">
 <h2>What does a left turn of 90 mean?<a class="headerlink" href="#what-does-a-left-turn-of-90-mean" title="Permalink to this headline">¶</a></h2>
 <p>When we ask a turtle to turn left, it will turn left based on the direction it is currently heading. A turtle object keeps track of its heading (direction it is facing). Use the figure below to help you understand how much the turtle will turn if asked to turn left 90 degrees and it is currently heading east (0 degrees).</p>
@@ -478,7 +404,7 @@ ella.forward(75)</div>
 
     <script>
         $pjQ(document).ready(function(){
-
+            var rb = new RunestoneBase();
             $("#parsons-79").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
                     scrollTop: ($("#parsons-79").offset().top - 50)
@@ -494,10 +420,10 @@ ella.forward(75)</div>
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
-                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'5_1_1_Turtle_L'});
+                    rb.logBookEvent({'event':'parsons', 'act':hash, 'div_id':'5_1_1_Turtle_L'});
 
             } else {
-                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'5_1_1_Turtle_L'});
+                    rb.logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'5_1_1_Turtle_L'});
                     msgBox.fadeIn(100);
                     msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
@@ -607,7 +533,7 @@ maria.forward(150)</div>
 
     <script>
         $pjQ(document).ready(function(){
-
+            var rb = new RunestoneBase();
             $("#parsons-96").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
                     scrollTop: ($("#parsons-96").offset().top - 50)
@@ -623,10 +549,10 @@ maria.forward(150)</div>
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
-                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'5_1_2_Turtle_Check'});
+                    rb.logBookEvent({'event':'parsons', 'act':hash, 'div_id':'5_1_2_Turtle_Check'});
 
             } else {
-                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'5_1_2_Turtle_Check'});
+                    rb.logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'5_1_2_Turtle_Check'});
                     msgBox.fadeIn(100);
                     msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
@@ -742,7 +668,10 @@ maria.forward(150)</div>
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

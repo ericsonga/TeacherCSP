@@ -34,18 +34,19 @@ There is a version of ``range`` that takes an **change amount**, so that you can
       evens = evens + [numbers[index]]
   print evens
 
-.. mchoicema:: 16_7_1_addEvensQ2
-		  :answer_a: Start with numbers=[1,2,3,4,5,6,7,8,9,10]
-		  :answer_b: Change the range to range(1,len(numbers),2)
-		  :answer_c: Change the range to range(0,len(numbers),1)
-		  :answer_d: Change the range to range(0,len(numbers),3)
-		  :correct: a,b
-		  :feedback_a: Yes, that would work, but there's an easier way
-		  :feedback_b: Yes, just by starting at 1, then skipping 2 each time, we'd collect the odds
-		  :feedback_c: No, that would collect all the numbers in evens
-		  :feedback_d: No, that would result in 0,3,6,9 in evens
+.. mchoice:: 16_7_1_addEvensQ2
+   :multiple_answers:
+   :correct: a,b
+   :answer_a: Start with numbers=[1,2,3,4,5,6,7,8,9,10]
+   :answer_b: Change the range to range(1,len(numbers),2)
+   :answer_c: Change the range to range(0,len(numbers),1)
+   :answer_d: Change the range to range(0,len(numbers),3)
+   :feedback_a: Yes, that would work, but there's an easier way
+   :feedback_b: Yes, just by starting at 1, then skipping 2 each time, we'd collect the odds
+   :feedback_c: No, that would collect all the numbers in evens
+   :feedback_d: No, that would result in 0,3,6,9 in evens
 
-		   Which of these changes to the program would you give you just the odds? (Again: Try it!)  Select all that work.
+   Which of these changes to the program would give you just the odds? (Again: Try it!)  Select all that work.
 		   
 
 

@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -322,21 +338,7 @@
 <h1>Naming Input<a class="headerlink" href="#naming-input" title="Permalink to this headline">¶</a></h1>
 <p>What if we want to draw a different size square, like one with a side length of 50?  We could change each of the calls to the <code class="docutils literal"><span class="pre">forward</span></code> procedure as shown below.</p>
 
-<div id="cont"></div>
-<div id="Function_Change_Size" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Function_Change_Size_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Function_Change_Size_saveb" onclick="saveEditor('Function_Change_Size');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Function_Change_Size_loadb" onclick="requestCode('Function_Change_Size');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Function_Change_Size','def square*open*turtle*close*:*nline*    turtle.forward*open*50*close**nline*    turtle.right*open*90*close**nline*    turtle.forward*open*50*close**nline*    turtle.right*open*90*close**nline*    turtle.forward*open*50*close**nline*    turtle.right*open*90*close**nline*    turtle.forward*open*50*close**nline*    turtle.right*open*90*close**nline**nline*from turtle import *  # use the turtle library*nline*space = Screen*open**close*      # create a turtle screen*nline*malik = Turtle*open**close*      # create a turtle named malik*nline*square*open*malik*close*         # draw a square with malik','1','*doubleq*Important lines tour*doubleq*; 1-9: sq50-line1-9; 2,4,6,8: sq50-line2468; 11-13: sq50-line11-13; 14: sq50-line14;*atype*')"/>
-
-</div>
-<br/>
-<div id="Function_Change_Size_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Function_Change_Size_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Function_Change_Size data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Important lines tour*doubleq*; 1-9: sq50-line1-9; 2,4,6,8: sq50-line2468; 11-13: sq50-line11-13; 14: sq50-line14;*atype*'     >
 def square(turtle):
     turtle.forward(50)
     turtle.right(90)
@@ -351,88 +353,10 @@ from turtle import *  # use the turtle library
 space = Screen()      # create a turtle screen
 malik = Turtle()      # create a turtle named malik
 square(malik)         # draw a square with malik
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Function_Change_Size_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Function_Change_Size_suffix" style="display:none">
-</pre><pre id="Function_Change_Size_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Function_Change_Size)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Function_Change_Size_saveb').toggle();
-    $('#Function_Change_Size_loadb').toggle();
-}
-if ($("#Function_Change_Size").attr("lang") !== "html" && $("#Function_Change_Size_code_div").parents(".admonition").length == 0 && $("#Function_Change_Size_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Function_Change_Size_code_div").offset({
-            left: $("#Function_Change_Size .clearfix").offset().left
-        });
-    }
-    $("#Function_Change_Size_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Function_Change_Size_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Function_Change_Size_runb").parent().siblings(".ac_output").show();
-            runit('Function_Change_Size',this, undefined);
-            $("#Function_Change_Size_runb").on("click", function(){
-                runit('Function_Change_Size',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Function_Change_Size_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Function_Change_Size_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Function_Change_Size_runb").on("click", function(){
-        runit('Function_Change_Size',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>But, this means we have to change each of the four <code class="docutils literal"><span class="pre">forward</span></code> statements and we could make a mistake and not set all of them to the same number.  Is there a better way?  What if we create a variable <code class="docutils literal"><span class="pre">size</span></code> and set its value to the amount to move forward?</p>
 
-<div id="cont"></div>
-<div id="Function_Add_Var" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Function_Add_Var_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Function_Add_Var_saveb" onclick="saveEditor('Function_Add_Var');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Function_Add_Var_loadb" onclick="requestCode('Function_Add_Var');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Function_Add_Var','def square*open*turtle*close*:*nline*    size = 50*nline*    turtle.forward*open*size*close**nline*    turtle.right*open*90*close**nline*    turtle.forward*open*size*close**nline*    turtle.right*open*90*close**nline*    turtle.forward*open*size*close**nline*    turtle.right*open*90*close**nline*    turtle.forward*open*size*close**nline*    turtle.right*open*90*close**nline**nline*from turtle import *  # use the turtle library*nline*space = Screen*open**close*      # create a turtle screen*nline*malik = Turtle*open**close*      # create a turtle named malik*nline*square*open*malik*close*         # draw a square with malik','1','*doubleq*Important lines tour*doubleq*; 1-10: sqvar-line1-10; 2: sqvar-line2; 3: sqvar-line3; 4: sqvar-line4; 5-10: sqvar-line5-10; 12-14: sqvar-line12-14; 15: sqvar-line15;*atype*')"/>
-
-</div>
-<br/>
-<div id="Function_Add_Var_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Function_Add_Var_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Function_Add_Var data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Important lines tour*doubleq*; 1-10: sqvar-line1-10; 2: sqvar-line2; 3: sqvar-line3; 4: sqvar-line4; 5-10: sqvar-line5-10; 12-14: sqvar-line12-14; 15: sqvar-line15;*atype*'     >
 def square(turtle):
     size = 50
     turtle.forward(size)
@@ -448,73 +372,9 @@ from turtle import *  # use the turtle library
 space = Screen()      # create a turtle screen
 malik = Turtle()      # create a turtle named malik
 square(malik)         # draw a square with malik
-</textarea>
-</div>
+</pre>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Function_Add_Var_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Function_Add_Var_suffix" style="display:none">
-</pre><pre id="Function_Add_Var_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Function_Add_Var)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Function_Add_Var_saveb').toggle();
-    $('#Function_Add_Var_loadb').toggle();
-}
-if ($("#Function_Add_Var").attr("lang") !== "html" && $("#Function_Add_Var_code_div").parents(".admonition").length == 0 && $("#Function_Add_Var_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Function_Add_Var_code_div").offset({
-            left: $("#Function_Add_Var .clearfix").offset().left
-        });
-    }
-    $("#Function_Add_Var_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Function_Add_Var_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Function_Add_Var_runb").parent().siblings(".ac_output").show();
-            runit('Function_Add_Var',this, undefined);
-            $("#Function_Add_Var_runb").on("click", function(){
-                runit('Function_Add_Var',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Function_Add_Var_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Function_Add_Var_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Function_Add_Var_runb").on("click", function(){
-        runit('Function_Add_Var',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="6_4_1_Function_Var_Q1" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="6_4_1_Function_Var_Q1">
             <p>csp-6-4-1: What is the side length for a square drawn by the following procedure?</p>
 <blockquote>
 <div><div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -539,47 +399,21 @@ else{
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<form name="6_4_1_Function_Var_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="6_4_1_Function_Var_Q1_opt_a" />
-            <label for= "6_4_1_Function_Var_Q1_opt_a">  a) 100</label><br />
+
+            <li data-component="answer"  id="6_4_1_Function_Var_Q1_opt_a">100</li><li data-component="feedback" id="6_4_1_Function_Var_Q1_opt_a">How much will it go forward?</li>
             
-            <input type="radio" name="group1" value="b" id="6_4_1_Function_Var_Q1_opt_b" />
-            <label for= "6_4_1_Function_Var_Q1_opt_b">  b) 50</label><br />
+            <li data-component="answer"  id="6_4_1_Function_Var_Q1_opt_b">50</li><li data-component="feedback" id="6_4_1_Function_Var_Q1_opt_b">What value is size set to?</li>
             
-            <input type="radio" name="group1" value="c" id="6_4_1_Function_Var_Q1_opt_c" />
-            <label for= "6_4_1_Function_Var_Q1_opt_c">  c) 200</label><br />
+            <li data-component="answer" data-correct id="6_4_1_Function_Var_Q1_opt_c">200</li><li data-component="feedback" id="6_4_1_Function_Var_Q1_opt_c">Size is set to 200 in line 2 so this will draw a square that has a side length of 200.</li>
             
-            <input type="radio" name="group1" value="d" id="6_4_1_Function_Var_Q1_opt_d" />
-            <label for= "6_4_1_Function_Var_Q1_opt_d">  d) 90</label><br />
+            <li data-component="answer"  id="6_4_1_Function_Var_Q1_opt_d">90</li><li data-component="feedback" id="6_4_1_Function_Var_Q1_opt_d">It turns 90 degrees.  It doesn't go forward 90.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('6_4_1_Function_Var_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('6_4_1_Function_Var_Q1','c',['How much will it go forward?', 'What value is size set to?', 'Size is set to 200 in line 2 so this will draw a square that has a side length of 200.', 'It turns 90 degrees.  It doesn\u0027t go forward 90.'])">Check Me</button>
-            <button class='btn btn-default' id="6_4_1_Function_Var_Q1_bcomp" disabled name="compare" onclick="compareAnswers('6_4_1_Function_Var_Q1');">Compare Me</button>
-            </form><br />
-            <div id="6_4_1_Function_Var_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             <p>Now the program is easier to change since we only have one line to change <code class="docutils literal"><span class="pre">size</span> <span class="pre">=</span> <span class="pre">50</span></code> to draw another size square.  But, we still have to change the program in order to draw a different size square.  Is there a better way?</p>
 <p>We can add an additional input to the function that specifies the size of the square.  Just separate the names for the inputs with a comma: <code class="docutils literal"><span class="pre">(turtle,size)</span></code> as shown below and be sure to specify the actual size when you call the procedure <code class="docutils literal"><span class="pre">square(malik,</span> <span class="pre">100)</span></code> or <code class="docutils literal"><span class="pre">square(malik,</span> <span class="pre">50)</span></code>.</p>
 
-<div id="cont"></div>
-<div id="Function_Call2" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Function_Call2_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Function_Call2_saveb" onclick="saveEditor('Function_Call2');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Function_Call2_loadb" onclick="requestCode('Function_Call2');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Function_Call2','def square*open*turtle,size*close*:*nline*    turtle.forward*open*size*close**nline*    turtle.right*open*90*close**nline*    turtle.forward*open*size*close**nline*    turtle.right*open*90*close**nline*    turtle.forward*open*size*close**nline*    turtle.right*open*90*close**nline*    turtle.forward*open*size*close**nline*    turtle.right*open*90*close**nline**nline*from turtle import *  # use the turtle library*nline*space = Screen*open**close*      # create a turtle screen *open*space*close**nline*malik = Turtle*open**close*      # create a turtle named malik*nline*square*open*malik, 100*close*    # draw a square of size 100*nline*square*open*malik, 75*close*     # draw a square of size 75*nline*square*open*malik, 50*close*     # draw a square of size 50*nline*square*open*malik, 25*close*     # draw a square of size 25','1','*doubleq*Important lines tour*doubleq*; 1-9: dsq3-line1-9; 2: dsq3-line2; 11-13: dsq3-line11-13; 14: dsq3-line14; 15: dsq3-line15; 16: dsq3-line16; 17: dsq3-line17;*atype*')"/>
-
-</div>
-<br/>
-<div id="Function_Call2_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Function_Call2_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Function_Call2 data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Important lines tour*doubleq*; 1-9: dsq3-line1-9; 2: dsq3-line2; 11-13: dsq3-line11-13; 14: dsq3-line14; 15: dsq3-line15; 16: dsq3-line16; 17: dsq3-line17;*atype*'     >
 def square(turtle,size):
     turtle.forward(size)
     turtle.right(90)
@@ -597,73 +431,9 @@ square(malik, 100)    # draw a square of size 100
 square(malik, 75)     # draw a square of size 75
 square(malik, 50)     # draw a square of size 50
 square(malik, 25)     # draw a square of size 25
-</textarea>
-</div>
+</pre>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Function_Call2_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Function_Call2_suffix" style="display:none">
-</pre><pre id="Function_Call2_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Function_Call2)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Function_Call2_saveb').toggle();
-    $('#Function_Call2_loadb').toggle();
-}
-if ($("#Function_Call2").attr("lang") !== "html" && $("#Function_Call2_code_div").parents(".admonition").length == 0 && $("#Function_Call2_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Function_Call2_code_div").offset({
-            left: $("#Function_Call2 .clearfix").offset().left
-        });
-    }
-    $("#Function_Call2_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Function_Call2_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Function_Call2_runb").parent().siblings(".ac_output").show();
-            runit('Function_Call2',this, undefined);
-            $("#Function_Call2_runb").on("click", function(){
-                runit('Function_Call2',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Function_Call2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Function_Call2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Function_Call2_runb").on("click", function(){
-        runit('Function_Call2',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="6_4_2_Name_The_Shape_Q1" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="6_4_2_Name_The_Shape_Q1">
             <p>csp-6-4-2: What shape would the following code draw?</p>
 <div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -694,29 +464,18 @@ malik = Turtle()           # create a turtle named malik
 mystery(malik, 100)        # draw something with size = 100
 </pre></div>
 </td></tr></table></div>
-<form name="6_4_2_Name_The_Shape_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="6_4_2_Name_The_Shape_Q1_opt_a" />
-            <label for= "6_4_2_Name_The_Shape_Q1_opt_a">  a) square</label><br />
+
+            <li data-component="answer"  id="6_4_2_Name_The_Shape_Q1_opt_a">square</li><li data-component="feedback" id="6_4_2_Name_The_Shape_Q1_opt_a">Check the 2nd and 4th forwards.  How much do they move forward by?</li>
             
-            <input type="radio" name="group1" value="b" id="6_4_2_Name_The_Shape_Q1_opt_b" />
-            <label for= "6_4_2_Name_The_Shape_Q1_opt_b">  b) rectangle</label><br />
+            <li data-component="answer" data-correct id="6_4_2_Name_The_Shape_Q1_opt_b">rectangle</li><li data-component="feedback" id="6_4_2_Name_The_Shape_Q1_opt_b">This will draw a rectangle with two sides with the specified size and two sides half that size.  Copy this code into the area above and run it.</li>
             
-            <input type="radio" name="group1" value="c" id="6_4_2_Name_The_Shape_Q1_opt_c" />
-            <label for= "6_4_2_Name_The_Shape_Q1_opt_c">  c) triangle</label><br />
+            <li data-component="answer"  id="6_4_2_Name_The_Shape_Q1_opt_c">triangle</li><li data-component="feedback" id="6_4_2_Name_The_Shape_Q1_opt_c">A triangle has 3 sides.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('6_4_2_Name_The_Shape_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('6_4_2_Name_The_Shape_Q1','b',['Check the 2nd and 4th forwards.  How much do they move forward by?', 'This will draw a rectangle with two sides with the specified size and two sides half that size.  Copy this code into the area above and run it.', 'A triangle has 3 sides.'])">Check Me</button>
-            <button class='btn btn-default' id="6_4_2_Name_The_Shape_Q1_bcomp" disabled name="compare" onclick="compareAnswers('6_4_2_Name_The_Shape_Q1');">Compare Me</button>
-            </form><br />
-            <div id="6_4_2_Name_The_Shape_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             <span class="target" id="index-0"></span><span class="target" id="index-1"></span><span class="target" id="index-2"></span><p id="index-3">The inputs that are specified in a function or procedure definition are also called <strong>parameters</strong> or <strong>formal parameters</strong>.  So <code class="docutils literal"><span class="pre">turtle</span></code> and <code class="docutils literal"><span class="pre">size</span></code> are both parameters (formal parameters) in the <code class="docutils literal"><span class="pre">square</span></code> procedure.  Notice that when we call <code class="docutils literal"><span class="pre">square</span></code> we have to specify the actual values for the inputs.  The actual values passed into the function as inputs are called the <strong>arguments</strong> or <strong>actual parameters</strong>. In the call <code class="docutils literal"><span class="pre">square(malik,</span> <span class="pre">50)</span></code> both <code class="docutils literal"><span class="pre">malik</span></code> and <code class="docutils literal"><span class="pre">50</span></code> are arguments (actual parameters) to the <code class="docutils literal"><span class="pre">square</span></code> procedure.</p>
 
-            <div id="6_4_3_Name_Args_Q1" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="6_4_3_Name_Args_Q1">
             <p>csp-6-4-3: In the following code what are the arguments (actual parameters)?</p>
 <div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -747,26 +506,15 @@ imani = Turtle()           # create a turtle named imani
 square(imani, 25)      # draw a square with size 25
 </pre></div>
 </td></tr></table></div>
-<form name="6_4_3_Name_Args_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="6_4_3_Name_Args_Q1_opt_a" />
-            <label for= "6_4_3_Name_Args_Q1_opt_a">  a) turtle and size</label><br />
+
+            <li data-component="answer"  id="6_4_3_Name_Args_Q1_opt_a">turtle and size</li><li data-component="feedback" id="6_4_3_Name_Args_Q1_opt_a">These are the names of the parameters (formal parameters).</li>
             
-            <input type="radio" name="group1" value="b" id="6_4_3_Name_Args_Q1_opt_b" />
-            <label for= "6_4_3_Name_Args_Q1_opt_b">  b) malik and 25</label><br />
+            <li data-component="answer"  id="6_4_3_Name_Args_Q1_opt_b">malik and 25</li><li data-component="feedback" id="6_4_3_Name_Args_Q1_opt_b">Look again at the code above.  Is that the name of this turtle?</li>
             
-            <input type="radio" name="group1" value="c" id="6_4_3_Name_Args_Q1_opt_c" />
-            <label for= "6_4_3_Name_Args_Q1_opt_c">  c) imani and 25</label><br />
+            <li data-component="answer" data-correct id="6_4_3_Name_Args_Q1_opt_c">imani and 25</li><li data-component="feedback" id="6_4_3_Name_Args_Q1_opt_c">The turtle is named imani and the size is 25 in the code: square(imani, 25).</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('6_4_3_Name_Args_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('6_4_3_Name_Args_Q1','c',['These are the names of the parameters (formal parameters).', 'Look again at the code above.  Is that the name of this turtle?', 'The turtle is named imani and the size is 25 in the code: square(imani, 25).'])">Check Me</button>
-            <button class='btn btn-default' id="6_4_3_Name_Args_Q1_bcomp" disabled name="compare" onclick="compareAnswers('6_4_3_Name_Args_Q1');">Compare Me</button>
-            </form><br />
-            <div id="6_4_3_Name_Args_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             
         <div class='parsons alert alert-warning' id="parsons-189">
         <div class="parsons-text">csp-6-4-4: The following code assumes that a procedure square has been defined that takes a size.  The code should create a turtle and then use it to draw a square, move forward, and draw a second square as shown at left, <img src="../_static/SquareForwardSquare.png" width="150" align="left" hspace="10" vspace="5"/> but the lines are mixed up.  Drag the lines into the correct order on the right.<br /><br /></div>
@@ -791,7 +539,7 @@ square(imani, 50)</div>
 
     <script>
         $pjQ(document).ready(function(){
-
+            var rb = new RunestoneBase();
             $("#parsons-189").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
                     scrollTop: ($("#parsons-189").offset().top - 50)
@@ -807,10 +555,10 @@ square(imani, 50)</div>
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
-                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'6_4_4_Draw_Squares'});
+                    rb.logBookEvent({'event':'parsons', 'act':hash, 'div_id':'6_4_4_Draw_Squares'});
 
             } else {
-                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'6_4_4_Draw_Squares'});
+                    rb.logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'6_4_4_Draw_Squares'});
                     msgBox.fadeIn(100);
                     msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
@@ -925,7 +673,10 @@ square(imani, 50)</div>
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

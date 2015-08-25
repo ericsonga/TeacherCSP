@@ -23,7 +23,7 @@ Chapter 8 Exercises
 
         .. tab:: Question
             
-            Fix the code below to print a countdown of the numbers from 10 to 0.  
+            Fix the 5 errors in the code below to print a countdown of the numbers from 10 to 0.  
 
             .. activecode:: ch8ex1q
                 :nocodelens:
@@ -35,7 +35,7 @@ Chapter 8 Exercises
 
         .. tab:: Answer
         
-            Change ``Counter`` to ``counter`` everywhere.  Loop while ``counter`` is greater than or equal to 0.  Change the ``Print`` to ``print``.  Change the last line to subtract one rather than add it.
+            Change ``Counter`` to ``counter`` on lines 2 and 4.  Loop while ``counter`` is greater than or equal to 0.  Change the ``Print`` to ``print``.  Change the last line to subtract one rather than add it.
 
             .. activecode:: ch8ex1a
                 :nocodelens:
@@ -57,7 +57,7 @@ Chapter 8 Exercises
 
         .. tab:: Question
 
-           Fix the code below to print a count up from -10 to 0.  
+           Make 5 changes to the code below to correctly print a count up from -10 to 0.  
            
            .. activecode::  ch8ex2q
                 :nocodelens:
@@ -136,7 +136,7 @@ Chapter 8 Exercises
 
         .. tab:: Question
 
-           The code below is supposed to print an estimate of the square root.  But, the indention is wrong on many lines.  Fix it.
+           The code below is supposed to print an estimate of the square root.  But, the indention is wrong on 4 lines.  Fix it.
            
            .. activecode::  ch8ex4q
                 :nocodelens:
@@ -178,7 +178,7 @@ Chapter 8 Exercises
 
         .. tab:: Question
 
-           The program below is supposed to print the times tables for 1 to 3, but there are errors.  Fix the errors.
+           The program below is supposed to print the times tables for 1 to 3, but there are 5 errors.  Fix the errors.
            
            .. activecode::  ch8ex5q
                 :nocodelens:

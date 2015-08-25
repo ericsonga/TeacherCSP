@@ -452,15 +452,15 @@ One of the interesting questions to explore is, "Which city has the worst pollut
           lines = inFile.readlines()
           inFile.close()
      
-           maxCity = ''
-           # initialize max10 here
-           for line in lines:
-               values = line.split(":")
-               # set the value for new10 to be the current PM 10 value
-               if new10 > max10:
-                   maxCity = values[0]
-                   # save the new maximum
-           print("Largest PM 10 value is ",max10," in ",maxCity)
+          maxCity = ''
+          # initialize max10 here
+          for line in lines:
+              values = line.split(":")
+              # set the value for new10 to be the current PM 10 value
+              if new10 > max10:
+                  maxCity = values[0]
+                  # save the new maximum
+          print("Largest PM 10 value is ",max10," in ",maxCity)
            
     .. tab:: Max_Polution_10_Answer
    

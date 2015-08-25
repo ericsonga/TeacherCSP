@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -320,19 +336,12 @@
   
   <div class="section" id="exam-questions-for-chapters-5-and-6">
 <h1>Exam Questions for Chapters 5 and 6<a class="headerlink" href="#exam-questions-for-chapters-5-and-6" title="Permalink to this headline">¶</a></h1>
-<p>The following questions test what you have learned in chapters 5 and 6. Click the &#8220;Start&#8221; button when you are ready to begin the exam.  Click the &#8220;Pause&#8221; button to pause the exam (you will not be able to see the questions when the exam is paused).  Hover over the clock icon to see how much time you have spent on the exam, but you have unlimited time.  Click on the &#8220;Submit Answers&#8221; button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.</p>
+<p>The following questions test what you have learned in chapters 5 and 6. Click the &#8220;Start&#8221; button when you are ready to begin the exam.  Click the &#8220;Pause&#8221; button to pause the exam (you will not be able to see the questions when the exam is paused).  It will show how much time you have used, but you have unlimited time.  Click on the &#8220;Submit answers&#8221; button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.</p>
 <p>You will not be able to change your answers after you hit the &#8220;Submit Answers&#8221; button.</p>
 
-           <div id="startWrapper">
-		    <p id="timeOutput"></p>
-		    </div>
-		    
-		    <div id="controls" style="text-align: center;">
-			<button class='btn btn-inverse' id ="examButton" onclick="handleExamButtonClick()">Start</button>
-	        </div>
-            <div id='timed_Test' style='display:none'>
-            
-            <div id="e5a6_1" class="alert alert-warning">
+    <ul data-component="timedAssessment"  id="ch5a6ex"  >
+    
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e5a6_1">
             <p>6-10-1: What value is printed when the following code is executed?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;John Smith&quot;</span>
 <span class="k">def</span> <span class="nf">myFunction</span><span class="p">(</span><span class="n">parameter</span><span class="p">):</span>
@@ -344,37 +353,18 @@
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e5a6_1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e5a6_1_opt_a" />
-            <label for= "e5a6_1_opt_a">  a) value</label><br />
-	        <div id= "e5a6_1_eachFeedback_a"></div>
+            <li data-component="answer"  id="e5a6_1_opt_a">value</li><li data-component="feedback" id="e5a6_1_opt_a">When you print a variable it will print the value of the variable.</li>
             
-            <input type="radio" name="group1" value="b" id="e5a6_1_opt_b" />
-            <label for= "e5a6_1_opt_b">  b) Second</label><br />
-	        <div id= "e5a6_1_eachFeedback_b"></div>
+            <li data-component="answer" data-correct id="e5a6_1_opt_b">Second</li><li data-component="feedback" id="e5a6_1_opt_b">When you call myFunction("Second") the value of parameter is set to "Second".  This code prints the value of the variable called "value" which is set to the value of parameter.</li>
             
-            <input type="radio" name="group1" value="c" id="e5a6_1_opt_c" />
-            <label for= "e5a6_1_opt_c">  c) parameter</label><br />
-	        <div id= "e5a6_1_eachFeedback_c"></div>
+            <li data-component="answer"  id="e5a6_1_opt_c">parameter</li><li data-component="feedback" id="e5a6_1_opt_c">When value = parameter is executed the value of parameter is copied into the space called value.</li>
             
-            <input type="radio" name="group1" value="d" id="e5a6_1_opt_d" />
-            <label for= "e5a6_1_opt_d">  d) First</label><br />
-	        <div id= "e5a6_1_eachFeedback_d"></div>
+            <li data-component="answer"  id="e5a6_1_opt_d">First</li><li data-component="feedback" id="e5a6_1_opt_d">While value was first set to "First" it was changed to a copy of the value of parameter.</li>
             
 
-            <script>
-		    populateArrays('e5a6_1','b',['When you print a variable it will print the value of the variable.', 'When you call myFunction(\u0022Second\u0022) the value of parameter is set to \u0022Second\u0022.  This code prints the value of the variable called \u0022value\u0022 which is set to the value of parameter.', 'When value \u003D parameter is executed the value of parameter is copied into the space called value.', 'While value was first set to \u0022First\u0022 it was changed to a copy of the value of parameter.']);
-            $(document).ready(function(){checkExamRadio('e5a6_1');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e5a6_1_feedback">
-            </div>
-            </div>
-            
-            <div id="e5a6_2" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e5a6_2">
             <p>6-10-2: Which picture would the following code produce?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">screen</span> <span class="o">=</span> <span class="n">Screen</span><span class="p">()</span>
@@ -390,37 +380,18 @@
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e5a6_2_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e5a6_2_opt_a" />
-            <label for= "e5a6_2_opt_a">  a) <img src="../_static/squarea.png" alt="A square with the first line in black and the next 3 in red" width="300"></label><br />
-	        <div id= "e5a6_2_eachFeedback_a"></div>
+            <li data-component="answer"  id="e5a6_2_opt_a"><img src="../_static/squarea.png" alt="A square with the first line in black and the next 3 in red" width="300"></li><li data-component="feedback" id="e5a6_2_opt_a">This would be true if the alice.pencolor("red") was after the first forward.</li>
             
-            <input type="radio" name="group1" value="b" id="e5a6_2_opt_b" />
-            <label for= "e5a6_2_opt_b">  b) <img src="../_static/squareb.png" alt="A square with all lines in red" width="300"></label><br />
-	        <div id= "e5a6_2_eachFeedback_b"></div>
+            <li data-component="answer"  id="e5a6_2_opt_b"><img src="../_static/squareb.png" alt="A square with all lines in red" width="300"></li><li data-component="feedback" id="e5a6_2_opt_b">This would be true if the alice.pencolor("red") was before the first forward.</li>
             
-            <input type="radio" name="group1" value="c" id="e5a6_2_opt_c" />
-            <label for= "e5a6_2_opt_c">  c) <img src="../_static/squarec.png" alt="A square with the first two lines in black and the last two in red" width="300"></label><br />
-	        <div id= "e5a6_2_eachFeedback_c"></div>
+            <li data-component="answer" data-correct id="e5a6_2_opt_c"><img src="../_static/squarec.png" alt="A square with the first two lines in black and the last two in red" width="300"></li><li data-component="feedback" id="e5a6_2_opt_c">Since the alice.pencolor("red") is after the second forward the first two lines will be black and the last two will be red.</li>
             
-            <input type="radio" name="group1" value="d" id="e5a6_2_opt_d" />
-            <label for= "e5a6_2_opt_d">  d) <img src="../_static/squared.png" alt="A square with the first three lines in black and the last one in red" width="300"></label><br />
-	        <div id= "e5a6_2_eachFeedback_d"></div>
+            <li data-component="answer"  id="e5a6_2_opt_d"><img src="../_static/squared.png" alt="A square with the first three lines in black and the last one in red" width="300"></li><li data-component="feedback" id="e5a6_2_opt_d">This would be true if the alice.pencolor("red") was after the third forward.</li>
             
 
-            <script>
-		    populateArrays('e5a6_2','c',['This would be true if the alice.pencolor(\u0022red\u0022) was after the first forward.', 'This would be true if the alice.pencolor(\u0022red\u0022) was before the first forward.', 'Since the alice.pencolor(\u0022red\u0022) is after the second forward the first two lines will be black and the last two will be red.', 'This would be true if the alice.pencolor(\u0022red\u0022) was after the third forward.']);
-            $(document).ready(function(){checkExamRadio('e5a6_2');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e5a6_2_feedback">
-            </div>
-            </div>
-            
-            <div id="e5a6_3" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e5a6_3">
             <p>6-10-3: Given the following lines of code, which will move the turtle bob 50 units forward?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">space</span> <span class="o">=</span> <span class="n">Screen</span><span class="p">()</span>
@@ -428,69 +399,31 @@
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e5a6_3_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e5a6_3_opt_a" />
-            <label for= "e5a6_3_opt_a">  a) bob.move(50)</label><br />
-	        <div id= "e5a6_3_eachFeedback_a"></div>
+            <li data-component="answer"  id="e5a6_3_opt_a">bob.move(50)</li><li data-component="feedback" id="e5a6_3_opt_a">Turtles don't understand move.</li>
             
-            <input type="radio" name="group1" value="b" id="e5a6_3_opt_b" />
-            <label for= "e5a6_3_opt_b">  b) bob.left(50)</label><br />
-	        <div id= "e5a6_3_eachFeedback_b"></div>
+            <li data-component="answer"  id="e5a6_3_opt_b">bob.left(50)</li><li data-component="feedback" id="e5a6_3_opt_b">The left procedure turns the turtle left by the specified amount.</li>
             
-            <input type="radio" name="group1" value="c" id="e5a6_3_opt_c" />
-            <label for= "e5a6_3_opt_c">  c) bob.forward(50)</label><br />
-	        <div id= "e5a6_3_eachFeedback_c"></div>
+            <li data-component="answer" data-correct id="e5a6_3_opt_c">bob.forward(50)</li><li data-component="feedback" id="e5a6_3_opt_c">Turtles have a forward procedure which moves the turtle in the direction it is facing by the specified amount.</li>
             
-            <input type="radio" name="group1" value="d" id="e5a6_3_opt_d" />
-            <label for= "e5a6_3_opt_d">  d) bob.right(50)</label><br />
-	        <div id= "e5a6_3_eachFeedback_d"></div>
+            <li data-component="answer"  id="e5a6_3_opt_d">bob.right(50)</li><li data-component="feedback" id="e5a6_3_opt_d">The right procedure turns the turtle right by the specified amount.</li>
             
 
-            <script>
-		    populateArrays('e5a6_3','c',['Turtles don\u0027t understand move.', 'The left procedure turns the turtle left by the specified amount.', 'Turtles have a forward procedure which moves the turtle in the direction it is facing by the specified amount.', 'The right procedure turns the turtle right by the specified amount.']);
-            $(document).ready(function(){checkExamRadio('e5a6_3');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e5a6_3_feedback">
-            </div>
-            </div>
-            
-            <div id="e5a6_4" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e5a6_4">
             6-10-4: A named sequence of statements that returns a result is known as which of the following?
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e5a6_4_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e5a6_4_opt_a" />
-            <label for= "e5a6_4_opt_a">  a) definition</label><br />
-	        <div id= "e5a6_4_eachFeedback_a"></div>
+            <li data-component="answer"  id="e5a6_4_opt_a">definition</li><li data-component="feedback" id="e5a6_4_opt_a">You use the def keyword to define a procedure or function.</li>
             
-            <input type="radio" name="group1" value="b" id="e5a6_4_opt_b" />
-            <label for= "e5a6_4_opt_b">  b) procedure</label><br />
-	        <div id= "e5a6_4_eachFeedback_b"></div>
+            <li data-component="answer"  id="e5a6_4_opt_b">procedure</li><li data-component="feedback" id="e5a6_4_opt_b">A procedure doesn't return anything.</li>
             
-            <input type="radio" name="group1" value="c" id="e5a6_4_opt_c" />
-            <label for= "e5a6_4_opt_c">  c) turtle</label><br />
-	        <div id= "e5a6_4_eachFeedback_c"></div>
+            <li data-component="answer"  id="e5a6_4_opt_c">turtle</li><li data-component="feedback" id="e5a6_4_opt_c">Turtles have procedures and functions.</li>
             
-            <input type="radio" name="group1" value="d" id="e5a6_4_opt_d" />
-            <label for= "e5a6_4_opt_d">  d) function</label><br />
-	        <div id= "e5a6_4_eachFeedback_d"></div>
+            <li data-component="answer" data-correct id="e5a6_4_opt_d">function</li><li data-component="feedback" id="e5a6_4_opt_d">A function returns a result.</li>
             
 
-            <script>
-		    populateArrays('e5a6_4','d',['You use the def keyword to define a procedure or function.', 'A procedure doesn\u0027t return anything.', 'Turtles have procedures and functions.', 'A function returns a result.']);
-            $(document).ready(function(){checkExamRadio('e5a6_4');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e5a6_4_feedback">
-            </div>
-            </div>
-            
-            <div id="e5a6_5" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e5a6_5">
             <p>6-10-5: Which picture would the following code produce?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">space</span> <span class="o">=</span> <span class="n">Screen</span><span class="p">()</span>
@@ -502,37 +435,18 @@
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e5a6_5_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e5a6_5_opt_a" />
-            <label for= "e5a6_5_opt_a">  a) <img src="../_static/checka.png" alt="Shorter line to south and then longer line to east" width="300"></label><br />
-	        <div id= "e5a6_5_eachFeedback_a"></div>
+            <li data-component="answer"  id="e5a6_5_opt_a"><img src="../_static/checka.png" alt="Shorter line to south and then longer line to east" width="300"></li><li data-component="feedback" id="e5a6_5_opt_a">This would be true if it was right first and then left.</li>
             
-            <input type="radio" name="group1" value="b" id="e5a6_5_opt_b" />
-            <label for= "e5a6_5_opt_b">  b) <img src="../_static/checkb.png" alt="Longer line to south and then shorter line to east" width="300"></label><br />
-	        <div id= "e5a6_5_eachFeedback_b"></div>
+            <li data-component="answer"  id="e5a6_5_opt_b"><img src="../_static/checkb.png" alt="Longer line to south and then shorter line to east" width="300"></li><li data-component="feedback" id="e5a6_5_opt_b">This would be true if it was right first and then left and if the first forward was 150 and the last was 75.</li>
             
-            <input type="radio" name="group1" value="c" id="e5a6_5_opt_c" />
-            <label for= "e5a6_5_opt_c">  c) <img src="../_static/checkc.png" alt="Longer line to north and then shorter line to east" width="300"></label><br />
-	        <div id= "e5a6_5_eachFeedback_c"></div>
+            <li data-component="answer"  id="e5a6_5_opt_c"><img src="../_static/checkc.png" alt="Longer line to north and then shorter line to east" width="300"></li><li data-component="feedback" id="e5a6_5_opt_c">This would be true if it was the shorter line to the north and the longer to the east.</li>
             
-            <input type="radio" name="group1" value="d" id="e5a6_5_opt_d" />
-            <label for= "e5a6_5_opt_d">  d) <img src="../_static/checkd.png" alt="Shorter line to north and then longer line to east" width="300"></label><br />
-	        <div id= "e5a6_5_eachFeedback_d"></div>
+            <li data-component="answer" data-correct id="e5a6_5_opt_d"><img src="../_static/checkd.png" alt="Shorter line to north and then longer line to east" width="300"></li><li data-component="feedback" id="e5a6_5_opt_d">This will draw the shorter line to the north and then the longer one to the east.</li>
             
 
-            <script>
-		    populateArrays('e5a6_5','d',['This would be true if it was right first and then left.', 'This would be true if it was right first and then left and if the first forward was 150 and the last was 75.', 'This would be true if it was the shorter line to the north and the longer to the east.', 'This will draw the shorter line to the north and then the longer one to the east.']);
-            $(document).ready(function(){checkExamRadio('e5a6_5');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e5a6_5_feedback">
-            </div>
-            </div>
-            
-            <div id="e5a6_6" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e5a6_6">
             <p>6-10-6: What will the following code draw?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">shape</span><span class="p">(</span><span class="n">turtle</span><span class="p">):</span>
     <span class="n">turtle</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
@@ -552,70 +466,18 @@
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e5a6_6_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e5a6_6_opt_a" />
-            <label for= "e5a6_6_opt_a">  a) Two squares connected with a straight line</label><br />
-	        <div id= "e5a6_6_eachFeedback_a"></div>
+            <li data-component="answer"  id="e5a6_6_opt_a">Two squares connected with a straight line</li><li data-component="feedback" id="e5a6_6_opt_a">This would be true if the right turns were 90 and there were four forwards</li>
             
-            <input type="radio" name="group1" value="b" id="e5a6_6_opt_b" />
-            <label for= "e5a6_6_opt_b">  b) Two triangles connected with a straight line</label><br />
-	        <div id= "e5a6_6_eachFeedback_b"></div>
+            <li data-component="answer" data-correct id="e5a6_6_opt_b">Two triangles connected with a straight line</li><li data-component="feedback" id="e5a6_6_opt_b">This procedure will draw a triangle and it is called twice so it draws two triangles</li>
             
-            <input type="radio" name="group1" value="c" id="e5a6_6_opt_c" />
-            <label for= "e5a6_6_opt_c">  c) Two rectangles connected with a straight line</label><br />
-	        <div id= "e5a6_6_eachFeedback_c"></div>
+            <li data-component="answer"  id="e5a6_6_opt_c">Two rectangles connected with a straight line</li><li data-component="feedback" id="e5a6_6_opt_c">This would be true if the right turns were 90 and there were four forwards with two different forward amounts</li>
             
-            <input type="radio" name="group1" value="d" id="e5a6_6_opt_d" />
-            <label for= "e5a6_6_opt_d">  d) Nothing</label><br />
-	        <div id= "e5a6_6_eachFeedback_d"></div>
+            <li data-component="answer"  id="e5a6_6_opt_d">Nothing</li><li data-component="feedback" id="e5a6_6_opt_d">This would be true if we only defined the procedure and didn't execute it.</li>
             
 
-            <script>
-		    populateArrays('e5a6_6','b',['This would be true if the right turns were 90 and there were four forwards', 'This procedure will draw a triangle and it is called twice so it draws two triangles', 'This would be true if the right turns were 90 and there were four forwards with two different forward amounts', 'This would be true if we only defined the procedure and didn\u0027t execute it.']);
-            $(document).ready(function(){checkExamRadio('e5a6_6');});
-            </script>
-            
- 
-            </form><br />
-            <div id="e5a6_6_feedback">
-            </div>
-            </div>
-            
-
-            
-	
-	<div style="text-align: center;">
-	<button class='btn btn-inverse' id ="finish" onclick="checkExam()">Submit Answers</button>
-	</div>
-	<script>
-	    
-	    $(document).ready(function() {
-	      $("#results").hide();
-	      checkIfFinished()
-	    });
-	</script>
-
-
-            
-            </div>
-            <p id="results"></p>
- 
-            
-            <script>
-			   var time = 0;
-			   var change = 1;
-		       showTime(0);
-            </script>
-            
-            <script>
-			   var showFeedback = 1;
-            </script>
-            
-            <script>
-			   var showResult = 1;
-            </script>
-            </div>
+            </ul>
+            </ul>
+    </div>
 
 
   
@@ -645,7 +507,10 @@
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -365,30 +381,18 @@ $(window).resize(function() {
 });
 </script>
 
-            <div id="3_7_1_Assignment_Q1" class="alert alert-warning">
-            csp-3-7-1: What is the value of variable <code class="docutils literal"><span class="pre">d</span></code> when this program is finished running?<form name="3_7_1_Assignment_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="3_7_1_Assignment_Q1_opt_a" />
-            <label for= "3_7_1_Assignment_Q1_opt_a">  a) 1</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="3_7_1_Assignment_Q1">
+            csp-3-7-1: What is the value of variable <code class="docutils literal"><span class="pre">d</span></code> when this program is finished running?
+            <li data-component="answer"  id="3_7_1_Assignment_Q1_opt_a">1</li><li data-component="feedback" id="3_7_1_Assignment_Q1_opt_a">The variable a is not used in defining the variable b.</li>
             
-            <input type="radio" name="group1" value="b" id="3_7_1_Assignment_Q1_opt_b" />
-            <label for= "3_7_1_Assignment_Q1_opt_b">  b) 12.3</label><br />
+            <li data-component="answer" data-correct id="3_7_1_Assignment_Q1_opt_b">12.3</li><li data-component="feedback" id="3_7_1_Assignment_Q1_opt_b">The variable d is set to a copy of the value in variable b.  The variable b still holds the value 12.3 as well.</li>
             
-            <input type="radio" name="group1" value="c" id="3_7_1_Assignment_Q1_opt_c" />
-            <label for= "3_7_1_Assignment_Q1_opt_c">  c) "b"</label><br />
+            <li data-component="answer"  id="3_7_1_Assignment_Q1_opt_c">"b"</li><li data-component="feedback" id="3_7_1_Assignment_Q1_opt_c">The variable d gets assigned the same value as the one stored in b.</li>
             
-            <input type="radio" name="group1" value="d" id="3_7_1_Assignment_Q1_opt_d" />
-            <label for= "3_7_1_Assignment_Q1_opt_d">  d) "d"</label><br />
+            <li data-component="answer"  id="3_7_1_Assignment_Q1_opt_d">"d"</li><li data-component="feedback" id="3_7_1_Assignment_Q1_opt_d">The variable d gets its value from the variable b.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('3_7_1_Assignment_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('3_7_1_Assignment_Q1','b',['The variable a is not used in defining the variable b.', 'The variable d is set to a copy of the value in variable b.  The variable b still holds the value 12.3 as well.', 'The variable d gets assigned the same value as the one stored in b.', 'The variable d gets its value from the variable b.'])">Check Me</button>
-            <button class='btn btn-default' id="3_7_1_Assignment_Q1_bcomp" disabled name="compare" onclick="compareAnswers('3_7_1_Assignment_Q1');">Compare Me</button>
-            </form><br />
-            <div id="3_7_1_Assignment_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             <p>The <em>sequence</em> of statements in a program is very important.  Assignment doesn&#8217;t create some kind of relationship between the names, like in mathematics.  The variable <code class="docutils literal"><span class="pre">a</span></code> might equal <code class="docutils literal"><span class="pre">12</span></code> at one point, and <code class="docutils literal"><span class="pre">15</span></code> at another. An assignment statement is an action that occurs once, and then is over with.</p>
 
 <div class="alert alert-warning cd_section">
@@ -434,144 +438,41 @@ $(window).resize(function() {
 });
 </script>
 
-            <div id="3_7_2_Assignment_Multiple_Q1" class="alert alert-warning">
-            csp-3-7-2: What are the values in <code class="docutils literal"><span class="pre">var1</span></code> and <code class="docutils literal"><span class="pre">var2</span></code> after this program runs?<form name="3_7_2_Assignment_Multiple_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="3_7_2_Assignment_Multiple_Q1_opt_a" />
-            <label for= "3_7_2_Assignment_Multiple_Q1_opt_a">  a) var1 is 45, var2 is 45</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="3_7_2_Assignment_Multiple_Q1">
+            csp-3-7-2: What are the values in <code class="docutils literal"><span class="pre">var1</span></code> and <code class="docutils literal"><span class="pre">var2</span></code> after this program runs?
+            <li data-component="answer"  id="3_7_2_Assignment_Multiple_Q1_opt_a">var1 is 45, var2 is 45</li><li data-component="feedback" id="3_7_2_Assignment_Multiple_Q1_opt_a">The variable var1 was set to 45, but that gets changed in line 2, before var2 gets set to any value at all.</li>
             
-            <input type="radio" name="group1" value="b" id="3_7_2_Assignment_Multiple_Q1_opt_b" />
-            <label for= "3_7_2_Assignment_Multiple_Q1_opt_b">  b) var1 is 45, var2 is var1</label><br />
+            <li data-component="answer"  id="3_7_2_Assignment_Multiple_Q1_opt_b">var1 is 45, var2 is var1</li><li data-component="feedback" id="3_7_2_Assignment_Multiple_Q1_opt_b">Both variables contain numeric values, because those are the only values in this program.</li>
             
-            <input type="radio" name="group1" value="c" id="3_7_2_Assignment_Multiple_Q1_opt_c" />
-            <label for= "3_7_2_Assignment_Multiple_Q1_opt_c">  c) var1 is 17.3, var2 is 45</label><br />
+            <li data-component="answer"  id="3_7_2_Assignment_Multiple_Q1_opt_c">var1 is 17.3, var2 is 45</li><li data-component="feedback" id="3_7_2_Assignment_Multiple_Q1_opt_c">The variable var2 never gets set to 45 in this program.</li>
             
-            <input type="radio" name="group1" value="d" id="3_7_2_Assignment_Multiple_Q1_opt_d" />
-            <label for= "3_7_2_Assignment_Multiple_Q1_opt_d">  d) var1 is 17.3, var2 is 17.3</label><br />
+            <li data-component="answer" data-correct id="3_7_2_Assignment_Multiple_Q1_opt_d">var1 is 17.3, var2 is 17.3</li><li data-component="feedback" id="3_7_2_Assignment_Multiple_Q1_opt_d">The variable var1 is first set to 45 and then changed to 17.3, and then, var2 gets the value from var1.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('3_7_2_Assignment_Multiple_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('3_7_2_Assignment_Multiple_Q1','d',['The variable var1 was set to 45, but that gets changed in line 2, before var2 gets set to any value at all.', 'Both variables contain numeric values, because those are the only values in this program.', 'The variable var2 never gets set to 45 in this program.', 'The variable var1 is first set to 45 and then changed to 17.3, and then, var2 gets the value from var1.'])">Check Me</button>
-            <button class='btn btn-default' id="3_7_2_Assignment_Multiple_Q1_bcomp" disabled name="compare" onclick="compareAnswers('3_7_2_Assignment_Multiple_Q1');">Compare Me</button>
-            </form><br />
-            <div id="3_7_2_Assignment_Multiple_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             <p>We can see values (including the values for named variables) by printing them.  It&#8217;s a useful way to see what&#8217;s going on inside a program.  Try running this example where we&#8217;re having the computer calculate the number of days in three weeks:</p>
 
-<div id="cont"></div>
-<div id="Assign_Days" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Assign_Days_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Assign_Days_saveb" onclick="saveEditor('Assign_Days');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Assign_Days_loadb" onclick="requestCode('Assign_Days');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Assign_Days','daysInWeek = 7*nline*print*open*daysInWeek*close**nline*numDays = 7 * 3*nline*print*open*numDays*close**nline*numDays2 = daysInWeek * 3*nline*print*open*numDays2*close*','1','*doubleq*Line by line tour*doubleq*; 1: calcDays-line1; 2: calcDays-line2; 3: calcDays-line3; 4: calcDays-line4; 5: calcDays-line5; 6: calcDays-line6;*atype*')"/>
-<button class='btn btn-default' id="Assign_Days_vizb" onclick="injectCodelens(this,'Assign_Days');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="Assign_Days_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Assign_Days_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Assign_Days data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Line by line tour*doubleq*; 1: calcDays-line1; 2: calcDays-line2; 3: calcDays-line3; 4: calcDays-line4; 5: calcDays-line5; 6: calcDays-line6;*atype*'     >
 daysInWeek = 7
 print(daysInWeek)
 numDays = 7 * 3
 print(numDays)
 numDays2 = daysInWeek * 3
 print(numDays2)
-</textarea>
-</div>
+</pre>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Assign_Days_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Assign_Days_suffix" style="display:none">
-</pre><pre id="Assign_Days_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Assign_Days)</span> </p>
-<div id="Assign_Days_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Assign_Days_saveb').toggle();
-    $('#Assign_Days_loadb').toggle();
-}
-if ($("#Assign_Days").attr("lang") !== "html" && $("#Assign_Days_code_div").parents(".admonition").length == 0 && $("#Assign_Days_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Assign_Days_code_div").offset({
-            left: $("#Assign_Days .clearfix").offset().left
-        });
-    }
-    $("#Assign_Days_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Assign_Days_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Assign_Days_runb").parent().siblings(".ac_output").show();
-            runit('Assign_Days',this, undefined);
-            $("#Assign_Days_runb").on("click", function(){
-                runit('Assign_Days',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Assign_Days_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Assign_Days_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Assign_Days_runb").on("click", function(){
-        runit('Assign_Days',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="3_7_3_Assign_Days_Q1" class="alert alert-warning">
-            csp-3-7-3: What three values are printed when this program runs?<form name="3_7_3_Assign_Days_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="3_7_3_Assign_Days_Q1_opt_a" />
-            <label for= "3_7_3_Assign_Days_Q1_opt_a">  a) 7, 7*3, daysInWeek*3</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="3_7_3_Assign_Days_Q1">
+            csp-3-7-3: What three values are printed when this program runs?
+            <li data-component="answer"  id="3_7_3_Assign_Days_Q1_opt_a">7, 7*3, daysInWeek*3</li><li data-component="feedback" id="3_7_3_Assign_Days_Q1_opt_a">The values will actually be computed and numbers will be printed.</li>
             
-            <input type="radio" name="group1" value="b" id="3_7_3_Assign_Days_Q1_opt_b" />
-            <label for= "3_7_3_Assign_Days_Q1_opt_b">  b) daysInWeek, numDays, numDays2</label><br />
+            <li data-component="answer"  id="3_7_3_Assign_Days_Q1_opt_b">daysInWeek, numDays, numDays2</li><li data-component="feedback" id="3_7_3_Assign_Days_Q1_opt_b">The variable names will not be printed.</li>
             
-            <input type="radio" name="group1" value="c" id="3_7_3_Assign_Days_Q1_opt_c" />
-            <label for= "3_7_3_Assign_Days_Q1_opt_c">  c) 7, 21, 21</label><br />
+            <li data-component="answer" data-correct id="3_7_3_Assign_Days_Q1_opt_c">7, 21, 21</li><li data-component="feedback" id="3_7_3_Assign_Days_Q1_opt_c">The first print will print the value of daysInWeek (7), the second the value of numDays (21), and the third the value of numDays2 (21).</li>
             
-            <input type="radio" name="group1" value="d" id="3_7_3_Assign_Days_Q1_opt_d" />
-            <label for= "3_7_3_Assign_Days_Q1_opt_d">  d) 7, 21, 3</label><br />
+            <li data-component="answer"  id="3_7_3_Assign_Days_Q1_opt_d">7, 21, 3</li><li data-component="feedback" id="3_7_3_Assign_Days_Q1_opt_d">The value for daysInWeek will be computed and assigned.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('3_7_3_Assign_Days_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('3_7_3_Assign_Days_Q1','c',['The values will actually be computed and numbers will be printed.', 'The variable names will not be printed.', 'The first print will print the value of daysInWeek (7), the second the value of numDays (21), and the third the value of numDays2 (21).', 'The value for daysInWeek will be computed and assigned.'])">Check Me</button>
-            <button class='btn btn-default' id="3_7_3_Assign_Days_Q1_bcomp" disabled name="compare" onclick="compareAnswers('3_7_3_Assign_Days_Q1');">Compare Me</button>
-            </form><br />
-            <div id="3_7_3_Assign_Days_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             
         <div class='parsons alert alert-warning' id="parsons-127">
         <div class="parsons-text">csp-3-7-4: The following program should figure out the cost per person for a dinner including the tip. But the blocks have been mixed up.  Drag the blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p><br /><br /></div>
@@ -595,7 +496,7 @@ print(perPersonCost)</div>
 
     <script>
         $pjQ(document).ready(function(){
-
+            var rb = new RunestoneBase();
             $("#parsons-127").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
                     scrollTop: ($("#parsons-127").offset().top - 50)
@@ -611,10 +512,10 @@ print(perPersonCost)</div>
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
-                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'3_7_4_Per_Person_Cost'});
+                    rb.logBookEvent({'event':'parsons', 'act':hash, 'div_id':'3_7_4_Per_Person_Cost'});
 
             } else {
-                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'3_7_4_Per_Person_Cost'});
+                    rb.logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'3_7_4_Per_Person_Cost'});
                     msgBox.fadeIn(100);
                     msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
@@ -729,7 +630,10 @@ print(perPersonCost)</div>
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -420,22 +436,7 @@ $(window).resize(function() {
 <p id="index-2">What we&#8217;re doing above is <strong>tracing</strong> a program.  Normally, we <strong>run</strong> a program &#8211; tell the computer to execute each step of the program as fast as possible. When we do that, we don&#8217;t see individual variable values, as we can above.  We can check values (including the values for variables) by printing them.  The function <code class="docutils literal"><span class="pre">print</span></code> can take an <em>input</em> (a variable name inside of parentheses) whose value will be displayed. The <code class="docutils literal"><span class="pre">print</span></code> function can also print a <strong>string</strong> (like <code class="docutils literal"><span class="pre">&quot;Cost</span> <span class="pre">to</span> <span class="pre">get</span> <span class="pre">from</span> <span class="pre">Chicago</span> <span class="pre">to</span> <span class="pre">Dallas&quot;</span></code>) which is a sequence of characters inside a pair of double quotes as seen in line 6.  It will print the exact contents of the string.  This is useful for explaining the values that you are printing.</p>
 <p>Press the <a class="reference internal" href="../_images/run-button.png"><img alt="run button" class="align-top" src="../_images/run-button.png" style="height: 20px;" /></a> below to see this program run at full speed.</p>
 
-<div id="cont"></div>
-<div id="Trip_Calculator" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Trip_Calculator_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Trip_Calculator_saveb" onclick="saveEditor('Trip_Calculator');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Trip_Calculator_loadb" onclick="requestCode('Trip_Calculator');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Trip_Calculator','distance = 924.7*nline*mpg = 35.5*nline*gallons = distance / mpg*nline*costPerGallon = 3.65*nline*costTrip = gallons * costPerGallon*nline*print*open**doubleq*Cost to get from Chicago to Dallas*doubleq**close**nline*print*open*costTrip*close*','1','*doubleq*Line by line tour*doubleq*; 1: trp-line1; 2: trp-line2; 3: trp-line3; 4: trp-line4; 5: trp-line5; 6: trp-line6; 7: trp-line7;*atype*')"/>
-<button class='btn btn-default' id="Trip_Calculator_vizb" onclick="injectCodelens(this,'Trip_Calculator');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="Trip_Calculator_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Trip_Calculator_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Trip_Calculator data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Line by line tour*doubleq*; 1: trp-line1; 2: trp-line2; 3: trp-line3; 4: trp-line4; 5: trp-line5; 6: trp-line6; 7: trp-line7;*atype*'     >
 distance = 924.7
 mpg = 35.5
 gallons = distance / mpg
@@ -443,117 +444,31 @@ costPerGallon = 3.65
 costTrip = gallons * costPerGallon
 print("Cost to get from Chicago to Dallas")
 print(costTrip)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Trip_Calculator_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Trip_Calculator_suffix" style="display:none">
-</pre><pre id="Trip_Calculator_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Trip_Calculator)</span> </p>
-<div id="Trip_Calculator_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Trip_Calculator_saveb').toggle();
-    $('#Trip_Calculator_loadb').toggle();
-}
-if ($("#Trip_Calculator").attr("lang") !== "html" && $("#Trip_Calculator_code_div").parents(".admonition").length == 0 && $("#Trip_Calculator_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Trip_Calculator_code_div").offset({
-            left: $("#Trip_Calculator .clearfix").offset().left
-        });
-    }
-    $("#Trip_Calculator_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Trip_Calculator_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Trip_Calculator_runb").parent().siblings(".ac_output").show();
-            runit('Trip_Calculator',this, undefined);
-            $("#Trip_Calculator_runb").on("click", function(){
-                runit('Trip_Calculator',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Trip_Calculator_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Trip_Calculator_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Trip_Calculator_runb").on("click", function(){
-        runit('Trip_Calculator',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>How does this program work?  Try pressing the <a class="reference internal" href="../_images/start-audio-tour.png"><img alt="audio tour button" class="align-top" src="../_images/start-audio-tour.png" style="height: 20px;" /></a> button above to listen to an explanation of the program.</p>
 <p>Try editing the program above and running it to answer this question:</p>
 
-            <div id="3_5_1_Chicago_2_Dallas_Q1" class="alert alert-warning">
-            csp-3-5-1: If the cost per gallon drops to $3.45, can we drive from Chicago to Dallas for less than $90 in gas?<form name="3_5_1_Chicago_2_Dallas_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="3_5_1_Chicago_2_Dallas_Q1_opt_a" />
-            <label for= "3_5_1_Chicago_2_Dallas_Q1_opt_a">  a) Yes</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="3_5_1_Chicago_2_Dallas_Q1">
+            csp-3-5-1: If the cost per gallon drops to $3.45, can we drive from Chicago to Dallas for less than $90 in gas?
+            <li data-component="answer" data-correct id="3_5_1_Chicago_2_Dallas_Q1_opt_a">Yes</li><li data-component="feedback" id="3_5_1_Chicago_2_Dallas_Q1_opt_a">Yes, the cost would be $89.86 (which you knew by editing the program above and running it)</li>
             
-            <input type="radio" name="group1" value="b" id="3_5_1_Chicago_2_Dallas_Q1_opt_b" />
-            <label for= "3_5_1_Chicago_2_Dallas_Q1_opt_b">  b) No</label><br />
+            <li data-component="answer"  id="3_5_1_Chicago_2_Dallas_Q1_opt_b">No</li><li data-component="feedback" id="3_5_1_Chicago_2_Dallas_Q1_opt_b">Try it -- it's just under $90.</li>
             
-            <input type="radio" name="group1" value="c" id="3_5_1_Chicago_2_Dallas_Q1_opt_c" />
-            <label for= "3_5_1_Chicago_2_Dallas_Q1_opt_c">  c) We should fly instead.</label><br />
+            <li data-component="answer"  id="3_5_1_Chicago_2_Dallas_Q1_opt_c">We should fly instead.</li><li data-component="feedback" id="3_5_1_Chicago_2_Dallas_Q1_opt_c">You might be right, but figure out the cost by editing the above program</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('3_5_1_Chicago_2_Dallas_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('3_5_1_Chicago_2_Dallas_Q1','a',['Yes, the cost would be $89.86 (which you knew by editing the program above and running it)', 'Try it \u002D\u002D it\u0027s just under $90.', 'You might be right, but figure out the cost by editing the above program'])">Check Me</button>
-            <button class='btn btn-default' id="3_5_1_Chicago_2_Dallas_Q1_bcomp" disabled name="compare" onclick="compareAnswers('3_5_1_Chicago_2_Dallas_Q1');">Compare Me</button>
-            </form><br />
-            <div id="3_5_1_Chicago_2_Dallas_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             
-            <div id="3_5_2_Chicago_2_Dallas_Q2" class="alert alert-warning">
-            csp-3-5-2: What would be printed by <code class="docutils literal"><span class="pre">print(&quot;costPerGallon&quot;)</span></code> if this line was added to the end of the last program?<form name="3_5_2_Chicago_2_Dallas_Q2_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="3_5_2_Chicago_2_Dallas_Q2_opt_a" />
-            <label for= "3_5_2_Chicago_2_Dallas_Q2_opt_a">  a) 3.45</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="3_5_2_Chicago_2_Dallas_Q2">
+            csp-3-5-2: What would be printed by <code class="docutils literal"><span class="pre">print(&quot;costPerGallon&quot;)</span></code> if this line was added to the end of the last program?
+            <li data-component="answer"  id="3_5_2_Chicago_2_Dallas_Q2_opt_a">3.45</li><li data-component="feedback" id="3_5_2_Chicago_2_Dallas_Q2_opt_a">This would be true if it was printing the value of original variable.</li>
             
-            <input type="radio" name="group1" value="b" id="3_5_2_Chicago_2_Dallas_Q2_opt_b" />
-            <label for= "3_5_2_Chicago_2_Dallas_Q2_opt_b">  b) 3.65</label><br />
+            <li data-component="answer"  id="3_5_2_Chicago_2_Dallas_Q2_opt_b">3.65</li><li data-component="feedback" id="3_5_2_Chicago_2_Dallas_Q2_opt_b">This would be true if it was printing the value of the variable after you changed it to figure out the previous question.</li>
             
-            <input type="radio" name="group1" value="c" id="3_5_2_Chicago_2_Dallas_Q2_opt_c" />
-            <label for= "3_5_2_Chicago_2_Dallas_Q2_opt_c">  c) costPerGallon</label><br />
+            <li data-component="answer" data-correct id="3_5_2_Chicago_2_Dallas_Q2_opt_c">costPerGallon</li><li data-component="feedback" id="3_5_2_Chicago_2_Dallas_Q2_opt_c">Since <code>costPerGallon</code> is in double quotes it is a string, and it will print out those exact characters.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('3_5_2_Chicago_2_Dallas_Q2');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('3_5_2_Chicago_2_Dallas_Q2','c',['This would be true if it was printing the value of original variable.', 'This would be true if it was printing the value of the variable after you changed it to figure out the previous question.', 'Since \u003Ccode\u003EcostPerGallon\u003C/code\u003E is in double quotes it is a string, and it will print out those exact characters.'])">Check Me</button>
-            <button class='btn btn-default' id="3_5_2_Chicago_2_Dallas_Q2_bcomp" disabled name="compare" onclick="compareAnswers('3_5_2_Chicago_2_Dallas_Q2');">Compare Me</button>
-            </form><br />
-            <div id="3_5_2_Chicago_2_Dallas_Q2_feedback">
-            </div>
-            </div>
+            </ul>
             </div>
 
 
@@ -584,7 +499,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

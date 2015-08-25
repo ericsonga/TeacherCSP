@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -273,7 +289,10 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Chapter 8 - Summary</a></li>
+<li><a class="reference internal" href="#">Chapter 8 - Summary</a><ul>
+<li><a class="reference internal" href="#summary-of-python-keywords-and-functions">Summary of Python Keywords and Functions</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -324,16 +343,23 @@
 <ul class="simple" id="index-0">
 <li><strong>Body of a Loop</strong> - The body of a loop is a statement or set of statements to be repeated in a loop.  The body of a loop is indicated in Python with indention.</li>
 <li><strong>Counter</strong> - A counter is a variable that is used to count something in a program.</li>
-<li><strong>Definite Loop</strong> - A definite loop repeats a specific number of times.  A <code class="docutils literal"><span class="pre">for</span></code> loop is a definite loop.</li>
-<li><strong>For Loop</strong> - A <code class="docutils literal"><span class="pre">for</span></code> loop is a programming statement that tells the computer to repeat a statement or a set of statements. It is used to repeat a loop a specific number of times.</li>
 <li><strong>Increment</strong> - Increment means to increase the value of a variable by 1.</li>
 <li><strong>Infinite Loop</strong> - An infinite loop is one that never ends.</li>
 <li><strong>Logical Expression</strong> - An logical expression is either true or false.  An example of a logical expression is <code class="docutils literal"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">3</span></code>.</li>
-<li><strong>While Loop</strong> - A <code class="docutils literal"><span class="pre">while</span></code> loop is a programming statement that tells the computer to repeat a statement or a set of statements. It repeats the <strong>body of the loop</strong> while a <strong>logical expression</strong> is true.</li>
+</ul>
+<div class="section" id="summary-of-python-keywords-and-functions">
+<h2>Summary of Python Keywords and Functions<a class="headerlink" href="#summary-of-python-keywords-and-functions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>def</strong> - The <code class="docutils literal"><span class="pre">def</span></code> keyword is used to define a procedure or function in Python.  The line must also end with a <code class="docutils literal"><span class="pre">:</span></code> and the body of the procedure or function must be indented 4 spaces.</li>
+<li><strong>for</strong> - A <code class="docutils literal"><span class="pre">for</span></code> loop is a programming statement that tells the computer to repeat a statement or a set of statements. It is one type of loop.</li>
+<li><strong>print</strong> - The <code class="docutils literal"><span class="pre">print</span></code> statement in Python will print the value of the items passed to it.</li>
+<li><strong>range</strong> - The <code class="docutils literal"><span class="pre">range</span></code> function in Python returns a list of consecutive values.  If the range function is passed one value it returns a list with the numbers from 0 up to and not including the passed number.  For example, <code class="docutils literal"><span class="pre">range(5)</span></code> returns a list of <code class="docutils literal"><span class="pre">[0,1,2,3,4]</span></code>.  If the range function is passed two numbers separated by a comma it returns a list including the first number and then up to but not including the second number.  For example, <code class="docutils literal"><span class="pre">range(1,4)</span></code> returns the list <code class="docutils literal"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>.  If it is passed three values <code class="docutils literal"><span class="pre">range(start,end,step)</span></code> it returns all the numbers from start to one less than end changing by step.  For example, <code class="docutils literal"><span class="pre">range(0,10,2)</span></code> returns <code class="docutils literal"><span class="pre">[0,2,4,6,8]</span></code>.</li>
+<li><strong>while</strong> - A <code class="docutils literal"><span class="pre">while</span></code> loop is a programming statement that tells the computer to repeat a statement or a set of statements. It repeats the <strong>body of the loop</strong> while a <strong>logical expression</strong> is true.</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This is the end of chapter 8.  Readers who are part of the teacher study should go to <a class="reference external" href="https://www.surveymonkey.com/r/ch7a8-feedback">https://www.surveymonkey.com/r/ch7a8-feedback</a> to provide feedback and then continue to the next section which is an exam on chapters 7 and 8.  If you are not part of the study you can skip the exam or take it if you wish.  Remember that you can go to the table of contents by clicking on &#8220;Teacher-CSP&#8221; in the upper left corner of this window.</p>
+</div>
 </div>
 </div>
 
@@ -365,7 +391,10 @@
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

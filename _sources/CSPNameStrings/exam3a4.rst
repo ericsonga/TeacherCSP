@@ -5,15 +5,13 @@
 Exam Questions for Chapters 3 and 4
 -------------------------------------
 
-The following questions test what you have learned in chapters 3 and 4. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  Hover over the clock icon to see how much time you have spent on the exam, but you have unlimited time.  Click on the "Submit Answers" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
+The following questions test what you have learned in chapters 3 and 4. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  It will show how much time you have used, but you have unlimited time.  Click on the "Submit answers" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
 
 You will not be able to change your answers after you hit the "Submit Answers" button.
 
-.. startexam:: timed_Test
-    :showtitle: Exam Not Started
-    :hidetitle: Currently Taking Exam
+.. timed:: ch3a4ex
     
-    .. exammchoicemf:: e3a4_1
+    .. mchoice:: e3a4_1
        :answer_a: namewords
        :answer_b: name + words
        :answer_c: John Smith + likes to play outside.
@@ -32,7 +30,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           words = " likes to play outside." 
           print (name + words)
            
-    .. exammchoicemf:: e3a4_2
+    .. mchoice:: e3a4_2
        :answer_a: Tests to see if the values on each side of the expression are equal
        :answer_b: Assigns the name on the left to the value on the right
        :answer_c: Copies the value from the right to the left
@@ -49,7 +47,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
        
           cat = "meow"
            
-    .. exammchoicemf:: e3a4_3
+    .. mchoice:: e3a4_3
        :answer_a: I only
        :answer_b: II only 
        :answer_c: III only
@@ -73,7 +71,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
                orrissey = "orrissey" 
                print ("My name is " + Morrissey)
            
-    .. exammchoicemf:: e3a4_4
+    .. mchoice:: e3a4_4
        :answer_a: 0
        :answer_b: 2
        :answer_c: 5
@@ -91,7 +89,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           result = 5 % 2
           print(result)
            
-    .. exammchoicemf:: e3a4_5
+    .. mchoice:: e3a4_5
        :answer_a: 3
        :answer_b: 10
        :answer_c: 18
@@ -112,7 +110,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           var3 = var2
           var1 = 18
           
-    .. exammchoicemf:: e3a4_6
+    .. mchoice:: e3a4_6
        :answer_a: THIS IS A TEST
        :answer_b: this is a test
        :answer_c: This is a test
@@ -131,7 +129,6 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           better = sentence.lower()
           betterStill = better.capitalize() + "."
           more = sentence + ", really!"
-          
-    .. finishexam:: timed_Test
+
 
    

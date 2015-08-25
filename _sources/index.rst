@@ -173,6 +173,8 @@ Chapter 9: Repeating Steps with Strings
    CSPRepeatStrings/repeatstrings.rst
    CSPRepeatStrings/reverse.rst
    CSPRepeatStrings/mirror.rst
+   CSPRepeatStrings/modify.rst
+   CSPRepeatStrings/ch9_exercises.rst
    CSPRepeatStrings/ch9_summary.rst
    
 Chapter 10: Repeating Steps with Turtles
@@ -185,6 +187,7 @@ Chapter 10: Repeating Steps with Turtles
    CSPRepeatTurtles/turtleGeom.rst
    CSPRepeatTurtles/patterns.rst
    CSPRepeatTurtles/stamp.rst
+   CSPRepeatTurtles/ch10_exercises.rst
    CSPRepeatTurtles/ch10_summary.rst
    
 Chapter 11: Repeating Steps with Images
@@ -199,6 +202,7 @@ Chapter 11: Repeating Steps with Images
    CSPRepeatImages/changeColor.rst
    CSPRepeatImages/changeColorLoc.rst
    CSPRepeatImages/changeData.rst
+   CSPRepeatImages/ch11_exercises.rst
    CSPRepeatImages/ch11_summary.rst
    CSPRepeatImages/exam9t11.rst
    
@@ -222,6 +226,7 @@ Chapter 12: A Computer can Make Decisions
    CSPIntroDecisions/practice.rst
    CSPIntroDecisions/ifAndElse.rst
    CSPIntroDecisions/decTeacherNotes.rst
+   CSPIntroDecisions/ch12_exercises.rst
    CSPIntroDecisions/ch12_summary.rst
    
 Chapter 13: Using Decisions with Strings
@@ -234,6 +239,7 @@ Chapter 13: Using Decisions with Strings
    CSPStringDecisions/input.rst
    CSPStringDecisions/fortuneTeller.rst
    CSPStringDecisions/elif.rst
+   CSPStringDecisions/ch13_exercises.rst
    CSPStringDecisions/ch13_summary.rst
    CSPStringDecisions/exam12a13.rst
    
@@ -248,6 +254,7 @@ Chapter 14: Using Decisions with Turtles
    CSPTurtleDecisions/oddEven.rst
    CSPTurtleDecisions/random.rst
    CSPTurtleDecisions/collisions.rst
+   CSPTurtleDecisions/ch14_exercises.rst
    CSPTurtleDecisions/ch14_summary.rst
    
 Chapter 15: Using Decisions with Images
@@ -260,6 +267,7 @@ Chapter 15: Using Decisions with Images
    CSPImageDecisions/combineImages.rst
    CSPImageDecisions/imageIfElse.rst
    CSPImageDecisions/imageMultIf.rst
+   CSPImageDecisions/ch15_exercises.rst
    CSPImageDecisions/ch15_summary.rst
    CSPImageDecisions/exam14a15.rst
    

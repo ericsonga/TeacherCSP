@@ -25,14 +25,14 @@ You can use the ``range`` function to create a list of numbers.    If the ``rang
 
 .. activecode:: Numbers_Range1
 	
-    print range(3)
-    print range(5)
-    print range(11)  
+    print(range(3))
+    print(range(5))
+    print(range(11)) 
     
 .. mchoicemf:: 7_4_1_Numbers_Range1
-   :answer_a: print range(5)
-   :answer_b: print range(6)
-   :answer_c: print range(7)
+   :answer_a: range(5)
+   :answer_b: range(6)
+   :answer_c: range(7)
    :correct: b
    :feedback_a: This will return a list of all the numbers from 0 to 4.
    :feedback_b: This will return a list of all the numbers from 0 to 5.
@@ -44,15 +44,15 @@ If two values are passed as input to the ``range`` function then it will return 
 
 .. activecode:: Numbers_Range2
 	
-    print range(1,10)
-    print range(0,11)
-    print range(20,31)
+    print(range(1,10))
+    print(range(0,11))
+    print(range(20,31))
 
 .. mchoicemf:: 7_4_2_Numbers_Range2
-   :answer_a: print range(10)
-   :answer_b: print range(1,10)
-   :answer_c: print range(11)
-   :answer_d: print range(1,11)
+   :answer_a: range(10)
+   :answer_b: range(1,10)
+   :answer_c: range(11)
+   :answer_d: range(1,11)
    :correct: d
    :feedback_a: That includes zero and doesn't include 10: [0,1,2,3,4,5,6,7,8,9]
    :feedback_b: That doesn't include 10: [1,2,3,4,5,6,7,8,9]

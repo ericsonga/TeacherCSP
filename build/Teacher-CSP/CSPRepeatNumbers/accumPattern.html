@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -333,202 +349,32 @@
 </div>
 <div class="section" id="using-the-accumulator-pattern">
 <h1>Using the Accumulator Pattern<a class="headerlink" href="#using-the-accumulator-pattern" title="Permalink to this headline">¶</a></h1>
-<p>What is the sum of all the numbers between 0 and 100?  We can answer that easily using our pattern.</p>
+<p>What is the sum of all the numbers between 1 and 100?  We can answer that easily using our pattern.</p>
 
-<div id="cont"></div>
-<div id="Numbers_Sum" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Numbers_Sum_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Sum_saveb" onclick="saveEditor('Numbers_Sum');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Sum_loadb" onclick="requestCode('Numbers_Sum');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Numbers_Sum','# STEP 1: INITIALIZE ACCUMULATOR*nline*sum = 0  # Start out with nothing*nline*# STEP 2: GET DATA*nline*numbers = range*open*101*close**nline*# STEP 3: LOOP THROUGH THE DATA*nline*for number in numbers:*nline*    # STEP 4: ACCUMULATE*nline*    sum = sum + number*nline*# STEP 5: PROCESS RESULT*nline*print*open*sum*close*','1','*doubleq*Code tour*doubleq*; 2: accum_line2; 4: accum_line4; 6: accum_line6; 8: accum_line8; 10: accum_line10;*atype*')"/>
-<button class='btn btn-default' id="Numbers_Sum_vizb" onclick="injectCodelens(this,'Numbers_Sum');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="Numbers_Sum_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Numbers_Sum_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Numbers_Sum data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Code tour*doubleq*; 2: accum_line2; 4: accum_line4; 6: accum_line6; 8: accum_line8; 10: accum_line10;*atype*'     >
 # STEP 1: INITIALIZE ACCUMULATOR
 sum = 0  # Start out with nothing
 # STEP 2: GET DATA
-numbers = range(101)
+numbers = range(1,101)
 # STEP 3: LOOP THROUGH THE DATA
 for number in numbers:
     # STEP 4: ACCUMULATE
     sum = sum + number
 # STEP 5: PROCESS RESULT
 print(sum)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Numbers_Sum_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Numbers_Sum_suffix" style="display:none">
-</pre><pre id="Numbers_Sum_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Numbers_Sum)</span> </p>
-<div id="Numbers_Sum_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Numbers_Sum_saveb').toggle();
-    $('#Numbers_Sum_loadb').toggle();
-}
-if ($("#Numbers_Sum").attr("lang") !== "html" && $("#Numbers_Sum_code_div").parents(".admonition").length == 0 && $("#Numbers_Sum_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Numbers_Sum_code_div").offset({
-            left: $("#Numbers_Sum .clearfix").offset().left
-        });
-    }
-    $("#Numbers_Sum_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Numbers_Sum_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Numbers_Sum_runb").parent().siblings(".ac_output").show();
-            runit('Numbers_Sum',this, undefined);
-            $("#Numbers_Sum_runb").on("click", function(){
-                runit('Numbers_Sum',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Numbers_Sum_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Numbers_Sum_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Numbers_Sum_runb").on("click", function(){
-        runit('Numbers_Sum',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>The <code class="docutils literal"><span class="pre">range</span></code> function has one more version that we can use here.  By providing <em>three</em> input numbers, we can specify the <em>start</em> value, the <em>ending</em> value (which is one more than the <em>last</em> value), and the <em>step</em> &#8211; how much to change <em>between</em> numbers.</p>
 
-<div id="cont"></div>
-<div id="Range_Examples" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Range_Examples_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Range_Examples_saveb" onclick="saveEditor('Range_Examples');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Range_Examples_loadb" onclick="requestCode('Range_Examples');">Load</button>
-<button class='btn btn-default' id="Range_Examples_vizb" onclick="injectCodelens(this,'Range_Examples');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="Range_Examples_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Range_Examples_code" class="active_code" prefixcode="undefined" lang="python">
-print range(1,11,1)
-print range(0,11,2)
-print range(1,11,3)
-print range(5,50,5)
-print range(10,1,-1)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Range_Examples_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Range_Examples_suffix" style="display:none">
-</pre><pre id="Range_Examples_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Range_Examples)</span> </p>
-<div id="Range_Examples_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Range_Examples_saveb').toggle();
-    $('#Range_Examples_loadb').toggle();
-}
-if ($("#Range_Examples").attr("lang") !== "html" && $("#Range_Examples_code_div").parents(".admonition").length == 0 && $("#Range_Examples_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Range_Examples_code_div").offset({
-            left: $("#Range_Examples .clearfix").offset().left
-        });
-    }
-    $("#Range_Examples_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Range_Examples_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Range_Examples_runb").parent().siblings(".ac_output").show();
-            runit('Range_Examples',this, undefined);
-            $("#Range_Examples_runb").on("click", function(){
-                runit('Range_Examples',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Range_Examples_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Range_Examples_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Range_Examples_runb").on("click", function(){
-        runit('Range_Examples',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+<pre data-component="activecode" id=Range_Examples data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+print(range(1,11,1))
+print(range(0,11,2))
+print(range(1,11,3))
+print(range(5,50,5))
+print(range(10,1,-1))
+</pre>
 <p>Now let&#8217;s answer a slightly harder question: What is the sum of all the <em>even</em> numbers between 0 and 100?  It&#8217;s easy with our pattern.</p>
 
-<div id="cont"></div>
-<div id="Numbers_Sum_Even" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Numbers_Sum_Even_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Sum_Even_saveb" onclick="saveEditor('Numbers_Sum_Even');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Sum_Even_loadb" onclick="requestCode('Numbers_Sum_Even');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Numbers_Sum_Even','# STEP 1: INITIALIZE ACCUMULATOR*nline*sum = 0  # Start out with nothing*nline*# STEP 2: GET DATA*nline*numbers = range*open*0,101,2*close**nline*# STEP 3: LOOP THROUGH THE DATA*nline*for number in numbers:*nline*    # STEP 4: ACCUMULATE*nline*    sum = sum + number*nline*# STEP 5: PROCESS RESULT*nline*print*open*sum*close*','1','*doubleq*Code tour*doubleq*; 2: accE_line2; 4: accE_line4; 6: accE_line6; 8: accE_line8; 10: accE_line10;*atype*')"/>
-<button class='btn btn-default' id="Numbers_Sum_Even_vizb" onclick="injectCodelens(this,'Numbers_Sum_Even');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="Numbers_Sum_Even_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Numbers_Sum_Even_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Numbers_Sum_Even data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Code tour*doubleq*; 2: accE_line2; 4: accE_line4; 6: accE_line6; 8: accE_line8; 10: accE_line10;*atype*'     >
 # STEP 1: INITIALIZE ACCUMULATOR
 sum = 0  # Start out with nothing
 # STEP 2: GET DATA
@@ -539,118 +385,31 @@ for number in numbers:
     sum = sum + number
 # STEP 5: PROCESS RESULT
 print(sum)
-</textarea>
-</div>
+</pre>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Numbers_Sum_Even_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Numbers_Sum_Even_suffix" style="display:none">
-</pre><pre id="Numbers_Sum_Even_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Numbers_Sum_Even)</span> </p>
-<div id="Numbers_Sum_Even_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Numbers_Sum_Even_saveb').toggle();
-    $('#Numbers_Sum_Even_loadb').toggle();
-}
-if ($("#Numbers_Sum_Even").attr("lang") !== "html" && $("#Numbers_Sum_Even_code_div").parents(".admonition").length == 0 && $("#Numbers_Sum_Even_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Numbers_Sum_Even_code_div").offset({
-            left: $("#Numbers_Sum_Even .clearfix").offset().left
-        });
-    }
-    $("#Numbers_Sum_Even_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Numbers_Sum_Even_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Numbers_Sum_Even_runb").parent().siblings(".ac_output").show();
-            runit('Numbers_Sum_Even',this, undefined);
-            $("#Numbers_Sum_Even_runb").on("click", function(){
-                runit('Numbers_Sum_Even',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Numbers_Sum_Even_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Numbers_Sum_Even_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Numbers_Sum_Even_runb").on("click", function(){
-        runit('Numbers_Sum_Even',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="7_5_1_Numbers_Even_Q1" class="alert alert-warning">
-            csp-7-5-1: Why do we stop at 101 in the above program?<form name="7_5_1_Numbers_Even_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="7_5_1_Numbers_Even_Q1_opt_a" />
-            <label for= "7_5_1_Numbers_Even_Q1_opt_a">  a) Because we started at 0</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="7_5_1_Numbers_Even_Q1">
+            csp-7-5-1: Why do we stop at 101 in the above program?
+            <li data-component="answer"  id="7_5_1_Numbers_Even_Q1_opt_a">Because we started at 0</li><li data-component="feedback" id="7_5_1_Numbers_Even_Q1_opt_a">We would want to include 100.</li>
             
-            <input type="radio" name="group1" value="b" id="7_5_1_Numbers_Even_Q1_opt_b" />
-            <label for= "7_5_1_Numbers_Even_Q1_opt_b">  b) Because we want to include 100</label><br />
+            <li data-component="answer" data-correct id="7_5_1_Numbers_Even_Q1_opt_b">Because we want to include 100</li><li data-component="feedback" id="7_5_1_Numbers_Even_Q1_opt_b">If we stop BEFORE 101, we include 100.</li>
             
-            <input type="radio" name="group1" value="c" id="7_5_1_Numbers_Even_Q1_opt_c" />
-            <label for= "7_5_1_Numbers_Even_Q1_opt_c">  c) Because the computer only understands 1s and 0s</label><br />
+            <li data-component="answer"  id="7_5_1_Numbers_Even_Q1_opt_c">Because the computer only understands 1s and 0s</li><li data-component="feedback" id="7_5_1_Numbers_Even_Q1_opt_c">Internally, yes, but in Python, all decimal digits are allowed.</li>
             
-            <input type="radio" name="group1" value="d" id="7_5_1_Numbers_Even_Q1_opt_d" />
-            <label for= "7_5_1_Numbers_Even_Q1_opt_d">  d) Because we're using a step of 2</label><br />
+            <li data-component="answer"  id="7_5_1_Numbers_Even_Q1_opt_d">Because we're using a step of 2</li><li data-component="feedback" id="7_5_1_Numbers_Even_Q1_opt_d">That doesn't really matter.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('7_5_1_Numbers_Even_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7_5_1_Numbers_Even_Q1','b',['We would want to include 100.', 'If we stop BEFORE 101, we include 100.', 'Internally, yes, but in Python, all decimal digits are allowed.', 'That doesn\u0027t really matter.'])">Check Me</button>
-            <button class='btn btn-default' id="7_5_1_Numbers_Even_Q1_bcomp" disabled name="compare" onclick="compareAnswers('7_5_1_Numbers_Even_Q1');">Compare Me</button>
-            </form><br />
-            <div id="7_5_1_Numbers_Even_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             
-            <div id="7_5_2_Numbers_Even_Q2" class="alert alert-warning">
-            csp-7-5-2: Why do we START with zero?<form name="7_5_2_Numbers_Even_Q2_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="7_5_2_Numbers_Even_Q2_opt_a" />
-            <label for= "7_5_2_Numbers_Even_Q2_opt_a">  a) Because if we started with 1, we would get all odd numbers</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="7_5_2_Numbers_Even_Q2">
+            csp-7-5-2: Why do we START with zero?
+            <li data-component="answer" data-correct id="7_5_2_Numbers_Even_Q2_opt_a">Because if we started with 1, we would get all odd numbers</li><li data-component="feedback" id="7_5_2_Numbers_Even_Q2_opt_a">This gives us [0,2,4,6...98,100].</li>
             
-            <input type="radio" name="group1" value="b" id="7_5_2_Numbers_Even_Q2_opt_b" />
-            <label for= "7_5_2_Numbers_Even_Q2_opt_b">  b) Because all lists start with zero</label><br />
+            <li data-component="answer"  id="7_5_2_Numbers_Even_Q2_opt_b">Because all lists start with zero</li><li data-component="feedback" id="7_5_2_Numbers_Even_Q2_opt_b">They don't have to start at 0.</li>
             
-            <input type="radio" name="group1" value="c" id="7_5_2_Numbers_Even_Q2_opt_c" />
-            <label for= "7_5_2_Numbers_Even_Q2_opt_c">  c) Because we end with 101</label><br />
+            <li data-component="answer"  id="7_5_2_Numbers_Even_Q2_opt_c">Because we end with 101</li><li data-component="feedback" id="7_5_2_Numbers_Even_Q2_opt_c">That is true, but is not relevant here.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('7_5_2_Numbers_Even_Q2');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7_5_2_Numbers_Even_Q2','a',['This gives us [0,2,4,6...98,100].', 'They don\u0027t have to start at 0.', 'That is true, but is not relevant here.'])">Check Me</button>
-            <button class='btn btn-default' id="7_5_2_Numbers_Even_Q2_bcomp" disabled name="compare" onclick="compareAnswers('7_5_2_Numbers_Even_Q2');">Compare Me</button>
-            </form><br />
-            <div id="7_5_2_Numbers_Even_Q2_feedback">
-            </div>
-            </div>
+            </ul>
             <p>How do we know what&#8217;s really going on in this program?  How do we know that <em>number</em> is taking on all of the even values from 0 to 100?  One way we can tell is by using a CodeLens on a smaller problem from 0 to 20.  We can step through the program line-by-line, or race to the end by clicking the <em>Last</em> button and then step backwards.</p>
 
 <div class="alert alert-warning cd_section">
@@ -718,7 +477,7 @@ print(sum)</div>
 
     <script>
         $pjQ(document).ready(function(){
-
+            var rb = new RunestoneBase();
             $("#parsons-119").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
                     scrollTop: ($("#parsons-119").offset().top - 50)
@@ -734,10 +493,10 @@ print(sum)</div>
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
-                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'7_5_3_Sum_100'});
+                    rb.logBookEvent({'event':'parsons', 'act':hash, 'div_id':'7_5_3_Sum_100'});
 
             } else {
-                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'7_5_3_Sum_100'});
+                    rb.logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'7_5_3_Sum_100'});
                     msgBox.fadeIn(100);
                     msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
@@ -823,33 +582,21 @@ print(sum)</div>
     </script>
 
 
-            <div id="7_5_4_Numbers_Add_Odds_Q1" class="alert alert-warning">
-            csp-7-5-4: Change the program above (in ActiveCode 3: Numbers_Sum_Even) to add up all the ODD numbers including up to 99.  You should run it to get 2500. What change did you make to the program?<form name="7_5_4_Numbers_Add_Odds_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="7_5_4_Numbers_Add_Odds_Q1_opt_a" />
-            <label for= "7_5_4_Numbers_Add_Odds_Q1_opt_a">  a) Changed the range step from 2 to 3</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="7_5_4_Numbers_Add_Odds_Q1">
+            csp-7-5-4: Change the program above (in ActiveCode 3: Numbers_Sum_Even) to add up all the ODD numbers including up to 99.  You should run it to get 2500. What change did you make to the program?
+            <li data-component="answer"  id="7_5_4_Numbers_Add_Odds_Q1_opt_a">Changed the range step from 2 to 3</li><li data-component="feedback" id="7_5_4_Numbers_Add_Odds_Q1_opt_a">That would give us [0,3,6,9,12...99].</li>
             
-            <input type="radio" name="group1" value="b" id="7_5_4_Numbers_Add_Odds_Q1_opt_b" />
-            <label for= "7_5_4_Numbers_Add_Odds_Q1_opt_b">  b) Changed the range end from 101 to 100</label><br />
+            <li data-component="answer"  id="7_5_4_Numbers_Add_Odds_Q1_opt_b">Changed the range end from 101 to 100</li><li data-component="feedback" id="7_5_4_Numbers_Add_Odds_Q1_opt_b">That would give us the even numbers from 0 to 98.</li>
             
-            <input type="radio" name="group1" value="c" id="7_5_4_Numbers_Add_Odds_Q1_opt_c" />
-            <label for= "7_5_4_Numbers_Add_Odds_Q1_opt_c">  c) Changed the range end from 101 to 99</label><br />
+            <li data-component="answer"  id="7_5_4_Numbers_Add_Odds_Q1_opt_c">Changed the range end from 101 to 99</li><li data-component="feedback" id="7_5_4_Numbers_Add_Odds_Q1_opt_c">That would give us the even numbers from 0 to 98.</li>
             
-            <input type="radio" name="group1" value="d" id="7_5_4_Numbers_Add_Odds_Q1_opt_d" />
-            <label for= "7_5_4_Numbers_Add_Odds_Q1_opt_d">  d) Changed the range start from 0 to 1</label><br />
+            <li data-component="answer" data-correct id="7_5_4_Numbers_Add_Odds_Q1_opt_d">Changed the range start from 0 to 1</li><li data-component="feedback" id="7_5_4_Numbers_Add_Odds_Q1_opt_d">That would give us [1,3,5,...99].</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('7_5_4_Numbers_Add_Odds_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7_5_4_Numbers_Add_Odds_Q1','d',['That would give us [0,3,6,9,12...99].', 'That would give us the even numbers from 0 to 98.', 'That would give us the even numbers from 0 to 98.', 'That would give us [1,3,5,...99].'])">Check Me</button>
-            <button class='btn btn-default' id="7_5_4_Numbers_Add_Odds_Q1_bcomp" disabled name="compare" onclick="compareAnswers('7_5_4_Numbers_Add_Odds_Q1');">Compare Me</button>
-            </form><br />
-            <div id="7_5_4_Numbers_Add_Odds_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             
         <div class='parsons alert alert-warning' id="parsons-146">
-        <div class="parsons-text">csp-7-5-5: The following is the correct code for printing the sum of all the even numbers from 50 to 100 using the accumulator pattern, but it is mixed up. Drag the blocks from the left and put them in the correct order on the right.  Don't forget to indent blocks in the body of the loop.  Just drag the block further right to indent.  Click the <i>Check Me</i> button to check your solution.</p><br /><br /></div>
+        <div class="parsons-text">csp-7-5-5: The following is the correct code for printing the sum of all the even numbers from 50 to 100 using the accumulator pattern, but it is mixed up and <b>contains one extra block</b>. Drag the required blocks from the left and put them in the correct order on the right.  Don't forget to indent blocks in the body of the loop.  Just drag the block further right to indent.  Click the <i>Check Me</i> button to check your solution.</p><br /><br /></div>
         <div style="clear:left;"></div>
         <div id="parsons-orig-146" style="display:none;">sum = 0
 numbers = range(50,101,2)
@@ -871,7 +618,7 @@ numbers = range(50,100,2) #distractor</div>
 
     <script>
         $pjQ(document).ready(function(){
-
+            var rb = new RunestoneBase();
             $("#parsons-146").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
                     scrollTop: ($("#parsons-146").offset().top - 50)
@@ -887,10 +634,10 @@ numbers = range(50,100,2) #distractor</div>
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
-                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'7_5_5_Sum_From_50'});
+                    rb.logBookEvent({'event':'parsons', 'act':hash, 'div_id':'7_5_5_Sum_From_50'});
 
             } else {
-                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'7_5_5_Sum_From_50'});
+                    rb.logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'7_5_5_Sum_From_50'});
                     msgBox.fadeIn(100);
                     msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
@@ -1005,7 +752,10 @@ numbers = range(50,100,2) #distractor</div>
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

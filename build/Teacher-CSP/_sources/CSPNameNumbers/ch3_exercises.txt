@@ -89,7 +89,7 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Finish lines 3 and 5 below to calculate and print the cost of a car trip of 500 miles when your car gets 26 miles per gallon and gas costs 3.45 a gallon. 
+           Finish lines 3 and 5 below to calculate and print the cost of a car trip of 500 miles when your car gets 26 miles per gallon and gas costs 3.45 a gallon.  It should print 66.3461538462.
         
            .. activecode::  ch3ex3q
                :nocodelens:
@@ -103,7 +103,7 @@ Chapter 3 Exercises
 
         .. tab:: Answer
         
-            Calculate ``numGallons`` as the ``miles / milesPerGallon``.  Calculate ``total`` as ``numGallons * pricePerGallon``..
+            Calculate ``numGallons`` as the ``miles / milesPerGallon``.  Calculate ``total`` as ``numGallons * pricePerGallon``. 
             
             .. activecode::  ch3ex3a
                 :nocanvas:
@@ -128,7 +128,7 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Finish lines 4 and 5 in the code below to print how many miles you can drive on $25 if your car gets 40 miles per gallon and the price of gas is $3.65 a gallon. 
+           Finish lines 4 and 5 in the code below to print how many miles you can drive on $25 if your car gets 40 miles per gallon and the price of gas is $3.65 a gallon.  It should print 273.97260274. 
            
            .. activecode::  ch3ex4q
                :nocodelens:
@@ -167,7 +167,7 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Finish lines 3 and 7 in the code below to calculate and print the total cost for an item that is priced $68, but is 40% off the original price and you have a coupon to take an additional 20% of the sale price. 
+           Finish lines 3 and 7 in the code below to calculate and print the total cost for an item that is priced $68, but is 40% off the original price and you have a coupon to take an additional 20% of the sale price.  It should print 32.64.  
            
            .. activecode::  ch3ex5q
                 :nocodelens:
@@ -209,7 +209,7 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Finish lines 4 and 5 in the code below to print how many wings you can buy if you have 5 people and they each can spend $4 a person and the wings are $0.50 a wing. 
+           Finish lines 4 and 5 in the code below to print how many wings you can buy if you have 5 people and they each can spend $4 a person and the wings are $0.50 a wing. It should print 40.0.  
            
            .. activecode::  ch3ex6q
                 :nocodelens:
@@ -247,7 +247,7 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Finish lines 2 and 3 in the code below to calculate and print how many hours and minutes it has been when you have been waiting a total of 270 minutes.  Remember that there are 60 minutes in an hour. 
+           Finish lines 2 and 3 in the code below to calculate and print how many hours and minutes it has been when you have been waiting a total of 270 minutes.  Remember that there are 60 minutes in an hour. It should print 4.0 and then 30.  
            
            .. activecode::  ch3ex7q
                 :nocodelens:
@@ -283,7 +283,7 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Fix the errors in the code below so that it calculates and prints the number of hours you will need to work if you earn $8 an hour and want to earn $100.
+           Fix the errors in the code below so that it calculates and prints the number of hours you will need to work if you earn $8 an hour and want to earn $100.  It should print 12.5.
            
            .. activecode::  ch3ex8q
                 :nocodelens:
@@ -317,7 +317,7 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Finish lines 5 and 6 in the code below to calculate and print how many apples you can buy when apples cost 0.60 and you want to get 3 pears and they cost $1.2 each and you have $8.00.
+           Finish lines 5 and 6 in the code below to calculate and print how many apples you can buy when apples cost 0.60 and you want to get 3 pears and they cost $1.2 each and you have $8.00.  It should print 7.33333333333.  
            
            .. activecode::  ch3ex9q
                 :nocodelens:
@@ -357,7 +357,7 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Write the code to calculate and print how many miles you can drive if your car holds 10 gallons and you have a quarter of a tank left and your car gets 32 miles per gallon.  
+           Write the code to calculate and print how many miles you can drive if your car holds 10 gallons and you have a quarter of a tank left and your car gets 32 miles per gallon.  It should print 80.
            
            .. activecode::  ch3ex10q
                :nocodelens:

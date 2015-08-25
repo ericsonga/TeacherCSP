@@ -40,12 +40,13 @@ You may remember this example as well.
     zari.forward(100)		# tell zari to move forward by 100 units
     zari.right(90)    		# turn by 90 degrees
 
-.. fillintheblank:: 5_4_1_triangle
-   :correct: ^triangle$|^Triangle$|^TRIANGLE$
-   :feedback1: ('.*','Try to follow the directions as if you are the turtle')
-   :blankid: triBlank
+.. fillintheblank:: 5_4_1_triangle_fill
 
-   What shape will the program below draw when you click on the *Run* button? :textfield:`triBlank::medium` 
+    .. blank:: 5_4_1_triangle
+        :correct:  ^triangle$|^Triangle$|^TRIANGLE$
+        :feedback1: ('.*','Try to follow the directions as if you are the turtle')
+
+        What shape will the program below draw when you click on the Run button?
 
 .. activecode:: Turtle_Names2
     :tour_1: "Line-by-line Tour"; 1: tri-line1; 2: tri-line2; 3: tri-line3; 4: tri-line4; 5: tri-line5; 6: tri-line6; 7: tri-line7; 8: tri-line8; 9: tri-line9; 10: tri-line10;
@@ -89,7 +90,7 @@ Every turtle object has its own attributes like its current position and color. 
 
    The following program has one turtle, "jamal", draw a capital L in blue and then another, "tina", draw a line to the west in orange as shown to the left, <img src="../_static/TwoTurtles1.png" width="150" align="left" hspace="10" vspace="5" />.  The program should do all set-up, have "jamal" draw the L, and then have "tina" draw the line.   Finally, it should set the window to close when the user clicks in it.<br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.</p>
    -----
-   import turtle
+   from turtle import *
    wn = turtle.Screen()
    =====    	
    jamal = turtle.Turtle()
@@ -113,7 +114,7 @@ Every turtle object has its own attributes like its current position and color. 
 
    The following program has one turtle, "jamal", draw a line to the north in blue and then another, "tina", draw a line to the east in orange as shown to the left, <img src="../_static/TwoTurtlesL.png" width="150" align="left" hspace="10" vspace="5" />.  The program should import the turtle module, get the window to draw on, create the turtle "jamal", have it draw a line to the north, then create the turtle "tina", and have it draw a line to the east.  Finally, it should set the window to close when the user clicks in it.<br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.</p> 
    -----
-   import turtle
+   from turtle import *
    =====
    wn = turtle.Screen()
    =====   	

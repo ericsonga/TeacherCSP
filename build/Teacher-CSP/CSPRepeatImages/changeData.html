@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -86,7 +101,7 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
-    <link rel="next" title="Chapter 11 - Summary" href="ch11_summary.html" />
+    <link rel="next" title="Chapter 11 Exercises" href="ch11_exercises.html" />
     <link rel="prev" title="Changing Step 6: Changing where we put the colors" href="changeColorLoc.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -287,8 +303,8 @@
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Chapter 11 - Summary' data-toggle="tooltip" >
-    <a href="ch11_summary.html" >
+  <li id="relations-next" title='Next Chapter - Chapter 11 Exercises' data-toggle="tooltip" >
+    <a href="ch11_exercises.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -334,21 +350,7 @@
 <tr><td><img src="../_static/gal1.jpg" id="gal1.jpg"></td><td><img src="../_static/guy1.jpg" id="guy1.jpg"></td><td><img src="../_static/gal2.jpg" id="gal2.jpg"></td></tr>
 </table><p>We can also change which part of the picture we read and manipulate.  When we are changing several colors at once we can create a new pixel with the desired color using <code class="docutils literal"><span class="pre">Pixl(red,green,blue)</span></code> as shown below on line 20.</p>
 
-<div id="cont"></div>
-<div id="Image_Negate_Quarter" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Image_Negate_Quarter_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Negate_Quarter_saveb" onclick="saveEditor('Image_Negate_Quarter');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Negate_Quarter_loadb" onclick="requestCode('Image_Negate_Quarter');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Image_Negate_Quarter','# STEP 1: USE THE IMAGE LIBRARY*nline*from image import **nline**nline*# STEP 2: PICK THE IMAGE*nline*img = Image*open**doubleq*vangogh.jpg*doubleq**close**nline**nline*# STEP 3: SELECT THE DATA*nline*halfWidth = *open*int*close* *open*img.getWidth*open**close* / 2*close**nline*halfHeight = *open*int*close* *open*img.getHeight*open**close* / 2*close**nline*for x in range*open*halfWidth*close*:*nline*    for y in range*open*halfHeight*close*:*nline**nline*        # STEP 4: GET THE DATA*nline*        p = img.getPixel*open*x, y*close**nline*        r = p.getRed*open**close**nline*        g = p.getGreen*open**close**nline*        b = p.getBlue*open**close**nline**nline*        # STEP 5: CREATE THE COLOR*nline*        newPixel = Pixel*open*255-r, 255-g, 255-b*close**nline**nline*        # STEP 6: CHANGE THE PIXEL*nline*        img.setPixel*open*x, y, newPixel*close**nline**nline*# STEP 7: SHOW THE RESULT*nline*win = ImageWin*open*img.getWidth*open**close*,img.getHeight*open**close**close**nline*img.draw*open*win*close*','1','*doubleq*Important Lines Tour*doubleq*; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 8: imgR6-line8; 9: imgR6-line9; 10: imgR6-line10; 11: imgR6-line11; 13-17: imgR6-line13-17; 19-20: imgR6-line19-20; 22-23: imgR6-line22-23; 25-27: imgR6-line25-27;*atype*')"/>
-
-</div>
-<br/>
-<div id="Image_Negate_Quarter_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Image_Negate_Quarter_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Image_Negate_Quarter data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Important Lines Tour*doubleq*; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 8: imgR6-line8; 9: imgR6-line9; 10: imgR6-line10; 11: imgR6-line11; 13-17: imgR6-line13-17; 19-20: imgR6-line19-20; 22-23: imgR6-line22-23; 25-27: imgR6-line25-27;*atype*'     >
 # STEP 1: USE THE IMAGE LIBRARY
 from image import *
 
@@ -376,88 +378,10 @@ for x in range(halfWidth):
 # STEP 7: SHOW THE RESULT
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Image_Negate_Quarter_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Image_Negate_Quarter_suffix" style="display:none">
-</pre><pre id="Image_Negate_Quarter_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Image_Negate_Quarter)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Image_Negate_Quarter_saveb').toggle();
-    $('#Image_Negate_Quarter_loadb').toggle();
-}
-if ($("#Image_Negate_Quarter").attr("lang") !== "html" && $("#Image_Negate_Quarter_code_div").parents(".admonition").length == 0 && $("#Image_Negate_Quarter_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Image_Negate_Quarter_code_div").offset({
-            left: $("#Image_Negate_Quarter .clearfix").offset().left
-        });
-    }
-    $("#Image_Negate_Quarter_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Image_Negate_Quarter_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Image_Negate_Quarter_runb").parent().siblings(".ac_output").show();
-            runit('Image_Negate_Quarter',this, undefined);
-            $("#Image_Negate_Quarter_runb").on("click", function(){
-                runit('Image_Negate_Quarter',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Image_Negate_Quarter_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Image_Negate_Quarter_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Image_Negate_Quarter_runb").on("click", function(){
-        runit('Image_Negate_Quarter',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>What happens if we skip every other x and y as we manipulate the colors?  Maybe make the green 255 and the blue 0?</p>
 
-<div id="cont"></div>
-<div id="Image_Every_Other" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Image_Every_Other_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Every_Other_saveb" onclick="saveEditor('Image_Every_Other');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Every_Other_loadb" onclick="requestCode('Image_Every_Other');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Image_Every_Other','# STEP 1: USE THE IMAGE LIBRARY*nline*from image import **nline**nline*# STEP 2: PICK THE IMAGE*nline*img = Image*open**doubleq*vangogh.jpg*doubleq**close**nline**nline*# STEP 3: SELECT THE DATA*nline*for x in range*open*0,img.getWidth*open**close*,2*close*:*nline*    for y in range*open*0,img.getHeight*open**close*,2*close*:*nline**nline*        # STEP 4: GET THE DATA*nline*        p = img.getPixel*open*x, y*close**nline*        r = p.getRed*open**close**nline**nline*        # STEP 5: CREATE THE COLOR*nline*        newPixel = Pixel*open*r, 255, 0*close**nline**nline*        # STEP 6: CHANGE THE PIXEL*nline*        img.setPixel*open*x, y, newPixel*close**nline**nline*# STEP 7: SHOW THE RESULT*nline*win = ImageWin*open*img.getWidth*open**close*,img.getHeight*open**close**close**nline*img.draw*open*win*close*','1','*doubleq*Important Lines Tour*doubleq*; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 8: imgR7-line8; 9: imgR7-line9;  11-13: imgR7-line11-13; 15-16: imgR7-line15-16; 18-19: imgR7-line18-19; 21-23: imgR7-line21-23; 25-27:*atype*')"/>
-
-</div>
-<br/>
-<div id="Image_Every_Other_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Image_Every_Other_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Image_Every_Other data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Important Lines Tour*doubleq*; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 8: imgR7-line8; 9: imgR7-line9;  11-13: imgR7-line11-13; 15-16: imgR7-line15-16; 18-19: imgR7-line18-19; 21-23: imgR7-line21-23; 25-27:*atype*'     >
 # STEP 1: USE THE IMAGE LIBRARY
 from image import *
 
@@ -481,88 +405,10 @@ for x in range(0,img.getWidth(),2):
 # STEP 7: SHOW THE RESULT
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Image_Every_Other_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Image_Every_Other_suffix" style="display:none">
-</pre><pre id="Image_Every_Other_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Image_Every_Other)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Image_Every_Other_saveb').toggle();
-    $('#Image_Every_Other_loadb').toggle();
-}
-if ($("#Image_Every_Other").attr("lang") !== "html" && $("#Image_Every_Other_code_div").parents(".admonition").length == 0 && $("#Image_Every_Other_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Image_Every_Other_code_div").offset({
-            left: $("#Image_Every_Other .clearfix").offset().left
-        });
-    }
-    $("#Image_Every_Other_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Image_Every_Other_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Image_Every_Other_runb").parent().siblings(".ac_output").show();
-            runit('Image_Every_Other',this, undefined);
-            $("#Image_Every_Other_runb").on("click", function(){
-                runit('Image_Every_Other',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Image_Every_Other_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Image_Every_Other_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Image_Every_Other_runb").on("click", function(){
-        runit('Image_Every_Other',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>Let&#8217;s try side-to-side copying.</p>
 
-<div id="cont"></div>
-<div id="Image_Copy_Left" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Image_Copy_Left_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Copy_Left_saveb" onclick="saveEditor('Image_Copy_Left');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Copy_Left_loadb" onclick="requestCode('Image_Copy_Left');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Image_Copy_Left','# STEP 1: USE THE IMAGE LIBRARY*nline*from image import **nline**nline*# STEP 2: PICK THE IMAGE*nline*img = Image*open**doubleq*vangogh.jpg*doubleq**close**nline**nline*# STEP 3: SELECT THE DATA*nline*halfway = *open*int*close* *open*img.getWidth*open**close* / 2*close**nline*for x in range*open*halfway*close*:*nline*    for y in range*open*img.getHeight*open**close**close*:*nline**nline*        # STEP 4: GET THE DATA*nline*        p = img.getPixel*open*x, y*close**nline*        r = p.getRed*open**close**nline*        g = p.getGreen*open**close**nline*        b = p.getBlue*open**close**nline**nline*        # STEP 5: CREATE THE COLOR*nline*        newPixel = Pixel*open*r, g, b*close**nline**nline*        # STEP 6: CHANGE THE PIXEL*nline*        img.setPixel*open*halfway + x, y, newPixel*close**nline**nline*# STEP 7: SHOW THE RESULT*nline*win = ImageWin*open*img.getWidth*open**close*,img.getHeight*open**close**close**nline*img.draw*open*win*close*','1','*doubleq*Important Lines Tour*doubleq*; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 8: imgR8-line8; 9: imgR8-line9; 10: imgR8-line10; 12-16: imgR8-line12-16; 18-19: imgR8-line18-19; 21-22: imgR8-line21-22; 24-26: imgR8-line24-26;*atype*')"/>
-
-</div>
-<br/>
-<div id="Image_Copy_Left_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Image_Copy_Left_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Image_Copy_Left data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Important Lines Tour*doubleq*; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 8: imgR8-line8; 9: imgR8-line9; 10: imgR8-line10; 12-16: imgR8-line12-16; 18-19: imgR8-line18-19; 21-22: imgR8-line21-22; 24-26: imgR8-line24-26;*atype*'     >
 # STEP 1: USE THE IMAGE LIBRARY
 from image import *
 
@@ -589,96 +435,20 @@ for x in range(halfway):
 # STEP 7: SHOW THE RESULT
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
-</textarea>
-</div>
+</pre>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Image_Copy_Left_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Image_Copy_Left_suffix" style="display:none">
-</pre><pre id="Image_Copy_Left_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Image_Copy_Left)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Image_Copy_Left_saveb').toggle();
-    $('#Image_Copy_Left_loadb').toggle();
-}
-if ($("#Image_Copy_Left").attr("lang") !== "html" && $("#Image_Copy_Left_code_div").parents(".admonition").length == 0 && $("#Image_Copy_Left_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Image_Copy_Left_code_div").offset({
-            left: $("#Image_Copy_Left .clearfix").offset().left
-        });
-    }
-    $("#Image_Copy_Left_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Image_Copy_Left_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Image_Copy_Left_runb").parent().siblings(".ac_output").show();
-            runit('Image_Copy_Left',this, undefined);
-            $("#Image_Copy_Left_runb").on("click", function(){
-                runit('Image_Copy_Left',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Image_Copy_Left_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Image_Copy_Left_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Image_Copy_Left_runb").on("click", function(){
-        runit('Image_Copy_Left',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="11_6_1_Image_Mirror_Q1" class="alert alert-warning">
-            csp-11-6-1: Try it: How would you mirror the image from left-to-right around a vertical line in the middle of the picture?  Try changing line 22 to these.  If you get it right it will look like the women is nose to nose with herself.<form name="11_6_1_Image_Mirror_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="11_6_1_Image_Mirror_Q1_opt_a" />
-            <label for= "11_6_1_Image_Mirror_Q1_opt_a">  a) img.setPixel(halfway - x, y, newPixel)</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="11_6_1_Image_Mirror_Q1">
+            csp-11-6-1: Try it: How would you mirror the image from left-to-right around a vertical line in the middle of the picture?  Try changing line 22 to these.  If you get it right it will look like the women is nose to nose with herself.
+            <li data-component="answer"  id="11_6_1_Image_Mirror_Q1_opt_a">img.setPixel(halfway - x, y, newPixel)</li><li data-component="feedback" id="11_6_1_Image_Mirror_Q1_opt_a">It does mirror, but only the left half</li>
             
-            <input type="radio" name="group1" value="b" id="11_6_1_Image_Mirror_Q1_opt_b" />
-            <label for= "11_6_1_Image_Mirror_Q1_opt_b">  b) img.setPixel(x - halfway, y, newPixel)</label><br />
+            <li data-component="answer"  id="11_6_1_Image_Mirror_Q1_opt_b">img.setPixel(x - halfway, y, newPixel)</li><li data-component="feedback" id="11_6_1_Image_Mirror_Q1_opt_b">This creates two copies of the left half</li>
             
-            <input type="radio" name="group1" value="c" id="11_6_1_Image_Mirror_Q1_opt_c" />
-            <label for= "11_6_1_Image_Mirror_Q1_opt_c">  c) img.setPixel(img.getWidth() - 1 - x, y, newPixel)</label><br />
+            <li data-component="answer" data-correct id="11_6_1_Image_Mirror_Q1_opt_c">img.setPixel(img.getWidth() - 1 - x, y, newPixel)</li><li data-component="feedback" id="11_6_1_Image_Mirror_Q1_opt_c">Yes, it looks like the woman is kissing herself</li>
             
-            <input type="radio" name="group1" value="d" id="11_6_1_Image_Mirror_Q1_opt_d" />
-            <label for= "11_6_1_Image_Mirror_Q1_opt_d">  d) img.setPixel(x - img.getWidth(), y, newPixel)</label><br />
+            <li data-component="answer"  id="11_6_1_Image_Mirror_Q1_opt_d">img.setPixel(x - img.getWidth(), y, newPixel)</li><li data-component="feedback" id="11_6_1_Image_Mirror_Q1_opt_d">No, no effect.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('11_6_1_Image_Mirror_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('11_6_1_Image_Mirror_Q1','c',['It does mirror, but only the left half', 'This creates two copies of the left half', 'Yes, it looks like the woman is kissing herself', 'No, no effect.'])">Check Me</button>
-            <button class='btn btn-default' id="11_6_1_Image_Mirror_Q1_bcomp" disabled name="compare" onclick="compareAnswers('11_6_1_Image_Mirror_Q1');">Compare Me</button>
-            </form><br />
-            <div id="11_6_1_Image_Mirror_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             </div>
 
 
@@ -691,12 +461,12 @@ else{
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="changeColorLoc.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - Chapter 11 - Summary' data-toggle="tooltip" >
-    <a href="ch11_summary.html" >
+  <li id="relations-next" class="navLink" title='Next Section - Chapter 11 Exercises' data-toggle="tooltip" >
+    <a href="ch11_exercises.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="ch11_summary.html" >Next Section - Chapter 11 - Summary</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="ch11_exercises.html" >Next Section - Chapter 11 Exercises</a>
 
 <script type="text/javascript">
 
@@ -709,7 +479,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

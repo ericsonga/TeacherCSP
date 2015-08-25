@@ -105,7 +105,7 @@ The next type of problem is new.  It shows correct code in code blocks on the le
    dripFPS = dripFPM / SPM
    =====
    print("Ketchup speed:")
-   print(ketchupFPS)
+   print(dripFPS)
 
 
 

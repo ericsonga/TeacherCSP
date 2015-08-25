@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -86,7 +101,7 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
     <link rel="top" title="Runestone Interactive Overview" href="../index.html" />
-    <link rel="next" title="Chapter 9 - Summary" href="ch9_summary.html" />
+    <link rel="next" title="Modifying Text" href="modify.html" />
     <link rel="prev" title="Reversing Text" href="reverse.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -287,8 +303,8 @@
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Chapter 9 - Summary' data-toggle="tooltip" >
-    <a href="ch9_summary.html" >
+  <li id="relations-next" title='Next Chapter - Modifying Text' data-toggle="tooltip" >
+    <a href="modify.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -322,22 +338,7 @@
 <h1>Mirroring Text<a class="headerlink" href="#mirroring-text" title="Permalink to this headline">¶</a></h1>
 <p>What happens if we add the letter to <em>both</em> sides of the new string that we&#8217;re making?</p>
 
-<div id="cont"></div>
-<div id="Copy_Mirror" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Copy_Mirror_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Copy_Mirror_saveb" onclick="saveEditor('Copy_Mirror');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Copy_Mirror_loadb" onclick="requestCode('Copy_Mirror');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Copy_Mirror','# STEP 1: INITIALIZE ACCUMULATOR*nline*newString = *doubleq**doubleq**nline*# STEP 2: GET DATA*nline*phrase = *doubleq*This is a test*doubleq**nline*# STEP 3: LOOP THROUGH THE DATA*nline*for letter in phrase:*nline*    # STEP 4: ACCUMULATE*nline*    newString = letter + newString + letter*nline*# STEP 5: PROCESS RESULT*nline*print*open*newString*close*','1','*doubleq*Lines of code*doubleq*; 2: strR3-line1; 4: strR3-line2; 6: strR3-line3; 8: strR3-line4; 10: strR3-line5;*atype*')"/>
-<button class='btn btn-default' id="Copy_Mirror_vizb" onclick="injectCodelens(this,'Copy_Mirror');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="Copy_Mirror_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Copy_Mirror_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Copy_Mirror data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Lines of code*doubleq*; 2: strR3-line1; 4: strR3-line2; 6: strR3-line3; 8: strR3-line4; 10: strR3-line5;*atype*'     >
 # STEP 1: INITIALIZE ACCUMULATOR
 newString = ""
 # STEP 2: GET DATA
@@ -348,97 +349,21 @@ for letter in phrase:
     newString = letter + newString + letter
 # STEP 5: PROCESS RESULT
 print(newString)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Copy_Mirror_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Copy_Mirror_suffix" style="display:none">
-</pre><pre id="Copy_Mirror_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Copy_Mirror)</span> </p>
-<div id="Copy_Mirror_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Copy_Mirror_saveb').toggle();
-    $('#Copy_Mirror_loadb').toggle();
-}
-if ($("#Copy_Mirror").attr("lang") !== "html" && $("#Copy_Mirror_code_div").parents(".admonition").length == 0 && $("#Copy_Mirror_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Copy_Mirror_code_div").offset({
-            left: $("#Copy_Mirror .clearfix").offset().left
-        });
-    }
-    $("#Copy_Mirror_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Copy_Mirror_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Copy_Mirror_runb").parent().siblings(".ac_output").show();
-            runit('Copy_Mirror',this, undefined);
-            $("#Copy_Mirror_runb").on("click", function(){
-                runit('Copy_Mirror',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Copy_Mirror_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Copy_Mirror_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Copy_Mirror_runb").on("click", function(){
-        runit('Copy_Mirror',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>Try changing the phrase and see what effects you can generate.</p>
 
-            <div id="9_3_1_Copy_Mirror_Q1" class="alert alert-warning">
-            csp-9-3-1: Change the mirroring program to mirror the phrase <code class="docutils literal"><span class="pre">&quot;Time</span> <span class="pre">to</span> <span class="pre">Panic&quot;</span></code> with a single exclamation point in the middle, to make the printed words look like this: <code class="docutils literal"><span class="pre">cinaP</span> <span class="pre">ot</span> <span class="pre">emiT!Time</span> <span class="pre">to</span> <span class="pre">Panic</span></code>.  How do you do it?<form name="9_3_1_Copy_Mirror_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="9_3_1_Copy_Mirror_Q1_opt_a" />
-            <label for= "9_3_1_Copy_Mirror_Q1_opt_a">  a) Make the phrase <code>"Time to panic!"</code></label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="9_3_1_Copy_Mirror_Q1">
+            csp-9-3-1: Change the mirroring program to mirror the phrase <code class="docutils literal"><span class="pre">&quot;Time</span> <span class="pre">to</span> <span class="pre">Panic&quot;</span></code> with a single exclamation point in the middle, to make the printed words look like this: <code class="docutils literal"><span class="pre">cinaP</span> <span class="pre">ot</span> <span class="pre">emiT!Time</span> <span class="pre">to</span> <span class="pre">Panic</span></code>.  How do you do it?
+            <li data-component="answer"  id="9_3_1_Copy_Mirror_Q1_opt_a">Make the phrase <code>"Time to panic!"</code></li><li data-component="feedback" id="9_3_1_Copy_Mirror_Q1_opt_a">That would give us <code>!cinaP ot emiTTime to Panic!</code>.</li>
             
-            <input type="radio" name="group1" value="b" id="9_3_1_Copy_Mirror_Q1_opt_b" />
-            <label for= "9_3_1_Copy_Mirror_Q1_opt_b">  b) Change the <code>newString</code> in line 1 to <code>"!"</code> instead of <cod>""</code></label><br />
+            <li data-component="answer" data-correct id="9_3_1_Copy_Mirror_Q1_opt_b">Change the <code>newString</code> in line 1 to <code>"!"</code> instead of <cod>""</code></li><li data-component="feedback" id="9_3_1_Copy_Mirror_Q1_opt_b">We can start our accumulator with something in it.</li>
             
-            <input type="radio" name="group1" value="c" id="9_3_1_Copy_Mirror_Q1_opt_c" />
-            <label for= "9_3_1_Copy_Mirror_Q1_opt_c">  c) Change the right hand side of line 4 to <code>letter + "!" + newstring + letter</code></label><br />
+            <li data-component="answer"  id="9_3_1_Copy_Mirror_Q1_opt_c">Change the right hand side of line 4 to <code>letter + "!" + newstring + letter</code></li><li data-component="feedback" id="9_3_1_Copy_Mirror_Q1_opt_c">That would give us <code>!!c!i!n!a!P! !o!t! !e!m!i!T!Time to Panic!</code> -- exclamation points between the letters in the first half of the mirror.</li>
             
-            <input type="radio" name="group1" value="d" id="9_3_1_Copy_Mirror_Q1_opt_d" />
-            <label for= "9_3_1_Copy_Mirror_Q1_opt_d">  d) Change the right hand side of line 4 to <code>letter + newstring + "!" + letter</code></label><br />
+            <li data-component="answer"  id="9_3_1_Copy_Mirror_Q1_opt_d">Change the right hand side of line 4 to <code>letter + newstring + "!" + letter</code></li><li data-component="feedback" id="9_3_1_Copy_Mirror_Q1_opt_d">That would give us <code>!cinaP ot emiT!T!i!m!e! !t!o! !P!a!n!i!c!!</code> -- exclamation points between the letters in the second half of the mirror.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('9_3_1_Copy_Mirror_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('9_3_1_Copy_Mirror_Q1','b',['That would give us \u003Ccode\u003E!cinaP ot emiTTime to Panic!\u003C/code\u003E.', 'We can start our accumulator with something in it.', 'That would give us \u003Ccode\u003E!!c!i!n!a!P! !o!t! !e!m!i!T!Time to Panic!\u003C/code\u003E \u002D\u002D exclamation points between the letters in the first half of the mirror.', 'That would give us \u003Ccode\u003E!cinaP ot emiT!T!i!m!e! !t!o! !P!a!n!i!c!!\u003C/code\u003E \u002D\u002D exclamation points between the letters in the second half of the mirror.'])">Check Me</button>
-            <button class='btn btn-default' id="9_3_1_Copy_Mirror_Q1_bcomp" disabled name="compare" onclick="compareAnswers('9_3_1_Copy_Mirror_Q1');">Compare Me</button>
-            </form><br />
-            <div id="9_3_1_Copy_Mirror_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             <p>The accumulator doesn&#8217;t have to be set to be an empty string.  You can put something in the accumulator, and then it will show up in the middle of the mirrored phrase.</p>
 
 <div class="alert alert-warning cd_section">
@@ -484,30 +409,18 @@ $(window).resize(function() {
 });
 </script>
 
-            <div id="9_3_2_Count_Exclamations_Q1" class="alert alert-warning">
-            csp-9-3-2: When the variable <code class="docutils literal"><span class="pre">letter</span></code> contains the <code class="docutils literal"><span class="pre">&quot;W&quot;</span></code> from <code class="docutils literal"><span class="pre">Wizard</span></code>, how many exclamation points are in <code class="docutils literal"><span class="pre">newString</span></code>?<form name="9_3_2_Count_Exclamations_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="9_3_2_Count_Exclamations_Q1_opt_a" />
-            <label for= "9_3_2_Count_Exclamations_Q1_opt_a">  a) One</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="9_3_2_Count_Exclamations_Q1">
+            csp-9-3-2: When the variable <code class="docutils literal"><span class="pre">letter</span></code> contains the <code class="docutils literal"><span class="pre">&quot;W&quot;</span></code> from <code class="docutils literal"><span class="pre">Wizard</span></code>, how many exclamation points are in <code class="docutils literal"><span class="pre">newString</span></code>?
+            <li data-component="answer" data-correct id="9_3_2_Count_Exclamations_Q1_opt_a">One</li><li data-component="feedback" id="9_3_2_Count_Exclamations_Q1_opt_a">There is just the one in the accumulator to start.</li>
             
-            <input type="radio" name="group1" value="b" id="9_3_2_Count_Exclamations_Q1_opt_b" />
-            <label for= "9_3_2_Count_Exclamations_Q1_opt_b">  b) Two</label><br />
+            <li data-component="answer"  id="9_3_2_Count_Exclamations_Q1_opt_b">Two</li><li data-component="feedback" id="9_3_2_Count_Exclamations_Q1_opt_b">If we just mirrored the string, there would be only two.  But we are mirroring with something in the accumulator.</li>
             
-            <input type="radio" name="group1" value="c" id="9_3_2_Count_Exclamations_Q1_opt_c" />
-            <label for= "9_3_2_Count_Exclamations_Q1_opt_c">  c) Three</label><br />
+            <li data-component="answer"  id="9_3_2_Count_Exclamations_Q1_opt_c">Three</li><li data-component="feedback" id="9_3_2_Count_Exclamations_Q1_opt_c">That is true at the end, but not when letter contains the first letter of <code>"Wizard"</code></li>
             
-            <input type="radio" name="group1" value="d" id="9_3_2_Count_Exclamations_Q1_opt_d" />
-            <label for= "9_3_2_Count_Exclamations_Q1_opt_d">  d) Four</label><br />
+            <li data-component="answer"  id="9_3_2_Count_Exclamations_Q1_opt_d">Four</li><li data-component="feedback" id="9_3_2_Count_Exclamations_Q1_opt_d">At most, there will be three in <code>newString</code>.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('9_3_2_Count_Exclamations_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('9_3_2_Count_Exclamations_Q1','a',['There is just the one in the accumulator to start.', 'If we just mirrored the string, there would be only two.  But we are mirroring with something in the accumulator.', 'That is true at the end, but not when letter contains the first letter of \u003Ccode\u003E\u0022Wizard\u0022\u003C/code\u003E', 'At most, there will be three in \u003Ccode\u003EnewString\u003C/code\u003E.'])">Check Me</button>
-            <button class='btn btn-default' id="9_3_2_Count_Exclamations_Q1_bcomp" disabled name="compare" onclick="compareAnswers('9_3_2_Count_Exclamations_Q1');">Compare Me</button>
-            </form><br />
-            <div id="9_3_2_Count_Exclamations_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             
         <div class='parsons alert alert-warning' id="parsons-83">
         <div class="parsons-text">csp-9-3-3: <p>The phrase <code>"A but tuba"</code> is a <b>palindrome</b>.  The letters are the same forward and backward.  The below program generates the output: <code>"abut tub a<=>a but tuba"</code>  Put the lines in the right order with the right indentation.</p><br /><br /></div>
@@ -530,7 +443,7 @@ print(newStr)</div>
 
     <script>
         $pjQ(document).ready(function(){
-
+            var rb = new RunestoneBase();
             $("#parsons-83").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
                     scrollTop: ($("#parsons-83").offset().top - 50)
@@ -546,10 +459,10 @@ print(newStr)</div>
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
-                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'9_3_3_Palindrome'});
+                    rb.logBookEvent({'event':'parsons', 'act':hash, 'div_id':'9_3_3_Palindrome'});
 
             } else {
-                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'9_3_3_Palindrome'});
+                    rb.logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'9_3_3_Palindrome'});
                     msgBox.fadeIn(100);
                     msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
@@ -646,12 +559,12 @@ print(newStr)</div>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="reverse.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - Chapter 9 - Summary' data-toggle="tooltip" >
-    <a href="ch9_summary.html" >
+  <li id="relations-next" class="navLink" title='Next Section - Modifying Text' data-toggle="tooltip" >
+    <a href="modify.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="ch9_summary.html" >Next Section - Chapter 9 - Summary</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="modify.html" >Next Section - Modifying Text</a>
 
 <script type="text/javascript">
 
@@ -664,7 +577,10 @@ print(newStr)</div>
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

@@ -28,7 +28,7 @@ options(
                        'loglevel': 0,
                        'course_url':master_url,
                        'use_services': 'true',
-                       'python3': 'false'
+                       'python3': 'true'
                         }
     )
 )

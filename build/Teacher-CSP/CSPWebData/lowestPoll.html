@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -323,12 +339,8 @@
 <p>If we can figure out the city with the maximum pollution, the city with the minimum pollution should be pretty easy to find as well.</p>
 <p>This program uses the same data file that we have been using, but if you want to see <strong>all</strong> of the data click on the <em>Show</em> button below.  Once it appears, you can hide it again by clicking on the <em>Hide</em> button.</p>
 
-    <button type='button' id='pol_Data5_show' class='btn btn-default reveal_button' style='margin-bottom:10px;' onclick="$(this).hide();$('#pol_Data5').show();$('#pol_Data5_hide').show();$('#pol_Data5').find('.CodeMirror').each(function(i, el){el.CodeMirror.refresh();});">
-        Show
-    </button>
-    <button type='button' id='pol_Data5_hide' class='btn btn-default reveal_button' onclick="$(this).hide();$('#pol_Data5').hide();$('#pol_Data5_show').show();" style='display:none'>Hide</button>
-    <div id='pol_Data5' style='display:none'>
-<pre id="uspoll.txt">
+    <div data-component="reveal" id="pol_Data5"   data-showtitle="Show" data-hidetitle="Hide">
+    <pre id="uspoll.txt">
 Aberdeen, SD :13 :8
 Adrian, MI :15 :9
 Akron, OH :18 :11
@@ -710,22 +722,8 @@ Yuba City, CA :12 :7
 Yuma, AZ :14 :9
 </pre>
     </div>
-
-<div id="cont"></div>
-<div id="min25" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="min25_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="min25_saveb" onclick="saveEditor('min25');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="min25_loadb" onclick="requestCode('min25');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('min25','inFile = open*open**doubleq*uspoll.txt*doubleq*,*doubleq*r*doubleq**close**nline*lines = inFile.readlines*open**close**nline*inFile.close*open**close**nline**nline*minCity = *singleq**singleq**nline*min25 = 500*nline*for line in lines:*nline*    values = line.split*open**doubleq*:*doubleq**close**nline*    new25 = float*open*values[2]*close* # set the value for new25 to be the current PM 2.5 value*nline*    if new25 < min25:*nline*        minCity = values[0] # Save the minimum city and state*nline*        min25 = new25 # save the minimum PM 2.5 value*nline*print*open**doubleq*Smallest PM 2.5 *doubleq*,min25,*doubleq* in *doubleq*,minCity*close*','1','*doubleq*Structural tour*doubleq*; 1-3: web4-line1-3; 5-6: web4-line5-6; 7: web4-line7; 8: web4-line8; 9: web4-line9; 10: web4-line10; 11-12: web4-line11-12; 13: web4-line13;*atype*')"/>
-
-</div>
-<br/>
-<div id="min25_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="min25_code" class="active_code" prefixcode="undefined" lang="python">
+    
+<pre data-component="activecode" id=min25 data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Structural tour*doubleq*; 1-3: web4-line1-3; 5-6: web4-line5-6; 7: web4-line7; 8: web4-line8; 9: web4-line9; 10: web4-line10; 11-12: web4-line11-12; 13: web4-line13;*atype*'     >
 inFile = open("uspoll.txt","r")
 lines = inFile.readlines()
 inFile.close()
@@ -739,93 +737,11 @@ for line in lines:
         minCity = values[0] # Save the minimum city and state
         min25 = new25 # save the minimum PM 2.5 value
 print("Smallest PM 2.5 ",min25," in ",minCity)
-</textarea>
-</div>
+</pre>
+<div id='tab_max_pol' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Min_Polution_10_Exercise" >
+<p>Can you now write the code to get the city with the smallest PM 10 value?  Change the lines that start with a comment (a <code class="docutils literal"><span class="pre">#</span></code>) below.  If you have problems see a solution in the other tab.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="min25_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="min25_suffix" style="display:none">
-</pre><pre id="min25_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (min25)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#min25_saveb').toggle();
-    $('#min25_loadb').toggle();
-}
-if ($("#min25").attr("lang") !== "html" && $("#min25_code_div").parents(".admonition").length == 0 && $("#min25_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#min25_code_div").offset({
-            left: $("#min25 .clearfix").offset().left
-        });
-    }
-    $("#min25_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#min25_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#min25_runb").parent().siblings(".ac_output").show();
-            runit('min25',this, undefined);
-            $("#min25_runb").on("click", function(){
-                runit('min25',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#min25_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#min25_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#min25_runb").on("click", function(){
-        runit('min25',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-<div id='tab_max_pol' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#tab_max_pol-Min_Polution_10_Exercise'><span>Min_Polution_10_Exercise</span></a>
-</li>
-
-<li>
-    <a data-toggle='tab' href='#tab_max_pol-Min_Polution_10_Answer'><span>Min_Polution_10_Answer</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='tab_max_pol-Min_Polution_10_Exercise'><p>Can you now write the code to get the city with the smallest PM 10 value?  Change the lines that start with a comment (a <code class="docutils literal"><span class="pre">#</span></code>) below.  If you have problems see a solution in the other tab.</p>
-
-<div id="cont"></div>
-<div id="min10_ex" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="min10_ex_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="min10_ex_saveb" onclick="saveEditor('min10_ex');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="min10_ex_loadb" onclick="requestCode('min10_ex');">Load</button>
-
-</div>
-<br/>
-<div id="min10_ex_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="min10_ex_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=min10_ex data-lang="python"    data-timelimit=25000   data-audio=''     >
 inFile = open("uspoll.txt","r")
 lines = inFile.readlines()
 inFile.close()
@@ -839,85 +755,11 @@ for line in lines:
         # Save the minimum city and state
         # save the minimum PM 10 value
 print("Smallest PM 10 value is ",min10," in ",minCity)
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Min_Polution_10_Answer" >
+<p>Here is a solution to finding the city with the smallest PM 10 pollution.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="min10_ex_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="min10_ex_suffix" style="display:none">
-</pre><pre id="min10_ex_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (min10_ex)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#min10_ex_saveb').toggle();
-    $('#min10_ex_loadb').toggle();
-}
-if ($("#min10_ex").attr("lang") !== "html" && $("#min10_ex_code_div").parents(".admonition").length == 0 && $("#min10_ex_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#min10_ex_code_div").offset({
-            left: $("#min10_ex .clearfix").offset().left
-        });
-    }
-    $("#min10_ex_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#min10_ex_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#min10_ex_runb").parent().siblings(".ac_output").show();
-            runit('min10_ex',this, undefined);
-            $("#min10_ex_runb").on("click", function(){
-                runit('min10_ex',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#min10_ex_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#min10_ex_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#min10_ex_runb").on("click", function(){
-        runit('min10_ex',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='tab_max_pol-Min_Polution_10_Answer'><p>Here is a solution to finding the city with the smallest PM 10 pollution.</p>
-
-<div id="cont"></div>
-<div id="min10_answer" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="min10_answer_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="min10_answer_saveb" onclick="saveEditor('min10_answer');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="min10_answer_loadb" onclick="requestCode('min10_answer');">Load</button>
-
-</div>
-<br/>
-<div id="min10_answer_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="min10_answer_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=min10_answer data-lang="python"    data-timelimit=25000   data-audio=''     >
 inFile = open("uspoll.txt","r")
 lines = inFile.readlines()
 inFile.close()
@@ -931,116 +773,21 @@ for line in lines:
         minCity = values[0]
         min10 = new10
 print("Smallest PM 10 value is ",min10," in ",minCity)
-</textarea>
+</pre>
 </div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="min10_answer_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="min10_answer_suffix" style="display:none">
-</pre><pre id="min10_answer_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (min10_answer)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#min10_answer_saveb').toggle();
-    $('#min10_answer_loadb').toggle();
-}
-if ($("#min10_answer").attr("lang") !== "html" && $("#min10_answer_code_div").parents(".admonition").length == 0 && $("#min10_answer_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#min10_answer_code_div").offset({
-            left: $("#min10_answer .clearfix").offset().left
-        });
-    }
-    $("#min10_answer_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#min10_answer_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#min10_answer_runb").parent().siblings(".ac_output").show();
-            runit('min10_answer',this, undefined);
-            $("#min10_answer_runb").on("click", function(){
-                runit('min10_answer',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#min10_answer_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#min10_answer_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#min10_answer_runb").on("click", function(){
-        runit('min10_answer',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div></div>
     </div>
-    <script type='text/javascript'>
-        $('#tab_max_pol .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
 
-        // activate the first tab
-        var el = $('#tab_max_pol .nav-tabs a')[0];
-        $(el).tab('show');
 
-        $('#tab_max_pol .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
-
-            <div id="18_5_1_min10" class="alert alert-warning">
-            csp-18-5-1: Which of the following is true about the cities with the minimum PM 2.5 and PM 10 values?<form name="18_5_1_min10_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="18_5_1_min10_opt_a" />
-            <label for= "18_5_1_min10_opt_a">  a) The same city has the minimum PM 2.5 and the minimum PM 10.</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="18_5_1_min10">
+            csp-18-5-1: Which of the following is true about the cities with the minimum PM 2.5 and PM 10 values?
+            <li data-component="answer"  id="18_5_1_min10_opt_a">The same city has the minimum PM 2.5 and the minimum PM 10.</li><li data-component="feedback" id="18_5_1_min10_opt_a">Check your program for PM 10.</li>
             
-            <input type="radio" name="group1" value="b" id="18_5_1_min10_opt_b" />
-            <label for= "18_5_1_min10_opt_b">  b) The two cities are in different states, but are both in the east.</label><br />
+            <li data-component="answer"  id="18_5_1_min10_opt_b">The two cities are in different states, but are both in the east.</li><li data-component="feedback" id="18_5_1_min10_opt_b">You didn't run the first program to find the minimum PM 2.5, did you?</li>
             
-            <input type="radio" name="group1" value="c" id="18_5_1_min10_opt_c" />
-            <label for= "18_5_1_min10_opt_c">  c) The two cities are in different states, but are both in the west.</label><br />
+            <li data-component="answer" data-correct id="18_5_1_min10_opt_c">The two cities are in different states, but are both in the west.</li><li data-component="feedback" id="18_5_1_min10_opt_c">Two different cities have the minimum values, but they are both in the west.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('18_5_1_min10');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('18_5_1_min10','c',['Check your program for PM 10.', 'You didn\u0027t run the first program to find the minimum PM 2.5, did you?', 'Two different cities have the minimum values, but they are both in the west.'])">Check Me</button>
-            <button class='btn btn-default' id="18_5_1_min10_bcomp" disabled name="compare" onclick="compareAnswers('18_5_1_min10');">Compare Me</button>
-            </form><br />
-            <div id="18_5_1_min10_feedback">
-            </div>
-            </div>
+            </ul>
             </div>
 
 
@@ -1071,7 +818,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -322,22 +338,7 @@
 <h1>Using Multiple if statements<a class="headerlink" href="#using-multiple-if-statements" title="Permalink to this headline">¶</a></h1>
 <p>You can use more than one <code class="docutils literal"><span class="pre">if</span></code> statement in your code.  Here&#8217;s an example of a calculation that uses two <code class="docutils literal"><span class="pre">if</span></code> statements.  Let&#8217;s compute the total cost of an item where the price is based on the weight of the item.  If the item weighs less than 1 pound then the price is 1.45 a pound.  If the item weighs 1 pound or more the price is 1.15 a pound.</p>
 
-<div id="cont"></div>
-<div id="Price_If" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Price_If_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Price_If_saveb" onclick="saveEditor('Price_If');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Price_If_loadb" onclick="requestCode('Price_If');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Price_If','weight = 0.5*nline*if weight < 1:*nline*    price = 1.45*nline*if weight >= 1:*nline*    price = 1.15*nline*total = weight * price*nline*print*open*weight*close**nline*print*open*price*close**nline*print*open*total*close*','1','*doubleq*Structural Tour*doubleq*; 1: c1-line1; 2-3: c1-line2-3; 4-5: c1-line4-5; 6: c1-line6; 7-9: c3f-line7-9;*atype*')"/>
-<button class='btn btn-default' id="Price_If_vizb" onclick="injectCodelens(this,'Price_If');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="Price_If_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Price_If_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Price_If data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Structural Tour*doubleq*; 1: c1-line1; 2-3: c1-line2-3; 4-5: c1-line4-5; 6: c1-line6; 7-9: c3f-line7-9;*atype*'     >
 weight = 0.5
 if weight < 1:
     price = 1.45
@@ -347,90 +348,11 @@ total = weight * price
 print(weight)
 print(price)
 print(total)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Price_If_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Price_If_suffix" style="display:none">
-</pre><pre id="Price_If_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Price_If)</span> </p>
-<div id="Price_If_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Price_If_saveb').toggle();
-    $('#Price_If_loadb').toggle();
-}
-if ($("#Price_If").attr("lang") !== "html" && $("#Price_If_code_div").parents(".admonition").length == 0 && $("#Price_If_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Price_If_code_div").offset({
-            left: $("#Price_If .clearfix").offset().left
-        });
-    }
-    $("#Price_If_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Price_If_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Price_If_runb").parent().siblings(".ac_output").show();
-            runit('Price_If',this, undefined);
-            $("#Price_If_runb").on("click", function(){
-                runit('Price_If',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Price_If_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Price_If_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Price_If_runb").on("click", function(){
-        runit('Price_If',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>Edit the code above and change the first line so that <code class="docutils literal"><span class="pre">weight</span></code> has a different value. Run it again and see what changes.  Try it in the codelens as well to see how the different values for weight changes the lines of code that are executed.</p>
 <p>In this second version, we set a <code class="docutils literal"><span class="pre">price</span></code> as a <em>default</em>, then change it only on the special condition. Does it work the same as the above example?</p>
 
-<div id="cont"></div>
-<div id="Price_If_Default" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Price_If_Default_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Price_If_Default_saveb" onclick="saveEditor('Price_If_Default');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Price_If_Default_loadb" onclick="requestCode('Price_If_Default');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Price_If_Default','weight = 0.5*nline*price = 1.45*nline*if weight >= 1:*nline*    price = 1.15*nline*total = weight * price*nline*print*open*weight*close**nline*print*open*price*close**nline*print*open*total*close*','1','*doubleq*Structural Tour*doubleq*; 1: c2-line1; 2: c2-line2; 3-4: c2-line3-4; 5: c2-line5; 6-8: c3f-line7-9;*atype*')"/>
-<button class='btn btn-default' id="Price_If_Default_vizb" onclick="injectCodelens(this,'Price_If_Default');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="Price_If_Default_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Price_If_Default_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Price_If_Default data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Structural Tour*doubleq*; 1: c2-line1; 2: c2-line2; 3-4: c2-line3-4; 5: c2-line5; 6-8: c3f-line7-9;*atype*'     >
 weight = 0.5
 price = 1.45
 if weight >= 1:
@@ -439,100 +361,24 @@ total = weight * price
 print(weight)
 print(price)
 print(total)
-</textarea>
-</div>
+</pre>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Price_If_Default_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Price_If_Default_suffix" style="display:none">
-</pre><pre id="Price_If_Default_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Price_If_Default)</span> </p>
-<div id="Price_If_Default_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Price_If_Default_saveb').toggle();
-    $('#Price_If_Default_loadb').toggle();
-}
-if ($("#Price_If_Default").attr("lang") !== "html" && $("#Price_If_Default_code_div").parents(".admonition").length == 0 && $("#Price_If_Default_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Price_If_Default_code_div").offset({
-            left: $("#Price_If_Default .clearfix").offset().left
-        });
-    }
-    $("#Price_If_Default_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Price_If_Default_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Price_If_Default_runb").parent().siblings(".ac_output").show();
-            runit('Price_If_Default',this, undefined);
-            $("#Price_If_Default_runb").on("click", function(){
-                runit('Price_If_Default',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Price_If_Default_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Price_If_Default_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Price_If_Default_runb").on("click", function(){
-        runit('Price_If_Default',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="12_3_1_Price_If_Equivalent" class="alert alert-warning">
-            csp-12-3-1:  Are there values for weight that make the two programs above print different results when the same weight is used in both programs?<form name="12_3_1_Price_If_Equivalent_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="12_3_1_Price_If_Equivalent_opt_a" />
-            <label for= "12_3_1_Price_If_Equivalent_opt_a">  a) No, they're always the same.</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="12_3_1_Price_If_Equivalent">
+            csp-12-3-1:  Are there values for weight that make the two programs above print different results when the same weight is used in both programs?
+            <li data-component="answer" data-correct id="12_3_1_Price_If_Equivalent_opt_a">No, they're always the same.</li><li data-component="feedback" id="12_3_1_Price_If_Equivalent_opt_a">The end result is the same.</li>
             
-            <input type="radio" name="group1" value="b" id="12_3_1_Price_If_Equivalent_opt_b" />
-            <label for= "12_3_1_Price_If_Equivalent_opt_b">  b) Yes, they're different if the weight is exactly 1 pound.</label><br />
+            <li data-component="answer"  id="12_3_1_Price_If_Equivalent_opt_b">Yes, they're different if the weight is exactly 1 pound.</li><li data-component="feedback" id="12_3_1_Price_If_Equivalent_opt_b">If the weight is exactly 1 pound the price will be 1.15 in both programs.</li>
             
-            <input type="radio" name="group1" value="c" id="12_3_1_Price_If_Equivalent_opt_c" />
-            <label for= "12_3_1_Price_If_Equivalent_opt_c">  c) Yes, they're different if the weight is under 1 pound.</label><br />
+            <li data-component="answer"  id="12_3_1_Price_If_Equivalent_opt_c">Yes, they're different if the weight is under 1 pound.</li><li data-component="feedback" id="12_3_1_Price_If_Equivalent_opt_c">If the weight is under 1 pound the price will be 1.45 in both programs.</li>
             
-            <input type="radio" name="group1" value="d" id="12_3_1_Price_If_Equivalent_opt_d" />
-            <label for= "12_3_1_Price_If_Equivalent_opt_d">  d) Yes, they're different if the weight is over 1 pound.</label><br />
+            <li data-component="answer"  id="12_3_1_Price_If_Equivalent_opt_d">Yes, they're different if the weight is over 1 pound.</li><li data-component="feedback" id="12_3_1_Price_If_Equivalent_opt_d">If the weight is over 1 pound the price will be 1.15 in both programs.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('12_3_1_Price_If_Equivalent');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('12_3_1_Price_If_Equivalent','a',['The end result is the same.', 'If the weight is exactly 1 pound the price will be 1.15 in both programs.', 'The the weight is under 1 pound the price will be 1.45 in both programs.', 'If the weight is over 1 pound the price will be 1.15 in both programs.'])">Check Me</button>
-            <button class='btn btn-default' id="12_3_1_Price_If_Equivalent_bcomp" disabled name="compare" onclick="compareAnswers('12_3_1_Price_If_Equivalent');">Compare Me</button>
-            </form><br />
-            <div id="12_3_1_Price_If_Equivalent_feedback">
-            </div>
-            </div>
+            </ul>
             <p><strong>Mixed up programs</strong></p>
 
         <div class='parsons alert alert-warning' id="parsons-70">
-        <div class="parsons-text">csp-12-3-2: The following program should calculate the total price, but the lines are mixed up.   The price is based on the weight.  Items that weigh less than 2 pounds should cost 1.5.  Items that weight more than 2 pounds should cost 1.3.   Drag the blocks from the left and place them in the correct order on the right.  Be sure to also indent correctly! click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or have the wrong indention.</p><br /><br /></div>
+        <div class="parsons-text">csp-12-3-2: The following program should calculate the total price, but the lines are mixed up.   The price is based on the weight.  Items that weigh less than 2 pounds should cost 1.5.  Items that weigh more than 2 pounds should cost 1.3.   Drag the blocks from the left and place them in the correct order on the right.  Be sure to also indent correctly! Click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or have the wrong indention.</p><br /><br /></div>
         <div style="clear:left;"></div>
         <div id="parsons-orig-70" style="display:none;">weight = 0.5\nnumItems = 5\nif weight < 2:
     price = 1.50
@@ -554,7 +400,7 @@ print(weight)\nprint(price)\nprint(total)</div>
 
     <script>
         $pjQ(document).ready(function(){
-
+            var rb = new RunestoneBase();
             $("#parsons-70").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
                     scrollTop: ($("#parsons-70").offset().top - 50)
@@ -570,10 +416,10 @@ print(weight)\nprint(price)\nprint(total)</div>
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
-                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'12_3_2_Price_By_Weight'});
+                    rb.logBookEvent({'event':'parsons', 'act':hash, 'div_id':'12_3_2_Price_By_Weight'});
 
             } else {
-                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'12_3_2_Price_By_Weight'});
+                    rb.logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'12_3_2_Price_By_Weight'});
                     msgBox.fadeIn(100);
                     msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
@@ -688,7 +534,10 @@ print(weight)\nprint(price)\nprint(total)</div>
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

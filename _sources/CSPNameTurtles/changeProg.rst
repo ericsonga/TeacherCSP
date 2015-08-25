@@ -104,7 +104,6 @@ Run the following program.
    jamal.left(70)
    =====                
    jamal.forward(100)
-   =====
    jamal.right(135)
    =====
    jamal.forward(100)

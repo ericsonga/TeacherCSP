@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -322,22 +338,7 @@
 <h1>Reversing Text<a class="headerlink" href="#reversing-text" title="Permalink to this headline">¶</a></h1>
 <p>Run this next one, and look at how a simple change to the pattern gives a very different result.    Here we&#8217;ll combine <em>before</em> rather than <em>afterward</em>, changing only Step 4 (how values are accumulated).</p>
 
-<div id="cont"></div>
-<div id="Copy_Reverse" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Copy_Reverse_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Copy_Reverse_saveb" onclick="saveEditor('Copy_Reverse');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Copy_Reverse_loadb" onclick="requestCode('Copy_Reverse');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Copy_Reverse','# STEP 1: INITIALIZE ACCUMULATORS*nline*newStringA = *doubleq**doubleq**nline*newStringB = *doubleq**doubleq**nline*# STEP 2: GET DATA*nline*phrase = *doubleq*Happy Birthday!*doubleq**nline*# STEP 3: LOOP THROUGH THE DATA*nline*for letter in phrase:*nline*    # STEP 4: ACCUMULATE*nline*    newStringA = letter + newStringA*nline*    newStringB = newStringB + letter*nline*# STEP 5: PROCESS RESULT*nline*print*open**doubleq*Here*singleq*s the result of using letter + newStringA:*doubleq**close**nline*print*open*newStringA*close**nline*print*open**doubleq*Here*singleq*s the result of using newStringB + letter:*doubleq**close**nline*print*open*newStringB*close*','1','*doubleq*Lines of code*doubleq*; 2-3: strR2-line2-3; 5: strR2-line5; 7: strR2-line7; 9: strR2-line9; 10: strR2-line10; 12: strR2-line12; 13: strR2-line13; 14: strR2-line14; 15: strR2-line15;*atype*')"/>
-<button class='btn btn-default' id="Copy_Reverse_vizb" onclick="injectCodelens(this,'Copy_Reverse');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="Copy_Reverse_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Copy_Reverse_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Copy_Reverse data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Lines of code*doubleq*; 2-3: strR2-line2-3; 5: strR2-line5; 7: strR2-line7; 9: strR2-line9; 10: strR2-line10; 12: strR2-line12; 13: strR2-line13; 14: strR2-line14; 15: strR2-line15;*atype*'     >
 # STEP 1: INITIALIZE ACCUMULATORS
 newStringA = ""
 newStringB = ""
@@ -353,96 +354,20 @@ print("Here's the result of using letter + newStringA:")
 print(newStringA)
 print("Here's the result of using newStringB + letter:")
 print(newStringB)
-</textarea>
-</div>
+</pre>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Copy_Reverse_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Copy_Reverse_suffix" style="display:none">
-</pre><pre id="Copy_Reverse_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Copy_Reverse)</span> </p>
-<div id="Copy_Reverse_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Copy_Reverse_saveb').toggle();
-    $('#Copy_Reverse_loadb').toggle();
-}
-if ($("#Copy_Reverse").attr("lang") !== "html" && $("#Copy_Reverse_code_div").parents(".admonition").length == 0 && $("#Copy_Reverse_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Copy_Reverse_code_div").offset({
-            left: $("#Copy_Reverse .clearfix").offset().left
-        });
-    }
-    $("#Copy_Reverse_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Copy_Reverse_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Copy_Reverse_runb").parent().siblings(".ac_output").show();
-            runit('Copy_Reverse',this, undefined);
-            $("#Copy_Reverse_runb").on("click", function(){
-                runit('Copy_Reverse',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Copy_Reverse_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Copy_Reverse_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Copy_Reverse_runb").on("click", function(){
-        runit('Copy_Reverse',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="9_2_1_Copy_Reverse_Q1" class="alert alert-warning">
-            csp-9-2-1: Why do you think <code class="docutils literal"><span class="pre">newStringB</span></code> has all the letters, but in the reverse order?<form name="9_2_1_Copy_Reverse_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="9_2_1_Copy_Reverse_Q1_opt_a" />
-            <label for= "9_2_1_Copy_Reverse_Q1_opt_a">  a) Because we add each new letter at the <i>end</i> of <code>newStringB</code>.</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="9_2_1_Copy_Reverse_Q1">
+            csp-9-2-1: Why do you think <code class="docutils literal"><span class="pre">newStringB</span></code> has all the letters, but in the reverse order?
+            <li data-component="answer" data-correct id="9_2_1_Copy_Reverse_Q1_opt_a">Because we add each new letter at the <i>end</i> of <code>newStringB</code>.</li><li data-component="feedback" id="9_2_1_Copy_Reverse_Q1_opt_a">Each new letter gets added at the end, which creates a reversal.</li>
             
-            <input type="radio" name="group1" value="b" id="9_2_1_Copy_Reverse_Q1_opt_b" />
-            <label for= "9_2_1_Copy_Reverse_Q1_opt_b">  b) Because <code>newStringA</code> is adding the characters from left to right.</label><br />
+            <li data-component="answer"  id="9_2_1_Copy_Reverse_Q1_opt_b">Because <code>newStringA</code> is adding the characters from left to right.</li><li data-component="feedback" id="9_2_1_Copy_Reverse_Q1_opt_b">How would that reverse the other string?</li>
             
-            <input type="radio" name="group1" value="c" id="9_2_1_Copy_Reverse_Q1_opt_c" />
-            <label for= "9_2_1_Copy_Reverse_Q1_opt_c">  c) Because we called a reverse function.</label><br />
+            <li data-component="answer"  id="9_2_1_Copy_Reverse_Q1_opt_c">Because we called a reverse function.</li><li data-component="feedback" id="9_2_1_Copy_Reverse_Q1_opt_c">There is no reverse function in this program.</li>
             
-            <input type="radio" name="group1" value="d" id="9_2_1_Copy_Reverse_Q1_opt_d" />
-            <label for= "9_2_1_Copy_Reverse_Q1_opt_d">  d) Because the <code>for</code> loop is doing a reversal</label><br />
+            <li data-component="answer"  id="9_2_1_Copy_Reverse_Q1_opt_d">Because the <code>for</code> loop is doing a reversal</li><li data-component="feedback" id="9_2_1_Copy_Reverse_Q1_opt_d">The same <code>for</code> loop is creating both an in-order copy of the string and a reversed order of the string.  The <code>for</code> loop is the same in both cases.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('9_2_1_Copy_Reverse_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('9_2_1_Copy_Reverse_Q1','a',['Each new letter gets added at the end, which creates a reversal.', 'How would that reverse the other string?', 'There is no reverse function in this program.', 'The same \u003Ccode\u003Efor\u003C/code\u003E loop is creating both an in\u002Dorder copy of the string and a reversed order of the string.  The \u003Ccode\u003Efor\u003C/code\u003E loop is the same in both cases.'])">Check Me</button>
-            <button class='btn btn-default' id="9_2_1_Copy_Reverse_Q1_bcomp" disabled name="compare" onclick="compareAnswers('9_2_1_Copy_Reverse_Q1');">Compare Me</button>
-            </form><br />
-            <div id="9_2_1_Copy_Reverse_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             </div>
 
 
@@ -473,7 +398,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

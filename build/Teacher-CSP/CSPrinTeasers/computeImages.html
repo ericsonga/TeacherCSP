@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -331,30 +347,18 @@
 <p class="caption"><span class="caption-text">Figure 2: Picture of an arch from Oxford, England</span></p>
 </div>
 
-            <div id="1_5_1_Image_Q1" class="alert alert-warning">
-            csp-1-5-1: Which way does y increase on an image?<form name="1_5_1_Image_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="1_5_1_Image_Q1_opt_a" />
-            <label for= "1_5_1_Image_Q1_opt_a">  a) From left to right</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="1_5_1_Image_Q1">
+            csp-1-5-1: Which way does y increase on an image?
+            <li data-component="answer"  id="1_5_1_Image_Q1_opt_a">From left to right</li><li data-component="feedback" id="1_5_1_Image_Q1_opt_a">The x value increases from left to right</li>
             
-            <input type="radio" name="group1" value="b" id="1_5_1_Image_Q1_opt_b" />
-            <label for= "1_5_1_Image_Q1_opt_b">  b) From right to left</label><br />
+            <li data-component="answer"  id="1_5_1_Image_Q1_opt_b">From right to left</li><li data-component="feedback" id="1_5_1_Image_Q1_opt_b">The horizontal direction is the x direction</li>
             
-            <input type="radio" name="group1" value="c" id="1_5_1_Image_Q1_opt_c" />
-            <label for= "1_5_1_Image_Q1_opt_c">  c) From top to bottom</label><br />
+            <li data-component="answer" data-correct id="1_5_1_Image_Q1_opt_c">From top to bottom</li><li data-component="feedback" id="1_5_1_Image_Q1_opt_c">The y value increases from top to bottom</li>
             
-            <input type="radio" name="group1" value="d" id="1_5_1_Image_Q1_opt_d" />
-            <label for= "1_5_1_Image_Q1_opt_d">  d) From bottom to top</label><br />
+            <li data-component="answer"  id="1_5_1_Image_Q1_opt_d">From bottom to top</li><li data-component="feedback" id="1_5_1_Image_Q1_opt_d">This is common on a Cartesian coordinate system, but it is not true here</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('1_5_1_Image_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('1_5_1_Image_Q1','c',['The x value increases from left to right', 'The horizontal direction is the x direction', 'The y value increases from top to bottom', 'This is common on a Cartesian coordinate system, but it is not true here'])">Check Me</button>
-            <button class='btn btn-default' id="1_5_1_Image_Q1_bcomp" disabled name="compare" onclick="compareAnswers('1_5_1_Image_Q1');">Compare Me</button>
-            </form><br />
-            <div id="1_5_1_Image_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             <p>Each pixel has a color associated with it: An amount of red, an amount of green, and an amount of blue.  The amount can be in the range of 0 to 255 where 0 is none of that color and 255 is the maximum amount of that color.  A pixel is displayed using light, not paint, so it may work a bit differently than you might expect if you only have experience making colors by mixing paint.  For example, you would mix blue and yellow paint to make green, but you mix red and green light to make yellow light.  See <a class="reference external" href="http://www.webexhibits.org/causesofcolor/1BE.html">http://www.webexhibits.org/causesofcolor/1BE.html</a> for a procedure to try this out for yourself.</p>
 <div class="align-center figure" id="id3">
 <a class="reference internal image-reference" href="http://www.d.umn.edu/~mharvey/colorwheel.jpg"><img alt="a color wheel for combining color lights" src="http://www.d.umn.edu/~mharvey/colorwheel.jpg" style="width: 200px;" /></a>
@@ -371,21 +375,7 @@
 </div></blockquote>
 <p>The lines that are important are under the comments (lines that start with a <code class="docutils literal"><span class="pre">#</span></code>). Press the <a class="reference internal" href="../_images/start-audio-tour4.png"><img alt="audio tour button" class="align-top" src="../_images/start-audio-tour4.png" style="height: 20px;" /></a> button to hear an audio explanation of the important lines.  Press the <a class="reference internal" href="../_images/run-button2.png"><img alt="run button" class="align-top" src="../_images/run-button2.png" style="height: 20px;" /></a> button to run the program and show the changed image.  Please note that processing all those pixels can take a few minutes.</p>
 <img src="../_static/arch.jpg" id="arch.jpg" >
-<div id="cont"></div>
-<div id="Images_1" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Images_1_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Images_1_saveb" onclick="saveEditor('Images_1');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Images_1_loadb" onclick="requestCode('Images_1');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Images_1','from image import **nline**nline*# CREATE AN IMAGE FROM A FILE*nline*img = Image*open**doubleq*arch.jpg*doubleq**close**nline**nline*# LOOP THROUGH ALL THE PIXELS*nline*pixels = img.getPixels*open**close**nline*for p in pixels:*nline**nline*    # CLEAR THE RED*nline*    p.setRed*open*0*close**nline*    img.updatePixel*open*p*close**nline**nline*# SHOW THE CHANGED IMAGE*nline*win = ImageWin*open*img.getWidth*open**close*,img.getHeight*open**close**close**nline*img.draw*open*win*close*','1','*doubleq*Important Lines Tour*doubleq*; 3,6,10,14: timg1-line361014; 4: timg1-line4; 7: timg1-line7; 8: timg1-line8; 11: timg1-line11; 12: timg1-line12; 15-16: timg1-line15-16;*atype*')"/>
-
-</div>
-<br/>
-<div id="Images_1_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Images_1_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Images_1 data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Important Lines Tour*doubleq*; 3,6,10,14: timg1-line361014; 4: timg1-line4; 7: timg1-line7; 8: timg1-line8; 11: timg1-line11; 12: timg1-line12; 15-16: timg1-line15-16;*atype*'     >
 from image import *
 
 # CREATE AN IMAGE FROM A FILE
@@ -402,93 +392,18 @@ for p in pixels:
 # SHOW THE CHANGED IMAGE
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
-</textarea>
-</div>
+</pre>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Images_1_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Images_1_suffix" style="display:none">
-</pre><pre id="Images_1_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Images_1)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Images_1_saveb').toggle();
-    $('#Images_1_loadb').toggle();
-}
-if ($("#Images_1").attr("lang") !== "html" && $("#Images_1_code_div").parents(".admonition").length == 0 && $("#Images_1_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Images_1_code_div").offset({
-            left: $("#Images_1 .clearfix").offset().left
-        });
-    }
-    $("#Images_1_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Images_1_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Images_1_runb").parent().siblings(".ac_output").show();
-            runit('Images_1',this, undefined);
-            $("#Images_1_runb").on("click", function(){
-                runit('Images_1',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Images_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Images_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Images_1_runb").on("click", function(){
-        runit('Images_1',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="1_5_2_Image_Black" class="alert alert-warning">
-            csp-1-5-2: What do you think happens when you set all the colors to 0?  Try adding <code class="docutils literal"><span class="pre">p.setBlue(0)</span></code> and <code class="docutils literal"><span class="pre">p.setGreen(0)</span></code> to the program above after the <code class="docutils literal"><span class="pre">p.setRed(0)</span></code> and run it to check.<form name="1_5_2_Image_Black_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="1_5_2_Image_Black_opt_a" />
-            <label for= "1_5_2_Image_Black_opt_a">  a) You still see the picture, but it is all in shades of gray.</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="1_5_2_Image_Black">
+            csp-1-5-2: What do you think happens when you set all the colors to 0?  Try adding <code class="docutils literal"><span class="pre">p.setBlue(0)</span></code> and <code class="docutils literal"><span class="pre">p.setGreen(0)</span></code> to the program above after the <code class="docutils literal"><span class="pre">p.setRed(0)</span></code> and run it to check.
+            <li data-component="answer"  id="1_5_2_Image_Black_opt_a">You still see the picture, but it is all in shades of gray.</li><li data-component="feedback" id="1_5_2_Image_Black_opt_a">Not if you set all the color values to 0.</li>
             
-            <input type="radio" name="group1" value="b" id="1_5_2_Image_Black_opt_b" />
-            <label for= "1_5_2_Image_Black_opt_b">  b) The picture is all white.</label><br />
+            <li data-component="answer"  id="1_5_2_Image_Black_opt_b">The picture is all white.</li><li data-component="feedback" id="1_5_2_Image_Black_opt_b">Did you try it?  This would be true if you set all the values to 255 instead of 0.</li>
             
-            <input type="radio" name="group1" value="c" id="1_5_2_Image_Black_opt_c" />
-            <label for= "1_5_2_Image_Black_opt_c">  c) The picture is all black.</label><br />
+            <li data-component="answer" data-correct id="1_5_2_Image_Black_opt_c">The picture is all black.</li><li data-component="feedback" id="1_5_2_Image_Black_opt_c">Black is the absence of light so setting all colors to 0 results in an all black image since there is no light.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('1_5_2_Image_Black');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('1_5_2_Image_Black','c',['Not if you set all the color values to 0.', 'Did you try it?  This would be true if you set all the values to 255 instead of 0.', 'Black is the absence of light so setting all colors to 0 results in an all black image since there is no light.'])">Check Me</button>
-            <button class='btn btn-default' id="1_5_2_Image_Black_bcomp" disabled name="compare" onclick="compareAnswers('1_5_2_Image_Black');">Compare Me</button>
-            </form><br />
-            <div id="1_5_2_Image_Black_feedback">
-            </div>
-            </div>
+            </ul>
             </div>
 
 
@@ -519,7 +434,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

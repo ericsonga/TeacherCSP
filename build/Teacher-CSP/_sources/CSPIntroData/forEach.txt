@@ -47,14 +47,14 @@ This isn't actually a different ``for`` loop.  The function ``range`` actually c
 
 .. mchoicemf:: 16_5_1_foreachRangeQ
 			  :answer_a: We would get an error for doing math in a range function.
-			  :answer_b: We would get an error because len(myString)/2 is 7.5 which can't be used in a range.
+			  :answer_b: We would get an error because len(myString)/2 is 1.5 which can't be used in a range.
 			  :answer_c: We would get "M L K" printed with one character per line.
 			  :answer_d: We would get "M L K " printed with one character per line plus an extra space at the end.
 			  :correct: b
 			  :feedback_a: You are allowed to do math in a range function.
-			  :feedback_b: Dividing 15 by 2 results in 7.5, which can't be used in a range.  
-			  :feedback_c: This would be true if dividing by 2 was truncated to 7.
-			  :feedback_d: This would be true if 7.5 was rounded to 8, but that doesn't happen.
+			  :feedback_b: Dividing 3 by 2 results in 1.5, which can't be used in a range.  
+			  :feedback_c: This would be true if dividing by 2 was truncated to 1.
+			  :feedback_d: This would be true if 1.5 was rounded to 2, but that doesn't happen.
 
 			   What would happen if we changed line 2 to `myList = range(0,len(myString)/2)`? (Hint: You could try it)
 			   		   

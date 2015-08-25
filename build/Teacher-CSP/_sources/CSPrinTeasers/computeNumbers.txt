@@ -59,7 +59,7 @@ One thing that you might want to calculate is a **Body Mass Index**.    `Body Ma
 
 To calculate a BMI, you need the height in inches and the weight in pounds.  You square the height (multiply the height in inches by itself), then divide the weight in pounds by the squared-height.  BMI is defined in terms of meters and kilograms, so to convert from pounds and inches multiply by 703.
 
-In the box below is a computer program that calculates the BMI for someone 60 inches tall (5 feet) and 110 pounds.  
+In the box below is a computer program that calculates and prints the BMI for someone 60 inches tall (5 feet) and 110 pounds.  
 
 Press the |runbutton| button below to make the computer execute these steps. The output from this program will be displayed to the right of the program.
 

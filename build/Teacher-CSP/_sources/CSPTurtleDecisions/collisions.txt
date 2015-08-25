@@ -67,4 +67,10 @@ You can use conditionals to detect when two turtles are getting close to each ot
     	      mia.forward(10)    
     	      if (mia.xcor() - jaz.xcor() < 40 and mia.ycor() - jaz.ycor() < 10): 
                   jaz.right(45)          
-                  mia.right(45)                    
+                  mia.right(45)   
+                  
+    .. tab:: Discussion
+
+       .. disqus::
+           :shortname: cslearn4u
+           :identifier: teachercsp_ch14collision                

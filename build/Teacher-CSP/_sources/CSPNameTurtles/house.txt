@@ -92,7 +92,7 @@ Let's imagine going on to make another partial square along the slope, to create
    bob.setheading(90) 
    =====
    # Draw chimney
-   bob.pencolor("red")
+   bob.color("red")
    bob.forward(30)
    bob.right(90)
    bob.forward(30)

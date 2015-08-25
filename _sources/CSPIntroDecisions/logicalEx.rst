@@ -23,7 +23,7 @@ Logical Expressions
 
 The basic form of an ``if`` statement is the word **if** followed by a logical expression, and then a colon.  All the statements that are indented beneath the ``if`` (called the body of condition) are executed *IF AND ONLY IF* the logical expression is ``true``.
 
-Some logical expressions include:
+The following are examples of logical expressions:
 
 +------------+---------------------------------------------------------+
 | Expression | Logical meaning                                         |

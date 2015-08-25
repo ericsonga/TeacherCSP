@@ -78,7 +78,7 @@ Try clicking the |runbutton| button below to see what the following program does
 .. Note::
    Notice that we tell ``alex`` what to do in the code above using **dot notation**: ``alex.forward(150)``, 	``alex.left(90)``, and ``alex.forward(75)``.  That is how you communicate with a turtle.  You use the name of the turtle followed by a ``.`` and then what you want it to do.  
 
-.. mchoicemf:: 1_4_1_Turtle_Q1
+.. mchoice:: 1_4_1_Turtle_Q1
    :answer_a: North
    :answer_b: West
    :answer_c: South
@@ -100,12 +100,13 @@ Try clicking the |runbutton| button below to see what the following program does
 
 Just by going forward, backward, left, and right, we can have a turtle draw a shape.  
 
-.. fillintheblank:: 1_4_2_Shape
-   :correct: ^square$|^Square$|^SQUARE$
-   :feedback1: ('.*','Did you actually run the program?')
-   :blankid: shapeBlank
+.. fillintheblank:: 1_4_2_Shape_fill
 
-   What shape will the program below draw when you click on the *Run* button? :textfield:`shapeBlank::medium`
+    .. blank:: 1_4_2_Shape
+        :correct: ^square$|^Square$|^SQUARE$
+        :feedback1: ('.*','Did you actually run the program?')
+
+        What shape will the program below draw when you click on the Run button? 
 
 .. activecode:: Turtle_2
     :tour_1: "Line-by-line Tour"; 1: t1-line1; 2: t1-line2; 3: t1-line3; 4: t1-line4; 5: t1-line5; 6: t1-line6; 7: t1-for100-1; 8: t1-right90-1; 9: t1-for100-2; 10: t1-right90-2; 11: t1-for100-3; 12: t1-right90-3; 

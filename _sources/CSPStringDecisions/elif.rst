@@ -43,6 +43,8 @@ Another way to choose between three options is to use ``if`` followed by ``elif`
         print("x is 0")
     else:
         print("x is positive")
+        
+Which way is better?  It turns out that beginners have an easier time understanding 3 ``if`` statements.  Experts prefer using ``if``, ``elif``, and ``else`` since it takes less time to execute and makes it less likely that you will miss a value.
        
 **Mixed up programs**
 
@@ -56,11 +58,11 @@ Another way to choose between three options is to use ``if`` followed by ``elif`
    if (team1 < team2):
        print("team1 won")
    =====
-   elif (team2 > team1)
+   elif (team2 > team1):
    =====
        print("team2 won")
    =====
-   else
+   else:
    =====
        print("team1 and team2 tied")
       

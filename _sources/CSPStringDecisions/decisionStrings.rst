@@ -31,6 +31,8 @@ Here's an example of conditional execution using ``if`` statements with strings.
     if numItems > 1:
         message = "You ordered " + str(numItems) + " items"
     print(message)
+    
+Change the value of ``numItems`` to see how that changes the output.
        
 .. mchoicemf:: 13_1_1_invoice_neg
    :answer_a: You ordered 1 item

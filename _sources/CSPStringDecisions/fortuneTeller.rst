@@ -57,7 +57,7 @@ You can tell someone's fortune by having them pick a number and then using ``if`
 
    How many conditions (logical expressions) are checked if the user answered 6?
    
-Modify the program to handle when the user enters something other than a number from 1 to 5.
+Modify the program to handle when the user enters something other than a number from 1 to 5.  Also add some additional fortunes and allow the user to pick a number from 1 to 10.
 
 
 

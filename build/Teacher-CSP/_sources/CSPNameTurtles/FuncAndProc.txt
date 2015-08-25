@@ -26,12 +26,13 @@ We have seen string **functions** like ``lower()`` which returns a new string wi
 .. note::
    Some Python books don't make a distinction between procedures and functions and will call both of these functions.  In this book we are using **function** only for named code that returns a value and **procedure** for named code that doesn't return a value.   
    
-.. fillintheblank:: 5_2_1_LetterC
-   :correct: ^c$|^C$
-   :feedback1: ('.*','Try to follow the directions as if you are the turtle')
-   :blankid: cBlank
+.. fillintheblank:: 5_2_1_LetterC_fill
 
-   What letter (like A and D) will the program below draw in block style when you click on the *Run* button? :textfield:`cBlank::medium`
+    .. blank:: 5_2_1_LetterC
+        :correct: ^c$|^C$
+        :feedback1: ('.*','Try to follow the directions as if you are the turtle')
+
+        What letter (like A and D) will the program below draw in block style when you click on the Run button?
 
 .. activecode:: Turtle_C
     :nocodelens:
@@ -62,7 +63,7 @@ The following example has 4 errors.  Can you fix the errors so that the code run
     
 **Check Your Understanding**
 
-.. mchoicemf:: 5_2_2_FuncOrProc
+.. mchoice:: 5_2_2_FuncOrProc
    :answer_a: function
    :answer_b: procedure
    :correct: b

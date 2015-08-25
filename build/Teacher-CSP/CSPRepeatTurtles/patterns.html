@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -326,21 +342,7 @@
 <p class="last">The outer <code class="docutils literal"><span class="pre">for</span></code> loop in the code below on line 8 executes 20 times and the inner <code class="docutils literal"><span class="pre">for</span></code> loop on line 13 executes 5 times <em>for each</em> of the outer loop values, 5 times when the outer loop value is 0, 5 times when the outer loop value is 1, 5 times when the outer loop value is 2, and so on.  The inner loop is executed a total of 20 * 5 = 100 times.  The turtle can take a long time to finish drawing this pattern.  Normally code in the browser is limited to only running in 10 seconds or less.  But, we can use the <code class="docutils literal"><span class="pre">sys</span></code> library (short for system) <code class="docutils literal"><span class="pre">setExecutionLimit(milliseconds)</span></code> procedure which will let the code run for up to the specified number of milliseconds.  One second is 1,000 milliseconds, so 50,0000 milliseconds is 50 seconds.</p>
 </div>
 
-<div id="cont"></div>
-<div id="Turtle_Spirograph1" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Turtle_Spirograph1_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_Spirograph1_saveb" onclick="saveEditor('Turtle_Spirograph1');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_Spirograph1_loadb" onclick="requestCode('Turtle_Spirograph1');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Turtle_Spirograph1','from turtle import *     # use the turtle library*nline*from sys import *        # use the system library*nline*setExecutionLimit*open*50000*close* # let this take up to 50 seconds*nline*space = Screen*open**close*         # create a turtle space*nline*zoe = Turtle*open**close*           # create a turtle named zoe*nline*zoe.setheading*open*90*close*       # point due north*nline**nline*for repeats in range*open*20*close*:   # draw the pattern 20 times*nline*    zoe.forward*open*10*close*                 # Offset the shapes a bit*nline*    zoe.right*open*18*close*                   # And turn each one a bit*nline**nline*    # This part makes a pentagon*nline*    for sides in range*open*5*close*:    # repeat 5 times*nline*        zoe.forward*open*50*close*         # move forward by 50 unit*nline*        zoe.right*open*72*close*           # turn by 72 degrees','1','*doubleq*Lines of code*doubleq*; 1-2: tr3-line1-2; 3: tr3-line3; 4: tr3-line4; 5: tr3-line5; 6: tr3-line6; 8: tr3-line8; 9: tr3-line9; 10: tr3-line10; 13: tr3-line13; 14: tr3-line14; 15: tr3-line15;*atype*')"/>
-
-</div>
-<br/>
-<div id="Turtle_Spirograph1_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Turtle_Spirograph1_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Turtle_Spirograph1 data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Lines of code*doubleq*; 1-2: tr3-1-line1-2; 3: tr3-1-line3; 4: tr3-1-line4; 5: tr3-1-line5; 6: tr3-1-line6; 8: tr3-1-line8; 9: tr3-1-line9; 10: tr3-1-line10; 13: tr3-1-line13; 14: tr3-1-line14; 15: tr3-1-line15;*atype*'     >
 from turtle import *     # use the turtle library
 from sys import *        # use the system library
 setExecutionLimit(50000) # let this take up to 50 seconds
@@ -356,88 +358,10 @@ for repeats in range(20):   # draw the pattern 20 times
     for sides in range(5):    # repeat 5 times
         zoe.forward(50)         # move forward by 50 unit
         zoe.right(72)           # turn by 72 degrees
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Turtle_Spirograph1_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Turtle_Spirograph1_suffix" style="display:none">
-</pre><pre id="Turtle_Spirograph1_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Turtle_Spirograph1)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Turtle_Spirograph1_saveb').toggle();
-    $('#Turtle_Spirograph1_loadb').toggle();
-}
-if ($("#Turtle_Spirograph1").attr("lang") !== "html" && $("#Turtle_Spirograph1_code_div").parents(".admonition").length == 0 && $("#Turtle_Spirograph1_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Turtle_Spirograph1_code_div").offset({
-            left: $("#Turtle_Spirograph1 .clearfix").offset().left
-        });
-    }
-    $("#Turtle_Spirograph1_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Turtle_Spirograph1_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Turtle_Spirograph1_runb").parent().siblings(".ac_output").show();
-            runit('Turtle_Spirograph1',this, undefined);
-            $("#Turtle_Spirograph1_runb").on("click", function(){
-                runit('Turtle_Spirograph1',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Turtle_Spirograph1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Turtle_Spirograph1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Turtle_Spirograph1_runb").on("click", function(){
-        runit('Turtle_Spirograph1',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>By setting the pen color differently, we can distinguish the part that draws the shape, from the part that draws <em>between</em> the shapes.</p>
 
-<div id="cont"></div>
-<div id="Turtle_Spirograph2" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Turtle_Spirograph2_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_Spirograph2_saveb" onclick="saveEditor('Turtle_Spirograph2');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_Spirograph2_loadb" onclick="requestCode('Turtle_Spirograph2');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Turtle_Spirograph2','from turtle import *     # use the turtle library*nline*from sys import *        # use the system library*nline*setExecutionLimit*open*50000*close* # let this take up to 50 seconds*nline*space = Screen*open**close*         # create a turtle space*nline*zoe = Turtle*open**close*           # create a turtle named zoe*nline*zoe.setheading*open*90*close*       # point zoe due north*nline**nline*for repeats in range*open*20*close*:   # 20 times to draw the pattern*nline*    zoe.pencolor*open**doubleq*green*doubleq**close*     # set the color to green*nline*    zoe.forward*open*10*close*           # Offset the shapes a bit*nline*    zoe.right*open*18*close*             # And turn each one a bit*nline*    zoe.pencolor*open**doubleq*red*doubleq**close*       # set the color to red*nline**nline*    # This part makes a pentagon*nline*    for sides in range*open*5*close*:    # repeat 5 times*nline*        zoe.forward*open*50*close*         # move forward 50 units*nline*        zoe.right*open*72*close*           # turn by 72 degrees','1','*doubleq*Lines of code*doubleq*; 1-2: tr3-line1-2; 3: tr3-line3; 4: tr3-line4; 5: tr3-line5; 6: tr3-line6; 8: tr3-line8; 9: ts2-line9; 10: ts2-line10; 11: ts2-line11; 12: ts2-line12; 15: ts2-line15; 16: ts2-line16; 17: ts2-line17;*atype*')"/>
-
-</div>
-<br/>
-<div id="Turtle_Spirograph2_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Turtle_Spirograph2_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Turtle_Spirograph2 data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Lines of code*doubleq*; 1-2: tr3-1-line1-2; 3: tr3-1-line3; 4: tr3-1-line4; 5: tr3-1-line5; 6: tr3-1-line6; 8: tr3-1-line8; 9: ts2-line9; 10: ts2-line10; 11: ts2-line11; 12: ts2-line12; 15: ts2-line15; 16: ts2-line16; 17: ts2-line17;*atype*'     >
 from turtle import *     # use the turtle library
 from sys import *        # use the system library
 setExecutionLimit(50000) # let this take up to 50 seconds
@@ -446,80 +370,16 @@ zoe = Turtle()           # create a turtle named zoe
 zoe.setheading(90)       # point zoe due north
 
 for repeats in range(20):   # 20 times to draw the pattern
-    zoe.pencolor("green")     # set the color to green
+    zoe.color("green")      # set the color to green
     zoe.forward(10)           # Offset the shapes a bit
     zoe.right(18)             # And turn each one a bit
-    zoe.pencolor("red")       # set the color to red
+    zoe.color("red")          # set the color to red
 
     # This part makes a pentagon
     for sides in range(5):    # repeat 5 times
         zoe.forward(50)         # move forward 50 units
         zoe.right(72)           # turn by 72 degrees
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Turtle_Spirograph2_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Turtle_Spirograph2_suffix" style="display:none">
-</pre><pre id="Turtle_Spirograph2_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Turtle_Spirograph2)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Turtle_Spirograph2_saveb').toggle();
-    $('#Turtle_Spirograph2_loadb').toggle();
-}
-if ($("#Turtle_Spirograph2").attr("lang") !== "html" && $("#Turtle_Spirograph2_code_div").parents(".admonition").length == 0 && $("#Turtle_Spirograph2_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Turtle_Spirograph2_code_div").offset({
-            left: $("#Turtle_Spirograph2 .clearfix").offset().left
-        });
-    }
-    $("#Turtle_Spirograph2_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Turtle_Spirograph2_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Turtle_Spirograph2_runb").parent().siblings(".ac_output").show();
-            runit('Turtle_Spirograph2',this, undefined);
-            $("#Turtle_Spirograph2_runb").on("click", function(){
-                runit('Turtle_Spirograph2',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Turtle_Spirograph2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Turtle_Spirograph2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Turtle_Spirograph2_runb").on("click", function(){
-        runit('Turtle_Spirograph2',this, undefined);
-    });
-}
-</script>
-
-</div>
-
+</pre>
 <p>You can use the coloring to help figure out the correct order of the lines below.</p>
 
         <div class='parsons alert alert-warning' id="parsons-76">
@@ -527,9 +387,9 @@ else{
         <div style="clear:left;"></div>
         <div id="parsons-orig-76" style="display:none;">from turtle import *\nfrom sys import *\nsetExecutionLimit(50000)\nwn = Screen()\nmateo = Turtle()\nmateo.setheading(90)\n
 for repeats in range(20):
-    mateo.pencolor("red")\nmateo.forward(10)\nmateo.left(18)\n
+    mateo.color("red")\nmateo.forward(10)\nmateo.left(18)\n
     for sides in range(3):
-        mateo.pencolor("blue")\nmateo.forward(50)\nmateo.right(120)</div>
+        mateo.color("blue")\nmateo.forward(50)\nmateo.right(120)</div>
         <div class="sortable-code-container">
         <div id="parsons-sortableTrash-76" class="sortable-code"></div>
         <div id="parsons-sortableCode-76" class="sortable-code"></div>
@@ -544,7 +404,7 @@ for repeats in range(20):
 
     <script>
         $pjQ(document).ready(function(){
-
+            var rb = new RunestoneBase();
             $("#parsons-76").not(".sortable-code").not(".parsons-controls").on("click", function(){
                  $('html, body').animate({
                     scrollTop: ($("#parsons-76").offset().top - 50)
@@ -560,10 +420,10 @@ for repeats in range(20):
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
-                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'10_3_1_Turtle_Spiro'});
+                    rb.logBookEvent({'event':'parsons', 'act':hash, 'div_id':'10_3_1_Turtle_Spiro'});
 
             } else {
-                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'10_3_1_Turtle_Spiro'});
+                    rb.logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'10_3_1_Turtle_Spiro'});
                     msgBox.fadeIn(100);
                     msgBox.attr('class','alert alert-success');
                     msgBox.html("Perfect!")
@@ -678,7 +538,10 @@ for repeats in range(20):
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

@@ -42,12 +42,16 @@ The code below uses the ``window_width()`` function of the ``Screen`` object tha
     for y in range(5):               # repeat 5 times
     	sue.penup()                      # pick up the pen
        	if y % 2 == 0:                   # if even row
-        	sue.color('red')                 # set the color to red
+            sue.color('red')                 # set the color to red
        	if y % 2 == 1:                   # if odd row
-        	sue.color('black')               # set the color to black
+            sue.color('black')               # set the color to black
        	sue.goto(-1 * maxX,y * 10)       # move to the next row
        	sue.pendown()                    # put the pen down
        	sue.forward(width)               # move forward by the width
+       	
+This code calculates ``maxX`` as half the width of the drawing space.  This is used to determine the x value for the left side of the window.  The left side is at ``-1 * maxX`` since the window uses the cartesian coordinate system with (0,0) as the center of the window.  
+
+For more information on what this code is doing listen to the audio tour.
        
 .. mchoicemf:: 14_3_1_finish_stripes
    :answer_a: 10

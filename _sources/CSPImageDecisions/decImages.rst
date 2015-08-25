@@ -24,7 +24,7 @@ Using Decisions with Images
 
     <img src="../_static/gal2.jpg" id="gal2.jpg">
 	
-We can create image effects by conditionally executing code.  In the code below we will try to change the color of the women's shirt.  We will clear the red value for any pixel that has a red value greater than 200 and a green value of less than 100 and a blue value of less than 100.   
+We can create image effects by conditionally executing code.  In the code below we will try to change the color of the women's shirt.  We will clear the red value (set it to 0) for any pixel that has a red value greater than 200 and a green value of less than 100 and a blue value of less than 100.   
 
 .. activecode:: Color_Replace
     :tour_1: "Structural Tour"; 1: id1-line1; 4: id1-line4; 7-8: id1-line7-8; 9: id1-line9; 10-12: id1-line10-12; 15: id1-line15; 18: id1-line18; 21: id1-line21; 24-25: id1-line23-24;

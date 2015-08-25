@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -336,27 +352,16 @@
 <p>We have been using a <code class="docutils literal"><span class="pre">for</span></code> loop to repeat the <strong>body of a loop</strong> a known number of times.  The <strong>body of a loop</strong> is all the statements that follow the <code class="docutils literal"><span class="pre">for</span></code> statement and are indented to the right of it.  Be sure to indent 4 spaces to indicate the statements that are part of the body of the loop.</p>
 <p>Before you step through the code in for_counter below, try to predict the last value it will print and then answer the question below.</p>
 
-            <div id="8_1_1_For_Counter_Q1" class="alert alert-warning">
-            csp-8-1-1: What is the last value that will be printed when the code below executes?<form name="8_1_1_For_Counter_Q1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="8_1_1_For_Counter_Q1_opt_a" />
-            <label for= "8_1_1_For_Counter_Q1_opt_a">  a) 9</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="8_1_1_For_Counter_Q1">
+            csp-8-1-1: What is the last value that will be printed when the code below executes?
+            <li data-component="answer" data-correct id="8_1_1_For_Counter_Q1_opt_a">9</li><li data-component="feedback" id="8_1_1_For_Counter_Q1_opt_a">A range goes from a starting point to one <i>less</i> than the ending point. If we want to count to 10, use range(1,11).</li>
             
-            <input type="radio" name="group1" value="b" id="8_1_1_For_Counter_Q1_opt_b" />
-            <label for= "8_1_1_For_Counter_Q1_opt_b">  b) 10</label><br />
+            <li data-component="answer"  id="8_1_1_For_Counter_Q1_opt_b">10</li><li data-component="feedback" id="8_1_1_For_Counter_Q1_opt_b">The range doesn't include the end value.  It stops at one before the last value.</li>
             
-            <input type="radio" name="group1" value="c" id="8_1_1_For_Counter_Q1_opt_c" />
-            <label for= "8_1_1_For_Counter_Q1_opt_c">  c) 11</label><br />
+            <li data-component="answer"  id="8_1_1_For_Counter_Q1_opt_c">11</li><li data-component="feedback" id="8_1_1_For_Counter_Q1_opt_c">In fact, it doesn't even get to 10! Try it.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('8_1_1_For_Counter_Q1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('8_1_1_For_Counter_Q1','a',['A range goes from a starting point to one \u003Ci\u003Eless\u003C/i\u003E than the ending point. If we want to count to 10, use range(1,11).', 'The range doesn\u0027t include the end value.  It stops at one before the last value.', 'In fact, it doesn\u0027t even get to 10! Try it.'])">Check Me</button>
-            <button class='btn btn-default' id="8_1_1_For_Counter_Q1_bcomp" disabled name="compare" onclick="compareAnswers('8_1_1_For_Counter_Q1');">Compare Me</button>
-            </form><br />
-            <div id="8_1_1_For_Counter_Q1_feedback">
-            </div>
-            </div>
+            </ul>
             <p>If we want to print out a count that starts at 1 and increases by 1 each time, we can do easily do that with a <code class="docutils literal"><span class="pre">for</span></code> loop.  Use the <em>Forward</em> button to see how counter takes on a new value each time through the loop.</p>
 
 <div class="alert alert-warning cd_section">
@@ -408,19 +413,7 @@ $(window).resize(function() {
 <p><code class="docutils literal"><span class="pre">While</span></code> loops are typically used when you don&#8217;t know how many times to execute the loop.  For example, when you play a game you will repeat the game <em>while</em> there isn&#8217;t a winner.  If you ever played musical chairs you walked around the circle of chairs <em>while</em> the music was playing.</p>
 <p>The code below will loop as long as the number that you enter isn&#8217;t negative.  It will add each non negative number to the current sum.  It will print out the sum and average of all of the numbers you have entered.</p>
 
-<div id="cont"></div>
-<div id="while_input" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="while_input_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="while_input_saveb" onclick="saveEditor('while_input');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="while_input_loadb" onclick="requestCode('while_input');">Load</button>
-<button class='btn btn-default' id="while_input_vizb" onclick="injectCodelens(this,'while_input');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="while_input_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="while_input_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=while_input data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
 sum = 0
 count = 0
 message = "Enter an integer or a negative number to stop"
@@ -432,118 +425,31 @@ while int(value) > 0:
     value = input(message)
 print("The sum is: " + str(sum) +
       " the average is: " + str(sum / count))
-</textarea>
-</div>
+</pre>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="while_input_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="while_input_suffix" style="display:none">
-</pre><pre id="while_input_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (while_input)</span> </p>
-<div id="while_input_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#while_input_saveb').toggle();
-    $('#while_input_loadb').toggle();
-}
-if ($("#while_input").attr("lang") !== "html" && $("#while_input_code_div").parents(".admonition").length == 0 && $("#while_input_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#while_input_code_div").offset({
-            left: $("#while_input .clearfix").offset().left
-        });
-    }
-    $("#while_input_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#while_input_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#while_input_runb").parent().siblings(".ac_output").show();
-            runit('while_input',this, undefined);
-            $("#while_input_runb").on("click", function(){
-                runit('while_input',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#while_input_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#while_input_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#while_input_runb").on("click", function(){
-        runit('while_input',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="8_1_2_While_Input1" class="alert alert-warning">
-            csp-8-1-2: How many lines are in the body of the <code class="docutils literal"><span class="pre">while</span></code> loop in while_input above?<form name="8_1_2_While_Input1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="8_1_2_While_Input1_opt_a" />
-            <label for= "8_1_2_While_Input1_opt_a">  a) 3</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="8_1_2_While_Input1">
+            csp-8-1-2: How many lines are in the body of the <code class="docutils literal"><span class="pre">while</span></code> loop in while_input above?
+            <li data-component="answer"  id="8_1_2_While_Input1_opt_a">3</li><li data-component="feedback" id="8_1_2_While_Input1_opt_a">All the statements that are indented 4 spaces to the right of the <code>while</code> are part of the body of the loop.</li>
             
-            <input type="radio" name="group1" value="b" id="8_1_2_While_Input1_opt_b" />
-            <label for= "8_1_2_While_Input1_opt_b">  b) 4</label><br />
+            <li data-component="answer" data-correct id="8_1_2_While_Input1_opt_b">4</li><li data-component="feedback" id="8_1_2_While_Input1_opt_b">There are four statements that are indented 4 spaces to the right of the <code>while</code> statement, so there are four statements in the body of this loop.</li>
             
-            <input type="radio" name="group1" value="c" id="8_1_2_While_Input1_opt_c" />
-            <label for= "8_1_2_While_Input1_opt_c">  c) 5</label><br />
+            <li data-component="answer"  id="8_1_2_While_Input1_opt_c">5</li><li data-component="feedback" id="8_1_2_While_Input1_opt_c">Is the <code>print(message)</code> line indented 4 spaces to the right of the <code>while</code>? If not it is not part of the body of the loop.</li>
             
-            <input type="radio" name="group1" value="d" id="8_1_2_While_Input1_opt_d" />
-            <label for= "8_1_2_While_Input1_opt_d">  d) 6</label><br />
+            <li data-component="answer"  id="8_1_2_While_Input1_opt_d">6</li><li data-component="feedback" id="8_1_2_While_Input1_opt_d">While line 11 is indented this is just to allow the print statement to take up more than one line.  The print statement is not indented so the body of the loop contains just 4 lines.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('8_1_2_While_Input1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('8_1_2_While_Input1','b',['All the statements that are indented 4 spaces to the right of the \u003Ccode\u003Ewhile\u003C/code\u003E are part of the body of the loop.', 'There are four statements that are indented 4 spaces to the right of the \u003Ccode\u003Ewhile\u003C/code\u003E statement, so there are four statements in the body of this loop.', 'Is the \u003Ccode\u003Eprint(message)\u003C/code\u003E line indented 4 spaces to the right of the \u003Ccode\u003Ewhile\u003C/code\u003E? If not it is not part of the body of the loop.', 'While line 11 is indented this is just to allow the print statement to take up more than one line.  The print statement is not indented so the body of the loop contains just 4 lines.'])">Check Me</button>
-            <button class='btn btn-default' id="8_1_2_While_Input1_bcomp" disabled name="compare" onclick="compareAnswers('8_1_2_While_Input1');">Compare Me</button>
-            </form><br />
-            <div id="8_1_2_While_Input1_feedback">
-            </div>
-            </div>
+            </ul>
             
-            <div id="8_1_2_While_InputError" class="alert alert-warning">
-            csp-8-1-3: What happens if you enter a negative number as the first input to the code above?<form name="8_1_2_While_InputError_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="8_1_2_While_InputError_opt_a" />
-            <label for= "8_1_2_While_InputError_opt_a">  a) It prints the sum is 0 and the average is 0.</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="8_1_2_While_InputError">
+            csp-8-1-3: What happens if you enter a negative number as the first input to the code above?
+            <li data-component="answer"  id="8_1_2_While_InputError_opt_a">It prints the sum is 0 and the average is 0.</li><li data-component="feedback" id="8_1_2_While_InputError_opt_a">Do you see code to do this in the program?</li>
             
-            <input type="radio" name="group1" value="b" id="8_1_2_While_InputError_opt_b" />
-            <label for= "8_1_2_While_InputError_opt_b">  b) It prints a message that it can't divide by 0.</label><br />
+            <li data-component="answer"  id="8_1_2_While_InputError_opt_b">It prints a message that it can't divide by 0.</li><li data-component="feedback" id="8_1_2_While_InputError_opt_b">This might be nice, but is that what happens?</li>
             
-            <input type="radio" name="group1" value="c" id="8_1_2_While_InputError_opt_c" />
-            <label for= "8_1_2_While_InputError_opt_c">  c) There is an error.</label><br />
+            <li data-component="answer" data-correct id="8_1_2_While_InputError_opt_c">There is an error.</li><li data-component="feedback" id="8_1_2_While_InputError_opt_c">You will get a ZeroDivisionError since you can't divide by zero.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('8_1_2_While_InputError');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('8_1_2_While_InputError','c',['Do you see code to do this in the program?', 'This might be nice, but is that what happens?', 'You will get a ZeroDivisionError since you can\u0027t divide by zero.'])">Check Me</button>
-            <button class='btn btn-default' id="8_1_2_While_InputError_bcomp" disabled name="compare" onclick="compareAnswers('8_1_2_While_InputError');">Compare Me</button>
-            </form><br />
-            <div id="8_1_2_While_InputError_feedback">
-            </div>
-            </div>
+            </ul>
             </div>
 </div>
 
@@ -575,7 +481,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

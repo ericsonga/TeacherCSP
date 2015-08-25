@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -320,19 +336,12 @@
   
   <div class="section" id="exam-questions-for-chapters-16-and-17">
 <h1>Exam Questions for Chapters 16 and 17<a class="headerlink" href="#exam-questions-for-chapters-16-and-17" title="Permalink to this headline">¶</a></h1>
-<p>The following questions test what you have learned in chapters 16 and 17. Click the &#8220;Start&#8221; button when you are ready to begin the exam.  Click the &#8220;Pause&#8221; button to pause the exam (you will not be able to see the questions when the exam is paused).  Hover over the clock icon to see how much time you have spent on the exam, but you have unlimited time.  Click on the &#8220;Submit Answers&#8221; button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.</p>
+<p>The following questions test what you have learned in chapters 16 and 17. Click the &#8220;Start&#8221; button when you are ready to begin the exam.  Click the &#8220;Pause&#8221; button to pause the exam (you will not be able to see the questions when the exam is paused).  It will show how much time you have used, but you have unlimited time.  Click on the &#8220;Submit answers&#8221; button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.</p>
 <p>You will not be able to change your answers after you hit the &#8220;Submit Answers&#8221; button.</p>
 
-           <div id="startWrapper">
-		    <p id="timeOutput"></p>
-		    </div>
-		    
-		    <div id="controls" style="text-align: center;">
-			<button class='btn btn-inverse' id ="examButton" onclick="handleExamButtonClick()">Start</button>
-	        </div>
-            <div id='timed_Test' style='display:none'>
-            
-            <div id="e16a17_1" class="alert alert-warning">
+    <ul data-component="timedAssessment"  id="ch16a17ex"  >
+    
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e16a17_1">
             <p>17-6-1: What does the following code print?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">256</span><span class="p">,</span><span class="mi">512</span><span class="p">,</span><span class="mi">1024</span><span class="p">,</span><span class="mi">2048</span><span class="p">]</span>
 <span class="n">answer</span> <span class="o">=</span> <span class="p">[]</span>
@@ -342,41 +351,20 @@
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e16a17_1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e16a17_1_opt_a" />
-            <label for= "e16a17_1_opt_a">  a) [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1204, 2048]</label><br />
-	        <div id= "e16a17_1_eachFeedback_a"></div>
+            <li data-component="answer"  id="e16a17_1_opt_a">[1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1204, 2048]</li><li data-component="feedback" id="e16a17_1_opt_a">This would be true if it was range(len(numbers))</li>
             
-            <input type="radio" name="group1" value="b" id="e16a17_1_opt_b" />
-            <label for= "e16a17_1_opt_b">  b) [1, 4, 16, 64, 256, 1024]</label><br />
-	        <div id= "e16a17_1_eachFeedback_b"></div>
+            <li data-component="answer"  id="e16a17_1_opt_b">[1, 4, 16, 64, 256, 1024]</li><li data-component="feedback" id="e16a17_1_opt_b">This would be true if it was range(0,len(numbers),2):</li>
             
-            <input type="radio" name="group1" value="c" id="e16a17_1_opt_c" />
-            <label for= "e16a17_1_opt_c">  c) [2, 8, 32, 128, 512, 2048]</label><br />
-	        <div id= "e16a17_1_eachFeedback_c"></div>
+            <li data-component="answer"  id="e16a17_1_opt_c">[2, 8, 32, 128, 512, 2048]</li><li data-component="feedback" id="e16a17_1_opt_c">This would be true it it was range(1,len(numbers),2):</li>
             
-            <input type="radio" name="group1" value="d" id="e16a17_1_opt_d" />
-            <label for= "e16a17_1_opt_d">  d) [1, 8, 64, 512]</label><br />
-	        <div id= "e16a17_1_eachFeedback_d"></div>
+            <li data-component="answer" data-correct id="e16a17_1_opt_d">[1, 8, 64, 512]</li><li data-component="feedback" id="e16a17_1_opt_d">This code adds the values at indicies that are evenly divisible by 3 to the new answer array and prints the contents of the array.</li>
             
-            <input type="radio" name="group1" value="e" id="e16a17_1_opt_e" />
-            <label for= "e16a17_1_opt_e">  e) out of range error</label><br />
-	        <div id= "e16a17_1_eachFeedback_e"></div>
+            <li data-component="answer"  id="e16a17_1_opt_e">out of range error</li><li data-component="feedback" id="e16a17_1_opt_e">This would be true if range included the second parameter, but it does not.  This will stop at one before the length of the array which is the last valid index.</li>
             
 
-            <script>
-		    populateArrays('e16a17_1','d',['This would be true if it was range(len(numbers))', 'This would be true if it was range(0,len(numbers),2):', 'This would be true it it was range(1,len(numbers),2):', 'This code adds the values at indicies that are evenly divisible by 3 to the new answer array and prints the contents of the array.', 'This would be true if range included the second parameter, but it does not.  This will stop at one before the length of the array which is the last valid index.']);
-            $(document).ready(function(){checkExamRadio('e16a17_1');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e16a17_1_feedback">
-            </div>
-            </div>
-            
-            <div id="e16a17_2" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e16a17_2">
             <p>17-6-2: What does the following code print?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">source</span> <span class="o">=</span> <span class="s">&quot;Hooray for CS&quot;</span>
 <span class="n">answer</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
@@ -386,41 +374,20 @@
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e16a17_2_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e16a17_2_opt_a" />
-            <label for= "e16a17_2_opt_a">  a) Crfyro</label><br />
-	        <div id= "e16a17_2_eachFeedback_a"></div>
+            <li data-component="answer"  id="e16a17_2_opt_a">Crfyro</li><li data-component="feedback" id="e16a17_2_opt_a">This would be true if it was range(len(source)-2,0,-2).</li>
             
-            <input type="radio" name="group1" value="b" id="e16a17_2_opt_b" />
-            <label for= "e16a17_2_opt_b">  b) SC rof yarooH</label><br />
-	        <div id= "e16a17_2_eachFeedback_b"></div>
+            <li data-component="answer"  id="e16a17_2_opt_b">SC rof yarooH</li><li data-component="feedback" id="e16a17_2_opt_b">This would be true if it was range(len(source)-1,0,-1).</li>
             
-            <input type="radio" name="group1" value="c" id="e16a17_2_opt_c" />
-            <label for= "e16a17_2_opt_c">  c) S o ao</label><br />
-	        <div id= "e16a17_2_eachFeedback_c"></div>
+            <li data-component="answer" data-correct id="e16a17_2_opt_c">S o ao</li><li data-component="feedback" id="e16a17_2_opt_c">This adds elements from source to answer starting at the last index and moving forward toward the front by 2 each time.  It stops before index reaches 0.</li>
             
-            <input type="radio" name="group1" value="d" id="e16a17_2_opt_d" />
-            <label for= "e16a17_2_opt_d">  d) Hoa o C</label><br />
-	        <div id= "e16a17_2_eachFeedback_d"></div>
+            <li data-component="answer"  id="e16a17_2_opt_d">Hoa o C</li><li data-component="feedback" id="e16a17_2_opt_d">This would be true if it was range(0,len(source),2)</li>
             
-            <input type="radio" name="group1" value="e" id="e16a17_2_opt_e" />
-            <label for= "e16a17_2_opt_e">  e) out of range error</label><br />
-	        <div id= "e16a17_2_eachFeedback_e"></div>
+            <li data-component="answer"  id="e16a17_2_opt_e">out of range error</li><li data-component="feedback" id="e16a17_2_opt_e">This would be true if it was range(len(source),0,-2)</li>
             
 
-            <script>
-		    populateArrays('e16a17_2','c',['This would be true if it was range(len(source)\u002D2,0,\u002D2).', 'This would be true if it was range(len(source)\u002D1,0,\u002D1).', 'This adds elements from source to answer starting at the last index and moving forward toward the front by 2 each time.  It stops before index reaches 0.', 'This would be true if it was range(0,len(source),2)', 'This would be true if it was range(len(source),0,\u002D2)']);
-            $(document).ready(function(){checkExamRadio('e16a17_2');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e16a17_2_feedback">
-            </div>
-            </div>
-            
-            <div id="e16a17_3" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e16a17_3">
             <p>17-6-3: What is the value of name after executing the following code?</p>
 <div class="highlight-python"><div class="highlight"><pre>from image import *
 def example (nameInput, ageInput):
@@ -434,37 +401,18 @@ def example (nameInput, ageInput):
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e16a17_3_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e16a17_3_opt_a" />
-            <label for= "e16a17_3_opt_a">  a) Charlie</label><br />
-	        <div id= "e16a17_3_eachFeedback_a"></div>
+            <li data-component="answer"  id="e16a17_3_opt_a">Charlie</li><li data-component="feedback" id="e16a17_3_opt_a">This would be true if it was "Charlie Brown boy football" and we were splitting at the space characters.</li>
             
-            <input type="radio" name="group1" value="b" id="e16a17_3_opt_b" />
-            <label for= "e16a17_3_opt_b">  b) Brown</label><br />
-	        <div id= "e16a17_3_eachFeedback_b"></div>
+            <li data-component="answer"  id="e16a17_3_opt_b">Brown</li><li data-component="feedback" id="e16a17_3_opt_b">This would be true if it was "Charlie Brown boy football" and we were splitting at the space characters and it was name = pieces[1]</li>
             
-            <input type="radio" name="group1" value="c" id="e16a17_3_opt_c" />
-            <label for= "e16a17_3_opt_c">  c) football</label><br />
-	        <div id= "e16a17_3_eachFeedback_c"></div>
+            <li data-component="answer"  id="e16a17_3_opt_c">football</li><li data-component="feedback" id="e16a17_3_opt_c">This is the value of sport.</li>
             
-            <input type="radio" name="group1" value="d" id="e16a17_3_opt_d" />
-            <label for= "e16a17_3_opt_d">  d) Charlie Brown</label><br />
-	        <div id= "e16a17_3_eachFeedback_d"></div>
+            <li data-component="answer" data-correct id="e16a17_3_opt_d">Charlie Brown</li><li data-component="feedback" id="e16a17_3_opt_d">The split function splits the string at the passed character which is a comma so the name is everything before the first comma.</li>
             
 
-            <script>
-		    populateArrays('e16a17_3','d',['This would be true if it was \u0022Charlie Brown boy football\u0022 and we were splitting at the space characters.', 'This would be true if it was \u0022Charlie Brown boy football\u0022 and we were splitting at the space characters and it was name \u003D pieces[1]', 'This is the value of sport.', 'The split function splits the string at the passed character which is a comma so the name is everything before the first comma.']);
-            $(document).ready(function(){checkExamRadio('e16a17_3');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e16a17_3_feedback">
-            </div>
-            </div>
-            
-            <div id="e16a17_4" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e16a17_4">
             <p>17-6-4: What does the following code print?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">myString</span> <span class="o">=</span> <span class="s">&quot;It is a nice day&quot;</span>
 <span class="n">resString</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
@@ -474,37 +422,18 @@ def example (nameInput, ageInput):
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e16a17_4_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e16a17_4_opt_a" />
-            <label for= "e16a17_4_opt_a">  a) yad ecin a si tI</label><br />
-	        <div id= "e16a17_4_eachFeedback_a"></div>
+            <li data-component="answer" data-correct id="e16a17_4_opt_a">yad ecin a si tI</li><li data-component="feedback" id="e16a17_4_opt_a">The for each loop will loop through each character and add it to the front of the result so this will reverse the string.</li>
             
-            <input type="radio" name="group1" value="b" id="e16a17_4_opt_b" />
-            <label for= "e16a17_4_opt_b">  b) It is a nice day</label><br />
-	        <div id= "e16a17_4_eachFeedback_b"></div>
+            <li data-component="answer"  id="e16a17_4_opt_b">It is a nice day</li><li data-component="feedback" id="e16a17_4_opt_b">This would be true if it was resString = resString + char</li>
             
-            <input type="radio" name="group1" value="c" id="e16a17_4_opt_c" />
-            <label for= "e16a17_4_opt_c">  c) The empty string</label><br />
-	        <div id= "e16a17_4_eachFeedback_c"></div>
+            <li data-component="answer"  id="e16a17_4_opt_c">The empty string</li><li data-component="feedback" id="e16a17_4_opt_c">While resString was initialized to the empty string it changes in the for each loop.</li>
             
-            <input type="radio" name="group1" value="d" id="e16a17_4_opt_d" />
-            <label for= "e16a17_4_opt_d">  d) It will cause an error</label><br />
-	        <div id= "e16a17_4_eachFeedback_d"></div>
+            <li data-component="answer"  id="e16a17_4_opt_d">It will cause an error</li><li data-component="feedback" id="e16a17_4_opt_d">This is the correct syntax for the for each loop.</li>
             
 
-            <script>
-		    populateArrays('e16a17_4','a',['The for each loop will loop through each character and add it to the front of the result so this will reverse the string.', 'This would be true if it was resString \u003D resString + char', 'While resString was initialized to the empty string it changes in the for each loop.', 'This is the correct syntax for the for each loop.']);
-            $(document).ready(function(){checkExamRadio('e16a17_4');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e16a17_4_feedback">
-            </div>
-            </div>
-            
-            <div id="e16a17_5" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e16a17_5">
             <p>17-6-5: What is the output from the code below?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
 <span class="k">print</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -514,37 +443,18 @@ def example (nameInput, ageInput):
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e16a17_5_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e16a17_5_opt_a" />
-            <label for= "e16a17_5_opt_a">  a) 10 and -1</label><br />
-	        <div id= "e16a17_5_eachFeedback_a"></div>
+            <li data-component="answer"  id="e16a17_5_opt_a">10 and -1</li><li data-component="feedback" id="e16a17_5_opt_a">This would be true if we were using index 2 everywhere instead of index 1.</li>
             
-            <input type="radio" name="group1" value="b" id="e16a17_5_opt_b" />
-            <label for= "e16a17_5_opt_b">  b) 5 and 2</label><br />
-	        <div id= "e16a17_5_eachFeedback_b"></div>
+            <li data-component="answer" data-correct id="e16a17_5_opt_b">5 and 2</li><li data-component="feedback" id="e16a17_5_opt_b">Since arrays indicies start at 0 this will print the 2nd element of a which is 5 and then add one to the second element of b which is 1 and print it.</li>
             
-            <input type="radio" name="group1" value="c" id="e16a17_5_opt_c" />
-            <label for= "e16a17_5_opt_c">  c) 10 and 4</label><br />
-	        <div id= "e16a17_5_eachFeedback_c"></div>
+            <li data-component="answer"  id="e16a17_5_opt_c">10 and 4</li><li data-component="feedback" id="e16a17_5_opt_c">This would be true if we were using index 0 everywhere instead of index 1.</li>
             
-            <input type="radio" name="group1" value="d" id="e16a17_5_opt_d" />
-            <label for= "e16a17_5_opt_d">  d) 5 and 1</label><br />
-	        <div id= "e16a17_5_eachFeedback_d"></div>
+            <li data-component="answer"  id="e16a17_5_opt_d">5 and 1</li><li data-component="feedback" id="e16a17_5_opt_d">This would be true if we hand't added 1 to b[1] before printing it.</li>
             
 
-            <script>
-		    populateArrays('e16a17_5','b',['This would be true if we were using index 2 everywhere instead of index 1.', 'Since arrays indicies start at 0 this will print the 2nd element of a which is 5 and then add one to the second element of b which is 1 and print it.', 'This would be true if we were using index 0 everywhere instead of index 1.', 'This would be true if we hand\u0027t added 1 to b[1] before printing it.']);
-            $(document).ready(function(){checkExamRadio('e16a17_5');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e16a17_5_feedback">
-            </div>
-            </div>
-            
-            <div id="e16a17_6" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e16a17_6">
             <p>17-6-6: Given the following code segment which of the below statements is the most true?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">things</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">31</span><span class="p">]</span>
@@ -554,37 +464,18 @@ def example (nameInput, ageInput):
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e16a17_6_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e16a17_6_opt_a" />
-            <label for= "e16a17_6_opt_a">  a) The printed result will be even and will be printed with a decimal point</label><br />
-	        <div id= "e16a17_6_eachFeedback_a"></div>
+            <li data-component="answer"  id="e16a17_6_opt_a">The printed result will be even and will be printed with a decimal point</li><li data-component="feedback" id="e16a17_6_opt_a">When you add two odd numbers you get an even number, but it will be an integer and not a decimal.</li>
             
-            <input type="radio" name="group1" value="b" id="e16a17_6_opt_b" />
-            <label for= "e16a17_6_opt_b">  b) The printed result will be odd and will be printed with a decimal point</label><br />
-	        <div id= "e16a17_6_eachFeedback_b"></div>
+            <li data-component="answer"  id="e16a17_6_opt_b">The printed result will be odd and will be printed with a decimal point</li><li data-component="feedback" id="e16a17_6_opt_b">This would be true if things had an odd number of items, but there are an even number.  Also the result will be an integer, not a decimal number.</li>
             
-            <input type="radio" name="group1" value="c" id="e16a17_6_opt_c" />
-            <label for= "e16a17_6_opt_c">  c) The printed result will be even and will be printed without a decimal point</label><br />
-	        <div id= "e16a17_6_eachFeedback_c"></div>
+            <li data-component="answer" data-correct id="e16a17_6_opt_c">The printed result will be even and will be printed without a decimal point</li><li data-component="feedback" id="e16a17_6_opt_c">When you add two odd numbers you get an even number that is an integer (no decimal point).</li>
             
-            <input type="radio" name="group1" value="d" id="e16a17_6_opt_d" />
-            <label for= "e16a17_6_opt_d">  d) The printed result will be odd and will be printed without a decimal point</label><br />
-	        <div id= "e16a17_6_eachFeedback_d"></div>
+            <li data-component="answer"  id="e16a17_6_opt_d">The printed result will be odd and will be printed without a decimal point</li><li data-component="feedback" id="e16a17_6_opt_d">This would b true if things had an odd number of items, but it has an even number of items.</li>
             
 
-            <script>
-		    populateArrays('e16a17_6','c',['When you add two odd numbers you get an even number, but it will be an integer and not a decimal.', 'This would be true if things had an odd number of items, but there are an even number.  Also the result will be an integer, not a decimal number.', 'When you add two odd numbers you get an even number that is an integer (no decimal point).', 'This would b true if things had an odd number of items, but it has an even number of items.']);
-            $(document).ready(function(){checkExamRadio('e16a17_6');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e16a17_6_feedback">
-            </div>
-            </div>
-            
-            <div id="e16a17_7" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e16a17_7">
             <p>17-6-7: What is printed when the following code executes?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">newString</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
 <span class="n">phrase</span> <span class="o">=</span> <span class="s">&quot;Rubber baby buggy bumpers.&quot;</span>
@@ -595,70 +486,18 @@ def example (nameInput, ageInput):
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e16a17_7_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e16a17_7_opt_a" />
-            <label for= "e16a17_7_opt_a">  a) ueauue</label><br />
-	        <div id= "e16a17_7_eachFeedback_a"></div>
+            <li data-component="answer" data-correct id="e16a17_7_opt_a">ueauue</li><li data-component="feedback" id="e16a17_7_opt_a">The letter is only added to newString when it is a vowel and the list does not include y as a vowel.</li>
             
-            <input type="radio" name="group1" value="b" id="e16a17_7_opt_b" />
-            <label for= "e16a17_7_opt_b">  b) ueayuyue</label><br />
-	        <div id= "e16a17_7_eachFeedback_b"></div>
+            <li data-component="answer"  id="e16a17_7_opt_b">ueayuyue</li><li data-component="feedback" id="e16a17_7_opt_b">This would be true if y was in the list of things you were looking for as a vowel, but it is not.</li>
             
-            <input type="radio" name="group1" value="c" id="e16a17_7_opt_c" />
-            <label for= "e16a17_7_opt_c">  c) bbrbbybggybmprs</label><br />
-	        <div id= "e16a17_7_eachFeedback_c"></div>
+            <li data-component="answer"  id="e16a17_7_opt_c">bbrbbybggybmprs</li><li data-component="feedback" id="e16a17_7_opt_c">This would be true if it was letter in "bcdfghjklmnpqrstvwxyz"</li>
             
-            <input type="radio" name="group1" value="d" id="e16a17_7_opt_d" />
-            <label for= "e16a17_7_opt_d">  d) Rbbr bb bgg bmprs.</label><br />
-	        <div id= "e16a17_7_eachFeedback_d"></div>
+            <li data-component="answer"  id="e16a17_7_opt_d">Rbbr bb bgg bmprs.</li><li data-component="feedback" id="e16a17_7_opt_d">This would be true if it was letter not in "aeiou"</li>
             
 
-            <script>
-		    populateArrays('e16a17_7','a',['The letter is only added to newString when it is a vowel and the list does not include y as a vowel.', 'This would be true if y was in the list of things you were looking for as a vowel, but it is not.', 'This would be true if it was letter in \u0022bcdfghjklmnpqrstvwxyz\u0022', 'This would be true if it was letter not in \u0022aeiou\u0022']);
-            $(document).ready(function(){checkExamRadio('e16a17_7');});
-            </script>
-            
- 
-            </form><br />
-            <div id="e16a17_7_feedback">
-            </div>
-            </div>
-            
-
-            
-	
-	<div style="text-align: center;">
-	<button class='btn btn-inverse' id ="finish" onclick="checkExam()">Submit Answers</button>
-	</div>
-	<script>
-	    
-	    $(document).ready(function() {
-	      $("#results").hide();
-	      checkIfFinished()
-	    });
-	</script>
-
-
-            
-            </div>
-            <p id="results"></p>
- 
-            
-            <script>
-			   var time = 0;
-			   var change = 1;
-		       showTime(0);
-            </script>
-            
-            <script>
-			   var showFeedback = 1;
-            </script>
-            
-            <script>
-			   var showResult = 1;
-            </script>
-            </div>
+            </ul>
+            </ul>
+    </div>
 
 
   
@@ -688,7 +527,10 @@ def example (nameInput, ageInput):
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

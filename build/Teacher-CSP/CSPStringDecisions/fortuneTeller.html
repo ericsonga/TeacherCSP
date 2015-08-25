@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -322,21 +338,7 @@
 <h1>Fortune Teller<a class="headerlink" href="#fortune-teller" title="Permalink to this headline">¶</a></h1>
 <p>You can tell someone&#8217;s fortune by having them pick a number and then using <code class="docutils literal"><span class="pre">if</span></code> statements to print the fortune for the number.</p>
 
-<div id="cont"></div>
-<div id="sd_fortune" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="sd_fortune_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="sd_fortune_saveb" onclick="saveEditor('sd_fortune');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="sd_fortune_loadb" onclick="requestCode('sd_fortune');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('sd_fortune','num = input *open**doubleq*Type a number from 1 to 5. Then click OK or press enter*doubleq**close**nline*if num == *doubleq*1*doubleq*:*nline*    print*open**doubleq*You will get a treat.*doubleq**close**nline*if num == *doubleq*2*doubleq*:*nline*    print*open**doubleq*You will lose something.*doubleq**close**nline*if num == *doubleq*3*doubleq*:*nline*    print*open**doubleq*You will meet a new friend.*doubleq**close**nline*if num == *doubleq*4*doubleq*:*nline*    print*open**doubleq*You will catch a cold.*doubleq**close**nline*if num == *doubleq*5*doubleq*:*nline*    print*open**doubleq*You will ace a test.*doubleq**close*','1','*doubleq*Structural Tour*doubleq*; 1: sd4-line1; 2-3: sd4-line2-3; 4-5: sd4-line4-5; 6-7: sd4-line6-7; 8-9: sd4-line8-9; 10-11: sd4-line10-11;*atype*')"/>
-
-</div>
-<br/>
-<div id="sd_fortune_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="sd_fortune_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=sd_fortune data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Structural Tour*doubleq*; 1: sd4-line1; 2-3: sd4-line2-3; 4-5: sd4-line4-5; 6-7: sd4-line6-7; 8-9: sd4-line8-9; 10-11: sd4-line10-11;*atype*'     >
 num = input ("Type a number from 1 to 5. Then click OK or press enter")
 if num == "1":
     print("You will get a treat.")
@@ -348,122 +350,34 @@ if num == "4":
     print("You will catch a cold.")
 if num == "5":
     print("You will ace a test.")
-</textarea>
-</div>
+</pre>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="sd_fortune_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="sd_fortune_suffix" style="display:none">
-</pre><pre id="sd_fortune_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (sd_fortune)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#sd_fortune_saveb').toggle();
-    $('#sd_fortune_loadb').toggle();
-}
-if ($("#sd_fortune").attr("lang") !== "html" && $("#sd_fortune_code_div").parents(".admonition").length == 0 && $("#sd_fortune_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#sd_fortune_code_div").offset({
-            left: $("#sd_fortune .clearfix").offset().left
-        });
-    }
-    $("#sd_fortune_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#sd_fortune_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#sd_fortune_runb").parent().siblings(".ac_output").show();
-            runit('sd_fortune',this, undefined);
-            $("#sd_fortune_runb").on("click", function(){
-                runit('sd_fortune',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#sd_fortune_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#sd_fortune_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#sd_fortune_runb").on("click", function(){
-        runit('sd_fortune',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="13_3_1_fortune1" class="alert alert-warning">
-            csp-13-3-1: How many conditions (logical expressions) are checked if the user answered 2?<form name="13_3_1_fortune1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="13_3_1_fortune1_opt_a" />
-            <label for= "13_3_1_fortune1_opt_a">  a) 1</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="13_3_1_fortune1">
+            csp-13-3-1: How many conditions (logical expressions) are checked if the user answered 2?
+            <li data-component="answer"  id="13_3_1_fortune1_opt_a">1</li><li data-component="feedback" id="13_3_1_fortune1_opt_a">It would have to at least check if it was 1 or 2.</li>
             
-            <input type="radio" name="group1" value="b" id="13_3_1_fortune1_opt_b" />
-            <label for= "13_3_1_fortune1_opt_b">  b) 2</label><br />
+            <li data-component="answer"  id="13_3_1_fortune1_opt_b">2</li><li data-component="feedback" id="13_3_1_fortune1_opt_b">It executes every if, even if it already found the answer.</li>
             
-            <input type="radio" name="group1" value="c" id="13_3_1_fortune1_opt_c" />
-            <label for= "13_3_1_fortune1_opt_c">  c) 5</label><br />
+            <li data-component="answer" data-correct id="13_3_1_fortune1_opt_c">5</li><li data-component="feedback" id="13_3_1_fortune1_opt_c">It executes every if.</li>
             
-            <input type="radio" name="group1" value="d" id="13_3_1_fortune1_opt_d" />
-            <label for= "13_3_1_fortune1_opt_d">  d) 6</label><br />
+            <li data-component="answer"  id="13_3_1_fortune1_opt_d">6</li><li data-component="feedback" id="13_3_1_fortune1_opt_d">There are only 5 logical expression here so it can't be more than 5.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('13_3_1_fortune1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('13_3_1_fortune1','c',['It would have to at least check if it was 1 or 2.', 'It executes every if, even if it already found the answer.', 'It executes every if.', 'There are only 5 logical expression here so it can\u0027t be more than 5.'])">Check Me</button>
-            <button class='btn btn-default' id="13_3_1_fortune1_bcomp" disabled name="compare" onclick="compareAnswers('13_3_1_fortune1');">Compare Me</button>
-            </form><br />
-            <div id="13_3_1_fortune1_feedback">
-            </div>
-            </div>
+            </ul>
             
-            <div id="13_3_2_fortune2" class="alert alert-warning">
-            csp-13-3-2: How many conditions (logical expressions) are checked if the user answered 6?<form name="13_3_2_fortune2_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="13_3_2_fortune2_opt_a" />
-            <label for= "13_3_2_fortune2_opt_a">  a) 1</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="13_3_2_fortune2">
+            csp-13-3-2: How many conditions (logical expressions) are checked if the user answered 6?
+            <li data-component="answer"  id="13_3_2_fortune2_opt_a">1</li><li data-component="feedback" id="13_3_2_fortune2_opt_a">It has to execute each if in order from top to bottom.</li>
             
-            <input type="radio" name="group1" value="b" id="13_3_2_fortune2_opt_b" />
-            <label for= "13_3_2_fortune2_opt_b">  b) 2</label><br />
+            <li data-component="answer"  id="13_3_2_fortune2_opt_b">2</li><li data-component="feedback" id="13_3_2_fortune2_opt_b">How would this work?</li>
             
-            <input type="radio" name="group1" value="c" id="13_3_2_fortune2_opt_c" />
-            <label for= "13_3_2_fortune2_opt_c">  c) 5</label><br />
+            <li data-component="answer" data-correct id="13_3_2_fortune2_opt_c">5</li><li data-component="feedback" id="13_3_2_fortune2_opt_c">It executes every if.</li>
             
-            <input type="radio" name="group1" value="d" id="13_3_2_fortune2_opt_d" />
-            <label for= "13_3_2_fortune2_opt_d">  d) 6</label><br />
+            <li data-component="answer"  id="13_3_2_fortune2_opt_d">6</li><li data-component="feedback" id="13_3_2_fortune2_opt_d">There are only 5 logical expression here so it can't be more than 5.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('13_3_2_fortune2');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('13_3_2_fortune2','c',['It has to execute each if in order from top to bottom.', 'How would this work?', 'It executes every if.', 'There are only 5 logical expression here so it can\u0027t be more than 5.'])">Check Me</button>
-            <button class='btn btn-default' id="13_3_2_fortune2_bcomp" disabled name="compare" onclick="compareAnswers('13_3_2_fortune2');">Compare Me</button>
-            </form><br />
-            <div id="13_3_2_fortune2_feedback">
-            </div>
-            </div>
-            <p>Modify the program to handle when the user enters something other than a number from 1 to 5.</p>
+            </ul>
+            <p>Modify the program to handle when the user enters something other than a number from 1 to 5.  Also add some additional fortunes and allow the user to pick a number from 1 to 10.</p>
 </div>
 
 
@@ -494,7 +408,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

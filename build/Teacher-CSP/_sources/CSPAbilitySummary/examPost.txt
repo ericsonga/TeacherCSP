@@ -5,15 +5,13 @@
 Post Exam
 -------------
 
-The following questions test what you have learned in this ebook. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  Hover over the clock icon to see how much time you have spent on the exam, but you have unlimited time.  Click on the "Submit Answers" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
+The following questions test what you have learned in this ebook. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  It will show how much time you have used, but you have unlimited time.  Click on the "Submit answers" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
 
 You will not be able to change your answers after you hit the "Submit Answers" button.
 
-.. startexam:: timed_Test
-    :showtitle: Exam Not Started
-    :hidetitle: Currently Taking Exam
+.. timed:: ch18t20ex
     
-    .. exammchoicemf:: ePost_1_25
+    .. mchoice:: ePost_1_25
        :answer_a: The turtle in this example draws a pentagram.
        :answer_b: This code will generate an error.
        :answer_c: The turtle draws four lines of length 5, 11, 16, and 21
@@ -36,7 +34,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
               sue.forward(100) 
               sue.right(90)
     
-    .. exammchoicemf:: ePost_2_18
+    .. mchoice:: ePost_2_18
        :answer_a: Normal
        :answer_b: Hypertensive Crisis
        :answer_c: High Blood Pressure B
@@ -87,7 +85,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           else:
               print ("High Blood Pressure B")
               
-    .. exammchoicemf:: ePost_3_20
+    .. mchoice:: ePost_3_20
        :answer_a: [-5, 5, 0]  [3, 1, 3, 5]
        :answer_b: [10, 5, 0]  [3, 1, 3, 100]
        :answer_c: [-5, 5, 0]  [3, 1, 3, 100]
@@ -113,7 +111,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           print (b)
            
     
-    .. exammchoicemf:: ePost_4_16
+    .. mchoice:: ePost_4_16
        :answer_a: a = 7, b = 5, c = 0
        :answer_b: a = 5, b = 7, c = 7
        :answer_c: a = 5, b = 0, c = 7
@@ -137,7 +135,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           a = b;
           b = c;
            
-    .. exammchoicemf:: ePost_5_21
+    .. mchoice:: ePost_5_21
        :answer_a: It will print "Hello Fred"
        :answer_b: It will print "Good-bye Fred"
        :answer_c: It will print "Hello name"
@@ -160,7 +158,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           message = hello + " " + name
           print (message)
           
-    .. exammchoicemf:: ePost_6_22
+    .. mchoice:: ePost_6_22
        :answer_a: The printed result will be odd with a decimal point.
        :answer_b: The printed result will be even with a decimal point.
        :answer_c: The printed result will be odd without a decimal point.
@@ -182,7 +180,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           print (sum)
 
           
-    .. exammchoicemf:: ePost_7_17
+    .. mchoice:: ePost_7_17
        :answer_a: Error
        :answer_b: Error and 250.0 on the next line
        :answer_c: 250.0
@@ -205,7 +203,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           else:
               print (1000 / x)
               
-    .. exammchoicemf:: ePost_8_24
+    .. mchoice:: ePost_8_24
        :answer_a: The printed result will include a "z"
        :answer_b: The printed result will contain a "u"
        :answer_c: The printed result will only contain consonants.
@@ -227,7 +225,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
                   newString = newString + letter
           print (newString)
               
-    .. exammchoicemf:: ePost_9_19
+    .. mchoice:: ePost_9_19
        :answer_a: 6          [3, 1, -2]         -2
        :answer_b: 6          [3, 1, -2]         -1
        :answer_c: 6          [3, 1, -2]          2
@@ -251,7 +249,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           b[2] = b[2] + 1
           print (b[2])
           
-    .. exammchoicemf:: ePost_10_23
+    .. mchoice:: ePost_10_23
        :answer_a: The printed result will be odd with a decimal point.
        :answer_b: The printed result will be even with a decimal point.
        :answer_c: The printed result will be odd without a decimal point.
@@ -273,7 +271,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
               counter = counter + 2
           print (sum)
           
-    .. exammchoicemf:: ePost_11_26
+    .. mchoice:: ePost_11_26
        :answer_a: 182
        :answer_b: 181
        :answer_c: 153
@@ -294,6 +292,5 @@ You will not be able to change your answers after you hit the "Submit Answers" b
               sum = sum + numList[number]
           print(sum)
              
-    .. finishexam:: timed_Test
 
    

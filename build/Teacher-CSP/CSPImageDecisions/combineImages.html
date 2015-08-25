@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -322,31 +338,10 @@
 <h1>Combining Pictures<a class="headerlink" href="#combining-pictures" title="Permalink to this headline">¶</a></h1>
 <p>We can use a conditional to copy just the non-white pixels from one picture to another picture.  We can take this tiny image of the women and put her by the Eiffel tower in Paris, France.</p>
 <img src="../_static/lady_tiny.png" id="lady_tiny.png">
-<img src="../_static/eiffel.jpg" id="eiffel.jpg"><div id='tab_combine' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
-<li>
-    <a data-toggle='tab' href='#tab_combine-Copy_Non_White_Exercize'><span>Copy_Non_White_Exercize</span></a>
-</li>
+<img src="../_static/eiffel.jpg" id="eiffel.jpg"><div id='tab_combine' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Copy_Non_White_Exercize" >
+<p>Run the program below.  What would happen if <code class="docutils literal"><span class="pre">img1</span></code> was wider or taller than <code class="docutils literal"><span class="pre">img2</span></code>, like if we tried to do this with the apple (see below) as img1 and gal2 (see below) as img2?  Can you modify the program below to work even if that were true?  One thing you might need to know is that the function <code class="docutils literal"><span class="pre">min(value1,value2)</span></code> will return the smaller of the two values.  If you have trouble figuring out a solution click on the Answer tab to see one way to do this.</p>
 
-<li>
-    <a data-toggle='tab' href='#tab_combine-Copy_Non_White_Answer'><span>Copy_Non_White_Answer</span></a>
-</li>
-</ul><div class='tab-content'><div class='tab-pane' id='tab_combine-Copy_Non_White_Exercize'><p>Run the program below.  What would happen if <code class="docutils literal"><span class="pre">img1</span></code> was wider or taller than <code class="docutils literal"><span class="pre">img2</span></code>, like if we tried to do this with the apple (see below) as img1 and gal2 (see below) as img2?  Can you modify the program below to work even if that were true?  One thing you might need to know is that the function <code class="docutils literal"><span class="pre">min(value1,value2)</span></code> will return the smaller of the two values.  If you have trouble figuring out a solution click on the Answer tab to see one way to do this.</p>
-
-<div id="cont"></div>
-<div id="Copy_Non_White" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Copy_Non_White_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Copy_Non_White_saveb" onclick="saveEditor('Copy_Non_White');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Copy_Non_White_loadb" onclick="requestCode('Copy_Non_White');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Copy_Non_White','from image import **nline**nline*# CREATE THE IMAGES*nline*img1 = Image*open**doubleq*lady_tiny.png*doubleq**close**nline*img2 = Image*open**doubleq*eiffel.jpg*doubleq**close**nline**nline*# LOOP THROUGH ALL THE PIXELS IN IMG1*nline*for x in range*open*img1.getWidth*open**close**close*:*nline*    for y in range*open*img1.getHeight*open**close**close*:*nline*        p1 = img1.getPixel*open*x, y*close**nline*        r1 = p1.getRed*open**close**nline*        g1 = p1.getGreen*open**close**nline*        b1 = p1.getBlue*open**close**nline**nline*        # CHECK IF THE PIXEL ISN*singleq*T WHITE*nline*        if r1 < 250 and g1 < 250 and b1 < 250:*nline**nline*            # COPY THE COLOR TO IMG2*nline*            img2.setPixel*open*x, y + 130, p1*close**nline**nline*# SHOW THE CHANGED IMAGE*nline*win = ImageWin*open*img2.getWidth*open**close*,img2.getHeight*open**close**close**nline*img2.draw*open*win*close*','1','*doubleq*Structural Tour*doubleq*; 1: id2a-line1; 4-5: id2a-line4-5; 8-9: id2a-line8-9; 10: id2a-line10; 11-13: id2a-line11-13; 16: id2a-line16; 19: id2a-line19; 22-23: id2a-line21-22;*atype*')"/>
-
-</div>
-<br/>
-<div id="Copy_Non_White_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Copy_Non_White_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Copy_Non_White data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Structural Tour*doubleq*; 1: id2a-line1; 4-5: id2a-line4-5; 8-9: id2a-line8-9; 10: id2a-line10; 11-13: id2a-line11-13; 16: id2a-line16; 19: id2a-line19; 22-23: id2a-line21-22;*atype*'     >
 from image import *
 
 # CREATE THE IMAGES
@@ -370,88 +365,11 @@ for x in range(img1.getWidth()):
 # SHOW THE CHANGED IMAGE
 win = ImageWin(img2.getWidth(),img2.getHeight())
 img2.draw(win)
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Copy_Non_White_Answer" >
+<p>Here is one way to make sure that the codes till works even if img1 is wider or taller than img2.</p>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Copy_Non_White_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Copy_Non_White_suffix" style="display:none">
-</pre><pre id="Copy_Non_White_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Copy_Non_White)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Copy_Non_White_saveb').toggle();
-    $('#Copy_Non_White_loadb').toggle();
-}
-if ($("#Copy_Non_White").attr("lang") !== "html" && $("#Copy_Non_White_code_div").parents(".admonition").length == 0 && $("#Copy_Non_White_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Copy_Non_White_code_div").offset({
-            left: $("#Copy_Non_White .clearfix").offset().left
-        });
-    }
-    $("#Copy_Non_White_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Copy_Non_White_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Copy_Non_White_runb").parent().siblings(".ac_output").show();
-            runit('Copy_Non_White',this, undefined);
-            $("#Copy_Non_White_runb").on("click", function(){
-                runit('Copy_Non_White',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Copy_Non_White_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Copy_Non_White_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Copy_Non_White_runb").on("click", function(){
-        runit('Copy_Non_White',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-</div><div class='tab-pane' id='tab_combine-Copy_Non_White_Answer'><p>Here is one way to make sure that the codes till works even if img1 is wider or taller than img2.</p>
-
-<div id="cont"></div>
-<div id="Copy_Non_White_Answer" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Copy_Non_White_Answer_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Copy_Non_White_Answer_saveb" onclick="saveEditor('Copy_Non_White_Answer');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Copy_Non_White_Answer_loadb" onclick="requestCode('Copy_Non_White_Answer');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Copy_Non_White_Answer','from image import **nline**nline*# CREATE THE IMAGES*nline*img1 = Image*open**doubleq*apple.jpg*doubleq**close**nline*img2 = Image*open**doubleq*gal2.jpg*doubleq**close**nline*width1 = img1.getWidth*open**close**nline*height1 = img1.getHeight*open**close**nline*width2= img2.getWidth*open**close**nline*height2 = img2.getHeight*open**close**nline*maxWidth = min*open*width1,width2*close**nline*maxHeight = min*open*height1,height2*close**nline**nline*# LOOP THROUGH THE PIXELS*nline*for x in range*open*maxWidth*close*:*nline*    for y in range*open*maxHeight*close*:*nline*        p1 = img1.getPixel*open*x, y*close**nline*        r1 = p1.getRed*open**close**nline*        g1 = p1.getGreen*open**close**nline*        b1 = p1.getBlue*open**close**nline**nline*        # CHECK IF THE PIXEL ISN*singleq*T WHITE*nline*        if r1 < 250 and g1 < 250 and b1 < 250:*nline**nline*            # COPY THE COLOR TO IMG2*nline*            img2.setPixel*open*x, y, p1*close**nline**nline*# SHOW THE CHANGED IMAGE*nline*win = ImageWin*open*img2.getWidth*open**close*,img2.getHeight*open**close**close**nline*img2.draw*open*win*close*','1','*doubleq*Structural Tour*doubleq*; 1: id2a-line1; 4-5: id2a-line4-5; 8-9: id2a-line8-9; 10: id2a-line10; 11-13: id2a-line11-13; 16: id2a-line16; 19: id2a-line19; 22-23: id2a-line21-22;*atype*')"/>
-
-</div>
-<br/>
-<div id="Copy_Non_White_Answer_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Copy_Non_White_Answer_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Copy_Non_White_Answer data-lang="python"    data-timelimit=25000   data-audio='*doubleq*Structural Tour*doubleq*; 1: id2a-line1; 4-5: id2a-line4-5; 8-9: id2a-line8-9; 10: id2a-line10; 11-13: id2a-line11-13; 16: id2a-line16; 19: id2a-line19; 22-23: id2a-line21-22;*atype*'     >
 from image import *
 
 # CREATE THE IMAGES
@@ -481,94 +399,49 @@ for x in range(maxWidth):
 # SHOW THE CHANGED IMAGE
 win = ImageWin(img2.getWidth(),img2.getHeight())
 img2.draw(win)
-</textarea>
-</div>
+</pre>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch15combine_disqus(source) { 
+        if (window.DISQUS) {
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Copy_Non_White_Answer_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Copy_Non_White_Answer_suffix" style="display:none">
-</pre><pre id="Copy_Non_White_Answer_pre" class="active_out"></pre>
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
 
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Copy_Non_White_Answer)</span> </p>
-
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Copy_Non_White_Answer_saveb').toggle();
-    $('#Copy_Non_White_Answer_loadb').toggle();
-}
-if ($("#Copy_Non_White_Answer").attr("lang") !== "html" && $("#Copy_Non_White_Answer_code_div").parents(".admonition").length == 0 && $("#Copy_Non_White_Answer_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Copy_Non_White_Answer_code_div").offset({
-            left: $("#Copy_Non_White_Answer .clearfix").offset().left
-        });
-    }
-    $("#Copy_Non_White_Answer_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Copy_Non_White_Answer_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch15combine_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch15combine_'+eBookConfig.course+'.interactivepython.com/#!';
                 }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Copy_Non_White_Answer_runb").parent().siblings(".ac_output").show();
-            runit('Copy_Non_White_Answer',this, undefined);
-            $("#Copy_Non_White_Answer_runb").on("click", function(){
-                runit('Copy_Non_White_Answer',this, undefined);
             });
-        })
 
-    });
-}
-else{
-    $("#Copy_Non_White_Answer_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Copy_Non_White_Answer_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Copy_Non_White_Answer_runb").on("click", function(){
-        runit('Copy_Non_White_Answer',this, undefined);
-    });
-}
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'cslearn4u';    
+            disqus_identifier = 'teachercsp_ch15combine_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch15combine_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
 </script>
 
-</div>
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch15combine" onclick="teachercsp_ch15combine_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch15combine']").attr('data-disqus-identifier', 'teachercsp_ch15combine_' + eBookConfig.course);
+</script>
+</div><p>Below is a selection of images that you can use in the programs in this section.</p>
 
-</div></div>
     </div>
-    <script type='text/javascript'>
-        $('#tab_combine .nav-tabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
 
-        // activate the first tab
-        var el = $('#tab_combine .nav-tabs a')[0];
-        $(el).tab('show');
-
-        $('#tab_combine .nav-tabs a').on('shown.bs.tab', function (e) {
-            var content_div = $(e.target.attributes.href.value);
-            content_div.find('.disqus_thread_link').each(function() {
-                $(this).click();
-            });
-
-            content_div.find('.CodeMirror').each(function(i, el) {
-                el.CodeMirror.refresh();
-            });
-        })
-    </script>
 <p>Here are a couple of other pictures that we can also use.  The first is apple.jpg and the second is gal2.jpg.  The apple is 500 wide by 334 high and gal2 is 248 wide by 240 high.</p>
 <img src="../_static/apple.jpg" id="apple.jpg">
 <img src="../_static/gal2.jpg" id="gal2.jpg"></div>
@@ -601,7 +474,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

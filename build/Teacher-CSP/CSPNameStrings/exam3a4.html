@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -320,19 +336,12 @@
   
   <div class="section" id="exam-questions-for-chapters-3-and-4">
 <h1>Exam Questions for Chapters 3 and 4<a class="headerlink" href="#exam-questions-for-chapters-3-and-4" title="Permalink to this headline">¶</a></h1>
-<p>The following questions test what you have learned in chapters 3 and 4. Click the &#8220;Start&#8221; button when you are ready to begin the exam.  Click the &#8220;Pause&#8221; button to pause the exam (you will not be able to see the questions when the exam is paused).  Hover over the clock icon to see how much time you have spent on the exam, but you have unlimited time.  Click on the &#8220;Submit Answers&#8221; button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.</p>
+<p>The following questions test what you have learned in chapters 3 and 4. Click the &#8220;Start&#8221; button when you are ready to begin the exam.  Click the &#8220;Pause&#8221; button to pause the exam (you will not be able to see the questions when the exam is paused).  It will show how much time you have used, but you have unlimited time.  Click on the &#8220;Submit answers&#8221; button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.</p>
 <p>You will not be able to change your answers after you hit the &#8220;Submit Answers&#8221; button.</p>
 
-           <div id="startWrapper">
-		    <p id="timeOutput"></p>
-		    </div>
-		    
-		    <div id="controls" style="text-align: center;">
-			<button class='btn btn-inverse' id ="examButton" onclick="handleExamButtonClick()">Start</button>
-	        </div>
-            <div id='timed_Test' style='display:none'>
-            
-            <div id="e3a4_1" class="alert alert-warning">
+    <ul data-component="timedAssessment"  id="ch3a4ex"  >
+    
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e3a4_1">
             <p>4-8-1: What is printed after the following code is run?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;John Smith&quot;</span>
 <span class="n">words</span> <span class="o">=</span> <span class="s">&quot; likes to play outside.&quot;</span>
@@ -340,73 +349,35 @@
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e3a4_1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e3a4_1_opt_a" />
-            <label for= "e3a4_1_opt_a">  a) namewords</label><br />
-	        <div id= "e3a4_1_eachFeedback_a"></div>
+            <li data-component="answer"  id="e3a4_1_opt_a">namewords</li><li data-component="feedback" id="e3a4_1_opt_a">This would be true if it was print ("name" + "words"), but name and words are not in quotes so the value of each will be printed.</li>
             
-            <input type="radio" name="group1" value="b" id="e3a4_1_opt_b" />
-            <label for= "e3a4_1_opt_b">  b) name + words</label><br />
-	        <div id= "e3a4_1_eachFeedback_b"></div>
+            <li data-component="answer"  id="e3a4_1_opt_b">name + words</li><li data-component="feedback" id="e3a4_1_opt_b">This would be true if it was print ("name + words").</li>
             
-            <input type="radio" name="group1" value="c" id="e3a4_1_opt_c" />
-            <label for= "e3a4_1_opt_c">  c) John Smith + likes to play outside.</label><br />
-	        <div id= "e3a4_1_eachFeedback_c"></div>
+            <li data-component="answer"  id="e3a4_1_opt_c">John Smith + likes to play outside.</li><li data-component="feedback" id="e3a4_1_opt_c">The would be true if it was print (name + " +" + words).</li>
             
-            <input type="radio" name="group1" value="d" id="e3a4_1_opt_d" />
-            <label for= "e3a4_1_opt_d">  d) John Smith likes to play outside.</label><br />
-	        <div id= "e3a4_1_eachFeedback_d"></div>
+            <li data-component="answer" data-correct id="e3a4_1_opt_d">John Smith likes to play outside.</li><li data-component="feedback" id="e3a4_1_opt_d">When you use a variable name in a print statement the value of the variable is printed.  The + sign is used to join strings together.</li>
             
 
-            <script>
-		    populateArrays('e3a4_1','d',['This would be true if it was print (\u0022name\u0022 + \u0022words\u0022), but name and words are not in quotes so the value of each will be printed.', 'This would be true if it was print (\u0022name + words\u0022).', 'The would be true if it was print (name + \u0022 +\u0022 + words).', 'When you use a variable name in a print statement the value of the variable is printed.  The + sign is used to join strings together.']);
-            $(document).ready(function(){checkExamRadio('e3a4_1');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e3a4_1_feedback">
-            </div>
-            </div>
-            
-            <div id="e3a4_2" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e3a4_2">
             <p>4-8-2: In the following code, what does the &#8220;=&#8221; do?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">cat</span> <span class="o">=</span> <span class="s">&quot;meow&quot;</span>
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e3a4_2_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e3a4_2_opt_a" />
-            <label for= "e3a4_2_opt_a">  a) Tests to see if the values on each side of the expression are equal</label><br />
-	        <div id= "e3a4_2_eachFeedback_a"></div>
+            <li data-component="answer"  id="e3a4_2_opt_a">Tests to see if the values on each side of the expression are equal</li><li data-component="feedback" id="e3a4_2_opt_a">This would be true if it was cat == "meow"</li>
             
-            <input type="radio" name="group1" value="b" id="e3a4_2_opt_b" />
-            <label for= "e3a4_2_opt_b">  b) Assigns the name on the left to the value on the right</label><br />
-	        <div id= "e3a4_2_eachFeedback_b"></div>
+            <li data-component="answer" data-correct id="e3a4_2_opt_b">Assigns the name on the left to the value on the right</li><li data-component="feedback" id="e3a4_2_opt_b">A name on the left and a value on the right creates a variable with that name and that value.</li>
             
-            <input type="radio" name="group1" value="c" id="e3a4_2_opt_c" />
-            <label for= "e3a4_2_opt_c">  c) Copies the value from the right to the left</label><br />
-	        <div id= "e3a4_2_eachFeedback_c"></div>
+            <li data-component="answer"  id="e3a4_2_opt_c">Copies the value from the right to the left</li><li data-component="feedback" id="e3a4_2_opt_c">This would be true if it was a variable name on the right instead of a string.</li>
             
-            <input type="radio" name="group1" value="d" id="e3a4_2_opt_d" />
-            <label for= "e3a4_2_opt_d">  d) Creates two new objects, one named cat and one named meow</label><br />
-	        <div id= "e3a4_2_eachFeedback_d"></div>
+            <li data-component="answer"  id="e3a4_2_opt_d">Creates two new objects, one named cat and one named meow</li><li data-component="feedback" id="e3a4_2_opt_d">This creates a variable and sets its value.  It doesn't create an object.</li>
             
 
-            <script>
-		    populateArrays('e3a4_2','b',['This would be true if it was cat \u003D\u003D \u0022meow\u0022', 'A name on the left and a value on the right creates a variable with that name and that value.', 'This would be true if it was a variable name on the right instead of a string.', 'This creates a variable and sets its value.  It doesn\u0027t create an object.']);
-            $(document).ready(function(){checkExamRadio('e3a4_2');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e3a4_2_feedback">
-            </div>
-            </div>
-            
-            <div id="e3a4_3" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e3a4_3">
             <p>4-8-3: Which of the following line(s) of code will print out &#8220;My name is Morrissey&#8221;?</p>
 <div class="highlight-python"><div class="highlight"><pre>I.   print (My name is Morrissey)
 II.  var1 = &quot;My name is &quot;
@@ -419,74 +390,36 @@ III. M = &quot;M&quot;
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e3a4_3_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e3a4_3_opt_a" />
-            <label for= "e3a4_3_opt_a">  a) I only</label><br />
-	        <div id= "e3a4_3_eachFeedback_a"></div>
+            <li data-component="answer"  id="e3a4_3_opt_a">I only</li><li data-component="feedback" id="e3a4_3_opt_a">There are no quotes around the string so this gives an error.</li>
             
-            <input type="radio" name="group1" value="b" id="e3a4_3_opt_b" />
-            <label for= "e3a4_3_opt_b">  b) II only</label><br />
-	        <div id= "e3a4_3_eachFeedback_b"></div>
+            <li data-component="answer" data-correct id="e3a4_3_opt_b">II only</li><li data-component="feedback" id="e3a4_3_opt_b">When you use '+' it appends the strings together so this will print the correct string</li>
             
-            <input type="radio" name="group1" value="c" id="e3a4_3_opt_c" />
-            <label for= "e3a4_3_opt_c">  c) III only</label><br />
-	        <div id= "e3a4_3_eachFeedback_c"></div>
+            <li data-component="answer"  id="e3a4_3_opt_c">III only</li><li data-component="feedback" id="e3a4_3_opt_c">Answer III will not work since there is no variable called Morrissey.</li>
             
-            <input type="radio" name="group1" value="d" id="e3a4_3_opt_d" />
-            <label for= "e3a4_3_opt_d">  d) all of them</label><br />
-	        <div id= "e3a4_3_eachFeedback_d"></div>
+            <li data-component="answer"  id="e3a4_3_opt_d">all of them</li><li data-component="feedback" id="e3a4_3_opt_d">Answer II will work, but not answer I or answer III.  Number I has no quotes around the string. In III there is no variable called Morrissey.</li>
             
 
-            <script>
-		    populateArrays('e3a4_3','b',['There are no quotes around the string so this gives an error.', 'When you use \u0027+\u0027 it appends the strings together so this will print the correct string', 'Answer III will not work since there is no variable called Morrissey.', 'Answer II will work, but not answer I or answer III.  Number I has no quotes around the string. In III there is no variable called Morrissey.']);
-            $(document).ready(function(){checkExamRadio('e3a4_3');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e3a4_3_feedback">
-            </div>
-            </div>
-            
-            <div id="e3a4_4" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e3a4_4">
             <p>4-8-4: What is printed after the following executes?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span>
 <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e3a4_4_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e3a4_4_opt_a" />
-            <label for= "e3a4_4_opt_a">  a) 0</label><br />
-	        <div id= "e3a4_4_eachFeedback_a"></div>
+            <li data-component="answer"  id="e3a4_4_opt_a">0</li><li data-component="feedback" id="e3a4_4_opt_a">This would be true if it was 4 % 2 since 2 goes in evenly into 4.</li>
             
-            <input type="radio" name="group1" value="b" id="e3a4_4_opt_b" />
-            <label for= "e3a4_4_opt_b">  b) 2</label><br />
-	        <div id= "e3a4_4_eachFeedback_b"></div>
+            <li data-component="answer"  id="e3a4_4_opt_b">2</li><li data-component="feedback" id="e3a4_4_opt_b">This would be true if you were trying to divide 5 by a number that was larger than 5.</li>
             
-            <input type="radio" name="group1" value="c" id="e3a4_4_opt_c" />
-            <label for= "e3a4_4_opt_c">  c) 5</label><br />
-	        <div id= "e3a4_4_eachFeedback_c"></div>
+            <li data-component="answer"  id="e3a4_4_opt_c">5</li><li data-component="feedback" id="e3a4_4_opt_c">This would be true if it was 5 % 3.</li>
             
-            <input type="radio" name="group1" value="d" id="e3a4_4_opt_d" />
-            <label for= "e3a4_4_opt_d">  d) 1</label><br />
-	        <div id= "e3a4_4_eachFeedback_d"></div>
+            <li data-component="answer" data-correct id="e3a4_4_opt_d">1</li><li data-component="feedback" id="e3a4_4_opt_d">2 goes into 5 2 times with a remainder of 1.</li>
             
 
-            <script>
-		    populateArrays('e3a4_4','d',['This would be true if it was 4 % 2 since 2 goes in evenly into 4.', 'This would be true if you were trying to divide 5 by a number that was larger than 5.', 'This would be true if it was 5 % 3.', '2 goes into 5 2 times with a remainder of 1.']);
-            $(document).ready(function(){checkExamRadio('e3a4_4');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e3a4_4_feedback">
-            </div>
-            </div>
-            
-            <div id="e3a4_5" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e3a4_5">
             <p>4-8-5: What is the value of var2 after the following code executes?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">var2</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">var1</span> <span class="o">=</span> <span class="mi">10</span>
@@ -496,37 +429,18 @@ III. M = &quot;M&quot;
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e3a4_5_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e3a4_5_opt_a" />
-            <label for= "e3a4_5_opt_a">  a) 3</label><br />
-	        <div id= "e3a4_5_eachFeedback_a"></div>
+            <li data-component="answer"  id="e3a4_5_opt_a">3</li><li data-component="feedback" id="e3a4_5_opt_a">While var2 starts out set to 3 it changes when it is set to a copy of the value in var1.</li>
             
-            <input type="radio" name="group1" value="b" id="e3a4_5_opt_b" />
-            <label for= "e3a4_5_opt_b">  b) 10</label><br />
-	        <div id= "e3a4_5_eachFeedback_b"></div>
+            <li data-component="answer" data-correct id="e3a4_5_opt_b">10</li><li data-component="feedback" id="e3a4_5_opt_b">While var2 starts out set to 3 it changes to a copy of the value in var1 which is 10.</li>
             
-            <input type="radio" name="group1" value="c" id="e3a4_5_opt_c" />
-            <label for= "e3a4_5_opt_c">  c) 18</label><br />
-	        <div id= "e3a4_5_eachFeedback_c"></div>
+            <li data-component="answer"  id="e3a4_5_opt_c">18</li><li data-component="feedback" id="e3a4_5_opt_c">This is the value of var1 after the code executes.</li>
             
-            <input type="radio" name="group1" value="d" id="e3a4_5_opt_d" />
-            <label for= "e3a4_5_opt_d">  d) 0</label><br />
-	        <div id= "e3a4_5_eachFeedback_d"></div>
+            <li data-component="answer"  id="e3a4_5_opt_d">0</li><li data-component="feedback" id="e3a4_5_opt_d">You would have to set var2 to 0 at some point for this to be true.</li>
             
 
-            <script>
-		    populateArrays('e3a4_5','b',['While var2 starts out set to 3 it changes when it is set to a copy of the value in var1.', 'While var2 starts out set to 3 it changes to a copy of the value in var1 which is 10.', 'This is the value of var1 after the code executes.', 'You would have to set var2 to 0 at some point for this to be true.']);
-            $(document).ready(function(){checkExamRadio('e3a4_5');});
-            </script>
+            </ul>
             
- 
-            </form><br />
-            <div id="e3a4_5_feedback">
-            </div>
-            </div>
-            
-            <div id="e3a4_6" class="alert alert-warning">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="e3a4_6">
             <p>4-8-6: What is the value of sentence after the following code executes?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">sentence</span> <span class="o">=</span> <span class="s">&quot;THIS IS A TEST&quot;</span>
 <span class="n">better</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
@@ -535,70 +449,18 @@ III. M = &quot;M&quot;
 </pre></div>
 </div>
 
-            <div class="timeTip" title=" "><img src="../_static/clock.png" style="width:15px;height:15px"></div>
-            <form name="e3a4_6_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="e3a4_6_opt_a" />
-            <label for= "e3a4_6_opt_a">  a) THIS IS A TEST</label><br />
-	        <div id= "e3a4_6_eachFeedback_a"></div>
+            <li data-component="answer" data-correct id="e3a4_6_opt_a">THIS IS A TEST</li><li data-component="feedback" id="e3a4_6_opt_a">Strings are immutable.  Any change to a string returns a new string.</li>
             
-            <input type="radio" name="group1" value="b" id="e3a4_6_opt_b" />
-            <label for= "e3a4_6_opt_b">  b) this is a test</label><br />
-	        <div id= "e3a4_6_eachFeedback_b"></div>
+            <li data-component="answer"  id="e3a4_6_opt_b">this is a test</li><li data-component="feedback" id="e3a4_6_opt_b">This would be true if the question asked for the value of better.</li>
             
-            <input type="radio" name="group1" value="c" id="e3a4_6_opt_c" />
-            <label for= "e3a4_6_opt_c">  c) This is a test</label><br />
-	        <div id= "e3a4_6_eachFeedback_c"></div>
+            <li data-component="answer"  id="e3a4_6_opt_c">This is a test</li><li data-component="feedback" id="e3a4_6_opt_c">This would be true if the question asked for the value of betterStill</li>
             
-            <input type="radio" name="group1" value="d" id="e3a4_6_opt_d" />
-            <label for= "e3a4_6_opt_d">  d) This is a test, really!</label><br />
-	        <div id= "e3a4_6_eachFeedback_d"></div>
+            <li data-component="answer"  id="e3a4_6_opt_d">This is a test, really!</li><li data-component="feedback" id="e3a4_6_opt_d">This would be true if the question asked for the value of more.</li>
             
 
-            <script>
-		    populateArrays('e3a4_6','a',['Strings are immutable.  Any change to a string returns a new string.', 'This would be true if the question asked for the value of better.', 'This would be true if the question asked for the value of betterStill', 'This would be true if the question asked for the value of more.']);
-            $(document).ready(function(){checkExamRadio('e3a4_6');});
-            </script>
-            
- 
-            </form><br />
-            <div id="e3a4_6_feedback">
-            </div>
-            </div>
-            
-
-            
-	
-	<div style="text-align: center;">
-	<button class='btn btn-inverse' id ="finish" onclick="checkExam()">Submit Answers</button>
-	</div>
-	<script>
-	    
-	    $(document).ready(function() {
-	      $("#results").hide();
-	      checkIfFinished()
-	    });
-	</script>
-
-
-            
-            </div>
-            <p id="results"></p>
- 
-            
-            <script>
-			   var time = 0;
-			   var change = 1;
-		       showTime(0);
-            </script>
-            
-            <script>
-			   var showFeedback = 1;
-            </script>
-            
-            <script>
-			   var showResult = 1;
-            </script>
-            </div>
+            </ul>
+            </ul>
+    </div>
 
 
   
@@ -628,7 +490,10 @@ III. M = &quot;M&quot;
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

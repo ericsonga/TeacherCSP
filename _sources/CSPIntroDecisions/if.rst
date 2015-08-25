@@ -55,13 +55,11 @@ indented block if the logical expression was true.  If the logical expression wa
     Figure 3: Flow of execution for an if statement
     
 .. mchoicemf:: 12_2_1_If_Structure
-  :answer_a: line 2
-  :answer_b: line 3
-  :answer_c: line 4
-  :correct: c
-  :feedback_a: It won't repeat line 2.  
-  :feedback_b: Line 2 will only execute when x is less than 3.
-  :feedback_c: Execution continues at the next statement beyond the block following the <code>if</code>.
+  :answer_a: line 3
+  :answer_b: line 4
+  :correct: b
+  :feedback_a: Line 3 will only execute when x is less than 3.
+  :feedback_b: Execution continues at the next statement beyond the block following the <code>if</code> when the logical expression is false.
 
    Given the code below, what line executes after line 2 executes? 
    

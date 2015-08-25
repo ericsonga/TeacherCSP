@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -405,55 +421,31 @@
 </tbody>
 </table>
 
-            <div id="14_1_1_change_size" class="alert alert-warning">
-            csp-14-1-1: What procedure would you use to change the size of the line the turtle leaves when it moves?<form name="14_1_1_change_size_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="14_1_1_change_size_opt_a" />
-            <label for= "14_1_1_change_size_opt_a">  a) shape</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="14_1_1_change_size">
+            csp-14-1-1: What procedure would you use to change the size of the line the turtle leaves when it moves?
+            <li data-component="answer"  id="14_1_1_change_size_opt_a">shape</li><li data-component="feedback" id="14_1_1_change_size_opt_a">Use shape to set the shape used for the turtle.  It doesn't affect the line that is drawn.</li>
             
-            <input type="radio" name="group1" value="b" id="14_1_1_change_size_opt_b" />
-            <label for= "14_1_1_change_size_opt_b">  b) xcor</label><br />
+            <li data-component="answer"  id="14_1_1_change_size_opt_b">xcor</li><li data-component="feedback" id="14_1_1_change_size_opt_b">Use this function to get the x value of the turtle's position</li>
             
-            <input type="radio" name="group1" value="c" id="14_1_1_change_size_opt_c" />
-            <label for= "14_1_1_change_size_opt_c">  c) pensize</label><br />
+            <li data-component="answer" data-correct id="14_1_1_change_size_opt_c">pensize</li><li data-component="feedback" id="14_1_1_change_size_opt_c">This changes the width of the line that the turtle draws as it moves.</li>
             
-            <input type="radio" name="group1" value="d" id="14_1_1_change_size_opt_d" />
-            <label for= "14_1_1_change_size_opt_d">  d) color</label><br />
+            <li data-component="answer"  id="14_1_1_change_size_opt_d">color</li><li data-component="feedback" id="14_1_1_change_size_opt_d">Use color to change the line color and the turtle color.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('14_1_1_change_size');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('14_1_1_change_size','c',['Use shape to set the shape used for the turtle.  It doesn\u0027t affect the line that is drawn.', 'Use this function to get the x value of the turtle\u0027s position', 'This changes the width of the line that the turtle draws as it moves.', 'Use color to change the line color and the turtle color.'])">Check Me</button>
-            <button class='btn btn-default' id="14_1_1_change_size_bcomp" disabled name="compare" onclick="compareAnswers('14_1_1_change_size');">Compare Me</button>
-            </form><br />
-            <div id="14_1_1_change_size_feedback">
-            </div>
-            </div>
+            </ul>
             
-            <div id="14_1_2_goto" class="alert alert-warning">
-            csp-14-1-2: What procedure would you use move the turtle to a given x and y position?<form name="14_1_2_goto_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="14_1_2_goto_opt_a" />
-            <label for= "14_1_2_goto_opt_a">  a) stamp</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="14_1_2_goto">
+            csp-14-1-2: What procedure would you use move the turtle to a given x and y position?
+            <li data-component="answer"  id="14_1_2_goto_opt_a">stamp</li><li data-component="feedback" id="14_1_2_goto_opt_a">Use stamp to leave a copy of turtle shape at the current position.</li>
             
-            <input type="radio" name="group1" value="b" id="14_1_2_goto_opt_b" />
-            <label for= "14_1_2_goto_opt_b">  b) xcor</label><br />
+            <li data-component="answer"  id="14_1_2_goto_opt_b">xcor</li><li data-component="feedback" id="14_1_2_goto_opt_b">Use xcor to get the x value of the turtle's position.</li>
             
-            <input type="radio" name="group1" value="c" id="14_1_2_goto_opt_c" />
-            <label for= "14_1_2_goto_opt_c">  c) penup</label><br />
+            <li data-component="answer"  id="14_1_2_goto_opt_c">penup</li><li data-component="feedback" id="14_1_2_goto_opt_c">Use penup to pick up the pen (stop drawing as you move).</li>
             
-            <input type="radio" name="group1" value="d" id="14_1_2_goto_opt_d" />
-            <label for= "14_1_2_goto_opt_d">  d) goto</label><br />
+            <li data-component="answer" data-correct id="14_1_2_goto_opt_d">goto</li><li data-component="feedback" id="14_1_2_goto_opt_d">Use goto to move to the given x and y position.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('14_1_2_goto');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('14_1_2_goto','d',['Use stamp to leave a copy of turtle shape at the current position.', 'Use xcor to get the x value of the turtle\u0027s position.', 'Use penup to pick up the pen (stop drawing as you move).', 'Use goto to move to the given x and y position.'])">Check Me</button>
-            <button class='btn btn-default' id="14_1_2_goto_bcomp" disabled name="compare" onclick="compareAnswers('14_1_2_goto');">Compare Me</button>
-            </form><br />
-            <div id="14_1_2_goto_feedback">
-            </div>
-            </div>
+            </ul>
             <p>Once you are comfortable with the basics of turtle graphics you can read about even
 more options on the <a class="reference external" href="http://docs.python.org/dev/py3k/library/turtle.html">Python Docs Website</a>.</p>
 </div>
@@ -486,7 +478,10 @@ more options on the <a class="reference external" href="http://docs.python.org/d
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

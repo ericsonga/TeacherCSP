@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/clickable.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/dragndrop.css" type="text/css" />
     <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
     <link rel="stylesheet" href="../_static/livecode.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
     <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/shortanswer.css" type="text/css" />
     <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="../_static/video.css" type="text/css" />
     <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
@@ -36,6 +39,7 @@
         HAS_SOURCE:  true
       };
     </script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -50,16 +54,25 @@
     <script type="text/javascript" src="../_static/activecode.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
     <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
     <script type="text/javascript" src="../_static/pytutor.js"></script>
     <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
     <script type="text/javascript" src="../_static/skulpt.min.js"></script>
     <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
     <script type="text/javascript" src="../_static/livecode.js"></script>
     <script type="text/javascript" src="../_static/clike.js"></script>
     <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
@@ -70,7 +83,9 @@
     <script type="text/javascript" src="../_static/parsons.js"></script>
     <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
     <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
     <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="../_static/jquery-fix.js"></script>
@@ -102,7 +117,7 @@
   eBookConfig.build_info = "unknown";
   eBookConfig.isLoggedIn = false;
   eBookConfig.useRunestoneServices = true;
-  eBookConfig.python3 = false;
+  eBookConfig.python3 = true;
 </script>
 
 <div id="fb-root"></div>
@@ -200,7 +215,7 @@
             
             <li><a href='/runestone/static/Teacher-CSP/genindex.html'>Book Index</a></li>
             <li class="divider"></li>
-            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li id="scratch_ac_link"><a href="javascript:ActiveCode.toggleScratchActivecode()">Scratch ActiveCode</a></li>
             <li class="divider"></li>
             <li style="width: 240px;">
               <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
@@ -222,6 +237,7 @@
 
         <li class="divider-vertical"></li>
 
+        
         <!-- user account dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -245,7 +261,7 @@
           </ul>
         </li>
         <!-- end user account dropdown -->
-
+        
         <li class="divider-vertical"></li>
 
         <!-- help menu dropdown -->
@@ -322,330 +338,64 @@
 <h1>The Range Function<a class="headerlink" href="#the-range-function" title="Permalink to this headline">¶</a></h1>
 <p>You can use the <code class="docutils literal"><span class="pre">range</span></code> function to create a list of numbers.    If the <code class="docutils literal"><span class="pre">range</span></code> function is passed just one value it will return a list of all the numbers from 0 to one less than that number.</p>
 
-<div id="cont"></div>
-<div id="Numbers_Range1" lang="python" time="" class="ac_section alert alert-warning" >
+<pre data-component="activecode" id=Numbers_Range1 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+print(range(3))
+print(range(5))
+print(range(11))
+</pre>
 
-<div class="ac_actions">
-<button class='btn btn-success' id="Numbers_Range1_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Range1_saveb" onclick="saveEditor('Numbers_Range1');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Range1_loadb" onclick="requestCode('Numbers_Range1');">Load</button>
-<button class='btn btn-default' id="Numbers_Range1_vizb" onclick="injectCodelens(this,'Numbers_Range1');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="Numbers_Range1_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Numbers_Range1_code" class="active_code" prefixcode="undefined" lang="python">
-print range(3)
-print range(5)
-print range(11)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Numbers_Range1_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Numbers_Range1_suffix" style="display:none">
-</pre><pre id="Numbers_Range1_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Numbers_Range1)</span> </p>
-<div id="Numbers_Range1_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Numbers_Range1_saveb').toggle();
-    $('#Numbers_Range1_loadb').toggle();
-}
-if ($("#Numbers_Range1").attr("lang") !== "html" && $("#Numbers_Range1_code_div").parents(".admonition").length == 0 && $("#Numbers_Range1_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Numbers_Range1_code_div").offset({
-            left: $("#Numbers_Range1 .clearfix").offset().left
-        });
-    }
-    $("#Numbers_Range1_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Numbers_Range1_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Numbers_Range1_runb").parent().siblings(".ac_output").show();
-            runit('Numbers_Range1',this, undefined);
-            $("#Numbers_Range1_runb").on("click", function(){
-                runit('Numbers_Range1',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Numbers_Range1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Numbers_Range1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Numbers_Range1_runb").on("click", function(){
-        runit('Numbers_Range1',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="7_4_1_Numbers_Range1" class="alert alert-warning">
-            csp-7-4-1: Which of the following lines actually gives us a list of all the numbers from 0 to 5?<form name="7_4_1_Numbers_Range1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="7_4_1_Numbers_Range1_opt_a" />
-            <label for= "7_4_1_Numbers_Range1_opt_a">  a) print range(5)</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="7_4_1_Numbers_Range1">
+            csp-7-4-1: Which of the following lines actually gives us a list of all the numbers from 0 to 5?
+            <li data-component="answer"  id="7_4_1_Numbers_Range1_opt_a">range(5)</li><li data-component="feedback" id="7_4_1_Numbers_Range1_opt_a">This will return a list of all the numbers from 0 to 4.</li>
             
-            <input type="radio" name="group1" value="b" id="7_4_1_Numbers_Range1_opt_b" />
-            <label for= "7_4_1_Numbers_Range1_opt_b">  b) print range(6)</label><br />
+            <li data-component="answer" data-correct id="7_4_1_Numbers_Range1_opt_b">range(6)</li><li data-component="feedback" id="7_4_1_Numbers_Range1_opt_b">This will return a list of all the numbers from 0 to 5.</li>
             
-            <input type="radio" name="group1" value="c" id="7_4_1_Numbers_Range1_opt_c" />
-            <label for= "7_4_1_Numbers_Range1_opt_c">  c) print range(7)</label><br />
+            <li data-component="answer"  id="7_4_1_Numbers_Range1_opt_c">range(7)</li><li data-component="feedback" id="7_4_1_Numbers_Range1_opt_c">This will return a list of all the numbers from 0 to 6.</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('7_4_1_Numbers_Range1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7_4_1_Numbers_Range1','b',['This will return a list of all the numbers from 0 to 4.', 'This will return a list of all the numbers from 0 to 5.', 'This will return a list of all the numbers from 0 to 6.'])">Check Me</button>
-            <button class='btn btn-default' id="7_4_1_Numbers_Range1_bcomp" disabled name="compare" onclick="compareAnswers('7_4_1_Numbers_Range1');">Compare Me</button>
-            </form><br />
-            <div id="7_4_1_Numbers_Range1_feedback">
-            </div>
-            </div>
+            </ul>
             <p>If two values are passed as input to the <code class="docutils literal"><span class="pre">range</span></code> function then it will return a list of values that includes the first value, but ends at one less than the second value.  It is <em>inclusive</em> of the first value and <em>exclusive</em> of the second value.</p>
 
-<div id="cont"></div>
-<div id="Numbers_Range2" lang="python" time="" class="ac_section alert alert-warning" >
+<pre data-component="activecode" id=Numbers_Range2 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+print(range(1,10))
+print(range(0,11))
+print(range(20,31))
+</pre>
 
-<div class="ac_actions">
-<button class='btn btn-success' id="Numbers_Range2_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Range2_saveb" onclick="saveEditor('Numbers_Range2');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Range2_loadb" onclick="requestCode('Numbers_Range2');">Load</button>
-<button class='btn btn-default' id="Numbers_Range2_vizb" onclick="injectCodelens(this,'Numbers_Range2');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="Numbers_Range2_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Numbers_Range2_code" class="active_code" prefixcode="undefined" lang="python">
-print range(1,10)
-print range(0,11)
-print range(20,31)
-</textarea>
-</div>
-
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Numbers_Range2_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Numbers_Range2_suffix" style="display:none">
-</pre><pre id="Numbers_Range2_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Numbers_Range2)</span> </p>
-<div id="Numbers_Range2_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Numbers_Range2_saveb').toggle();
-    $('#Numbers_Range2_loadb').toggle();
-}
-if ($("#Numbers_Range2").attr("lang") !== "html" && $("#Numbers_Range2_code_div").parents(".admonition").length == 0 && $("#Numbers_Range2_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Numbers_Range2_code_div").offset({
-            left: $("#Numbers_Range2 .clearfix").offset().left
-        });
-    }
-    $("#Numbers_Range2_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Numbers_Range2_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Numbers_Range2_runb").parent().siblings(".ac_output").show();
-            runit('Numbers_Range2',this, undefined);
-            $("#Numbers_Range2_runb").on("click", function(){
-                runit('Numbers_Range2',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Numbers_Range2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Numbers_Range2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Numbers_Range2_runb").on("click", function(){
-        runit('Numbers_Range2',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="7_4_2_Numbers_Range2" class="alert alert-warning">
-            csp-7-4-2: Which of the following lines actually gives us a list of all numbers from 1 to 10?<form name="7_4_2_Numbers_Range2_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="7_4_2_Numbers_Range2_opt_a" />
-            <label for= "7_4_2_Numbers_Range2_opt_a">  a) print range(10)</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="7_4_2_Numbers_Range2">
+            csp-7-4-2: Which of the following lines actually gives us a list of all numbers from 1 to 10?
+            <li data-component="answer"  id="7_4_2_Numbers_Range2_opt_a">range(10)</li><li data-component="feedback" id="7_4_2_Numbers_Range2_opt_a">That includes zero and doesn't include 10: [0,1,2,3,4,5,6,7,8,9]</li>
             
-            <input type="radio" name="group1" value="b" id="7_4_2_Numbers_Range2_opt_b" />
-            <label for= "7_4_2_Numbers_Range2_opt_b">  b) print range(1,10)</label><br />
+            <li data-component="answer"  id="7_4_2_Numbers_Range2_opt_b">range(1,10)</li><li data-component="feedback" id="7_4_2_Numbers_Range2_opt_b">That doesn't include 10: [1,2,3,4,5,6,7,8,9]</li>
             
-            <input type="radio" name="group1" value="c" id="7_4_2_Numbers_Range2_opt_c" />
-            <label for= "7_4_2_Numbers_Range2_opt_c">  c) print range(11)</label><br />
+            <li data-component="answer"  id="7_4_2_Numbers_Range2_opt_c">range(11)</li><li data-component="feedback" id="7_4_2_Numbers_Range2_opt_c">That includes zero: [0,1,2,3,4,5,6,7,8,9,10]</li>
             
-            <input type="radio" name="group1" value="d" id="7_4_2_Numbers_Range2_opt_d" />
-            <label for= "7_4_2_Numbers_Range2_opt_d">  d) print range(1,11)</label><br />
+            <li data-component="answer" data-correct id="7_4_2_Numbers_Range2_opt_d">range(1,11)</li><li data-component="feedback" id="7_4_2_Numbers_Range2_opt_d">That returns [1,2,3,4,5,6,7,8,9,10]</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('7_4_2_Numbers_Range2');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7_4_2_Numbers_Range2','d',['That includes zero and doesn\u0027t include 10: [0,1,2,3,4,5,6,7,8,9]', 'That doesn\u0027t include 10: [1,2,3,4,5,6,7,8,9]', 'That includes zero: [0,1,2,3,4,5,6,7,8,9,10]', 'That returns [1,2,3,4,5,6,7,8,9,10]'])">Check Me</button>
-            <button class='btn btn-default' id="7_4_2_Numbers_Range2_bcomp" disabled name="compare" onclick="compareAnswers('7_4_2_Numbers_Range2');">Compare Me</button>
-            </form><br />
-            <div id="7_4_2_Numbers_Range2_feedback">
-            </div>
-            </div>
+            </ul>
             <p>Let&#8217;s rewrite the program that calculates the product using the <code class="docutils literal"><span class="pre">range</span></code> function to generate the list of numbers as shown below.</p>
 
-<div id="cont"></div>
-<div id="Numbers_Product2" lang="python" time="" class="ac_section alert alert-warning" >
-
-<div class="ac_actions">
-<button class='btn btn-success' id="Numbers_Product2_runb">Run</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Product2_saveb" onclick="saveEditor('Numbers_Product2');">Save</button>
-<button class="ac_opt btn btn-default" style="display: inline-block" id="Numbers_Product2_loadb" onclick="requestCode('Numbers_Product2');">Load</button>
-
-<span class="ac_sep"></span>
-<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Numbers_Product2','product = 1  # Start out with nothing*nline*numbers = range*open*1,11*close**nline*for number in numbers:*nline*    product = product * number*nline*print*open*product*close*','1','*doubleq*Line by line tour*doubleq*; 1: for2_line1; 2: for2_line2; 3: for2_line3; 4: for2_line4; 5: for2_line5;*atype*')"/>
-<button class='btn btn-default' id="Numbers_Product2_vizb" onclick="injectCodelens(this,'Numbers_Product2');">Show in Codelens</button>
-
-</div>
-<br/>
-<div id="Numbers_Product2_code_div" style="display: block" class="ac_code_div">
-<textarea cols="50" rows="12" id="Numbers_Product2_code" class="active_code" prefixcode="undefined" lang="python">
+<pre data-component="activecode" id=Numbers_Product2 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio='*doubleq*Line by line tour*doubleq*; 1: for2_line1; 2: for2_line2; 3: for2_line3; 4: for2_line4; 5: for2_line5;*atype*'     >
 product = 1  # Start out with nothing
 numbers = range(1,11)
 for number in numbers:
     product = product * number
 print(product)
-</textarea>
-</div>
+</pre>
 
-<div class="ac_output">
-<div style="text-align: center">
-<div id="Numbers_Product2_canvas" class="ac-canvas" style="border-style: solid; text-align: center"></div>
-</div>
-<pre id="Numbers_Product2_suffix" style="display:none">
-</pre><pre id="Numbers_Product2_pre" class="active_out"></pre>
-
-</div> <!-- end output --> 
-<div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text"> (Numbers_Product2)</span> </p>
-<div id="Numbers_Product2_codelens_div" style="display:none"></div>
-<script>
-if ('block' == 'none') {
-    // a hack to preserve the inline-block display style. Toggle() will use display: block
-    // (instead of inline-block) if the previous display style was 'none'
-    $('#Numbers_Product2_saveb').toggle();
-    $('#Numbers_Product2_loadb').toggle();
-}
-if ($("#Numbers_Product2").attr("lang") !== "html" && $("#Numbers_Product2_code_div").parents(".admonition").length == 0 && $("#Numbers_Product2_code_div").parents("#exercises").length == 0){
-    if ($(window).width() > 975){
-        $("#Numbers_Product2_code_div").offset({
-            left: $("#Numbers_Product2 .clearfix").offset().left
-        });
-    }
-    $("#Numbers_Product2_runb").one("click", function(){
-        $({})
-        .queue(function (next) {
-            if ($(window).width() > 975){
-                $("#Numbers_Product2_code_div").animate({
-                    left: 40
-                }, 500, next);
-                if (! Sk.TurtleGraphics ) {
-                    Sk.TurtleGraphics = {};
-                }
-                Sk.TurtleGraphics.height = 320;
-                Sk.TurtleGraphics.width = 320;
-            }
-            else{
-                next();
-            }
-        })
-        .queue(function (next) {
-            $("#Numbers_Product2_runb").parent().siblings(".ac_output").show();
-            runit('Numbers_Product2',this, undefined);
-            $("#Numbers_Product2_runb").on("click", function(){
-                runit('Numbers_Product2',this, undefined);
-            });
-        })
-
-    });
-}
-else{
-    $("#Numbers_Product2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
-    $("#Numbers_Product2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
-    $("#Numbers_Product2_runb").on("click", function(){
-        runit('Numbers_Product2',this, undefined);
-    });
-}
-</script>
-
-</div>
-
-
-            <div id="7_4_3_Numbers_Product_Q3" class="alert alert-warning">
-            csp-7-4-3: Change ONE number in the above program to tell us the product of all numbers from 1 to 20<form name="7_4_3_Numbers_Product_Q3_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="7_4_3_Numbers_Product_Q3_opt_a" />
-            <label for= "7_4_3_Numbers_Product_Q3_opt_a">  a) 121645100408832000</label><br />
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="7_4_3_Numbers_Product_Q3">
+            csp-7-4-3: Change ONE number in the above program to tell us the product of all numbers from 1 to 20
+            <li data-component="answer"  id="7_4_3_Numbers_Product_Q3_opt_a">121645100408832000</li><li data-component="feedback" id="7_4_3_Numbers_Product_Q3_opt_a">That is the product of all numbers from 1 to 19 (e.g., you changed the 11 to 20)</li>
             
-            <input type="radio" name="group1" value="b" id="7_4_3_Numbers_Product_Q3_opt_b" />
-            <label for= "7_4_3_Numbers_Product_Q3_opt_b">  b) 3628800</label><br />
+            <li data-component="answer"  id="7_4_3_Numbers_Product_Q3_opt_b">3628800</li><li data-component="feedback" id="7_4_3_Numbers_Product_Q3_opt_b">That is the product of all numbers from 1 to 10 (e.g., no change at all)</li>
             
-            <input type="radio" name="group1" value="c" id="7_4_3_Numbers_Product_Q3_opt_c" />
-            <label for= "7_4_3_Numbers_Product_Q3_opt_c">  c) 362880</label><br />
+            <li data-component="answer"  id="7_4_3_Numbers_Product_Q3_opt_c">362880</li><li data-component="feedback" id="7_4_3_Numbers_Product_Q3_opt_c">That is the product of all numbers from 1 to 9 (e.g., you changed the 11 to 10)</li>
             
-            <input type="radio" name="group1" value="d" id="7_4_3_Numbers_Product_Q3_opt_d" />
-            <label for= "7_4_3_Numbers_Product_Q3_opt_d">  d) 2432902008176640000</label><br />
+            <li data-component="answer" data-correct id="7_4_3_Numbers_Product_Q3_opt_d">2432902008176640000</li><li data-component="feedback" id="7_4_3_Numbers_Product_Q3_opt_d">That is the product of all numbers from 1 to 20 (e.g., you changed the 11 to 21)</li>
             
 
-            <script>
-            $(document).ready(function(){checkRadio('7_4_3_Numbers_Product_Q3');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('7_4_3_Numbers_Product_Q3','d',['That is the product of all numbers from 1 to 19 (e.g., you changed the 11 to 20)', 'That is the product of all numbers from 1 to 10 (e.g., no change at all)', 'That is the product of all numbers from 1 to 9 (e.g., you changed the 11 to 10)', 'That is the product of all numbers from 1 to 20 (e.g., you changed the 11 to 21)'])">Check Me</button>
-            <button class='btn btn-default' id="7_4_3_Numbers_Product_Q3_bcomp" disabled name="compare" onclick="compareAnswers('7_4_3_Numbers_Product_Q3');">Compare Me</button>
-            </form><br />
-            <div id="7_4_3_Numbers_Product_Q3_feedback">
-            </div>
-            </div>
+            </ul>
             </div>
 
 
@@ -676,7 +426,10 @@ else{
 <footer class="footer">
   <div class="container">
     <p class="pull-right">
-      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
       
     </p>
     <p>

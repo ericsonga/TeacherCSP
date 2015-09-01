@@ -59,7 +59,11 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Add parentheses to the expression ``6 * 1 - 2`` to change the result that is printed from 4 to -6.
+           Where can you add a set of parentheses to the expression 
+
+           ``6 * 1 - 2`` 
+
+           to change the result that is printed from 4 to -6?
            
            .. activecode::  ch3ex2q
                :nocodelens:
@@ -89,7 +93,9 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Finish lines 3 and 5 below to calculate and print the cost of a car trip of 500 miles when your car gets 26 miles per gallon and gas costs 3.45 a gallon.  It should print 66.3461538462.
+           **Intent:** This program computes and prints the *cost* of a trip given the mileage per gallon on the vehicle and the cost of gas per gallon.
+
+           **Challenge**: Complete the calculations usings variables on lines 3 and 5 below to print the cost of a car trip of 500 miles when your car gets 26 miles per gallon and gas costs 3.45 a gallon.  It should print 66.3461538462.
         
            .. activecode::  ch3ex3q
                :nocodelens:
@@ -128,7 +134,9 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Finish lines 4 and 5 in the code below to print how many miles you can drive on $25 if your car gets 40 miles per gallon and the price of gas is $3.65 a gallon.  It should print 273.97260274. 
+           **Intent**: This program computes and prints the *number* *of* *miles* you can drive given a budget, the mileage per gallon, and the current price of gas per gallon.
+
+           **Challenge**: Complete the calculations using variables on lines 4 and 5 in the code below to print how many miles you can drive on $25 if your car gets 40 miles per gallon and the price of gas is $3.65 a gallon.  It should print 273.97260274. 
            
            .. activecode::  ch3ex4q
                :nocodelens:
@@ -167,7 +175,9 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Finish lines 3 and 7 in the code below to calculate and print the total cost for an item that is priced $68, but is 40% off the original price and you have a coupon to take an additional 20% of the sale price.  It should print 32.64.  
+           **Intent**: This program computes and prints the *final* *cost* of an item given the sale promotions and coupon promotions applied. 
+
+           **Challenge**: Complete the calculations using variables on lines 3 and 7 in the code below to print the total cost for an item that is priced $68, but is 40% off the original price and you have a coupon to take an additional 20% of the sale price.  It should print 32.64.  
            
            .. activecode::  ch3ex5q
                 :nocodelens:
@@ -209,7 +219,9 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Finish lines 4 and 5 in the code below to print how many wings you can buy if you have 5 people and they each can spend $4 a person and the wings are $0.50 a wing. It should print 40.0.  
+           **Intent**: This program computes and prints the *number* *of* *wings* a group of X people can purchase given the cost is Y dollars per wing.
+
+           **Challenge**: Complete the calculations using variables on lines 4 and 5 in the code below to print how many wings you can buy if you have 5 people and they each can spend $4 a person and the wings are $0.50 a wing. It should print 40.0.  
            
            .. activecode::  ch3ex6q
                 :nocodelens:
@@ -247,7 +259,9 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Finish lines 2 and 3 in the code below to calculate and print how many hours and minutes it has been when you have been waiting a total of 270 minutes.  Remember that there are 60 minutes in an hour. It should print 4.0 and then 30.  
+           **Intent**: This program converts and prints the *time* *you* *have* waited from minutes to hours and minutes. 
+
+           **Challenge**: Complete the calculations using variables on lines 2 and 3 in the code below to print how many hours and minutes have transpired when you have been waiting a total of 270 minutes.  Remember that there are 60 minutes in an hour. It should print 4.0 and then 30.  
            
            .. activecode::  ch3ex7q
                 :nocodelens:
@@ -283,7 +297,9 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Fix the errors in the code below so that it calculates and prints the number of hours you will need to work if you earn $8 an hour and want to earn $100.  It should print 12.5.
+           **Intent**: This program calculates the *number* *of* *hours* you need to work given your salary and target earnings.
+
+           **Challenge**: Fix the syntactical errors in the code below so that it calculates and prints the number of hours you will need to work if you earn $8 an hour and want to earn $100.  It should print 12.5.
            
            .. activecode::  ch3ex8q
                 :nocodelens:
@@ -317,7 +333,9 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Finish lines 5 and 6 in the code below to calculate and print how many apples you can buy when apples cost 0.60 and you want to get 3 pears and they cost $1.2 each and you have $8.00.  It should print 7.33333333333.  
+           **Intent**: This program calculates the *number* *of* *apples* you can buy given cost per apple, your pear budget, and your overall budget.
+
+           **Challenge**: Complete the calculations using variables on lines 5 and 6 in the code below to print how many apples you can buy when apples cost 0.60 and you want to get 3 pears and they cost $1.2 each and you have $8.00.  It should print 7.33333333333.  
            
            .. activecode::  ch3ex9q
                 :nocodelens:
@@ -357,7 +375,7 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Write the code to calculate and print how many miles you can drive if your car holds 10 gallons and you have a quarter of a tank left and your car gets 32 miles per gallon.  It should print 80.
+           Write the code to calculate and print how many *miles* you can drive if your car holds 10 gallons and you have a quarter of a tank left and your car gets 32 miles per gallon.  It should print 80.
            
            .. activecode::  ch3ex10q
                :nocodelens:

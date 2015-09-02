@@ -349,7 +349,7 @@ Chapter 13 Exercises
 
         .. tab:: Question
 
-           Change the code below into a procedure that takes a number and prints the quartile.  Be sure to test each quartile.
+           Change the code below into a procedure that takes a number as a parameter and prints the quartile.  Be sure to test each quartile.
            
            .. activecode::  ch13ex8q
                 :nocodelens:
@@ -366,7 +366,7 @@ Chapter 13 Exercises
 
         .. tab:: Answer
         
-            Add ``:`` at the end of lines 2 and 4.  Indent lines 3 and 5.  Add a ``)`` at the end of line 8.  Change line 9 to ``total``.  Add code to test each quartile.   ta
+            Create the procedure and pass the number.  Test the procedure for each quartile.  
             
             .. activecode::  ch13ex8a
                 :nocodelens:
@@ -407,7 +407,7 @@ Chapter 13 Exercises
 
         .. tab:: Answer
         
-            Define the procedure as shown below and be sure to test it.
+            Define the function as shown below and be sure to test it.
             
             .. activecode::  ch13ex9a
                 :nocodelens:
@@ -446,7 +446,7 @@ Chapter 13 Exercises
 
         .. tab:: Answer
         
-            Create a function as shown below.  Call it to test it and print the result.
+            Create a procedure as shown below.  Call it to test it and print the result.
             
             .. activecode::  ch13ex10a
                 :nocodelens:

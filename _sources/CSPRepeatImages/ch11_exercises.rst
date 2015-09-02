@@ -44,7 +44,7 @@ Below is a selection of images that you can use in the programs in this section.
 
         .. tab:: Question
             
-            Fix 4 errors in the code below so that it correctly sets the red in all pixels to 0.  
+            Fix 4 syntax errors in the code below so that it correctly sets the red in all pixels to 0.  
 
             .. activecode:: ch11ex1q
                 :nocodelens:
@@ -331,7 +331,7 @@ Below is a selection of images that you can use in the programs in this section.
 
         .. tab:: Question
 
-           Fix the code below to correct set the green and blue values to 0.75 times their current values. 
+           Fix the code below to correctly set the green and blue values to 0.75 times their current values. 
            
            .. activecode::  ch11ex5q
                 :nocodelens:

@@ -45,7 +45,7 @@ Below is a selection of images that you can use in the programs in this section.
 
         .. tab:: Question
             
-            Make changes to 10 lines in the code below so that it runs and correctly changes the shirt color to green.  
+            Make changes to 10 lines in the code below so that it runs.  It changes areas that look red in the original to green.    
 
             .. activecode:: ch15ex1q
                 :nocodelens:
@@ -211,7 +211,7 @@ Below is a selection of images that you can use in the programs in this section.
 
         .. tab:: Question
 
-           Fix the indention in the code below so that it runs correctly.  It posterizes a picture.
+           Fix the indention in the code below so that it runs correctly.  It posterizes a picture which means that it reduces all the colors in a picture to a small number of colors – like the ones you might use if you were making a poster..
         
            .. activecode::  ch15ex3q
                 :nocodelens:
@@ -388,7 +388,7 @@ Below is a selection of images that you can use in the programs in this section.
 
         .. tab:: Question
 
-           Change the code below to use ``if`` and ``else`` rather than two ``if`` statements per color.
+           Change the code below to use ``if`` and ``else`` rather than two ``if`` statements per color.  It posterizes an image.
            
            .. activecode::  ch15ex5q
                 :nocodelens:
@@ -488,7 +488,7 @@ Below is a selection of images that you can use in the programs in this section.
 
         .. tab:: Question
 
-           Change the following code into a procedure.  Be sure to call it to test it.
+           Change the following code into a procedure. It posterizes an image. Be sure to call it to test it.
            
            .. activecode::  ch15ex6q
                 :nocodelens: 
@@ -593,7 +593,7 @@ Below is a selection of images that you can use in the programs in this section.
 
         .. tab:: Question
 
-           Change the following into a procedure.  Be sure to call it to test it.
+           Change the following into a procedure. It changes areas that are mostly red looking to green.  Be sure to call it to test it.
            
            .. activecode::  ch15ex7q
                 :nocodelens: 
@@ -800,7 +800,7 @@ Below is a selection of images that you can use in the programs in this section.
 
         .. tab:: Question
 
-           Write a procedure to remove the red on very red pixels.  
+           Write a procedure to remove the red on very red pixels (pixels that have a red value greater than 200 and a green and blue value of less than 100).  
            
            .. activecode::  ch15ex10q
                :nocodelens:

@@ -23,7 +23,7 @@ Chapter 4 Exercises
 
         .. tab:: Question
             
-            There are 3 errors in the following code.  Fix it to print correctly without errors.  
+            There are 3 syntax errors in the following code.  Fix it to print correctly without errors. It will print, "Your name is Carly and your favorite color is red". 
 
             .. activecode:: ch4ex1q
                 :nocodelens:
@@ -57,7 +57,7 @@ Chapter 4 Exercises
 
         .. tab:: Question
 
-           There is 1 error in the following code.  Fix it to print correctly without errors.  
+           You will get an error if you try to run the following code.  Fix the code to print correctly without errors.  It should print, "Your name is Carly and your age is 5."
            
            .. activecode::  ch4ex2q
                :nocodelens:
@@ -91,7 +91,7 @@ Chapter 4 Exercises
 
         .. tab:: Question
 
-           There are 3 errors in the following code.  Fix it to print correctly without errors.  
+           There are 3 syntax errors in the following code.  Fix it to print correctly without errors.  It will print your name and age.
         
            .. activecode::  ch4ex3q
                :nocodelens:
@@ -281,7 +281,7 @@ Chapter 4 Exercises
 
         .. tab:: Question
 
-           Write the code to get a color as input and print out the given color in all lowercase letters.  This can be helpful when you want to check for a particular color and want to compare the values with them both all lowercase.
+           Write code to get the name of a color from the user using the ``input`` function. Next convert the name of the color to all lowercase letters and print it. 
            
            .. activecode::  ch4ex8q
                 :nocodelens:
@@ -341,7 +341,7 @@ Chapter 4 Exercises
 
         .. tab:: Question
 
-           Write the code below to gather at least 3 inputs and output a mad lib (which will use the input to tell a silly story).
+           Write code below to get at least 3 values from the user using the ``input`` function and output a mad lib (which will use the input to tell a silly story).
            
            .. activecode::  ch4ex10q
                :nocodelens:

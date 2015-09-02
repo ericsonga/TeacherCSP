@@ -23,7 +23,7 @@ Chapter 17 Exercises
 
         .. tab:: Question
             
-            Fix 6 errors in the code below so that the code runs correctly.  
+            Fix 6 syntax errors in the code below so that the code runs correctly.  It will print a story.
 
             .. activecode:: ch17ex1q
                 :nocodelens:
@@ -90,7 +90,7 @@ Chapter 17 Exercises
 
         .. tab:: Question
 
-           Fix the 6 errors in the code below so that it runs.
+           Fix the 6 syntax errors in the code below so that it runs.  It will print a story.
            
            .. activecode::  ch17ex2q
                 :nocodelens:
@@ -169,7 +169,7 @@ Chapter 17 Exercises
 
         .. tab:: Question
 
-           Indent 6 lines and fix the call to the procedure so that it works correctly. 
+           Indent 6 lines and fix the call to the procedure so that it works correctly.  It will print a story.
            
            .. activecode::  ch17ex3q
                 :nocodelens:
@@ -231,7 +231,7 @@ Chapter 17 Exercises
 
         .. tab:: Question
 
-           Change 4 lines in the code below so that runs correctly without any errors.  
+           Change 4 lines in the code below so that runs correctly without any errors.  It will print a poem. 
         
            .. activecode::  ch17ex4q
                 :nocodelens:
@@ -286,7 +286,7 @@ Chapter 17 Exercises
 
         .. tab:: Question
 
-           Turn the following code into a function.  Pass in the string and return the name if it is found and "Unknown" if not.  Be sure to call the function to test it.  Test it both when the name is there and when it isn't. 
+           Turn the following code into a function. It finds the name in a string and prints it.  Pass in the string and return the name if it is found and "Unknown" if not.  Be sure to call the function to test it.  Test it both when the name is there and when it isn't. 
            
            .. activecode::  ch17ex5q
                 :nocodelens:

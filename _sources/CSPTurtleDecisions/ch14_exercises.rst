@@ -23,7 +23,7 @@ Chapter 14 Exercises
 
         .. tab:: Question
             
-            Fix 5 errors in the code below so that it runs correctly.   
+            Fix 5 errors in the code below so that it runs correctly. It will draw red and black horizontal stripes.  
 
             .. activecode:: ch14ex1q
                 :nocodelens:
@@ -160,7 +160,7 @@ Chapter 14 Exercises
 
         .. tab:: Question
 
-           Fix 5 errors in the code below so that it runs correctly.  
+           Fix 5 errors in the code below so that it runs correctly.  It will draw a repeating pattern from left to right until it hits the width of the window and then will move back to the left side of the window to continue the pattern.
         
            .. activecode::  ch14ex3q
                 :nocodelens:
@@ -238,7 +238,7 @@ Chapter 14 Exercises
 
         .. tab:: Question
 
-           Change the code below to use ``if`` and ``else``.  Also fix any errors.   You will need to change 3 lines.
+           Change the code below to use ``if`` and ``else``.  Also fix any errors.   You will need to change 3 lines.  The code will draw random connected lines in alternating colors of red and black.
            
            .. activecode::  ch14ex4q
                 :nocodelens:
@@ -304,7 +304,7 @@ Chapter 14 Exercises
 
         .. tab:: Question
 
-           Fix the indention so that the code runs correctly. 
+           Fix the indention so that the code runs correctly.  Two turtles will move towards each other and then turn around and move away from each other.
            
            .. activecode::  ch14ex5q
                 :nocodelens:
@@ -360,7 +360,7 @@ Chapter 14 Exercises
 
         .. tab:: Question
 
-           Change the following code to use a different color per stamp and use at least 3 colors.  You can use a counter and reset the counter to 0 after it reaches the number of colors.  Use ``if``, ``elif``, and ``else``. 
+           The following code stamps a circle of turtles.  Change the following code to use a different color per stamp and use at least 3 colors.  You can use a counter and reset the counter to 0 after it reaches the number of colors.  Use ``if``, ``elif``, and ``else``. 
            
            .. activecode::  ch14ex6q
                 :nocodelens: 
@@ -414,7 +414,7 @@ Chapter 14 Exercises
 
         .. tab:: Question
 
-           Change the code below to cycle through at least 3 colors.  Use ``if``, ``elif``, and ``else``. 
+           The following code stamps turtles in a spiral.  Change the code below to cycle through at least 3 colors.  Use ``if``, ``elif``, and ``else``. 
            
            .. activecode::  ch14ex7q
                 :nocodelens: 
@@ -468,7 +468,7 @@ Chapter 14 Exercises
 
         .. tab:: Question
 
-           Change the code below to use 5 different colors.  Use ``y % 5`` to get 5 possible values.
+           The following code draws vertical stripes alternating between red and black.  Change the code below to use 5 different colors.  Use ``y % 5`` to get 5 possible values.
            
            .. activecode::  ch14ex8q
                 :nocodelens:

@@ -432,7 +432,7 @@ Chapter 9 Exercises
 
         .. tab:: Question
 
-           Create a function that encodes a string.  Pass in the string to be encoded and the string to use to encode the string as well.  
+           Create another function that encodes a string.  Pass in both the string to be encoded *and* the string to use to encode the string as well.  
            
            .. activecode::  ch9ex10q
                :nocodelens:

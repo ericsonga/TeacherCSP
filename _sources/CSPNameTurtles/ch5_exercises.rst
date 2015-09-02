@@ -23,7 +23,7 @@ Chapter 5 Exercises
 
         .. tab:: Question
             
-            There are 3 errors in the following code.  Fix it to work correctly without errors.  
+            There are 3 syntax errors in the following code.  Fix it to work correctly without errors.  
 
             .. activecode:: ch5ex1q
                 :nocodelens:
@@ -91,7 +91,7 @@ Chapter 5 Exercises
 
         .. tab:: Question
 
-           The following code has 3 errors.  Fix the errors so that the code runs. 
+           The following code has 3 syntax errors.  Fix the errors so that the code runs. 
         
            .. activecode::  ch5ex3q
                 :nocodelens:
@@ -130,7 +130,7 @@ Chapter 5 Exercises
 
         .. tab:: Question
 
-           The following code draws two lines of a rectangle.  Add code to finish the rectangle.  
+           The following code draws two lines of a rectangle.  Add code to finish drawing the rectangle.  
            
            .. activecode::  ch5ex4q
                 :nocodelens:

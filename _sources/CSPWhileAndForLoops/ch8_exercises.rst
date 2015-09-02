@@ -23,7 +23,7 @@ Chapter 8 Exercises
 
         .. tab:: Question
             
-            Fix the 5 errors in the code below to print a countdown of the numbers from 10 to 0.  
+            Fix the 5 syntax errors in the code below to print a countdown of the numbers from 10 to 0.  
 
             .. activecode:: ch8ex1q
                 :nocodelens:

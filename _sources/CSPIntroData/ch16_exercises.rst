@@ -23,7 +23,7 @@ Chapter 16 Exercises
 
         .. tab:: Question
             
-            Fix 6 errors in the code below so that the code runs correctly.  
+            Fix syntax 6 errors in the code below so that the code runs correctly. It should set ``combined`` to the concatenation of ``start`` and ``name``.  It should print the length of the combined string, print the combined string, and it should print the result of ``name * 3``. 
 
             .. activecode:: ch16ex1q
                 :nocodelens:
@@ -62,7 +62,7 @@ Chapter 16 Exercises
 
         .. tab:: Question
 
-           Fix the 5 errors in the code below so that it runs.
+           Fix the 5 syntax errors in the code below so that it runs.  It should print the length of ``myFirstList`` and print the result of ``myFirstList * 3``.  Then it should set ``mySecondList`` to the concatenation of ``myFirstList`` and a list containing ``321.4``.  Then it should print the value of ``mySecondList``.
            
            .. activecode::  ch16ex2q
                 :nocodelens:
@@ -99,7 +99,7 @@ Chapter 16 Exercises
 
         .. tab:: Question
 
-           Fix 5 errors in the code below so that it runs and prints the contents of ``items``.  
+           Fix 5 syntax errors in the code below so that it runs and prints the contents of ``items``.  
            
            .. activecode::  ch16ex3q
                 :nocodelens:
@@ -172,7 +172,7 @@ Chapter 16 Exercises
 
         .. tab:: Question
 
-           Fix 4 errors in the code below. 
+           Fix 4 syntax errors in the code below.  After the code executes the list ``soFar`` should contain the reverse of the ``source`` list.  
            
            .. activecode::  ch16ex5q
                 :nocodelens:
@@ -266,7 +266,7 @@ Chapter 16 Exercises
 
         .. tab:: Question
 
-           Change the following into a procedure.  Have it take the starting number for the countdown as a parameter.  Print each value till it gets to 0.
+           Change the following into a procedure. It prints a countdown from 5 to 0.  Have it take the starting number for the countdown as a parameter.  Print each value till it gets to 0.
            
            .. activecode::  ch16ex7q
                 :nocodelens: 
@@ -303,7 +303,7 @@ Chapter 16 Exercises
 
         .. tab:: Question
 
-           Write a function that returns the values at the odd indices in a list.
+           Write a function that returns the values at the odd indices in a list.  The function should take the number list as a parameter.  
            
            .. activecode::  ch16ex8q
                 :nocodelens:

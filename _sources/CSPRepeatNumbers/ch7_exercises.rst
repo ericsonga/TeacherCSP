@@ -59,7 +59,7 @@ Chapter 7 Exercises
 
         .. tab:: Question
 
-           Change the code below into a function that returns the sum of a list of numbers.  Pass the list of numbers and print the result to test the function.
+           Change the code below into a function that returns the sum of a list of numbers.  Pass the list of numbers as a parameter and print the result of calling the function.
            
            .. activecode::  ch7ex2q
                 :nocodelens:
@@ -99,7 +99,7 @@ Chapter 7 Exercises
 
         .. tab:: Question
 
-           Fill in the missing code on lines 3 and 4 to loop through the list of numbers and calculate the project.  Add a line at the end to print the result.  
+           Fill in the missing code on lines 3 and 4 to loop through the list of numbers and calculate the product.  Add a line at the end to print the value in ``product``.  
         
            .. activecode::  ch7ex3q
                 :nocodelens:
@@ -136,7 +136,7 @@ Chapter 7 Exercises
 
         .. tab:: Question
 
-           Modify the code below to create a function that calculates the product of a list of numbers and returns it.  Call the function to test it and print the result.   
+           Modify the code below to create a function that calculates the product of a list of numbers and returns it. Have the function take a list of numbers as a parameter.  Call the function to test it and print the result of calling the function.   
            
            .. activecode::  ch7ex4q
                 :nocodelens:

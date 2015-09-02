@@ -23,7 +23,7 @@ Chapter 10 Exercises
 
         .. tab:: Question
             
-            Fix 4 errors in the code below to correctly draw a square
+            Fix 4 syntax errors in the code below to correctly draw a square
 
             .. activecode:: ch10ex1q
                 :nocodelens:
@@ -112,7 +112,7 @@ Chapter 10 Exercises
 
         .. tab:: Question
 
-           Fill in values for ``x`` and ``y`` to allow the code below to correctly draw a pentagon.     
+           Fill in values for ``x`` on line 5 and ``y`` on line 7 to allow the code below to correctly draw a pentagon.     
         
            .. activecode::  ch10ex3q
                 :nocodelens:
@@ -298,7 +298,7 @@ Chapter 10 Exercises
 
         .. tab:: Question
 
-           Rewrite the following code to create a procedure to draw a square with a turtle.  Pass the turtle and the size of the square as input to the procedure. 
+           Rewrite the following code to create a procedure to draw a square with a turtle.  Pass the turtle and the size of the square as input (parameters) to the procedure. 
            
            .. activecode::  ch10ex7q
                 :nocodelens: 
@@ -341,7 +341,7 @@ Chapter 10 Exercises
 
         .. tab:: Question
 
-           Rewrite the following code to create a procedure to draw a rectangle with a turtle.  Pass the turtle and the length and width of the rectangle. 
+           Rewrite the following code to create a procedure to draw a rectangle with a turtle.  Pass the turtle and the length and width of the rectangle as parameters to the procedure. 
            
            .. activecode::  ch10ex8q
                 :nocodelens:
@@ -388,7 +388,7 @@ Chapter 10 Exercises
 
         .. tab:: Question
 
-           Create a procedure to draw a pattern of 4 turtles at the 4 corners of a square using the ``stamp`` procedure.  
+           Create a procedure to draw 4 turtles at the 4 corners of a square using the ``stamp`` procedure.  
            
            .. activecode::  ch10ex9q
                 :nocodelens:
@@ -425,7 +425,7 @@ Chapter 10 Exercises
 
         .. tab:: Question
 
-           Write a procedure that takes a turtle and a number of sides and draws a polygon with that number of sides. 
+           Write a procedure that takes a turtle and a number of sides as parameters and draws a polygon with that number of sides. 
            
            .. activecode::  ch10ex10q
                :nocodelens:

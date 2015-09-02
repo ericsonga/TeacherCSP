@@ -32,6 +32,7 @@ Chapter 3 Exercises
             #. ``9 % 5``
             #. ``6 % 6``
             #. ``2 % 7``
+            #. ``3 / 0``
 
             .. activecode:: ch3_ex1
                 :nocodelens:
@@ -46,6 +47,7 @@ Chapter 3 Exercises
             #. ``9 % 5 = 4``
             #. ``6 % 6 = 0``
             #. ``2 % 7 = 2``
+            #. error - you can't divide by zero
 
         .. tab:: Discussion
 
@@ -318,7 +320,7 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-           Finish lines 5 and 6 in the code below to print how many apples you can buy when apples cost 0.60 and you want to get 3 pears and they cost $1.2 each and you have $8.00.  It should print 7.33333333333.  
+           Finish lines 5 and 6 in the code below to print how many apples you can buy when apples cost 0.60 and you want to get 3 pears and they cost $1.2 each and you have $8.00.  It should print 7.33333333333.  Since you can't buy 7.333 apples can you also figure out how to make it print just 7?  
            
            .. activecode::  ch3ex9q
                 :nocodelens:
@@ -333,7 +335,7 @@ Chapter 3 Exercises
 
         .. tab:: Answer
         
-            Calculate ``fundsAfterPears`` as ``funds - (pricePerPear * numPears)``.  Calculate ``numApples`` as ``fundsAfterPears / pricePerApple``.  
+            Calculate ``fundsAfterPears`` as ``funds - (pricePerPear * numPears)``.  Calculate ``numApples`` as ``fundsAfterPears / pricePerApple``.  You can throw away the fractional part using ``int(num)``.  
             
             .. activecode::  ch3ex9a
                 :nocodelens:

@@ -77,7 +77,7 @@ Chapter 6 Exercises
 
         .. tab:: Question
 
-           There are 2 errors in the following code.  Fix the errors so that it runs.  
+           There are 2 syntax errors in the following code.  Fix the errors so that it runs.  
            
            .. activecode::  ch6ex2q
                 :nocodelens:
@@ -132,7 +132,7 @@ Chapter 6 Exercises
 
         .. tab:: Question
 
-           The following code has 4 errors.  Fix the errors so that the code runs. 
+           The following code has 4 syntax errors.  Fix the errors so that the code runs. 
         
            .. activecode::  ch6ex3q
                 :nocodelens:
@@ -258,7 +258,7 @@ Chapter 6 Exercises
 
         .. tab:: Question
 
-           Change the square procedure below to take a size parameter and go forward by the specified size each time.
+           Change the square procedure below to take a size parameter and have the turtle go forward by the specified size each time.
            
            .. activecode::  ch6ex5q
                 :nocodelens:
@@ -313,7 +313,7 @@ Chapter 6 Exercises
 
         .. tab:: Question
 
-           Change the code below to create a function that calculates the cost of a trip.  It will takes as input the ``miles``, ``milesPerGallon``, and ``pricePerGallon`` and will return the cost of the trip.  
+           Change the code below to create a function that calculates the cost of a trip.  It should take the ``miles``, ``milesPerGallon``, and ``pricePerGallon`` as parameters and should return the cost of the trip.  
            
            .. activecode::  ch6ex6q
                 :nocodelens: 
@@ -352,7 +352,7 @@ Chapter 6 Exercises
 
         .. tab:: Question
 
-           Change the code below to create a function to return the number of miles you can drive.  It will take as input the ``tankCapacity``, ``theAmountLeft``, and the ``milesPerGallon``.  
+           Change the code below to create a function to return the number of miles you can drive.  It will take as input (parameters) the ``tankCapacity``, ``theAmountLeft``, and the ``milesPerGallon``.  
            
            .. activecode::  ch6ex7q
                 :nocodelens: 
@@ -428,7 +428,7 @@ Chapter 6 Exercises
 
         .. tab:: Question
 
-           Create a procedure to draw a triangle and call it.  Be sure to take the size of the triangle as input to the procedure.
+           Create a procedure to draw a triangle and call it.  Be sure to take the length of each side of the triangle as input to the procedure.
            
            .. activecode::  ch6ex9q
                 :nocodelens:

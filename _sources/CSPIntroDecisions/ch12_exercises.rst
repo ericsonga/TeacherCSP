@@ -23,7 +23,7 @@ Chapter 12 Exercises
 
         .. tab:: Question
             
-            Fix 3 errors in the code below so that it correctly prints "x is less than 3" and then "All done".
+            Fix 3 syntax errors in the code below so that it correctly prints "x is less than 3" and then "All done" when x is less than 3.
 
             .. activecode:: ch12ex1q
                 :nocodelens:
@@ -57,7 +57,7 @@ Chapter 12 Exercises
 
         .. tab:: Question
 
-           Fix 3 errors in the code below to use a price of 1.45 if the weight is less than 1 and a price of 1.15 otherwise.  
+           Fix the indention in the code below to use a price of 1.45 if the weight is less than 1 and a price of 1.15 otherwise.  There is also one syntax error.
            
            .. activecode::  ch12ex2q
                 :nocodelens:
@@ -188,7 +188,7 @@ Chapter 12 Exercises
 
         .. tab:: Question
 
-           Finish the conditional on line 3 to print "You can go out!" if either cleanedRoom or finishedHomework is true (not 0).
+           Finish the conditional on line 3 to print "You can go out!" if either cleanedRoom or finishedHomework is true (not 0). It should always print "All done" as well.
            
            .. activecode::  ch12ex5q
                 :nocodelens:

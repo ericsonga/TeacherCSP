@@ -260,10 +260,10 @@ Chapter 17 Exercises
 
                 input = "Roses,Violets,Sugar,Sue"
                 pieces = input.split(",")
-                flower1 = pieces[1]
-                flower2 = pieces[2]
-                spice = pieces[3]
-                name = pieces[4]
+                flower1 = pieces[0]
+                flower2 = pieces[1]
+                spice = pieces[2]
+                name = pieces[3]
                 line1 = flower1 + " are red"
                 line2 = flower2 + " are blue"
                 line3 = spice + " is sweet"

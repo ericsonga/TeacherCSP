@@ -303,7 +303,7 @@ Chapter 16 Exercises
 
         .. tab:: Question
 
-           Write a function that returns the values at the odd indices in a list.  The function should take the number list as a parameter.  
+           Write a function that returns the values at the odd indices in a list.  The function should take the number list as a parameter.  If it is passed [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] for example, it should return [1, 3, 5, 7, 9].  
            
            .. activecode::  ch16ex8q
                 :nocodelens:
@@ -370,14 +370,14 @@ Chapter 16 Exercises
 
         .. tab:: Question
 
-           Write a function to return the reverse of a list, but with only every other item from the original list starting at the end of the list.    
+           Write a function to return the reverse of a list, but with only every other item from the original list starting at the end of the list.  So, if it is passed the list [0,1,2,3,4,5] for example, it should return the list [5, 3, 1]. 
            
            .. activecode::  ch16ex10q
                :nocodelens:
 
         .. tab:: Answer
         
-            Define the 
+            Define the function as shown below.  
             
             .. activecode::  ch16ex10a
                 :nocodelens:

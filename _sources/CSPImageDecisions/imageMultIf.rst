@@ -66,7 +66,7 @@ We can use multiple if's to reduce the number of colors in an image.  Let's say 
     
 Rewrite the code for posterizing an image using if and else rather than multiple if's.  Test that it still works correctly. 
 
-.. mchoicemf:: 15_4_1_posterize1
+.. mchoice:: 15_4_1_posterize1
    :answer_a: 8
    :answer_b: 3
    :answer_c: 120

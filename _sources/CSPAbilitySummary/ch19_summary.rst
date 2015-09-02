@@ -10,13 +10,13 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-20-2-
+	:prefix: csp-19-2-
 
 
-Chapter 20 - Concept Summary
+Chapter 19 - Concept Summary
 ============================
 
-Chapter 20 included the following concepts from computing.
+Chapter 19 included the following concepts from computing.
 
 ..	index::
     single: abstraction

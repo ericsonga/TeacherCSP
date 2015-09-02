@@ -18,7 +18,7 @@
 What's the largest pollution values?
 ======================================
 
-This program uses the same data file that we have been using, but if you want to see **all** of the data click on the *Show* button below.  Once it appears, you can hide it again by clicking on the *Hide* button.
+This section uses the same data file that we have been using, but if you want to see **all** of the data click on the *Show* button below.  Once it appears, you can hide it again by clicking on the *Hide* button.
 
 .. reveal:: pol_Data4
     :showtitle: Show
@@ -411,24 +411,38 @@ This program uses the same data file that we have been using, but if you want to
 One of the interesting questions to explore is, "Which city has the worst pollution?" The program below figures that out for the PM 2.5 value.  It will read all the data in, then set ``max25`` (the maximum PM 2.5 value) to zero.  It will then loop through all the city data and if the current pollution (in ``new25``) is greater than ``max25``, it will save that value in ``max25`` and save that city name as ``maxCity``.  We need the ``float`` function to convert the string into a number that we can compare.
 
 .. activecode:: max25
-   :tour_1: "Structural tour"; 1: web3-line1; 2: web3-line2; 3: web3-line3; 5: web3-line5; 6: web3-line6; 7: web3-line7; 8: web3-line8; 9: web3-line9; 10: web3-line10; 11: web3-line11; 12: web3-line12; 13: web3-line13;
+   :tour_1: "Structural tour"; 2: web3-line1; 3: web3-line2; 4: web3-line3; 7: web3-line5; 8: web3-line6; 11: web3-line7; 14: web3-line8; 17: web3-line9; 20: web3-line10; 23: web3-line11; 24: web3-line12; 27: web3-line13;
    :nocodelens:
   
+   # read all the lines 
    inFile = open("uspoll.txt","r")
    lines = inFile.readlines()
    inFile.close()
 
+   # initialize the variables
    maxCity = ''
-   max25 = 0 # initialize max25
+   max25 = 0 
+   
+   # loop through the lines
    for line in lines:
+   
+       # split at :
        values = line.split(":")
-       new25 = float(values[2]) # get the current value
+       
+       # get the PM 2.5 pollution
+       new25 = float(values[2]) 
+       
+       # if current >  max
        if new25 > max25:
+       
+           # save the new max info
            maxCity = values[0]
            max25 = new25 # save the new maximum
-   print("Largest PM 2.5 value is ",max25," in ",maxCity)
+           
+   # print the largest PM 2.5 value
+   print("Largest is ",max25," in ",maxCity)
    
-.. mchoicemf:: 18_4_3_max10
+.. mchoice:: 18_4_3_max10
    :answer_a: new10 = float(values[0])
    :answer_b: new10 = float(values[1])
    :answer_c: new10 = float(values[2])
@@ -437,7 +451,7 @@ One of the interesting questions to explore is, "Which city has the worst pollut
    :feedback_b: This gets the value of PM 10.
    :feedback_c: This gets the value of PM 2.5. 
 
-   Which of the following would return the value of the PM 10 pollution instead at line 9?  
+   Which of the following would return the value of the PM 10 pollution instead at line 17?  
    
 .. tabbed:: tab_max_pol
 
@@ -483,7 +497,7 @@ One of the interesting questions to explore is, "Which city has the worst pollut
                   max10 = new10  # save the new maximum
           print("Largest PM 10 value is ",max10," in ",maxCity)
    
-.. mchoicemf:: 18_4_3_max10_max25_q
+.. mchoice:: 18_4_3_max10_max25_q
    :answer_a: The same city has the maximum value for both PM 2.5 and PM 10.
    :answer_b: Different cities have the maximums, but they are in the same state.
    :answer_c: Different cities in different states have the maximum values.
@@ -493,4 +507,36 @@ One of the interesting questions to explore is, "Which city has the worst pollut
    :feedback_c: You did not actually run and change the program, did you?
 
    Which of the following is true about the cities with the maximum PM 2.5 and PM 10 values? 
+   
+.. parsonsprob:: 18_4_1_maxPM25
+
+   The following program prints the maximum PM 2.5 pollution found, but the code is mixed up.  Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or have the wrong indention.
+   -----
+   # read all the lines 
+   inFile = open("uspoll.txt","r")
+   lines = inFile.readlines()
+   inFile.close()
+
+   # initialize the variables
+   maxCity = ''
+   max25 = 0 
+   =====
+   # loop through the lines
+   for line in lines:
+   =====
+       # split at :
+       values = line.split(":")
+   =====    
+       # get the PM 2.5 pollution
+       new25 = float(values[2]) 
+   =====    
+       # if current > max
+       if new25 > max25:
+   =====    
+           # save the new max info
+           maxCity = values[0]
+           max25 = new25 
+   =====        
+   # print the largest PM 2.5 value
+   print("Largest is ",max25," in ",maxCity)
 

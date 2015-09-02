@@ -53,7 +53,7 @@ This code calculates ``maxX`` as half the width of the drawing space.  This is u
 
 For more information on what this code is doing listen to the audio tour.
        
-.. mchoicemf:: 14_3_1_finish_stripes
+.. mchoice:: 14_3_1_finish_stripes
    :answer_a: 10
    :answer_b: 16
    :answer_c: 17

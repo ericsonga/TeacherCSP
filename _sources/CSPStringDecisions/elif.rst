@@ -81,7 +81,7 @@ You can use as many ``elif`` statements as you need.  You can only have one ``el
     else:
         print("x is in the fourth quartile - .75 < x <= 1")
        
-.. mchoicemf:: 13_4_2_elif1
+.. mchoice:: 13_4_2_elif1
    :answer_a: x is in the first quartile - x <= .25
    :answer_b: x is in the second quartile - .25 < x <= .5
    :answer_c: x is in the third quartile - .5 < x <= .75
@@ -112,7 +112,7 @@ Here's the fortune teller code from before but now it is written using ``elif`` 
     else:
         print("You will ace a test.")
        
-.. mchoicemf:: 13_4_3_fortune-elif-1
+.. mchoice:: 13_4_3_fortune-elif-1
    :answer_a: 1
    :answer_b: 2
    :answer_c: 5

@@ -66,7 +66,7 @@ Notice that the code above loops from 0 to the width - 1 as the last value throu
     
 Try other ways to detect big changes in color from one pixel to another.  
     
-.. mchoicemf:: 15_3_1_Edge
+.. mchoice:: 15_3_1_Edge
    :answer_a: 0
    :answer_b: 2
    :answer_c: 256

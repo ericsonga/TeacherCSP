@@ -20,7 +20,7 @@ What's the average PM 2.5 pollution?
 
 This time, we take every PM 2.5 value and add them all together, and we also increment a count for each value, so we can compute an average.
 
-This program uses the same data file that we have been using, but if you want to see **all** of the data click on the *Show* button below.  Once it appears, you can hide it again by clicking on the *Hide* button.
+This section uses the same data file that we have been using, but if you want to see **all** of the data click on the *Show* button below.  Once it appears, you can hide it again by clicking on the *Hide* button.
 
 .. reveal:: pol_Data6
     :showtitle: Show
@@ -411,21 +411,32 @@ This program uses the same data file that we have been using, but if you want to
        </pre>
 
 .. activecode:: average25
-   :tour_1: "Structural tour"; 1-3: web5-line1-3; 5-6: web5-line5-6; 7: web5-line7; 8: web5-line8; 9: web5-line9; 10: web5-line10; 11: web5-line11; 13: web5-line13;
+   :tour_1: "Structural tour"; 2-4: web5-line1-3; 7-8: web5-line5-6; 11: web5-line7; 14: web5-line8; 17: web5-line9; 20: web5-line10; 21: web5-line11; 24: web5-line13;
    :nocodelens:
 
+   # read all the lines 
    inFile = open("uspoll.txt","r")
    lines = inFile.readlines()
    inFile.close()
      
+   # initialize the variables
    total25 = 0
    count = 1.0
+   
+   # loop through the lines
    for line in lines:
+   
+       # split at :
        values = line.split(":")
+       
+       # get the PM 2.5 pollution
        new25 = float(values[2])
+       
+       # add to the total and count
        total25 = total25 + new25
        count = count + 1
 	 
+   # print the average PM 2.5 value
    print("Average PM 2.5 value is ",total25/count)
 
 Now, replace the lines that start with ``#`` below to write the code to get the average PM 10 value:
@@ -446,3 +457,32 @@ Now, replace the lines that start with ``#`` below to write the code to get the 
        count = count + 1
 	 
    print("Average PM 10 value is ",total10/count)
+   
+.. parsonsprob:: 18_6_1_avg25
+
+   The following program prints the maximum PM 2.5 pollution found, but the code is mixed up.  Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or have the wrong indention. 
+   -----
+   # read all the lines 
+   inFile = open("uspoll.txt","r")
+   lines = inFile.readlines()
+   inFile.close()
+
+   # initialize the variables
+   total25 = 0
+   count = 1.0
+   =====
+   # loop through the lines
+   for line in lines:
+   =====
+       # split at :
+       values = line.split(":")
+   =====    
+       # get the PM 2.5 pollution
+       new25 = float(values[2])
+   =====   
+       # add to the total and count
+       total25 = total25 + new25
+       count = count + 1
+   ===== 
+   # print the average PM 2.5 value
+   print("Average PM 2.5 value is ",total25/count)

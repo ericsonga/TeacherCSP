@@ -25,4 +25,5 @@ Breaking Strings into Pieces
 - Use lists
 - Use indices to get at parts of lists
 - Show how parameters can be used for input to a procedure
+- Use find and slice to create parts of strings
 

@@ -8,24 +8,12 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-19-1-
+	:prefix: csp-18-7-
 
-State Data
+Most Populated and Least Populated States
 ======================================================
 
-In this chapter, we're going to use another set of data (about the states) to give us insight into how we analyze the pollution data.
-
-*Learning Objectives*:
-
-This chapter of the book will address the following from the Computer Science Principles course:
-
- - *Big Idea 3: Data and Information*:
- - LO 3.1.1: ... Use computers to process information, find patterns, and test hypotheses about digitally processed information to gain insight and knowledge.
- - LO 3.2.1: ... Extract information from data to discover and explain connections, patterns, or trends. 
- - LO 3.2.2: ... Use large data sets to explore and discover information and knowledge. 
- 
-Which states are the biggest and smallest?
----------------------------------------------
+We're going to use another set of data (about the states) to give us insight into how we analyze the pollution data.
 
 The top three largest states in population are:
 
@@ -51,5 +39,17 @@ Wyoming                 582,658
 The three largest states in land area are Alaska, Texas, and California.  The three smallest are Connecticutt, Delaware, and Rhode Island.
 
 The three *richest* states (by per capita income) are Maryland, Alaska, and New Jersey.  The three poorest are Arkansas, West Virginia, and Mississippi.
+
+Do bigger or richer states have more pollution?
+------------------------------------------------
+
+What causes more pollution?
+ 
+ - Maybe bigger states have more *stuff* and that leads to more pollution?
+ - Maybe smaller states have more things crammed into a smaller place, and that leads to more pollution?
+ - Maybe richer states have more industry, and that leads to more pollution?
+ - Maybe more populous states have more people (so more cars and houses...) and that leads to more pollution?
+
+Let's give you a way of asking these questions.  Let's write a program to get the average pollution **for a state**.
 
 

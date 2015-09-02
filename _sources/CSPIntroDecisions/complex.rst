@@ -50,7 +50,7 @@ A common use of ``and`` is to check that a value is in a range between a minimum
       print ("x is a number from 1 to 10")
   print ("All done")
   
-.. mchoicemf:: 12_5_1_and1
+.. mchoice:: 12_5_1_and1
   :answer_a: 1 to 10
   :answer_b: 0 to 9
   :answer_c: 1 to 9
@@ -78,7 +78,7 @@ A common use of ``or`` is to check if either one of two conditions are true.  Fo
       print ("You can go out!")
   print ("All done")
   
-.. mchoicemf:: 12_5_2_or1
+.. mchoice:: 12_5_2_or1
   :answer_a: all values of x
   :answer_b: 1 to 9
   :answer_c: 0 to 9

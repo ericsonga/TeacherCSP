@@ -114,7 +114,7 @@ How does this program work?  Try pressing the |audiobutton| button above to list
 
 Try editing the program above and running it to answer this question:
 
-.. mchoicemf:: 3_5_1_Chicago_2_Dallas_Q1
+.. mchoice:: 3_5_1_Chicago_2_Dallas_Q1
    :answer_a: Yes
    :answer_b: No
    :answer_c: We should fly instead.
@@ -125,7 +125,7 @@ Try editing the program above and running it to answer this question:
 
    If the cost per gallon drops to $3.45, can we drive from Chicago to Dallas for less than $90 in gas?
    
-.. mchoicemf:: 3_5_2_Chicago_2_Dallas_Q2
+.. mchoice:: 3_5_2_Chicago_2_Dallas_Q2
    :answer_a: 3.45
    :answer_b: 3.65
    :answer_c: costPerGallon

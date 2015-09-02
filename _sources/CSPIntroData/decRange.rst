@@ -15,7 +15,7 @@
     
 .. 	qnum::
 	:start: 1
-	:prefix: csp-16-8-
+	:prefix: csp-16-7-
 		   
 Using a Negative Change Value with Range
 ==========================================
@@ -31,20 +31,27 @@ The ``range(start, end, change)`` function can have 3 parameters: the ``start``,
   :tour_1: "Line by Line Tour"; 1: range1-line1; 2: range1-line2;
 
   for index in range(5, -1, -1):
-      print index
+      print(index)
 
 Here's a program we saw earlier, but with the ``range`` function parameters changed to create a decreasing list from the last valid index (the length of the list minus 1) to 0.  
 
 .. activecode:: Build_Up_String
-  :tour_1: "Line by Line Tour"; 1: lst8-line1; 2: lst8-line2; 3: lst8-line3; 4: lst8-line4; 5: lst8-line5; 
+  :tour_1: "Line by Line Tour"; 2: lst8-line1; 3: lst8-line2; 6: lst8-line3; 9: lst8-line4; 12: lst8-line5; 
 
+  # initialize the variables
   source = ["This","is","a","list"]
   slowly = []
+  
+  # loop from the last index to the first (0)
   for index in range(len(source)-1,-1,-1):
+    
+      # append the lists
       slowly = [source[index]] + slowly
-      print slowly
+      
+      # print the current value of the list
+      print(slowly)
 
-.. mchoicemf:: 16_8_1_lenMinusOne
+.. mchoice:: 16_7_1_lenMinusOne
 	  :answer_a: If we started with len(source), we would get an error for indexing past the end of the list
 	  :answer_b: It is a mistake and should be len(source)
 	  :answer_c: Because we have -1 in the other two spots
@@ -63,20 +70,20 @@ Can you figure out what the following program does?
   slowly = ""
   for index in range(len(source)-1,-1,-1):
       slowly = slowly + source[index]
-      print slowly
+      print(slowly)
 
 Try to figure out what the program above does, then try to answer this question.
 
-.. mchoicemf:: 16_8_2_ReversedQ
-			  :answer_a: <image src="../_static/reversal.png"/>
-			  :answer_b: <image src="../_static/build-up-rightway.png"/>
-			  :answer_c: <image src="../_static/build-up-missed-one.png"/>
-			  :correct: a
-			  :feedback_a: This takes letters from the end of the string forward, and adds them to the end
-			  :feedback_b: This one is adding up letters in the forward direction
-			  :feedback_c: This one ends at 0 (or rather, 1)
+.. mchoice:: 16_7_2_ReversedQ
+   :answer_a: <image src="../_static/reversal.png"/>
+   :answer_b: <image src="../_static/build-up-rightway.png"/>
+   :answer_c: <image src="../_static/build-up-missed-one.png"/>
+   :correct: a
+   :feedback_a: This takes letters from the end of the string forward, and adds them to the end
+   :feedback_b: This one is adding up letters in the forward direction
+   :feedback_c: This one ends at 0 (or rather, 1)
 
-		   	  Which one of these is the output of that program?
+   Which one of these is the output of that program?
 
 
 

@@ -10,7 +10,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-17-5-
+	:prefix: csp-17-8-
 
 
 Chapter 17 - Concept Summary
@@ -19,14 +19,20 @@ Chapter 17 - Concept Summary
 Chapter 17 included the following concepts from computing.
 
 ..	index::
+    single: find
     single: list
     single: index
+    single: out of range error
     single: parameter
+    single: slice
     single: split
 
+- **Find** - The ``source.find(target)`` function returns the position of the target string in the source string if it is there or -1 if it is not.
 - **List** - A list holds items in order.  An example of a list is ``[1, 2, 3]``.   
 - **Index** - The index is the position of the item in a list or string.  In Python the first item is at index 0.  
+- **Out of Range Error** - An out of range error will occur if you try to access an item in a list and give it an invalid index.  The first item in a list is at index 0 and the last is at one less than the length.
 - **Parameter** - A parameter is input to a procedure or function that is specified when you define the procedure or function.  This is also called a **formal parameter**. The parameter will be assigned a value when the procedure or function is called.
+- **Slice** - The statement ``source[pos]`` returns the character at that position in the string.  This uses an index to get the character from the string at that index.  The statement ``source[start:end]`` returns the characters from start to one before end.  It uses two indices the start index (inclusive) and the end index (exclusive) to return a substring of the string from the start character to one before the end character.
 - **Split** - The ``split`` function returns a list of strings separated by a specified character.  For example, if ``message = "Nora, Jones, 15"`` then ``message.split(",")`` would return ``['Nora', 'Jones', '15']``.
 
 .. note::  

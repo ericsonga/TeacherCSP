@@ -286,17 +286,18 @@ Chapter 16:  Working with Collections
    CSPIntroData/workColls.rst
    CSPIntroData/workStrings.rst
    CSPIntroData/workLists.rst
-   CSPIntroData/outOfRange.rst
-   CSPIntroData/forEach.rst
+   CSPIntroData/listIndexes.rst
    CSPIntroData/revList.rst
    CSPIntroData/rangeChange.rst
    CSPIntroData/decRange.rst
+   CSPIntroData/forEach.rst
    CSPIntroData/rainfall.rst
    CSPIntroData/teacherRainfall.rst
+   CSPIntroData/ch16_exercises.rst
    CSPIntroData/ch16_summary.rst
    
-Chapter 17: Getting pieces out of strings
-::::::::::::::::::::::::::::::::::::::::::::
+Chapter 17: Getting pieces out of strings and lists
+::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :maxdepth: 2
@@ -304,7 +305,10 @@ Chapter 17: Getting pieces out of strings
    CSPStringPieces/piecesstrings.rst
    CSPStringPieces/madLibPieces.rst
    CSPStringPieces/split.rst
+   CSPStringPieces/outOfRange.rst
    CSPStringPieces/strProcParam.rst
+   CSPStringPieces/createPartsOfStrings.rst
+   CSPStringPieces/ch17_exercises.rst
    CSPStringPieces/ch17_summary.rst
    CSPStringPieces/exam16a17.rst
    
@@ -320,29 +324,19 @@ Chapter 18: Working with Data on the Web
    CSPWebData/largestPoll.rst
    CSPWebData/lowestPoll.rst
    CSPWebData/avgPoll.rst
+   CSPWebData/datastates.rst
+   CSPWebData/findPollState.rst
+   CSPWebData/ch18_exercises.rst
    CSPWebData/ch18_summary.rst
    
-Chapter 19: Comparing Data Sets
-::::::::::::::::::::::::::::::::::::::::::::
-
-.. toctree::
-   :maxdepth: 2
-   
-
-   CSPDataSets/datastates.rst
-   CSPDataSets/pollQuestions.rst
-   CSPDataSets/findPollState.rst
-   CSPDataSets/ch19_summary.rst
-   
-   
-Chapter 20: Computer Abilities Summary
+Chapter 19: Computer Abilities Summary
 ::::::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :maxdepth: 2
    
    CSPAbilitySummary/thatsall.rst
-   CSPAbilitySummary/ch20_summary.rst
+   CSPAbilitySummary/ch19_summary.rst
    CSPAbilitySummary/examPost.rst
    
 Indices

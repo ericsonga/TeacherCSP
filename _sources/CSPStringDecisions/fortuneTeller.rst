@@ -31,7 +31,7 @@ You can tell someone's fortune by having them pick a number and then using ``if`
     if num == "5":
         print("You will ace a test.")
        
-.. mchoicemf:: 13_3_1_fortune1
+.. mchoice:: 13_3_1_fortune1
    :answer_a: 1
    :answer_b: 2
    :answer_c: 5
@@ -44,7 +44,7 @@ You can tell someone's fortune by having them pick a number and then using ``if`
 
    How many conditions (logical expressions) are checked if the user answered 2?
    
-.. mchoicemf:: 13_3_2_fortune2
+.. mchoice:: 13_3_2_fortune2
    :answer_a: 1
    :answer_b: 2
    :answer_c: 5

@@ -8,14 +8,14 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-19-3-
+	:prefix: csp-18-8-
 
 Finding the Pollution for a State
 ===================================
 
 We can use **split** to chop up our data by fields, separated by ":".  But we can also use it *within*  field, to separate by space.  If we split the city/state by "space", we'd get city and state as two different elements of the list.
 
-This program uses the same data file that we have been using, but if you want to see **all** of the data click on the *Show* button below.  Once it appears, you can hide it again by clicking on the *Hide* button.
+This section uses the same data file that we have been using, but if you want to see **all** of the data click on the *Show* button below.  Once it appears, you can hide it again by clicking on the *Hide* button.
 
 .. reveal:: pol_Data_7
     :showtitle: Show
@@ -436,24 +436,39 @@ So, to check for particular state, we want to know if the current state name *ma
 Now, let's reuse the average code and look for a particular state.
 
 .. activecode:: average25state
-   :tour_1: "Structural tour"; 1-3: state3-line1-3; 5-7: state3-line5-7; 8: state3-line8; 9: state3-line9; 10: state3-line10; 11: state3-line11; 12: state3-line12; 13: state3-line13; 14: state3-line14; 16: state3-line16;
+   :tour_1: "Structural tour"; 2-4: state3-line1-3; 7-9: state3-line5-7; 12: state3-line8; 15: state3-line9; 18: state3-line10; 21: state3-line11; 24: state3-line12; 25: state3-line13; 28: state3-line14; 31: state3-line16;
    :nocodelens:
 
+   # read all the lines 
    infile = open("uspoll.txt","r")
    lines = infile.readlines()
    infile.close()
    
+   # initialize the variables
    state = "CA"
-   total25 = 0 # create and initialize total25
+   total25 = 0 
    count = 1.0
+   
+   # loop through the lines
    for line in lines:
+   
+       # split at :
        values = line.split(":")
+       
+       # split at , 
        cityState = values[0].split(",")
+       
+       # if found state
        if cityState[1].find(state) >= 0:
-           new25 = float(values[2]) # get the current pollution value
-           total25 = total25 + new25 # add the current pollution to total25
+       
+           # add the current to the sum
+           new25 = float(values[2]) 
+           total25 = total25 + new25
+           
+           # increment the count 
            count = count + 1
 	 
+   # print the average
    print("Average PM 2.5 value for " , state, " is ", total25/count)
 
 Use the below active code area to figure out the PM 10 code.  Replace the lines that start with ``#``.
@@ -478,7 +493,41 @@ Use the below active code area to figure out the PM 10 code.  Replace the lines 
 	 
    print("Average PM 10 value for ", state, " is ", total10/count)
 
-Explore the hypotheses from the top of the chapter.  What states have the highest average pollution values?  What do you think is most related to pollution: Population, area, or wealth?  Does it differ by PM 2.5 and PM 10?  For a list of the state two-letter abbreviations see http://www.50states.com/abbreviations.htm#.VJCB9r5NsXc.
+What states have the highest average pollution values?  What do you think is most related to pollution: Population, area, or wealth?  Does it differ by PM 2.5 and PM 10?  For a list of the state two-letter abbreviations see http://www.50states.com/abbreviations.htm#.VJCB9r5NsXc.
 
+.. parsonsprob:: 18_6_1_avg25
 
-
+   The following program prints the average PM 2.5 pollution for a state, but the code is mixed up. Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or have the wrong indention. 
+   -----
+   # read all the lines 
+   infile = open("uspoll.txt","r")
+   lines = infile.readlines()
+   infile.close()
+   
+   # initialize the variables
+   state = "CA"
+   total25 = 0 
+   count = 1.0
+   =====
+   # loop through the lines
+   for line in lines:
+   =====
+       # split at :
+       values = line.split(":")
+   =====    
+       # split at , 
+       cityState = values[0].split(",")
+   =====    
+       # if found state
+       if cityState[1].find(state) >= 0:
+   =====   
+           # add the current to the sum
+           new25 = float(values[2]) 
+           total25 = total25 + new25 
+           
+           # increment the count
+           count = count + 1
+   ===== 
+   # print the average
+   avg = total25/count
+   print("Avg for " , state, " is ", avg)

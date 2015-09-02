@@ -23,15 +23,14 @@ Working with Collections of Data
 
 *Learning Objectives:*
 
-- Use ``+`` to append strings together.
+- Use ``+`` to append strings and lists together.
 - Use ``*`` to create multiples of strings.
-- Introduce the ``len`` (length) function to get the number of characters in a string.
+- Introduce the ``len`` (length) function to get the number of characters in a string or the number of items in a list.
 - Introduce a list as something that holds items in order.
 - Use an index to get an item from a list.
-- Introduce the out of range error.
-- Introduce a for each loop, which loops through all the items in a list.
+- Introduce a for each loop, which loops through all the items in a list or string.
 - Show how to reverse a list.
-- Vary the change amount in creating a list using the ``range`` function.
+- Vary the change amount when creating a list using the ``range`` function.
 - Generate a decreasing list with the ``range`` function.
 - Introduce the rainfall problem.
 

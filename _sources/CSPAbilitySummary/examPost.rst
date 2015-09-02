@@ -1,5 +1,5 @@
 .. qnum::
-   :prefix: 20-3-
+   :prefix: 19-3-
    :start: 1
    
 Post Exam
@@ -9,7 +9,7 @@ The following questions test what you have learned in this ebook. Click the "Sta
 
 You will not be able to change your answers after you hit the "Submit Answers" button.
 
-.. timed:: ch18t20ex
+.. timed:: ch18a19ex
     
     .. mchoice:: ePost_1_25
        :answer_a: The turtle in this example draws a pentagram.

@@ -43,7 +43,7 @@ We can generate random numbers in Python using the ``randrange`` function in the
        	
 Can you modify the code above to use 3 different colors?  You can use ``num % 3`` to give you 3 possible results.  
        
-.. mchoicemf:: 14_4_1_randrange1
+.. mchoice:: 14_4_1_randrange1
    :answer_a: randX = random.randrange(minX, maxX)
    :answer_b: randX = random.randrange(0, maxX)
    :answer_c: randX = random.randrange(minX, 0)

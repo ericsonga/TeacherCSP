@@ -52,7 +52,7 @@ In this second version, we set a ``price`` as a *default*, then change it only o
   print(price)
   print(total)
 
-.. mchoicemf:: 12_3_1_Price_If_Equivalent
+.. mchoice:: 12_3_1_Price_If_Equivalent
   :answer_a: No, they're always the same.
   :answer_b: Yes, they're different if the weight is exactly 1 pound.
   :answer_c: Yes, they're different if the weight is under 1 pound.

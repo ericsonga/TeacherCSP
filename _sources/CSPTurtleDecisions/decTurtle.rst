@@ -49,7 +49,7 @@ This code calculates ``maxX`` as half the ``width`` since the drawing area uses 
 
 For more information on what this code does listen to the audio tour.  
   
-.. mchoicemf:: 14_2_1_finish_pattern
+.. mchoice:: 14_2_1_finish_pattern
    :answer_a: 12
    :answer_b: 14
    :answer_c: 16

@@ -28,34 +28,83 @@ Let's imagine that you have a list that contains amounts of rainfall for each da
    
   Construct a program that correctly solves the rainfall problem
   -----
+  # initialize the variables
   rain = [0,5,1,0,-1,6,7,-2,0]
   sumRain = 0
   count = 0
   =====
+  # loop through the values in the list
   for day in rain:
   =====
+      # if the value of day is positive
       if day >= 0:
   =====
+          # add day to the sum
+          # also add one to count
           sumRain = sumRain + day
           count = count + 1.0
   =====
+  # if count is positive
   if count > 0:
   =====
+      # calculate and print the average
       ave = sumRain / count
       print("Average",ave)
   =====
+  # otherwise 
   else:
   =====
+      # print no rain
       print("No rain")
 
-Type the program here and try it.  Does it work like you thought it would?
 
-.. activecode:: Rainfall_Code
+.. tabbed:: rainfallTab
 
-  rain = [0,5,1,0,-1,6,7,-2,0]
-  sumRain = 0
-  count = 0
-  # Your code goes here
+    .. tab:: Question
+   
+        Type the program here and try it.  Does it work like you thought it would?
+
+        .. activecode:: Rainfall_AC
+
+           # initialize the variables
+           rain = [0,5,1,0,-1,6,7,-2,0]
+           sumRain = 0
+           count = 0
+  
+           # Your code goes here
+           
+    .. tab:: Answer
+    
+        Here is a solution.  Notice that it checks that the value is positive before adding it to the sum.  It also checks that the count is positive before calculating the average since you can't divide by zero.
+    
+        .. activecode:: Rainfall_Answer
+
+           # initialize the variables
+           rain = [0,5,1,0,-1,6,7,-2,0]
+           sumRain = 0
+           count = 0
+  
+           # loop through the values in the list
+           for day in rain:
+           
+               # if the value of day is positive
+               if day >= 0:
+                   # add the value of day to the sum and increment the count
+                   sumRain = sumRain + day
+                   count = count + 1.0
+  
+           # if count is positive
+           if count > 0:
+
+               # calculate and print the average
+               ave = sumRain / count
+               print("Average",ave)
+  
+           # otherwise 
+           else:
+      
+               # print no rain
+               print("No rain")
   
 
 

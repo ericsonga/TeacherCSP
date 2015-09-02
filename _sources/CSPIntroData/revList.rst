@@ -15,7 +15,7 @@
     
 .. 	qnum::
 	:start: 1
-	:prefix: csp-16-6-
+	:prefix: csp-16-5-
 		   
 Reversing a List
 =================
@@ -25,15 +25,26 @@ Reversing a List
 We can use the looping ability of computers, plus the indexing ability, to manipulate lists in interesting and even surprising ways. In the below program, we use an **accumulator**, which is something that accumulates values.  We start with the accumulator ``soFar`` set to an empty list -- a list with nothing in it.  As the program executes, it appends items from the ``source`` list into the ``soFar`` list.  
 
 .. activecode:: Reverse_List
-  :tour_1: "Line by Line Tour"; 1: lst6-line1; 2: lst6-line2; 3: lst6-line3; 4: lst6-line4; 5: lst6-line5; 
+  :tour_1: "Line by Line Tour"; 2: lst6-line1; 5: lst6-line2; 8: lst6-line3; 11: lst6-line4; 12: lst6-line5; 
   
+  # setup the source list
   source = ["This","is","a","list"]
+  
+  # Set the accumulator to the empty list
   soFar = []
+  
+  # Loop through all the items in the source list
   for index in range(0,len(source)):
+  
+      # Add a list with the current item from source to soFar
       soFar = [source[index]] + soFar
-      print soFar
+      print(soFar)
+      
+.. note:: 
 
-.. mchoicemf:: 16_6_1_reversinglist
+    Notice the ``[`` and ``]`` around the value in the ``source`` at the current value of ``index``.  This is needed because you can only concatenate two lists together.  Try removing the ``[`` and ``]``.  What error do you get?
+
+.. mchoice:: 16_5_1_reversinglist
 		  :answer_a: Because we started at 0 and went to len(source).
 		  :answer_b: Because we put the new element ahead of the others in soFar.
 		  :answer_c: Because of the square brackets around source[index].

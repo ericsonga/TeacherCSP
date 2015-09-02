@@ -46,7 +46,7 @@ What is the sum of all the numbers between 1 and 10?  Run the program below to c
     	sum = sum + number
     print(sum)
     
-.. mchoicemf:: 7_2_1_Numbers_Repeat1_Q1
+.. mchoice:: 7_2_1_Numbers_Repeat1_Q1
    :answer_a: It prints the same thing it did before.
    :answer_b: It prints the value of sum 10 times and sum is different each time it is printed.
    :answer_c: It prints the same sum 10 times.
@@ -59,7 +59,7 @@ What is the sum of all the numbers between 1 and 10?  Run the program below to c
 
    What is printed if you change the program above so that line 5 is also indented the same amount as line 4?
    
-.. mchoicemf:: 7_2_2_Numbers_Repeat1_Q2
+.. mchoice:: 7_2_2_Numbers_Repeat1_Q2
    :answer_a: It prints the same thing it did before.
    :answer_b: It prints the value of sum 10 times and sum is different each time it is printed.
    :answer_c: It prints the same sum 10 times.

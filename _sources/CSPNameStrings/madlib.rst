@@ -136,7 +136,7 @@ You might have done MadLib stories when you were a kid.  You provide some pieces
      print("Mali" + " is " + str(Mali))
      
 .. Note::
-   When you print a string (a sequence of characters in a pair of single or double quotes) in Python it will print the exact characters in the string.  When you print a variable it will print the value of that variable.
+   When you print a string (a sequence of characters in a pair of single, double, or triple quotes) in Python it will print the exact characters in the string.  When you print a variable it will print the value of that variable.
      
 .. parsonsprob:: 4_4_4_Poem
 

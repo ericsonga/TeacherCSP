@@ -69,7 +69,7 @@ A string has characters in a sequence.  Each character is at a position or **ind
 
     Figure 1: A string with the position (index) shown above each character
    
-A slice with one value returns a new string with just the character at that position in the string.
+A **slice** is a way to get part of a string.  One way to use a **slice** is to do `stringName[num]``.  This will return a new string with just the character at that position in the string.
 
 .. activecode:: String_Slice1
    :nocodelens:
@@ -92,7 +92,7 @@ A slice with one value returns a new string with just the character at that posi
 
     Figure 2: A string with the position (index) shown above each character
    
-A slice with two values specified with a ``:`` between them returns a new string with the characters from the given start position to the one before the given end position.
+A **slice** with two values separated with a ``:`` between them returns a new string with the characters from the given start position to the one before the given end position.
 
 .. activecode:: String_Slice2
    :nocodelens:

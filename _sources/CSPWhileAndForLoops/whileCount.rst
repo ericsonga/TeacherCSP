@@ -39,7 +39,7 @@ For example, we could have a computer count up from 1 to 10.  We will use a ``co
        print(counter)
        counter = counter + 1
        
-.. mchoicemf:: 8_3_1_While_Count_Q1
+.. mchoice:: 8_3_1_While_Count_Q1
    :answer_a: 1
    :answer_b: 10
    :answer_c: 11
@@ -50,7 +50,7 @@ For example, we could have a computer count up from 1 to 10.  We will use a ``co
 
    What is the value of counter after the loop finishes executing?
    
-.. mchoicemf:: 8_3_2_NegativeCounter
+.. mchoice:: 8_3_2_NegativeCounter
    :answer_a: 5 4 3 2 1
    :answer_b: -5 -4 -3 -2 -1
    :answer_c: -4 -3 -2 -1

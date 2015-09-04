@@ -127,7 +127,7 @@ We can update our driving example to print out the cost of the trip with just on
    
 **Check your understanding**
    
-.. mchoicemf:: 4_1_1_stringVsValue
+.. mchoice:: 4_1_1_stringVsValue
    :answer_a: The address is street
    :answer_b: The address is 125 Main Street
    :answer_c: It won't execute
@@ -144,7 +144,7 @@ We can update our driving example to print out the cost of the trip with just on
      street = "125 Main Street"
      print("The address is " + "street")
      
-.. mchoicemf:: 4_1_2_noSpace
+.. mchoice:: 4_1_2_noSpace
    :answer_a: 125 Main Street, Atlanta, GA
    :answer_b: 125 Main Street,Atlanta, GA
    :answer_c: 125 Main Street Atlanta, GA

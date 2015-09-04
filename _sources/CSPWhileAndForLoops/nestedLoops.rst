@@ -68,7 +68,7 @@ The outer loop executes 2 times and each time the outer loop executes the inner 
 .. note::
    The formula for calculating the number of times the inner loop executes is the number of times the outer loop repeats multiplied by the number of times the inner loop repeats.
 		   
-.. mchoicemf:: 8_5_1_NumStars
+.. mchoice:: 8_5_1_NumStars
    :answer_a: 6
    :answer_b: 9
    :answer_c: 12

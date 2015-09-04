@@ -93,7 +93,7 @@ You define a function just like you define a procedure, but it will also ``retur
   
 **Check Your Understanding**
 
-.. mchoicemf:: 6_3_1_Functions_Q2
+.. mchoice:: 6_3_1_Functions_Q2
    :answer_a: Procedure
    :answer_b: Function
    :correct: b
@@ -102,7 +102,7 @@ You define a function just like you define a procedure, but it will also ``retur
 
    Is ``abs`` a procedure or a function?
    
-.. mchoicemf:: 6_3_2_Functions_Q3
+.. mchoice:: 6_3_2_Functions_Q3
    :answer_a: Procedure
    :answer_b: Function
    :correct: a

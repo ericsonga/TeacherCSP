@@ -52,3 +52,7 @@ right       angle         Turns the turtle clockwise by the specified angle
 setheading  angle         Turns the turtle to face the given heading.  East is 0, north is 90, west is 180, and south is 270. 
 Turtle      None          Creates and returns a new turtle object
 ==========  ==========  =========================
+
+.. note::  
+
+   This is the end of chapter 5.   We would love it if you could give us some feedback on this chapter at https://www.surveymonkey.com/r/ch5-teacher-fb.  You might want to open this link in a new tab to make it easier for you to return to your place in this ebook.

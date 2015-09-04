@@ -106,7 +106,7 @@ Let's say that you showed Sam this program:
 
 Then asked Sam, "What's the value for the variable `number1`?"
 
-.. mchoicemf:: 3_8_1_Diagnosing_Assignment_Q1
+.. mchoice:: 3_8_1_Diagnosing_Assignment_Q1
   :answer_a: Sam may see assignment as a move.
   :answer_b: Sam may see assignment as a copy.
   :answer_c: Sam may see assignment as a relationship.

@@ -33,7 +33,7 @@ The idea for a computer was first described in 1936, over a dozen years before t
         
     Figure 2: Photo of Alan Turing
     
-.. mchoicemf:: 2_2_1_Turing_Q1
+.. mchoice:: 2_2_1_Turing_Q1
 		   :answer_a: He occasionally ran 40 miles to London for meetings.
 		   :answer_b: He proposed the Turing Test to decide if a computer was intelligent.   
 		   :answer_c: He worked on breaking Enigma ciphers in World War II.   
@@ -65,7 +65,7 @@ Turing's machine didn't actually know anything about numbers, which might be sur
 	
 When you work with a computer, you have all kinds of abilities already built-in by others.  Your computer already knows how to deal with numbers and mathematical operations, and lots of other things as well.  At the basic level, though, even the biggest, most powerful, most expensive supercomputer cannot solve problems better than a Turing Machine. **All computers are exactly the same in terms of what they can do.** 
 
-.. mchoicemf:: 2_2_2_Computers_Q1
+.. mchoice:: 2_2_2_Computers_Q1
 		   :answer_a: There were female computers.
 		   :answer_b: You can make a computer with Tinkertoys.     
 		   :answer_c: Computers can solve any problem.   

@@ -50,7 +50,7 @@ As we have seen before the ``find(string)`` function takes a target string as in
    
 **Check your understanding**
      
-.. mchoicemf:: 17_6_1_Find_red
+.. mchoice:: 17_6_1_Find_red
    :answer_a: 1
    :answer_b: 9
    :answer_c: 10
@@ -69,7 +69,7 @@ As we have seen before the ``find(string)`` function takes a target string as in
      pos = str.find("is")
      print(pos)
      
-.. mchoicemf:: 17_6_2_Find_Red
+.. mchoice:: 17_6_2_Find_Red
    :answer_a: 1
    :answer_b: 13
    :answer_c: 14

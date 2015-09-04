@@ -56,7 +56,7 @@ You might have done MadLib stories when you were a kid.  You provide some pieces
    print(ending)
 
 
-.. mchoicemf:: 4_4_1_Story1_Q1
+.. mchoice:: 4_4_1_Story1_Q1
    :answer_a: realEnding = firstName + " called the police who took the witch away."
    :answer_b: print(firstName + " called the police who took the witch away.")
    :answer_c: print("Pat called the police who took the witch away.")
@@ -90,7 +90,7 @@ You might have done MadLib stories when you were a kid.  You provide some pieces
    print(next3)
    print(ending)
    
-.. mchoicemf:: 4_4_2_Story2_Q1
+.. mchoice:: 4_4_2_Story2_Q1
    :answer_a: Yes
    :answer_b: No
    :correct: a
@@ -117,7 +117,7 @@ You might have done MadLib stories when you were a kid.  You provide some pieces
      ending = "But " + firstName + " was smart and avoided the wicked witch."
      print(ending)
      
-.. mchoicemf:: 4_4_3_StringVsVariableName
+.. mchoice:: 4_4_3_StringVsVariableName
    :answer_a: Mali is Mali
    :answer_b: Mali is 5
    :answer_c: 5 is Mali

@@ -34,7 +34,7 @@ Run the following program.
     alex.left(90)       	# turn by 90 degrees
     alex.forward(75)      	# tell alex to move forward by 75 units
 
-.. mchoicemf:: 5_6_1_Turtle_Names4_Q1
+.. mchoice:: 5_6_1_Turtle_Names4_Q1
    :answer_a: Change the 150 to 90
    :answer_b: Change the 75 to 90
    :answer_c: Change the 75 to 150
@@ -61,7 +61,7 @@ Run the following program.
     alex.forward(57)      	# Close the triangle
 
 
-.. mchoicemf:: 5_6_2_Turtle_Names5_Q1
+.. mchoice:: 5_6_2_Turtle_Names5_Q1
    :answer_a: alex.left(45)
    :answer_b: alex.left(90)
    :answer_c: alex.left(135)

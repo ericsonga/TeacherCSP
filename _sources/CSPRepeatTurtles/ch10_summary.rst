@@ -10,7 +10,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-10-5-
+	:prefix: csp-10-6-
 
 
 Chapter 10 - Summary
@@ -62,3 +62,7 @@ shape       shape name 	  Takes a shape name as a string to use for the turtle. 
 stamp       None		  Leaves a copy of the turtle shape at the current location
 Turtle      None          Creates and returns a new turtle object
 ==========  ==========  =========================
+
+.. note::  
+
+   This is the end of chapter 10.   We would love it if you could give us some feedback on this chapter at https://www.surveymonkey.com/r/ch10-teacher-fb.  You might want to open this link in a new tab to make it easier for you to return to your place in this ebook.

@@ -74,7 +74,7 @@ A string can also be asked to return a new string that is changed in some way fr
    betterStill = better.capitalize() + "."
    print(betterStill)
    
-.. mchoicemf:: 1_3_1_String_Methods_Q1
+.. mchoice:: 1_3_1_String_Methods_Q1
    :answer_a: Hi There
    :answer_b: HiThere
    :answer_c: Hi There Hi There

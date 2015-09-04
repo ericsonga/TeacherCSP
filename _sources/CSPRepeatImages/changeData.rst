@@ -139,7 +139,7 @@ Let's try side-to-side copying.
     win = ImageWin(img.getWidth(),img.getHeight())
     img.draw(win)
 
-.. mchoicemf:: 11_6_1_Image_Mirror_Q1
+.. mchoice:: 11_6_1_Image_Mirror_Q1
    :answer_a: img.setPixel(halfway - x, y, newPixel) 
    :answer_b: img.setPixel(x - halfway, y, newPixel) 
    :answer_c: img.setPixel(img.getWidth() - 1 - x, y, newPixel) 

@@ -44,7 +44,7 @@ When you ran the code in the last section, did you get 55?  That's the sum of al
     	sum = sum + number
     print(sum)
 
-.. mchoicemf:: 7_3_1_Numbers_Repeat2_Q1
+.. mchoice:: 7_3_1_Numbers_Repeat2_Q1
    :answer_a: 55
    :answer_b: 0
    :answer_c: 3628800
@@ -74,7 +74,7 @@ Let's write that program again with a better variable name.  We will use ``produ
     	product = product * number
     print(product)
     
-.. mchoicemf:: 7_3_2_Numbers_Product_Q1
+.. mchoice:: 7_3_2_Numbers_Product_Q1
    :answer_a: 1
    :answer_b: 2
    :answer_c: 3
@@ -89,7 +89,7 @@ Let's write that program again with a better variable name.  We will use ``produ
 
    What is the value of number the 3rd time through the loop?
    
-.. mchoicemf:: 7_3_3_Numbers_Product_Q2
+.. mchoice:: 7_3_3_Numbers_Product_Q2
    :answer_a: 6
    :answer_b: 10
    :answer_c: 24

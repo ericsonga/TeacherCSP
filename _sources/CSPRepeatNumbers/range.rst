@@ -29,7 +29,7 @@ You can use the ``range`` function to create a list of numbers.    If the ``rang
     print(range(5))
     print(range(11)) 
     
-.. mchoicemf:: 7_4_1_Numbers_Range1
+.. mchoice:: 7_4_1_Numbers_Range1
    :answer_a: range(5)
    :answer_b: range(6)
    :answer_c: range(7)
@@ -48,7 +48,7 @@ If two values are passed as input to the ``range`` function then it will return 
     print(range(0,11))
     print(range(20,31))
 
-.. mchoicemf:: 7_4_2_Numbers_Range2
+.. mchoice:: 7_4_2_Numbers_Range2
    :answer_a: range(10)
    :answer_b: range(1,10)
    :answer_c: range(11)
@@ -72,7 +72,7 @@ Let's rewrite the program that calculates the product using the ``range`` functi
     	product = product * number
     print(product)
 
-.. mchoicemf:: 7_4_3_Numbers_Product_Q3
+.. mchoice:: 7_4_3_Numbers_Product_Q3
    :answer_a: 121645100408832000
    :answer_b: 3628800
    :answer_c: 362880

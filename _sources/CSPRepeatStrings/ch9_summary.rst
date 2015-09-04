@@ -37,3 +37,7 @@ Summary of Python Keywords and Functions
 - **print** - The ``print`` statement in Python will print the value of the items passed to it.  
 - **range** - The ``range`` function in Python returns a list of consecutive values.  If the range function is passed one value it returns a list with the numbers from 0 up to and not including the passed number.  For example, ``range(5)`` returns a list of ``[0,1,2,3,4]``.  If the range function is passed two numbers separated by a comma it returns a list including the first number and then up to but not including the second number.  For example, ``range(1,4)`` returns the list ``[1, 2, 3]``.  If it is passed three values ``range(start,end,step)`` it returns all the numbers from start to one less than end changing by step.  For example, ``range(0,10,2)`` returns ``[0,2,4,6,8]``.
 - **while** - A ``while`` loop is a programming statement that tells the computer to repeat a statement or a set of statements. It repeats the **body of the loop** while a **logical expression** is true.
+
+.. note::  
+
+   This is the end of chapter 9.   We would love it if you could give us some feedback on this chapter at https://www.surveymonkey.com/r/ch9-teacher-fb.  You might want to open this link in a new tab to make it easier for you to return to your place in this ebook.

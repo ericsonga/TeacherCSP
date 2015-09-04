@@ -109,7 +109,7 @@ A **slice** with two values separated with a ``:`` between them returns a new st
    
 **Check Your Understanding**
 
-.. mchoicemf:: 4_2_1_Slice
+.. mchoice:: 4_2_1_Slice
    :answer_a: This is the end
    :answer_b: This
    :answer_c: his
@@ -126,7 +126,7 @@ A **slice** with two values separated with a ``:`` between them returns a new st
      str = str[1:4]
      print(str)
      
-.. mchoicemf:: 4_2_2_Slice2
+.. mchoice:: 4_2_2_Slice2
    :answer_a: i
    :answer_b: s
    :answer_c: is the end
@@ -182,7 +182,7 @@ The ``find(string)`` function takes a string as input and returns the index wher
    
    **Check your understanding**
    
-.. mchoicemf:: 4_2_3_stringLen
+.. mchoice:: 4_2_3_stringLen
    :answer_a: 13
    :answer_b: 15
    :answer_c: 10
@@ -199,7 +199,7 @@ The ``find(string)`` function takes a string as input and returns the index wher
      street = "125 Main Street"
      print(len(street))
      
-.. mchoicemf:: 4_2_4_Find
+.. mchoice:: 4_2_4_Find
    :answer_a: 1
    :answer_b: 9
    :answer_c: 10

@@ -31,7 +31,7 @@ Try running this program.
    print("First name is:")
    print(pieces[0])
 
-.. mchoicemf:: 17_3_1_question_firstsplit
+.. mchoice:: 17_3_1_question_firstsplit
    :answer_a: Smith
    :answer_b: girl
    :answer_c: 65 Elm Street
@@ -46,7 +46,7 @@ Try running this program.
 
    What do you think we would get if we executed ``print(pieces[3])``
 
-.. mchoicemf:: 17_3_2_question_firstsplit2
+.. mchoice:: 17_3_2_question_firstsplit2
    :answer_a: Smith
    :answer_b: girl
    :answer_c: 65 Elm Street

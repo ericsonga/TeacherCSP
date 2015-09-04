@@ -80,7 +80,7 @@ Here's a program to compute the total price for the invoice.  Be sure to click |
     invoiceTotal = total1 + total2
     print(invoiceTotal)
 
-.. mchoicemf:: 3_9_1_Invoice1_Q1
+.. mchoice:: 3_9_1_Invoice1_Q1
 		   :answer_a: 7
 		   :answer_b: 6
 		   :answer_c: 5
@@ -106,7 +106,7 @@ We don't really have to create new variables ``quantity2`` and ``unitPrice2``.  
   invoiceTotal = total1 + total2
   print(invoiceTotal)
 
-.. mchoicemf:: 3_9_2_Invoice2_Q1
+.. mchoice:: 3_9_2_Invoice2_Q1
 		   :answer_a: 7
 		   :answer_b: 6
 		   :answer_c: 5
@@ -133,7 +133,7 @@ Let's say that apples are $0.40 apiece, and pears are $0.65 apiece.  Modify the 
 
 You are welcome to try out the following answers by copying and pasting them into the program above before answering this question:
 
-.. mchoicemf:: 3_9_3_Make_An_Assignment_Q1
+.. mchoice:: 3_9_3_Make_An_Assignment_Q1
   :answer_a: totalCost = apples + pears
   :answer_b: totalCost = (0.4 * apples) + (0.65 * pears)
   :answer_c: totalCost = (0.4 * pears) + (0.65 * apples)

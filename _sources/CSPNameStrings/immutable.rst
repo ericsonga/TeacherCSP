@@ -58,7 +58,7 @@ While the strings themselves can't be changed you can change the value of a vari
    sentence = "Hi there"
    print(sentence)
    
-.. mchoicemf:: 4_3_1_s1
+.. mchoice:: 4_3_1_s1
    :answer_a: xyz
    :answer_b: xyxyz
    :answer_c: xy xy z
@@ -79,7 +79,7 @@ While the strings themselves can't be changed you can change the value of a vari
      s2 = s1
      s1 = s1 + s2 + "z"
      
-.. mchoicemf:: 4_3_2_s2
+.. mchoice:: 4_3_2_s2
    :answer_a: Hey
    :answer_b: hey
    :answer_c: HEY

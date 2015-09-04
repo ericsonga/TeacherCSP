@@ -45,7 +45,7 @@ We have been using a ``for`` loop to repeat the **body of a loop** a known numbe
 
 Before you step through the code in for_counter below, try to predict the last value it will print and then answer the question below.
 
-.. mchoicemf:: 8_1_1_For_Counter_Q1
+.. mchoice:: 8_1_1_For_Counter_Q1
 		  :answer_a: 9
 		  :answer_b: 10
 		  :answer_c: 11
@@ -87,7 +87,7 @@ The code below will loop as long as the number that you enter isn't negative.  I
     print("The sum is: " + str(sum) + 
           " the average is: " + str(sum / count))
     
-.. mchoicemf:: 8_1_2_While_Input1
+.. mchoice:: 8_1_2_While_Input1
 		  :answer_a: 3
 		  :answer_b: 4
 		  :answer_c: 5
@@ -100,7 +100,7 @@ The code below will loop as long as the number that you enter isn't negative.  I
 
 	   	  How many lines are in the body of the ``while`` loop in while_input above?
 	   	  
-.. mchoicemf:: 8_1_2_While_InputError
+.. mchoice:: 8_1_2_While_InputError
 		  :answer_a: It prints the sum is 0 and the average is 0.
 		  :answer_b: It prints a message that it can't divide by 0.  
 		  :answer_c: There is an error.

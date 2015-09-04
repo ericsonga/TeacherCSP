@@ -33,7 +33,7 @@ The functions ``abs`` and ``int`` are *names*.  They are *variables* whose value
   print("Integer part of of 34.2")
   print(noDecimal(34.2))
 
-.. mchoicemf:: 6_8_1_Rename_Internal_Q1
+.. mchoice:: 6_8_1_Rename_Internal_Q1
    :answer_a: -16
    :answer_b: -16.789
    :answer_c: 16.789

@@ -77,7 +77,7 @@ Now let's answer a slightly harder question: What is the sum of all the *even* n
     # STEP 5: PROCESS RESULT
     print(sum)
 
-.. mchoicemf:: 7_5_1_Numbers_Even_Q1
+.. mchoice:: 7_5_1_Numbers_Even_Q1
    :answer_a: Because we started at 0
    :answer_b: Because we want to include 100
    :answer_c: Because the computer only understands 1s and 0s
@@ -90,7 +90,7 @@ Now let's answer a slightly harder question: What is the sum of all the *even* n
 
    Why do we stop at 101 in the above program?
 
-.. mchoicemf:: 7_5_2_Numbers_Even_Q2
+.. mchoice:: 7_5_2_Numbers_Even_Q2
    :answer_a: Because if we started with 1, we would get all odd numbers
    :answer_b: Because all lists start with zero
    :answer_c: Because we end with 101
@@ -130,7 +130,7 @@ How do we know what's really going on in this program?  How do we know that *num
    =====
    print(sum)
 
-.. mchoicemf:: 7_5_4_Numbers_Add_Odds_Q1
+.. mchoice:: 7_5_4_Numbers_Add_Odds_Q1
    :answer_a: Changed the range step from 2 to 3
    :answer_b: Changed the range end from 101 to 100
    :answer_c: Changed the range end from 101 to 99

@@ -73,7 +73,7 @@ Can you loop through and encode a string to hide the contents of the message?
     print(encodedMessage)
 
 
-.. mchoicemf:: 9_4_1_replace_m
+.. mchoice:: 9_4_1_replace_m
    :answer_a: a
    :answer_b: d
    :answer_c: w
@@ -86,7 +86,7 @@ Can you loop through and encode a string to hide the contents of the message?
 
    What character is e replaced with when the message is encoded?
 
-.. mchoicemf:: 9_4_2_encodeMess1
+.. mchoice:: 9_4_2_encodeMess1
    :answer_a: ""
    :answer_b: "o"
    :answer_c: "n"

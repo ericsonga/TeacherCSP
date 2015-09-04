@@ -48,7 +48,7 @@ We have seen the example below once before.  It allows us to use the ``turtle`` 
     alex.left(90)   		# turn by 90 degrees
     alex.forward(75)		# move forward by 75 units 
     
-.. mchoicemf:: 5_1_1_Turtle_Dir_Q1
+.. mchoice:: 5_1_1_Turtle_Dir_Q1
    :answer_a: North
    :answer_b: South
    :answer_c: East

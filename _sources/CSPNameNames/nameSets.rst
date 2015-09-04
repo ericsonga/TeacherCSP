@@ -58,7 +58,7 @@ That is what you are doing when you execute a statement like ``from turtle impor
   emily.right(18)           # And turn each one a bit
   square(emily,100)  		# draw a square with size 100
 
-.. mchoicemf:: 6_6_1_Function_Use_Q1
+.. mchoice:: 6_6_1_Function_Use_Q1
    :answer_a: square
    :answer_b: forward
    :answer_c: right

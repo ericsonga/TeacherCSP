@@ -64,7 +64,7 @@ But, this means we have to change each of the four ``forward`` statements and we
   malik = Turtle()    	# create a turtle named malik
   square(malik)      	# draw a square with malik
   
-.. mchoicemf:: 6_4_1_Function_Var_Q1
+.. mchoice:: 6_4_1_Function_Var_Q1
    :answer_a: 100
    :answer_b: 50
    :answer_c: 200
@@ -116,7 +116,7 @@ We can add an additional input to the function that specifies the size of the sq
   square(malik, 50)    	# draw a square of size 50
   square(malik, 25)   	# draw a square of size 25
   
-.. mchoicemf:: 6_4_2_Name_The_Shape_Q1
+.. mchoice:: 6_4_2_Name_The_Shape_Q1
    :answer_a: square
    :answer_b: rectangle
    :answer_c: triangle
@@ -158,7 +158,7 @@ We can add an additional input to the function that specifies the size of the sq
   
 The inputs that are specified in a function or procedure definition are also called **parameters** or **formal parameters**.  So ``turtle`` and ``size`` are both parameters (formal parameters) in the ``square`` procedure.  Notice that when we call ``square`` we have to specify the actual values for the inputs.  The actual values passed into the function as inputs are called the **arguments** or **actual parameters**. In the call ``square(malik, 50)`` both ``malik`` and ``50`` are arguments (actual parameters) to the ``square`` procedure.  
 
-.. mchoicemf:: 6_4_3_Name_Args_Q1
+.. mchoice:: 6_4_3_Name_Args_Q1
    :answer_a: turtle and size
    :answer_b: malik and 25
    :answer_c: imani and 25

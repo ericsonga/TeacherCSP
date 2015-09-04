@@ -84,7 +84,7 @@ Change the weight (in inches) and height (in pounds) in the program above, and p
 .. Note
    Notice how naming the values (using variables) for height and weight makes it easier to figure out what values need to be changed.  
 
-.. mchoicemf:: 1_2_1_BMI_Q1
+.. mchoice:: 1_2_1_BMI_Q1
    :answer_a: 21.9
    :answer_b: 21.924704834
    :answer_c: 21

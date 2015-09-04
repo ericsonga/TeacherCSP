@@ -40,7 +40,7 @@ Is there another way to make it easy to change the story, rather than creating a
    
 Creating a procedure with parameters makes it easy to customize the madlib stories without having to split a string.  The ``split`` function is very useful when you read data from a file or from a website.   
 
-.. mchoicemf:: 17_5_1_madlib_proc1
+.. mchoice:: 17_5_1_madlib_proc1
    :answer_a: Emily
    :answer_b: Smith
    :answer_c: girl

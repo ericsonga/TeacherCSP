@@ -46,7 +46,7 @@ Here's a program that does exactly that.  Try different `target` values, and see
       guessSquared = guess * guess
   print("Square root of", target,"is", guess)
 
-.. mchoicemf:: 8_4_1_Square_Root_Q1
+.. mchoice:: 8_4_1_Square_Root_Q1
   :answer_a: No error, since we compute it inside the loop.
   :answer_b: We would get an error.
   :answer_c: We need the one before the while loop, but not the one afterward.
@@ -66,7 +66,7 @@ Let's say that you wanted to figure out the square root of 6.  How many times wo
    http://ice-web.cc.gatech.edu/ce21/1/static/video/square-root-trace.mov
    http://ice-web.cc.gatech.edu/ce21/1/static/video/square-root-trace.webm
 
-.. mchoicemf:: 8_4_2_Count_Loops_Q1
+.. mchoice:: 8_4_2_Count_Loops_Q1
   :answer_a: Just once.
   :answer_b: Twice.
   :answer_c: Three times.
@@ -81,7 +81,7 @@ Let's say that you wanted to figure out the square root of 6.  How many times wo
 
 How about the square root of 25?  How about 2,356?  It's difficult to know ahead of time how many times the loop will execute.  That's where the ``while`` loop really shines, when you can specify an end condition (or rather, a *continue* condition).
 
-.. mchoicemf:: 8_4_3_Var1Var2
+.. mchoice:: 8_4_3_Var1Var2
    :answer_a: var1 = -2, var2 = 0
    :answer_b: var1 = 0, var2 = -2
    :answer_c: var1 = 0, var2 = -1

@@ -47,7 +47,7 @@ Run this next one, and look at how a simple change to the pattern gives a very d
     print("Here's the result of using newStringB + letter:")
     print(newStringB)
 
-.. mchoicemf:: 9_2_1_Copy_Reverse_Q1
+.. mchoice:: 9_2_1_Copy_Reverse_Q1
    :answer_a: Because we add each new letter at the <i>end</i> of <code>newStringB</code>.
    :answer_b: Because <code>newStringA</code> is adding the characters from left to right.
    :answer_c: Because we called a reverse function.

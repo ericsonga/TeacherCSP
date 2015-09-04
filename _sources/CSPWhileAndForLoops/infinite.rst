@@ -58,7 +58,7 @@ We ran the following code in a form of Python where we could stop the computer e
 	
 (We stopped the computer around this point.)
 
-.. mchoicemf:: 8_2_1_While_Inf_NumLines
+.. mchoice:: 8_2_1_While_Inf_NumLines
    :answer_a: 1
    :answer_b: 2
    :answer_c: 3

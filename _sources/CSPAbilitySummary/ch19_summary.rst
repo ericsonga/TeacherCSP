@@ -31,5 +31,4 @@ Chapter 19 included the following concepts from computing.
 
 .. note::  
 
-   This is the end of this eBook.  Readers who are part of the teacher study should go to `https://www.surveymonkey.com/s/TeacherFollow <https://www.surveymonkey.com/s/TeacherFollow>`_ and then continue on to the next section to take a post exam.  If you are not part of the study you can skip the exam or take it if you wish.  Thanks very much for trying the ebook!
-
+   This is the end of chapter 19.   We would love it if you could give us some feedback on this chapter at https://www.surveymonkey.com/r/ch19-teacher-fb.  You might want to open this link in a new tab to make it easier for you to return to your place in this ebook.

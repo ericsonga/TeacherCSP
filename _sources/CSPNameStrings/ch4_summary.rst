@@ -58,6 +58,5 @@ Chapter 4 also included the following string functions.
 
 .. note::  
 
-   This is the end of chapter 4.   Readers who are part of the teacher study should go to https://www.surveymonkey.com/r/ch3a4-feedback to give us feedback about these chapters and then continue to the next section which is an exam on chapters 3 and 4.  If you are not part of the study you can skip the exam or take it if you wish.  Remember that you can go to the table of contents by clicking on "Teacher-CSP" in the upper left corner of this window.
-   
+   This is the end of chapter 4.   We would love it if you could give us some feedback on this chapter at https://www.surveymonkey.com/r/ch4-teacher-fb.  You might want to open this link in a new tab to make it easier for you to return to your place in this ebook. 
 

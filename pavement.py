@@ -22,7 +22,7 @@ options(
         outdir="./build/Teacher-CSP",
         confdir=".",
         project_name = "Teacher-CSP",
-        template_args={'course_id': 'Teacher-CSP',
+        template_args={'course_id': 'TeacherCSP',
                        'login_required':'true',
                        'appname':master_app,
                        'loglevel': 0,

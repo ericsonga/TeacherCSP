@@ -12,7 +12,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: 7-7-
+	:prefix: 7-8-
 
 Chapter 7 Exercises
 --------------------
@@ -175,7 +175,7 @@ Chapter 7 Exercises
 
         .. tab:: Question
 
-           Fill in the code below on lines 2, 4, and 6 to correctly add up and print the sum of all the even numbers from 1 to 10 (inclusive).
+           Fill in the code below on lines 2, 4, and 6 to correctly add up and print the sum of all the even numbers from 0 to 10 (inclusive).
            
            .. activecode::  ch7ex5q
                 :nocodelens:
@@ -193,7 +193,7 @@ Chapter 7 Exercises
 
         .. tab:: Answer
         
-            Initialize the sum to 0.  Create a range from 1 to 11 with a step of 2.  Set the sum to the current value of sum plus the value of number.
+            Initialize the sum to 0.  Create a range from 0 to 11 with a step of 2.  Set the sum to the current value of sum plus the value of number.
             
             .. activecode::  ch7ex5a
                 :nocodelens:
@@ -201,11 +201,11 @@ Chapter 7 Exercises
                 # STEP 1: INITIALIZE ACCUMULATOR 
                 sum = 0  # Start out with nothing
                 # STEP 2: GET DATA
-                numbers = range(1,11,2)
+                numbers = range(0,11,2)
                 # STEP 3: LOOP THROUGH THE DATA
                 for number in numbers:
     	            # STEP 4: ACCUMULATE
-    	           sum = sum + number
+    	            sum = sum + number
                 # STEP 5: PROCESS RESULT
                 print(sum)
 
@@ -351,7 +351,7 @@ Chapter 7 Exercises
 
         .. tab:: Question
 
-           Create a function to calculate and return the product of all of the even numbers from 1 to the passed end number.  Be sure to call the function to test it and print the result.
+           Create a function to calculate and return the product of all of the even numbers from 2 to the passed end number (inclusive).  Be sure to call the function to test it and print the result.
            
            .. activecode::  ch7ex9q
                 :nocodelens:
@@ -365,7 +365,7 @@ Chapter 7 Exercises
                 
                 def calculateProduct(lastNum):
                     total = 1
-                    numList = range(1, lastNum + 1, 2)
+                    numList = range(2, lastNum + 1, 2)
                     for num in numList:
                         total = total * num
                     return total

@@ -37,6 +37,8 @@ This Book is for Teachers
 
 This chapter introduces the approach used in this book and offers some quick "teasers" of things we'll be doing later.  **Don't worry if you don't understand the code (programs - instructions that a computer can understand) that you see in this chapter**.  We'll go through things much more slowly in the next few chapters.  This book is intended for teachers who haven't programmed before.
 
+Please fill out the survey at https://www.surveymonkey.com/r/teacherCSP-pre. It will help us with our research. You might want to open that link in another tab to make it easier for you to get back to the ebook.
+
 ..	index::
 	single: Python
 	single: code

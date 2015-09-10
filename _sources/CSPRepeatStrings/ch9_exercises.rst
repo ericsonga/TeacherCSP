@@ -12,7 +12,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: 9-5-
+	:prefix: 9-6-
 
 Chapter 9 Exercises
 --------------------
@@ -165,7 +165,7 @@ Chapter 9 Exercises
 
         .. tab:: Question
 
-           The code below is supposed to replace all 1's with i's, but it is in an infinite loop.  Add a line to make the code work.  It should print: "This is a string."
+           The code below is supposed to replace all 1's with i's, but it is in an infinite loop.  You can reload the page to stop the infinite loop.  Add a line to make the code work.  It should print: "This is a string."
            
            .. activecode::  ch9ex4q
                 :nocodelens:

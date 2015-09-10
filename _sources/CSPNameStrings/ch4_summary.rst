@@ -10,7 +10,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-4-7-
+	:prefix: csp-4-6-
 
 
 Chapter 4 - Summary

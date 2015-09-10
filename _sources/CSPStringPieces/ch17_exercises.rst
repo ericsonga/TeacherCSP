@@ -12,7 +12,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: 17-7-
+	:prefix: 17-8-
 
 Chapter 17 Exercises
 ---------------------
@@ -337,7 +337,7 @@ Chapter 17 Exercises
            .. activecode::  ch17ex6q
                 :nocodelens: 
                 
-                input = "Elivs, alien, blue"
+                input = "Elvis, alien, blue"
                 pieces = input.split(",")
                 name = pieces[0]
                 thing = pieces[1]
@@ -356,7 +356,7 @@ Chapter 17 Exercises
                 def getHeadline(name, thing, color):
                    return name + " was abducted by a " + color + " " + thing + "."
                    
-                print(getHeadline("Elivs", "alien", "blue"))
+                print(getHeadline("Elvis", "alien", "blue"))
                 
         .. tab:: Discussion 
 

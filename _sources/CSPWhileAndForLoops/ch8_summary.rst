@@ -10,7 +10,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-8-8-
+	:prefix: csp-8-7-
 
 
 Chapter 8 - Summary

@@ -12,7 +12,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: 15-5-
+	:prefix: 15-6-
 
 Chapter 15 Exercises
 ---------------------

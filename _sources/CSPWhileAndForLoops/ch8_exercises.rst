@@ -12,7 +12,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: 8-7-
+	:prefix: 8-8-
 
 Chapter 8 Exercises
 --------------------
@@ -346,7 +346,7 @@ Chapter 8 Exercises
 
         .. tab:: Question
 
-           Create a function to calculate and return the sum of all of the even numbers from 1 to the passed input using a while loop.
+           Create a function to calculate and return the sum of all of the even numbers from 0 to the passed number (inclusive) using a while loop.
            
            .. activecode::  ch8ex9q
                 :nocodelens:
@@ -360,10 +360,10 @@ Chapter 8 Exercises
                 
                 def calculateSum(lastNum):
                     sum = 0
-                    num = 1
+                    num = 0
                     while (num <= lastNum):
-                       sum = sum + num
-                       num = num + 2
+                        sum = sum + num
+                        num = num + 2
                     return sum
                     
                 print(calculateSum(10))
@@ -380,7 +380,7 @@ Chapter 8 Exercises
 
         .. tab:: Question
 
-           Create a procedure to print stars in a square pattern and have it take as input the number of stars on a side.  Use a nested loop to do this.
+           Create a procedure to print stars and spaces in a roughly square pattern and have it take as input the number of stars on a side.  Use a nested loop to do this.
            
            .. activecode::  ch8ex10q
                :nocodelens:
@@ -396,7 +396,7 @@ Chapter 8 Exercises
                     for x in range(0,numStars):
                         line = ""
                         for y in range(0,numStars):
-                            line = line + '*'
+                            line = line + ' *'
                         print(line)
                     
                 printSquare(6)

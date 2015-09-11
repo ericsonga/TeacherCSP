@@ -35,6 +35,8 @@
 This Book is for Teachers
 ==========================
 
+There is a companion book for students so please don't use this ebook with your students.  The book for students is available at http://runestoneinteractive.org.  We recommend creating your own course with that ebook so that you can track the progress of your students.  We also recommend having your students create usernames and logging in so that if you have several students using the same computer their answers will be saved by their username.  
+
 This chapter introduces the approach used in this book and offers some quick "teasers" of things we'll be doing later.  **Don't worry if you don't understand the code (programs - instructions that a computer can understand) that you see in this chapter**.  We'll go through things much more slowly in the next few chapters.  This book is intended for teachers who haven't programmed before.
 
 Please fill out the survey at https://www.surveymonkey.com/r/teacherCSP-pre. It will help us with our research. You might want to open that link in another tab to make it easier for you to get back to the ebook.

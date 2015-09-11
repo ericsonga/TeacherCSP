@@ -34,6 +34,7 @@ Chapter 1: What is this Book About?
    :maxdepth: 2
 
    CSPrinTeasers/teacherBook.rst
+   CSPrinTeasers/pretest.rst
    CSPrinTeasers/computeNumbers.rst
    CSPrinTeasers/computeWords.rst
    CSPrinTeasers/computeTurtles.rst

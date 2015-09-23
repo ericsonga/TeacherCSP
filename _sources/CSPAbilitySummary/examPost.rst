@@ -5,9 +5,9 @@
 Post Exam
 -------------
 
-The following questions test what you have learned in this ebook. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  It will show how much time you have used, but you have unlimited time.  Click on the "Submit Answers" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
+The following questions test what you have learned in this ebook. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  It will show how much time you have used, but you have unlimited time.  Click on the "Finish Exam" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
 
-You will not be able to change your answers after you hit the "Submit Answers" button.
+You will not be able to change your answers after you hit the "Finish Exam" button.
 
 .. timed:: ch18a19ex
     
@@ -139,16 +139,14 @@ You will not be able to change your answers after you hit the "Submit Answers" b
        :answer_a: It will print "Hello Fred"
        :answer_b: It will print "Good-bye Fred"
        :answer_c: It will print "Hello name"
-       :answer_d: The variable fred contains "name"
-       :answer_e: Both b and d
-       :correct: e
+       :answer_d: It will print hello + " " + name
+       :correct: b
        :feedback_a: Even though the variable is called hello it contains "Good-bye".
-       :feedback_b: Yes, this is what it will print, but something else is also true
+       :feedback_b: Yes, this is what it will print.
        :feedback_c: It prints the value in name which has been set to "Fred".
-       :feedback_d: Yes, this is true, but something else is also true.
-       :feedback_e: Both of these are true so this statement is the most true. 
+       :feedback_d: It will print the value of hello and then a space and the value of name.
 
-       Given the following code segment, which of the below statements is the most true?
+       Given the following code segment, which of the below statements is true?
        
        ::
        
@@ -204,24 +202,26 @@ You will not be able to change your answers after you hit the "Submit Answers" b
               print (1000 / x)
               
     .. mchoice:: ePost_8_24
-       :answer_a: The printed result will include a "z"
-       :answer_b: The printed result will contain a "u"
-       :answer_c: The printed result will only contain consonants.
-       :answer_d: The printed result will only contain vowels.
-       :correct: c
-       :feedback_a: There is no "z" in the phrase.  
-       :feedback_b: This would be true if it was if letter in "aeiouy"
-       :feedback_c: This will add the letter to newString if it is not a vowel (including "y"). 
-       :feedback_d: This would be true if it was a letter in "aeiouy".
+       :answer_a: The printed result will only contain vowels.
+       :answer_b: The printed result will only contain consonants.
+       :answer_c: It will print the empty string.
+       :answer_d: The printed result will include "y"
+       :answer_e: I don't know
+       :correct: a
+       :feedback_a: This only adds the letter if it is a vowel.
+       :feedback_b: This only adds the letter if it is a vowel.
+       :feedback_c: No, it will add vowels to newString and print that.
+       :feedback_d: The letter must be in "aeiou" to be added to newString.
+       :feedback_e: That is okay.  We do not expect you to know this.
 
-       Given the following code segment, which of the statements below is the most true?
+       Given the following code segment, which of the statements below is true?
        
        ::
-       
+
           newString = ""
           phrase = "Rubber baby buggy bumpers."
           for letter in phrase:
-              if letter not in "aeiouy":
+              if letter in "aeiou":
                   newString = newString + letter
           print (newString)
               

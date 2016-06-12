@@ -90,9 +90,9 @@ Chapter 3 Exercises
 
     .. tabbed:: ch3ex3t
 
-        .. tab:: Question
+        .. tab:: question
 
-           Complete the code on lines 3 and 5 below to print the cost of a car trip of 500 miles when the car gets 26 miles per gallon and gas costs 3.45 a gallon.  It should print 66.3461538462.
+           complete the code on lines 3 and 5 below to print the cost of a car trip of 500 miles when the car gets 26 miles per gallon and gas costs 3.45 a gallon.  It should print 66.3461538462.
         
            .. activecode::  ch3ex3q
                :nocodelens:
@@ -384,5 +384,34 @@ Chapter 3 Exercises
                 :shortname: teachercsp
                 :identifier: teachercsp_ch3ex10q
 
+    .. tabbed:: ch3ex11t
+
+        .. tab:: Question
+            
+            Insert the correct operator in place of the # that would make the statment true (remember ``==`` checks for equality)
+
+            .. activecode:: ch3_ex11
+                :nocodelens:
+
+               print(16 # 7 == 2)
+               print((7 # 2) # 10 == 35)
+               print(2 # 4 == 0.5)
+               print(5 # 2 # 3 == -1)
+               print(3 # 2 # 1 = 7)
+        .. tab:: Answer
+
+            #. ``9 * 5 = 45``
+            #. ``2 / 5 = 0.4``
+            #. ``5 % 2 = 1``
+            #. ``9 % 5 = 4``
+            #. ``6 % 6 = 0``
+            #. ``2 % 7 = 2``
+            #. error - you can't divide by zero
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: cslearn4u
+                :identifier: teachercsp_ch3ex11
 
 

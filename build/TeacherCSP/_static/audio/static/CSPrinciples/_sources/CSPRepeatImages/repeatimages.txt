@@ -1,0 +1,437 @@
+..  Copyright (C)  Mark Guzdial, Barbara Ericson, Briana Morrison
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3 or
+    any later version published by the Free Software Foundation; with
+    Invariant Sections being Forward, Prefaces, and Contributor List,
+    no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license
+    is included in the section entitled "GNU Free Documentation License".
+
+.. |bigteachernote| image:: Figures/apple.jpg
+    :width: 50px
+    :align: top
+    :alt: teacher note
+    
+.. |audiobutton| image:: Figures/start-audio-tour.png
+    :height: 20px
+    :align: top
+    :alt: audio tour button
+
+.. 	qnum::
+	:start: 1
+	:prefix: csp-11-
+
+Using Repetition with Images
+============================================
+
+..	index::
+	single: images
+	pair: statements; for
+
+.. index::
+    single: pixel
+	single: picture
+	single: color
+
+Pictures on a computer are broken up into little bits called **pixels**, for *picture* (pix) *elements* (els).  These are laid out on a grid, from left to right (horizontal or **x** dimension) and top to bottom (vertical or **y** dimension).
+
+Pixels are quite small.  Even this small picture below has 180 columns and 240 rows of pixels:
+
+.. raw:: html
+
+    <img src="../_static/arch.jpg" id="arch.jpg">
+
+Each pixel has a color associated with it: An amount of redness, an amount of greenness, and an amount of blueness.
+Let's remove the red from this picture.  Now, there are lot of lines in the program below, but fortunately, you can ignore most of them. The Audio Tour explains the important lines.  Press |audiobutton| to hear the audio tour explanation.  When you run this program it may take several minutes to show the changed picture. 
+
+
+
+.. activecode:: Image_Remove_Red
+    :tour_1: "Important Lines Tour"; 4: img1-line4; 7-9: img1-line7-9; 10: img1-line10; 11: img1-line11;
+    :nocodelens:
+
+    import image
+    
+    # CREATE AN IMAGE FROM A FILE
+    img = image.Image("arch.jpg")
+
+    # CLEAR THE RED FROM ALL PIXELS
+    for x in range(img.getWidth()):
+        for y in range(img.getHeight()):
+            p = img.getPixel(x, y)
+            p.setRed(0)
+            img.setPixel(x, y, p)
+            
+    win = image.ImageWin()
+    img.draw(win)
+
+The program above can take several minutes to execute on the ``arch.jpg`` picture.  But we're not stuck using just the arch image.  We can use smaller images which will execute more quickly.
+
+|bigteachernote| Teachers Notes: Understanding Image Representation
+====================================================================
+ Understanding images requires understanding a set of abstractions:
+
+1. Pictures are made up of little pixels, laid out on an (x,y) grid.
+2. Each pixel contains a color.
+3. Each color has a red part, a green part, and a blue part.
+4. Each color part is actually a number between 0 and 255.
+
+There are some excellent CS Unplugged activities for understanding `image and color representation <http://csunplugged.org/image-representation>`_.
+
+A Library of Images
+=====================
+
+Because of the way that web page images work, you can only manipulate pictures here that have been pre-loaded to this web-server.  Modify the program above to try out the code on some of these other images by changing line 4 above. 
+
+.. raw:: html
+
+   <table>
+   <tr><td>beach.jpg</td><td>baby.jpg</td><td>vangogh.jpg</td><td>swan.jpg</td></tr>
+   <tr><td><img src="../_static/beach.jpg" id="beach.jpg"></td><td><img src="../_static/baby.jpg" id="baby.jpg"></td><td><img src="../_static/vangogh.jpg" id="vangogh.jpg"></td><td><img src="../_static/swan.jpg" id="swan.jpg"></td></tr>
+   </table>
+   <table>
+   <tr><td>puppy.jpg</td><td>kitten.jpg</td><td>girl.jpg</td><td>motorcycle.jpg</td></tr>
+   <tr><td><img src="../_static/puppy.jpg" id="puppy.jpg"></td><td><img src="../_static/kitten.jpg" id="kitten.jpg"></td><td><img src="../_static/girl.jpg" id="girl.jpg"></td><td><img src="../_static/motorcycle.jpg" id="motorcycle.jpg"></td></tr>
+   </table>
+   <table>
+   <tr><td>gal1.jpg</td><td>guy1.jpg</td><td>gal2.jpg</td></tr>
+   <tr><td><img src="../_static/gal1.jpg" id="gal1.jpg"></td><td><img src="../_static/guy1.jpg" id="guy1.jpg"></td><td><img src="../_static/gal2.jpg" id="gal2.jpg"></td></tr>
+   </table>
+
+
+
+
+
+A Pattern for Image Processing
+================================
+
+As we have seen with turtles and words, there are some general patterns in the programs that we write.  With turtles, there was a polygon pattern (based on the Total Turtle Trip Theorem).  With words and numbers, there is the accumulator pattern.
+
+The image processing pattern looks like this.  This program actually doesn't do anything to the image at all.  We're just describing the pattern.
+
+.. activecode:: Image_Pattern
+    :tour_1: "Important Lines Tour"; 2: imgR1-line2; 5: imgR1-line5; 8: imgR1-line8; 9: imgR1-line9; 12: imgR1-line12; 13: imgR1-line13; 14: imgR1-line14; 15: imgR1-line15; 18: imgR1-line18; 21: imgR1-line21; 24-25: imgR1-line24-25; 
+    :nocodelens:
+
+    # STEP 1: USE THE IMAGE LIBRARY 
+    import image
+    
+    # STEP 2: PICK THE IMAGE
+    img = image.Image("beach.jpg")
+
+    # STEP 3: SELECT THE DATA
+    for x in range(img.getWidth()):
+        for y in range(img.getHeight()):
+        
+            # STEP 4: GET THE DATA
+            p = img.getPixel(x, y)
+            r = p.getRed()
+            g = p.getGreen()
+            b = p.getBlue()
+            
+            # STEP 5: CREATE THE COLOR
+            newPixel = image.Pixel(r, g, b)
+            
+            # STEP 6: CHANGE THE PIXEL
+            img.setPixel(x, y, newPixel)
+            
+    # STEP 7: SHOW THE RESULT
+    win = image.ImageWin()
+    img.draw(win)
+
+
+Here are our six steps:
+
+1. STEP 1: USE THE IMAGE LIBRARY.  We need to import the image library.
+2. STEP 2: PICK THE IMAGE. We pick a particular image from our library by specifying it inside of the parentheses and double quotes.
+3. STEP 3: SELECT THE DATA. This example selects *every* pixel, that is "for all x values in the width of the image" and "for all y values in the height of the image".
+4. STEP 4: GET THE DATA.  You could *always* use the STEP 4 lines just as they are above, but you might be able to make it shorter if you wanted.  If you only needed red and were going to set the green and blue to zero, you don't have to get the green and blue.
+5. STEP 5: CREATE THE COLOR. This is the part that you will most often change.  Here's where you create a new color with red, green, and blue components.
+6. STEP 6: CHANGE THE PIXEL.  Normally, you put the color back at the same x and y coordinates.  But you might change that.
+
+
+
+Changing Step 5: Increasing and decreasing color values
+========================================================
+
+First example: Let's change STEP 5, so that we decrease the red by 50%.
+
+.. activecode:: Image_Decrease_Red
+    :tour_1: "Important Lines Tour"; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 7-9: imgR2-line7-9; 11-15: imgR2-line11-15; 17-18: imgR2-line17-18; 20-21: imgR2-line20-21; 23-25: imgR2-line23-25;
+    :nocodelens:
+
+    # STEP 1: USE THE IMAGE LIBRARY 
+    import image
+    
+    # STEP 2: PICK THE IMAGE
+    img = image.Image("beach.jpg")
+
+    # STEP 3: SELECT THE DATA
+    for x in range(img.getWidth()):
+        for y in range(img.getHeight()):
+        
+            # STEP 4: GET THE DATA
+            p = img.getPixel(x, y)
+            r = p.getRed()
+            g = p.getGreen()
+            b = p.getBlue()
+            
+            # STEP 5: CREATE THE COLOR
+            newPixel = image.Pixel(r * 0.5, g, b)
+            
+            # STEP 6: CHANGE THE PIXEL
+            img.setPixel(x, y, newPixel)
+            
+    # STEP 7: SHOW THE RESULT
+    win = image.ImageWin()
+    img.draw(win)
+
+We can *increase* the red in a similar way. Let's change STEP 5, so that we increase the red by 150%.
+
+.. activecode:: Image_Increase_Red
+    :tour_1: "Important Lines Tour"; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 7-9: imgR2-line7-9; 11-15: imgR2-line11-15; 17-18: imgR3-line17-18; 20-21: imgR2-line20-21; 23-25: imgR2-line23-25;
+    :nocodelens:
+
+    # STEP 1: USE THE IMAGE LIBRARY 
+    import image
+    
+    # STEP 2: PICK THE IMAGE
+    img = image.Image("beach.jpg")
+
+    # STEP 3: SELECT THE DATA
+    for x in range(img.getWidth()):
+        for y in range(img.getHeight()):
+        
+            # STEP 4: GET THE DATA
+            p = img.getPixel(x, y)
+            r = p.getRed()
+            g = p.getGreen()
+            b = p.getBlue()
+            
+            # STEP 5: CREATE THE COLOR
+            newPixel = image.Pixel(r * 1.5, g, b)
+            
+            # STEP 6: CHANGE THE PIXEL
+            img.setPixel(x, y, newPixel)
+            
+    # STEP 7: SHOW THE RESULT
+    win = image.ImageWin()
+    img.draw(win)
+
+
+.. parsonsprob:: 11-Image_Decrease_GB
+
+   Another way to get a similar effect to increasing the red, is to decrease the green and blue.  Figure out how to do that in the program above and then use that information to drag the code blocks below from the left to the right in the correct order with the correct indention. 
+   -----
+   import image
+   =====
+   img = image.Image("beach.jpg")
+   =====
+   for x in range(img.getWidth()):
+      for y in range(img.getHeight()):
+   =====
+         p = img.getPixel(x, y)
+         r = p.getRed()
+         g = p.getGreen()
+         b = p.getBlue()
+   =====       
+         newPixel = image.Pixel(r, g * 0.75, b * 0.75)
+   =====
+         img.setPixel(x, y, newPixel)
+   =====
+   win = image.ImageWin()
+   img.draw(win)
+
+Changing Step 6: Changing where we put the colors
+===================================================
+
+Now, let's change Step 6.  Let's change *where* we put our new color.  Here is a subtle change from our original template -- look at Step 6 and compare it to other programs we have written here.
+
+.. activecode:: Image_Location_Change
+    :tour_1: "Important Lines Tour"; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 7-9: imgR2-line7-9; 11-15: imgR2-line11-15; 17-18: imgR4-line17-18; 20-21: imgR4-line20-21; 23-25: imgR2-line23-25;
+    :nocodelens:
+
+    # STEP 1: USE THE IMAGE LIBRARY 
+    import image
+    
+    # STEP 2: PICK THE IMAGE
+    img = image.Image("vangogh.jpg")
+
+    # STEP 3: SELECT THE DATA
+    for x in range(img.getWidth()):
+        for y in range(img.getHeight()):
+        
+            # STEP 4: GET THE DATA
+            p = img.getPixel(x, y)
+            r = p.getRed()
+            g = p.getGreen()
+            b = p.getBlue()
+            
+            # STEP 5: CREATE THE COLOR
+            newPixel = image.Pixel(r, g, b)
+            
+            # STEP 6: CHANGE THE PIXEL
+            img.setPixel(y, x, newPixel)
+            
+    # STEP 7: SHOW THE RESULT
+    win = image.ImageWin()
+    img.draw(win)
+
+.. mchoicemf:: 11-Image_YX_Q1
+   :answer_a: We rotated the image 90 degrees to the right.
+   :answer_b: We mirrored the image around a diagonal line from the top left to the bottom right.
+   :answer_c: We flipped the image horizontally.
+   :answer_d: No change.
+   :correct: b
+   :feedback_a: That would turn the image to the right, but you would still see all the original pixels.
+   :feedback_b: The pixels to the left of the diagonal line were copied across a diagonal line like folding paper with paint on it on the diagonal.  
+   :feedback_c: The pixels would be copied to the same row.
+   :feedback_d: Compare this image to the original vangogh.jpg image.
+   
+   What happened when we swapped x and y when we stored the color back to the picture?
+
+This one does a little math with the x and y.
+
+.. activecode:: Image_Flip_Both
+    :tour_1: "Important Lines Tour"; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 7-9: imgR2-line7-9; 11-15: imgR2-line11-15; 17-18: imgR5-line17-18; 20-21: imgR5-line20-21; 23-25: imgR2-line23-25;
+    :nocodelens:
+
+    # STEP 1: USE THE IMAGE LIBRARY 
+    import image
+    
+    # STEP 2: PICK THE IMAGE
+    img = image.Image("vangogh.jpg")
+
+    # STEP 3: SELECT THE DATA
+    for x in range(img.getWidth()):
+        for y in range(img.getHeight()):
+        
+            # STEP 4: GET THE DATA
+            p = img.getPixel(x, y)
+            r = p.getRed()
+            g = p.getGreen()
+            b = p.getBlue()
+            
+            # STEP 5: CREATE THE COLOR
+            newP = image.Pixel(r, g, b)
+            
+            # STEP 6: CHANGE THE PIXEL
+            img.setPixel(img.getWidth() - x, img.getHeight() - y, newP)
+            
+    # STEP 7: SHOW THE RESULT
+    win = image.ImageWin()
+    img.draw(win)
+
+Changing Step 3: Changing which data we use
+============================================
+
+We can also change which part of the picture we read and manipulate.
+
+.. activecode:: Image_Negate_Quarter
+    :tour_1: "Important Lines Tour"; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 8: imgR6-line8; 9: imgR6-line9; 10: imgR6-line10; 11: imgR6-line11; 13-17: imgR6-line13-17; 19-20: imgR6-line19-20; 22-23: imgR6-line22-23; 25-27: imgR6-line25-27;
+    :nocodelens:
+
+    # STEP 1: USE THE IMAGE LIBRARY 
+    import image
+    
+    # STEP 2: PICK THE IMAGE
+    img = image.Image("vangogh.jpg")
+
+    # STEP 3: SELECT THE DATA
+    halfWidth = (int) (img.getWidth() / 2)
+    halfHeight = (int) (img.getHeight() / 2)
+    for x in range(halfWidth):
+        for y in range(halfHeight):
+        
+            # STEP 4: GET THE DATA
+            p = img.getPixel(x, y)
+            r = p.getRed()
+            g = p.getGreen()
+            b = p.getBlue()
+            
+            # STEP 5: CREATE THE COLOR
+            newPixel = image.Pixel(255-r, 255-g, 255-b)
+            
+            # STEP 6: CHANGE THE PIXEL
+            img.setPixel(x, y, newPixel)
+            
+    # STEP 7: SHOW THE RESULT
+    win = image.ImageWin()
+    img.draw(win)
+
+What happens if we skip every other x and y as we manipulate the colors?  Maybe make the green 255 and the blue 0? 
+
+.. activecode:: Image_Every_Other
+    :tour_1: "Important Lines Tour"; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 8: imgR7-line8; 9: imgR7-line9;  11-13: imgR7-line11-13; 15-16: imgR7-line15-16; 18-19: imgR7-line18-19; 21-23: imgR7-line21-23; 25-27: 
+    :nocodelens:
+
+    # STEP 1: USE THE IMAGE LIBRARY 
+    import image
+    
+    # STEP 2: PICK THE IMAGE
+    img = image.Image("vangogh.jpg")
+
+    # STEP 3: SELECT THE DATA
+    for x in range(0,img.getWidth(),2):
+        for y in range(0,img.getHeight(),2):
+        
+            # STEP 4: GET THE DATA
+            p = img.getPixel(x, y)
+            r = p.getRed()
+            
+            # STEP 5: CREATE THE COLOR
+            newPixel = image.Pixel(r, 255, 0)
+            
+            # STEP 6: CHANGE THE PIXEL
+            img.setPixel(x, y, newPixel)
+            
+    # STEP 7: SHOW THE RESULT
+    win = image.ImageWin()
+    img.draw(win)
+
+Let's try side-to-side copying.
+
+
+.. activecode:: Image_Copy_Left
+    :tour_1: "Important Lines Tour"; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 8: imgR8-line8; 9: imgR8-line9; 10: imgR8-line10; 12-16: imgR8-line12-16; 18-19: imgR8-line18-19; 21-22: imgR8-line21-22; 24-26: imgR8-line24-26;
+    :nocodelens:
+
+    # STEP 1: USE THE IMAGE LIBRARY 
+    import image
+    
+    # STEP 2: PICK THE IMAGE
+    img = image.Image("vangogh.jpg")
+
+    # STEP 3: SELECT THE DATA
+    halfway = (int) (img.getWidth() / 2)
+    for x in range(halfway):
+        for y in range(img.getHeight()):
+        
+            # STEP 4: GET THE DATA
+            p = img.getPixel(x, y)
+            r = p.getRed()
+            g = p.getGreen()
+            b = p.getBlue()
+            
+            # STEP 5: CREATE THE COLOR
+            newPixel = image.Pixel(r, g, b)
+            
+            # STEP 6: CHANGE THE PIXEL
+            img.setPixel(halfway + x, y, newPixel)
+            
+    # STEP 7: SHOW THE RESULT
+    win = image.ImageWin()
+    img.draw(win)
+
+.. mchoicemf:: 11-Image_Mirror_Q1
+   :answer_a: img.setPixel(halfway - x, y, newPixel) 
+   :answer_b: img.setPixel(x - halfway, y, newPixel) 
+   :answer_c: img.setPixel(img.getWidth() - x, y, newPixel) 
+   :answer_d: img.setPixel(x - img.getWidth(), y, newPixel) 
+   :correct: c
+   :feedback_a: It does mirror, but only the left half
+   :feedback_b: This creates two copies of the left half
+   :feedback_c: Yes, it looks like the woman is kissing herself
+   :feedback_d: No, no effect.
+   
+   Try it: How would you mirror the image from left-to-right around a vertical line in the middle of the picture?  Try changing line 22 to these.  If you get it right it will look like the women is nose to nose with herself.
+

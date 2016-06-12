@@ -1,0 +1,268 @@
+..  Copyright (C)  Mark Guzdial, Barbara Ericson, Briana Morrison
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3 or
+    any later version published by the Free Software Foundation; with
+    Invariant Sections being Forward, Prefaces, and Contributor List,
+    no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license
+    is included in the section entitled "GNU Free Documentation License".
+
+.. |bigteachernote| image:: Figures/apple.jpg
+    :width: 50px
+    :align: top
+    :alt: teacher note
+
+.. 	qnum::
+	:start: 1
+	:prefix: csp-8-
+	
+.. highlight:: java
+   :linenothreshold: 4
+
+	
+More Types of Loops
+===============================
+
+..	index:
+	single: while
+	single: variable
+	single: index variable
+	single: infinite loop
+	pair: statements; while
+	pair: statements; for
+
+**Learning Objectives:**:
+
+- Introduce the concept of an *infinite loop*
+- Use a *while* loop to repeat code.
+- Compare and contrast *while* and *for* loops
+
+	
+Infinite Loops
+================
+
+Getting a computer to repeat is simple.  Getting it to *stop* can be tricky.  A simple way of getting a computer to repeat is to use a ``while`` loop.  A ``while`` loop includes a logical expression, and is followed by a block.  **AS LONG AS THE EXPRESSION IS TRUE**, the block of statements gets executed.
+
+..	index::
+	single: infinite loop
+	pair: loop; infinite
+	
+So, here's a program that loops forever. 
+
+.. sourcecode:: python
+
+  	while 1 == 1:
+		print("Looping")
+		print("Forever")
+
+Since ``1`` will always be equal to ``1``, the two ``print`` statements will just be repeated over and over and over again.  We call that an **infinite loop**, which means a loop that continues forever or until it is forced to stop. Mark ran this in a form of Python where he could stop the computer easily:
+
+.. sourcecode:: python
+
+ 	>>> while 1==1:
+	 		print ("Looping")
+	 		print ("Forever")
+	Looping
+	Forever
+	Looping
+	Forever
+	Looping
+	Forever
+	Looping
+	Forever
+
+(Mark stopped the computer around this point.)
+
+Loops that Count
+================
+
+It's much easier to have the computer repeat something for a specific number of times.  For example, we could have a computer count from 1 to 10 pretty easily.  We will use a ``counter`` variable that we will **increment** inside the loop.  **Increment** means increase the value by one.
+
+.. codelens:: While_Counter
+   :showoutput: 
+
+   counter = 1
+   while counter <= 10:
+     print(counter)
+     counter = counter + 1
+
+.. mchoicemf:: 8-While_Counter_Q1
+		  :answer_a: It increments the variable counter. 
+		  :answer_b: Since counter is in the test for the while loop, it has to change or it would be an infinite loop. 
+		  :correct: b
+		  :feedback_a: Why is it in the loop?
+		  :feedback_b: It must change inside the loop for the loop to stop
+
+	   	  Why is it important to have ``counter = counter + 1`` inside the loop?
+
+
+.. mchoicemf:: 8-While_Counter_Q2
+	  :answer_a: 1
+	  :answer_b: 10
+	  :answer_c: 11
+	  :correct: c
+	  :feedback_a: Counter gets incremented from 1.
+	  :feedback_b: The last value to be printed is 10.
+	  :feedback_c: Counter gets incremented to 11 after printing, and then the while loop tests counter, finds counter > 10 and stops.
+
+   	  When this program is done, what is the value of counter?
+   	
+.. parsonsprob:: 8-While_Countdown
+
+   The following is the correct code for printing a countdown from 10 to 0, but it is mixed up. Drag the blocks from the left and put them in the correct order on the right.  Don't forget to indent blocks in the body of the loop.  Just drag the block to the further right to indent.  Click the <i>Check Me</i> button to check your solution.</p>
+   -----
+   counter = 10
+   while counter >= 0:
+     print(counter)
+     counter = counter - 1 
+
+.. index::
+	pair: statements; for
+	single: definite loop
+	
+.. parsonsprob:: 8-While_Count_Even
+
+   The following is the correct code for printing the even numbers from 0 to 10, but also some extra code that you won't need. Drag the needed blocks from the left and put them in the correct order on the right.  Don't forget to indent blocks in the body of the loop.  Just drag the block to the further right to indent.  Click the <i>Check Me</i> button to check your solution.</p>
+   -----
+   counter = 0
+   =====
+   while counter <= 10:
+   =====
+     print(counter)
+   =====
+     counter = counter + 2
+   =====
+     counter = counter + 1 #distractor
+    
+
+.. index::
+	pair: statements; for
+	single: definite loop
+
+Because we count in a loop so often, there is a special loop just for *definite loops* (loops that repeat a known number of times).  That's a ``for`` loop which we saw last chapter.  The ``for`` loop has a counter variable that takes on values within a ``range``.  A ``for`` loop is much simpler and much easier to use than a ``while`` loop for looping a known number of times.  Here is the counter program rewritten using a ``for`` loop.
+
+.. codelens:: For_Counter
+	:showoutput: 
+
+	for counter in range(1,10):
+	  print(counter)
+
+Before tracing the above to the end, see if you figure out this question:
+
+.. mchoicemf:: 8-For_Counter_Q1
+		  :answer_a: 9
+		  :answer_b: 10
+		  :answer_c: 11
+		  :correct: a
+		  :feedback_a: A range goes from a starting point to one *less* than the ending point. If we want to count to 10, range(1,11).
+		  :feedback_b: Try it -- nope, never gets to 10.
+		  :feedback_c: In fact, it doesn't even get to 10! Try it.
+
+	   	  What is the last value to be printed here?
+
+The body of any loop, can even include...another loop!  Here is a super-simple program that generates all the times tables from 0 to 10.  The ``str()`` function changes a numeric value into a string.
+
+.. codelens:: Times_Table
+	:showoutput: 
+
+	for x in range(0,11):
+	   for y in range(0,11):
+	      print(str(x) + " * " + str(y) + " = " + str(x*y))
+		
+
+Here are two different ways to look at this program.  In the first one, we look at the *structure* of the program -- what you can understand by just *looking* at the program.
+
+.. video:: timesTableStructure
+		   :controls:
+		   :thumb: ../_static/timesTableStructure.png
+
+		   http://ice-web.cc.gatech.edu/ce21/1/static/video/nestedLoopStructure.mov
+		   http://ice-web.cc.gatech.edu/ce21/1/static/video/nestedLoopStructure.webm
+
+
+In this video, we look at the *execution* of the program -- how it actually works when it's being *run* by the computer.
+
+.. video:: timesTableTrace
+		   :controls:
+		   :thumb: ../_static/timesTableTrace.png
+
+		   http://ice-web.cc.gatech.edu/ce21/1/static/video/nestedLoopTrace.mov
+		   http://ice-web.cc.gatech.edu/ce21/1/static/video/nestedLoopTrace.webm
+
+Looping When We Don't Know When We'll Stop
+============================================
+
+Now, how do we get the computer to do something only so many times, or until something happens that we want to happen?  We have to construct programs so that all the parts together make the logical expression true *until* we want it to be false.
+
+Let's say that we want to find the square root of a number.  For some square roots, you're never going to be exact.  Let's say that we want to find a square root that, when multiplied by itself, is within `0.01` of the square we want.  How do we do it?  There's a really old process that we can apply here.
+
+1. Start by guessing `2`.
+2. Compute the guess squared.
+3. Is the guess squared close to the target number?  If it's within `0.01`, we're done.  We'll take the absolute value of the difference, in case we overshoot. (In Python, ``abs`` is the absolute value function.)
+4. If it's not close enough, we divide the target number by our guess, then average that value with our guess.
+5. That's our new guess.  Square it, and go back to Step #3.
+
+Here's a program that does exactly that.  Try different `target` values, and see how good it is at computing square roots.
+
+.. activecode:: Square_Root
+  :tour_1: "Line by line tour"; 1: sqR_line1; 2: sqR_line2; 3: sqR_line3; 4: sqR_line4; 5: sqR_line5; 6: sqR_line6; 7: sqR_line7; 8: sqR_line8;
+
+  target = 6
+  guess = 2
+  guessSquared = guess * guess
+  while abs(target-guessSquared) > 0.01:
+     closer = target / guess
+     guess = (guess + closer) / 2.0
+     guessSquared = guess * guess
+  print("Square root of", target,"is", guess)
+
+.. mchoicemf:: 8-Square_Root_Q1
+  :answer_a: No error, since we compute it inside the loop.
+  :answer_b: We would get an error.
+  :answer_c: We need the one before the while loop, but not the one afterward.
+  :correct: b
+  :feedback_a: We have to compute it before, or abs(target-guessSquared) > 0.01 would be an error.
+  :feedback_b: A variable has to be declared (created) before it is used.
+  :feedback_c: We need both.  The one before sets up the test.  The one inside the loop lets us update guessSquared.
+
+   What would happen if we didn't compute ``guessSquared`` before the ``while`` loop?
+
+Let's say that you wanted to figure out the square root of 6.  How many times would the body of the ``while`` loop be executed?  We could figure it out by tracing the program.  
+
+.. video:: trace-squareroot
+   :controls:
+   :thumb: ../_static/squareRootTrace.png
+
+   http://ice-web.cc.gatech.edu/ce21/1/static/video/square-root-trace.mov
+   http://ice-web.cc.gatech.edu/ce21/1/static/video/square-root-trace.webm
+
+.. mchoicemf:: 8-Count_Loops_Q1
+  :answer_a: Just once.
+  :answer_b: Twice.
+  :answer_c: Three times.
+  :answer_d: Four times
+  :correct: c
+  :feedback_a: The first time through the loop, guess is 2, and 2 * 2 is 4, which isn't 6.
+  :feedback_b: The second time through the loop, guess is 2.5 (average of 3 and 2). But, 2.5 * 2.5 is still more than 0.01 away from 6.
+  :feedback_c: The third time through the loop, guess is 2.45 which is a pretty good square root value for 6.
+  :feedback_d: We don't get to a fourth time.  Guess is 2, then 2.5, then 2.45, and then we stop.
+
+   How many times do we execute the body of the loop when ``target = 6`` (in the video)?
+
+How about the square root of 25?  How about 2,356?  It's difficult to know ahead of time how many times the loop will execute.  That's where the ``while`` loop really shines, when you can specify an end condition (or rather, a *continue* condition).
+
+|bigteachernote| Teacher Note: ``for`` Loops are Easier and More "Natural"
+============================================================================
+
+Several researchers have studied how people "naturally" describe programs.  In one study, students as young as middle school are shown videos of someone playing a game like "Pokemon" then asked:
+
+	"Imagine that you are going to program a computer to make this video game.  What do you think you would say to the computer?"
+
+Participants rarely specify iteration like in a ``while`` loop.  They often say things like "For all the folders, I would..." or "For each of the characters, do this..."  Doing something "for all" is pretty common.  As we have seen, we can use ``for`` loops just like that, e.g., *for each item in a list*.  In general, ``for`` loops are closer to how people naturally talk about looping.
+
+But computer science students often make an economic argument to themselves.
+
+	"A ``while`` loop can do everything that a ``for`` loop can, and is more flexible.  I'll just learn that."
+
+Mark used to teach a 2nd year undergraduate course on *Object-oriented Design*.  He wanted to know how much programming they knew before we got started.  One year, he gave them the challenge of writing the program to print the times table, just as you just saw ealier.  With a ``for`` loop, it's three lines of code.  Out of 75 students, only 15 used a ``for`` loop.  *Every* other student used a ``while`` loop.  Using a ``while`` loop is more lines of code, and more opportunities for error. (And many of the students did make errors.)  But they were more *comfortable* with the ``while`` loop, because that's what they had used the most.
+
+Start out using the ``for`` loop in your classes as we have done in the prior chapter.  It will be easier and more natural for students. 

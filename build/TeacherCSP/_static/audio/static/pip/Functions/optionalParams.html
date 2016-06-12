@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Optional Parameters &mdash; Programs, Information, and People: Interactive Edition</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Programs, Information, and People: Interactive Edition" href="../index.html" />
+    <link rel="next" title="Keyword Parameters" href="KeywordParams.html" />
+    <link rel="prev" title="More on Functions" href="functions2.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pip';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+var _prum = [['id', '521dfcc4abe53d0749000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../toc.html">Programs, Information, and People</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../toc.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pip/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/assignments" id="registerlink">Project Page</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pip/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Optional Parameters</a><ul>
+<li><a class="reference internal" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - More on Functions" data-toggle="tooltip">
+    <a href="functions2.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Keyword Parameters' data-toggle="tooltip" >
+    <a href="KeywordParams.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="optional-parameters">
+<span id="optional-pararams-chap"></span><h1>Optional Parameters<a class="headerlink" href="#optional-parameters" title="Permalink to this headline">¶</a></h1>
+<p>In the treatment of functions so far, each function definition specifies zero or
+more formal parameters and each function invocation provides exactly that
+many values. Sometimes it is convenient to have <strong>optional parameters</strong> that can
+be specified or omitted. When an optional parameter is omitted from a function
+invocation, the formal parameter is bound to a <strong>default value</strong>. When the
+optional parameter is included, then the formal parameter is bound to the value
+provided. Optional parameters are convenient when a function is almost always used in a simple
+way, but it&#8217;s nice to allow it to be used in a more complex way, with non-default
+values specified for the optional parameters.</p>
+<p>Consider, for example, the <tt class="docutils literal"><span class="pre">int</span></tt> function, which you have used previously.
+Its first parameter, which is required, specifies the object that you wish to
+convert to an integer. For example, if you call in on a string, <tt class="docutils literal"><span class="pre">int(&quot;100&quot;)</span></tt>,
+the return value will be the integer 100.</p>
+<p>That&#8217;s the most common way programmers want to convert strings to integers. Sometimes,
+however, they are working with numbers in some other &#8220;base&#8221; rather than based 10.
+For example, in base 8, the rightmost digit is ones, the next digit to the left
+is 8s, and the one to the left of that is the 64s place (8**2).</p>
+<p>The int function provides an optional parameter for the base. When it is
+not specified, the number is converted to an integer assuming the original
+number was in base 10. We say that 10 is the default value. So <tt class="docutils literal"><span class="pre">int(&quot;100&quot;)</span></tt> is the
+same as invoking <tt class="docutils literal"><span class="pre">int(&quot;100&quot;,</span> <span class="pre">10)</span></tt>. We can override the default of 10 by
+supplying a different value.</p>
+
+<div id="cont"></div>
+<div id="opt_params_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="opt_params_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="opt_params_1_saveb" onclick="saveEditor('opt_params_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="opt_params_1_loadb" onclick="requestCode('opt_params_1');">Load</button>
+<button class='btn btn-default' id="opt_params_1_vizb" onclick="injectCodelens(this,'opt_params_1');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="opt_params_1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="opt_params_1_code" class="active_code" prefixcode="undefined" lang="python">
+print(int("100"))
+print(int("100", 10))    # same thing, 10 is the default value for the base
+print(int("100", 8))     # now the base is 8, so the result is 1*64 = 64
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="opt_params_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="opt_params_1_suffix" style="display:none">
+</pre><pre id="opt_params_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (opt_params_1)</span> </p>
+<div id="opt_params_1_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#opt_params_1_saveb').toggle();
+    $('#opt_params_1_loadb').toggle();
+}
+if ($("#opt_params_1").attr("lang") !== "html" && $("#opt_params_1_code_div").parents(".admonition").length == 0 && $("#opt_params_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#opt_params_1_code_div").offset({
+			left: $("#opt_params_1 .clearfix").offset().left
+		});
+	}
+	$("#opt_params_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#opt_params_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#opt_params_1_runb").parent().siblings(".ac_output").show();
+			runit('opt_params_1',this, undefined);
+			$("#opt_params_1_runb").on("click", function(){
+				runit('opt_params_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#opt_params_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#opt_params_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#opt_params_1_runb").on("click", function(){
+		runit('opt_params_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Tom Lehrer&#8217;s New Math</p>
+<p class="last">Some math educators believe that elementary school students will get a much
+deeper understanding of the place-value system, and set a foundation for
+learning algebra later, if they learn to do arithmetic not only in base-10 but
+also in base-8 and other bases. This was part of a movement called &#8220;The New Math&#8221;,
+though it&#8217;s not so new now (I had it when I was in elementary school!) Tom
+Lehrer made a really funny song about it, and it&#8217;s set with visuals in several
+YouTube renditions now. Try this very nice <a class="reference external" href="http://www.youtube.com/watch?v=DfCJgC2zezw">lip-synched version</a>.</p>
+</div>
+<p>When defining a function, you can specify a default value for a parameter. That
+parameter then becomes an optional parameter when the function is called.
+The way to specify a default value is with an assignment statement inside the parameter list.
+Consider the following code, for example.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="opt_params_2"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (opt_params_2)</span> </p>
+</div>
+<script type="text/javascript">
+var opt_params_2_trace = {"code": "initial = 7\ndef f(x, y =3, z=initial):\n    print(\"x, y, z, are: \" + str(x) + \", \" + str(y) + \", \" + str(z))\n\nf(2)\nf(2, 5)\nf(2, 5, 8)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["initial"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"initial": 7}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["initial", "f"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"initial": 7, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["initial", "f"], "stdout": "", "func_name": "f", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 3, "x": 2, "z": 7}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f1", "ordered_varnames": ["x", "y", "z"]}], "globals": {"initial": 7, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 2, "event": "call"}, {"ordered_globals": ["initial", "f"], "stdout": "", "func_name": "f", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 3, "x": 2, "z": 7}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f1", "ordered_varnames": ["x", "y", "z"]}], "globals": {"initial": 7, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["initial", "f"], "stdout": "x, y, z, are: 2, 3, 7\n", "func_name": "f", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 3, "x": 2, "__return__": null, "z": 7}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f1", "ordered_varnames": ["x", "y", "z", "__return__"]}], "globals": {"initial": 7, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 3, "event": "return"}, {"ordered_globals": ["initial", "f"], "stdout": "x, y, z, are: 2, 3, 7\n", "func_name": "<module>", "stack_to_render": [], "globals": {"initial": 7, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["initial", "f"], "stdout": "x, y, z, are: 2, 3, 7\n", "func_name": "f", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"y": 5, "x": 2, "z": 7}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f2", "ordered_varnames": ["x", "y", "z"]}], "globals": {"initial": 7, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 2, "event": "call"}, {"ordered_globals": ["initial", "f"], "stdout": "x, y, z, are: 2, 3, 7\n", "func_name": "f", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"y": 5, "x": 2, "z": 7}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f2", "ordered_varnames": ["x", "y", "z"]}], "globals": {"initial": 7, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["initial", "f"], "stdout": "x, y, z, are: 2, 3, 7\nx, y, z, are: 2, 5, 7\n", "func_name": "f", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"y": 5, "x": 2, "__return__": null, "z": 7}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f2", "ordered_varnames": ["x", "y", "z", "__return__"]}], "globals": {"initial": 7, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 3, "event": "return"}, {"ordered_globals": ["initial", "f"], "stdout": "x, y, z, are: 2, 3, 7\nx, y, z, are: 2, 5, 7\n", "func_name": "<module>", "stack_to_render": [], "globals": {"initial": 7, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["initial", "f"], "stdout": "x, y, z, are: 2, 3, 7\nx, y, z, are: 2, 5, 7\n", "func_name": "f", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"y": 5, "x": 2, "z": 8}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f3", "ordered_varnames": ["x", "y", "z"]}], "globals": {"initial": 7, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 2, "event": "call"}, {"ordered_globals": ["initial", "f"], "stdout": "x, y, z, are: 2, 3, 7\nx, y, z, are: 2, 5, 7\n", "func_name": "f", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"y": 5, "x": 2, "z": 8}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f3", "ordered_varnames": ["x", "y", "z"]}], "globals": {"initial": 7, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["initial", "f"], "stdout": "x, y, z, are: 2, 3, 7\nx, y, z, are: 2, 5, 7\nx, y, z, are: 2, 5, 8\n", "func_name": "f", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"y": 5, "x": 2, "__return__": null, "z": 8}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f3", "ordered_varnames": ["x", "y", "z", "__return__"]}], "globals": {"initial": 7, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 3, "event": "return"}, {"ordered_globals": ["initial", "f"], "stdout": "x, y, z, are: 2, 3, 7\nx, y, z, are: 2, 5, 7\nx, y, z, are: 2, 5, 8\n", "func_name": "<module>", "stack_to_render": [], "globals": {"initial": 7, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 7, "event": "return"}]};
+var opt_params_2_vis;
+
+$(document).ready(function() {
+    opt_params_2_vis = new ExecutionVisualizer('opt_params_2',opt_params_2_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(opt_params_2_vis,'opt_params_2');
+    allVisualizers.push(opt_params_2_vis);
+
+});
+
+$(document).ready(function() {
+    $("#opt_params_2_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'opt_params_2'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    opt_params_2_vis.redrawConnectors();
+});
+</script>
+<p>Notice the different bindings of x, y, and z on the three invocations of f. The first
+time, y and z have their default values, 3 and 7. The second time, y gets the
+value 5 that is passed in, but z still gets the default value of 7. The last time,
+z gets the value 8 that is passed in.</p>
+<p>If you want to provide a non-default value for the third parameter (z),
+you also need to provide a value for the second item (y). We will see at a later time
+a mechanism called keyword parameters that lets you specify a value for z without specifying
+a value for y.</p>
+<p>There are two tricky things that can confuse you with default values. The first is that
+the default
+value is determined at the time that the function is defined, not at the time
+that it is invoked. So in the example above, if we wanted to invoke the function
+f with a value of 10 for z, we cannot simply set initial = 10 right before
+invoking f. See what happens in the code below, where z still gets the value 7
+when f is invoked without specifying a value for z.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="opt_params_3"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (opt_params_3)</span> </p>
+</div>
+<script type="text/javascript">
+var opt_params_3_trace = {"code": "initial = 7\ndef f(x, y =3, z=initial):\n    print(\"x, y, z, are: \" + str(x) + \", \" + str(y) + \", \" + str(z))\n\ninitial = 10\nf(2)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["initial"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"initial": 7}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["initial", "f"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"initial": 7, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["initial", "f"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"initial": 10, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["initial", "f"], "stdout": "", "func_name": "f", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 3, "x": 2, "z": 7}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f1", "ordered_varnames": ["x", "y", "z"]}], "globals": {"initial": 10, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 2, "event": "call"}, {"ordered_globals": ["initial", "f"], "stdout": "", "func_name": "f", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 3, "x": 2, "z": 7}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f1", "ordered_varnames": ["x", "y", "z"]}], "globals": {"initial": 10, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["initial", "f"], "stdout": "x, y, z, are: 2, 3, 7\n", "func_name": "f", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 3, "x": 2, "__return__": null, "z": 7}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f1", "ordered_varnames": ["x", "y", "z", "__return__"]}], "globals": {"initial": 10, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 3, "event": "return"}, {"ordered_globals": ["initial", "f"], "stdout": "x, y, z, are: 2, 3, 7\n", "func_name": "<module>", "stack_to_render": [], "globals": {"initial": 10, "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(x, y, z)", null]}, "line": 6, "event": "return"}]};
+var opt_params_3_vis;
+
+$(document).ready(function() {
+    opt_params_3_vis = new ExecutionVisualizer('opt_params_3',opt_params_3_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(opt_params_3_vis,'opt_params_3');
+    allVisualizers.push(opt_params_3_vis);
+
+});
+
+$(document).ready(function() {
+    $("#opt_params_3_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'opt_params_3'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    opt_params_3_vis.redrawConnectors();
+});
+</script>
+<p>The second tricky thing is that if the default value is set to a mutable object,
+such as a list or a dictionary, that object will be shared in all invocations
+of the function. For example, follow the exceution of this one carefully.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="opt_params_4"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (opt_params_4)</span> </p>
+</div>
+<script type="text/javascript">
+var opt_params_4_trace = {"code": "def f(a, L=[]):\n    L.append(a)\n    return L\n\nprint f(1)\nprint f(2)\nprint f(3)\nprint f(4, [\"Hello\"])\nprint f(5, [\"Hello\"])", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["f"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["f"], "stdout": "", "func_name": "f", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 1, "L": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f1", "ordered_varnames": ["a", "L"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "2": ["LIST"]}, "line": 1, "event": "call"}, {"ordered_globals": ["f"], "stdout": "", "func_name": "f", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 1, "L": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f1", "ordered_varnames": ["a", "L"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "2": ["LIST"]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["f"], "stdout": "", "func_name": "f", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 1, "L": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f1", "ordered_varnames": ["a", "L"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "2": ["LIST", 1]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["f"], "stdout": "", "func_name": "f", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 1, "__return__": ["REF", 2], "L": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f1", "ordered_varnames": ["a", "L", "__return__"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "2": ["LIST", 1]}, "line": 3, "event": "return"}, {"ordered_globals": ["f"], "stdout": "[1]\n", "func_name": "<module>", "stack_to_render": [], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["f"], "stdout": "[1]\n", "func_name": "f", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"a": 2, "L": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f2", "ordered_varnames": ["a", "L"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "2": ["LIST", 1]}, "line": 1, "event": "call"}, {"ordered_globals": ["f"], "stdout": "[1]\n", "func_name": "f", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"a": 2, "L": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f2", "ordered_varnames": ["a", "L"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "2": ["LIST", 1]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["f"], "stdout": "[1]\n", "func_name": "f", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"a": 2, "L": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f2", "ordered_varnames": ["a", "L"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "2": ["LIST", 1, 2]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["f"], "stdout": "[1]\n", "func_name": "f", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"a": 2, "__return__": ["REF", 2], "L": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f2", "ordered_varnames": ["a", "L", "__return__"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "2": ["LIST", 1, 2]}, "line": 3, "event": "return"}, {"ordered_globals": ["f"], "stdout": "[1]\n[1, 2]\n", "func_name": "<module>", "stack_to_render": [], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["f"], "stdout": "[1]\n[1, 2]\n", "func_name": "f", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"a": 3, "L": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f3", "ordered_varnames": ["a", "L"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "2": ["LIST", 1, 2]}, "line": 1, "event": "call"}, {"ordered_globals": ["f"], "stdout": "[1]\n[1, 2]\n", "func_name": "f", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"a": 3, "L": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f3", "ordered_varnames": ["a", "L"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "2": ["LIST", 1, 2]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["f"], "stdout": "[1]\n[1, 2]\n", "func_name": "f", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"a": 3, "L": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f3", "ordered_varnames": ["a", "L"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "2": ["LIST", 1, 2, 3]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["f"], "stdout": "[1]\n[1, 2]\n", "func_name": "f", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"a": 3, "__return__": ["REF", 2], "L": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f3", "ordered_varnames": ["a", "L", "__return__"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "2": ["LIST", 1, 2, 3]}, "line": 3, "event": "return"}, {"ordered_globals": ["f"], "stdout": "[1]\n[1, 2]\n[1, 2, 3]\n", "func_name": "<module>", "stack_to_render": [], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["f"], "stdout": "[1]\n[1, 2]\n[1, 2, 3]\n", "func_name": "f", "stack_to_render": [{"frame_id": 4, "encoded_locals": {"a": 4, "L": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f4", "ordered_varnames": ["a", "L"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "3": ["LIST", "Hello"]}, "line": 1, "event": "call"}, {"ordered_globals": ["f"], "stdout": "[1]\n[1, 2]\n[1, 2, 3]\n", "func_name": "f", "stack_to_render": [{"frame_id": 4, "encoded_locals": {"a": 4, "L": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f4", "ordered_varnames": ["a", "L"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "3": ["LIST", "Hello"]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["f"], "stdout": "[1]\n[1, 2]\n[1, 2, 3]\n", "func_name": "f", "stack_to_render": [{"frame_id": 4, "encoded_locals": {"a": 4, "L": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f4", "ordered_varnames": ["a", "L"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "3": ["LIST", "Hello", 4]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["f"], "stdout": "[1]\n[1, 2]\n[1, 2, 3]\n", "func_name": "f", "stack_to_render": [{"frame_id": 4, "encoded_locals": {"a": 4, "__return__": ["REF", 3], "L": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f4", "ordered_varnames": ["a", "L", "__return__"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "3": ["LIST", "Hello", 4]}, "line": 3, "event": "return"}, {"ordered_globals": ["f"], "stdout": "[1]\n[1, 2]\n[1, 2, 3]\n['Hello', 4]\n", "func_name": "<module>", "stack_to_render": [], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["f"], "stdout": "[1]\n[1, 2]\n[1, 2, 3]\n['Hello', 4]\n", "func_name": "f", "stack_to_render": [{"frame_id": 5, "encoded_locals": {"a": 5, "L": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f5", "ordered_varnames": ["a", "L"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "4": ["LIST", "Hello"]}, "line": 1, "event": "call"}, {"ordered_globals": ["f"], "stdout": "[1]\n[1, 2]\n[1, 2, 3]\n['Hello', 4]\n", "func_name": "f", "stack_to_render": [{"frame_id": 5, "encoded_locals": {"a": 5, "L": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f5", "ordered_varnames": ["a", "L"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "4": ["LIST", "Hello"]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["f"], "stdout": "[1]\n[1, 2]\n[1, 2, 3]\n['Hello', 4]\n", "func_name": "f", "stack_to_render": [{"frame_id": 5, "encoded_locals": {"a": 5, "L": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f5", "ordered_varnames": ["a", "L"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "4": ["LIST", "Hello", 5]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["f"], "stdout": "[1]\n[1, 2]\n[1, 2, 3]\n['Hello', 4]\n", "func_name": "f", "stack_to_render": [{"frame_id": 5, "encoded_locals": {"a": 5, "__return__": ["REF", 4], "L": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "f", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "f_f5", "ordered_varnames": ["a", "L", "__return__"]}], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null], "4": ["LIST", "Hello", 5]}, "line": 3, "event": "return"}, {"ordered_globals": ["f"], "stdout": "[1]\n[1, 2]\n[1, 2, 3]\n['Hello', 4]\n['Hello', 5]\n", "func_name": "<module>", "stack_to_render": [], "globals": {"f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "f(a, L)", null]}, "line": 9, "event": "return"}]};
+var opt_params_4_vis;
+
+$(document).ready(function() {
+    opt_params_4_vis = new ExecutionVisualizer('opt_params_4',opt_params_4_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(opt_params_4_vis,'opt_params_4');
+    allVisualizers.push(opt_params_4_vis);
+
+});
+
+$(document).ready(function() {
+    $("#opt_params_4_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'opt_params_4'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    opt_params_4_vis.redrawConnectors();
+});
+</script>
+<p>When the default value is used, the same list is shared. But on lines 8 and 9
+two different copies of the list [&#8220;Hello&#8221;] are provided, so the 4 that is
+appended is not present in the list that is printed on line 9.</p>
+<p><strong>Check your understanding</strong></p>
+
+            <div id="test_questionopt_params_1" class="alert alert-warning">
+            <p>opt-params-1: What will the following code print?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">())</span>
+</pre></div>
+</div>
+<form name="test_questionopt_params_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionopt_params_1_opt_a" />
+            <label for= "test_questionopt_params_1_opt_a">  a) 0</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionopt_params_1_opt_b" />
+            <label for= "test_questionopt_params_1_opt_b">  b) 1</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionopt_params_1_opt_c" />
+            <label for= "test_questionopt_params_1_opt_c">  c) None</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_questionopt_params_1_opt_d" />
+            <label for= "test_questionopt_params_1_opt_d">  d) Runtime error since no parameters are passed in the call to f</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionopt_params_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionopt_params_1','a',['Since no parameters are specified, x is 0 and y is 1, so 0 is returned', '0 * 1 is 0.', 'The function does return a value', 'Because both parameters have default values specified in the definition, they are both optional'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionopt_params_1_bcomp" disabled name="compare" onclick="compareAnswers('test_questionopt_params_1');">Compare Me</button>
+            </form><br />
+            <div id="test_questionopt_params_1_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionopt_params_2" class="alert alert-warning">
+            <p>opt-params-2: What will the following code print?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<form name="test_questionopt_params_2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionopt_params_2_opt_a" />
+            <label for= "test_questionopt_params_2_opt_a">  a) 0</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionopt_params_2_opt_b" />
+            <label for= "test_questionopt_params_2_opt_b">  b) 1</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionopt_params_2_opt_c" />
+            <label for= "test_questionopt_params_2_opt_c">  c) None</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_questionopt_params_2_opt_d" />
+            <label for= "test_questionopt_params_2_opt_d">  d) Runtime error since the second parameter value is missing</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionopt_params_2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionopt_params_2','b',['Since one parameter value is specified, it is bound to x\u003B y gets the default value of 1', 'Since one parameter value is specified, it is bound to x\u003B y gets the default value of 1', 'The function does return a value', 'Because both parameters have default values specified in the definition, they are both optional'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionopt_params_2_bcomp" disabled name="compare" onclick="compareAnswers('test_questionopt_params_2');">Compare Me</button>
+            </form><br />
+            <div id="test_questionopt_params_2_feedback">
+            </div>
+            </div>
+            <div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Fill in the parameter list for g so that the invocations of g yield the return values specified</li>
+</ol>
+
+<div id="cont"></div>
+<div id="ex_opt_params_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ex_opt_params_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ex_opt_params_1_saveb" onclick="saveEditor('ex_opt_params_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ex_opt_params_1_loadb" onclick="requestCode('ex_opt_params_1');">Load</button>
+<button class='btn btn-default' id="ex_opt_params_1_vizb" onclick="injectCodelens(this,'ex_opt_params_1');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ex_opt_params_1_coach_b" onclick="injectCodeCoach('ex_opt_params_1');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ex_opt_params_1_showb" onclick="$('#ex_opt_params_1_code_div').toggle();cm_editors['ex_opt_params_1_code'].refresh();$('#ex_opt_params_1_saveb').toggle();$('#ex_opt_params_1_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ex_opt_params_1')"/>
+
+</div>
+<br/>
+<div id="ex_opt_params_1_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ex_opt_params_1_code" class="active_code" prefixcode="undefined" lang="python">
+def g():
+    return 2*x + y + z
+print(g(3))     # should output 10
+print(g(3, 2))  # should output 8
+print(g(3, 2, 1)) #should output 9
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ex_opt_params_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ex_opt_params_1_suffix" style="display:none">
+</pre><pre id="ex_opt_params_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ex_opt_params_1)</span> </p>
+<div id="ex_opt_params_1_codelens_div" style="display:none"></div><div id="ex_opt_params_1_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ex_opt_params_1_saveb').toggle();
+    $('#ex_opt_params_1_loadb').toggle();
+}
+if ($("#ex_opt_params_1").attr("lang") !== "html" && $("#ex_opt_params_1_code_div").parents(".admonition").length == 0 && $("#ex_opt_params_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ex_opt_params_1_code_div").offset({
+			left: $("#ex_opt_params_1 .clearfix").offset().left
+		});
+	}
+	$("#ex_opt_params_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ex_opt_params_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ex_opt_params_1_runb").parent().siblings(".ac_output").show();
+			runit('ex_opt_params_1',this, undefined);
+			$("#ex_opt_params_1_runb").on("click", function(){
+				runit('ex_opt_params_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ex_opt_params_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ex_opt_params_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ex_opt_params_1_runb").on("click", function(){
+		runit('ex_opt_params_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 Paul Resnick, Brad Miller, David Ranum, Created using Runestone Interactive.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

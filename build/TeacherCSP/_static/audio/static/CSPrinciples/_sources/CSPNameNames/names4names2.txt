@@ -1,0 +1,547 @@
+..  Copyright (C)  Mark Guzdial, Barbara Ericson, Briana Morrison
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3 or
+    any later version published by the Free Software Foundation; with
+    Invariant Sections being Forward, Prefaces, and Contributor List,
+    no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license
+    is included in the section entitled "GNU Free Documentation License".
+
+.. |bigteachernote| image:: Figures/apple.jpg
+    :width: 50px
+    :align: top
+    :alt: teacher note
+
+.. 	qnum::
+	:start: 1
+	:prefix: csp-6-
+	
+.. highlight:: java
+   :linenothreshold: 4
+
+
+Naming Everything
+========================================
+
+**Learning Objectives:**:
+
+- Learn how to define new functions and procedures.
+- Learn that we can use libraries containing functions and procedures written by others.
+- Learn that *any* name can be renamed, even Python's internal names.
+
+Earlier we learned about how a variable can store a value in a memory location (box).  The "value" can be anything.  It doesn't have to just be a number
+or a string.  It can be steps, instructions, and even other names.  This ability to 
+name other things is key to `Alan Turing's <http://en.wikipedia.org/wiki/Alan_Turing>`_ vision of a computer. 
+
+Naming Procedures and Functions
+========================================
+
+..	index::
+	single: procedure
+	pair: programming; procedure
+	
+..	index::
+	single: function
+	pair: programming; function	
+	
+We've already seen how we can use names to represent numbers (both integers like ``3`` and ``-325`` and decimal numbers like ``2.4`` and ``-322.9392``), strings (like ``"Hi There"``), turtles, and images.  When we do calculations using the names, the computer will look up the value for each name, and then use the value in the calculation.  We can also name a sequence of statements and then ask the computer to run that sequence whenever we use that name.  This is similar to asking someone to do a dance that they know, like the `Macarena <http://en.wikipedia.org/wiki/Macarena_(song)>`_ or `Salsa <http://en.wikipedia.org/wiki/Salsa_(dance)>`_. Once you know the dance you can do the steps.    
+
+.. figure:: Figures/salsaDancer.jpg
+    :height: 100px
+    :align: center
+    :alt: a women dancing Salsa
+    :figclass: align-center
+
+    Figure 1: A Salsa dancer
+    
+In programming there are two different terms used for a named sequence of statements: **procedure** and **function**.  A **procedure** accomplishes some task or makes something happen, but doesn't return anything. A **function** returns a result. Many procedures and functions are built into Python.  The function ``abs`` returns the absolute value of its input.  The function ``int`` takes a decimal number as input and returns just the integer part.
+
+.. activecode:: Functions
+  :tour_1: "Line by line tour"; 1: fun-line1; 2: fun-line2; 3: fun-line3; 4: fun-line4;
+
+  print("Absolute value of -5:")
+  print(abs(-5))
+  print("Integer part of 34.2")
+  print(int(34.2))
+  
+.. mchoicemf:: 6-Functions_Q1
+   :answer_a: -16
+   :answer_b: -16.789
+   :answer_c: 16.789
+   :answer_d: 16
+   :correct: d
+   :feedback_a: The function abs will change the negative.
+   :feedback_b: The original number will change.
+   :feedback_c: The function int will remove the decimal part.
+   :feedback_d: The function abs will make it positive, and the function int will cut it down to 16.
+   
+   What do you think `print(int(abs(-16.789)))`, prints?
+
+Naming Sets of Steps
+=====================
+
+How did `abs` and `int` get defined?  By *defining* new procedures and functions, we can associate a name with a sequence of steps.  Look at the program below.  What do you think it will do when you press the *Run* button?  Click *Run* and see what happens. 
+
+.. activecode:: First_Function
+  :tour_1: "Line by line tour"; 1: dsq-line1; 2: dsq-line2; 3: dsq-line3; 4: dsq-line4; 5: dsq-line5; 6: dsq-line6; 7: dsq-line7; 8: dsq-line8; 9: dsq-line9;
+  :nocodelens:
+
+  def square(turtle):
+       turtle.forward(100)
+       turtle.right(90)
+       turtle.forward(100)
+       turtle.right(90)
+       turtle.forward(100)
+       turtle.right(90)
+       turtle.forward(100)
+       turtle.right(90)
+
+If you are wondering why the *Run* button didn't seem to do anything, all that the program did was define the procedure ``square`` which takes a ``turtle`` as input.  If we want to actually execute the program we need to create a turtle and *call* the procedure as shown in the next example.
+
+..	index::
+	single: def
+	single: functions
+	single: calling functions
+
+.. activecode:: First_Function_Call
+  :tour_1: "Important lines tour"; 1-9: dsq2-line1-9; 11-13: dsq2-line11-13; 14: dsq2-line14;
+  :nocodelens:
+
+  def square(turtle):
+       turtle.forward(100)
+       turtle.right(90)
+       turtle.forward(100)
+       turtle.right(90)
+       turtle.forward(100)
+       turtle.right(90)
+       turtle.forward(100)
+       turtle.right(90)
+
+  from turtle import * 	# use the turtle library
+  space = Screen()     	# create a turtle screen
+  malik = Turtle()    	# create a turtle named malik
+  square(malik)       	# draw a square with malik
+  
+..	index::
+	single: parameter
+	pair: programming; parameter
+	
+In the above program, we *DEFine* the word ``square`` to represent the Python statements that draw a square with a turtle.  The ``square`` procedure takes as input a ``turtle`` that will be used to draw the square. Notice that the sequence of statements that are part of the ``square`` procedure are indented.  Python uses indention to show what statements belong to the procedure.  When the indention stops with ``from turtle import *`` it means that the new statements are not part of the procedure.  
+
+.. mchoicemf:: 6-Functions_Q2
+   :answer_a: Procedure
+   :answer_b: Function
+   :correct: b
+   :feedback_a: It returns a value so it is a function
+   :feedback_b: It returns a value so it can't be a procedure
+
+   Is ``abs`` a procedure or a function?
+   
+.. mchoicemf:: 6-Functions_Q3
+   :answer_a: Procedure
+   :answer_b: Function
+   :correct: a
+   :feedback_a: It doesn't return a value so it is a procedure
+   :feedback_b: It doesn't return a value so it can't be a function
+
+   Is ``square`` a procedure or a function?
+   
+See the video below for a hint on how to solve the next mixed up code problem. 
+
+.. video:: indentVideo
+		   :controls:
+		   :thumb: ../_static/video-mixedUpCodeIndent.png
+
+		   http://ice-web.cc.gatech.edu/ce21/1/static/video/IndentVideo.mov
+		   http://ice-web.cc.gatech.edu/ce21/1/static/video/IndentVideo.webm
+   
+.. parsonsprob:: 6-Triangle-Procedure
+
+   The following code should define a procedure that draws a triangle, but it may be mixed up and contains extra code.  Drag the needed code to the right side in the correct order.  <b>Remember that the statements in the procedure must be indented!</b>  To indent a block drag it further right. 
+   -----
+   def triangle(turtle):
+   =====
+       turtle.left(60)
+       turtle.forward(100)
+       turtle.right(120)
+       turtle.forward(100)
+       turtle.right(120)
+       turtle.forward(100)
+       turtle.right(120)  
+   ===== 
+       endDef #distractor
+
+Naming Input 
+================
+
+What if we want to draw a different size square, like one with a side length of 50?  We could change each of the calls to the ``forward`` procedure as shown below. 
+
+.. activecode:: Function_Change_Size
+  :tour_1: "Important lines tour"; 1-9: sq50-line1-9; 2,4,6,8: sq50-line2468; 11-13: sq50-line11-13; 14: sq50-line14; 
+  :nocodelens:
+
+  def square(turtle):
+       turtle.forward(50)
+       turtle.right(90)
+       turtle.forward(50)
+       turtle.right(90)
+       turtle.forward(50)
+       turtle.right(90)
+       turtle.forward(50)
+       turtle.right(90)
+
+  from turtle import * 	# use the turtle library
+  space = Screen()    	# create a turtle screen
+  malik = Turtle()    	# create a turtle named malik
+  square(malik)      	# draw a square with malik
+  
+But, it is somewhat slow to change each of the four ``forward`` statements and we could make a mistake and not set all of them to the same number.  Is there a better way?  What if we create a variable ``size`` and set its value to the amount to move forward?
+
+.. activecode:: Function_Add_Var
+  :tour_1: "Important lines tour"; 1-10: sqvar-line1-10; 2: sqvar-line2; 3: sqvar-line3; 4: sqvar-line4; 5-10: sqvar-line5-10; 12-14: sqvar-line12-14; 15: sqvar-line15;
+  :nocodelens:
+
+  def square(turtle):
+       size = 50
+       turtle.forward(size)
+       turtle.right(90)
+       turtle.forward(size)
+       turtle.right(90)
+       turtle.forward(size)
+       turtle.right(90)
+       turtle.forward(size)
+       turtle.right(90)
+
+  from turtle import *	# use the turtle library
+  space = Screen()    	# create a turtle screen
+  malik = Turtle()    	# create a turtle named malik
+  square(malik)      	# draw a square with malik
+  
+.. mchoicemf:: 6-Function_Var_Q1
+   :answer_a: 100
+   :answer_b: 50
+   :answer_c: 200
+   :answer_d: 90
+   :correct: c
+   :feedback_a: How much will it go forward?
+   :feedback_b: What value is size set to?
+   :feedback_c: Size is set to 200 in line 2 so this will draw a square that has a side length of 200.
+   :feedback_d: It turns 90 degrees.  It doesn't go forward 90.  
+
+   What is the side length for a square drawn by the following procedure?
+   
+    :: 
+ 
+     def square(turtle):
+        size = 200
+        turtle.forward(size)
+        turtle.right(90)
+        turtle.forward(size)
+        turtle.right(90)
+        turtle.forward(size)
+        turtle.right(90)
+        turtle.forward(size)
+        turtle.right(90)
+
+Now the program is easier to change since we only have one line to change ``size = 50`` to draw another size square.  But, we still have to change the program in order to draw a different size square.  Is there a better way?
+
+We can add an additional input to the function that specifies the size of the square.  Just separate the names for the inputs with a comma: ``(turtle,size)`` as shown below and be sure to specify the actual size when you call the procedure ``square(malik, 100)`` or ``square(malik, 50)``.
+
+.. activecode:: Function_Call2
+  :tour_1: "Important lines tour"; 1-9: dsq3-line1-9; 2: dsq3-line2; 11-13: dsq3-line11-13; 14: dsq3-line14; 15: dsq3-line15; 16: dsq3-line16; 17: dsq3-line17;
+  :nocodelens:
+
+  def square(turtle,size):
+        turtle.forward(size)
+        turtle.right(90)
+        turtle.forward(size)
+        turtle.right(90)
+        turtle.forward(size)
+        turtle.right(90)
+        turtle.forward(size)
+        turtle.right(90)
+
+  from turtle import *	# use the turtle library
+  space = Screen()    	# create a turtle screen (space)
+  malik = Turtle()    	# create a turtle named malik
+  square(malik, 100) 	# draw a square of size 100
+  square(malik, 75)   	# draw a square of size 75
+  square(malik, 50)    	# draw a square of size 50
+  square(malik, 25)   	# draw a square of size 25
+  
+.. mchoicemf:: 6-Name_The_Shape_Q1
+   :answer_a: square
+   :answer_b: rectangle
+   :answer_c: triangle
+   :correct: b
+   :feedback_a: Check the 2nd and 4th forwards.  How much do they move forward by?
+   :feedback_b: This will draw a rectangle with two sides with the specified size and two sides half that size.  Copy this code into the area above and run it.  
+   :feedback_c: A triangle has 3 sides.
+
+   What shape would the following code draw? 
+   
+   :: 
+ 
+     def mystery(turtle,size):
+        turtle.forward(size)
+        turtle.right(90)
+        turtle.forward(size / 2)
+        turtle.right(90)
+        turtle.forward(size)
+        turtle.right(90)
+        turtle.forward(size / 2)
+        turtle.right(90)
+     
+     from turtle import *	# use the turtle library
+     space = Screen()     	# create a turtle screen (space)
+     malik = Turtle()     	# create a turtle named malik
+     mystery(malik, 100)   	# draw something with size = 100
+
+  
+..	index::
+	pair: function; inputs
+	pair: function; arguments
+	pair: function; actual parameters
+	pair: function; parameters
+	pair: function; formal parameters
+  
+The inputs that are specified in a function or procedure definition are also called **parameters** or **formal parameters**.  So ``turtle`` and ``size`` are both parameters (formal parameters) in the ``square`` procedure.  Notice that when we call ``square`` we have to specify the actual values for the inputs.  The actual values passed into the function as inputs are called **arguments** or **actual parameters**. In the call ``square(malik, 50)`` both ``malik`` and ``50`` are arguments (actual parameters) to the ``square`` procedure.  
+
+.. mchoicemf:: 6-Name_Args_Q1
+   :answer_a: turtle and size
+   :answer_b: malik and 25
+   :answer_c: imani and 25
+   :correct: c
+   :feedback_a: These are the names of the parameters (formal parameters).  
+   :feedback_b: Look again at the code above.  Is that the name of this turtle?
+   :feedback_c: The turtle is named imani and the size is 25 in the code: square(imani, 25). 
+
+   In the following code what are the arguments (actual parameters)?  
+   
+   :: 
+ 
+     def square(turtle,size):
+        turtle.forward(size)
+        turtle.right(90)
+        turtle.forward(size)
+        turtle.right(90)
+        turtle.forward(size)
+        turtle.right(90)
+        turtle.forward(size)
+        turtle.right(90)
+     
+     from turtle import * 	# use the turtle library
+     space = Screen()      	# create a turtle screen (space)
+     imani = Turtle()    	# create a turtle named imani
+     square(imani, 25)      # draw a square with size 25
+     
+.. parsonsprob:: 6-Draw_Squares
+
+   The following code assumes that a procedure square has been defined that takes a size.  The code should create a turtle and then use it to draw a square, move forward, and draw a second square as shown at left, <img src="../_static/SquareForwardSquare.png" width="150" align="left" hspace="10" vspace="5"/> but the lines are mixed up.  Drag the lines into the correct order on the right.
+   -----
+   from turtle import *    
+   =====
+   space = Screen()    		
+   imani = Turtle()   		
+   =====
+   square(imani, 75)
+   =====
+   imani.forward(100)
+   =====
+   square(imani, 50)
+
+
+|bigteachernote| Teachers Note: Creating Procedures with Parameters
+===================================================================
+
+You probably don't quite feel comfortable with creating procedures with parameters right now.  That's okay.  Our research on how people learn programming says that understanding how *names* can represent *something else* takes alot of practice.  People new to programming will probably prefer:
+
+
+:: 
+
+   from turtle import *     # use the turtle library
+   space = Screen()    		# create a turtle screen (space)
+   malik = Turtle()   		# create a turtle named malik
+   malik.forward(100)
+   malik.right(90)
+   malik.forward(100)
+   malik.right(90)
+   malik.forward(100)
+   malik.right(90)
+   malik.forward(100)
+   malik.right(90)
+
+To creating a ``square`` procedure as shown below
+
+:: 
+
+   def square(turtle,size):
+        turtle.forward(size)
+        turtle.right(90)
+        turtle.forward(size)
+        turtle.right(90)
+        turtle.forward(size)
+        turtle.right(90)
+        turtle.forward(size)
+        turtle.right(90)
+
+and then calling the ``square`` procedure as shown below
+
+:: 
+
+   from turtle import *     # use the turtle library
+   space = Screen()    		# create a turtle screen (space)
+   malik = Turtle()   		# create a turtle named malik
+   square(malik, 100)     	# draw a square with side length 100
+
+When people are first learning programming, they prefer seeing actual values like ``forward(100)`` over ``forward(size)``.  They can probably recognize that having one ``square`` function that can make squares of all kinds of sizes is flexible and thus powerful.  But, they are still trying to understand the baisc turtle commands yet. 
+
+..	index::
+	single: abstraction 
+
+Don't worry about creating procedures with parameters yet.  That will come later in the chapter on **abstraction**.  **Abstraction** means focusing on just the important details in a context, just like using an abstract figure to identify female restrooms as shown below.  
+
+.. figure:: Figures/femaleIcon.jpg
+    :height: 100px
+    :align: center
+    :alt: abstract representation of a female 
+    :figclass: align-center
+
+    Figure 2: Abstract representation of a female
+
+Right now, it's okay to just be able to read procedures and understand what happens when they are called.  As beginners become more comfortable with basic programming, they will be ready to use the abstraction of using names to represent things like new procedures and functions.
+
+Naming Sets of Procedures
+==========================
+
+So far we've seen names for values, like strings and numbers.  We've seen names for functions.  We've now seen how to name (*define*) functions and use additional names to store the inputs to those functions.
+
+Sometimes, you will want to have have a whole group of functions, and you will want to store them somewhere and *name* that *whole set of functions*.  In fact, you can.  And in fact, you have already used those.
+
+.. index::
+	single: import, from import
+
+That is what you are doing when you execute a statement like ``from turtle import *``.  That is where the procedures like ``forward`` and ``right`` and functions like ``Screen`` are defined.  We can mix procedures and functions that *we* define with procedures and functions that we *import*.
+
+.. activecode:: Squares_Pattern
+  :tour_1: "Important lines tour"; 1-9: sqM-line1-9; 11-13: sqM-line11-13; 14: sqM-line14; 15: sqM-line15; 16: sqM-line16; 17: sqM-line17; 18: sqM-line18; 19: sqM-line19; 20: sqM-line20; 21: sqM-line21; 22: sqM-line22; 23: sqM-line23; 
+  :nocodelens:
+
+  def square(turtle,size):
+     turtle.forward(size)
+     turtle.right(90)
+     turtle.forward(size)
+     turtle.right(90)
+     turtle.forward(size)
+     turtle.right(90)
+     turtle.forward(size)
+     turtle.right(90)
+
+  from turtle import *      # use the turtle library
+  space = Screen()          # create a turtle screen (space)
+  emily = Turtle()          # create a turtle named emily
+  emily.setheading(90)      # Point due north
+  emily.forward(10)         # Offset the shapes a bit
+  emily.right(18)           # And turn each one a bit
+  square(emily,100)   		# draw a square with size 100
+  emily.forward(10)         # Offset the shapes a bit
+  emily.right(18)           # And turn each one a bit
+  square(emily,100) 		# draw a square with size 100
+  emily.forward(10)         # Offset the shapes a bit
+  emily.right(18)           # And turn each one a bit
+  square(emily,100)  		# draw a square with size 100
+
+.. mchoicemf:: 6-Function_Use_Q1
+   :answer_a: square
+   :answer_b: forward
+   :answer_c: right
+   :answer_d: All of the above
+   :correct: d
+   :feedback_a: You can use square since you just defined it, but you can also use the others.
+   :feedback_b: You can use forward because of the import, but you can also use others.
+   :feedback_c: You can use right because of the import, but you can also use others.
+   :feedback_d: Yes, you can use all of the turtle stuff from the import, plus the procedure square that was defined.
+   
+   Imagine that you add one more line to the above program.  Which function can you use safely, because it will have been defined?
+
+Using an Image Library
+========================
+
+Similarly, in the image processing examples, we used ``import image``.  That made the functions ``getPixel()`` and ``getRed()`` accessible.  We could also define a new function that returns a new color, or a new procedure that changes the image.  Don't worry about what ``for`` means right now, we'll talk more about that in the next chapter.
+
+.. raw:: html
+
+    <img src="../_static/arch.jpg" id="arch.jpg" >
+    
+.. activecode:: Image_Functions
+    :tour_1: "Important Lines Tour"; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 7-9: imgR2-line7-9; 11-15: imgR2-line11-15; 17-18: imgR2-line17-18; 20-21: imgR2-line20-21; 23-25: imgR2-line23-25;
+    :nocodelens:
+
+    # STEP 1: USE THE IMAGE LIBRARY 
+    import image
+    
+    # STEP 2: PICK THE IMAGE
+    img = image.Image("arch.jpg")
+
+    # STEP 3: SELECT THE DATA
+    for x in range(img.getWidth()):
+        for y in range(img.getHeight()):
+        
+            # STEP 4: GET THE DATA
+            p = img.getPixel(x, y)
+            r = p.getRed()
+            g = p.getGreen()
+            b = p.getBlue()
+            
+            # STEP 5: CREATE THE COLOR
+            newPixel = image.Pixel(r * 0.5, g, b)
+            
+            # STEP 6: CHANGE THE PIXEL
+            img.setPixel(x, y, newPixel)
+            
+    # STEP 7: SHOW THE RESULT
+    win = image.ImageWin()
+    img.draw(win)
+ 
+.. mchoicemf:: 6-Image_Functions_Q1
+   :answer_a: It creates a new pixel with a color like the current color, but with half the red of the original.  
+   :answer_b: It creates a new pixel with a color like the current color, but with twice the red of the original.
+   :answer_c: It creates a new pixel with a color like the current color, but with 5 times the red of the original.
+   :answer_d: It creates a new pixel with a color like the current color, but with the red set to 0.5.  
+   :correct: a
+   :feedback_a: Multiplying by 0.5 is the same as dividing by 2.  
+   :feedback_b: This would be true if it was r * 2, instead of r * 0.5
+   :feedback_c: This would be true if it was r * 5, instead of r * 0.5
+   :feedback_d: This would be true if it was 0.5 instead of r * 0.5
+   
+   What does the line ``newPixel = image.Pixel(r * 0.5, g, b)`` do?
+
+
+This ability to name functions, and sets of functions, and absolutely anything and any set of things in a computer is very powerful.  It allows us to create **abstractions** that make the computer easier to program and use.  More on that in a future chapter.
+
+Renaming Python's Functions
+=============================
+
+The functions ``abs`` and ``int`` are *names*.  They are *variables* whose values are a set of statements that achieve a goal.  Later on, we'll know enough code to write ``abs`` and ``int`` ourselves.  The important point right now is that ``abs`` and ``int`` are *names* for functions.  You can create several names that have the same value.  You can think of this like how a person can have both a name and a nickname.  In the program below we demonstrate that you can even create new names for Python functions.
+
+.. activecode:: Rename_Internal
+  :tour_1: "Line-by-line tour"; 1: funName-line1; 2: funName-line2; 3: funName-line3; 4: funName-line4; 5: funName-line5; 6: funName-line6;
+
+  absolute = abs
+  print("Absolute value of -5:")
+  print(absolute(-5))
+  noDecimal = int
+  print("Integer part of of 34.2")
+  print(noDecimal(34.2))
+
+.. mchoicemf:: 6-Rename_Internal_Q1
+   :answer_a: -16
+   :answer_b: -16.789
+   :answer_c: 16.789
+   :answer_d: 16
+   :correct: d
+   :feedback_a: No, absolute will change the negative
+   :feedback_b: No, the original number will change
+   :feedback_c: No, noDecimal will remove the decimal part
+   :feedback_d: Yes! Absolute will make it positive, and noDecimal will throw away the values after the decimal point leaving just the 16.
+   
+   If you add one more line to the above program, `print(noDecimal(absolute(-16.789)))`, what prints?

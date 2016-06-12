@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Building A Program &mdash; Programs, Information, and People: Interactive Edition</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Programs, Information, and People: Interactive Edition" href="../index.html" />
+    <link rel="next" title="Functions" href="../Functions/functions.html" />
+    <link rel="prev" title="Accumulating Multiple Results In a Dictionary" href="../Dictionaries/dictionary_accum.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pip';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+var _prum = [['id', '521dfcc4abe53d0749000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../toc.html">Programs, Information, and People</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../toc.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pip/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/assignments" id="registerlink">Project Page</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pip/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Building A Program</a><ul>
+<li><a class="reference internal" href="#sketch-an-outline">Sketch an Outline</a></li>
+<li><a class="reference internal" href="#code-one-section-at-a-time">Code One Section at a Time</a></li>
+<li><a class="reference internal" href="#clean-up">Clean Up</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#understanding-code">Understanding Code</a><ul>
+<li><a class="reference internal" href="#explain-make-a-reference-diagram">Explain (Make a reference diagram)</a></li>
+<li><a class="reference internal" href="#predict">Predict</a></li>
+<li><a class="reference internal" href="#check">Check</a></li>
+<li><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Accumulating Multiple Results In a Dictionary" data-toggle="tooltip">
+    <a href="../Dictionaries/dictionary_accum.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Functions' data-toggle="tooltip" >
+    <a href="../Functions/functions.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  
+<pre id="about_programming.txt" style="display: none;">
+Computer programming (often shortened to programming) is a process that leads from an
+original formulation of a computing problem to executable programs. It involves
+activities such as analysis, understanding, and generically solving such problems
+resulting in an algorithm, verification of requirements of the algorithm including its
+correctness and its resource consumption, implementation (or coding) of the algorithm in
+a target programming language, testing, debugging, and maintaining the source code,
+implementation of the build system and management of derived artefacts such as machine
+code of computer programs. The algorithm is often only represented in human-parseable
+form and reasoned about using logic. Source code is written in one or more programming
+languages (such as C++, C#, Java, Python, Smalltalk, JavaScript, etc.). The purpose of
+programming is to find a sequence of instructions that will automate performing a
+specific task or solve a given problem. The process of programming thus often requires
+expertise in many different subjects, including knowledge of the application domain,
+specialized algorithms and formal logic.
+Within software engineering, programming (the implementation) is regarded as one phase in a software development process. There is an on-going debate on the extent to which
+the writing of programs is an art form, a craft, or an engineering discipline. In
+general, good programming is considered to be the measured application of all three,
+with the goal of producing an efficient and evolvable software solution (the criteria
+for "efficient" and "evolvable" vary considerably). The discipline differs from many
+other technical professions in that programmers, in general, do not need to be licensed
+or pass any standardized (or governmentally regulated) certification tests in order to
+call themselves "programmers" or even "software engineers." Because the discipline
+covers many areas, which may or may not include critical applications, it is debatable
+whether licensing is required for the profession as a whole. In most cases, the
+discipline is self-governed by the entities which require the programming, and sometimes
+very strict environments are defined (e.g. United States Air Force use of AdaCore and
+security clearance). However, representing oneself as a "professional software engineer"
+without a license from an accredited institution is illegal in many parts of the world.
+</pre>
+<div class="section" id="building-a-program">
+<h1>Building A Program<a class="headerlink" href="#building-a-program" title="Permalink to this headline">¶</a></h1>
+<p>Building on lessons learned in the first debugging interlude, this chapter offers a strategy for writing a program to solve a problem such as those that appear in the exercises at the ends of the chapters in this book. (A similar approach is helpful for writing larger programs, but that will come later.)</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title">Warning.</p>
+<p>You may find it tempting to start an exercise by copying and pasting a snippet of code from somewhere in the textbook, and hoping that a small edit will lead to a solution to the current problem. Often this will lead to frustration and confusion; after trying a few code substitutions that feel vaguely familiar to you, you’ll find the code looking kind of complicated and the outputs baffling.</p>
+<p class="last">Copying and editing snippets of code is actually a useful element of the strategy we outline below. But it comes a little later in the process, not as the first thing. And it requires a fair bit of work to make sure you understand the code snippet that you’ve copied. Only then will you be able to find the <em>right</em> small edits to the code snippet to make it do what you want.</p>
+</div>
+<p>There are three basic steps to the strategy we recommend: Outline; Code One Section at a Time; Clean Up.</p>
+<div class="section" id="sketch-an-outline">
+<h2>Sketch an Outline<a class="headerlink" href="#sketch-an-outline" title="Permalink to this headline">¶</a></h2>
+<p>We are suggesting you first write down all the steps you want the program to do. You can do this in any manner you like. We are going to show you how to outline using comments, but if you are more visual you might want to sketch on a piece of paper and if you are more spatial try walking around the room. The big trick is to understand everything you want to do first in your own words, so then you are translating them to the computer.</p>
+</div>
+<div class="section" id="code-one-section-at-a-time">
+<h2>Code One Section at a Time<a class="headerlink" href="#code-one-section-at-a-time" title="Permalink to this headline">¶</a></h2>
+<p>After you outline your program, you should write code one section at a time, and carefully test that section before you go on. The idea here is to make sure your program is doing what you think it’s doing at each stage.</p>
+<p>Translating your English description of a step into code may be the most challenging step for you early in your learning about programming. Later it will come more naturally. Here is a checklist of questions that you may find useful in trying to find the right python code to express your idea, based on what you’ve learned so far:</p>
+<ul class="simple">
+<li>Is this operation pulling out an item from a list or string or dictionary? If so, use [] to pull out the item you want.</li>
+<li>Is this operation transforming a string into another string? If so, look at the summary of <a class="reference internal" href="../Sequences/index.html#id1"><em>string methods</em></a></li>
+<li>Is this operation modifying a list? If so, look at the material on <a class="reference internal" href="../Sequences/index.html#lists"><em>lists</em></a>.</li>
+<li>Is the operation doing something multiple times? If so, you’ll want a <tt class="docutils literal"><span class="pre">for</span></tt> loop. Start by making a skeleton version of a for loop, and then fill in the parts that are in &lt;brackets&gt;</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>for &lt;varname&gt; in &lt;seq&gt;:
+                &lt;code block line 1&gt;
+                &lt;code block line 2&gt;
+                ...
+</pre></div>
+</div>
+<ul class="simple">
+<li>Is the operation something that should only occur in some circumstances and not in others? If so, you’ll want an <tt class="docutils literal"><span class="pre">if</span></tt> statement. Start by making a skeleton version of an if/then/else code snippet, and then fill in the parts that are in &lt;brackets&gt;</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>if &lt;boolean exp&gt;:
+  &lt;if block here&gt;
+  ...
+else:
+  &lt;else block here&gt;
+  ...
+</pre></div>
+</div>
+<ul class="simple">
+<li>Is this an accumulator pattern? If so, start by making a skeleton version of it, and then fill it in.</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>#initialize accumulator
+a = &lt;initial value&gt;
+
+for &lt;varname&gt; in &lt;seq&gt;:
+  &lt;some code in for block&gt;
+  a = &lt;new_value&gt;
+  &lt;other code in for block&gt;
+print a
+</pre></div>
+</div>
+<p>Finally, you may be reminded of a snippet of code somewhere in the textbook that did something similar to what you want to do. Now is the time to copy and edit that code. <strong>But wait!</strong> Before you start editing that code snippet, make sure you understand it. See the section below on understanding code.</p>
+</div>
+<div class="section" id="clean-up">
+<h2>Clean Up<a class="headerlink" href="#clean-up" title="Permalink to this headline">¶</a></h2>
+<p>When you are done with outlining and testing your program, delete any diagnostic print statements from your program. No one really needs to see the test statements you wrote, and leaving test statements in the program might confuse you if you add more to the program.</p>
+<p>Extra comments do help other people read your code, but try to leave in only the bits that you think are useful. There is an art to writing good informative comments, and you can only learn this art by reading other people&#8217;s programs and having your peers read your programs. As a rule of thumb for comments, when in doubt, keep it; it you’re worried it won’t make sense to you or someone else later, add more detail to it.</p>
+</div>
+</div>
+<div class="section" id="understanding-code">
+<h1>Understanding Code<a class="headerlink" href="#understanding-code" title="Permalink to this headline">¶</a></h1>
+<p>Whether you’re trying to understand a code snippet that someone else wrote or trying to understand your own code that isn’t doing exactly what you wanted, you can avoid a lot of frustration if you slow down and spend the time to fully understand that code. It will reduce your anxiety level as well and make programming more fun!</p>
+<p>The basic strategy for understanding code is the &#8220;explain; predict; check&#8221; loop.</p>
+<div class="section" id="explain-make-a-reference-diagram">
+<h2>Explain (Make a reference diagram)<a class="headerlink" href="#explain-make-a-reference-diagram" title="Permalink to this headline">¶</a></h2>
+<p>To understand what a snippet of code (one or more lines) does, you should first form a hypothesis about the <em>state</em> of the program just before your snippet executes.</p>
+<p>It’s a good idea to make a reference diagram by hand, the kind of diagram that CodeLens produces for you. In particular, for each of the variable names that are referred to in the code snippet you are trying to understand, you should make a prediction about:</p>
+<blockquote>
+<div><ul class="simple">
+<li>the type of that variable’s value (integer, string, list, dictionary, etc.)</li>
+<li>the value of that variable</li>
+</ul>
+</div></blockquote>
+<p>You should also be able to state, in English, what each of the operations in your code snippet does. For example, if your code snippet includes a line <tt class="docutils literal"><span class="pre">x.append(4)</span></tt>, then you should be able to say, “The append operation takes a list, x in this case, and appends an item, 4 in this case, to the end of the list. It changes the actual list, so any other variable that is an alias for the list will also have its value changed.”</p>
+</div>
+<div class="section" id="predict">
+<h2>Predict<a class="headerlink" href="#predict" title="Permalink to this headline">¶</a></h2>
+<p>In the predict phase, you will predict the effect of running a snippet of code. Later on in your development, you may make predictions about large snippets of code, but for now you will typically be predicting the effect of executing a single line of code, or at most the net effect of running an entire <tt class="docutils literal"><span class="pre">for</span></tt> loop. A prediction will either be about what gets printed out, or about the value of a variable, or that an error will occur.</p>
+<p>A prediction is not a random guess. It is based on some explanation you have about what the current state of variables is and about what you think certain commands in python do.</p>
+</div>
+<div class="section" id="check">
+<h2>Check<a class="headerlink" href="#check" title="Permalink to this headline">¶</a></h2>
+<p>To check your understanding or your predictions, you will run a program.</p>
+<p>To check your understanding about the state of variables before your code snippet runs, add diagnostic print statements that print out the types and values of variables. Add these print statements just <em>before</em> the code snippet you are trying to understand.</p>
+<p>If you made a prediction about the output that will be generated when the code snippet runs, then you can just run the program. If, however, you made a prediction about a change that occurs in the value of a variable, you will need to add an extra diagnostic print statement right after the line of code that you think should be changing that variable.</p>
+<p>The diagnostic print statements are temporary.  Once you have verified that a program is doing what you think it’s doing, you will remove these extra print statements.</p>
+<p>If you get any surprises, then you will want to revise your understanding or your predictions. If you were wrong about the values or types of variables before the code snippet was run, you may to revisit your understanding of the previous code.</p>
+<p>If you were wrong about the effect of an operation, you may need to revisit your understanding of that operation. One good way to do that is to run that operation on some very simple values. For example, if you thought <tt class="docutils literal"><span class="pre">x.append([4,</span> <span class="pre">5])</span></tt> appended x as the second element of the list that already contains 4 and 5, you might want to try it on even simpler values, like <tt class="docutils literal"><span class="pre">x.append(4)</span></tt> in order to realize that the item in parentheses in the one being appended, not the list one being appended to.</p>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>The following code illustrates what your program might look like after you complete the process above of adding comments that document your understanding and diagnostic print statements that allow you to check your understanding. This is what your code might look like prior to the cleanup phase.</p>
+<p>In this program we are adding all the even numbers in a list together, accumulating a sum. You will see a diagnostic print statement inside the code block of the for loop, and one inside the if statement. All of these make it easier to check whether it’s doing what it’s supposed to do.</p>
+
+<div id="cont"></div>
+<div id="db2_ex_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="db2_ex_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="db2_ex_1_saveb" onclick="saveEditor('db2_ex_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="db2_ex_1_loadb" onclick="requestCode('db2_ex_1');">Load</button>
+<button class='btn btn-default' id="db2_ex_1_vizb" onclick="injectCodelens(this,'db2_ex_1');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="db2_ex_1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="db2_ex_1_code" class="active_code" prefixcode="undefined" lang="python">
+numbers = [1,2,6,4,5,6, 93]
+
+z = 0
+for num in numbers:
+  print("*** LOOP ***")
+  print("Num =",num)
+  if (num % 2) == 0:
+    print("Is even. Adding",num,"to",z)
+    z = num + z
+  print ("Running sum =",z)
+print("*** DONE ***")
+print ("Total = " , z)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="db2_ex_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="db2_ex_1_suffix" style="display:none">
+</pre><pre id="db2_ex_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (db2_ex_1)</span> </p>
+<div id="db2_ex_1_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#db2_ex_1_saveb').toggle();
+    $('#db2_ex_1_loadb').toggle();
+}
+if ($("#db2_ex_1").attr("lang") !== "html" && $("#db2_ex_1_code_div").parents(".admonition").length == 0 && $("#db2_ex_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#db2_ex_1_code_div").offset({
+			left: $("#db2_ex_1 .clearfix").offset().left
+		});
+	}
+	$("#db2_ex_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#db2_ex_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#db2_ex_1_runb").parent().siblings(".ac_output").show();
+			runit('db2_ex_1',this, undefined);
+			$("#db2_ex_1_runb").on("click", function(){
+				runit('db2_ex_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#db2_ex_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#db2_ex_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#db2_ex_1_runb").on("click", function(){
+		runit('db2_ex_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 Paul Resnick, Brad Miller, David Ranum, Created using Runestone Interactive.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Implementing an Unordered List: Linked Lists &mdash; Problem Solving with Algorithms and Data Structures</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
+    <link rel="next" title="The Ordered List Abstract Data Type" href="TheOrderedListAbstractDataType.html" />
+    <link rel="prev" title="The Unordered List Abstract Data Type" href="TheUnorderedListAbstractDataType.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pythonds';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">Problem Solving with Algorithms and Data Structures</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pythonds/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/initiateGroup' id="joinGroupLink">Join a Study Group</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/schedule' id="groupScheduleLink">Group Schedule</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/newschedule' id="newChapterLink">Schedule New Chapter</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/manageGroup' id="manageGroupLink">Manage Group</a></li>
+			<li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/assignments/index'>Progress Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pythonds/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Implementing an Unordered List: Linked Lists</a><ul>
+<li><a class="reference internal" href="#the-node-class">The <tt class="docutils literal"><span class="pre">Node</span></tt> Class</a></li>
+<li><a class="reference internal" href="#the-unordered-list-class">The <tt class="docutils literal"><span class="pre">Unordered</span> <span class="pre">List</span></tt> Class</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - The Unordered List Abstract Data Type" data-toggle="tooltip">
+    <a href="TheUnorderedListAbstractDataType.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - The Ordered List Abstract Data Type' data-toggle="tooltip" >
+    <a href="TheOrderedListAbstractDataType.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="implementing-an-unordered-list-linked-lists">
+<h1>Implementing an Unordered List: Linked Lists<a class="headerlink" href="#implementing-an-unordered-list-linked-lists" title="Permalink to this headline">¶</a></h1>
+<p>In order to implement an unordered list, we will construct what is
+commonly known as a <strong>linked list</strong>. Recall that we need to be sure that
+we can maintain the relative positioning of the items. However, there is
+no requirement that we maintain that positioning in contiguous memory.
+For example, consider the collection of items shown in
+<a class="reference internal" href="#fig-idea"><em>Figure 1</em></a>. It appears that these values have been placed
+randomly. If we can maintain some explicit information in each item,
+namely the location of the next item (see <a class="reference internal" href="#fig-idea2"><em>Figure 2</em></a>), then the
+relative position of each item can be expressed by simply following the
+link from one item to the next.</p>
+<div class="figure align-center" id="fig-idea">
+<img alt="../_images/idea.png" src="../_images/idea.png" />
+<p class="caption">Figure 1: Items Not Constrained in Their Physical Placement</p>
+</div>
+<div class="figure align-center" id="fig-idea2">
+<img alt="../_images/idea2.png" src="../_images/idea2.png" />
+<p class="caption">Figure 2: Relative Positions Maintained by Explicit Links.</p>
+</div>
+<p>It is important to note that the location of the first item of the list
+must be explicitly specified. Once we know where the first item is, the
+first item can tell us where the second is, and so on. The external
+reference is often referred to as the <strong>head</strong> of the list. Similarly,
+the last item needs to know that there is no next item.</p>
+<div class="section" id="the-node-class">
+<h2>The <tt class="docutils literal"><span class="pre">Node</span></tt> Class<a class="headerlink" href="#the-node-class" title="Permalink to this headline">¶</a></h2>
+<p>The basic building block for the linked list implementation is the
+<strong>node</strong>. Each node object must hold at least two pieces of information.
+First, the node must contain the list item itself. We will call this the
+<strong>data field</strong> of the node. In addition, each node must hold a reference
+to the next node. <a class="reference internal" href="#lst-nodeclass"><em>Listing 1</em></a> shows the Python
+implementation. To construct a node, you need to supply the initial data
+value for the node. Evaluating the assignment statement below will yield
+a node object containing the value 93 (see <a class="reference internal" href="#fig-node"><em>Figure 3</em></a>). You
+should note that we will typically represent a node object as shown in
+<a class="reference internal" href="#fig-node2"><em>Figure 4</em></a>. The <tt class="docutils literal"><span class="pre">Node</span></tt> class also includes the usual methods
+to access and modify the data and the next reference.</p>
+<p id="lst-nodeclass"><strong>Listing 1</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">initdata</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">initdata</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">getData</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+
+    <span class="k">def</span> <span class="nf">getNext</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">next</span>
+
+    <span class="k">def</span> <span class="nf">setData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">newdata</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">newdata</span>
+
+    <span class="k">def</span> <span class="nf">setNext</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">newnext</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">newnext</span>
+</pre></div>
+</div>
+<p>We create <tt class="docutils literal"><span class="pre">Node</span></tt> objects in the usual way.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">temp</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">93</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">temp</span><span class="o">.</span><span class="n">getData</span><span class="p">()</span>
+<span class="go">93</span>
+</pre></div>
+</div>
+<p>The special Python reference value <tt class="docutils literal"><span class="pre">None</span></tt> will play an important role
+in the <tt class="docutils literal"><span class="pre">Node</span></tt> class and later in the linked list itself. A reference
+to <tt class="docutils literal"><span class="pre">None</span></tt> will denote the fact that there is no next node. Note in the
+constructor that a node is initially created with <tt class="docutils literal"><span class="pre">next</span></tt> set to
+<tt class="docutils literal"><span class="pre">None</span></tt>. Since this is sometimes referred to as “grounding the node,”
+we will use the standard ground symbol to denote a reference that is
+referring to <tt class="docutils literal"><span class="pre">None</span></tt>. It is always a good idea to explicitly assign
+<tt class="docutils literal"><span class="pre">None</span></tt> to your initial next reference values.</p>
+<div class="figure align-center" id="fig-node">
+<img alt="../_images/node.png" src="../_images/node.png" />
+<p class="caption">Figure 3: A Node Object Contains the Item and a Reference to the Next Node</p>
+</div>
+<div class="figure align-center" id="fig-node2">
+<img alt="../_images/node2.png" src="../_images/node2.png" />
+<p class="caption">Figure 4: A Typical Representation for a Node</p>
+</div>
+</div>
+<div class="section" id="the-unordered-list-class">
+<h2>The <tt class="docutils literal"><span class="pre">Unordered</span> <span class="pre">List</span></tt> Class<a class="headerlink" href="#the-unordered-list-class" title="Permalink to this headline">¶</a></h2>
+<p>As we suggested above, the unordered list will be built from a
+collection of nodes, each linked to the next by explicit references. As
+long as we know where to find the first node (containing the first
+item), each item after that can be found by successively following the
+next links. With this in mind, the <tt class="docutils literal"><span class="pre">UnorderedList</span></tt> class must maintain
+a reference to the first node. <a class="reference internal" href="#lst-listclass"><em>Listing 2</em></a> shows the
+constructor. Note that each list object will maintain a single reference
+to the head of the list.</p>
+<p id="lst-listclass"><strong>Listing 2</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">UnorderedList</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="bp">None</span>
+</pre></div>
+</div>
+<p>Initially when we construct a list, there are no items. The assignment
+statement</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mylist</span> <span class="o">=</span> <span class="n">UnorderedList</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>creates the linked list representation shown in
+<a class="reference internal" href="#fig-initlinkedlist"><em>Figure 5</em></a>. As we discussed in the <tt class="docutils literal"><span class="pre">Node</span></tt> class, the
+special reference <tt class="docutils literal"><span class="pre">None</span></tt> will again be used to state that the head of
+the list does not refer to anything. Eventually, the example list given
+earlier will be represented by a linked list as shown in
+<a class="reference internal" href="#fig-linkedlist"><em>Figure 6</em></a>. The head of the list refers to the first node
+which contains the first item of the list. In turn, that node holds a
+reference to the next node (the next item) and so on. It is very
+important to note that the list class itself does not contain any node
+objects. Instead it contains a single reference to only the first node
+in the linked structure.</p>
+<div class="figure align-center" id="fig-initlinkedlist">
+<img alt="../_images/initlinkedlist.png" src="../_images/initlinkedlist.png" />
+<p class="caption">Figure 5: An Empty List</p>
+</div>
+<div class="figure align-center" id="fig-linkedlist">
+<img alt="../_images/linkedlist.png" src="../_images/linkedlist.png" />
+<p class="caption">Figure 6: A Linked List of Integers</p>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">isEmpty</span></tt> method, shown in <a class="reference internal" href="#lst-isempty"><em>Listing 3</em></a>, simply checks to
+see if the head of the list is a reference to <tt class="docutils literal"><span class="pre">None</span></tt>. The result of
+the boolean expression <tt class="docutils literal"><span class="pre">self.head==None</span></tt> will only be true if there
+are no nodes in the linked list. Since a new list is empty, the
+constructor and the check for empty must be consistent with one another.
+This shows the advantage to using the reference <tt class="docutils literal"><span class="pre">None</span></tt> to denote the
+“end” of the linked structure. In Python, <tt class="docutils literal"><span class="pre">None</span></tt> can be compared to
+any reference. Two references are equal if they both refer to the same
+object. We will use this often in our remaining methods.</p>
+<p id="lst-isempty"><strong>Listing 3</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">==</span> <span class="bp">None</span>
+</pre></div>
+</div>
+<p>So, how do we get items into our list? We need to implement the <tt class="docutils literal"><span class="pre">add</span></tt>
+method. However, before we can do that, we need to address the important
+question of where in the linked list to place the new item. Since this
+list is unordered, the specific location of the new item with respect to
+the other items already in the list is not important. The new item can
+go anywhere. With that in mind, it makes sense to place the new item in
+the easiest location possible.</p>
+<p>Recall that the linked list structure provides us with only one entry
+point, the head of the list. All of the other nodes can only be reached
+by accessing the first node and then following <tt class="docutils literal"><span class="pre">next</span></tt> links. This
+means that the easiest place to add the new node is right at the head,
+or beginning, of the list. In other words, we will make the new item the
+first item of the list and the existing items will need to be linked to
+this new first item so that they follow.</p>
+<p>The linked list shown in <a class="reference internal" href="#fig-linkedlist"><em>Figure 6</em></a> was built by calling
+the <tt class="docutils literal"><span class="pre">add</span></tt> method a number of times.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mylist</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">31</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mylist</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">77</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mylist</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mylist</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">93</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mylist</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">26</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mylist</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">54</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that since 31 is the first item added to the list, it will
+eventually be the last node on the linked list as every other item is
+added ahead of it. Also, since 54 is the last item added, it will become
+the data value in the first node of the linked list.</p>
+<p>The <tt class="docutils literal"><span class="pre">add</span></tt> method is shown in <a class="reference internal" href="#lst-add"><em>Listing 4</em></a>. Each item of the list
+must reside in a node object. Line 2 creates a new node and places the
+item as its data. Now we must complete the process by linking the new
+node into the existing structure. This requires two steps as shown in
+<a class="reference internal" href="#fig-addtohead"><em>Figure 7</em></a>. Step 1 (line 3) changes the <tt class="docutils literal"><span class="pre">next</span></tt> reference
+of the new node to refer to the old first node of the list. Now that the
+rest of the list has been properly attached to the new node, we can
+modify the head of the list to refer to the new node. The assignment
+statement in line 4 sets the head of the list.</p>
+<p>The order of the two steps described above is very important. What
+happens if the order of line 3 and line 4 is reversed? If the
+modification of the head of the list happens first, the result can be
+seen in <a class="reference internal" href="#fig-wrongorder"><em>Figure 8</em></a>. Since the head was the only external
+reference to the list nodes, all of the original nodes are lost and can
+no longer be accessed.</p>
+<p id="lst-add"><strong>Listing 4</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">item</span><span class="p">):</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="n">temp</span><span class="o">.</span><span class="n">setNext</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">temp</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="fig-addtohead">
+<img alt="../_images/addtohead.png" src="../_images/addtohead.png" />
+<p class="caption">Figure 7: Adding a New Node is a Two-Step Process</p>
+</div>
+<div class="figure align-center" id="fig-wrongorder">
+<img alt="../_images/wrongorder.png" src="../_images/wrongorder.png" />
+<p class="caption">Figure 8: Result of Reversing the Order of the Two Steps</p>
+</div>
+<p>The next methods that we will implement–<tt class="docutils literal"><span class="pre">size</span></tt>, <tt class="docutils literal"><span class="pre">search</span></tt>, and
+<tt class="docutils literal"><span class="pre">remove</span></tt>–are all based on a technique known as <strong>linked list
+traversal</strong>. Traversal refers to the process of systematically visiting
+each node. To do this we use an external reference that starts at the
+first node in the list. As we visit each node, we move the reference to
+the next node by “traversing” the next reference.</p>
+<p>To implement the <tt class="docutils literal"><span class="pre">size</span></tt> method, we need to traverse the linked list
+and keep a count of the number of nodes that occurred.
+<a class="reference internal" href="#lst-length"><em>Listing 5</em></a> shows the Python code for counting the number of
+nodes in the list. The external reference is called <tt class="docutils literal"><span class="pre">current</span></tt> and is
+initialized to the head of the list in line 2. At the start of the
+process we have not seen any nodes so the count is set to <span class="math">\(0\)</span>.
+Lines 4–6 actually implement the traversal. As long as the current
+reference has not seen the end of the list (<tt class="docutils literal"><span class="pre">None</span></tt>), we move current
+along to the next node via the assignment statement in line 6. Again,
+the ability to compare a reference to <tt class="docutils literal"><span class="pre">None</span></tt> is very useful. Every
+time current moves to a new node, we add <span class="math">\(1\)</span> to <tt class="docutils literal"><span class="pre">count</span></tt>.
+Finally, <tt class="docutils literal"><span class="pre">count</span></tt> gets returned after the iteration stops.
+<a class="reference internal" href="#fig-traversal"><em>Figure 9</em></a> shows this process as it proceeds down the list.</p>
+<p id="lst-length"><strong>Listing 5</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">current</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">getNext</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">count</span>
+</pre></div>
+</td></tr></table></div>
+<div class="figure align-center" id="fig-traversal">
+<img alt="../_images/traversal.png" src="../_images/traversal.png" />
+<p class="caption">Figure 9: Traversing the Linked List from the Head to the End</p>
+</div>
+<p>Searching for a value in a linked list implementation of an unordered
+list also uses the traversal technique. As we visit each node in the
+linked list we will ask whether the data stored there matches the item
+we are looking for. In this case, however, we may not have to traverse
+all the way to the end of the list. In fact, if we do get to the end of
+the list, that means that the item we are looking for must not be
+present. Also, if we do find the item, there is no need to continue.</p>
+<p><a class="reference internal" href="#lst-search"><em>Listing 6</em></a> shows the implementation for the <tt class="docutils literal"><span class="pre">search</span></tt> method.
+As in the <tt class="docutils literal"><span class="pre">size</span></tt> method, the traversal is initialized to start at
+the head of the list (line 2). We also use a boolean variable called
+<tt class="docutils literal"><span class="pre">found</span></tt> to remember whether we have located the item we are searching
+for. Since we have not found the item at the start of the traversal,
+<tt class="docutils literal"><span class="pre">found</span></tt> can be set to <tt class="docutils literal"><span class="pre">False</span></tt> (line 3). The iteration in line 4
+takes into account both conditions discussed above. As long as there are
+more nodes to visit and we have not found the item we are looking for,
+we continue to check the next node. The question in line 5 asks whether
+the data item is present in the current node. If so, <tt class="docutils literal"><span class="pre">found</span></tt> can be
+set to <tt class="docutils literal"><span class="pre">True</span></tt>.</p>
+<p id="lst-search"><strong>Listing 6</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">item</span><span class="p">):</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">while</span> <span class="n">current</span> <span class="o">!=</span> <span class="bp">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">current</span><span class="o">.</span><span class="n">getData</span><span class="p">()</span> <span class="o">==</span> <span class="n">item</span><span class="p">:</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">getNext</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">found</span>
+</pre></div>
+</td></tr></table></div>
+<p>As an example, consider invoking the <tt class="docutils literal"><span class="pre">search</span></tt> method looking for the
+item 17.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mylist</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Since 17 is in the list, the traversal process needs to move only to the
+node containing 17. At that point, the variable <tt class="docutils literal"><span class="pre">found</span></tt> is set to
+<tt class="docutils literal"><span class="pre">True</span></tt> and the <tt class="docutils literal"><span class="pre">while</span></tt> condition will fail, leading to the return
+value seen above. This process can be seen in <a class="reference internal" href="#fig-searchpic"><em>Figure 10</em></a>.</p>
+<div class="figure align-center" id="fig-searchpic">
+<img alt="../_images/search.png" src="../_images/search.png" />
+<p class="caption">Figure 10: Successful Search for the Value 17</p>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">remove</span></tt> method requires two logical steps. First, we need to
+traverse the list looking for the item we want to remove. Once we find
+the item (recall that we assume it is present), we must remove it. The
+first step is very similar to <tt class="docutils literal"><span class="pre">search</span></tt>. Starting with an external
+reference set to the head of the list, we traverse the links until we
+discover the item we are looking for. Since we assume that item is
+present, we know that the iteration will stop before <tt class="docutils literal"><span class="pre">current</span></tt> gets to
+<tt class="docutils literal"><span class="pre">None</span></tt>. This means that we can simply use the boolean <tt class="docutils literal"><span class="pre">found</span></tt> in the
+condition.</p>
+<p>When <tt class="docutils literal"><span class="pre">found</span></tt> becomes <tt class="docutils literal"><span class="pre">True</span></tt>, <tt class="docutils literal"><span class="pre">current</span></tt> will be a reference to the
+node containing the item to be removed. But how do we remove it? One
+possibility would be to replace the value of the item with some marker
+that suggests that the item is no longer present. The problem with this
+approach is the number of nodes will no longer match the number of
+items. It would be much better to remove the item by removing the entire
+node.</p>
+<p>In order to remove the node containing the item, we need to modify the
+link in the previous node so that it refers to the node that comes after
+<tt class="docutils literal"><span class="pre">current</span></tt>. Unfortunately, there is no way to go backward in the linked
+list. Since <tt class="docutils literal"><span class="pre">current</span></tt> refers to the node ahead of the node where we
+would like to make the change, it is too late to make the necessary
+modification.</p>
+<p>The solution to this dilemma is to use two external references as we
+traverse down the linked list. <tt class="docutils literal"><span class="pre">current</span></tt> will behave just as it did
+before, marking the current location of the traverse. The new reference,
+which we will call <tt class="docutils literal"><span class="pre">previous</span></tt>, will always travel one node behind
+<tt class="docutils literal"><span class="pre">current</span></tt>. That way, when <tt class="docutils literal"><span class="pre">current</span></tt> stops at the node to be removed,
+<tt class="docutils literal"><span class="pre">previous</span></tt> will be referring to the proper place in the linked list
+for the modification.</p>
+<p><a class="reference internal" href="#lst-remove"><em>Listing 7</em></a> shows the complete <tt class="docutils literal"><span class="pre">remove</span></tt> method. Lines 2–3
+assign initial values to the two references. Note that <tt class="docutils literal"><span class="pre">current</span></tt>
+starts out at the list head as in the other traversal examples.
+<tt class="docutils literal"><span class="pre">previous</span></tt>, however, is assumed to always travel one node behind
+current. For this reason, <tt class="docutils literal"><span class="pre">previous</span></tt> starts out with a value of
+<tt class="docutils literal"><span class="pre">None</span></tt> since there is no node before the head (see
+<a class="reference internal" href="#fig-removeinit"><em>Figure 11</em></a>). The boolean variable <tt class="docutils literal"><span class="pre">found</span></tt> will again be
+used to control the iteration.</p>
+<p>In lines 6–7 we ask whether the item stored in the current node is the
+item we wish to remove. If so, <tt class="docutils literal"><span class="pre">found</span></tt> can be set to <tt class="docutils literal"><span class="pre">True</span></tt>. If we
+do not find the item, <tt class="docutils literal"><span class="pre">previous</span></tt> and <tt class="docutils literal"><span class="pre">current</span></tt> must both be moved
+one node ahead. Again, the order of these two statements is crucial.
+<tt class="docutils literal"><span class="pre">previous</span></tt> must first be moved one node ahead to the location of
+<tt class="docutils literal"><span class="pre">current</span></tt>. At that point, <tt class="docutils literal"><span class="pre">current</span></tt> can be moved. This process is
+often referred to as “inch-worming” as <tt class="docutils literal"><span class="pre">previous</span></tt> must catch up to
+<tt class="docutils literal"><span class="pre">current</span></tt> before <tt class="docutils literal"><span class="pre">current</span></tt> moves ahead. <a class="reference internal" href="#fig-prevcurr"><em>Figure 12</em></a> shows
+the movement of <tt class="docutils literal"><span class="pre">previous</span></tt> and <tt class="docutils literal"><span class="pre">current</span></tt> as they progress down the
+list looking for the node containing the value 17.</p>
+<p id="lst-remove"><strong>Listing 7</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">item</span><span class="p">):</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
+    <span class="n">previous</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">current</span><span class="o">.</span><span class="n">getData</span><span class="p">()</span> <span class="o">==</span> <span class="n">item</span><span class="p">:</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">previous</span> <span class="o">=</span> <span class="n">current</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">getNext</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">previous</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">getNext</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">previous</span><span class="o">.</span><span class="n">setNext</span><span class="p">(</span><span class="n">current</span><span class="o">.</span><span class="n">getNext</span><span class="p">())</span>
+</pre></div>
+</td></tr></table></div>
+<div class="figure align-center" id="fig-removeinit">
+<img alt="../_images/removeinit.png" src="../_images/removeinit.png" />
+<p class="caption">Figure 11: Initial Values for the <tt class="docutils literal"><span class="pre">previous</span></tt> and <tt class="docutils literal"><span class="pre">current</span></tt> References</p>
+</div>
+<div class="figure align-center" id="fig-prevcurr">
+<img alt="../_images/prevcurr.png" src="../_images/prevcurr.png" />
+<p class="caption">Figure 12: <tt class="docutils literal"><span class="pre">previous</span></tt> and <tt class="docutils literal"><span class="pre">current</span></tt> Move Down the List</p>
+</div>
+<p>Once the searching step of the <tt class="docutils literal"><span class="pre">remove</span></tt> has been completed, we need to
+remove the node from the linked list. <a class="reference internal" href="#fig-removepic1"><em>Figure 13</em></a> shows the
+link that must be modified. However, there is a special case that needs
+to be addressed. If the item to be removed happens to be the first item
+in the list, then <tt class="docutils literal"><span class="pre">current</span></tt> will reference the first node in the
+linked list. This also means that <tt class="docutils literal"><span class="pre">previous</span></tt> will be <tt class="docutils literal"><span class="pre">None</span></tt>. We said
+earlier that <tt class="docutils literal"><span class="pre">previous</span></tt> would be referring to the node whose next
+reference needs to be modified in order to complete the remove. In this
+case, it is not <tt class="docutils literal"><span class="pre">previous</span></tt> but rather the head of the list that needs
+to be changed (see <a class="reference internal" href="#fig-removehead"><em>Figure 14</em></a>).</p>
+<div class="figure align-center" id="fig-removepic1">
+<img alt="../_images/remove.png" src="../_images/remove.png" />
+<p class="caption">Figure 13: Removing an Item from the Middle of the List</p>
+</div>
+<div class="figure align-center" id="fig-removehead">
+<img alt="../_images/remove2.png" src="../_images/remove2.png" />
+<p class="caption">Figure 14: Removing the First Node from the List</p>
+</div>
+<p>Line 12 allows us to check whether we are dealing with the special case
+described above. If <tt class="docutils literal"><span class="pre">previous</span></tt> did not move, it will still have the
+value <tt class="docutils literal"><span class="pre">None</span></tt> when the boolean <tt class="docutils literal"><span class="pre">found</span></tt> becomes <tt class="docutils literal"><span class="pre">True</span></tt>. In that case
+(line 13) the head of the list is modified to refer to the node after
+the current node, in effect removing the first node from the linked
+list. However, if previous is not <tt class="docutils literal"><span class="pre">None</span></tt>, the node to be removed is
+somewhere down the linked list structure. In this case the previous
+reference is providing us with the node whose next reference must be
+changed. Line 15 uses the <tt class="docutils literal"><span class="pre">setNext</span></tt> method from <tt class="docutils literal"><span class="pre">previous</span></tt> to
+accomplish the removal. Note that in both cases the destination of the
+reference change is <tt class="docutils literal"><span class="pre">current.getNext()</span></tt>. One question that often
+arises is whether the two cases shown here will also handle the
+situation where the item to be removed is in the last node of the linked
+list. We leave that for you to consider.</p>
+<p>You can try out the <tt class="docutils literal"><span class="pre">UnorderedList</span></tt> class in ActiveCode 1.</p>
+
+<div id="cont"></div>
+<div id="unorderedlistcomplete" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="unorderedlistcomplete_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="unorderedlistcomplete_saveb" onclick="saveEditor('unorderedlistcomplete');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="unorderedlistcomplete_loadb" onclick="requestCode('unorderedlistcomplete');">Load</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="unorderedlistcomplete_showb" onclick="$('#unorderedlistcomplete_code_div').toggle();cm_editors['unorderedlistcomplete_code'].refresh();$('#unorderedlistcomplete_saveb').toggle();$('#unorderedlistcomplete_loadb').toggle()">Show/Hide Code</button>
+
+</div>
+<br/>
+<div id="unorderedlistcomplete_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="unorderedlistcomplete_code" class="active_code" prefixcode="undefined" lang="python">
+class Node:
+    def __init__(self,initdata):
+        self.data = initdata
+        self.next = None
+
+    def getData(self):
+        return self.data
+
+    def getNext(self):
+        return self.next
+
+    def setData(self,newdata):
+        self.data = newdata
+
+    def setNext(self,newnext):
+        self.next = newnext
+
+
+class UnorderedList:
+
+    def __init__(self):
+        self.head = None
+
+    def isEmpty(self):
+        return self.head == None
+
+    def add(self,item):
+        temp = Node(item)
+        temp.setNext(self.head)
+        self.head = temp
+
+    def size(self):
+        current = self.head
+        count = 0
+        while current != None:
+            count = count + 1
+            current = current.getNext()
+
+        return count
+
+    def search(self,item):
+        current = self.head
+        found = False
+        while current != None and not found:
+            if current.getData() == item:
+                found = True
+            else:
+                current = current.getNext()
+
+        return found
+
+    def remove(self,item):
+        current = self.head
+        previous = None
+        found = False
+        while not found:
+            if current.getData() == item:
+                found = True
+            else:
+                previous = current
+                current = current.getNext()
+
+        if previous == None:
+            self.head = current.getNext()
+        else:
+            previous.setNext(current.getNext())
+
+mylist = UnorderedList()
+
+mylist.add(31)
+mylist.add(77)
+mylist.add(17)
+mylist.add(93)
+mylist.add(26)
+mylist.add(54)
+
+print(mylist.size())
+print(mylist.search(93))
+print(mylist.search(100))
+
+mylist.add(100)
+print(mylist.search(100))
+print(mylist.size())
+
+mylist.remove(54)
+print(mylist.size())
+mylist.remove(93)
+print(mylist.size())
+mylist.remove(31)
+print(mylist.size())
+print(mylist.search(93))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="unorderedlistcomplete_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="unorderedlistcomplete_suffix" style="display:none">
+</pre><pre id="unorderedlistcomplete_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text">The Complete UnorderedList Class (unorderedlistcomplete)</span> </p>
+
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#unorderedlistcomplete_saveb').toggle();
+    $('#unorderedlistcomplete_loadb').toggle();
+}
+if ($("#unorderedlistcomplete").attr("lang") !== "html" && $("#unorderedlistcomplete_code_div").parents(".admonition").length == 0 && $("#unorderedlistcomplete_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#unorderedlistcomplete_code_div").offset({
+			left: $("#unorderedlistcomplete .clearfix").offset().left
+		});
+	}
+	$("#unorderedlistcomplete_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#unorderedlistcomplete_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#unorderedlistcomplete_runb").parent().siblings(".ac_output").show();
+			runit('unorderedlistcomplete',this, undefined);
+			$("#unorderedlistcomplete_runb").on("click", function(){
+				runit('unorderedlistcomplete',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#unorderedlistcomplete_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#unorderedlistcomplete_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#unorderedlistcomplete_runb").on("click", function(){
+		runit('unorderedlistcomplete',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>The remaining methods <tt class="docutils literal"><span class="pre">append</span></tt>, <tt class="docutils literal"><span class="pre">insert</span></tt>, <tt class="docutils literal"><span class="pre">index</span></tt>, and <tt class="docutils literal"><span class="pre">pop</span></tt> are
+left as exercises. Remember that each of these must take into account
+whether the change is taking place at the head of the list or someplace
+else. Also, <tt class="docutils literal"><span class="pre">insert</span></tt>, <tt class="docutils literal"><span class="pre">index</span></tt>, and <tt class="docutils literal"><span class="pre">pop</span></tt> require that we name the
+positions of the list. We will assume that position names are integers
+starting with 0.</p>
+<div class="admonition-self-check admonition">
+<p class="first admonition-title">Self Check</p>
+<p>Part I:  Implement the append method for UnorderedList.  What is the time complexity of the method you created?</p>
+
+<div id="cont"></div>
+<div id="self_check_list1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="self_check_list1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="self_check_list1_saveb" onclick="saveEditor('self_check_list1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="self_check_list1_loadb" onclick="requestCode('self_check_list1');">Load</button>
+<button class='ac_opt btn btn-default' id="self_check_list1_coach_b" onclick="injectCodeCoach('self_check_list1');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="self_check_list1_showb" onclick="$('#self_check_list1_code_div').toggle();cm_editors['self_check_list1_code'].refresh();$('#self_check_list1_saveb').toggle();$('#self_check_list1_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('self_check_list1')"/>
+
+</div>
+<br/>
+<div id="self_check_list1_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="self_check_list1_code" class="active_code" prefixcode="undefined" lang="python">
+class Node:
+    def __init__(self,initdata):
+        self.data = initdata
+        self.next = None
+
+    def getData(self):
+        return self.data
+
+    def getNext(self):
+        return self.next
+
+    def setData(self,newdata):
+        self.data = newdata
+
+    def setNext(self,newnext):
+        self.next = newnext
+
+
+class UnorderedList:
+
+    def __init__(self):
+        self.head = None
+
+    def isEmpty(self):
+        return self.head == None
+
+    def add(self,item):
+        temp = Node(item)
+        temp.setNext(self.head)
+        self.head = temp
+
+    def size(self):
+        current = self.head
+        count = 0
+        while current != None:
+            count = count + 1
+            current = current.getNext()
+
+        return count
+
+    def search(self,item):
+        current = self.head
+        found = False
+        while current != None and not found:
+            if current.getData() == item:
+                found = True
+            else:
+                current = current.getNext()
+
+        return found
+
+    def remove(self,item):
+        current = self.head
+        previous = None
+        found = False
+        while not found:
+            if current.getData() == item:
+                found = True
+            else:
+                previous = current
+                current = current.getNext()
+
+        if previous == None:
+            self.head = current.getNext()
+        else:
+            previous.setNext(current.getNext())
+
+mylist = UnorderedList()
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="self_check_list1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="self_check_list1_suffix" style="display:none">
+</pre><pre id="self_check_list1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (self_check_list1)</span> </p>
+<div id="self_check_list1_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#self_check_list1_saveb').toggle();
+    $('#self_check_list1_loadb').toggle();
+}
+if ($("#self_check_list1").attr("lang") !== "html" && $("#self_check_list1_code_div").parents(".admonition").length == 0 && $("#self_check_list1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#self_check_list1_code_div").offset({
+			left: $("#self_check_list1 .clearfix").offset().left
+		});
+	}
+	$("#self_check_list1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#self_check_list1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#self_check_list1_runb").parent().siblings(".ac_output").show();
+			runit('self_check_list1',this, undefined);
+			$("#self_check_list1_runb").on("click", function(){
+				runit('self_check_list1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#self_check_list1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#self_check_list1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#self_check_list1_runb").on("click", function(){
+		runit('self_check_list1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Part II:  In the previous problem, you most likely created an append method that was <span class="math">\(O(n)\)</span>  If you add an instance variable to the UnorderedList class you can create an append method that is <span class="math">\(O(1)\)</span>.  Modify your append method to be <span class="math">\(O(1)\)</span>  Be Careful!  To really do this correctly you will need to consider a couple of special cases that may require you to make a modification to the add method as well.</p>
+
+<div id="cont"></div>
+<div id="self_check_list2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="self_check_list2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="self_check_list2_saveb" onclick="saveEditor('self_check_list2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="self_check_list2_loadb" onclick="requestCode('self_check_list2');">Load</button>
+<button class='ac_opt btn btn-default' id="self_check_list2_coach_b" onclick="injectCodeCoach('self_check_list2');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="self_check_list2_showb" onclick="$('#self_check_list2_code_div').toggle();cm_editors['self_check_list2_code'].refresh();$('#self_check_list2_saveb').toggle();$('#self_check_list2_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('self_check_list2')"/>
+
+</div>
+<br/>
+<div id="self_check_list2_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="self_check_list2_code" class="active_code" prefixcode="undefined" lang="python">
+class Node:
+    def __init__(self,initdata):
+        self.data = initdata
+        self.next = None
+
+    def getData(self):
+        return self.data
+
+    def getNext(self):
+        return self.next
+
+    def setData(self,newdata):
+        self.data = newdata
+
+    def setNext(self,newnext):
+        self.next = newnext
+
+
+class UnorderedList:
+
+    def __init__(self):
+        self.head = None
+
+    def isEmpty(self):
+        return self.head == None
+
+    def add(self,item):
+        temp = Node(item)
+        temp.setNext(self.head)
+        self.head = temp
+
+    def size(self):
+        current = self.head
+        count = 0
+        while current != None:
+            count = count + 1
+            current = current.getNext()
+
+        return count
+
+    def search(self,item):
+        current = self.head
+        found = False
+        while current != None and not found:
+            if current.getData() == item:
+                found = True
+            else:
+                current = current.getNext()
+
+        return found
+
+    def remove(self,item):
+        current = self.head
+        previous = None
+        found = False
+        while not found:
+            if current.getData() == item:
+                found = True
+            else:
+                previous = current
+                current = current.getNext()
+
+        if previous == None:
+            self.head = current.getNext()
+        else:
+            previous.setNext(current.getNext())
+
+mylist = UnorderedList()
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="self_check_list2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="self_check_list2_suffix" style="display:none">
+</pre><pre id="self_check_list2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (self_check_list2)</span> </p>
+<div id="self_check_list2_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#self_check_list2_saveb').toggle();
+    $('#self_check_list2_loadb').toggle();
+}
+if ($("#self_check_list2").attr("lang") !== "html" && $("#self_check_list2_code_div").parents(".admonition").length == 0 && $("#self_check_list2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#self_check_list2_code_div").offset({
+			left: $("#self_check_list2 .clearfix").offset().left
+		});
+	}
+	$("#self_check_list2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#self_check_list2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#self_check_list2_runb").parent().siblings(".ac_output").show();
+			runit('self_check_list2',this, undefined);
+			$("#self_check_list2_runb").on("click", function(){
+				runit('self_check_list2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#self_check_list2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#self_check_list2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#self_check_list2_runb").on("click", function(){
+		runit('self_check_list2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - The Unordered List Abstract Data Type' data-toggle="tooltip">
+    <a href="TheUnorderedListAbstractDataType.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="TheUnorderedListAbstractDataType.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - The Ordered List Abstract Data Type' data-toggle="tooltip" >
+    <a href="TheOrderedListAbstractDataType.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="TheOrderedListAbstractDataType.html" >Next Section - The Ordered List Abstract Data Type</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014 Brad Miller, David Ranum.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,390 @@
+..  Copyright (C)  Mark Guzdial, Barbara Ericson, Briana Morrison
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3 or
+    any later version published by the Free Software Foundation; with
+    Invariant Sections being Forward, Prefaces, and Contributor List,
+    no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license
+    is included in the section entitled "GNU Free Documentation License".
+
+.. setup for automatic question numbering.
+
+.. |bigteachernote| image:: Figures/apple.jpg
+    :width: 50px
+    :align: top
+    :alt: teacher note
+    
+.. 	qnum::
+	:start: 1
+	:prefix: csp-16-
+
+
+Working with Collections of Data
+=================================
+
+.. index:: 
+	single: arrays; lists; indexing; collections;
+
+Computers can work with more than just single values like 34.2 or single words like ``Hi``. They can also store large collections of numbers and letters and other objects.  To manipulate the data, computers really just use the first three abilities that we have discussed: the ability to name things, the ability to repeat instructions, and the ability to make decisions.  That means that computers have to be able to get single values out of those collections of data, and put single values back into them.
+
+The rest of this chapter will give examples of using two data *collections*: strings and lists.
+
+Working with Strings
+=====================
+.. index:: 
+	single: len;
+	
+A **string** is a collection of characters, in a sequence.  ``"My name is Mark."`` is a string with 16 characters in it. Spaces and periods are separate characters.
+Strings start with single quotes or double quotes.  You can actually do some simple "arithmetic" with strings using ``+`` and ``*`` as shown below. You can also get the length of any collection (including strings) with the ``len`` function.
+
+.. codelens:: String_Manip
+  :showoutput:
+
+  name = "Mark"
+  start = 'My name is '
+  combined = start + name
+  print(len(combined))
+  print(combined)
+  print(name * 3)
+
+.. mchoicema:: 16-Str_Combine
+		  :answer_a: start+name
+		  :answer_b: start+name+name+name
+		  :answer_c: start + (3 * name)
+		  :answer_d: start + 3 * name
+		  :correct: b,c,d
+		  :feedback_a: No, this just generates: My name is Mark
+		  :feedback_b: Yes, this will work. Could you also use multiplication?
+		  :feedback_c: Yes, this will work, but multiplication is processed before addition, so you do not have to have parentheses.
+		  :feedback_d: Yes, this will work just fine.
+
+	   	  If we wanted to add one line to the above to print "My name is MarkMarkMark", which one of these would do it? Choose all that are correct.
+	   	  
+Working with Lists
+=====================
+
+When you go shopping, you might create a **list**. As you shop you might check things off your list (remove them from the list).  You might search your list to see if something is already on it. You might add to a list.  A **list** holds items in an order.   
+
+.. figure:: Figures/lists.jpg
+    :width: 400px
+    :align: center
+    :figclass: align-center
+
+    Figure 1: A couple of lists
+
+A **list** in Python can hold any number of items. It can also hold different types of things in the same list, like numbers and strings. You start and end a list with square brackets and separate elements with commas as shown in line 1 below.
+The function ``len`` will return the number of items in the list.  You can do "arithmetic" with lists using ``*`` and ``+``, just like with strings.  Multiplication repeats items in the list.  We can add two lists together, even if one of the lists only has a single item in it.
+
+.. codelens:: Simple_Lists
+  :showoutput:
+
+  myFirstList = [12,"ape",13]
+  print len(myFirstList)
+  print myFirstList * 3
+  mySecondList = myFirstList + [321.4]
+  print mySecondList
+
+.. index:: 
+	pair: list; index
+	
+To access individual items in a collection, we can use an **index**.  Each item in a collection has a number associated with it -- think of it as the item's address in the collection.  The first item in a collection has index ``0``, the next one ``1``, and so on.  See the image below for a view of the two lists created in the program above and the indicies for each list item.
+
+.. figure:: Figures/listIndices.png
+    :width: 300px
+    :align: center
+    :figclass: align-center
+
+    Figure 2: Lists and their indicies
+
+We use square brackets to access items of the list, e.g., ``myList[0]`` will always return the first item in the list.
+
+.. mchoicemf:: 16-lastIndex
+   :answer_a: 1
+   :answer_b: 2
+   :answer_c: 3
+   :correct: b
+   :feedback_a: This is the index of the second item in the list.  
+   :feedback_b: This is the index of the last item in this list since it contains 3 items and the first index is 0.   
+   :feedback_c: The length of the list is 3, but the first index is 0 so the 3rd item is at index 2.
+
+   What is the value of the last index in the list ``myFirstList``?
+
+You can access individual items of a list just like they were variables.  Using ``list[index]`` on the right side of an assignment returns the value at that index in the list. Using ``list[index]`` on the left side of an assignment statement changes the value at that index in the list.
+
+.. codelens:: Items_As_Variables
+  :showoutput:
+
+  items = [2,4,6,8]
+  items[0] = "First item"
+  items[1] = items[0]
+  items[2] = items[2] + 1
+  print(items)
+
+.. mchoicemf:: 16-ItemsAsVariablesQ
+	:answer_a: items[0]
+	:answer_b: items[1]
+	:answer_c: items[2]
+	:answer_d: items[3]
+	:correct: d
+	:feedback_a: Originally, items[0] was 2, but then we set it to the string: First item
+	:feedback_b: We set items[1] to be the same as items[0]: First item
+	:feedback_c: We increment items[2]
+	:feedback_d: The value at items[3] doesn't change.  It still equals 8.
+
+	Of the four items in the list named ``items``, which one is not changed in the program above?
+	
+Out of Range Error 
+===================
+
+.. index:: 
+	pair: list; out of range error
+		  
+If you try to access an index that isn't in the collection, you get an error **index out of range**.  That means that you have tried to access an item past the end of the array. Try running the example below to see what that error looks like.
+
+.. activeCode:: Index_Error
+  :tour_1: "Line by Line Tour"; 1: lst1-line1; 2: lst1-line2; 3: lst1-line3; 4: lst1-line4; 5: lst1-line5; 6: lst1-line6; 7: lst1-line7;
+
+  items = [2,4,6,8]
+  print("The number of items is", len(items))
+  items[0]="First item"
+  items[1] = items[0]
+  items[2] = items[2] + 1
+  items[4] = "Last item"
+  print(items)
+
+What would the programmer who wrote ``items[4] = "Last item"`` be trying to do?  Maybe he or she was trying to *add* an additional item to the list. 
+
+.. mchoicema:: 16-AddItem
+	:answer_a: items.append("Last item")
+	:answer_b: items = items + ["Last item"]
+	:answer_c: items.addIndex(4)
+	:answer_d: items = items + "Last item"
+	:correct: a,b
+	:feedback_a: Yes -- append is a *method* that lists understand.
+	:feedback_b: Yup, we know that we can add two lists together, and that's what we're doing here.
+	:feedback_c: That does not actually work.  A programmer could add the ability for lists to understand addIndex, though.
+	:feedback_d: No, you would get an error because you cannot add a list (items) to a string (Last item)
+	
+	Which of these line or lines *would* actually add "Last item" to the end of the ``items`` list? (Hint: Go ahead and try them above!)  Select all that work.
+
+Whatever the length of the collection (the number of items in the collection), the highest valid *index* is one *less* than the length.  (Since the first item in the collection is index `0`.)  You have probably figured out why the `range` in the `for` loop stops at one less than the last value.  If you access the ``range`` based on the ``len`` of the collection, you get exactly the right thing. We want to be able to do something like this:
+
+.. activecode:: Range_Len
+  :tour_1: "Line by Line Tour"; 1: lst2-line1; 2: lst2-line2; 3: lst2-line3;
+
+  myString = "Hello"
+  for index in range(0,len(myString)):
+     print(myString[index])
+
+**Programming Challenge**: Complete the program below to print out each item in the list ``myList``, one per line.  The code is very similar to the code above for printing each character in a string.
+
+.. activecode:: All_Items
+  
+  myList = ["this",1,"can","do", 2]
+  # You fill in here
+  
+For Each Item Loop
+===================
+
+.. index:: 
+	pair: loop; for each
+	
+Because it is very common to use a ``for`` loop to touch each of the elements of a collection, we can do it even without using a ``range`` and ``index``.  We can use a ``for`` loop that repeats the body of the loop one time for each value in the collection.  This is sometimes called a **for each loop** since it repeats the body of the loop one time for each element in the collection.
+
+.. activecode:: For_Each
+  :tour_1: "Line by Line Tour"; 1: lst3-line1; 2: lst3-line2; 3: lst3-line3; 4: lst3-line4; 5: lst3-line5; 6: lst3-line6;
+  
+  myList = [0,1,2,3,"end"]
+  for item in myList:
+    print(item)
+  myString = "MLK"
+  for character in myString:
+    print(character)
+
+This isn't actually a different ``for`` loop.  The function ``range`` actually creates a list of numbers, and the index just steps through each of those items one at a time.
+
+.. activecode:: For_Each_Range
+  :tour_1: "Line by Line Tour"; 1: lst4-line1; 2: lst4-line2; 3: lst4-line3; 4: lst4-line4;
+  
+  myString = "MLK"
+  myList = range(0,len(myString))
+  for index in myList:
+    print(myString[index])
+
+.. mchoicemf:: 16-foreachRangeQ
+			  :answer_a: We would get an error for doing math in a range function.
+			  :answer_b: We would get an error because len(myString)/2 is 7.5 which can't be used in a range.
+			  :answer_c: We would get "M L K" printed with one character per line.
+			  :answer_d: We would get "M L K " printed with one character per line plus an extra space at the end.
+			  :correct: b
+			  :feedback_a: You are allowed to do math in a range function.
+			  :feedback_b: Dividing 15 by 2 results in 7.5, which can't be used in a range.  
+			  :feedback_c: This would be true if dividing by 2 was truncated to 7.
+			  :feedback_d: This would be true if 7.5 was rounded to 8, but that doesn't happen.
+
+			   What would happen if we changed line 2 to `myList = range(0,len(myString)/2)`? (Hint: You could try it)
+			   
+Reversing a List
+=================
+
+.. index:: accumulator
+
+We can use the looping ability of computers, plus the indexing ability, to manipulate lists in interesting and even surprising ways. In the below program, we use an **accumulator**, which is something that accumulates values.  We start with the accumulator ``soFar`` set to an empty list -- a list with nothing in it.  As the program executes, it appends items from the ``source`` list into the ``soFar`` list.  
+
+.. activecode:: Reverse_List
+  :tour_1: "Line by Line Tour"; 1: lst6-line1; 2: lst6-line2; 3: lst6-line3; 4: lst6-line4; 5: lst6-line5; 
+  
+  source = ["This","is","a","list"]
+  soFar = []
+  for index in range(0,len(source)):
+    soFar = [source[index]] + soFar
+    print soFar
+
+.. mchoicemf:: 16-reversinglist
+		  :answer_a: Because we started at 0 and went to len(source).
+		  :answer_b: Because we put the new element ahead of the others in soFar.
+		  :answer_c: Because of the square brackets around source[index].
+		  :correct: b
+		  :feedback_a: That is the normal way of accessing each element, one at a time.
+		  :feedback_b: If we had done soFar = soFar + [source[index]], soFar would have just duplicated the list, in order.
+		  :feedback_c: We need those in order to add elements into the list.  You can only add a list to a list.
+
+		   Why did the code above end up reversing the list?
+		   
+Vary the Change Amount in Range
+================================
+
+.. index:: 
+	pair: range; change amount
+
+There is a version of ``range`` that takes an **change amount**, so that you can go up by more than one each time, or even down by a negative number.  Try it out!
+
+.. activecode:: 16-addEvensQ1
+  :tour_1: "Line by Line Tour"; 1: lst7-line1; 2: lst7-line2; 3: lst7-line3; 4: lst7-line4; 5: lst7-line5; 
+
+  numbers = [0,1,2,3,4,5,6,7,8,9,10]
+  evens = []
+  for index in range(0,len(numbers),2):
+     evens = evens + [numbers[index]]
+  print evens
+
+.. mchoicema:: 16-addEvensQ2
+		  :answer_a: Start with numbers=[1,2,3,4,5,6,7,8,9,10]
+		  :answer_b: Change the range to range(1,len(numbers),2)
+		  :answer_c: Change the range to range(0,len(numbers),1)
+		  :answer_d: Change the range to range(0,len(numbers),3)
+		  :correct: a,b
+		  :feedback_a: Yes, that would work, but there's an easier way
+		  :feedback_b: Yes, just by starting at 1, then skipping 2 each time, we'd collect the odds
+		  :feedback_c: No, that would collect all the numbers in evens
+		  :feedback_d: No, that would result in 0,3,6,9 in evens
+
+		   Which of these changes to the program would you give you just the odds? (Again: Try it!)  Select all that work.
+		   
+Using a Negative Change Value with Range
+==========================================
+
+.. index:: 
+	pair: range; negative change amount
+
+Here's a program we saw earlier, but with the ``range`` function parameters changed to something even more unusual.
+
+.. activecode:: Build_Up_String
+  :tour_1: "Line by Line Tour"; 1: lst8-line1; 2: lst8-line2; 3: lst8-line3; 4: lst8-line4; 5: lst8-line5; 
+
+  source = ["This","is","a","list"]
+  slowly = []
+  for index in range(len(source)-1,-1,-1):
+    slowly = [source[index]] + slowly
+    print slowly
+
+.. mchoicemf:: 16-lenMinusOne
+	  :answer_a: If we started with len(source), we would get an error for indexing past the end of the list
+	  :answer_b: It is a mistake and should be len(source)
+	  :answer_c: Because we have -1 in the other two spots
+	  :correct: a
+	  :feedback_a: Right -- the end element is at index len(source)-1
+	  :feedback_b: No -- if accessed len(source) as an index, we would be going past the end of the list
+	  :feedback_c: We have -1 in the end position because we want to stop at zero, and we have an increment of -1 (last position)
+	
+	   Why do we start at ``len(source)-1`` in this program?
+
+Can you figure out what the following program does?
+
+.. sourcecode:: python
+
+  source = "United States of America"
+  slowly = ""
+  for index in range(len(source)-1,-1,-1):
+    slowly = slowly + source[index]
+    print slowly
+
+Try to figure out what the program above does, then try to answer this question.
+
+.. mchoicemf:: 16-ReversedQ
+			  :answer_a: <image src="../_static/reversal.png"/>
+			  :answer_b: <image src="../_static/build-up-rightway.png"/>
+			  :answer_c: <image src="../_static/build-up-missed-one.png"/>
+			  :correct: a
+			  :feedback_a: This takes letters from the end of the string forward, and adds them to the end
+			  :feedback_b: This one is adding up letters in the forward direction
+			  :feedback_c: This one ends at 0 (or rather, 1)
+
+		   	  Which one of these is the output of that program?
+
+Mixed Up Rainfall Problem
+=========================
+
+.. index:: Rainfall problem
+
+Let's imagine that you have a list that contains amounts of rainfall for each day, collected by a meteorologist.  Her rain gathering equipment occasionally makes a mistake and reports a negative amount for that day.  We have to ignore those.  We need to write a program to (a) calculate the total rainfall by adding up all the positive integers (and only the positive integers), (b) count the number of positive integers (we will count with "1.0" so that our average can have a decimal point), and (c) print out the average rainfall at the end.  Only print the average if there was some rainfall, otherwise print "No rain".
+
+.. parsonsprob:: 16-rainfall
+   
+  Construct a program that correctly solves the rainfall problem
+  -----
+  rain = [0,5,1,0,-1,6,7,-2,0]
+  sumRain = 0
+  count = 0
+  =====
+  for day in rain:
+  =====
+    if day >= 0:
+  =====
+      sumRain = sumRain + day
+      count = count + 1.0
+  =====
+  if count > 0:
+  =====
+      ave = sumRain / count
+      print("Average",ave)
+  =====
+  else:
+  =====
+      print("No rain")
+
+Type the program here and try it.  Does it work like you thought it would?
+
+.. activecode:: Rainfall_Code
+
+  rain = [0,5,1,0,-1,6,7,-2,0]
+  sumRain = 0
+  count = 0
+  # Your code goes here
+  
+|bigteachernote| The Rainfall Problem
+--------------------------------------
+
+ The Rainfall Problem is perhaps the most famous problem in computer science education research.  Elliot Soloway invented it and had students at Yale University try it in 1983.  Only 14% of students in week 10 of their first semester could solve the problem correctly.  Only 36% of the students in the second course could do it.  Only 69% of Juniors and Seniors could do it.  Every study of this problem in the last 30 years has come up with the same result -- students find this to be a very hard problem.
+
+Why?  Thinking about that gives us insights into what students find hard about programming:
+
+- There are several different kinds of tests going on here.  Did we see a negative number?  Did we read any positive integers at all?  In the full version of the problem, students also have to check if they have reached the end of the data.
+
+- There are two accumulators (a sum and a count), and they have to be used together -- and **only** if the integer is positive.
+
+So that gives you a sense for what pace to expect from your students.  Two accumulators and three conditionals is enough that only 14% of Ivy League students can write the program after 10 weeks of undergraduate computer science class.  Notice how we dealt with the problem here -- we asked you to *assemble* the program out of *pieces* we already gave you.  That's already an easier task.  
+
+Have your students write lots of small simple programs before you expect them to write more complicated programs.
+
+
+

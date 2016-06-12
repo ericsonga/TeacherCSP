@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Exploring a Maze &mdash; Problem Solving with Algorithms and Data Structures</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
+    <link rel="next" title="Dynamic Programming" href="DynamicProgramming.html" />
+    <link rel="prev" title="Tower of Hanoi" href="TowerofHanoi.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pythonds';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">Problem Solving with Algorithms and Data Structures</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pythonds/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/initiateGroup' id="joinGroupLink">Join a Study Group</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/schedule' id="groupScheduleLink">Group Schedule</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/newschedule' id="newChapterLink">Schedule New Chapter</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/manageGroup' id="manageGroupLink">Manage Group</a></li>
+			<li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/assignments/index'>Progress Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pythonds/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Exploring a Maze</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Tower of Hanoi" data-toggle="tooltip">
+    <a href="TowerofHanoi.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Dynamic Programming' data-toggle="tooltip" >
+    <a href="DynamicProgramming.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="exploring-a-maze">
+<h1>Exploring a Maze<a class="headerlink" href="#exploring-a-maze" title="Permalink to this headline">¶</a></h1>
+<p>In this section we will look at a problem that has relevance to the
+expanding world of robotics: How do you find your way out of a maze? If you have
+a Roomba vacuum cleaner for your dorm room (don’t all college students?)
+you will wish that you could reprogram it using what you have learned in
+this section. The problem we want to solve is to help our turtle find
+its way out of a virtual maze. The maze problem has roots as deep as the
+Greek myth about Theseus who was sent into a maze to kill the minotaur.
+Theseus used a ball of thread to help him find his way back out again
+once he had finished off the beast. In our problem we will assume that
+our turtle is dropped down somewhere into the middle of the maze and
+must find its way out. Look at <a class="reference internal" href="#fig-mazescreen"><em>Figure 2</em></a> to get an idea of
+where we are going in this section.</p>
+<div class="figure align-center" id="fig-mazescreen">
+<img alt="../_images/maze.png" src="../_images/maze.png" />
+<p class="caption">Figure 2: The Finished Maze Search Program</p>
+</div>
+<p>To make it easier for us we will assume that our maze is divided up into
+“squares.” Each square of the maze is either open or occupied by a
+section of wall. The turtle can only pass through the open squares of
+the maze. If the turtle bumps into a wall it must try a different
+direction. The turtle will require a systematic procedure to find its
+way out of the maze. Here is the procedure:</p>
+<ul class="simple">
+<li>From our starting position we will first try going North one square
+and then recursively try our procedure from there.</li>
+<li>If we are not successful by trying a Northern path as the first step
+then we will take a step to the South and recursively repeat our
+procedure.</li>
+<li>If South does not work then we will try a step to the West as our
+first step and recursively apply our procedure.</li>
+<li>If North, South, and West have not been successful then apply the
+procedure recursively from a position one step to our East.</li>
+<li>If none of these directions works then there is no way to get out of
+the maze and we fail.</li>
+</ul>
+<p>Now, that sounds pretty easy, but there are a couple of details to talk
+about first. Suppose we take our first recursive step by going North. By
+following our procedure our next step would also be to the North. But if
+the North is blocked by a wall we must look at the next step of the
+procedure and try going to the South. Unfortunately that step to the
+south brings us right back to our original starting place. If we apply
+the recursive procedure from there we will just go back one step to the
+North and be in an infinite loop. So, we must have a strategy to
+remember where we have been. In this case we will assume that we have a
+bag of bread crumbs we can drop along our way. If we take a step in a
+certain direction and find that there is a bread crumb already on that
+square, we know that we should immediately back up and try the next
+direction in our procedure. As we will see when we look at the code for
+this algorithm, backing up is as simple as returning from a recursive
+function call.</p>
+<p>As we do for all recursive algorithms let us review the base cases. Some
+of them you may already have guessed based on the description in the
+previous paragraph. In this algorithm, there are four base cases to
+consider:</p>
+<ol class="arabic simple">
+<li>The turtle has run into a wall. Since the square is occupied by a
+wall no further exploration can take place.</li>
+<li>The turtle has found a square that has already been explored. We do
+not want to continue exploring from this position or we will get into
+a loop.</li>
+<li>We have found an outside edge, not occupied by a wall. In other words
+we have found an exit from the maze.</li>
+<li>We have explored a square unsuccessfully in all four directions.</li>
+</ol>
+<p>For our program to work we will need to have a way to represent the
+maze. To make this even more interesting we are going to use the turtle
+module to draw and explore our maze so we can watch this algorithm in
+action. The maze object will provide the following methods for us to use
+in writing our search algorithm:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">__init__</span></tt> Reads in a data file representing a maze, initializes
+the internal representation of the maze, and finds the starting
+position for the turtle.</li>
+<li><tt class="docutils literal"><span class="pre">drawMaze</span></tt> Draws the maze in a window on the screen.</li>
+<li><tt class="docutils literal"><span class="pre">updatePosition</span></tt> Updates the internal representation of the maze
+and changes the position of the turtle in the window.</li>
+<li><tt class="docutils literal"><span class="pre">isExit</span></tt> Checks to see if the current position is an exit from the
+maze.</li>
+</ul>
+<p>The <tt class="docutils literal"><span class="pre">Maze</span></tt> class also overloads the index operator <tt class="docutils literal"><span class="pre">[]</span></tt> so that our
+algorithm can easily access the status of any particular square.</p>
+<p>Let’s examine the code for the search function which we call
+<tt class="docutils literal"><span class="pre">searchFrom</span></tt>. The code is shown in <a class="reference internal" href="#lst-mazesearch"><em>Listing 3</em></a>. Notice
+that this function takes three parameters: a maze object, the starting
+row, and the starting column. This is important because as a recursive
+function the search logically starts again with each recursive call.</p>
+<p><strong>Listing 3</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre>def searchFrom(maze, startRow, startColumn):
+    maze.updatePosition(startRow, startColumn)
+   #  Check for base cases:
+   #  1. We have run into an obstacle, return false
+   if maze[startRow][startColumn] == OBSTACLE :
+        return False
+    #  2. We have found a square that has already been explored
+    if maze[startRow][startColumn] == TRIED:
+        return False
+    # 3. Success, an outside edge not occupied by an obstacle
+    if maze.isExit(startRow,startColumn):
+        maze.updatePosition(startRow, startColumn, PART_OF_PATH)
+        return True
+    maze.updatePosition(startRow, startColumn, TRIED)
+
+    # Otherwise, use logical short circuiting to try each
+    # direction in turn (if needed)
+    found = searchFrom(maze, startRow-1, startColumn) or \
+            searchFrom(maze, startRow+1, startColumn) or \
+            searchFrom(maze, startRow, startColumn-1) or \
+            searchFrom(maze, startRow, startColumn+1)
+    if found:
+        maze.updatePosition(startRow, startColumn, PART_OF_PATH)
+    else:
+        maze.updatePosition(startRow, startColumn, DEAD_END)
+    return found
+</pre></div>
+</td></tr></table></div>
+<p>As you look through the algorithm you will see that the first thing the
+code does (line 2) is call <tt class="docutils literal"><span class="pre">updatePosition</span></tt>. This is simply to help
+you visualize the algorithm so that you can watch exactly how the turtle
+explores its way through the maze. Next the algorithm checks for the
+first three of the four base cases: Has the turtle run into a wall (line
+5)? Has the turtle circled back to a square already explored (line 8)?
+Has the turtle found an exit (line 11)? If none of these conditions is
+true then we continue the search recursively.</p>
+<p>You will notice that in the recursive step there are four recursive
+calls to <tt class="docutils literal"><span class="pre">searchFrom</span></tt>. It is hard to predict how many of these
+recursive calls will be used since they are all connected by <tt class="docutils literal"><span class="pre">or</span></tt>
+statements. If the first call to <tt class="docutils literal"><span class="pre">searchFrom</span></tt> returns <tt class="docutils literal"><span class="pre">True</span></tt> then
+none of the last three calls would be needed. You can interpret this as
+meaning that a step to <tt class="docutils literal"><span class="pre">(row-1,column)</span></tt> (or North if you want to think
+geographically) is on the path leading out of the maze. If there is not
+a good path leading out of the maze to the North then the next recursive
+call is tried, this one to the South. If South fails then try West, and
+finally East. If all four recursive calls return false then we have
+found a dead end. You should download or type in the whole program and
+experiment with it by changing the order of these calls.</p>
+<p>The code for the <tt class="docutils literal"><span class="pre">Maze</span></tt> class is shown in <a class="reference internal" href="#lst-maze"><em>Listing 4</em></a>, <a class="reference internal" href="#lst-maze1"><em>Listing 5</em></a>, and <a class="reference internal" href="#lst-maze2"><em>Listing 6</em></a>.
+The <tt class="docutils literal"><span class="pre">__init__</span></tt> method takes the name of a file as its
+only parameter. This file is a text file that represents a maze by using
+“+” characters for walls, spaces for open squares, and the letter “S” to
+indicate the starting position. <a class="reference internal" href="#fig-exmaze"><em>Figure 3</em></a> is an example of a
+maze data file. The internal representation of the maze is a list of
+lists. Each row of the <tt class="docutils literal"><span class="pre">mazelist</span></tt> instance variable is also a list.
+This secondary list contains one character per square using the
+characters described above. For the data file in <a class="reference internal" href="#fig-exmaze"><em>Figure 3</em></a> the
+internal representation looks like the following:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span> <span class="p">[</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">,</span><span class="s">&#39;+&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">drawMaze</span></tt> method uses this internal representation to draw the
+initial view of the maze on the screen.</p>
+<p id="fig-exmaze">Figure 3: An Example Maze Data File</p>
+<div class="highlight-python"><div class="highlight"><pre>++++++++++++++++++++++
++   +   ++ ++     +
++ +   +       +++ + ++
++ + +  ++  ++++   + ++
++++ ++++++    +++ +  +
++          ++  ++    +
++++++ ++++++   +++++ +
++     +   +++++++  + +
++ +++++++      S +   +
++                + +++
+++++++++++++++++++ +++
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">updatePosition</span></tt> method, as shown in <a class="reference internal" href="#lst-maze1"><em>Listing 5</em></a> uses the
+same internal representation to see if the turtle has run into a wall.
+It also updates the internal representation with a “.” or “-” to
+indicate that the turtle has visited a particular square or if the
+square is part of a dead end. In addition, the <tt class="docutils literal"><span class="pre">updatePosition</span></tt> method
+uses two helper methods, <tt class="docutils literal"><span class="pre">moveTurtle</span></tt> and <tt class="docutils literal"><span class="pre">dropBreadCrumb</span></tt>, to
+update the view on the screen.</p>
+<p>Finally, the <tt class="docutils literal"><span class="pre">isExit</span></tt> method uses the current position of the turtle
+to test for an exit condition. An exit condition is whenever the turtle
+has navigated to the edge of the maze, either row zero or column zero,
+or the far right column or the bottom row.</p>
+<p id="lst-maze"><strong>Listing 4</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Maze</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">mazeFileName</span><span class="p">):</span>
+        <span class="n">rowsInMaze</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">columnsInMaze</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mazelist</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">mazeFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">mazeFileName</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
+        <span class="n">rowsInMaze</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">mazeFile</span><span class="p">:</span>
+            <span class="n">rowList</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">line</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">rowList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">ch</span> <span class="o">==</span> <span class="s">&#39;S&#39;</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">startRow</span> <span class="o">=</span> <span class="n">rowsInMaze</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">startCol</span> <span class="o">=</span> <span class="n">col</span>
+                <span class="n">col</span> <span class="o">=</span> <span class="n">col</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">rowsInMaze</span> <span class="o">=</span> <span class="n">rowsInMaze</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mazelist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rowList</span><span class="p">)</span>
+            <span class="n">columnsInMaze</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">rowList</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">rowsInMaze</span> <span class="o">=</span> <span class="n">rowsInMaze</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">columnsInMaze</span> <span class="o">=</span> <span class="n">columnsInMaze</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xTranslate</span> <span class="o">=</span> <span class="o">-</span><span class="n">columnsInMaze</span><span class="o">/</span><span class="mi">2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">yTranslate</span> <span class="o">=</span> <span class="n">rowsInMaze</span><span class="o">/</span><span class="mi">2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="n">Turtle</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="s">&#39;turtle&#39;</span><span class="p">)</span>
+        <span class="n">setup</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+        <span class="n">setworldcoordinates</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">columnsInMaze</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span>
+                            <span class="o">-</span><span class="p">(</span><span class="n">rowsInMaze</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span>
+                            <span class="p">(</span><span class="n">columnsInMaze</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">+.</span><span class="mi">5</span><span class="p">,</span>
+                            <span class="p">(</span><span class="n">rowsInMaze</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">+.</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="lst-maze1"><strong>Listing 5</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">drawMaze</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rowsInMaze</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">columnsInMaze</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mazelist</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="n">OBSTACLE</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">drawCenteredBox</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">xTranslate</span><span class="p">,</span>
+                                     <span class="o">-</span><span class="n">y</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">yTranslate</span><span class="p">,</span>
+                                     <span class="s">&#39;tan&#39;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s">&#39;black&#39;</span><span class="p">,</span><span class="s">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">drawCenteredBox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="p">):</span>
+    <span class="n">tracer</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">x</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span><span class="n">y</span><span class="o">-.</span><span class="mi">5</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s">&#39;black&#39;</span><span class="p">,</span><span class="n">color</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">setheading</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">down</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+    <span class="n">update</span><span class="p">()</span>
+    <span class="n">tracer</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">moveTurtle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">up</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">setheading</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">towards</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">xTranslate</span><span class="p">,</span>
+                                     <span class="o">-</span><span class="n">y</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">yTranslate</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">xTranslate</span><span class="p">,</span><span class="o">-</span><span class="n">y</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">yTranslate</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">dropBreadcrumb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">color</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">updatePosition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">,</span><span class="n">val</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">val</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mazelist</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">moveTurtle</span><span class="p">(</span><span class="n">col</span><span class="p">,</span><span class="n">row</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">val</span> <span class="o">==</span> <span class="n">PART_OF_PATH</span><span class="p">:</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;green&#39;</span>
+    <span class="k">elif</span> <span class="n">val</span> <span class="o">==</span> <span class="n">OBSTACLE</span><span class="p">:</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;red&#39;</span>
+    <span class="k">elif</span> <span class="n">val</span> <span class="o">==</span> <span class="n">TRIED</span><span class="p">:</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;black&#39;</span>
+    <span class="k">elif</span> <span class="n">val</span> <span class="o">==</span> <span class="n">DEAD_END</span><span class="p">:</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;red&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">if</span> <span class="n">color</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dropBreadcrumb</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="lst-maze2"><strong>Listing 6</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">isExit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">):</span>
+     <span class="k">return</span> <span class="p">(</span><span class="n">row</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span>
+             <span class="n">row</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">rowsInMaze</span><span class="o">-</span><span class="mi">1</span> <span class="ow">or</span>
+             <span class="n">col</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span>
+             <span class="n">col</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">columnsInMaze</span><span class="o">-</span><span class="mi">1</span> <span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">idx</span><span class="p">):</span>
+     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mazelist</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The complete program is shown in ActiveCode 1.  This program uses the data file <tt class="docutils literal"><span class="pre">maze2.txt</span></tt> shown below.
+Note that it is a much more simple example file in that the exit is very close to the starting position of the turtle.</p>
+      <pre id="maze2.txt">
+++++++++++++++++++++++
++   +   ++ ++        +
+      +     ++++++++++
++ +    ++  ++++ +++ ++
++ +   + + ++    +++  +
++          ++  ++  + +
++++++ + +      ++  + +
++++++ +++  + +  ++   +
++          + + S+ +  +
++++++ +  + + +     + +
+++++++++++++++++++++++
+  </pre>
+<div id="cont"></div>
+<div id="completemaze" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="completemaze_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="completemaze_saveb" onclick="saveEditor('completemaze');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="completemaze_loadb" onclick="requestCode('completemaze');">Load</button>
+
+</div>
+<br/>
+<div id="completemaze_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="completemaze_code" class="active_code" prefixcode="undefined" lang="python">
+import turtle
+
+PART_OF_PATH = 'O'
+TRIED = '.'
+OBSTACLE = '+'
+DEAD_END = '-'
+
+class Maze:
+    def __init__(self,mazeFileName):
+        rowsInMaze = 0
+        columnsInMaze = 0
+        self.mazelist = []
+        mazeFile = open(mazeFileName,'r')
+        rowsInMaze = 0
+        for line in mazeFile:
+            rowList = []
+            col = 0
+            for ch in line[:-1]:
+                rowList.append(ch)
+                if ch == 'S':
+                    self.startRow = rowsInMaze
+                    self.startCol = col
+                col = col + 1
+            rowsInMaze = rowsInMaze + 1
+            self.mazelist.append(rowList)
+            columnsInMaze = len(rowList)
+
+        self.rowsInMaze = rowsInMaze
+        self.columnsInMaze = columnsInMaze
+        self.xTranslate = -columnsInMaze/2
+        self.yTranslate = rowsInMaze/2
+        self.t = turtle.Turtle()
+        self.t.shape('turtle')
+        self.wn = turtle.Screen()
+        self.wn.setworldcoordinates(-(columnsInMaze-1)/2-.5,-(rowsInMaze-1)/2-.5,(columnsInMaze-1)/2+.5,(rowsInMaze-1)/2+.5)
+
+    def drawMaze(self):
+        self.t.speed(10)
+        for y in range(self.rowsInMaze):
+            for x in range(self.columnsInMaze):
+                if self.mazelist[y][x] == OBSTACLE:
+                    self.drawCenteredBox(x+self.xTranslate,-y+self.yTranslate,'orange')
+        self.t.color('black')
+        self.t.fillcolor('blue')
+
+    def drawCenteredBox(self,x,y,color):
+        self.t.up()
+        self.t.goto(x-.5,y-.5)
+        self.t.color(color)
+        self.t.fillcolor(color)
+        self.t.setheading(90)
+        self.t.down()
+        self.t.begin_fill()
+        for i in range(4):
+            self.t.forward(1)
+            self.t.right(90)
+        self.t.end_fill()
+
+    def moveTurtle(self,x,y):
+        self.t.up()
+        self.t.setheading(self.t.towards(x+self.xTranslate,-y+self.yTranslate))
+        self.t.goto(x+self.xTranslate,-y+self.yTranslate)
+
+    def dropBreadcrumb(self,color):
+        self.t.dot(10,color)
+
+    def updatePosition(self,row,col,val=None):
+        if val:
+            self.mazelist[row][col] = val
+        self.moveTurtle(col,row)
+
+        if val == PART_OF_PATH:
+            color = 'green'
+        elif val == OBSTACLE:
+            color = 'red'
+        elif val == TRIED:
+            color = 'black'
+        elif val == DEAD_END:
+            color = 'red'
+        else:
+            color = None
+
+        if color:
+            self.dropBreadcrumb(color)
+
+    def isExit(self,row,col):
+        return (row == 0 or
+                row == self.rowsInMaze-1 or
+                col == 0 or
+                col == self.columnsInMaze-1 )
+
+    def __getitem__(self,idx):
+        return self.mazelist[idx]
+
+
+def searchFrom(maze, startRow, startColumn):
+    # try each of four directions from this point until we find a way out.
+    # base Case return values:
+    #  1. We have run into an obstacle, return false
+    maze.updatePosition(startRow, startColumn)
+    if maze[startRow][startColumn] == OBSTACLE :
+        return False
+    #  2. We have found a square that has already been explored
+    if maze[startRow][startColumn] == TRIED or maze[startRow][startColumn] == DEAD_END:
+        return False
+    # 3. We have found an outside edge not occupied by an obstacle
+    if maze.isExit(startRow,startColumn):
+        maze.updatePosition(startRow, startColumn, PART_OF_PATH)
+        return True
+    maze.updatePosition(startRow, startColumn, TRIED)
+    # Otherwise, use logical short circuiting to try each direction
+    # in turn (if needed)
+    found = searchFrom(maze, startRow-1, startColumn) or \
+            searchFrom(maze, startRow+1, startColumn) or \
+            searchFrom(maze, startRow, startColumn-1) or \
+            searchFrom(maze, startRow, startColumn+1)
+    if found:
+        maze.updatePosition(startRow, startColumn, PART_OF_PATH)
+    else:
+        maze.updatePosition(startRow, startColumn, DEAD_END)
+    return found
+
+
+myMaze = Maze('maze2.txt')
+myMaze.drawMaze()
+myMaze.updatePosition(myMaze.startRow,myMaze.startCol)
+
+searchFrom(myMaze, myMaze.startRow, myMaze.startCol)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="completemaze_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="completemaze_suffix" style="display:none">
+</pre><pre id="completemaze_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text">Complete Maze Solver (completemaze)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#completemaze_saveb').toggle();
+    $('#completemaze_loadb').toggle();
+}
+if ($("#completemaze").attr("lang") !== "html" && $("#completemaze_code_div").parents(".admonition").length == 0 && $("#completemaze_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#completemaze_code_div").offset({
+			left: $("#completemaze .clearfix").offset().left
+		});
+	}
+	$("#completemaze_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#completemaze_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#completemaze_runb").parent().siblings(".ac_output").show();
+			runit('completemaze',this, undefined);
+			$("#completemaze_runb").on("click", function(){
+				runit('completemaze',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#completemaze_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#completemaze_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#completemaze_runb").on("click", function(){
+		runit('completemaze',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<div class="admonition-self-check admonition">
+<p class="first admonition-title">Self Check</p>
+<p class="last">Modify the maze search program so that the calls to searchFrom are in a different order.  Watch the program run. Can you explain why the behavior is different?  Can you predict what path the turtle will follow for a given change in order?</p>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - Tower of Hanoi' data-toggle="tooltip">
+    <a href="TowerofHanoi.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="TowerofHanoi.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Dynamic Programming' data-toggle="tooltip" >
+    <a href="DynamicProgramming.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="DynamicProgramming.html" >Next Section - Dynamic Programming</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014 Brad Miller, David Ranum.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

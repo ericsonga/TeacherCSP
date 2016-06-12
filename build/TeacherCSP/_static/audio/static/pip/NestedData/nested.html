@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Nested Data and Nested Iteration &mdash; Programs, Information, and People: Interactive Edition</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Programs, Information, and People: Interactive Edition" href="../index.html" />
+    <link rel="next" title="Iteration Revisited" href="../MoreAboutIteration/moreiteration.html" />
+    <link rel="prev" title="Test Cases" href="../Testing/simpleTest.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pip';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+var _prum = [['id', '521dfcc4abe53d0749000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../toc.html">Programs, Information, and People</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../toc.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pip/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/assignments" id="registerlink">Project Page</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pip/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Nested Data and Nested Iteration</a><ul>
+<li><a class="reference internal" href="#lists-with-complex-items">Lists with Complex Items</a></li>
+<li><a class="reference internal" href="#nested-dictionaries">Nested Dictionaries</a></li>
+<li><a class="reference internal" href="#nested-iteration">Nested Iteration</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Test Cases" data-toggle="tooltip">
+    <a href="../Testing/simpleTest.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Iteration Revisited' data-toggle="tooltip" >
+    <a href="../MoreAboutIteration/moreiteration.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="nested-data-and-nested-iteration">
+<span id="nested-data-chap"></span><h1>Nested Data and Nested Iteration<a class="headerlink" href="#nested-data-and-nested-iteration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="lists-with-complex-items">
+<h2>Lists with Complex Items<a class="headerlink" href="#lists-with-complex-items" title="Permalink to this headline">¶</a></h2>
+<p>The lists we have seen so far have had numbers or strings as items. Perhaps you
+noticed the lists of tuples when we sorted the contents of dictionaries.</p>
+<p>In fact, the items in a list can be any type of python object. For example,
+we can have a list of lists.</p>
+
+<div id="cont"></div>
+<div id="nested_data_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="nested_data_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="nested_data_1_saveb" onclick="saveEditor('nested_data_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="nested_data_1_loadb" onclick="requestCode('nested_data_1');">Load</button>
+<button class='btn btn-default' id="nested_data_1_vizb" onclick="injectCodelens(this,'nested_data_1');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="nested_data_1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="nested_data_1_code" class="active_code" prefixcode="undefined" lang="python">
+nested1 = [['a', 'b', 'c'],['d', 'e'],['f', 'g', 'h']]
+print(nested1[0])
+print(len(nested1))
+nested1.append(['i'])
+for L in nested1:
+    print L
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="nested_data_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="nested_data_1_suffix" style="display:none">
+</pre><pre id="nested_data_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (nested_data_1)</span> </p>
+<div id="nested_data_1_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#nested_data_1_saveb').toggle();
+    $('#nested_data_1_loadb').toggle();
+}
+if ($("#nested_data_1").attr("lang") !== "html" && $("#nested_data_1_code_div").parents(".admonition").length == 0 && $("#nested_data_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#nested_data_1_code_div").offset({
+			left: $("#nested_data_1 .clearfix").offset().left
+		});
+	}
+	$("#nested_data_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#nested_data_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#nested_data_1_runb").parent().siblings(".ac_output").show();
+			runit('nested_data_1',this, undefined);
+			$("#nested_data_1_runb").on("click", function(){
+				runit('nested_data_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#nested_data_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#nested_data_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#nested_data_1_runb").on("click", function(){
+		runit('nested_data_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Line 2 prints out the first item from the list that nested1 is bound to. That
+item is itself a list, so it prints out with square brackets. It has length 3,
+which prints out on line 3. Line 4 adds a new item to nested1. It is a list
+with one element, &#8216;i&#8217; (it a list with one element, it&#8217;s not just the string &#8216;i&#8217;).</p>
+<p>Codelens gives a you a reference diagram, a visual display of the contents of nested1.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="nested_data_2"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (nested_data_2)</span> </p>
+</div>
+<script type="text/javascript">
+var nested_data_2_trace = {"code": "nested1 = [['a', 'b', 'c'],['d', 'e'],['f', 'g', 'h']]\nprint(nested1[0])\nprint(len(nested1))\nnested1.append(['i'])\nfor L in nested1:\n    print L", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["nested1"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["nested1"], "stdout": "['a', 'b', 'c']\n", "func_name": "<module>", "stack_to_render": [], "globals": {"nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["nested1"], "stdout": "['a', 'b', 'c']\n3\n", "func_name": "<module>", "stack_to_render": [], "globals": {"nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nested1"], "stdout": "['a', 'b', 'c']\n3\n", "func_name": "<module>", "stack_to_render": [], "globals": {"nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4], ["REF", 5]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"], "5": ["LIST", "i"]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["nested1", "L"], "stdout": "['a', 'b', 'c']\n3\n", "func_name": "<module>", "stack_to_render": [], "globals": {"nested1": ["REF", 1], "L": ["REF", 2]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4], ["REF", 5]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"], "5": ["LIST", "i"]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["nested1", "L"], "stdout": "['a', 'b', 'c']\n3\n['a', 'b', 'c']\n", "func_name": "<module>", "stack_to_render": [], "globals": {"nested1": ["REF", 1], "L": ["REF", 2]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4], ["REF", 5]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"], "5": ["LIST", "i"]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["nested1", "L"], "stdout": "['a', 'b', 'c']\n3\n['a', 'b', 'c']\n", "func_name": "<module>", "stack_to_render": [], "globals": {"nested1": ["REF", 1], "L": ["REF", 3]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4], ["REF", 5]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"], "5": ["LIST", "i"]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["nested1", "L"], "stdout": "['a', 'b', 'c']\n3\n['a', 'b', 'c']\n['d', 'e']\n", "func_name": "<module>", "stack_to_render": [], "globals": {"nested1": ["REF", 1], "L": ["REF", 3]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4], ["REF", 5]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"], "5": ["LIST", "i"]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["nested1", "L"], "stdout": "['a', 'b', 'c']\n3\n['a', 'b', 'c']\n['d', 'e']\n", "func_name": "<module>", "stack_to_render": [], "globals": {"nested1": ["REF", 1], "L": ["REF", 4]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4], ["REF", 5]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"], "5": ["LIST", "i"]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["nested1", "L"], "stdout": "['a', 'b', 'c']\n3\n['a', 'b', 'c']\n['d', 'e']\n['f', 'g', 'h']\n", "func_name": "<module>", "stack_to_render": [], "globals": {"nested1": ["REF", 1], "L": ["REF", 4]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4], ["REF", 5]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"], "5": ["LIST", "i"]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["nested1", "L"], "stdout": "['a', 'b', 'c']\n3\n['a', 'b', 'c']\n['d', 'e']\n['f', 'g', 'h']\n", "func_name": "<module>", "stack_to_render": [], "globals": {"nested1": ["REF", 1], "L": ["REF", 5]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4], ["REF", 5]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"], "5": ["LIST", "i"]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["nested1", "L"], "stdout": "['a', 'b', 'c']\n3\n['a', 'b', 'c']\n['d', 'e']\n['f', 'g', 'h']\n['i']\n", "func_name": "<module>", "stack_to_render": [], "globals": {"nested1": ["REF", 1], "L": ["REF", 5]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4], ["REF", 5]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"], "5": ["LIST", "i"]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["nested1", "L"], "stdout": "['a', 'b', 'c']\n3\n['a', 'b', 'c']\n['d', 'e']\n['f', 'g', 'h']\n['i']\n", "func_name": "<module>", "stack_to_render": [], "globals": {"nested1": ["REF", 1], "L": ["REF", 5]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4], ["REF", 5]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"], "5": ["LIST", "i"]}, "line": 5, "event": "return"}]};
+var nested_data_2_vis;
+
+$(document).ready(function() {
+    nested_data_2_vis = new ExecutionVisualizer('nested_data_2',nested_data_2_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(nested_data_2_vis,'nested_data_2');
+    allVisualizers.push(nested_data_2_vis);
+
+});
+
+$(document).ready(function() {
+    $("#nested_data_2_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'nested_data_2'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    nested_data_2_vis.redrawConnectors();
+});
+</script>
+<p>When you get
+to step 4 of the execution, take a look at the object that variable nested1 points to.
+It is a list of three items, numbered 0, 1, and 2. The item in slot 1 is small enough
+that it is shown right there as a list containing items &#8220;d&#8221; and &#8220;e&#8221;. The item in
+slot 0 didn&#8217;t quite fit, so it is shown in the figure as a pointer to another separate list; same thing
+for the item in slot 2, the list [&#8220;f&#8221;, &#8220;g&#8221;, &#8220;h&#8221;].</p>
+<p>There&#8217;s no special meaning to whether the list
+is shown embedded or with a pointer to it: that&#8217;s just CodeLens making the best use
+of space that it can. In fact, if you go on to step 5, you&#8217;ll see that, with the
+addition of a fourth item, the list [&#8216;i&#8217;], CodeLens has chosen to show all four lists embedded in the
+top-level list.</p>
+<p>With a nested list, you can make complex expressions to get or set a value in a sub-list.</p>
+
+<div id="cont"></div>
+<div id="nested_data_3" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="nested_data_3_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="nested_data_3_saveb" onclick="saveEditor('nested_data_3');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="nested_data_3_loadb" onclick="requestCode('nested_data_3');">Load</button>
+<button class='btn btn-default' id="nested_data_3_vizb" onclick="injectCodelens(this,'nested_data_3');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="nested_data_3_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="nested_data_3_code" class="active_code" prefixcode="undefined" lang="python">
+nested1 = [['a', 'b', 'c'],['d', 'e'],['f', 'g', 'h']]
+y = nested1[1]
+print(y)
+print(y[0])
+
+print([10, 20, 30][1])
+print(nested1[1][0])
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="nested_data_3_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="nested_data_3_suffix" style="display:none">
+</pre><pre id="nested_data_3_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (nested_data_3)</span> </p>
+<div id="nested_data_3_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#nested_data_3_saveb').toggle();
+    $('#nested_data_3_loadb').toggle();
+}
+if ($("#nested_data_3").attr("lang") !== "html" && $("#nested_data_3_code_div").parents(".admonition").length == 0 && $("#nested_data_3_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#nested_data_3_code_div").offset({
+			left: $("#nested_data_3 .clearfix").offset().left
+		});
+	}
+	$("#nested_data_3_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#nested_data_3_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#nested_data_3_runb").parent().siblings(".ac_output").show();
+			runit('nested_data_3',this, undefined);
+			$("#nested_data_3_runb").on("click", function(){
+				runit('nested_data_3',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#nested_data_3_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#nested_data_3_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#nested_data_3_runb").on("click", function(){
+		runit('nested_data_3',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Lines 1-4 above probably look pretty natural to you. Line 6 is just a reminder that
+you index into a list that is written out just as you can index into a list referred to by a variable.</p>
+<p>Just as with a function call where the return value can be thought of as replacing the text of the
+function call in an expression, you can evaluate an expression like that in line 7 from left to right. Because the
+value of nested1[1] is the list [&#8216;d&#8217;, &#8216;e&#8217;], nested[1][0] is the same as [&#8216;d&#8217;, &#8216;e&#8217;][0]. So line 7 is equivalent to lines 2-4; it is a simpler way
+of pulling out the first item from the second list.</p>
+<p>At first, expressions like that on line 7 may look foreign. They will soon feel more natural, and you will end up using them a lot. Once you are comfortable
+with them, the only time you will write code like lines 2-4 is when you aren&#8217;t quite sure what the structure is of your data, and so you need to incrementally
+write and debug your code. Often, you will start by writing code like lines 2-4, then, once you&#8217;re sure it&#8217;s working, replace it with something like line 7.</p>
+<p>You can change values in such lists in the usual ways. You can even use complex expressions to change values. Consider the following</p>
+
+<div class="alert alert-warning cd_section">
+<div id="nested_data_4"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (nested_data_4)</span> </p>
+</div>
+<script type="text/javascript">
+var nested_data_4_trace = {"code": "nested1 = [['a', 'b', 'c'],['d', 'e'],['f', 'g', 'h'], ['i']]\nnested1[1] = [1, 2, 3]\nnested1[1][0] = 100", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["nested1"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4], ["REF", 5]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"], "5": ["LIST", "i"]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["nested1"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 6], ["REF", 4], ["REF", 5]], "2": ["LIST", "a", "b", "c"], "4": ["LIST", "f", "g", "h"], "5": ["LIST", "i"], "6": ["LIST", 1, 2, 3]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["nested1"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 6], ["REF", 4], ["REF", 5]], "2": ["LIST", "a", "b", "c"], "4": ["LIST", "f", "g", "h"], "5": ["LIST", "i"], "6": ["LIST", 100, 2, 3]}, "line": 3, "event": "return"}]};
+var nested_data_4_vis;
+
+$(document).ready(function() {
+    nested_data_4_vis = new ExecutionVisualizer('nested_data_4',nested_data_4_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(nested_data_4_vis,'nested_data_4');
+    allVisualizers.push(nested_data_4_vis);
+
+});
+
+$(document).ready(function() {
+    $("#nested_data_4_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'nested_data_4'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    nested_data_4_vis.redrawConnectors();
+});
+</script>
+<p>The complex items in a list do not have to be lists. They can be tuples or dictionaries. The items in a list do not all have to be the same time, but you will drive yourself crazy if you have lists of objects of varying types. Save yourself
+some headaches and don&#8217;t do that. Here&#8217;s a list of dictionaries and some operations on them. Take a look at its visual representation in codelens.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="nested_data_5"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (nested_data_5)</span> </p>
+</div>
+<script type="text/javascript">
+var nested_data_5_trace = {"code": "nested2 = [{'a': 1, 'b': 3}, {'a': 5, 'c': 90, 5: 50}, {'b': 3, 'c': \"yes\"}]", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["nested2"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"nested2": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["DICT", ["a", 1], ["b", 3]], "3": ["DICT", ["a", 5], ["c", 90], [5, 50]], "4": ["DICT", ["c", "yes"], ["b", 3]]}, "line": 1, "event": "return"}]};
+var nested_data_5_vis;
+
+$(document).ready(function() {
+    nested_data_5_vis = new ExecutionVisualizer('nested_data_5',nested_data_5_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(nested_data_5_vis,'nested_data_5');
+    allVisualizers.push(nested_data_5_vis);
+
+});
+
+$(document).ready(function() {
+    $("#nested_data_5_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'nested_data_5'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    nested_data_5_vis.redrawConnectors();
+});
+</script>
+<p>Try practicing some operations to get or set values in a list of dictionaries.</p>
+
+<div id="cont"></div>
+<div id="nested_data_6" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="nested_data_6_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="nested_data_6_saveb" onclick="saveEditor('nested_data_6');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="nested_data_6_loadb" onclick="requestCode('nested_data_6');">Load</button>
+<button class='btn btn-default' id="nested_data_6_vizb" onclick="injectCodelens(this,'nested_data_6');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="nested_data_6_coach_b" onclick="injectCodeCoach('nested_data_6');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="nested_data_6_showb" onclick="$('#nested_data_6_code_div').toggle();cm_editors['nested_data_6_code'].refresh();$('#nested_data_6_saveb').toggle();$('#nested_data_6_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('nested_data_6')"/>
+
+</div>
+<br/>
+<div id="nested_data_6_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="nested_data_6_code" class="active_code" prefixcode="undefined" lang="python">
+nested2 = [{'a': 1, 'b': 3}, {'a': 5, 'c': 90, 5: 50}, {'b': 3, 'c': "yes"}]
+
+#write code to print the value associated with key 'c' in the second dictionary (90)
+
+#write code to print the value associated with key 'b' in the third dictionary
+
+#add a fourth dictionary add the end of the list; print something to check your work.
+
+#change the value associated with 'c' in the third dictionary from "yes" to "no"; print something to check your work
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="nested_data_6_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="nested_data_6_suffix" style="display:none">
+</pre><pre id="nested_data_6_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (nested_data_6)</span> </p>
+<div id="nested_data_6_codelens_div" style="display:none"></div><div id="nested_data_6_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#nested_data_6_saveb').toggle();
+    $('#nested_data_6_loadb').toggle();
+}
+if ($("#nested_data_6").attr("lang") !== "html" && $("#nested_data_6_code_div").parents(".admonition").length == 0 && $("#nested_data_6_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#nested_data_6_code_div").offset({
+			left: $("#nested_data_6 .clearfix").offset().left
+		});
+	}
+	$("#nested_data_6_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#nested_data_6_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#nested_data_6_runb").parent().siblings(".ac_output").show();
+			runit('nested_data_6',this, undefined);
+			$("#nested_data_6_runb").on("click", function(){
+				runit('nested_data_6',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#nested_data_6_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#nested_data_6_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#nested_data_6_runb").on("click", function(){
+		runit('nested_data_6',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>You can even have a list of functions (!).</p>
+
+<div id="cont"></div>
+<div id="nested_data_7" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="nested_data_7_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="nested_data_7_saveb" onclick="saveEditor('nested_data_7');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="nested_data_7_loadb" onclick="requestCode('nested_data_7');">Load</button>
+<button class='btn btn-default' id="nested_data_7_vizb" onclick="injectCodelens(this,'nested_data_7');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="nested_data_7_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="nested_data_7_code" class="active_code" prefixcode="undefined" lang="python">
+def square(x):
+    return x*x
+
+L = [square, abs, lambda x: x + 1]
+
+print("****names****")
+for f in L:
+    print(f)
+
+print("****call each of them****")
+for f in L:
+    print(f(-2))
+
+print("****just the first one in the list****")
+print(L[0])
+print(L[0](3))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="nested_data_7_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="nested_data_7_suffix" style="display:none">
+</pre><pre id="nested_data_7_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (nested_data_7)</span> </p>
+<div id="nested_data_7_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#nested_data_7_saveb').toggle();
+    $('#nested_data_7_loadb').toggle();
+}
+if ($("#nested_data_7").attr("lang") !== "html" && $("#nested_data_7_code_div").parents(".admonition").length == 0 && $("#nested_data_7_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#nested_data_7_code_div").offset({
+			left: $("#nested_data_7 .clearfix").offset().left
+		});
+	}
+	$("#nested_data_7_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#nested_data_7_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#nested_data_7_runb").parent().siblings(".ac_output").show();
+			runit('nested_data_7',this, undefined);
+			$("#nested_data_7_runb").on("click", function(){
+				runit('nested_data_7',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#nested_data_7_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#nested_data_7_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#nested_data_7_runb").on("click", function(){
+		runit('nested_data_7',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Here, L is a list with three items. All those items are functions. The first is the
+function square that is defined on lines 1 and 2. The second is the built-in python
+function abs. The third is an anonymous function that returns one more than its input.</p>
+<p>In the first for loop, we do not call the functions, we just output their printed representations. The output &lt;function square&gt;
+confirms that square truly is a function object. For some reason, in codelens, it&#8217;s not able to produce a nice
+printed representation of the built-in function abs, so it just outputs &lt;unknown&gt;</p>
+<p>In the second for loop, we call each of the functions, passing in the value -2 each time and printing whatever value the function returns.</p>
+<p>The last two lines just emphasize that there&#8217;s nothing special about lists of functions. They follow all the same rules for how python treats any other list. Because L[0] picks out the function square, L[0](3) calls the functions square, passing it the parameter 3.</p>
+<p>Step through it in Codelens if that&#8217;s not all clear to you yet.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="nested_data_8"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (nested_data_8)</span> </p>
+</div>
+<script type="text/javascript">
+var nested_data_8_trace = {"code": "def square(x):\n    return x*x\n\nL = [square, abs, lambda x: x + 1]\n\nprint(\"****names****\")\nfor f in L:\n    print(f)\n\nprint(\"****call each of them****\")\nfor f in L:\n    print(f(-2))\n\nprint(\"****just the first one in the list****\")\nprint(L[0])\nprint(L[0](3))", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["square"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1]}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["square", "L"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["square", "L"], "stdout": "****names****\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 3]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 3]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 4]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 4]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 4]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 10, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 4]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 11, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 12, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": -2}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x"]}], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"x": -2}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x"]}], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n", "func_name": "square", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"__return__": 4, "x": -2}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f1", "ordered_varnames": ["x", "__return__"]}], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 2, "event": "return"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n4\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 1]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 11, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n4\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 3]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 12, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n4\n2\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 3]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 11, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n4\n2\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 4]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 12, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n4\n2\n", "func_name": "<lambda>", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"x": -2}, "is_highlighted": true, "is_parent": false, "func_name": "<lambda>", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "<lambda>_f2", "ordered_varnames": ["x"]}], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 4]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 4, "event": "call"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n4\n2\n", "func_name": "<lambda>", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"x": -2}, "is_highlighted": true, "is_parent": false, "func_name": "<lambda>", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "<lambda>_f2", "ordered_varnames": ["x"]}], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 4]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n4\n2\n", "func_name": "<lambda>", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"__return__": -1, "x": -2}, "is_highlighted": true, "is_parent": false, "func_name": "<lambda>", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "<lambda>_f2", "ordered_varnames": ["x", "__return__"]}], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 4]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 4, "event": "return"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n4\n2\n-1\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 4]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 11, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n4\n2\n-1\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 4]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 14, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n4\n2\n-1\n****just the first one in the list****\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 4]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 15, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n4\n2\n-1\n****just the first one in the list****\n<function square at 0x102b4b758>\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 4]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 16, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n4\n2\n-1\n****just the first one in the list****\n<function square at 0x102b4b758>\n", "func_name": "square", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"x": 3}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f3", "ordered_varnames": ["x"]}], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 4]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n4\n2\n-1\n****just the first one in the list****\n<function square at 0x102b4b758>\n", "func_name": "square", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"x": 3}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f3", "ordered_varnames": ["x"]}], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 4]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n4\n2\n-1\n****just the first one in the list****\n<function square at 0x102b4b758>\n", "func_name": "square", "stack_to_render": [{"frame_id": 3, "encoded_locals": {"__return__": 9, "x": 3}, "is_highlighted": true, "is_parent": false, "func_name": "square", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "square_f3", "ordered_varnames": ["x", "__return__"]}], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 4]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 2, "event": "return"}, {"ordered_globals": ["square", "L", "f"], "stdout": "****names****\n<function square at 0x102b4b758>\n<built-in function abs>\n<function <lambda> at 0x102b4b848>\n****call each of them****\n4\n2\n-1\n****just the first one in the list****\n<function square at 0x102b4b758>\n9\n", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "L": ["REF", 2], "f": ["REF", 4]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["LIST", ["REF", 1], ["REF", 3], ["REF", 4]], "3": ["FUNCTION", "abs(...)", null], "4": ["FUNCTION", "<lambda>(x)", null]}, "line": 16, "event": "return"}]};
+var nested_data_8_vis;
+
+$(document).ready(function() {
+    nested_data_8_vis = new ExecutionVisualizer('nested_data_8',nested_data_8_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(nested_data_8_vis,'nested_data_8');
+    allVisualizers.push(nested_data_8_vis);
+
+});
+
+$(document).ready(function() {
+    $("#nested_data_8_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'nested_data_8'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    nested_data_8_vis.redrawConnectors();
+});
+</script>
+</div>
+<div class="section" id="nested-dictionaries">
+<h2>Nested Dictionaries<a class="headerlink" href="#nested-dictionaries" title="Permalink to this headline">¶</a></h2>
+<p>Just as lists can contain items of any type, the value associated with a key in a dictionary
+can also be an object of any type. In particular, it is often useful to have a list or a dictionary as a value
+in a dictionary. And of course, those lists or dictionaries can also contain lists and dictionaries. There
+can be many layers of nesting.</p>
+<p>Only the values in dictionaries can be objects of arbitrary type. The keys in dictionaries must be one of the
+immutable data types (numbers, strings, tuples).</p>
+
+            <div id="test_questionnested_9" class="alert alert-warning">
+            <p>nested_data-1: Which of the following is a legal assignment statement, after the following code executes?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;key1&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">50</span><span class="p">},</span> <span class="s">&#39;key2&#39;</span><span class="p">:{</span><span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="s">&quot;yes&quot;</span><span class="p">}}</span>
+</pre></div>
+</div>
+<form name="test_questionnested_9_form" method="get" action="" onsubmit="return false;">
+            <input type="checkbox" name="group1" value="a" id="test_questionnested_9_opt_a" />
+            <label for= "test_questionnested_9_opt_a">  a) d[5] = {1: 2, 3: 4}</label><br />
+            
+            <input type="checkbox" name="group1" value="b" id="test_questionnested_9_opt_b" />
+            <label for= "test_questionnested_9_opt_b">  b) d[{1:2, 3:4}] = 5</label><br />
+            
+            <input type="checkbox" name="group1" value="c" id="test_questionnested_9_opt_c" />
+            <label for= "test_questionnested_9_opt_c">  c) d['key1']['d'] = d['key2']</label><br />
+            
+            <input type="checkbox" name="group1" value="d" id="test_questionnested_9_opt_d" />
+            <label for= "test_questionnested_9_opt_d">  d) d[key2] =3</label><br />
+            
+            <script>
+            $(document).ready(function(){checkMultipleSelect('test_questionnested_9');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMAStorage('test_questionnested_9','a,c',['5 is a valid key\u003B {1:2, 3:4} is a dictionary with two keys, and is a valid value to associate with key 5.', 'Dictionary keys must be of immutable types. A dictionary can\u0027t be used as a key in a dictionary.', 'd[\u0027key2\u0027] is {\u0027b\u0027: 3, \u0027c\u0027: \u0022yes\u0022}, a python object. It can be bound to the key \u0027d\u0027 in a dictionary {\u0027a\u0027: 5, \u0027c\u0027: 90, 5: 50}', 'key2 is an unbound variable here. d[\u0027key2\u0027] would be OK.'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionnested_9_bcomp" disabled name="compare" onclick="compareAnswers('test_questionnested_9');">Compare Me</button>
+            </form><br />
+            <div id="test_questionnested_9_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="nested-iteration">
+<h2>Nested Iteration<a class="headerlink" href="#nested-iteration" title="Permalink to this headline">¶</a></h2>
+<p>When you have nested data structures, especially lists and/or dictionaries, you will frequently need nested for loops
+to traverse them.</p>
+
+<div id="cont"></div>
+<div id="nested_data_10" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="nested_data_10_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="nested_data_10_saveb" onclick="saveEditor('nested_data_10');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="nested_data_10_loadb" onclick="requestCode('nested_data_10');">Load</button>
+<button class='btn btn-default' id="nested_data_10_vizb" onclick="injectCodelens(this,'nested_data_10');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="nested_data_10_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="nested_data_10_code" class="active_code" prefixcode="undefined" lang="python">
+nested1 = [['a', 'b', 'c'],['d', 'e'],['f', 'g', 'h']]
+for x in nested1:
+    print "level1: "
+    for y in x:
+        print "\tlevel2: " + y
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="nested_data_10_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="nested_data_10_suffix" style="display:none">
+</pre><pre id="nested_data_10_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (nested_data_10)</span> </p>
+<div id="nested_data_10_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#nested_data_10_saveb').toggle();
+    $('#nested_data_10_loadb').toggle();
+}
+if ($("#nested_data_10").attr("lang") !== "html" && $("#nested_data_10_code_div").parents(".admonition").length == 0 && $("#nested_data_10_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#nested_data_10_code_div").offset({
+			left: $("#nested_data_10 .clearfix").offset().left
+		});
+	}
+	$("#nested_data_10_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#nested_data_10_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#nested_data_10_runb").parent().siblings(".ac_output").show();
+			runit('nested_data_10',this, undefined);
+			$("#nested_data_10_runb").on("click", function(){
+				runit('nested_data_10',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#nested_data_10_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#nested_data_10_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#nested_data_10_runb").on("click", function(){
+		runit('nested_data_10',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Line 3 executes once for each top-level list, three times in all. With each sub-list,
+line 5 executes once for each item in the sub-list. Try stepping through it in Codelens to make sure you understand what the nested iteration does.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="nested_data_11"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (nested_data_11)</span> </p>
+</div>
+<script type="text/javascript">
+var nested_data_11_trace = {"code": "nested1 = [['a', 'b', 'c'],['d', 'e'],['f', 'g', 'h']]\nfor x in nested1:\n    print \"level1: \"\n    for y in x:\n        print \"\\tlevel2: \" + y", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["nested1"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["nested1", "x"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 2], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["nested1", "x"], "stdout": "level1: \n", "func_name": "<module>", "stack_to_render": [], "globals": {"x": ["REF", 2], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "a", "x": ["REF", 2], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "a", "x": ["REF", 2], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "b", "x": ["REF", 2], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "b", "x": ["REF", 2], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "c", "x": ["REF", 2], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "c", "x": ["REF", 2], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "c", "x": ["REF", 2], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "c", "x": ["REF", 3], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\nlevel1: \n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "c", "x": ["REF", 3], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\nlevel1: \n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "d", "x": ["REF", 3], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\nlevel1: \n\tlevel2: d\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "d", "x": ["REF", 3], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\nlevel1: \n\tlevel2: d\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "e", "x": ["REF", 3], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\nlevel1: \n\tlevel2: d\n\tlevel2: e\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "e", "x": ["REF", 3], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\nlevel1: \n\tlevel2: d\n\tlevel2: e\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "e", "x": ["REF", 3], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\nlevel1: \n\tlevel2: d\n\tlevel2: e\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "e", "x": ["REF", 4], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\nlevel1: \n\tlevel2: d\n\tlevel2: e\nlevel1: \n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "e", "x": ["REF", 4], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\nlevel1: \n\tlevel2: d\n\tlevel2: e\nlevel1: \n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "f", "x": ["REF", 4], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\nlevel1: \n\tlevel2: d\n\tlevel2: e\nlevel1: \n\tlevel2: f\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "f", "x": ["REF", 4], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\nlevel1: \n\tlevel2: d\n\tlevel2: e\nlevel1: \n\tlevel2: f\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "g", "x": ["REF", 4], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\nlevel1: \n\tlevel2: d\n\tlevel2: e\nlevel1: \n\tlevel2: f\n\tlevel2: g\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "g", "x": ["REF", 4], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\nlevel1: \n\tlevel2: d\n\tlevel2: e\nlevel1: \n\tlevel2: f\n\tlevel2: g\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "h", "x": ["REF", 4], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\nlevel1: \n\tlevel2: d\n\tlevel2: e\nlevel1: \n\tlevel2: f\n\tlevel2: g\n\tlevel2: h\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "h", "x": ["REF", 4], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\nlevel1: \n\tlevel2: d\n\tlevel2: e\nlevel1: \n\tlevel2: f\n\tlevel2: g\n\tlevel2: h\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "h", "x": ["REF", 4], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["nested1", "x", "y"], "stdout": "level1: \n\tlevel2: a\n\tlevel2: b\n\tlevel2: c\nlevel1: \n\tlevel2: d\n\tlevel2: e\nlevel1: \n\tlevel2: f\n\tlevel2: g\n\tlevel2: h\n", "func_name": "<module>", "stack_to_render": [], "globals": {"y": "h", "x": ["REF", 4], "nested1": ["REF", 1]}, "heap": {"1": ["LIST", ["REF", 2], ["REF", 3], ["REF", 4]], "2": ["LIST", "a", "b", "c"], "3": ["LIST", "d", "e"], "4": ["LIST", "f", "g", "h"]}, "line": 2, "event": "return"}]};
+var nested_data_11_vis;
+
+$(document).ready(function() {
+    nested_data_11_vis = new ExecutionVisualizer('nested_data_11',nested_data_11_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(nested_data_11_vis,'nested_data_11');
+    allVisualizers.push(nested_data_11_vis);
+
+});
+
+$(document).ready(function() {
+    $("#nested_data_11_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'nested_data_11'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    nested_data_11_vis.redrawConnectors();
+});
+</script>
+
+        <div class='parsons alert alert-warning' id="parsons-232">
+        <div class="parsons-text">nested_data-2: Now try rearranging these code fragments to make a function that counts all the *leaf* items in a nested list like nested1 above, the items at the lowest level of nesting (8 of them in nested1).<br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-232" style="display:none;">def count_leaves(n):
+    count = 0
+    for L in n:
+        for x in L:
+            count = count + 1
+    return count</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-232" class="sortable-code"></div>
+        <div id="parsons-sortableCode-232" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe232" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset232" value="Reset"/>
+        <div id="parsons-message-232"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-232").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-232").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-232");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_232.getHash("#ul-parsons-sortableCode-232");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'nested_data_12'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'nested_data_12'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-232");
+            var trashul = $("#ul-parsons-sortableTrash-232");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_232 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-232',
+		'trashId': 'parsons-sortableTrash-232',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_232.init($pjQ("#parsons-orig-232").text());
+	pp_232.shuffleLines();
+            
+        if(localStorage.getItem('nested_data_12') && localStorage.getItem('nested_data_12-trash')) {
+            try {
+                var solution = localStorage.getItem('nested_data_12');
+                var trash = localStorage.getItem('nested_data_12-trash');
+                pp_232.createHTMLFromHashes(solution,trash);
+                pp_232.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old nested_data_12 state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset232").click(function(event){
+              event.preventDefault();
+              pp_232.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-232");
+            var trashul = $("#ul-parsons-sortableTrash-232");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe232").click(function(event){
+              event.preventDefault();
+              var hash = pp_232.getHash("#ul-parsons-sortableCode-232");
+              localStorage.setItem('nested_data_12',hash);
+              hash = pp_232.getHash("#ul-parsons-sortableTrash-232");
+              localStorage.setItem('nested_data_12-trash',hash);
+            
+            pp_232.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 Paul Resnick, Brad Miller, David Ranum, Created using Runestone Interactive.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

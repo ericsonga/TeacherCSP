@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Hashing &mdash; Problem Solving with Algorithms and Data Structures</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
+    <link rel="next" title="The Bubble Sort" href="TheBubbleSort.html" />
+    <link rel="prev" title="The Binary Search" href="TheBinarySearch.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pythonds';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">Problem Solving with Algorithms and Data Structures</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pythonds/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/initiateGroup' id="joinGroupLink">Join a Study Group</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/schedule' id="groupScheduleLink">Group Schedule</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/newschedule' id="newChapterLink">Schedule New Chapter</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/manageGroup' id="manageGroupLink">Manage Group</a></li>
+			<li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/assignments/index'>Progress Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pythonds/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Hashing</a><ul>
+<li><a class="reference internal" href="#hash-functions">Hash Functions</a></li>
+<li><a class="reference internal" href="#collision-resolution">Collision Resolution</a></li>
+<li><a class="reference internal" href="#implementing-the-map-abstract-data-type">Implementing the <tt class="docutils literal"><span class="pre">Map</span></tt> Abstract Data Type</a></li>
+<li><a class="reference internal" href="#analysis-of-hashing">Analysis of Hashing</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - The Binary Search" data-toggle="tooltip">
+    <a href="TheBinarySearch.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - The Bubble Sort' data-toggle="tooltip" >
+    <a href="TheBubbleSort.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="hashing">
+<h1>Hashing<a class="headerlink" href="#hashing" title="Permalink to this headline">¶</a></h1>
+<p>In previous sections we were able to make improvements in our search
+algorithms by taking advantage of information about where items are
+stored in the collection with respect to one another. For example, by
+knowing that a list was ordered, we could search in logarithmic time
+using a binary search. In this section we will attempt to go one step
+further by building a data structure that can be searched in
+<span class="math">\(O(1)\)</span> time. This concept is referred to as <strong>hashing</strong>.</p>
+<p>In order to do this, we will need to know even more about where the
+items might be when we go to look for them in the collection. If every
+item is where it should be, then the search can use a single comparison
+to discover the presence of an item. We will see, however, that this is
+typically not the case.</p>
+<p>A <strong>hash table</strong> is a collection of items which are stored in such a way
+as to make it easy to find them later. Each position of the hash table,
+often called a <strong>slot</strong>, can hold an item and is named by an integer
+value starting at 0. For example, we will have a slot named 0, a slot
+named 1, a slot named 2, and so on. Initially, the hash table contains
+no items so every slot is empty. We can implement a hash table by using
+a list with each element initialized to the special Python value
+<tt class="docutils literal"><span class="pre">None</span></tt>. <a class="reference internal" href="#fig-hashtable1"><em>Figure 4</em></a> shows a hash table of size <span class="math">\(m=11\)</span>.
+In other words, there are <em>m</em> slots in the table, named 0 through 10.</p>
+<div class="figure align-center" id="fig-hashtable1">
+<img alt="../_images/hashtable.png" src="../_images/hashtable.png" />
+<p class="caption">Figure 4: Hash Table with 11 Empty Slots</p>
+</div>
+<p>The mapping between an item and the slot where that item belongs in the
+hash table is called the <strong>hash function</strong>. The hash function will take
+any item in the collection and return an integer in the range of slot
+names, between 0 and <em>m</em>-1. Assume that we have the set of integer items
+54, 26, 93, 17, 77, and 31. Our first hash function, sometimes referred
+to as the “remainder method,” simply takes an item and divides it by the
+table size, returning the remainder as its hash value
+(<span class="math">\(h(item)=item \% 11\)</span>). <a class="reference internal" href="#tbl-hashvalues1"><em>Table 4</em></a> gives all of the
+hash values for our example items. Note that this remainder method
+(modulo arithmetic) will typically be present in some form in all hash
+functions, since the result must be in the range of slot names.</p>
+<table border="1" class="docutils" id="tbl-hashvalues1">
+<caption><strong>Table 4: Simple Hash Function Using Remainders</strong></caption>
+<colgroup>
+<col width="52%" />
+<col width="48%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Item</strong></th>
+<th class="head"><strong>Hash Value</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>54</td>
+<td>10</td>
+</tr>
+<tr class="row-odd"><td>26</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>93</td>
+<td>5</td>
+</tr>
+<tr class="row-odd"><td>17</td>
+<td>6</td>
+</tr>
+<tr class="row-even"><td>77</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>31</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<p>Once the hash values have been computed, we can insert each item into
+the hash table at the designated position as shown in
+<a class="reference internal" href="#fig-hashtable2"><em>Figure 5</em></a>. Note that 6 of the 11 slots are now occupied. This
+is referred to as the <strong>load factor</strong>, and is commonly denoted by
+<span class="math">\(\lambda = \frac {numberofitems}{tablesize}\)</span>. For this example,
+<span class="math">\(\lambda = \frac {6}{11}\)</span>.</p>
+<div class="figure align-center" id="fig-hashtable2">
+<img alt="../_images/hashtable2.png" src="../_images/hashtable2.png" />
+<p class="caption">Figure 5: Hash Table with Six Items</p>
+</div>
+<p>Now when we want to search for an item, we simply use the hash function
+to compute the slot name for the item and then check the hash table to
+see if it is present. This searching operation is <span class="math">\(O(1)\)</span>, since
+a constant amount of time is required to compute the hash value and then
+index the hash table at that location. If everything is where it should
+be, we have found a constant time search algorithm.</p>
+<p>You can probably already see that this technique is going to work only
+if each item maps to a unique location in the hash table. For example,
+if the item 44 had been the next item in our collection, it would have a
+hash value of 0 (<span class="math">\(44 \% 11 == 0\)</span>). Since 77 also had a hash
+value of 0, we would have a problem. According to the hash function, two
+or more items would need to be in the same slot. This is referred to as
+a <strong>collision</strong> (it may also be called a “clash”). Clearly, collisions
+create a problem for the hashing technique. We will discuss them in
+detail later.</p>
+<div class="section" id="hash-functions">
+<h2>Hash Functions<a class="headerlink" href="#hash-functions" title="Permalink to this headline">¶</a></h2>
+<p>Given a collection of items, a hash function that maps each item into a
+unique slot is referred to as a <strong>perfect hash function</strong>. If we know
+the items and the collection will never change, then it is possible to
+construct a perfect hash function (refer to the exercises for more about
+perfect hash functions). Unfortunately, given an arbitrary collection of
+items, there is no systematic way to construct a perfect hash function.
+Luckily, we do not need the hash function to be perfect to still gain
+performance efficiency.</p>
+<p>One way to always have a perfect hash function is to increase the size
+of the hash table so that each possible value in the item range can be
+accommodated. This guarantees that each item will have a unique slot.
+Although this is practical for small numbers of items, it is not
+feasible when the number of possible items is large. For example, if the
+items were nine-digit Social Security numbers, this method would require
+almost one billion slots. If we only want to store data for a class of
+25 students, we will be wasting an enormous amount of memory.</p>
+<p>Our goal is to create a hash function that minimizes the number of
+collisions, is easy to compute, and evenly distributes the items in the
+hash table. There are a number of common ways to extend the simple
+remainder method. We will consider a few of them here.</p>
+<p>The <strong>folding method</strong> for constructing hash functions begins by
+dividing the item into equal-size pieces (the last piece may not be of
+equal size). These pieces are then added together to give the resulting
+hash value. For example, if our item was the phone number 436-555-4601,
+we would take the digits and divide them into groups of 2
+(43,65,55,46,01). After the addition, <span class="math">\(43+65+55+46+01\)</span>, we get
+210. If we assume our hash table has 11 slots, then we need to perform
+the extra step of dividing by 11 and keeping the remainder. In this case
+<span class="math">\(210\ \%\ 11\)</span> is 1, so the phone number 436-555-4601 hashes to
+slot 1. Some folding methods go one step further and reverse every other
+piece before the addition. For the above example, we get
+<span class="math">\(43+56+55+64+01 = 219\)</span> which gives <span class="math">\(219\ \%\ 11 = 10\)</span>.</p>
+<p>Another numerical technique for constructing a hash function is called
+the <strong>mid-square method</strong>. We first square the item, and then extract
+some portion of the resulting digits. For example, if the item were 44,
+we would first compute <span class="math">\(44 ^{2} = 1,936\)</span>. By extracting the
+middle two digits, 93, and performing the remainder step, we get 5
+(<span class="math">\(93\ \%\ 11\)</span>). <a class="reference internal" href="#tbl-hashvalues2"><em>Table 5</em></a> shows items under both the
+remainder method and the mid-square method. You should verify that you
+understand how these values were computed.</p>
+<table border="1" class="docutils" id="tbl-hashvalues2">
+<caption><strong>Table 5: Comparison of Remainder and Mid-Square Methods</strong></caption>
+<colgroup>
+<col width="35%" />
+<col width="31%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Item</strong></th>
+<th class="head"><strong>Remainder</strong></th>
+<th class="head"><strong>Mid-Square</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>54</td>
+<td>10</td>
+<td>3</td>
+</tr>
+<tr class="row-odd"><td>26</td>
+<td>4</td>
+<td>7</td>
+</tr>
+<tr class="row-even"><td>93</td>
+<td>5</td>
+<td>9</td>
+</tr>
+<tr class="row-odd"><td>17</td>
+<td>6</td>
+<td>8</td>
+</tr>
+<tr class="row-even"><td>77</td>
+<td>0</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>31</td>
+<td>9</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>We can also create hash functions for character-based items such as
+strings. The word “cat” can be thought of as a sequence of ordinal
+values.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">ord</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)</span>
+<span class="go">99</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">ord</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
+<span class="go">97</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">ord</span><span class="p">(</span><span class="s">&#39;t&#39;</span><span class="p">)</span>
+<span class="go">116</span>
+</pre></div>
+</div>
+<p>We can then take these three ordinal values, add them up, and use the
+remainder method to get a hash value (see <a class="reference internal" href="#fig-stringhash"><em>Figure 6</em></a>).
+<a class="reference internal" href="#lst-hashfunction1"><em>Listing 1</em></a> shows a function called <tt class="docutils literal"><span class="pre">hash</span></tt> that takes a
+string and a table size and returns the hash value in the range from 0
+to <tt class="docutils literal"><span class="pre">tablesize</span></tt>-1.</p>
+<div class="figure align-center" id="fig-stringhash">
+<img alt="../_images/stringhash.png" src="../_images/stringhash.png" />
+<p class="caption">Figure 6: Hashing a String Using Ordinal Values</p>
+</div>
+<p id="lst-hashfunction1"><strong>Listing 1</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">hash</span><span class="p">(</span><span class="n">astring</span><span class="p">,</span> <span class="n">tablesize</span><span class="p">):</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">astring</span><span class="p">)):</span>
+        <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="n">astring</span><span class="p">[</span><span class="n">pos</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="nb">sum</span><span class="o">%</span><span class="n">tablesize</span>
+</pre></div>
+</div>
+<p>It is interesting to note that when using this hash function, anagrams
+will always be given the same hash value. To remedy this, we could use
+the position of the character as a weight. <a class="reference internal" href="#fig-stringhash2"><em>Figure 7</em></a> shows
+one possible way to use the positional value as a weighting factor. The
+modification to the <tt class="docutils literal"><span class="pre">hash</span></tt> function is left as an exercise.</p>
+<div class="figure align-center" id="fig-stringhash2">
+<img alt="../_images/stringhash2.png" src="../_images/stringhash2.png" />
+<p class="caption">Figure 7: Hashing a String Using Ordinal Values with Weighting</p>
+</div>
+<p>You may be able to think of a number of additional ways to compute hash
+values for items in a collection. The important thing to remember is
+that the hash function has to be efficient so that it does not become
+the dominant part of the storage and search process. If the hash
+function is too complex, then it becomes more work to compute the slot
+name than it would be to simply do a basic sequential or binary search
+as described earlier. This would quickly defeat the purpose of hashing.</p>
+</div>
+<div class="section" id="collision-resolution">
+<h2>Collision Resolution<a class="headerlink" href="#collision-resolution" title="Permalink to this headline">¶</a></h2>
+<p>We now return to the problem of collisions. When two items hash to the
+same slot, we must have a systematic method for placing the second item
+in the hash table. This process is called <strong>collision resolution</strong>. As
+we stated earlier, if the hash function is perfect, collisions will
+never occur. However, since this is often not possible, collision
+resolution becomes a very important part of hashing.</p>
+<p>One method for resolving collisions looks into the hash table and tries
+to find another open slot to hold the item that caused the collision. A
+simple way to do this is to start at the original hash value position
+and then move in a sequential manner through the slots until we
+encounter the first slot that is empty. Note that we may need to go back
+to the first slot (circularly) to cover the entire hash table. This
+collision resolution process is referred to as <strong>open addressing</strong> in
+that it tries to find the next open slot or address in the hash table.
+By systematically visiting each slot one at a time, we are performing an
+open addressing technique called <strong>linear probing</strong>.</p>
+<p><a class="reference internal" href="#fig-linearprobing"><em>Figure 8</em></a> shows an extended set of integer items under the
+simple remainder method hash function (54,26,93,17,77,31,44,55,20).
+<a class="reference internal" href="#tbl-hashvalues1"><em>Table 4</em></a> above shows the hash values for the original items.
+<a class="reference internal" href="#fig-hashtable2"><em>Figure 5</em></a> shows the original contents. When we attempt to
+place 44 into slot 0, a collision occurs. Under linear probing, we look
+sequentially, slot by slot, until we find an open position. In this
+case, we find slot 1.</p>
+<p>Again, 55 should go in slot 0 but must be placed in slot 2 since it is
+the next open position. The final value of 20 hashes to slot 9. Since
+slot 9 is full, we begin to do linear probing. We visit slots 10, 0, 1,
+and 2, and finally find an empty slot at position 3.</p>
+<div class="figure align-center" id="fig-linearprobing">
+<img alt="../_images/linearprobing1.png" src="../_images/linearprobing1.png" />
+<p class="caption">Figure 8: Collision Resolution with Linear Probing</p>
+</div>
+<p>Once we have built a hash table using open addressing and linear
+probing, it is essential that we utilize the same methods to search for
+items. Assume we want to look up the item 93. When we compute the hash
+value, we get 5. Looking in slot 5 reveals 93, and we can return
+<tt class="docutils literal"><span class="pre">True</span></tt>. What if we are looking for 20? Now the hash value is 9, and
+slot 9 is currently holding 31. We cannot simply return <tt class="docutils literal"><span class="pre">False</span></tt> since
+we know that there could have been collisions. We are now forced to do a
+sequential search, starting at position 10, looking until either we find
+the item 20 or we find an empty slot.</p>
+<p>A disadvantage to linear probing is the tendency for <strong>clustering</strong>;
+items become clustered in the table. This means that if many collisions
+occur at the same hash value, a number of surrounding slots will be
+filled by the linear probing resolution. This will have an impact on
+other items that are being inserted, as we saw when we tried to add the
+item 20 above. A cluster of values hashing to 0 had to be skipped to
+finally find an open position. This cluster is shown in
+<a class="reference internal" href="#fig-clustering"><em>Figure 9</em></a>.</p>
+<div class="figure align-center" id="fig-clustering">
+<img alt="../_images/clustering.png" src="../_images/clustering.png" />
+<p class="caption">Figure 9: A Cluster of Items for Slot 0</p>
+</div>
+<p>One way to deal with clustering is to extend the linear probing
+technique so that instead of looking sequentially for the next open
+slot, we skip slots, thereby more evenly distributing the items that
+have caused collisions. This will potentially reduce the clustering that
+occurs. <a class="reference internal" href="#fig-linearprobing2"><em>Figure 10</em></a> shows the items when collision
+resolution is done with a “plus 3” probe. This means that once a
+collision occurs, we will look at every third slot until we find one
+that is empty.</p>
+<div class="figure align-center" id="fig-linearprobing2">
+<img alt="../_images/linearprobing2.png" src="../_images/linearprobing2.png" />
+<p class="caption">Figure 10: Collision Resolution Using “Plus 3”</p>
+</div>
+<p>The general name for this process of looking for another slot after a
+collision is <strong>rehashing</strong>. With simple linear probing, the rehash
+function is <span class="math">\(newhashvalue = rehash(oldhashvalue)\)</span> where
+<span class="math">\(rehash(pos) = (pos + 1) \% sizeoftable\)</span>. The “plus 3” rehash
+can be defined as <span class="math">\(rehash(pos) = (pos+3) \% sizeoftable\)</span>. In
+general, <span class="math">\(rehash(pos) = (pos + skip) \% sizeoftable\)</span>. It is
+important to note that the size of the “skip” must be such that all the
+slots in the table will eventually be visited. Otherwise, part of the
+table will be unused. To ensure this, it is often suggested that the
+table size be a prime number. This is the reason we have been using 11
+in our examples.</p>
+<p>A variation of the linear probing idea is called <strong>quadratic probing</strong>.
+Instead of using a constant “skip” value, we use a rehash function that
+increments the hash value by 1, 3, 5, 7, 9, and so on. This means that
+if the first hash value is <em>h</em>, the successive values are <span class="math">\(h+1\)</span>,
+<span class="math">\(h+4\)</span>, <span class="math">\(h+9\)</span>, <span class="math">\(h+16\)</span>, and so on. In other words,
+quadratic probing uses a skip consisting of successive perfect squares.
+<a class="reference internal" href="#fig-quadratic"><em>Figure 11</em></a> shows our example values after they are placed using
+this technique.</p>
+<div class="figure align-center" id="fig-quadratic">
+<img alt="../_images/quadratic.png" src="../_images/quadratic.png" />
+<p class="caption">Figure 11: Collision Resolution with Quadratic Probing</p>
+</div>
+<p>An alternative method for handling the collision problem is to allow
+each slot to hold a reference to a collection (or chain) of items.
+<strong>Chaining</strong> allows many items to exist at the same location in the hash
+table. When collisions happen, the item is still placed in the proper
+slot of the hash table. As more and more items hash to the same
+location, the difficulty of searching for the item in the collection
+increases. <a class="reference internal" href="#fig-chaining"><em>Figure 12</em></a> shows the items as they are added to a hash
+table that uses chaining to resolve collisions.</p>
+<div class="figure align-center" id="fig-chaining">
+<img alt="../_images/chaining.png" src="../_images/chaining.png" />
+<p class="caption">Figure 12: Collision Resolution with Chaining</p>
+</div>
+<p>When we want to search for an item, we use the hash function to generate
+the slot where it should reside. Since each slot holds a collection, we
+use a searching technique to decide whether the item is present. The
+advantage is that on the average there are likely to be many fewer items
+in each slot, so the search is perhaps more efficient. We will look at
+the analysis for hashing at the end of this section.</p>
+<div class="admonition-self-check admonition">
+<p class="first admonition-title">Self Check</p>
+
+            <div id="HASH_1" class="alert alert-warning">
+            Q-17: In a hash table of size 13 which index positions would the following two keys map to?  27,  130<form name="HASH_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="HASH_1_opt_a" />
+            <label for= "HASH_1_opt_a">  a) 1, 10</label><br />
+            
+            <input type="radio" name="group1" value="b" id="HASH_1_opt_b" />
+            <label for= "HASH_1_opt_b">  b) 13, 0</label><br />
+            
+            <input type="radio" name="group1" value="c" id="HASH_1_opt_c" />
+            <label for= "HASH_1_opt_c">  c) 1, 0</label><br />
+            
+            <input type="radio" name="group1" value="d" id="HASH_1_opt_d" />
+            <label for= "HASH_1_opt_d">  d) 2, 3</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('HASH_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('HASH_1','c',['Be careful to use modulo not integer division', 'Don\u0027t divide by two, use the modulo operator.', '27 % 13 \u003D\u003D 1 and 130 % 13 \u003D\u003D 0', 'Use the modulo operator'])">Check Me</button>
+            <button class='btn btn-default' id="HASH_1_bcomp" disabled name="compare" onclick="compareAnswers('HASH_1');">Compare Me</button>
+            </form><br />
+            <div id="HASH_1_feedback">
+            </div>
+            </div>
+            
+            <div id="HASH_2" class="alert alert-warning">
+            Q-18: Suppose you are given the following set of keys to insert into a hash table that holds exactly 11 values:  113 , 117 , 97 , 100 , 114 , 108 , 116 , 105 , 99 Which of the following best demonstrates the contents of the has table after all the keys have been inserted using linear probing?<form name="HASH_2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="HASH_2_opt_a" />
+            <label for= "HASH_2_opt_a">  a) 100, __, __, 113, 114, 105, 116, 117, 97, 108, 99</label><br />
+            
+            <input type="radio" name="group1" value="b" id="HASH_2_opt_b" />
+            <label for= "HASH_2_opt_b">  b) 99, 100, __, 113, 114, __, 116, 117, 105, 97, 108</label><br />
+            
+            <input type="radio" name="group1" value="c" id="HASH_2_opt_c" />
+            <label for= "HASH_2_opt_c">  c) 100, 113, 117, 97, 14, 108, 116, 105, 99, __, __</label><br />
+            
+            <input type="radio" name="group1" value="d" id="HASH_2_opt_d" />
+            <label for= "HASH_2_opt_d">  d) 117, 114, 108, 116, 105, 99, __, __, 97, 100, 113</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('HASH_2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('HASH_2','b',['It looks like you may have been doing modulo 2 arithmentic.  You need to use the hash table size as the modulo value.', 'Using modulo 11 arithmetic and linear probing gives these values', 'It looks like you are using modulo 10 arithmetic, use the table size.', 'Be careful to use modulo not integer division.'])">Check Me</button>
+            <button class='btn btn-default' id="HASH_2_bcomp" disabled name="compare" onclick="compareAnswers('HASH_2');">Compare Me</button>
+            </form><br />
+            <div id="HASH_2_feedback">
+            </div>
+            </div>
+            </div>
+</div>
+<div class="section" id="implementing-the-map-abstract-data-type">
+<h2>Implementing the <tt class="docutils literal"><span class="pre">Map</span></tt> Abstract Data Type<a class="headerlink" href="#implementing-the-map-abstract-data-type" title="Permalink to this headline">¶</a></h2>
+<p>One of the most useful Python collections is the dictionary. Recall that
+a dictionary is an associative data type where you can store key–data
+pairs. The key is used to look up the associated data value. We often
+refer to this idea as a <strong>map</strong>.</p>
+<p>The map abstract data type is defined as follows. The structure is an
+unordered collection of associations between a key and a data value. The
+keys in a map are all unique so that there is a one-to-one relationship
+between a key and a value. The operations are given below.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Map()</span></tt> Create a new, empty map. It returns an empty map
+collection.</li>
+<li><tt class="docutils literal"><span class="pre">put(key,val)</span></tt> Add a new key-value pair to the map. If the key is
+already in the map then replace the old value with the new value.</li>
+<li><tt class="docutils literal"><span class="pre">get(key)</span></tt> Given a key, return the value stored in the map or
+<tt class="docutils literal"><span class="pre">None</span></tt> otherwise.</li>
+<li><tt class="docutils literal"><span class="pre">del</span></tt> Delete the key-value pair from the map using a statement of
+the form <tt class="docutils literal"><span class="pre">del</span> <span class="pre">map[key]</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">len()</span></tt> Return the number of key-value pairs stored in the map.</li>
+<li><tt class="docutils literal"><span class="pre">in</span></tt> Return <tt class="docutils literal"><span class="pre">True</span></tt> for a statement of the form <tt class="docutils literal"><span class="pre">key</span> <span class="pre">in</span> <span class="pre">map</span></tt>, if
+the given key is in the map, <tt class="docutils literal"><span class="pre">False</span></tt> otherwise.</li>
+</ul>
+<p>One of the great benefits of a dictionary is the fact that given a key,
+we can look up the associated data value very quickly. In order to
+provide this fast look up capability, we need an implementation that
+supports an efficient search. We could use a list with sequential or
+binary search but it would be even better to use a hash table as
+described above since looking up an item in a hash table can approach
+<span class="math">\(O(1)\)</span> performance.</p>
+<p>In <a class="reference internal" href="#lst-hashtablecodeconstructor"><em>Listing 2</em></a> we use two lists to create a
+<tt class="docutils literal"><span class="pre">HashTable</span></tt> class that implements the Map abstract data type. One
+list, called <tt class="docutils literal"><span class="pre">slots</span></tt>, will hold the key items and a parallel list,
+called <tt class="docutils literal"><span class="pre">data</span></tt>, will hold the data values. When we look up a key, the
+corresponding position in the data list will hold the associated data
+value. We will treat the key list as a hash table using the ideas
+presented earlier. Note that the initial size for the hash table has
+been chosen to be 11. Although this is arbitrary, it is important that
+the size be a prime number so that the collision resolution algorithm
+can be as efficient as possible.</p>
+<p id="lst-hashtablecodeconstructor"><strong>Listing 2</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">HashTable</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">11</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slots</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">hashfunction</span></tt> implements the simple remainder method. The collision
+resolution technique is linear probing with a “plus 1” rehash function.
+The <tt class="docutils literal"><span class="pre">put</span></tt> function (see <a class="reference internal" href="#lst-hashtablecodestore"><em>Listing 3</em></a>) assumes that
+there will eventually be an empty slot unless the key is already present
+in the <tt class="docutils literal"><span class="pre">self.slots</span></tt>. It computes the original hash value and if that
+slot is not empty, iterates the <tt class="docutils literal"><span class="pre">rehash</span></tt> function until an empty slot
+occurs. If a nonempty slot already contains the key, the old data value
+is replaced with the new data value.</p>
+<p id="lst-hashtablecodestore"><strong>Listing 3</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+  <span class="n">hashvalue</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hashfunction</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">))</span>
+
+  <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">hashvalue</span><span class="p">]</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">hashvalue</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">hashvalue</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">hashvalue</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">hashvalue</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>  <span class="c">#replace</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">nextslot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rehash</span><span class="p">(</span><span class="n">hashvalue</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">))</span>
+      <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">nextslot</span><span class="p">]</span> <span class="o">!=</span> <span class="bp">None</span> <span class="ow">and</span> \
+                      <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">nextslot</span><span class="p">]</span> <span class="o">!=</span> <span class="n">key</span><span class="p">:</span>
+        <span class="n">nextslot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rehash</span><span class="p">(</span><span class="n">nextslot</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">))</span>
+
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">nextslot</span><span class="p">]</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">nextslot</span><span class="p">]</span><span class="o">=</span><span class="n">key</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">nextslot</span><span class="p">]</span><span class="o">=</span><span class="n">data</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">nextslot</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span> <span class="c">#replace</span>
+
+<span class="k">def</span> <span class="nf">hashfunction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">,</span><span class="n">size</span><span class="p">):</span>
+     <span class="k">return</span> <span class="n">key</span><span class="o">%</span><span class="n">size</span>
+
+<span class="k">def</span> <span class="nf">rehash</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">oldhash</span><span class="p">,</span><span class="n">size</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">oldhash</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">size</span>
+</pre></div>
+</div>
+<p>Likewise, the <tt class="docutils literal"><span class="pre">get</span></tt> function (see <a class="reference internal" href="#lst-hashtablecodesearch"><em>Listing 4</em></a>)
+begins by computing the initial hash value. If the value is not in the
+initial slot, <tt class="docutils literal"><span class="pre">rehash</span></tt> is used to locate the next possible position.
+Notice that line 15 guarantees that the search will terminate by
+checking to make sure that we have not returned to the initial slot. If
+that happens, we have exhausted all possible slots and the item must not
+be present.</p>
+<p>The final methods of the <tt class="docutils literal"><span class="pre">HashTable</span></tt> class provide additional
+dictionary functionality. We overload the __getitem__ and
+__setitem__ methods to allow access using``[]``. This means that
+once a <tt class="docutils literal"><span class="pre">HashTable</span></tt> has been created, the familiar index operator will
+be available. We leave the remaining methods as exercises.</p>
+<p id="lst-hashtablecodesearch"><strong>Listing 4</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">):</span>
+  <span class="n">startslot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hashfunction</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">))</span>
+
+  <span class="n">data</span> <span class="o">=</span> <span class="bp">None</span>
+  <span class="n">stop</span> <span class="o">=</span> <span class="bp">False</span>
+  <span class="n">found</span> <span class="o">=</span> <span class="bp">False</span>
+  <span class="n">position</span> <span class="o">=</span> <span class="n">startslot</span>
+  <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">position</span><span class="p">]</span> <span class="o">!=</span> <span class="bp">None</span> <span class="ow">and</span>  \
+                       <span class="ow">not</span> <span class="n">found</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">stop</span><span class="p">:</span>
+     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">[</span><span class="n">position</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+       <span class="n">found</span> <span class="o">=</span> <span class="bp">True</span>
+       <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">position</span><span class="p">]</span>
+     <span class="k">else</span><span class="p">:</span>
+       <span class="n">position</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rehash</span><span class="p">(</span><span class="n">position</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slots</span><span class="p">))</span>
+       <span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="n">startslot</span><span class="p">:</span>
+           <span class="n">stop</span> <span class="o">=</span> <span class="bp">True</span>
+  <span class="k">return</span> <span class="n">data</span>
+
+<span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>The following session shows the <tt class="docutils literal"><span class="pre">HashTable</span></tt> class in action. First we
+will create a hash table and store some items with integer keys and
+string data values.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="o">=</span><span class="n">HashTable</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="p">[</span><span class="mi">54</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;cat&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="p">[</span><span class="mi">26</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;dog&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="p">[</span><span class="mi">93</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;lion&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;tiger&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="p">[</span><span class="mi">77</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;bird&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="p">[</span><span class="mi">31</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;cow&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="p">[</span><span class="mi">44</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;goat&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="p">[</span><span class="mi">55</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;pig&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="o">=</span><span class="s">&quot;chicken&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="o">.</span><span class="n">slots</span>
+<span class="go">[77, 44, 55, 20, 26, 93, 17, None, None, 31, 54]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="o">.</span><span class="n">data</span>
+<span class="go">[&#39;bird&#39;, &#39;goat&#39;, &#39;pig&#39;, &#39;chicken&#39;, &#39;dog&#39;, &#39;lion&#39;,</span>
+<span class="go">       &#39;tiger&#39;, None, None, &#39;cow&#39;, &#39;cat&#39;]</span>
+</pre></div>
+</div>
+<p>Next we will access and modify some items in the hash table. Note that
+the value for the key 20 is being replaced.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span>
+<span class="go">&#39;chicken&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span>
+<span class="go">&#39;tiger&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="o">=</span><span class="s">&#39;duck&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span>
+<span class="go">&#39;duck&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">H</span><span class="o">.</span><span class="n">data</span>
+<span class="go">[&#39;bird&#39;, &#39;goat&#39;, &#39;pig&#39;, &#39;duck&#39;, &#39;dog&#39;, &#39;lion&#39;,</span>
+<span class="go">       &#39;tiger&#39;, None, None, &#39;cow&#39;, &#39;cat&#39;]</span>
+<span class="go">&gt;&gt; print(H[99])</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+<p>The complete hash table example can be found in ActiveCode 1.</p>
+
+<div id="cont"></div>
+<div id="hashtablecomplete" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="hashtablecomplete_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="hashtablecomplete_saveb" onclick="saveEditor('hashtablecomplete');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="hashtablecomplete_loadb" onclick="requestCode('hashtablecomplete');">Load</button>
+<button class='btn btn-default' id="hashtablecomplete_vizb" onclick="injectCodelens(this,'hashtablecomplete');">Show in Codelens</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="hashtablecomplete_showb" onclick="$('#hashtablecomplete_code_div').toggle();cm_editors['hashtablecomplete_code'].refresh();$('#hashtablecomplete_saveb').toggle();$('#hashtablecomplete_loadb').toggle()">Show/Hide Code</button>
+
+</div>
+<br/>
+<div id="hashtablecomplete_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="hashtablecomplete_code" class="active_code" prefixcode="undefined" lang="python">
+class HashTable:
+    def __init__(self):
+        self.size = 11
+        self.slots = [None] * self.size
+        self.data = [None] * self.size
+
+    def put(self,key,data):
+      hashvalue = self.hashfunction(key,len(self.slots))
+
+      if self.slots[hashvalue] == None:
+        self.slots[hashvalue] = key
+        self.data[hashvalue] = data
+      else:
+        if self.slots[hashvalue] == key:
+          self.data[hashvalue] = data  #replace
+        else:
+          nextslot = self.rehash(hashvalue,len(self.slots))
+          while self.slots[nextslot] != None and \
+                          self.slots[nextslot] != key:
+            nextslot = self.rehash(nextslot,len(self.slots))
+
+          if self.slots[nextslot] == None:
+            self.slots[nextslot]=key
+            self.data[nextslot]=data
+          else:
+            self.data[nextslot] = data #replace
+
+    def hashfunction(self,key,size):
+         return key%size
+
+    def rehash(self,oldhash,size):
+        return (oldhash+1)%size
+
+    def get(self,key):
+      startslot = self.hashfunction(key,len(self.slots))
+
+      data = None
+      stop = False
+      found = False
+      position = startslot
+      while self.slots[position] != None and  \
+                           not found and not stop:
+         if self.slots[position] == key:
+           found = True
+           data = self.data[position]
+         else:
+           position=self.rehash(position,len(self.slots))
+           if position == startslot:
+               stop = True
+      return data
+
+    def __getitem__(self,key):
+        return self.get(key)
+
+    def __setitem__(self,key,data):
+        self.put(key,data)
+
+H=HashTable()
+H[54]="cat"
+H[26]="dog"
+H[93]="lion"
+H[17]="tiger"
+H[77]="bird"
+H[31]="cow"
+H[44]="goat"
+H[55]="pig"
+H[20]="chicken"
+print(H.slots)
+print(H.data)
+
+print(H[20])
+
+print(H[17])
+H[20]='duck'
+print(H[20])
+print(H[99])
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="hashtablecomplete_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="hashtablecomplete_suffix" style="display:none">
+</pre><pre id="hashtablecomplete_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text">Complete Hash Table Example (hashtablecomplete)</span> </p>
+<div id="hashtablecomplete_codelens_div" style="display:none"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#hashtablecomplete_saveb').toggle();
+    $('#hashtablecomplete_loadb').toggle();
+}
+if ($("#hashtablecomplete").attr("lang") !== "html" && $("#hashtablecomplete_code_div").parents(".admonition").length == 0 && $("#hashtablecomplete_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#hashtablecomplete_code_div").offset({
+			left: $("#hashtablecomplete .clearfix").offset().left
+		});
+	}
+	$("#hashtablecomplete_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#hashtablecomplete_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#hashtablecomplete_runb").parent().siblings(".ac_output").show();
+			runit('hashtablecomplete',this, undefined);
+			$("#hashtablecomplete_runb").on("click", function(){
+				runit('hashtablecomplete',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#hashtablecomplete_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#hashtablecomplete_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#hashtablecomplete_runb").on("click", function(){
+		runit('hashtablecomplete',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+<div class="section" id="analysis-of-hashing">
+<h2>Analysis of Hashing<a class="headerlink" href="#analysis-of-hashing" title="Permalink to this headline">¶</a></h2>
+<p>We stated earlier that in the best case hashing would provide a
+<span class="math">\(O(1)\)</span>, constant time search technique. However, due to
+collisions, the number of comparisons is typically not so simple. Even
+though a complete analysis of hashing is beyond the scope of this text,
+we can state some well-known results that approximate the number of
+comparisons necessary to search for an item.</p>
+<p>The most important piece of information we need to analyze the use of a
+hash table is the load factor, <span class="math">\(\lambda\)</span>. Conceptually, if
+<span class="math">\(\lambda\)</span> is small, then there is a lower chance of collisions,
+meaning that items are more likely to be in the slots where they belong.
+If <span class="math">\(\lambda\)</span> is large, meaning that the table is filling up,
+then there are more and more collisions. This means that collision
+resolution is more difficult, requiring more comparisons to find an
+empty slot. With chaining, increased collisions means an increased
+number of items on each chain.</p>
+<p>As before, we will have a result for both a successful and an
+unsuccessful search. For a successful search using open addressing with
+linear probing, the average number of comparisons is approximately
+<span class="math">\(\frac{1}{2}\left(1+\frac{1}{1-\lambda}\right)\)</span> and an
+unsuccessful search gives
+<span class="math">\(\frac{1}{2}\left(1+\left(\frac{1}{1-\lambda}\right)^2\right)\)</span>
+If we are using chaining, the average number of comparisons is
+<span class="math">\(1 + \frac {\lambda}{2}\)</span> for the successful case, and simply
+<span class="math">\(\lambda\)</span> comparisons if the search is unsuccessful.</p>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - The Binary Search' data-toggle="tooltip">
+    <a href="TheBinarySearch.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="TheBinarySearch.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - The Bubble Sort' data-toggle="tooltip" >
+    <a href="TheBubbleSort.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="TheBubbleSort.html" >Next Section - The Bubble Sort</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014 Brad Miller, David Ranum.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

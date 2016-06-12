@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="An interactive version of Problem Solving with Algorithms and Data Structures using Python." name="description" />
+<meta content="python, data structures, computer science" name="keywords" />
+
+    <title>Assignments &mdash; Problem Solving with Algorithms and Data Structures</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/assess.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="_static/lib/lis.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="#" />
+    <link rel="next" title="Objectives" href="Introduction/Objectives.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pythonds';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="#">Problem Solving with Algorithms and Data Structures</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='#'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pythonds/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/initiateGroup' id="joinGroupLink">Join a Study Group</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/schedule' id="groupScheduleLink">Group Schedule</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/newschedule' id="newChapterLink">Schedule New Chapter</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/manageGroup' id="manageGroupLink">Manage Group</a></li>
+			<li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/assignments/index'>Progress Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pythonds/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Assignments</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#analysis">Analysis</a></li>
+<li><a class="reference internal" href="#basic-data-structures">Basic Data Structures</a></li>
+<li><a class="reference internal" href="#recursion">Recursion</a></li>
+<li><a class="reference internal" href="#sorting-and-searching">Sorting and Searching</a></li>
+<li><a class="reference internal" href="#trees-and-tree-algorithms">Trees and Tree Algorithms</a></li>
+<li><a class="reference internal" href="#graphs-and-graph-algorithms">Graphs and Graph Algorithms</a></li>
+<li><a class="reference internal" href="#acknowledgements">Acknowledgements</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-next" title='Next Chapter - Objectives' data-toggle="tooltip" >
+    <a href="Introduction/Objectives.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <img alt="PythonDS Cover" src="_images/PythonDScover.jpg" />
+<p>By Brad Miller and David Ranum, Luther College</p>
+<div class="section" id="assignments">
+<h1>Assignments<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+</div>
+<div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Introduction/Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction/GettingStarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction/WhatIsComputerScience.html">What Is Computer Science?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction/WhatIsProgramming.html">What Is Programming?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction/WhyStudyDataStructuresandAbstractDataTypes.html">Why Study Data Structures and Abstract Data Types?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction/WhyStudyAlgorithms.html">Why Study Algorithms?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction/ReviewofBasicPython.html">Review of Basic Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction/GettingStartedwithData.html">Getting Started with Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Introduction/GettingStartedwithData.html#built-in-atomic-data-types">Built-in Atomic Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction/GettingStartedwithData.html#built-in-collection-data-types">Built-in Collection Data Types</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction/InputandOutput.html">Input and Output</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Introduction/InputandOutput.html#string-formatting">String Formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction/ControlStructures.html">Control Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction/ExceptionHandling.html">Exception Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction/DefiningFunctions.html">Defining Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction/ObjectOrientedProgramminginPythonDefiningClasses.html">Object-Oriented Programming in Python: Defining Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Introduction/ObjectOrientedProgramminginPythonDefiningClasses.html#a-fraction-class">A <tt class="docutils literal"><span class="pre">Fraction</span></tt> Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction/ObjectOrientedProgramminginPythonDefiningClasses.html#inheritance-logic-gates-and-circuits">Inheritance: Logic Gates and Circuits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction/Summary.html">Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction/KeyTerms.html">Key Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction/DiscussionQuestions.html">Discussion Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction/ProgrammingExercises.html">Programming Exercises</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="analysis">
+<h1>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="AlgorithmAnalysis/Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AlgorithmAnalysis/WhatIsAlgorithmAnalysis.html">What Is Algorithm Analysis?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AlgorithmAnalysis/BigONotation.html">Big-O Notation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AlgorithmAnalysis/AnAnagramDetectionExample.html">An Anagram Detection Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="AlgorithmAnalysis/AnAnagramDetectionExample.html#solution-1-checking-off">Solution 1: Checking Off</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AlgorithmAnalysis/AnAnagramDetectionExample.html#solution-2-sort-and-compare">Solution 2: Sort and Compare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AlgorithmAnalysis/AnAnagramDetectionExample.html#solution-3-brute-force">Solution 3: Brute Force</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AlgorithmAnalysis/AnAnagramDetectionExample.html#solution-4-count-and-compare">Solution 4: Count and Compare</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="AlgorithmAnalysis/PerformanceofPythonDataStructures.html">Performance of Python Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AlgorithmAnalysis/Lists.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AlgorithmAnalysis/Dictionaries.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AlgorithmAnalysis/Summary.html">Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AlgorithmAnalysis/KeyTerms.html">Key Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AlgorithmAnalysis/DiscussionQuestions.html">Discussion Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AlgorithmAnalysis/ProgrammingExercises.html">Programming Exercises</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="basic-data-structures">
+<h1>Basic Data Structures<a class="headerlink" href="#basic-data-structures" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/WhatAreLinearStructures.html">What Are Linear Structures?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/WhatisaStack.html">What is a Stack?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/TheStackAbstractDataType.html">The Stack Abstract Data Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/ImplementingaStackinPython.html">Implementing a Stack in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/SimpleBalancedParentheses.html">Simple Balanced Parentheses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/BalancedSymbols(AGeneralCase).html">Balanced Symbols (A General Case)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/ConvertingDecimalNumberstoBinaryNumbers.html">Converting Decimal Numbers to Binary Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/InfixPrefixandPostfixExpressions.html">Infix, Prefix and Postfix Expressions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BasicDS/InfixPrefixandPostfixExpressions.html#conversion-of-infix-expressions-to-prefix-and-postfix">Conversion of Infix Expressions to Prefix and Postfix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicDS/InfixPrefixandPostfixExpressions.html#general-infix-to-postfix-conversion">General Infix-to-Postfix Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicDS/InfixPrefixandPostfixExpressions.html#postfix-evaluation">Postfix Evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/WhatIsaQueue.html">What Is a Queue?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/TheQueueAbstractDataType.html">The Queue Abstract Data Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/ImplementingaQueueinPython.html">Implementing a Queue in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/SimulationHotPotato.html">Simulation: Hot Potato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/SimulationPrintingTasks.html">Simulation: Printing Tasks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BasicDS/SimulationPrintingTasks.html#main-simulation-steps">Main Simulation Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicDS/SimulationPrintingTasks.html#python-implementation">Python Implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicDS/SimulationPrintingTasks.html#discussion">Discussion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/WhatIsaDeque.html">What Is a Deque?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/TheDequeAbstractDataType.html">The Deque Abstract Data Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/ImplementingaDequeinPython.html">Implementing a Deque in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/PalindromeChecker.html">Palindrome-Checker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/Lists.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/TheUnorderedListAbstractDataType.html">The Unordered List Abstract Data Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/ImplementinganUnorderedListLinkedLists.html">Implementing an Unordered List: Linked Lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BasicDS/ImplementinganUnorderedListLinkedLists.html#the-node-class">The <tt class="docutils literal"><span class="pre">Node</span></tt> Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicDS/ImplementinganUnorderedListLinkedLists.html#the-unordered-list-class">The <tt class="docutils literal"><span class="pre">Unordered</span> <span class="pre">List</span></tt> Class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/TheOrderedListAbstractDataType.html">The Ordered List Abstract Data Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/ImplementinganOrderedList.html">Implementing an Ordered List</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BasicDS/ImplementinganOrderedList.html#analysis-of-linked-lists">Analysis of Linked Lists</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/Summary.html">Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/KeyTerms.html">Key Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/DiscussionQuestions.html">Discussion Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BasicDS/ProgrammingExercises.html">Programming Exercises</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="recursion">
+<h1>Recursion<a class="headerlink" href="#recursion" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Recursion/Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recursion/WhatIsRecursion.html">What Is Recursion?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recursion/pythondsCalculatingtheSumofaListofNumbers.html">Calculating the Sum of a List of Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recursion/TheThreeLawsofRecursion.html">The Three Laws of Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recursion/pythondsConvertinganIntegertoaStringinAnyBase.html">Converting an Integer to a String in Any Base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recursion/StackFramesImplementingRecursion.html">Stack Frames: Implementing Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recursion/pythondsintro-VisualizingRecursion.html">Introduction: Visualizing Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recursion/pythondsSierpinskiTriangle.html">Sierpinski Triangle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recursion/ComplexRecursiveProblems.html">Complex Recursive Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recursion/TowerofHanoi.html">Tower of Hanoi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recursion/ExploringaMaze.html">Exploring a Maze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recursion/DynamicProgramming.html">Dynamic Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recursion/Summary.html">Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recursion/KeyTerms.html">Key Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recursion/DiscussionQuestions.html">Discussion Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recursion/Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recursion/pythondsProgrammingExercises.html">Programming Exercises</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="sorting-and-searching">
+<h1>Sorting and Searching<a class="headerlink" href="#sorting-and-searching" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="SortSearch/Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SortSearch/TheSequentialSearch.html">The Sequential Search</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SortSearch/TheSequentialSearch.html#analysis-of-sequential-search">Analysis of Sequential Search</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SortSearch/TheBinarySearch.html">The Binary Search</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SortSearch/TheBinarySearch.html#analysis-of-binary-search">Analysis of Binary Search</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SortSearch/Hashing.html">Hashing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="SortSearch/Hashing.html#hash-functions">Hash Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SortSearch/Hashing.html#collision-resolution">Collision Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SortSearch/Hashing.html#implementing-the-map-abstract-data-type">Implementing the <tt class="docutils literal"><span class="pre">Map</span></tt> Abstract Data Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SortSearch/Hashing.html#analysis-of-hashing">Analysis of Hashing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SortSearch/TheBubbleSort.html">The Bubble Sort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SortSearch/TheSelectionSort.html">The Selection Sort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SortSearch/TheInsertionSort.html">The Insertion Sort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SortSearch/TheShellSort.html">The Shell Sort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SortSearch/TheMergeSort.html">The Merge Sort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SortSearch/TheQuickSort.html">The Quick Sort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SortSearch/Summary.html">Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SortSearch/KeyTerms.html">Key Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SortSearch/DiscussionQuestions.html">Discussion Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SortSearch/ProgrammingExercises.html">Programming Exercises</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="trees-and-tree-algorithms">
+<h1>Trees and Tree Algorithms<a class="headerlink" href="#trees-and-tree-algorithms" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Trees/Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/ExamplesofTrees.html">Examples of Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/VocabularyandDefinitions.html">Vocabulary and Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/ListofListsRepresentation.html">List of Lists Representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/NodesandReferences.html">Nodes and References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/ParseTree.html">Parse Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/TreeTraversals.html">Tree Traversals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/PriorityQueueswithBinaryHeaps.html">Priority Queues with Binary Heaps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/BinaryHeapOperations.html">Binary Heap Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/BinaryHeapImplementation.html">Binary Heap Implementation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Trees/BinaryHeapImplementation.html#the-structure-property">The Structure Property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Trees/BinaryHeapImplementation.html#the-heap-order-property">The Heap Order Property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Trees/BinaryHeapImplementation.html#heap-operations">Heap Operations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/BinarySearchTrees.html">Binary Search Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/SearchTreeOperations.html">Search Tree Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/SearchTreeImplementation.html">Search Tree Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/SearchTreeAnalysis.html">Search Tree Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/BalancedBinarySearchTrees.html">Balanced Binary Search Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/AVLTreePerformance.html">AVL Tree Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/AVLTreeImplementation.html">AVL Tree Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/SummaryofMapADTImplementations.html">Summary of Map ADT Implementations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/Summary.html">Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/KeyTerms.html">Key Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/DiscussionQuestions.html">Discussion Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Trees/ProgrammingExercises.html">Programming Exercises</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="graphs-and-graph-algorithms">
+<h1>Graphs and Graph Algorithms<a class="headerlink" href="#graphs-and-graph-algorithms" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/Objectives.html">Objectives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/VocabularyandDefinitions.html">Vocabulary and Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/TheGraphAbstractDataType.html">The Graph Abstract Data Type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/AnAdjacencyMatrix.html">An Adjacency Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/AnAdjacencyList.html">An Adjacency List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/Implementation.html">Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/TheWordLadderProblem.html">The Word Ladder Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/BuildingtheWordLadderGraph.html">Building the Word Ladder Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/ImplementingBreadthFirstSearch.html">Implementing Breadth First Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/BreadthFirstSearchAnalysis.html">Breadth First Search Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/TheKnightsTourProblem.html">The Knight’s Tour Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/BuildingtheKnightsTourGraph.html">Building the Knight’s Tour Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/ImplementingKnightsTour.html">Implementing Knight’s Tour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/KnightsTourAnalysis.html">Knight’s Tour Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/GeneralDepthFirstSearch.html">General Depth First Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/DepthFirstSearchAnalysis.html">Depth First Search Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/TopologicalSorting.html">Topological Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/StronglyConnectedComponents.html">Strongly Connected Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/ShortestPathProblems.html">Shortest Path Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/DijkstrasAlgorithm.html">Dijkstra’s Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/AnalysisofDijkstrasAlgorithm.html">Analysis of Dijkstra’s Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/PrimsSpanningTreeAlgorithm.html">Prim’s Spanning Tree Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/Summary.html">Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/KeyTerms.html">Key Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/DiscussionQuestions.html">Discussion Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Graphs/ProgrammingExercises.html">Programming Exercises</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="acknowledgements">
+<h1>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-next" class="navLink" title='Next Section - Objectives' data-toggle="tooltip" >
+    <a href="Introduction/Objectives.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="Introduction/Objectives.html" >Next Section - Objectives</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014 Brad Miller, David Ranum.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

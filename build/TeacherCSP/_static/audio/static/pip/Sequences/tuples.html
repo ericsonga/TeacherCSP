@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tuples &mdash; Programs, Information, and People: Interactive Edition</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Programs, Information, and People: Interactive Edition" href="../index.html" />
+    <link rel="next" title="Sorting with Sort and Sorted" href="../Sort/sorted.html" />
+    <link rel="prev" title="Keyword Parameters" href="../Functions/KeywordParams.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pip';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+var _prum = [['id', '521dfcc4abe53d0749000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../toc.html">Programs, Information, and People</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../toc.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pip/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/assignments" id="registerlink">Project Page</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pip/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Tuples</a></li>
+<li><a class="reference internal" href="#tuple-packing">Tuple Packing</a></li>
+<li><a class="reference internal" href="#tuples-as-return-values">Tuples as Return Values</a></li>
+<li><a class="reference internal" href="#tuple-assignment-with-unpacking">Tuple Assignment with unpacking</a></li>
+<li><a class="reference internal" href="#unpacking-dictionary-items">Unpacking Dictionary Items</a></li>
+<li><a class="reference internal" href="#glossary">Glossary</a></li>
+<li><a class="reference internal" href="#exercises">Exercises</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Keyword Parameters" data-toggle="tooltip">
+    <a href="../Functions/KeywordParams.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Sorting with Sort and Sorted' data-toggle="tooltip" >
+    <a href="../Sort/sorted.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <span class="target" id="tuples-chap"></span><div class="section" id="tuples">
+<span id="index-0"></span><h1>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h1>
+<p>So far you have seen two types of sequential collections: strings, which are made up of
+characters; and lists, which are made up of elements of any type.  One of the
+differences we noted is that the elements of a list can be modified, but the
+characters in a string cannot. In other words, strings are <strong>immutable</strong> and
+lists are <strong>mutable</strong>.</p>
+<p>A <strong>tuple</strong>, like a list, is a sequence of items of any type. Unlike lists,
+however, tuples are immutable.  The printed representation of a tuple is a comma-separated
+sequence of values, enclosed in parentheses. In other words, the representation
+is just like lists, except with parentheses () instead of square brackets [].</p>
+<p>One way to create a tuple is to write an expression, enclosed in parentheses,
+that consists of multiple other expressions, separated by commas.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">julia</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;Julia&quot;</span><span class="p">,</span> <span class="s">&quot;Roberts&quot;</span><span class="p">,</span> <span class="mi">1967</span><span class="p">,</span> <span class="s">&quot;Duplicity&quot;</span><span class="p">,</span> <span class="mi">2009</span><span class="p">,</span> <span class="s">&quot;Actress&quot;</span><span class="p">,</span> <span class="s">&quot;Atlanta, Georgia&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tuples are useful for representing what other languages often call <em>records</em> &#8212;
+some related information that belongs together, like your student record.  There is
+no description of what each of these <em>fields</em> means, but we can guess.  A tuple
+lets us &#8220;chunk&#8221; together related information and use it as a single thing.</p>
+<p>Tuples support the same sequence operations as strings and
+lists.
+For example, the index operator selects an element from a tuple.</p>
+<p>As with strings, if we try to use item assignment to modify one of the elements of the
+tuple, we get an error.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">julia</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;X&#39;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="s">&#39;tuple&#39;</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
+</pre></div>
+</div>
+<p>Of course, even if we can&#8217;t modify the elements of a tuple, we can make a variable
+reference a new tuple holding different information.  To construct the new tuple,
+it is convenient that we can slice parts of the old tuple and join up the
+bits to make the new tuple.  So <tt class="docutils literal"><span class="pre">julia</span></tt> has a new recent film, and we might want
+to change her tuple.  We can easily slice off the parts we want and concatenate them with
+the new tuple.</p>
+
+<div id="cont"></div>
+<div id="ch09_tuple1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ch09_tuple1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch09_tuple1_saveb" onclick="saveEditor('ch09_tuple1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch09_tuple1_loadb" onclick="requestCode('ch09_tuple1');">Load</button>
+<button class='btn btn-default' id="ch09_tuple1_vizb" onclick="injectCodelens(this,'ch09_tuple1');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ch09_tuple1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ch09_tuple1_code" class="active_code" prefixcode="undefined" lang="python">
+julia = ("Julia", "Roberts", 1967, "Duplicity", 2009, "Actress", "Atlanta, Georgia")
+print(julia[2])
+print(julia[2:6])
+
+print(len(julia))
+
+julia = julia[:3] + ("Eat Pray Love", 2010) + julia[5:]
+print(julia)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ch09_tuple1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ch09_tuple1_suffix" style="display:none">
+</pre><pre id="ch09_tuple1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch09_tuple1)</span> </p>
+<div id="ch09_tuple1_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch09_tuple1_saveb').toggle();
+    $('#ch09_tuple1_loadb').toggle();
+}
+if ($("#ch09_tuple1").attr("lang") !== "html" && $("#ch09_tuple1_code_div").parents(".admonition").length == 0 && $("#ch09_tuple1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ch09_tuple1_code_div").offset({
+			left: $("#ch09_tuple1 .clearfix").offset().left
+		});
+	}
+	$("#ch09_tuple1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ch09_tuple1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ch09_tuple1_runb").parent().siblings(".ac_output").show();
+			runit('ch09_tuple1',this, undefined);
+			$("#ch09_tuple1_runb").on("click", function(){
+				runit('ch09_tuple1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ch09_tuple1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ch09_tuple1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ch09_tuple1_runb").on("click", function(){
+		runit('ch09_tuple1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>To create a tuple with a single element (but you&#8217;re probably not likely
+to do that too often), we have to include the final comma, because without
+the final comma, Python treats the <tt class="docutils literal"><span class="pre">(5)</span></tt> below as an integer in parentheses:</p>
+
+<div id="cont"></div>
+<div id="chp09_tuple2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp09_tuple2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp09_tuple2_saveb" onclick="saveEditor('chp09_tuple2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp09_tuple2_loadb" onclick="requestCode('chp09_tuple2');">Load</button>
+<button class='btn btn-default' id="chp09_tuple2_vizb" onclick="injectCodelens(this,'chp09_tuple2');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp09_tuple2_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp09_tuple2_code" class="active_code" prefixcode="undefined" lang="python">
+tup = (5,)
+print(type(tup))
+
+x = (5)
+print(type(x))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp09_tuple2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp09_tuple2_suffix" style="display:none">
+</pre><pre id="chp09_tuple2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp09_tuple2)</span> </p>
+<div id="chp09_tuple2_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp09_tuple2_saveb').toggle();
+    $('#chp09_tuple2_loadb').toggle();
+}
+if ($("#chp09_tuple2").attr("lang") !== "html" && $("#chp09_tuple2_code_div").parents(".admonition").length == 0 && $("#chp09_tuple2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp09_tuple2_code_div").offset({
+			left: $("#chp09_tuple2 .clearfix").offset().left
+		});
+	}
+	$("#chp09_tuple2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp09_tuple2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp09_tuple2_runb").parent().siblings(".ac_output").show();
+			runit('chp09_tuple2',this, undefined);
+			$("#chp09_tuple2_runb").on("click", function(){
+				runit('chp09_tuple2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp09_tuple2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp09_tuple2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp09_tuple2_runb").on("click", function(){
+		runit('chp09_tuple2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+<div class="section" id="tuple-packing">
+<span id="index-1"></span><h1>Tuple Packing<a class="headerlink" href="#tuple-packing" title="Permalink to this headline">¶</a></h1>
+<p>Wherever python expects a single value, if multiple expressions are provided, separated
+by commas, they are automatically <strong>packed</strong> into a tuple. For example, we could
+have omitted the parentheses when first assigning a tuple to the variable julia.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">julia</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;Julia&quot;</span><span class="p">,</span> <span class="s">&quot;Roberts&quot;</span><span class="p">,</span> <span class="mi">1967</span><span class="p">,</span> <span class="s">&quot;Duplicity&quot;</span><span class="p">,</span> <span class="mi">2009</span><span class="p">,</span> <span class="s">&quot;Actress&quot;</span><span class="p">,</span> <span class="s">&quot;Atlanta, Georgia&quot;</span><span class="p">)</span>
+<span class="c"># or equivalently</span>
+<span class="n">julia</span> <span class="o">=</span> <span class="s">&quot;Julia&quot;</span><span class="p">,</span> <span class="s">&quot;Roberts&quot;</span><span class="p">,</span> <span class="mi">1967</span><span class="p">,</span> <span class="s">&quot;Duplicity&quot;</span><span class="p">,</span> <span class="mi">2009</span><span class="p">,</span> <span class="s">&quot;Actress&quot;</span><span class="p">,</span> <span class="s">&quot;Atlanta, Georgia&quot;</span>
+</pre></div>
+</div>
+<p id="index-2"><strong>Check your understanding</strong></p>
+
+            <div id="test_questiontuples_1" class="alert alert-warning">
+            tuples-1: Which of the following statements will output Atlanta, Georgia<form name="test_questiontuples_1_form" method="get" action="" onsubmit="return false;">
+            <input type="checkbox" name="group1" value="a" id="test_questiontuples_1_opt_a" />
+            <label for= "test_questiontuples_1_opt_a">  a) print(julia['city'])</label><br />
+            
+            <input type="checkbox" name="group1" value="b" id="test_questiontuples_1_opt_b" />
+            <label for= "test_questiontuples_1_opt_b">  b) print(julia[-1])</label><br />
+            
+            <input type="checkbox" name="group1" value="c" id="test_questiontuples_1_opt_c" />
+            <label for= "test_questiontuples_1_opt_c">  c) print(julia(-1))</label><br />
+            
+            <input type="checkbox" name="group1" value="d" id="test_questiontuples_1_opt_d" />
+            <label for= "test_questiontuples_1_opt_d">  d) print(julia(6))</label><br />
+            
+            <input type="checkbox" name="group1" value="e" id="test_questiontuples_1_opt_e" />
+            <label for= "test_questiontuples_1_opt_e">  e) print(julia[7])</label><br />
+            
+            <script>
+            $(document).ready(function(){checkMultipleSelect('test_questiontuples_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMAStorage('test_questiontuples_1','b',['julia is a tuple, not a dictionary\u003B indexes must be integers', '[\u002D1] picks out the last item in the sequence', 'Index into tuples using square brackets. julia(\u002D1) will try to treat julia as a function call, with \u002D1 as the parameter value.', 'Index into tuples using square brackets. julia(\u002D1) will try to treat julia as a function call, with \u002D1 as the parameter value.', 'Indexing starts at 0. You want the seventh item, which is julia[6]'])">Check Me</button>
+            <button class='btn btn-default' id="test_questiontuples_1_bcomp" disabled name="compare" onclick="compareAnswers('test_questiontuples_1');">Compare Me</button>
+            </form><br />
+            <div id="test_questiontuples_1_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="tuples-as-return-values">
+<h1>Tuples as Return Values<a class="headerlink" href="#tuples-as-return-values" title="Permalink to this headline">¶</a></h1>
+<p>Functions can return tuples as return values. This is very useful &#8212; we often want to
+know some batsman&#8217;s highest and lowest score, or we want to find the mean and the standard
+deviation, or we want to know the year, the month, and the day, or if we&#8217;re doing some
+some ecological modeling we may want to know the number of rabbits and the number
+of wolves on an island at a given time.  In each case, a function (which
+can only return a single value), can create a single tuple holding multiple elements.</p>
+<p>For example, we could write a function that returns both the area and the circumference
+of a circle of radius r.</p>
+
+<div id="cont"></div>
+<div id="chp09_tuple3" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp09_tuple3_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp09_tuple3_saveb" onclick="saveEditor('chp09_tuple3');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp09_tuple3_loadb" onclick="requestCode('chp09_tuple3');">Load</button>
+<button class='btn btn-default' id="chp09_tuple3_vizb" onclick="injectCodelens(this,'chp09_tuple3');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp09_tuple3_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp09_tuple3_code" class="active_code" prefixcode="undefined" lang="python">
+def circleInfo(r):
+    """ Return (circumference, area) of a circle of radius r """
+    c = 2 * 3.14159 * r
+    a = 3.14159 * r * r
+    return (c, a)
+
+print(circleInfo(10))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp09_tuple3_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp09_tuple3_suffix" style="display:none">
+</pre><pre id="chp09_tuple3_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp09_tuple3)</span> </p>
+<div id="chp09_tuple3_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp09_tuple3_saveb').toggle();
+    $('#chp09_tuple3_loadb').toggle();
+}
+if ($("#chp09_tuple3").attr("lang") !== "html" && $("#chp09_tuple3_code_div").parents(".admonition").length == 0 && $("#chp09_tuple3_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp09_tuple3_code_div").offset({
+			left: $("#chp09_tuple3 .clearfix").offset().left
+		});
+	}
+	$("#chp09_tuple3_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp09_tuple3_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp09_tuple3_runb").parent().siblings(".ac_output").show();
+			runit('chp09_tuple3',this, undefined);
+			$("#chp09_tuple3_runb").on("click", function(){
+				runit('chp09_tuple3',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp09_tuple3_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp09_tuple3_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp09_tuple3_runb").on("click", function(){
+		runit('chp09_tuple3',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Again, we can take advantage of packing to make the code look a little more readable on line 4</p>
+
+<div id="cont"></div>
+<div id="chp09_tuple3a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp09_tuple3a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp09_tuple3a_saveb" onclick="saveEditor('chp09_tuple3a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp09_tuple3a_loadb" onclick="requestCode('chp09_tuple3a');">Load</button>
+<button class='btn btn-default' id="chp09_tuple3a_vizb" onclick="injectCodelens(this,'chp09_tuple3a');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp09_tuple3a_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp09_tuple3a_code" class="active_code" prefixcode="undefined" lang="python">
+def circleInfo(r):
+    """ Return (circumference, area) of a circle of radius r """
+    c = 2 * 3.14159 * r
+    a = 3.14159 * r * r
+    return c, a
+
+print(circleInfo(10))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp09_tuple3a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp09_tuple3a_suffix" style="display:none">
+</pre><pre id="chp09_tuple3a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp09_tuple3a)</span> </p>
+<div id="chp09_tuple3a_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp09_tuple3a_saveb').toggle();
+    $('#chp09_tuple3a_loadb').toggle();
+}
+if ($("#chp09_tuple3a").attr("lang") !== "html" && $("#chp09_tuple3a_code_div").parents(".admonition").length == 0 && $("#chp09_tuple3a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp09_tuple3a_code_div").offset({
+			left: $("#chp09_tuple3a .clearfix").offset().left
+		});
+	}
+	$("#chp09_tuple3a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp09_tuple3a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp09_tuple3a_runb").parent().siblings(".ac_output").show();
+			runit('chp09_tuple3a',this, undefined);
+			$("#chp09_tuple3a_runb").on("click", function(){
+				runit('chp09_tuple3a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp09_tuple3a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp09_tuple3a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp09_tuple3a_runb").on("click", function(){
+		runit('chp09_tuple3a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+<div class="section" id="tuple-assignment-with-unpacking">
+<h1>Tuple Assignment with unpacking<a class="headerlink" href="#tuple-assignment-with-unpacking" title="Permalink to this headline">¶</a></h1>
+<p>Python has a very powerful <strong>tuple assignment</strong> feature that allows a tuple of variable names
+on the left of an assignment to be assigned values from a tuple
+on the right of the assignment. Another ay to think of this is that the tuple of values
+is <strong>unpacked</strong> into the variable names.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">surname</span><span class="p">,</span> <span class="n">birth_year</span><span class="p">,</span> <span class="n">movie</span><span class="p">,</span> <span class="n">movie_year</span><span class="p">,</span> <span class="n">profession</span><span class="p">,</span> <span class="n">birth_place</span><span class="p">)</span> <span class="o">=</span> <span class="n">julia</span>
+</pre></div>
+</div>
+<p>This does the equivalent of seven assignment statements, all on one easy line.
+One requirement is that the number of variables on the left must match the number
+of elements in the tuple.</p>
+<p>Once in a while, it is useful to swap the values of two variables.  With
+conventional assignment statements, we have to use a temporary variable. For
+example, to swap <tt class="docutils literal"><span class="pre">a</span></tt> and <tt class="docutils literal"><span class="pre">b</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">temp</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">temp</span>
+</pre></div>
+</div>
+<p>Tuple assignment solves this problem neatly:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The left side is a tuple of variables; the right side is a tuple of values.
+Each value is assigned to its respective variable. All the expressions on the
+right side are evaluated before any of the assignments. This feature makes
+tuple assignment quite versatile.</p>
+<p>Naturally, the number of variables on the left and the number of values on the
+right have to be the same.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">ValueError: need more than 3 values to unpack</span>
+</pre></div>
+</div>
+<p>Python even provides a way to pass a single tuple to a function and have it be
+unpacked for assignment to the named parameters.</p>
+
+<div id="cont"></div>
+<div id="cp09_tuple4" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="cp09_tuple4_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="cp09_tuple4_saveb" onclick="saveEditor('cp09_tuple4');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="cp09_tuple4_loadb" onclick="requestCode('cp09_tuple4');">Load</button>
+<button class='btn btn-default' id="cp09_tuple4_vizb" onclick="injectCodelens(this,'cp09_tuple4');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="cp09_tuple4_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="cp09_tuple4_code" class="active_code" prefixcode="undefined" lang="python">
+def add(x, y):
+    return x + y
+
+print(add(3, 4))
+z = (5, 4)
+print(add(*z)) # this line will cause the values to be unpacked
+print(add(z)) # this line causes an error
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="cp09_tuple4_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="cp09_tuple4_suffix" style="display:none">
+</pre><pre id="cp09_tuple4_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (cp09_tuple4)</span> </p>
+<div id="cp09_tuple4_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#cp09_tuple4_saveb').toggle();
+    $('#cp09_tuple4_loadb').toggle();
+}
+if ($("#cp09_tuple4").attr("lang") !== "html" && $("#cp09_tuple4_code_div").parents(".admonition").length == 0 && $("#cp09_tuple4_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#cp09_tuple4_code_div").offset({
+			left: $("#cp09_tuple4 .clearfix").offset().left
+		});
+	}
+	$("#cp09_tuple4_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#cp09_tuple4_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#cp09_tuple4_runb").parent().siblings(".ac_output").show();
+			runit('cp09_tuple4',this, undefined);
+			$("#cp09_tuple4_runb").on("click", function(){
+				runit('cp09_tuple4',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#cp09_tuple4_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#cp09_tuple4_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#cp09_tuple4_runb").on("click", function(){
+		runit('cp09_tuple4',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>If you run this, you will be get an error caused by line 7, where it says that
+the function add is expecting two parameters, but you&#8217;re only passing one parameter
+(a tuple). In line 6 you&#8217;ll see that the tuple is unpacked and 5 is bound to x, 4 to y.</p>
+<p>Don&#8217;t worry about mastering this idea yet. But later in the course, if you come
+across some code that someone else has written that uses the * notation inside
+a parameter list, come back and look at this again.</p>
+
+            <div id="test_questiontuples_2" class="alert alert-warning">
+            tuples-2: If you want a function to return two values, contained in variables x and y, which of the following methods will work?<form name="test_questiontuples_2_form" method="get" action="" onsubmit="return false;">
+            <input type="checkbox" name="group1" value="a" id="test_questiontuples_2_opt_a" />
+            <label for= "test_questiontuples_2_opt_a">  a) Make the last two lines of the function be "return x" and "return y"</label><br />
+            
+            <input type="checkbox" name="group1" value="b" id="test_questiontuples_2_opt_b" />
+            <label for= "test_questiontuples_2_opt_b">  b) Include the statement "return [x, y]"</label><br />
+            
+            <input type="checkbox" name="group1" value="c" id="test_questiontuples_2_opt_c" />
+            <label for= "test_questiontuples_2_opt_c">  c) Include the statement "return (x, y)"</label><br />
+            
+            <input type="checkbox" name="group1" value="d" id="test_questiontuples_2_opt_d" />
+            <label for= "test_questiontuples_2_opt_d">  d) Include the statement "return x, y"</label><br />
+            
+            <input type="checkbox" name="group1" value="e" id="test_questiontuples_2_opt_e" />
+            <label for= "test_questiontuples_2_opt_e">  e) It's not possible to return two values; make two functions that each compute one value.</label><br />
+            
+            <script>
+            $(document).ready(function(){checkMultipleSelect('test_questiontuples_2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMAStorage('test_questiontuples_2','b,c,d',['As soon as the first return statement is executed, the function exits, so the second one will never be executed\u003B only x will be returned', 'return [x,y] is not the preferred method because it returns x and y in a list and you would have to manually unpack the values. But it is workable.', 'return (x, y) returns a tuple.', 'return x, y causes the two values to be packed into a tuple.', 'It is possible, and frequently useful, to have one function compute multiple values.'])">Check Me</button>
+            <button class='btn btn-default' id="test_questiontuples_2_bcomp" disabled name="compare" onclick="compareAnswers('test_questiontuples_2');">Compare Me</button>
+            </form><br />
+            <div id="test_questiontuples_2_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questiontuples_3" class="alert alert-warning">
+            <p>tuples-3: Consider the following alternative way to swap the values of variables x and y. What&#8217;s wrong with it?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># assume x and y already have values assigned to them</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+</pre></div>
+</div>
+<form name="test_questiontuples_3_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questiontuples_3_opt_a" />
+            <label for= "test_questiontuples_3_opt_a">  a) You can't use different variable names on the left and right side of an assignment statement.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questiontuples_3_opt_b" />
+            <label for= "test_questiontuples_3_opt_b">  b) At the end, x still has it's original value instead of y's original value.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questiontuples_3_opt_c" />
+            <label for= "test_questiontuples_3_opt_c">  c) Actually, it works just fine!</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questiontuples_3');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questiontuples_3','b',['Sure you can\u003B you can use any variable on the right\u002Dhand side that already has a value.', 'Once you assign x\u0027s value to y, y\u0027s original value is gone', 'Once you assign x\u0027s value to y, y\u0027s original value is gone'])">Check Me</button>
+            <button class='btn btn-default' id="test_questiontuples_3_bcomp" disabled name="compare" onclick="compareAnswers('test_questiontuples_3');">Compare Me</button>
+            </form><br />
+            <div id="test_questiontuples_3_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="unpacking-dictionary-items">
+<h1>Unpacking Dictionary Items<a class="headerlink" href="#unpacking-dictionary-items" title="Permalink to this headline">¶</a></h1>
+<p>A dictionary consists of key-value pairs. When you call the items() method on
+a dictionary, you get back a list of key-value pairs. Each of those pairs is a
+two-item tuple. (More generally, we refer to any two-item tuple as a <strong>pair</strong>).
+You can iterate the key-value pairs.</p>
+
+<div id="cont"></div>
+<div id="cp_09_tuple5" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="cp_09_tuple5_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="cp_09_tuple5_saveb" onclick="saveEditor('cp_09_tuple5');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="cp_09_tuple5_loadb" onclick="requestCode('cp_09_tuple5');">Load</button>
+<button class='btn btn-default' id="cp_09_tuple5_vizb" onclick="injectCodelens(this,'cp_09_tuple5');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="cp_09_tuple5_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="cp_09_tuple5_code" class="active_code" prefixcode="undefined" lang="python">
+d = {"k1": 3, "k2": 7, "k3": "some other value"}
+
+for p in d.items():
+    print p[0]
+    print p[1]
+    print '*** LOOP ***'
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="cp_09_tuple5_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="cp_09_tuple5_suffix" style="display:none">
+</pre><pre id="cp_09_tuple5_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (cp_09_tuple5)</span> </p>
+<div id="cp_09_tuple5_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#cp_09_tuple5_saveb').toggle();
+    $('#cp_09_tuple5_loadb').toggle();
+}
+if ($("#cp_09_tuple5").attr("lang") !== "html" && $("#cp_09_tuple5_code_div").parents(".admonition").length == 0 && $("#cp_09_tuple5_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#cp_09_tuple5_code_div").offset({
+			left: $("#cp_09_tuple5 .clearfix").offset().left
+		});
+	}
+	$("#cp_09_tuple5_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#cp_09_tuple5_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#cp_09_tuple5_runb").parent().siblings(".ac_output").show();
+			runit('cp_09_tuple5',this, undefined);
+			$("#cp_09_tuple5_runb").on("click", function(){
+				runit('cp_09_tuple5',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#cp_09_tuple5_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#cp_09_tuple5_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#cp_09_tuple5_runb").on("click", function(){
+		runit('cp_09_tuple5',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Each time line 4 is executed, p will refer to one key-value pair from d. A pair is just
+a tuple, so p[0] refers to the key and p[1] refers to the value.</p>
+<p>That code is easier to read if we unpacked to the key-value pairs into
+two variable names.</p>
+
+<div id="cont"></div>
+<div id="cp_09_tuple6" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="cp_09_tuple6_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="cp_09_tuple6_saveb" onclick="saveEditor('cp_09_tuple6');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="cp_09_tuple6_loadb" onclick="requestCode('cp_09_tuple6');">Load</button>
+<button class='btn btn-default' id="cp_09_tuple6_vizb" onclick="injectCodelens(this,'cp_09_tuple6');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="cp_09_tuple6_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="cp_09_tuple6_code" class="active_code" prefixcode="undefined" lang="python">
+d = {"k1": 3, "k2": 7, "k3": "some other value"}
+
+for (k, v) in d.items():
+    print k
+    print v
+    print '*** LOOP ***'
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="cp_09_tuple6_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="cp_09_tuple6_suffix" style="display:none">
+</pre><pre id="cp_09_tuple6_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (cp_09_tuple6)</span> </p>
+<div id="cp_09_tuple6_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#cp_09_tuple6_saveb').toggle();
+    $('#cp_09_tuple6_loadb').toggle();
+}
+if ($("#cp_09_tuple6").attr("lang") !== "html" && $("#cp_09_tuple6_code_div").parents(".admonition").length == 0 && $("#cp_09_tuple6_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#cp_09_tuple6_code_div").offset({
+			left: $("#cp_09_tuple6 .clearfix").offset().left
+		});
+	}
+	$("#cp_09_tuple6_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#cp_09_tuple6_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#cp_09_tuple6_runb").parent().siblings(".ac_output").show();
+			runit('cp_09_tuple6',this, undefined);
+			$("#cp_09_tuple6_runb").on("click", function(){
+				runit('cp_09_tuple6',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#cp_09_tuple6_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#cp_09_tuple6_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#cp_09_tuple6_runb").on("click", function(){
+		runit('cp_09_tuple6',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>More generally, if you have a list of tuples that each has more than two items, and you iterate through
+them with a for loop pulling out information from the tuples, the code will be far more readable if you unpack them
+into separate variable names.</p>
+</div>
+<div class="section" id="glossary">
+<h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary docutils">
+<dt id="term-tuple">tuple</dt>
+<dd>A type of sequence, much like a list but immutable. A tuple is created
+by enclosing one or more values in parentheses, separated by commas.</dd>
+<dt id="term-packing">packing</dt>
+<dd>When multiple values are specified, separated by commas, they are
+packed into a tuple.</dd>
+<dt id="term-unpacking">unpacking</dt>
+<dd>When a tuple is assigned to a collection of variable names separated
+by commas, the tuple is unpacked and the separate values are assigned to each
+of the variables.</dd>
+<dt id="term-pair">pair</dt>
+<dd>A tuple with exactly two items.</dd>
+</dl>
+</div>
+<div class="section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li>Fill in the left side of line 7 so that the following code runs without error</li>
+</ol>
+
+<div id="cont"></div>
+<div id="ex_tuples_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ex_tuples_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ex_tuples_1_saveb" onclick="saveEditor('ex_tuples_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ex_tuples_1_loadb" onclick="requestCode('ex_tuples_1');">Load</button>
+<button class='btn btn-default' id="ex_tuples_1_vizb" onclick="injectCodelens(this,'ex_tuples_1');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ex_tuples_1_coach_b" onclick="injectCodeCoach('ex_tuples_1');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ex_tuples_1_showb" onclick="$('#ex_tuples_1_code_div').toggle();cm_editors['ex_tuples_1_code'].refresh();$('#ex_tuples_1_saveb').toggle();$('#ex_tuples_1_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ex_tuples_1')"/>
+
+</div>
+<br/>
+<div id="ex_tuples_1_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ex_tuples_1_code" class="active_code" prefixcode="undefined" lang="python">
+def circleInfo(r):
+    """ Return (circumference, area) of a circle of radius r """
+    c = 2 * 3.14159 * r
+    a = 3.14159 * r * r
+    return c, a
+
+ = circleInfo(10)
+print("area is " + str(area))
+print("circumference is " + str(circ))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ex_tuples_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ex_tuples_1_suffix" style="display:none">
+</pre><pre id="ex_tuples_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ex_tuples_1)</span> </p>
+<div id="ex_tuples_1_codelens_div" style="display:none"></div><div id="ex_tuples_1_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ex_tuples_1_saveb').toggle();
+    $('#ex_tuples_1_loadb').toggle();
+}
+if ($("#ex_tuples_1").attr("lang") !== "html" && $("#ex_tuples_1_code_div").parents(".admonition").length == 0 && $("#ex_tuples_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ex_tuples_1_code_div").offset({
+			left: $("#ex_tuples_1 .clearfix").offset().left
+		});
+	}
+	$("#ex_tuples_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ex_tuples_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ex_tuples_1_runb").parent().siblings(".ac_output").show();
+			runit('ex_tuples_1',this, undefined);
+			$("#ex_tuples_1_runb").on("click", function(){
+				runit('ex_tuples_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ex_tuples_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ex_tuples_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ex_tuples_1_runb").on("click", function(){
+		runit('ex_tuples_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<ol class="arabic simple">
+<li>Use a for loop to print out the last name, year of birth, and city for each of the people</li>
+</ol>
+
+<div id="cont"></div>
+<div id="ex_tuples_2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ex_tuples_2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ex_tuples_2_saveb" onclick="saveEditor('ex_tuples_2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ex_tuples_2_loadb" onclick="requestCode('ex_tuples_2');">Load</button>
+<button class='btn btn-default' id="ex_tuples_2_vizb" onclick="injectCodelens(this,'ex_tuples_2');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ex_tuples_2_coach_b" onclick="injectCodeCoach('ex_tuples_2');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ex_tuples_2_showb" onclick="$('#ex_tuples_2_code_div').toggle();cm_editors['ex_tuples_2_code'].refresh();$('#ex_tuples_2_saveb').toggle();$('#ex_tuples_2_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ex_tuples_2')"/>
+
+</div>
+<br/>
+<div id="ex_tuples_2_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ex_tuples_2_code" class="active_code" prefixcode="undefined" lang="python">
+julia = ("Julia", "Roberts", 1967, "Duplicity", 2009, "Actress", "Atlanta, Georgia")
+claude = ("Claude", "Shannon", 1916, "A Mathematical Theory of Communication", 1948, "Mathematician", "Petoskey, Michigan")
+alan = ("Alan", "Turing", 1912, "Computing machinery and intelligence", 1950, "Mathematician", "London, England")
+
+people = [julia, claude, alan]
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ex_tuples_2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ex_tuples_2_suffix" style="display:none">
+</pre><pre id="ex_tuples_2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ex_tuples_2)</span> </p>
+<div id="ex_tuples_2_codelens_div" style="display:none"></div><div id="ex_tuples_2_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ex_tuples_2_saveb').toggle();
+    $('#ex_tuples_2_loadb').toggle();
+}
+if ($("#ex_tuples_2").attr("lang") !== "html" && $("#ex_tuples_2_code_div").parents(".admonition").length == 0 && $("#ex_tuples_2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ex_tuples_2_code_div").offset({
+			left: $("#ex_tuples_2 .clearfix").offset().left
+		});
+	}
+	$("#ex_tuples_2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ex_tuples_2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ex_tuples_2_runb").parent().siblings(".ac_output").show();
+			runit('ex_tuples_2',this, undefined);
+			$("#ex_tuples_2_runb").on("click", function(){
+				runit('ex_tuples_2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ex_tuples_2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ex_tuples_2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ex_tuples_2_runb").on("click", function(){
+		runit('ex_tuples_2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 Paul Resnick, Brad Miller, David Ranum, Created using Runestone Interactive.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Week 10: ends March 28, 2014 &mdash; Programs, Information, and People: Interactive Edition</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Programs, Information, and People: Interactive Edition" href="../index.html" />
+    <link rel="next" title="Week 9: ends March 21, 2014" href="week9.html" />
+    <link rel="prev" title="Week 11: ends April 4, 2014" href="week11.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pip';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+var _prum = [['id', '521dfcc4abe53d0749000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../toc.html">Programs, Information, and People</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../toc.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pip/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/assignments" id="registerlink">Project Page</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pip/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Week 10: ends March 28, 2014</a><ul>
+<li><a class="reference internal" href="#reading-response-9">Reading Response 9</a></li>
+<li><a class="reference internal" href="#session-21-prep">Session 21 prep</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Week 11: ends April 4, 2014" data-toggle="tooltip">
+    <a href="week11.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Week 9: ends March 21, 2014' data-toggle="tooltip" >
+    <a href="week9.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="week-10-ends-march-28-2014">
+<h1>Week 10: ends March 28, 2014<a class="headerlink" href="#week-10-ends-march-28-2014" title="Permalink to this headline">¶</a></h1>
+<p>For this week you have the following graded activities:</p>
+<ol class="arabic">
+<li><p class="first">Prepare for classes</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Before Tuesday&#8217;s class:</dt>
+<dd><ul class="first last">
+<li><p class="first"><a class="reference internal" href="../Classes/classesintro.html#classes-chap"><em>python Classes</em></a></p>
+</li>
+<li><p class="first">Review slides <tt class="docutils literal"><span class="pre">Classes</span></tt> in ctools resources/Slides</p>
+</li>
+<li><dl class="first docutils">
+<dt>get the code file lectures/session20.py via Bitbucket.org</dt>
+<dd><ul class="first last simple">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">upstream</span> <span class="pre">master</span></tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Before Thursday&#8217;s class:</dt>
+<dd><ul class="first last">
+<li><p class="first">Review slides <tt class="docutils literal"><span class="pre">oAuth</span> <span class="pre">and</span> <span class="pre">the</span> <span class="pre">Facebook</span> <span class="pre">API</span></tt> in cTools resources/Slides</p>
+</li>
+<li><dl class="first docutils">
+<dt>get the code file lectures/session21.py via Bitbucket.org</dt>
+<dd><ul class="first last simple">
+<li><tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">upstream</span> <span class="pre">master</span></tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">answer <a class="reference internal" href="#session21"><em>questions about session21.py</em></a></p>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+<li><p class="first">Turn in the reading response, by 8 PM the night before your registered section meets.</p>
+<ul class="simple">
+<li>Read <em>The Success of Open Source</em>, Chapter 3</li>
+<li><a class="reference internal" href="#response-9"><em>Reading response 9</em></a></li>
+</ul>
+</li>
+<li><p class="first">Do Problem Set 9:</p>
+<ul class="simple">
+<li>See /ps9 folder distributed via Bitbucket.org</li>
+</ul>
+</li>
+</ol>
+<div class="section" id="reading-response-9">
+<span id="response-9"></span><h2>Reading Response 9<a class="headerlink" href="#reading-response-9" title="Permalink to this headline">¶</a></h2>
+<p>The linux project uses git to organize the work of all the contributors. Take a look at the <a class="reference external" href="https://github.com/torvalds/linux">linux project on github</a>, a site that&#8217;s very similar to bitbucket but with a slightly different user interface. Take a look at the recent commits. Click around to see how many people have made contributions recently. Also check out the github page for <a class="reference external" href="https://github.com/bnmnetp/runestone">Runestone</a> and for <a class="reference external" href="https://github.com/presnick/runestone">my fork of it</a> to make this online textbook. Report on something interesting you found from exploring these public git repositories.</p>
+
+<div id="cont"></div>
+<div id="rr_9_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rr_9_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_9_1_saveb" onclick="saveEditor('rr_9_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_9_1_loadb" onclick="requestCode('rr_9_1');">Load</button>
+<button class='btn btn-default' id="rr_9_1_vizb" onclick="injectCodelens(this,'rr_9_1');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rr_9_1_coach_b" onclick="injectCodeCoach('rr_9_1');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rr_9_1_showb" onclick="$('#rr_9_1_code_div').toggle();cm_editors['rr_9_1_code'].refresh();$('#rr_9_1_saveb').toggle();$('#rr_9_1_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rr_9_1')"/>
+
+</div>
+<br/>
+<div id="rr_9_1_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rr_9_1_code" class="active_code" prefixcode="undefined" lang="python">
+# Fill in your response in between the triple quotes
+s = """
+
+"""
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rr_9_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rr_9_1_suffix" style="display:none">
+</pre><pre id="rr_9_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rr_9_1)</span> </p>
+<div id="rr_9_1_codelens_div" style="display:none"></div><div id="rr_9_1_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rr_9_1_saveb').toggle();
+    $('#rr_9_1_loadb').toggle();
+}
+if ($("#rr_9_1").attr("lang") !== "html" && $("#rr_9_1_code_div").parents(".admonition").length == 0 && $("#rr_9_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rr_9_1_code_div").offset({
+			left: $("#rr_9_1 .clearfix").offset().left
+		});
+	}
+	$("#rr_9_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rr_9_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rr_9_1_runb").parent().siblings(".ac_output").show();
+			runit('rr_9_1',this, undefined);
+			$("#rr_9_1_runb").on("click", function(){
+				runit('rr_9_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rr_9_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rr_9_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rr_9_1_runb").on("click", function(){
+		runit('rr_9_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Brooks make an argument that communication complexity grows with the square of the number of people participating in a project. Why would that be true? And what are the things you could do in organizing a project to make it not be true?</p>
+
+<div id="cont"></div>
+<div id="rr_9_2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rr_9_2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_9_2_saveb" onclick="saveEditor('rr_9_2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_9_2_loadb" onclick="requestCode('rr_9_2');">Load</button>
+<button class='btn btn-default' id="rr_9_2_vizb" onclick="injectCodelens(this,'rr_9_2');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rr_9_2_coach_b" onclick="injectCodeCoach('rr_9_2');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rr_9_2_showb" onclick="$('#rr_9_2_code_div').toggle();cm_editors['rr_9_2_code'].refresh();$('#rr_9_2_saveb').toggle();$('#rr_9_2_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rr_9_2')"/>
+
+</div>
+<br/>
+<div id="rr_9_2_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rr_9_2_code" class="active_code" prefixcode="undefined" lang="python">
+# Fill in your response in between the triple quotes
+s = """
+
+"""
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rr_9_2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rr_9_2_suffix" style="display:none">
+</pre><pre id="rr_9_2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rr_9_2)</span> </p>
+<div id="rr_9_2_codelens_div" style="display:none"></div><div id="rr_9_2_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rr_9_2_saveb').toggle();
+    $('#rr_9_2_loadb').toggle();
+}
+if ($("#rr_9_2").attr("lang") !== "html" && $("#rr_9_2_code_div").parents(".admonition").length == 0 && $("#rr_9_2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rr_9_2_code_div").offset({
+			left: $("#rr_9_2 .clearfix").offset().left
+		});
+	}
+	$("#rr_9_2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rr_9_2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rr_9_2_runb").parent().siblings(".ac_output").show();
+			runit('rr_9_2',this, undefined);
+			$("#rr_9_2_runb").on("click", function(){
+				runit('rr_9_2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rr_9_2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rr_9_2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rr_9_2_runb").on("click", function(){
+		runit('rr_9_2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>What other material from the chapter would you like to discuss in class?</p>
+
+<div id="cont"></div>
+<div id="rr_9_3" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rr_9_3_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_9_3_saveb" onclick="saveEditor('rr_9_3');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_9_3_loadb" onclick="requestCode('rr_9_3');">Load</button>
+<button class='btn btn-default' id="rr_9_3_vizb" onclick="injectCodelens(this,'rr_9_3');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rr_9_3_coach_b" onclick="injectCodeCoach('rr_9_3');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rr_9_3_showb" onclick="$('#rr_9_3_code_div').toggle();cm_editors['rr_9_3_code'].refresh();$('#rr_9_3_saveb').toggle();$('#rr_9_3_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rr_9_3')"/>
+
+</div>
+<br/>
+<div id="rr_9_3_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rr_9_3_code" class="active_code" prefixcode="undefined" lang="python">
+# Fill in your response in between the triple quotes
+s = """
+
+"""
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rr_9_3_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rr_9_3_suffix" style="display:none">
+</pre><pre id="rr_9_3_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rr_9_3)</span> </p>
+<div id="rr_9_3_codelens_div" style="display:none"></div><div id="rr_9_3_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rr_9_3_saveb').toggle();
+    $('#rr_9_3_loadb').toggle();
+}
+if ($("#rr_9_3").attr("lang") !== "html" && $("#rr_9_3_code_div").parents(".admonition").length == 0 && $("#rr_9_3_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rr_9_3_code_div").offset({
+			left: $("#rr_9_3 .clearfix").offset().left
+		});
+	}
+	$("#rr_9_3_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rr_9_3_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rr_9_3_runb").parent().siblings(".ac_output").show();
+			runit('rr_9_3',this, undefined);
+			$("#rr_9_3_runb").on("click", function(){
+				runit('rr_9_3',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rr_9_3_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rr_9_3_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rr_9_3_runb").on("click", function(){
+		runit('rr_9_3',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+<div class="section" id="session-21-prep">
+<span id="session21"></span><h2>Session 21 prep<a class="headerlink" href="#session-21-prep" title="Permalink to this headline">¶</a></h2>
+
+            <div id="session21_1" class="alert alert-warning">
+            Q-1: Use the <a class="reference external" href="https://developers.facebook.com/tools/explorer">Facebook Graph explorer</a> and run a GET request on /me. In the results, what is the value associated with the &#8220;locale&#8221; key?<form name="session21_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="session21_1_opt_a" />
+            <label for= "session21_1_opt_a">  a) EDT</label><br />
+            
+            <input type="radio" name="group1" value="b" id="session21_1_opt_b" />
+            <label for= "session21_1_opt_b">  b) GMT</label><br />
+            
+            <input type="radio" name="group1" value="c" id="session21_1_opt_c" />
+            <label for= "session21_1_opt_c">  c) Ann Arbor</label><br />
+            
+            <input type="radio" name="group1" value="d" id="session21_1_opt_d" />
+            <label for= "session21_1_opt_d">  d) en_US</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('session21_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('session21_1','d',['', '', '', ''])">Check Me</button>
+            <button class='btn btn-default' id="session21_1_bcomp" disabled name="compare" onclick="compareAnswers('session21_1');">Compare Me</button>
+            </form><br />
+            <div id="session21_1_feedback">
+            </div>
+            </div>
+            <p>Describe, in your own words, what the function pretty() does, defined on lines 5-6 of session21.py. (If you&#8217;re not sure, try invoking it with a few different arguments, like strings, lists, and dictionaries.)</p>
+
+<div id="cont"></div>
+<div id="session21_2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="session21_2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="session21_2_saveb" onclick="saveEditor('session21_2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="session21_2_loadb" onclick="requestCode('session21_2');">Load</button>
+<button class='btn btn-default' id="session21_2_vizb" onclick="injectCodelens(this,'session21_2');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="session21_2_coach_b" onclick="injectCodeCoach('session21_2');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="session21_2_showb" onclick="$('#session21_2_code_div').toggle();cm_editors['session21_2_code'].refresh();$('#session21_2_saveb').toggle();$('#session21_2_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('session21_2')"/>
+
+</div>
+<br/>
+<div id="session21_2_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="session21_2_code" class="active_code" prefixcode="undefined" lang="python">
+# Fill in your response below
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="session21_2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="session21_2_suffix" style="display:none">
+</pre><pre id="session21_2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (session21_2)</span> </p>
+<div id="session21_2_codelens_div" style="display:none"></div><div id="session21_2_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#session21_2_saveb').toggle();
+    $('#session21_2_loadb').toggle();
+}
+if ($("#session21_2").attr("lang") !== "html" && $("#session21_2_code_div").parents(".admonition").length == 0 && $("#session21_2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#session21_2_code_div").offset({
+			left: $("#session21_2 .clearfix").offset().left
+		});
+	}
+	$("#session21_2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#session21_2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#session21_2_runb").parent().siblings(".ac_output").show();
+			runit('session21_2',this, undefined);
+			$("#session21_2_runb").on("click", function(){
+				runit('session21_2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#session21_2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#session21_2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#session21_2_runb").on("click", function(){
+		runit('session21_2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="session21_3" class="alert alert-warning">
+            Q-2: Last week, you learned how to call REST APIs using urllib2.urlopen. What happens when you try to invoke the FB API using urllib2.urlopen? Try uncommenting and executing line 9 from session21.py. Also try visiting the URL <a class="reference external" href="https://graph.facebook.com/?245188182322906">https://graph.facebook.com/?245188182322906</a> in your browser. What do you think is going on?<form name="session21_3_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="session21_3_opt_a" />
+            <label for= "session21_3_opt_a">  a) The Facebook server is temporarily not working</label><br />
+            
+            <input type="radio" name="group1" value="b" id="session21_3_opt_b" />
+            <label for= "session21_3_opt_b">  b) Facebook only accepts REST API calls accompanied by an authorization key</label><br />
+            
+            <input type="radio" name="group1" value="c" id="session21_3_opt_c" />
+            <label for= "session21_3_opt_c">  c) The ? is in the wrong place</label><br />
+            
+            <input type="radio" name="group1" value="d" id="session21_3_opt_d" />
+            <label for= "session21_3_opt_d">  d) 245188182322906 is not an object that FB recognizes</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('session21_3');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('session21_3','b',['Even when the server is working, it won\u0027t provide data in response to a request unless it is accompanied by an authorization key', 'The authorization key is normally acquired through the oauth protocol, though we will work around that by copying and pasting it from the FB Graph Explorer https://developers.facebook.com/tools/explorer', 'The ? is in the right place, according to the FB Graph API documentation https://developers.facebook.com/docs/graph\u002Dapi/using\u002Dgraph\u002Dapi', 'That\u0027s actually the id for the FB group for our class.'])">Check Me</button>
+            <button class='btn btn-default' id="session21_3_bcomp" disabled name="compare" onclick="compareAnswers('session21_3');">Compare Me</button>
+            </form><br />
+            <div id="session21_3_feedback">
+            </div>
+            </div>
+            </div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 Paul Resnick, Brad Miller, David Ranum, Created using Runestone Interactive.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

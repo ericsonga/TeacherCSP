@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The Binary Search &mdash; Problem Solving with Algorithms and Data Structures</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
+    <link rel="next" title="Hashing" href="Hashing.html" />
+    <link rel="prev" title="The Sequential Search" href="TheSequentialSearch.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pythonds';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">Problem Solving with Algorithms and Data Structures</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHNwYJKoZIhvcNAQcEoIIHKDCCByQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYAcrkqh1hn3lYqIpfXxNqe1T82EhXzCJGy1yMAmklpyZshyMkfDGe1Bhx+iwyGeoYRTTyphFmP+9M3NyO0+Q5XdHxgZPx/zYjjBxlZHgEV6jhE8bN2fHkkPf0VHfz0a0QQylQOPlKiOTZV7B37Jpk6yM47oVZ1tG/KNm0NkfmB76DELMAkGBSsOAwIaBQAwgbQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIi0GmFfOlcjuAgZBbYOo9UO+CpMQa+PYqwsUmUnJvXIImeMeNI3KVTUx5Cfk9gNMo3WzPeiB5IqZo9nRAQ0mf1qL2ecLeB5tidM+lgBUhOxfj3/FecpnVFa0263gp4g+PLw8jzhvVRdUon1K3SeO1Rzh23fIRKwnrD6btt73uwtj0sl3tGd8qz+6GIcwPDdRk9VcUffiBJT/ZagKgggOHMIIDgzCCAuygAwIBAgIBADANBgkqhkiG9w0BAQUFADCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wHhcNMDQwMjEzMTAxMzE1WhcNMzUwMjEzMTAxMzE1WjCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMFHTt38RMxLXJyO2SmS+Ndl72T7oKJ4u4uw+6awntALWh03PewmIJuzbALScsTS4sZoS1fKciBGoh11gIfHzylvkdNe/hJl66/RGqrj5rFb08sAABNTzDTiqqNpJeBsYs/c2aiGozptX2RlnBktH+SUNpAajW724Nv2Wvhif6sFAgMBAAGjge4wgeswHQYDVR0OBBYEFJaffLvGbxe9WT9S1wob7BDWZJRrMIG7BgNVHSMEgbMwgbCAFJaffLvGbxe9WT9S1wob7BDWZJRroYGUpIGRMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbYIBADAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBAIFfOlaagFrl71+jq6OKidbWFSE+Q4FqROvdgIONth+8kSK//Y/4ihuE4Ymvzn5ceE3S/iBSQQMjyvb+s2TWbQYDwcp129OPIbD9epdr4tJOUNiSojw7BHwYRiPh58S1xGlFgHFXwrEBb3dgNbMUa+u4qectsMAXpVHnD9wIyfmHMYIBmjCCAZYCAQEwgZQwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tAgEAMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xMzExMDMxMzQxMzFaMCMGCSqGSIb3DQEJBDEWBBRDJF8w+zsMr7FSk+pwinB5f5D4rzANBgkqhkiG9w0BAQEFAASBgHw1LMHpkpaqHIvDGdFE0eG+2mZlmMnUeDCBhQlbc7QMzFQYKTV94NfaebBO4PmNdADe1rq4WidSRZZbE7CzkX9IGENYnBTWY0hb2l0lGdGrJdGeWyV3ekg9WVaFMMumrekds96h3Cx7dGz2kWDzIai2iEXE/qoE+xpkyXAYZNV3-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pythonds/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/initiateGroup' id="joinGroupLink">Join a Study Group</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/schedule' id="groupScheduleLink">Group Schedule</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/newschedule' id="newChapterLink">Schedule New Chapter</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/manageGroup' id="manageGroupLink">Manage Group</a></li>
+			<li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/assignments/index'>Progress Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pythonds/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">The Binary Search</a><ul>
+<li><a class="reference internal" href="#analysis-of-binary-search">Analysis of Binary Search</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - The Sequential Search" data-toggle="tooltip">
+    <a href="TheSequentialSearch.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Hashing' data-toggle="tooltip" >
+    <a href="Hashing.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="the-binary-search">
+<h1>The Binary Search<a class="headerlink" href="#the-binary-search" title="Permalink to this headline">¶</a></h1>
+<p>It is possible to take greater advantage of the ordered list if we are
+clever with our comparisons. In the sequential search, when we compare
+against the first item, there are at most <span class="math">\(n-1\)</span> more items to
+look through if the first item is not what we are looking for. Instead
+of searching the list in sequence, a <strong>binary search</strong> will start by
+examining the middle item. If that item is the one we are searching for,
+we are done. If it is not the correct item, we can use the ordered
+nature of the list to eliminate half of the remaining items. If the item
+we are searching for is greater than the middle item, we know that the
+entire lower half of the list as well as the middle item can be
+eliminated from further consideration. The item, if it is in the list,
+must be in the upper half.</p>
+<p>We can then repeat the process with the upper half. Start at the middle
+item and compare it against what we are looking for. Again, we either
+find it or split the list in half, therefore eliminating another large
+part of our possible search space. <a class="reference internal" href="#fig-binsearch"><em>Figure 3</em></a> shows how this
+algorithm can quickly find the value 54. The complete function is shown
+in <a class="reference internal" href="#lst-binarysearchpy"><em>CodeLens 3</em></a>.</p>
+<div class="figure align-center" id="fig-binsearch">
+<img alt="../_images/binsearch.png" src="../_images/binsearch.png" />
+<p class="caption">Figure 3: Binary Search of an Ordered List of Integers</p>
+</div>
+
+<div class="alert alert-warning cd_section">
+<div id="search3"></div>
+<p class="cl_caption"><span class="cl_caption_text">Binary Search of an Ordered List (search3)</span> </p>
+</div>
+<script type="text/javascript">
+var search3_trace = {"code": "def binarySearch(alist, item):\n    first = 0\n    last = len(alist)-1\n    found = False\n\n    while first<=last and not found:\n        midpoint = (first + last)//2\n        if alist[midpoint] == item:\n            found = True\n        else:\n            if item < alist[midpoint]:\n                last = midpoint-1\n            else:\n                first = midpoint+1\n\n    return found\n\ntestlist = [0, 1, 2, 8, 13, 17, 19, 32, 42,]\nprint(binarySearch(testlist, 3))\nprint(binarySearch(testlist, 13))", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["binarySearch"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null]}, "line": 18, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 19, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 1, "event": "call"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "last": 8, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"found": false, "alist": ["REF", 2], "last": 8, "item": 3, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"found": false, "alist": ["REF", 2], "last": 8, "item": 3, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 8, "midpoint": 4, "alist": ["REF", 2], "item": 3, "found": false, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 8, "midpoint": 4, "alist": ["REF", 2], "item": 3, "found": false, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 11, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 8, "midpoint": 4, "alist": ["REF", 2], "item": 3, "found": false, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 12, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 3, "midpoint": 4, "alist": ["REF", 2], "item": 3, "found": false, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 3, "midpoint": 4, "alist": ["REF", 2], "item": 3, "found": false, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 3, "midpoint": 1, "alist": ["REF", 2], "item": 3, "found": false, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 3, "midpoint": 1, "alist": ["REF", 2], "item": 3, "found": false, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 11, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 3, "midpoint": 1, "alist": ["REF", 2], "item": 3, "found": false, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 14, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 3, "midpoint": 1, "alist": ["REF", 2], "item": 3, "found": false, "first": 2}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 3, "midpoint": 1, "alist": ["REF", 2], "item": 3, "found": false, "first": 2}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 3, "midpoint": 2, "alist": ["REF", 2], "item": 3, "found": false, "first": 2}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 3, "midpoint": 2, "alist": ["REF", 2], "item": 3, "found": false, "first": 2}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 11, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 3, "midpoint": 2, "alist": ["REF", 2], "item": 3, "found": false, "first": 2}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 14, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 3, "midpoint": 2, "alist": ["REF", 2], "item": 3, "found": false, "first": 3}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 3, "midpoint": 2, "alist": ["REF", 2], "item": 3, "found": false, "first": 3}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 3, "midpoint": 3, "alist": ["REF", 2], "item": 3, "found": false, "first": 3}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 3, "midpoint": 3, "alist": ["REF", 2], "item": 3, "found": false, "first": 3}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 11, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 3, "midpoint": 3, "alist": ["REF", 2], "item": 3, "found": false, "first": 3}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 12, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 2, "midpoint": 3, "alist": ["REF", 2], "item": 3, "found": false, "first": 3}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 2, "midpoint": 3, "alist": ["REF", 2], "item": 3, "found": false, "first": 3}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 16, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"last": 2, "midpoint": 3, "alist": ["REF", 2], "item": 3, "__return__": false, "found": false, "first": 3}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint", "__return__"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 16, "event": "return"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "<module>", "stack_to_render": [], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 20, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"item": 13, "alist": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 1, "event": "call"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"item": 13, "alist": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"item": 13, "alist": ["REF", 2], "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "first"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"item": 13, "alist": ["REF", 2], "last": 8, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "first", "last"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"found": false, "alist": ["REF", 2], "last": 8, "item": 13, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "first", "last", "found"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"found": false, "alist": ["REF", 2], "last": 8, "item": 13, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "first", "last", "found"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"last": 8, "midpoint": 4, "alist": ["REF", 2], "item": 13, "found": false, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"last": 8, "midpoint": 4, "alist": ["REF", 2], "item": 13, "found": false, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"last": 8, "midpoint": 4, "alist": ["REF", 2], "item": 13, "found": true, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"last": 8, "midpoint": 4, "alist": ["REF", 2], "item": 13, "found": true, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 16, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"last": 8, "midpoint": 4, "alist": ["REF", 2], "item": 13, "__return__": true, "found": true, "first": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "first", "last", "found", "midpoint", "__return__"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 16, "event": "return"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\nTrue\n", "func_name": "<module>", "stack_to_render": [], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 20, "event": "return"}]};
+var search3_vis;
+
+$(document).ready(function() {
+    search3_vis = new ExecutionVisualizer('search3',search3_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(search3_vis,'search3');
+    allVisualizers.push(search3_vis);
+
+});
+
+$(document).ready(function() {
+    $("#search3_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'search3'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    search3_vis.redrawConnectors();
+});
+</script>
+<p>Before we move on to the analysis, we should note that this algorithm is
+a great example of a divide and conquer strategy. Divide and conquer
+means that we divide the problem into smaller pieces, solve the smaller
+pieces in some way, and then reassemble the whole problem to get the
+result. When we perform a binary search of a list, we first check the
+middle item. If the item we are searching for is less than the middle
+item, we can simply perform a binary search of the left half of the
+original list. Likewise, if the item is greater, we can perform a binary
+search of the right half. Either way, this is a recursive call to the
+binary search function passing a smaller list. <a class="reference internal" href="#lst-recbinarysearch"><em>CodeLens 4</em></a>
+shows this recursive version.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="search4"></div>
+<p class="cl_caption"><span class="cl_caption_text">A Binary Search--Recursive Version (search4)</span> </p>
+</div>
+<script type="text/javascript">
+var search4_trace = {"code": "def binarySearch(alist, item):\n    if len(alist) == 0:\n        return False\n    else:\n        midpoint = len(alist)//2\n        if alist[midpoint]==item:\n          return True\n        else:\n          if item<alist[midpoint]:\n            return binarySearch(alist[:midpoint],item)\n          else:\n            return binarySearch(alist[midpoint+1:],item)\n\ntestlist = [0, 1, 2, 8, 13, 17, 19, 32, 42,]\nprint(binarySearch(testlist, 3))\nprint(binarySearch(testlist, 13))", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["binarySearch"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null]}, "line": 14, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 15, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 1, "event": "call"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 10, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"item": 3, "alist": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8]}, "line": 1, "event": "call"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"item": 3, "alist": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"item": 3, "alist": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"item": 3, "alist": ["REF", 3], "midpoint": 2}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"item": 3, "alist": ["REF", 3], "midpoint": 2}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"item": 3, "alist": ["REF", 3], "midpoint": 2}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8]}, "line": 12, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"item": 3, "alist": ["REF", 3], "midpoint": 2}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 3, "encoded_locals": {"item": 3, "alist": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f3", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8], "4": ["LIST", 8]}, "line": 1, "event": "call"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"item": 3, "alist": ["REF", 3], "midpoint": 2}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 3, "encoded_locals": {"item": 3, "alist": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f3", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8], "4": ["LIST", 8]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"item": 3, "alist": ["REF", 3], "midpoint": 2}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 3, "encoded_locals": {"item": 3, "alist": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f3", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8], "4": ["LIST", 8]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"item": 3, "alist": ["REF", 3], "midpoint": 2}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 3, "encoded_locals": {"item": 3, "alist": ["REF", 4], "midpoint": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f3", "ordered_varnames": ["alist", "item", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8], "4": ["LIST", 8]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"item": 3, "alist": ["REF", 3], "midpoint": 2}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 3, "encoded_locals": {"item": 3, "alist": ["REF", 4], "midpoint": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f3", "ordered_varnames": ["alist", "item", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8], "4": ["LIST", 8]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"item": 3, "alist": ["REF", 3], "midpoint": 2}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 3, "encoded_locals": {"item": 3, "alist": ["REF", 4], "midpoint": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f3", "ordered_varnames": ["alist", "item", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8], "4": ["LIST", 8]}, "line": 10, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"item": 3, "alist": ["REF", 3], "midpoint": 2}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 3, "encoded_locals": {"item": 3, "alist": ["REF", 4], "midpoint": 0}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f3", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 4, "encoded_locals": {"item": 3, "alist": ["REF", 5]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f4", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8], "4": ["LIST", 8], "5": ["LIST"]}, "line": 1, "event": "call"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"item": 3, "alist": ["REF", 3], "midpoint": 2}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 3, "encoded_locals": {"item": 3, "alist": ["REF", 4], "midpoint": 0}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f3", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 4, "encoded_locals": {"item": 3, "alist": ["REF", 5]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f4", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8], "4": ["LIST", 8], "5": ["LIST"]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"item": 3, "alist": ["REF", 3], "midpoint": 2}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 3, "encoded_locals": {"item": 3, "alist": ["REF", 4], "midpoint": 0}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f3", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 4, "encoded_locals": {"item": 3, "alist": ["REF", 5]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f4", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8], "4": ["LIST", 8], "5": ["LIST"]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"item": 3, "alist": ["REF", 3], "midpoint": 2}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 3, "encoded_locals": {"item": 3, "alist": ["REF", 4], "midpoint": 0}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f3", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 4, "encoded_locals": {"__return__": false, "item": 3, "alist": ["REF", 5]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f4", "ordered_varnames": ["alist", "item", "__return__"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8], "4": ["LIST", 8], "5": ["LIST"]}, "line": 3, "event": "return"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"item": 3, "alist": ["REF", 3], "midpoint": 2}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 3, "encoded_locals": {"__return__": false, "item": 3, "alist": ["REF", 4], "midpoint": 0}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f3", "ordered_varnames": ["alist", "item", "midpoint", "__return__"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8], "4": ["LIST", 8]}, "line": 10, "event": "return"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": false, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint"]}, {"frame_id": 2, "encoded_locals": {"__return__": false, "item": 3, "alist": ["REF", 3], "midpoint": 2}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f2", "ordered_varnames": ["alist", "item", "midpoint", "__return__"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42], "3": ["LIST", 0, 1, 2, 8]}, "line": 12, "event": "return"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"__return__": false, "item": 3, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f1", "ordered_varnames": ["alist", "item", "midpoint", "__return__"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 10, "event": "return"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "<module>", "stack_to_render": [], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 16, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 5, "encoded_locals": {"item": 13, "alist": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f5", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 1, "event": "call"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 5, "encoded_locals": {"item": 13, "alist": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f5", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 5, "encoded_locals": {"item": 13, "alist": ["REF", 2]}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f5", "ordered_varnames": ["alist", "item"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 5, "encoded_locals": {"item": 13, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f5", "ordered_varnames": ["alist", "item", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 5, "encoded_locals": {"item": 13, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f5", "ordered_varnames": ["alist", "item", "midpoint"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\n", "func_name": "binarySearch", "stack_to_render": [{"frame_id": 5, "encoded_locals": {"__return__": true, "item": 13, "alist": ["REF", 2], "midpoint": 4}, "is_highlighted": true, "is_parent": false, "func_name": "binarySearch", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "binarySearch_f5", "ordered_varnames": ["alist", "item", "midpoint", "__return__"]}], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 7, "event": "return"}, {"ordered_globals": ["binarySearch", "testlist"], "stdout": "False\nTrue\n", "func_name": "<module>", "stack_to_render": [], "globals": {"testlist": ["REF", 2], "binarySearch": ["REF", 1]}, "heap": {"1": ["FUNCTION", "binarySearch(alist, item)", null], "2": ["LIST", 0, 1, 2, 8, 13, 17, 19, 32, 42]}, "line": 16, "event": "return"}]};
+var search4_vis;
+
+$(document).ready(function() {
+    search4_vis = new ExecutionVisualizer('search4',search4_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(search4_vis,'search4');
+    allVisualizers.push(search4_vis);
+
+});
+
+$(document).ready(function() {
+    $("#search4_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'search4'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    search4_vis.redrawConnectors();
+});
+</script>
+<div class="section" id="analysis-of-binary-search">
+<h2>Analysis of Binary Search<a class="headerlink" href="#analysis-of-binary-search" title="Permalink to this headline">¶</a></h2>
+<p>To analyze the binary search algorithm, we need to recall that each
+comparison eliminates about half of the remaining items from
+consideration. What is the maximum number of comparisons this algorithm
+will require to check the entire list? If we start with <em>n</em> items, about
+<span class="math">\(\frac{n}{2}\)</span> items will be left after the first comparison.
+After the second comparison, there will be about <span class="math">\(\frac{n}{4}\)</span>.
+Then <span class="math">\(\frac{n}{8}\)</span>, <span class="math">\(\frac{n}{16}\)</span>, and so on. How many
+times can we split the list? <a class="reference internal" href="#tbl-binaryanalysis"><em>Table 3</em></a> helps us to see the
+answer.</p>
+<table border="1" class="docutils" id="tbl-binaryanalysis">
+<caption><strong>Table 3: Tabular Analysis for a Binary Search</strong></caption>
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Comparisons</strong></th>
+<th class="head"><strong>Approximate Number of Items Left</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td><span class="math">\(\frac {n}{2}\)</span></td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td><span class="math">\(\frac {n}{4}\)</span></td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td><span class="math">\(\frac {n}{8}\)</span></td>
+</tr>
+<tr class="row-odd"><td>...</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>i</td>
+<td><span class="math">\(\frac {n}{2^i}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>When we split the list enough times, we end up with a list that has just
+one item. Either that is the item we are looking for or it is not.
+Either way, we are done. The number of comparisons necessary to get to
+this point is <em>i</em> where <span class="math">\(\frac {n}{2^i} =1\)</span>. Solving for <em>i</em>
+gives us <span class="math">\(i=\log n\)</span>. The maximum number of comparisons is
+logarithmic with respect to the number of items in the list. Therefore,
+the binary search is <span class="math">\(O(\log n)\)</span>.</p>
+<p>One additional analysis issue needs to be addressed. In the recursive
+solution shown above, the recursive call,</p>
+<p><tt class="docutils literal"><span class="pre">binarySearch(alist[:midpoint],item)</span></tt></p>
+<p>uses the slice operator to create the left half of the list that is then
+passed to the next invocation (similarly for the right half as well).
+The analysis that we did above assumed that the slice operator takes
+constant time. However, we know that the slice operator in Python is
+actually O(k). This means that the binary search using slice will not
+perform in strict logarithmic time. Luckily this can be remedied by
+passing the list along with the starting and ending indices. The indices
+can be calculated as we did in <a class="reference internal" href="#lst-binarysearchpy"><em>Listing 3</em></a>. We leave this
+implementation as an exercise.</p>
+<p>Even though a binary search is generally better than a sequential
+search, it is important to note that for small values of <em>n</em>, the
+additional cost of sorting is probably not worth it. In fact, we should
+always consider whether it is cost effective to take on the extra work
+of sorting to gain searching benefits. If we can sort once and then
+search many times, the cost of the sort is not so significant. However,
+for large lists, sorting even once can be so expensive that simply
+performing a sequential search from the start may be the best choice.</p>
+<div class="admonition-self-check admonition">
+<p class="first admonition-title">Self Check</p>
+
+            <div id="BSRCH_1" class="alert alert-warning">
+            Q-19: Suppose you have the following sorted list [3, 5, 6, 8, 11, 12, 14, 15, 17, 18] and are using the recursive binary search algorithm.  Which group of numbers correctly shows the sequence of comparisons used to find the key 8.<form name="BSRCH_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="BSRCH_1_opt_a" />
+            <label for= "BSRCH_1_opt_a">  a) 11, 5, 6, 8</label><br />
+            
+            <input type="radio" name="group1" value="b" id="BSRCH_1_opt_b" />
+            <label for= "BSRCH_1_opt_b">  b) 12, 6, 11, 8</label><br />
+            
+            <input type="radio" name="group1" value="c" id="BSRCH_1_opt_c" />
+            <label for= "BSRCH_1_opt_c">  c) 3, 5, 6, 8</label><br />
+            
+            <input type="radio" name="group1" value="d" id="BSRCH_1_opt_d" />
+            <label for= "BSRCH_1_opt_d">  d) 18, 12, 6, 8</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('BSRCH_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('BSRCH_1','b',['Looks like you might be guilty of an off\u002Dby\u002Done error.  Remember the first position is index 0.', 'Binary search starts at the midpoint and halves the list each time.', 'Binary search does not start at the beginning and search sequentially, its starts in the middle and halves the list after each compare.', 'It appears that you are starting from the end and halving the list each time.'])">Check Me</button>
+            <button class='btn btn-default' id="BSRCH_1_bcomp" disabled name="compare" onclick="compareAnswers('BSRCH_1');">Compare Me</button>
+            </form><br />
+            <div id="BSRCH_1_feedback">
+            </div>
+            </div>
+            
+            <div id="BSRCH_2" class="alert alert-warning">
+            Q-20: Suppose you have the following sorted list [3, 5, 6, 8, 11, 12, 14, 15, 17, 18] and are using the recursive binary search algorithm.  Which group of numbers correctly shows the sequence of comoparisons used to search for the key 16?<form name="BSRCH_2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="BSRCH_2_opt_a" />
+            <label for= "BSRCH_2_opt_a">  a) 11, 14, 17</label><br />
+            
+            <input type="radio" name="group1" value="b" id="BSRCH_2_opt_b" />
+            <label for= "BSRCH_2_opt_b">  b) 18, 17, 15</label><br />
+            
+            <input type="radio" name="group1" value="c" id="BSRCH_2_opt_c" />
+            <label for= "BSRCH_2_opt_c">  c) 14, 17, 15</label><br />
+            
+            <input type="radio" name="group1" value="d" id="BSRCH_2_opt_d" />
+            <label for= "BSRCH_2_opt_d">  d) 12, 17, 15</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('BSRCH_2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('BSRCH_2','d',['Looks like you might be guilty of an off\u002Dby\u002Done error.  Remember the first position is index 0.', 'Remember binary search starts in the middle and halves the list.', 'Looks like you might be off by one, be careful that you are calculating the midpont using integer arithmetic.', 'Binary search starts at the midpoint and halves the list each time. It is done when the list is empty.'])">Check Me</button>
+            <button class='btn btn-default' id="BSRCH_2_bcomp" disabled name="compare" onclick="compareAnswers('BSRCH_2');">Compare Me</button>
+            </form><br />
+            <div id="BSRCH_2_feedback">
+            </div>
+            </div>
+            </div>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - The Sequential Search' data-toggle="tooltip">
+    <a href="TheSequentialSearch.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="TheSequentialSearch.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Hashing' data-toggle="tooltip" >
+    <a href="Hashing.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="Hashing.html" >Next Section - Hashing</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014 Brad Miller, David Ranum.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

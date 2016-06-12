@@ -52,14 +52,46 @@ Chapter 4 Exercises
                 :identifier: teachercsp_ch4ex1q
                 
 #. 
-   
+
     .. tabbed:: ch4ex2t
+
+        .. tab:: Question
+
+            Fix the syntax errors so it prints "My name is Sam and I am 12 years old."           
+           
+            .. activecode::  ch4ex2q
+                :nocodelens:
+    
+                name = Sam
+                age = 12
+                print("My name is name and I am" + age + "years old".)
+           
+        .. tab:: Answer
+        
+            ``Sam`` must be a string because otherwise it's a variable. Age must be converted to a string.
+            
+            .. activecode::  ch4ex2a
+                :nocodelens:
+                
+                name = "Sam"
+                age = 12
+                print("My name is " + name +" and I am " + str(age) + " years old.")
+                                
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: teachercsp
+                :identifier: teachercsp_ch4ex2q
+
+#. 
+   
+    .. tabbed:: ch4ex3t
 
         .. tab:: Question
 
            You will get an error if you try to run the following code.  Fix the code to print correctly without errors.  It should print, "Your name is Carly and your age is 5."
            
-           .. activecode::  ch4ex2q
+           .. activecode::  ch4ex3q
                :nocodelens:
 
                age = 5
@@ -71,7 +103,7 @@ Chapter 4 Exercises
         
             Change ``age`` to ``str(age)``.  
             
-            .. activecode::  ch4ex2a
+            .. activecode::  ch4ex3a
                 :nocodelens:
                 
                 age = 5
@@ -83,17 +115,48 @@ Chapter 4 Exercises
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch4ex2q
+                :identifier: teachercsp_ch4ex3q
 
 #. 
 
-    .. tabbed:: ch4ex3t
+    .. tabbed:: ch4ex4t
+
+        .. tab:: Question
+
+            Using the variables given, modify the print statement to print ``"A car travelling at 70 mph takes 2 hours to go 140 miles."``
+            .. activecode::  ch4ex4q
+                :nocodelens:
+                   
+                milesPerHour = 70
+                distanceTravelled = 140
+                timeTaken = milesPerHour / distanceTravelled
+                print(timeTaken)
+
+        .. tab:: Answer
+        
+            .. activecode::  ch4ex4a
+                :nocodelens:
+                
+                milesPerHour = 70
+                distanceTravelled = 140
+                timeTaken = milesPerHour / distanceTravelled
+                print("A car travelling at " + str(milesPerHour) + " mph takes " + str(timeTaken) + "hours to go " + str(distanceTravelled) + " miles.")               
+                                
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: teachercsp
+                :identifier: teachercsp_ch4ex4q
+
+#. 
+
+    .. tabbed:: ch4ex5t
 
         .. tab:: Question
 
            There are 3 syntax errors in the following code.  Fix it to print correctly without errors.  It will print your name and age.
         
-           .. activecode::  ch4ex3q
+           .. activecode::  ch4ex5q
                :nocodelens:
 
                age = input("How old are you?")
@@ -105,7 +168,7 @@ Chapter 4 Exercises
         
             Change ``Name`` to ``name``.  Add a ``+`` at the end of line 3.  Add a ``+`` before and after ``age`` in line 4.  
             
-            .. activecode::  ch4ex3a
+            .. activecode::  ch4ex5a
                 :nocanvas:
 
                 age = input("How old are you?")
@@ -118,17 +181,17 @@ Chapter 4 Exercises
 
             .. disqus::
                 :shortname: cslearn4u
-                :identifier: teachercsp_ch4ex3q
+                :identifier: teachercsp_ch4ex5q
                 
 #. 
 
-    .. tabbed:: ch4ex4t
+    .. tabbed:: ch4ex7t
 
         .. tab:: Question
 
            Modify line 6 to print: "The number of miles you can drive on 25 dollars is 273.97260274."
            
-           .. activecode::  ch4ex4q
+           .. activecode::  ch4ex7q
                :nocodelens:
 
                funds = 25
@@ -143,7 +206,7 @@ Chapter 4 Exercises
         
             See line 6 below.  Be sure to use ``str(num)`` to convert a number to a string.
             
-            .. activecode::  ch4ex4a
+            .. activecode::  ch4ex7a
                 :nocodelens:
 
                 funds = 25
@@ -158,17 +221,17 @@ Chapter 4 Exercises
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch4ex4q
+                :identifier: teachercsp_ch4ex7q
    
 #. 
 
-    .. tabbed:: ch4ex5t
+    .. tabbed:: ch4ex9t
 
         .. tab:: Question
 
            Modify line 6 to print: "You can order 40.0 wings when you have 5 people who can each spend 4 dollars and wings cost 0.5 each."
            
-           .. activecode::  ch4ex5q
+           .. activecode::  ch4ex9q
                 :nocodelens:
 
                 numPeople = 5
@@ -182,7 +245,7 @@ Chapter 4 Exercises
         
             Change line 6 to include strings that explain the value that was calculated.  Be sure to use ``str(num)`` to convert a number to a string.
             
-            .. activecode::  ch4ex5a
+            .. activecode::  ch4ex9a
                 :nocodelens:
 
                 numPeople = 5
@@ -199,17 +262,17 @@ Chapter 4 Exercises
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch4ex5q
+                :identifier: teachercsp_ch4ex9q
                 
 #. 
 
-    .. tabbed:: ch4ex6t
+    .. tabbed:: ch4ex11t
 
         .. tab:: Question
 
            Combine lines 4 and 5 in the code below to print: "270 is 4.0 hours and 30 minutes."
            
-           .. activecode::  ch4ex6q
+           .. activecode::  ch4ex11q
                 :nocodelens:
 
                 totalMinutes = 270
@@ -222,7 +285,7 @@ Chapter 4 Exercises
         
            Combine lines 4 and 5 and use ``+`` to append strings.  Use ``str(num)`` to convert a number to a string so that it can be appended.
             
-            .. activecode::  ch4ex6a
+            .. activecode::  ch4ex11a
                 :nocodelens:
 
                 totalMinutes = 270
@@ -236,17 +299,17 @@ Chapter 4 Exercises
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch4ex6q
+                :identifier: teachercsp_ch4ex11q
                 
 #. 
 
-    .. tabbed:: ch4ex7t
+    .. tabbed:: ch4ex13t
 
         .. tab:: Question
 
            Complete the calculations on lines 2 and 4 and enter the items to be printed on line 5 to print the number of miles you can drive if you have a 10 gallon gas tank and are down to a quarter of a tank of gas and your car gets 32 miles per gallon.  It should print: "You can go 80.0 miles."
            
-           .. activecode::  ch4ex7q
+           .. activecode::  ch4ex13q
                 :nocodelens:
 
                 tankCapacity = 10
@@ -260,7 +323,7 @@ Chapter 4 Exercises
         
             Calculate ``numGallons`` as ``tankCapacity * 0.25``.  Calculate ``numMiles`` as ``numGallons * milesPerGallon``.  Use concatenation to print out an explanation and the value.  Be sure to use ``str(num)`` to convert a number to a string before you concatenate it.  
             
-            .. activecode::  ch4ex7a
+            .. activecode::  ch4ex13a
                 :nocodelens:
 
                 tankCapacity = 10
@@ -273,24 +336,24 @@ Chapter 4 Exercises
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch4ex7q
+                :identifier: teachercsp_ch4ex13q
                 
 #. 
 
-    .. tabbed:: ch4ex8t
+    .. tabbed:: ch4ex15t
 
         .. tab:: Question
 
            Write code to get the name of a color from the user using the ``input`` function. Next convert the name of the color to all lowercase letters and print it. 
            
-           .. activecode::  ch4ex8q
+           .. activecode::  ch4ex15q
                 :nocodelens:
 
         .. tab:: Answer
         
             Use ``input("message")`` to get the color.  Use the ``lower()`` function to get the string as all lowercase letters.  
             
-            .. activecode::  ch4ex8a
+            .. activecode::  ch4ex15a
                 :nocodelens:
                 
                 color = input("Enter an color.")
@@ -301,24 +364,24 @@ Chapter 4 Exercises
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch4ex8q
+                :identifier: teachercsp_ch4ex15q
                 
 #. 
 
-    .. tabbed:: ch4ex9t
+    .. tabbed:: ch4ex17t
 
         .. tab:: Question
 
            Write the code below to calculate and print how many months it will take to save $200 if you earn $20 a week.  It should print: "It will take 2.5 months to earn 200 if you make 20 dollars a week."
            
-           .. activecode::  ch4ex9q
+           .. activecode::  ch4ex17q
                 :nocodelens:
 
         .. tab:: Answer
         
             Name each of the values.  Calculate the ``totalWeeks`` it will take and the ``months`` and print the information.
             
-            .. activecode::  ch4ex9a
+            .. activecode::  ch4ex17a
                 :nocodelens:
                 
                 goal = 200
@@ -333,24 +396,24 @@ Chapter 4 Exercises
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch4ex9q
+                :identifier: teachercsp_ch4ex17q
                 
 #. 
 
-    .. tabbed:: ch4ex10t
+    .. tabbed:: ch4ex19t
 
         .. tab:: Question
 
            Write code below to get at least 3 values from the user using the ``input`` function and output a mad lib (which will use the input to tell a silly story).
            
-           .. activecode::  ch4ex10q
+           .. activecode::  ch4ex19q
                :nocodelens:
 
         .. tab:: Answer
         
             Use ``input("message")`` to get the input.  Use string concatenation to print the mad lib.  
             
-            .. activecode::  ch4ex10a
+            .. activecode::  ch4ex19a
                 :nocodelens:
                 
                 place = input("Enter the name of a place.")
@@ -366,7 +429,31 @@ Chapter 4 Exercises
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch4ex10q
+                :identifier: teachercsp_ch4ex19q
 
+#. 
 
+    .. tabbed:: ch4ex2t
+
+        .. tab:: Question
+
+           
+           
+            .. activecode::  ch4ex2q
+                :nocodelens:
+
+        .. tab:: Answer
+        
+           
+            
+            .. activecode::  ch4ex2a
+                :nocodelens:
+                
+                
+                                
+        .. tab:: Discussion 
+
+            .. disqus::
+                :shortname: teachercsp
+                :identifier: teachercsp_ch4ex2q
 

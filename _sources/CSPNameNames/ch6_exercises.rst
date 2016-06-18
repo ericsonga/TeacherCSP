@@ -385,6 +385,7 @@ Chapter 6 Exercises
     .. tabbed:: ch6ex8t
 
         .. tab:: Question
+        
             Fix the errors so it prints ``"My name is John and I am 18 years old"``.
 
             .. activecode::  ch6ex8q

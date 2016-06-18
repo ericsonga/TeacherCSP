@@ -124,6 +124,7 @@ Chapter 4 Exercises
         .. tab:: Question
 
             Using the variables given, modify the print statement to print ``"A car travelling at 70 mph takes 2 hours to go 140 miles."``
+            
             .. activecode::  ch4ex4q
                 :nocodelens:
 

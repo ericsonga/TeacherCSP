@@ -189,7 +189,8 @@ Chapter 4 Exercises
     .. tabbed:: ch4ex6t
 
         .. tab:: Question
-            Fix the syntax errors so that the code prints ��The apple costs $5��
+        
+            Fix the syntax errors so that the code prints "The apple costs $5".
 
             .. activecode::  ch4ex6q
                 :nocodelens:

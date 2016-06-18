@@ -861,7 +861,7 @@ Chapter 6 Exercises
         .. tab:: Answer
 
             Make sure the function takes in the 4 parameters. Use the mod function to make sure minutes and hours don't exceed 60 and 12, respectively. The total minutes minus the remaining minutes (from the mod function) gives the number of hours made from the extra minutes.
-            
+
             .. activecode::  ch6ex20a
                 :nocodelens:
 

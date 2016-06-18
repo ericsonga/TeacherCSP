@@ -477,6 +477,7 @@ Chapter 4 Exercises
         .. tab:: Question
 
             Fix line 2 so that it prints "Hi" instead of "hi".
+            
             .. activecode::  ch4ex14q
                 :nocodelens:
 

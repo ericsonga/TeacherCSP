@@ -71,6 +71,7 @@ Chapter 3: Names for Numbers
    CSPNameNumbers/expressionTable.rst
    CSPNameNumbers/orderOfOperations.rst
    CSPNameNumbers/driving.rst
+   CSPNameNumbers/noteEitherSideOfEquals.rst
    CSPNameNumbers/ketchup.rst
    CSPNameNumbers/walkAssign.rst
    CSPNameNumbers/misconceptions.rst

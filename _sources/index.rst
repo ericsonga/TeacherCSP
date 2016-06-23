@@ -120,6 +120,7 @@ Chapter 6: Computers can Name Anything
    CSPNameNames/names4names2.rst
    CSPNameNames/nameFandP.rst
    CSPNameNames/nameSteps.rst
+   CSPNameNames/noteFunDefVsCall.rst
    CSPNameNames/namesInput.rst
    CSPNameNames/params.rst
    CSPNameNames/nameSets.rst

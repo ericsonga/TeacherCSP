@@ -12,7 +12,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: 6-10-
+	:prefix: csp-6-11-
 
 Chapter 6 Exercises
 --------------------

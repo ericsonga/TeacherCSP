@@ -123,6 +123,7 @@ Chapter 6: Computers can Name Anything
    CSPNameNames/noteFunDefVsCall.rst
    CSPNameNames/namesInput.rst
    CSPNameNames/params.rst
+   CSPNameNames/noteActualVsFormalParams.rst
    CSPNameNames/nameSets.rst
    CSPNameNames/imageLib.rst
    CSPNameNames/renameFunctions.rst

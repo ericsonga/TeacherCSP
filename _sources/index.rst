@@ -229,6 +229,7 @@ Chapter 12: A Computer can Make Decisions
    CSPIntroDecisions/complex.rst
    CSPIntroDecisions/practice.rst
    CSPIntroDecisions/ifAndElse.rst
+   CSPIntroDecisions/noteConditionalsCards.rst
    CSPIntroDecisions/decTeacherNotes.rst
    CSPIntroDecisions/ch12_summary.rst
    CSPIntroDecisions/ch12_exercises.rst

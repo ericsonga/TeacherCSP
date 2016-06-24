@@ -244,6 +244,7 @@ Chapter 13: Using Decisions with Strings
    CSPStringDecisions/input.rst
    CSPStringDecisions/fortuneTeller.rst
    CSPStringDecisions/elif.rst
+   CSPStringDecisions/noteZodiac.rst
    CSPStringDecisions/ch13_summary.rst
    CSPStringDecisions/ch13_exercises.rst
    CSPStringDecisions/exam12a13.rst

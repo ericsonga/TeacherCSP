@@ -517,14 +517,35 @@ Chapter 8 Exercises
 
         .. tab:: Question
 
+ 	    The code below currently enters a loop where it keeps printing even. Fix the code so that it prints Even and Odd for numbers 0 to 9.
+ 	    
             .. activecode::  ch8ex14q
                 :nocodelens:
 
+		number = 0
+		while number < 10:
+		    while number % 2 == 0:
+		        print("Even")
+		    while number % 2 != 0:
+		        print("Odd")
+		    number += 1
+		    
         .. tab:: Answer
 
+	    You have to increment the counter in the body of each inner loop.
+	    
             .. activecode::  ch8ex14a
                 :nocodelens:
 
+		number = 0
+		while number < 10:
+		    while number % 2 == 0:
+		        print("Even")
+		        number += 1
+		    while number % 2 != 0:
+		        print("Odd")
+		        number += 1
+		        
         .. tab:: Discussion
 
             .. disqus::
@@ -652,6 +673,7 @@ Chapter 8 Exercises
     .. tabbed:: ch8ex18t
 
         .. tab:: Question
+        
             Write a procedure that takes a user input and keeps asking for a user input until the input is "Hello". If the input is not hello, it should print "This is you n wrong try." where n is the number of times they have put an input in. If they type "Hello", the procedure should print "Success!". Hint: ``!=`` means does not equal
 
             .. activecode::  ch8ex18q

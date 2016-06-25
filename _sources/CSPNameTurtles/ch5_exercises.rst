@@ -212,6 +212,7 @@ Chapter 5 Exercises
     .. tabbed:: ch5ex6t
 
         .. tab:: Question
+        
             Fix the 6 errors in the following code.
 
             .. activecode::  ch5ex6q

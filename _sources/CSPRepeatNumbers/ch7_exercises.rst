@@ -532,6 +532,7 @@ Chapter 7 Exercises
                 :nocodelens:
 
         .. tab:: Answer
+        
             Use the range function with from 1 to 20 (21 would work too) and a step size of 2. Get the sum of all those numbers and use the length of the list to find the average. Then use the range function again with a step size of the average and find the product of all the numbers in the new list.
 
             .. activecode::  ch7ex14a

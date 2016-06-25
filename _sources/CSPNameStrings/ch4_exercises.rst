@@ -124,6 +124,7 @@ Chapter 4 Exercises
         .. tab:: Question
 
             Using the variables given, modify the print statement to print ``"A car travelling at 70 mph takes 2 hours to go 140 miles."``
+            
             .. activecode::  ch4ex4q
                 :nocodelens:
 
@@ -188,7 +189,8 @@ Chapter 4 Exercises
     .. tabbed:: ch4ex6t
 
         .. tab:: Question
-            Fix the syntax errors so that the code prints ��The apple costs $5��
+        
+            Fix the syntax errors so that the code prints "The apple costs $5".
 
             .. activecode::  ch4ex6q
                 :nocodelens:
@@ -476,6 +478,7 @@ Chapter 4 Exercises
         .. tab:: Question
 
             Fix line 2 so that it prints "Hi" instead of "hi".
+            
             .. activecode::  ch4ex14q
                 :nocodelens:
 

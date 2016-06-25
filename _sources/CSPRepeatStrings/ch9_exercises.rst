@@ -154,6 +154,7 @@ Chapter 9 Exercises
         .. tab:: Question
 
             Fix the errors in the code to correctly print the reverse of the string. It should print: "!gnirts a m'I ,kool yeH"
+            
             .. activecode::  ch9ex4q
                 :nocodelens:
 

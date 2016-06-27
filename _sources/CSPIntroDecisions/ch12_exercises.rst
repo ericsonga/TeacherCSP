@@ -12,7 +12,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: 12-11-
+	:prefix: csp-12-12-
 
 Chapter 12 Exercises
 ---------------------

@@ -224,6 +224,7 @@ Chapter 12: A Computer can Make Decisions
 
    CSPIntroDecisions/decisions.rst
    CSPIntroDecisions/if.rst
+   CSPIntroDecisions/noteWaitingIf.rst
    CSPIntroDecisions/multiple.rst
    CSPIntroDecisions/logicalEx.rst
    CSPIntroDecisions/complex.rst

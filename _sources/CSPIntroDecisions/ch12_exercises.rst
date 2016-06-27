@@ -57,13 +57,25 @@ Chapter 12 Exercises
 
         .. tab:: Question
 
+            The code currently prints "Hello" when the number is less than 3. Change it so that it prints "Hello" when the number is equal to 3.
+
             .. activecode::  ch12ex2q
                 :nocodelens:
 
+                x = 3
+                if x < 3:
+                    print("Hello")
+
         .. tab:: Answer
+
+            Change the less than sign to ``==``.
 
             .. activecode::  ch12ex2a
                 :nocodelens:
+
+                x = 3
+                if x == 3:
+                    print("Hello")
 
         .. tab:: Discussion
 
@@ -91,8 +103,6 @@ Chapter 12 Exercises
                 print(weight)
                 print(price)
                 print(total)
-
-
 
 
         .. tab:: Answer
@@ -125,13 +135,35 @@ Chapter 12 Exercises
 
         .. tab:: Question
 
+            Fill in line 1 with a weight that will make the total equal 1, and fix the indentation errors.
+
             .. activecode::  ch12ex4q
                 :nocodelens:
 
+                weight =
+
+                if weight >= .5:
+                price = 2
+                if weight < .5:
+                price = 1
+                    total = weight * price
+                    print(total)
+
         .. tab:: Answer
+
+            The weight should be .5, and the indentation should look like below.
 
             .. activecode::  ch12ex4a
                 :nocodelens:
+
+                weight = .5
+
+                if weight >= 1:
+                    price = 4
+                if weight < 1:
+                    price = 2
+                total = weight * price
+                print(total)
 
         .. tab:: Discussion
 
@@ -194,13 +226,29 @@ Chapter 12 Exercises
 
         .. tab:: Question
 
+            The code currently does not do anything if the number is equal to 2. Fix it so that it prints "Hey" if the number is 2.
+
             .. activecode::  ch12ex6q
                 :nocodelens:
 
+                number = 2
+                if x < 2:
+                    print("Hello")
+                if x > 2:
+                    print("Hey")
+
         .. tab:: Answer
+
+            Make the second clause ``<=``
 
             .. activecode::  ch12ex6a
                 :nocodelens:
+
+                number = 2
+                if x < 2:
+                    print("Hello")
+                if x >= 2:
+                    print("Hey")
 
         .. tab:: Discussion
 
@@ -248,13 +296,25 @@ Chapter 12 Exercises
 
         .. tab:: Question
 
+            The following code prints "This is not 8" when the number is not 8. Change the if statement, so that it does the same thing but only uses one expression (No "and" or "or").
+
             .. activecode::  ch12ex8q
                 :nocodelens:
 
+                x = 8
+                if x < 8 or x > 8:
+                    print("This is not 8")
+
         .. tab:: Answer
+
+            Change it to ``x != 8``.
 
             .. activecode::  ch12ex8a
                 :nocodelens:
+
+                x = 8
+                if x != 8:
+                    print("This is not 8")
 
         .. tab:: Discussion
 
@@ -304,13 +364,25 @@ Chapter 12 Exercises
 
         .. tab:: Question
 
+            Complete the conditional and fix the errors so that it prints "Good job" when the number is between 1 and 10 (inclusive) or is 15.
+
             .. activecode::  ch12ex10q
                 :nocodelens:
 
+                x = 8
+                    if
+                print("Good job")
+
         .. tab:: Answer
+
+            Switch the indentation levels of lines 2 and 3, and use the conditional below.
 
             .. activecode::  ch12ex10a
                 :nocodelens:
+
+                x = 8
+                if (x >= 1 and x <= 1) or x == 15:
+                    print("Good job")
 
         .. tab:: Discussion
 
@@ -368,13 +440,41 @@ Chapter 12 Exercises
 
         .. tab:: Question
 
+            Fix the indentation below, so that the code sets the price based off the weight, then checks if the total is greater than the amount in your wallet.
+
             .. activecode::  ch12ex12q
                 :nocodelens:
 
+                weight = 0.5
+                numItems = 5
+                wallet = 2
+
+                if weight < 1:
+                    price = 1.45
+                    if weight >= 1:
+                    price = 1.15
+                    total = numItems * price
+                    if total > wallet:
+                    print("You have no money")
+
         .. tab:: Answer
+
+            Fix the indentation so it looks like below.
 
             .. activecode::  ch12ex12a
                 :nocodelens:
+
+                weight = 0.5
+                numItems = 5
+                wallet = 2
+
+                if weight < 1:
+                    price = 1.45
+                if weight >= 1:
+                    price = 1.15
+                total = numItems * price
+                if total > wallet:
+                    print("You have no money")
 
         .. tab:: Discussion
 
@@ -442,13 +542,30 @@ Chapter 12 Exercises
 
         .. tab:: Question
 
+            Fix the errors in the code, and change it, so there's only 1 if statement. The code should print "The number is 5" when the number is 5, and should print "The number is NOT 5" when it is not.
+
             .. activecode::  ch12ex14q
                 :nocodelens:
 
+                x = 5
+                if x == 5:
+                print("The number is 5")
+                if x != 5:
+                print("The number is NOT 5")
+
+
         .. tab:: Answer
+
+            Fix the indentation and change the second if statement to an else statement.
 
             .. activecode::  ch12ex14a
                 :nocodelens:
+
+                x = 5
+                if x == 5:
+                    print("The number is 5")
+                else:
+                    print("The number is NOT 5")
 
         .. tab:: Discussion
 
@@ -506,13 +623,28 @@ Chapter 12 Exercises
 
         .. tab:: Question
 
+            Complete and finish the code on lines 1 and 4 so that the code prints "Hi".
+
             .. activecode::  ch12ex16q
                 :nocodelens:
 
+                x =
+                if not x != 3:
+                    print("Hi")
+
+                    print("Hello")
         .. tab:: Answer
+
+            Line 1 should be x = 3, and line 4 should be else.
 
             .. activecode::  ch12ex16a
                 :nocodelens:
+
+                x = 3
+                if not x != 3:
+                    print("Hi")
+                else:
+                    print("Hello")
 
         .. tab:: Discussion
 
@@ -559,13 +691,23 @@ Chapter 12 Exercises
 
         .. tab:: Question
 
+            Write a procedure that takes 2 ints, total price, and amount in wallet. Print "You have enough money" if the difference between the wallet and price is 0 or greater; otherwise, print "Get more money"
+
             .. activecode::  ch12ex18q
                 :nocodelens:
 
         .. tab:: Answer
 
+            Do as shown below.
+
             .. activecode::  ch12ex18a
                 :nocodelens:
+
+                def aProcedure(price, wallet):
+                    if (wallet - price) >= 0:
+                        print("You have enough money")
+                    else:
+                        print("Get more money")
 
         .. tab:: Discussion
 
@@ -623,3 +765,34 @@ Chapter 12 Exercises
             .. disqus::
                 :shortname: teachercsp
                 :identifier: teachercsp_ch12ex19q
+
+#.
+
+    .. tabbed:: ch12ex20t
+
+        .. tab:: Question
+
+            Write code that prints "Fizz" when the number is divisible by 3, "Buzz" when it is divisible by 5, and "FizzBuzz" when it is divisible by 3 and 5  (If a number is divisible by 3 and 5, it should also print "Fizz" and "Buzz").
+
+            .. activecode::  ch12ex20q
+                :nocodelens:
+
+
+        .. tab:: Answer
+
+            .. activecode::  ch12ex20a
+                :nocodelens:
+
+                x = 3
+                if x % 3 == 0:
+                    print("Fizz")
+                if x % 5 == 0:
+                    print("Buzz")
+                if x % 3 == 0 and x % 5 == 0:
+                    print("FizzBuzz")
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: teachercsp
+                :identifier: teachercsp_ch12ex20q

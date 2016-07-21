@@ -74,10 +74,15 @@ Chapter 9 Exercises
             .. activecode::  ch9ex2q
                 :nocodelens:
 
+                # STEP 1: INITIALIZE ACCUMULATOR
                 newString = ""
+                # STEP 2: GET DATA
                 phrase = "This is a string."
+                # STEP 3: LOOP THROUGH THE DATA
                 for letter in phrase:
+                    # STEP 4: ACCUMULATE
                     newString = letter + newString
+                # STEP 5: PROCESS RESULT
                 print(newString)
 
         .. tab:: Answer
@@ -87,10 +92,15 @@ Chapter 9 Exercises
             .. activecode::  ch9ex2a
                 :nocodelens:
 
+                # STEP 1: INITIALIZE ACCUMULATOR
                 newString = ""
+                # STEP 2: GET DATA
                 phrase = "This is a string."
+                # STEP 3: LOOP THROUGH THE DATA
                 for letter in phrase:
+                    # STEP 4: ACCUMULATE
                     newString = newString + letter + " "
+                # STEP 5: PROCESS RESULT
                 print(newString)
 
         .. tab:: Discussion
@@ -154,14 +164,18 @@ Chapter 9 Exercises
         .. tab:: Question
 
             Fix the errors in the code to correctly print the reverse of the string. It should print: "!gnirts a m'I ,kool yeH"
-            
+
             .. activecode::  ch9ex4q
                 :nocodelens:
 
+                # STEP 2: GET DATA
                 phrase = "Hey look, I'm a string!"
+                # STEP 3: LOOP THROUGH THE DATA
                 for letter in phrase:
                     newString = ""
+                    # STEP 4: ACCUMULATE
                     newString = newString + phrase
+                    # STEP 5: PROCESS RESULT
                     print(phrase)
 
         .. tab:: Answer
@@ -171,10 +185,15 @@ Chapter 9 Exercises
             .. activecode::  ch9ex4a
                 :nocodelens:
 
+                # STEP 1: INITIALIZE ACCUMULATORS
                 newString = ""
+                # STEP 2: GET DATA
                 phrase = "Hey look, I'm a string!"
+                # STEP 3: LOOP THROUGH THE DATA
                 for letter in phrase:
+                    # STEP 4: ACCUMULATE
                     newString = letter + newString
+                # STEP 5: PROCESS RESULT
                 print(newString)
 
         .. tab:: Discussion
@@ -242,10 +261,15 @@ Chapter 9 Exercises
             .. activecode::  ch9ex6q
                 :nocodelens:
 
+                # STEP 1: INITIALIZE ACCUMULATOR
                 newString = ""
+                # STEP 2: GET DATA
                 phrase = "It's like looking in a mirror!"
+                # STEP 3: LOOP THROUGH THE DATA
                 for letter in phrase:
+                    # STEP 4: ACCUMULATE
                     newString = newString + letter + letter
+                # STEP 5: PROCESS RESULT
                 print(newString)
 
         .. tab:: Answer
@@ -255,10 +279,15 @@ Chapter 9 Exercises
             .. activecode::  ch9ex6a
                 :nocodelens:
 
+                # STEP 1: INITIALIZE ACCUMULATOR
                 newString = ""
+                # STEP 2: GET DATA
                 phrase = "It's like looking in a mirror!"
+                # STEP 3: LOOP THROUGH THE DATA
                 for letter in phrase:
+                    # STEP 4: ACCUMULATE
                     newString = letter + newString + letter
+                # STEP 5: PROCESS RESULT
                 print(newString)
 
         .. tab:: Discussion
@@ -315,10 +344,15 @@ Chapter 9 Exercises
             .. activecode::  ch9ex8q
                 :nocodelens:
 
+                # STEP 1: INITIALIZE ACCUMULATOR
                 newString = "  "
+                # STEP 2: GET DATA
                 phrase = "I'm just a string."
+                # STEP 3: LOOP THROUGH THE DATA
                 for phrase in letter
+                    # STEP 4: ACCUMULATE
                     letter = letter + newString
+                # STEP 5: PROCESS RESULT
                 print(newString)
 
         .. tab:: Answer
@@ -328,10 +362,15 @@ Chapter 9 Exercises
             .. activecode::  ch9ex8a
                 :nocodelens:
 
+                # STEP 1: INITIALIZE ACCUMULATOR
                 newString = ""
+                # STEP 2: GET DATA
                 phrase = "I'm just a string."
+                # STEP 3: LOOP THROUGH THE DATA
                 for letter in phrase:
+                    # STEP 4: ACCUMULATE
                     newString = newString + letter
+                # STEP 5: PROCESS RESULT
                 print(newString)
 
         .. tab:: Discussion
@@ -401,6 +440,8 @@ Chapter 9 Exercises
                 print(str)
 
         .. tab:: Answer
+
+            At the end of the body of the while loop, make sure to find the "1" again.
 
             .. activecode::  ch9ex10a
                 :nocodelens:
@@ -540,7 +581,6 @@ Chapter 9 Exercises
 
                     # STEP 1: INITIALIZE ACCUMULATOR
                     newString = ""
-
                     # STEP 3: LOOP THROUGH THE DATA
                     for letter in phrase:
                         # STEP 4: ACCUMULATE
@@ -577,7 +617,7 @@ Chapter 9 Exercises
         .. tab:: Answer
 
             On line 2, use the find method to find the period. On line 3, ``pos`` should be greater than or equal to 0. Line 4 should be "str = str[0:pos] + "," + str[pos+len("."):len(str)]" and line 5 should find the next period.
-            
+
             .. activecode::  ch9ex14a
                 :nocodelens:
 
@@ -649,12 +689,17 @@ Chapter 9 Exercises
             .. activecode::  ch9ex16q
                 :nocodelens:
 
+                # STEP 1: INITIALIZE ACCUMULATOR
                 reverseString = ""
                 mirrorString = " "
+                # STEP 2: GET DATA
                 phrase = "This is the string"
+                # STEP 3: LOOP THROUGH THE DATA
                 for phrase in phrase:
+                    # STEP 4: ACCUMULATE
                     reverseString = reverseString + letter
                     mirrorString = letter + letter + reverseString
+                # STEP 5: PROCESS RESULT
                 print(reverseString)
                 print(mirrorString)
 
@@ -666,11 +711,15 @@ Chapter 9 Exercises
                 :nocodelens:
 
                 def aProcedure(phrase):
+                    # STEP 1: INITIALIZE ACCUMULATOR
                     reverseString = ""
                     mirrorString = ""
+                    # STEP 3: LOOP THROUGH THE DATA
                     for letter in phrase:
+                        # STEP 4: ACCUMULATE
                         reverseString = letter + reverseString
                         mirrorString = letter + reverseString + letter
+                    # STEP 5: PROCESS RESULT
                     print(reverseString)
                     print(mirrorString)
 
@@ -737,8 +786,10 @@ Chapter 9 Exercises
             .. activecode::  ch9ex18q
                 :nocodelens:
 
+                # STEP 1: INITIALIZE ACCUMULATOR
                 newString = ""
                 aString = ""
+                # STEP 2: GET DATA
                 phrase = "This is a mirror!"
 
         .. tab:: Answer
@@ -746,13 +797,18 @@ Chapter 9 Exercises
             .. activecode::  ch9ex18a
                 :nocodelens:
 
+                # STEP 1: INITIALIZE ACCUMULATOR
                 newString = ""
                 aString = ""
+                # STEP 2: GET DATA
                 phrase = "This is a mirror!"
+                # STEP 3: LOOP THROUGH THE DATA
                 for letter in phrase:
+                    # STEP 4: ACCUMULATE
                 	newString = letter + newString
                 for letter in newString:
                   	aString = letter + aString + letter
+                # STEP 5: PROCESS RESULT
                 print(aString)
 
         .. tab:: Discussion

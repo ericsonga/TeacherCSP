@@ -149,7 +149,7 @@ Chapter 13 Exercises
 
         .. tab:: Question
 
-            Complete the code to get user input, and make choices based off the input.
+            Complete the code to get user input, and make choices based off the input. The input should either be "in", "left", or "right"; make sure the user knows that.
 
             .. activecode::  ch13ex4q
                 :nocodelens:
@@ -199,7 +199,7 @@ Chapter 13 Exercises
 
         .. tab:: Question
 
-           Fix the code below to assign grades correctly using elif and else.
+           Fix the code below to assign grades correctly using elif and else. You can assume the numbers are all correct.
 
            .. activecode::  ch13ex5q
                 :nocodelens:
@@ -331,7 +331,7 @@ Chapter 13 Exercises
 
         .. tab:: Question
 
-            Complete the code so that it iterates through the list of numbers and prints positive, negative, or neither based off the number.
+            Complete the code so that it iterates through the list of numbers and prints positive, negative, or neither based off the integer.
 
             .. activecode::  ch13ex8q
                 :nocodelens:
@@ -559,39 +559,37 @@ Chapter 13 Exercises
 
         .. tab:: Question
 
-           Change the code below to use ``elif`` and ``else``.
+           Change the code below to use only 1 ``if``, 1 ``elif``, and 1 ``else``.
 
            .. activecode::  ch13ex13q
                 :nocodelens:
 
-                x = .25
-                if x <= .25:
-                    print("x is in the first quartile - x <= .25")
-                if x <= .5 and x > .25:
-                    print("x is in the second quartile - .25 < x <= .5")
-                if x <= .75 and x > .5:
-                    print("x is in the third quartile - .5 < x <= .75")
-                if x > .75:
-                    print("x is in the fourth quartile - .75 < x <= 1")
-
+                state = "Georgia"
+                if state == "Georgia":
+                    print("It's hot")
+                if state == "Florida":
+                    print("It's hot")
+                if state == "Alaska":
+                    print("It's cold")
+                else:
+                    print("I don't know the weather")
 
 
         .. tab:: Answer
 
-            Change lines 4 and 6 to ``elif`` and remove from the ``and`` on.   Change line 8 to ``else:`` as shown below.
+            Combine the first 2 ``if`` statements by using an ``or``. Change the third ``if`` statement into an ``elif``.
 
             .. activecode::  ch13ex13a
                 :nocodelens
 
-                x = .25
-                if x <= .25:
-                    print("x is in the first quartile - x <= .25")
-                elif x <= .5:
-                    print("x is in the second quartile - .25 < x <= .5")
-                elif x <= .75:
-                    print("x is in the third quartile - .5 < x <= .75")
+                state = "Georgia"
+                if state = "Georgia" or state = "Florida":
+                    print("It's hot")
+                elif state == "Alaska":
+                    print("It's cold")
                 else:
-                    print("x is in the fourth quartile - .75 < x <= 1")
+                    print("I don't know the weather")
+
 
 
 

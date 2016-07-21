@@ -105,39 +105,51 @@ Below is a selection of images that you can use in the programs in this section.
     .. tabbed:: ch11ex2t
 
         .. tab:: Question
-	    
-	    The code below makes the image have a green-blue tint. Change 1 thing in order to make it have a red tint instead.
-	    
+
+    	    The code below makes the image have a green-blue tint. Change 1 thing in order to make it have a red tint instead.
+
             .. activecode::  ch11ex2q
                 :nocodelens:
 
-		from image import *
-		img = Image("puppy.jpg")
-		pixelList = img.getPixels()
-	        for p in pixelList:   
-		    p.setRed(0)
-	            img.updatePixel(p)
+                # USE THE IMAGE LIBRARY
+        		from image import *
+                # PICK THE IMAGE
+        		img = Image("puppy.jpg")
+                # LOOP THROUGH THE PIXELS
+        		pixelList = img.getPixels()
+    	        for p in pixelList:
+                    # SET THE COLOR
+    		        p.setRed(0)
+                    # UPDATE THE PIXEL
+    	            img.updatePixel(p)
 
-		win = ImageWin(img.getWidth(),img.getHeight())
+                # SHOW THE RESULT
+        		win = ImageWin(img.getWidth(),img.getHeight())
                 img.draw(win)
-	
+
         .. tab:: Answer
 
-	   Set the Red pixel to be 255.
-	   
+    	   Set the Red pixel to be 255.
+
             .. activecode::  ch11ex2a
                 :nocodelens:
 
-		from image import *
-		img = Image("puppy.jpg")
-		pixelList = img.getPixels()
-	        for p in pixelList:   
-		    p.setRed(255)
-	            img.updatePixel(p)
+                # USE THE IMAGE LIBRARY
+        		from image import *
+                # PICK THE IMAGE
+        		img = Image("puppy.jpg")
+                # LOOP THROUGH THE PIXELS
+        		pixelList = img.getPixels()
+    	        for p in pixelList:
+                    # SET THE COLOR
+    		        p.setRed(0)
+                    # UPDATE THE PIXEL
+    	            img.updatePixel(p)
 
-		win = ImageWin(img.getWidth(),img.getHeight())
+                # SHOW THE RESULT
+        		win = ImageWin(img.getWidth(),img.getHeight())
                 img.draw(win)
-		
+
         .. tab:: Discussion
 
             .. disqus::
@@ -232,56 +244,60 @@ Below is a selection of images that you can use in the programs in this section.
 
         .. tab:: Question
 
-	    Fix the 5 errors in the code, so that the Red pixels get the value of the green, the green get the value of blue, and the blue get the value of the red. (The cat should look purple and gray)
-	    
+    	    Fix the 5 errors in the code, so that the Red pixels get the value of the green, the green get the value of blue, and the blue get the value of the red. (The cat should look purple and gray)
+
             .. activecode::  ch11ex4q
                 :nocodelens:
 
-		from image import *
+                # STEP 1: USE THE IMAGE LIBRARY
+		        from image import *
+                # STEP 2: PICK THE IMAGE
                 img = Image("kitten")
-
+                # STEP 3: LOOP THROUGH THE PIXELS
                 pixels = img.getPixels()
                 for p in pixel:
-
+                    # STEP 4: GET THE DATA
                     r = p.getred()
                     b = p.getGreen()
                     g = p.getBlue()
-
+                    # STEP 5: MODIFY THE COLOR
                     p.setRed(g)
                     p.setGreen(b)
                     p.setBlue(r)
-
+                    # STEP 6: UPDATE THE IMAGE
                     img.updatePixel(p)
-
+                # STEP 7: SHOW THE RESULT
                 win = ImageWin(img.getWidth(),img.getHeight())
                 img.draw(win)
-		
+
         .. tab:: Answer
 
-	    The image passed should have the ``.jpg`` at the end. Make sure the ``r,g,b`` variables are correctly set to represent red, green, and blue. In the for loop header, make sure it's looping through pixels not pixel, and it should be ``setRed()`` not ``setred()``.
-	    
+    	    The image passed should have the ``.jpg`` at the end. Make sure the ``r,g,b`` variables are correctly set to represent red, green, and blue. In the for loop header, make sure it's looping through pixels not pixel, and it should be ``setRed()`` not ``setred()``.
+
             .. activecode::  ch11ex4a
                 :nocodelens:
 
-		from image import *
+                # STEP 1: USE THE IMAGE LIBRARY
+		        from image import *
+                # STEP 2: PICK THE IMAGE
                 img = Image("kitten.jpg")
-
+                # STEP 3: LOOP THROUGH THE PIXELS
                 pixels = img.getPixels()
                 for p in pixels:
-
+                    # STEP 4: GET THE DATA
                     r = p.getRed()
                     b = p.getBlue()
                     g = p.getGreen()
-
+                    # STEP 5: MODIFY THE COLOR
                     p.setRed(g)
                     p.setGreen(b)
                     p.setBlue(r)
-
+                    # STEP 6: UPDATE THE IMAGE
                     img.updatePixel(p)
-
+                # STEP 7: SHOW THE RESULT
                 win = ImageWin(img.getWidth(),img.getHeight())
                 img.draw(win)
-		
+
         .. tab:: Discussion
 
             .. disqus::
@@ -368,51 +384,55 @@ Below is a selection of images that you can use in the programs in this section.
         .. tab:: Question
 
             Complete the code in order to set the blue value to an eigth of the green value plus an eight of the red value.
-	    
+
             .. activecode::  ch11ex6q
                 :nocodelens:
 
-		from image import *
+                # STEP 1: USE THE IMAGE LIBRARY
+		        from image import *
+                # STEP 2: PICK THE IMAGE
                 img = Image("swan.jpg")
-
+                # STEP 3: LOOP THROUGH THE PIXELS
                 pixels = img.getPixels()
-                for 
-
+                for
+                    # STEP 4: GET THE DATA
                     b = p.get
                     g = p.get
-		    r = p.get
-		    
+		            r = p.get
+                    # STEP 5: MODIFY THE COLOR
                     p.set
-
+                    # STEP 6: UPDATE THE IMAGE
                     img.updatePixel(p)
-
+                # STEP 7: SHOW THE RESULT
                 win = ImageWin(img.getWidth(),img.getHeight())
                 img.draw(win)
-		
+
         .. tab:: Answer
 
-	    Complete the for loop header to iterate through pixels. Get the values for the blue, red, and green pixels. Set the blue pixels to the sum of an eighth of both the red and green pixels.
-	    
+    	    Complete the for loop header to iterate through pixels. Get the values for the blue, red, and green pixels. Set the blue pixels to the sum of an eighth of both the red and green pixels.
+
             .. activecode::  ch11ex6a
                 :nocodelens:
 
-		from image import *
+                # STEP 1: USE THE IMAGE LIBRARY
+		        from image import *
+                # STEP 2: PICK THE IMAGE
                 img = Image("swan.jpg")
-
+                # STEP 3: LOOP THROUGH THE PIXELS
                 pixels = img.getPixels()
                 for p in pixels:
-
+                    # STEP 4: GET THE DATA
                     b = p.getBlue()
                     g = p.getGreen()
-		    r = p.getRed()
-		    
+		            r = p.getRed()
+                    # STEP 5: MODIFY THE COLOR
                     p.setBlue((g/8)+(r/8))
-
+                    # STEP 6: UPDATE THE IMAGE
                     img.updatePixel(p)
-
+                # STEP 7: SHOW THE RESULT
                 win = ImageWin(img.getWidth(),img.getHeight())
                 img.draw(win)
-		
+
         .. tab:: Discussion
 
             .. disqus::
@@ -494,57 +514,63 @@ Below is a selection of images that you can use in the programs in this section.
     .. tabbed:: ch11ex8t
 
         .. tab:: Question
-   
+
             This code is supposed to make the picture completely black; however, it is taking forever when it should only take a few seconds. Fix the code (without adding anything new) so that it runs in a few seconds.
-       
+
             .. activecode::  ch11ex8q
                 :nocodelens:
 
-		from image import *
+                # STEP 1: USE THE IMAGE LIBRARY
+		        from image import *
+                # STEP 2: PICK THE IMAGE
                 img = Image("motorcycle.jpg")
 
+                # STEP 3: LOOP THROUGH THE PIXELS
                 pixels = img.getPixels()
                 for p in pixels:
-
+                    # STEP 4: GET THE DATA
                     r = p.getRed()
                     b = p.getBlue()
                     g = p.getGreen()
-
+                    # STEP 5: MODIFY THE COLOR
                     p.setRed(0)
                     p.setGreen(0)
                     p.setBlue(0)
-
+                    # STEP 6: UPDATE THE IMAGE
                     img.updatePixel(p)
-
+                    # STEP 7: SHOW THE RESULT
                     win = ImageWin(img.getWidth(),img.getHeight())
                     img.draw(win)
-		
+
         .. tab:: Answer
 
-	   The last two lines should be outside the for loop.
-	   
+	        The last two lines should be outside the for loop.
+
             .. activecode::  ch11ex8a
                 :nocodelens:
 
-		from image import *
+                # STEP 1: USE THE IMAGE LIBRARY
+		        from image import *
+                # STEP 2: PICK THE IMAGE
                 img = Image("motorcycle.jpg")
 
+                # STEP 3: LOOP THROUGH THE PIXELS
                 pixels = img.getPixels()
                 for p in pixels:
-
+                    # STEP 4: GET THE DATA
                     r = p.getRed()
                     b = p.getBlue()
                     g = p.getGreen()
-
+                    # STEP 5: MODIFY THE COLOR
                     p.setRed(0)
                     p.setGreen(0)
                     p.setBlue(0)
-
+                    # STEP 6: UPDATE THE IMAGE
                     img.updatePixel(p)
-
+                # STEP 7: SHOW THE RESULT
                 win = ImageWin(img.getWidth(),img.getHeight())
                 img.draw(win)
-		
+
         .. tab:: Discussion
 
             .. disqus::
@@ -628,57 +654,61 @@ Below is a selection of images that you can use in the programs in this section.
 
         .. tab:: Question
 
-	    The code below sets all the pixels to half their original values with one for loop. Change the code so it uses 2 for loops that utilize the range function (1 for loop should be nested in the other).
-	    
+    	    The code below sets all the pixels to half their original values with one for loop. Change the code so it uses 2 for loops that utilize the range function (1 for loop should be nested in the other).
+
             .. activecode::  ch11ex10q
                 :nocodelens:
 
-		from image import *
+                # STEP 1: USE THE IMAGE LIBRARY
+		        from image import *
+                # STEP 2: PICK THE IMAGE
                 img = Image("baby.jpg")
-
+                # STEP 3: LOOP THROUGH THE PIXELS
                 pixels = img.getPixels()
                 for p in pixels:
-
+                    # STEP 4: GET THE DATA
                     r = p.getRed()
                     b = p.getBlue()
                     g = p.getGreen()
-
+                    # STEP 5: MODIFY THE COLOR
                     p.setRed(r/2)
                     p.setGreen(g/2)
                     p.setBlue(b/2)
-
+                    # STEP 6: UPDATE THE IMAGE
                     img.updatePixel(p)
-
+                # STEP 7: SHOW THE RESULT
                 win = ImageWin(img.getWidth(),img.getHeight())
                 img.draw(win)
-		
+
         .. tab:: Answer
 
             Change the for loop to iterate through the range of the width and then the nested loop should iterate through the range of the height. Call the get pixel method inside the for loop as shown below.
-	    
+
             .. activecode::  ch11ex10a
                 :nocodelens:
 
-		from image import *
+                # STEP 1: USE THE IMAGE LIBRARY
+		        from image import *
+                # STEP 2: PICK THE IMAGE
                 img = Image("baby.jpg")
-
+                # STEP 3: LOOP THROUGH THE PIXELS
                 for x in range(img.getWidth()):
-		    for y in range(img.getHeight()):
-		        p = img.getPixel(x,y)
-
-		        r = p.getRed()
+		            for y in range(img.getHeight()):
+                        # STEP 4: GET THE DATA
+		                p = img.getPixel(x,y)
+		                r = p.getRed()
                         b = p.getBlue()
                         g = p.getGreen()
-
+                        # STEP 5: MODIFY THE COLOR
                         p.setRed(r/2)
                         p.setGreen(g/2)
                         p.setBlue(b/2)
-
+                        # STEP 6: UPDATE THE IMAGE
                         img.updatePixel(p)
-
+                # STEP 7: SHOW THE RESULT
                 win = ImageWin(img.getWidth(),img.getHeight())
                 img.draw(win)
-		
+
         .. tab:: Discussion
 
             .. disqus::
@@ -759,49 +789,50 @@ Below is a selection of images that you can use in the programs in this section.
 
         .. tab:: Question
 
-	   The code below makes the whole image have a blue-green tint. Change the code so that it makes an only blue tint in the bottom left corner.
-	   
+        	   The code below makes the whole image have a blue-green tint. Change the code so that it makes an only blue tint in the bottom left corner.
+
             .. activecode::  ch11ex12q
                 :nocodelens:
 
-		from image import *
+		        from image import *
+                # CREATE AN IMAGE FROM A FILE
+		        img = Image("vangogh.jpg")
+                # LOOP THROUGH THE PIXELS
+        		for x in range(int(img.getWidth()):
+        		    for y in range(int(img.getHeight()):
+                        # GET THE DATA
+        	            p = img.getPixel(x, y)
+                        # SET THE PIXEL
+        			    p.setRed(0)
+                        # UPDATE THE PIXEL
+        			    img.updatePixel(p)
+                # SHOW THE RESULT
+        		win = ImageWin(img.getWidth(),img.getHeight())
+        		img.draw(win)
 
-		img = Image("vangogh.jpg")
-
-		for x in range(int(img.getWidth()):
-		    for y in range(int(img.getHeight()):
-
-	                p = img.getPixel(x, y)
-
-			p.setRed(0)
-			
-			img.updatePixel(p)
-
-		win = ImageWin(img.getWidth(),img.getHeight())
-		img.draw(win)
-		
         .. tab:: Answer
 
-	   You have to iterate through the first half of the image width and the second half of the image height. Also, in the body of the loop, set the green pixel to 0 too.
-	   
+        	   You have to iterate through the first half of the image width and the second half of the image height. Also, in the body of the loop, set the green pixel to 0 too.
+
             .. activecode::  ch11ex12a
                 :nocodelens:
 
-		from image import *
+        		from image import *
+                # CREATE AN IMAGE FROM A FILE
+        		img = Image("vangogh.jpg")
 
-		img = Image("vangogh.jpg")
-
-		for x in range(int(img.getWidth()/2)):
-		    for y in range(int(img.getHeight() / 2), img.getHeight()):
-
-	                p = img.getPixel(x, y)
-
-			p.setRed(0)
-			p.setGreen(0)
-			img.updatePixel(p)
-
-		win = ImageWin(img.getWidth(),img.getHeight())
-		img.draw(win)
+        		for x in range(int(img.getWidth()/2)):
+        		    for y in range(int(img.getHeight() / 2), img.getHeight()):
+                        # GET THE DATA
+        	            p = img.getPixel(x, y)
+                        # SET THE PIXEL
+                		p.setRed(0)
+                		p.setGreen(0)
+                        # UPDATE THE PIXEL
+                		img.updatePixel(p)
+                # SHOW THE RESULT
+        		win = ImageWin(img.getWidth(),img.getHeight())
+        		img.draw(win)
 
         .. tab:: Discussion
 
@@ -885,49 +916,51 @@ Below is a selection of images that you can use in the programs in this section.
 
         .. tab:: Question
 
-	    The code below makes the whole image seem red. Change it, so that only every 5 pixels get changed, so that it will look like a red grid.
-	    
+    	    The code below makes the whole image seem red. Change it, so that only every 5 pixels get changed, so that it will look like a red grid.
+
             .. activecode::  ch11ex14q
                 :nocodelens:
-		
+
                 from image import *
-
-		img = Image("guy1.jpg")
-
-		for x in range(int(img.getWidth())):
-		    for y in range(img.getHeight()):
-
-		    p = img.getPixel(x, y)
-
-		    p.setGreen(0)
-		    p.setBlue(0)
-		    img.updatePixel(p)
-
-		    win = ImageWin(img.getWidth(),img.getHeight())
-		    img.draw(win)
+                # CREATE AN IMAGE FROM A FILE
+        		img = Image("guy1.jpg")
+                # LOOP THROUGH THE PIXELS
+        		for x in range(int(img.getWidth())):
+        		    for y in range(img.getHeight()):
+                    # GET THE DATA
+        		    p = img.getPixel(x, y)
+                    # SET THE PIXEL
+        		    p.setGreen(0)
+        		    p.setBlue(0)
+                    # UPDATE THE IMAGE
+        		    img.updatePixel(p)
+                # SHOW THE RESULT
+    		    win = ImageWin(img.getWidth(),img.getHeight())
+    		    img.draw(win)
 
         .. tab:: Answer
 
-	    In the for loops, add an argument of 0 before the existing argument and add a 5 after the existing argument in the range method.
-	    
+    	    In the for loops, add an argument of 0 before the existing argument and add a 5 after the existing argument in the range method.
+
             .. activecode::  ch11ex14a
                 :nocodelens:
 
                 from image import *
-
-		img = Image("guy1.jpg")
-
-		for x in range(0, int(img.getWidth()), 5):
-		    for y in range(0, img.getHeight(), 5):
-
-		    p = img.getPixel(x, y)
-
-		    p.setGreen(0)
-		    p.setBlue(0)
-		    img.updatePixel(p)
-
-		    win = ImageWin(img.getWidth(),img.getHeight())
-		    img.draw(win)
+                # CREATE AN IMAGE FROM A FILE
+        		img = Image("guy1.jpg")
+                # LOOP THROUGH THE PIXELS
+        		for x in range(0, int(img.getWidth()), 5):
+        		    for y in range(0, img.getHeight(), 5):
+                    # GET THE DATA
+        		    p = img.getPixel(x, y)
+                    # SET THE PIXEL
+        		    p.setGreen(0)
+        		    p.setBlue(0)
+                    # UPDATE THE IMAGE
+        		    img.updatePixel(p)
+                # SHOW THE RESULT
+    		    win = ImageWin(img.getWidth(),img.getHeight())
+    		    img.draw(win)
 
         .. tab:: Discussion
 
@@ -1006,15 +1039,15 @@ Below is a selection of images that you can use in the programs in this section.
         .. tab:: Question
 
             A grayscale picture is when the red, green, and blue value of a pixel are all equal to the average of the original pixel value. Write the code to turn the left half of an image into gray scale.
-	    
+
             .. activecode::  ch11ex16q
                 :nocodelens:
 
-		   
+
         .. tab:: Answer
 
 	   Iterate through only half of the width. Set each color to the average value of the original pixel values.
-	   
+
             .. activecode::  ch11ex16a
                 :nocodelens:
 
@@ -1030,7 +1063,7 @@ Below is a selection of images that you can use in the programs in this section.
 			g = p.getGreen()
 			b = p.getBlue()
 			avg = (r + g + b)/3
-			
+
 			p.setRed(avg)
 			p.setGreen(avg)
 			p.setBlue(avg)
@@ -1102,8 +1135,8 @@ Below is a selection of images that you can use in the programs in this section.
 
         .. tab:: Question
 
-	   Write code that takes the top half of an image and replicates it in the bottom half.
-	   
+    	   Write code that takes the top half of an image and replicates it in the bottom half.
+
             .. activecode::  ch11ex18q
                 :nocodelens:
 
@@ -1112,23 +1145,23 @@ Below is a selection of images that you can use in the programs in this section.
             .. activecode::  ch11ex18a
                 :nocodelens:
 
-		from image import *
+        		from image import *
 
-		img = Image("vangogh.jpg")
+        		img = Image("vangogh.jpg")
 
-		for x in range(int(img.getWidth()):
-		    for y in range(int(img.getHeight()/2)):
+        		for x in range(int(img.getWidth()):
+        		    for y in range(int(img.getHeight()/2)):
 
-		        p = img.getPixel(x, y)
-			r = p.getRed()
-			g = p.getGreen()
-			b = p.getBlue()
+        		        p = img.getPixel(x, y)
+            			r = p.getRed()
+            			g = p.getGreen()
+            			b = p.getBlue()
 
-			newPixel = Pixel(r, g, b)
-			img.setPixel(x, y + int(img.getHeight()/2), newPixel)
+            			newPixel = Pixel(r, g, b)
+            			img.setPixel(x, y + int(img.getHeight()/2), newPixel)
 
                 win = ImageWin(img.getWidth(),img.getHeight())
-		img.draw(win)
+        		img.draw(win)
 
         .. tab:: Discussion
 
@@ -1182,32 +1215,32 @@ Below is a selection of images that you can use in the programs in this section.
 
         .. tab:: Question
 
-	   Write code that flips the image across a horizontal line.
-	   
+            Write code that flips the image across a horizontal line.
+
             .. activecode::  ch11ex20q
                 :nocodelens:
 
-		   
+
         .. tab:: Answer
 
             Follow the code below.
-	    
+
             .. activecode::  ch11ex20a
                 :nocodelens:
 
-		from image import *
+        		from image import *
 
-		img = Image("motorcycle.jpg")
+        		img = Image("motorcycle.jpg")
 
-		last = min(img.getWidth(), img.getHeight())
-		for x in range(last):
-		    for y in range(int(last/2)):
+        		last = min(img.getWidth(), img.getHeight())
+        		for x in range(last):
+        		    for y in range(int(last/2)):
 
-		        p = img.getPixel(x, y)
+        		        p = img.getPixel(x, y)
 
-			img.setPixel(x, img.getHeight() -1 - y, p)
+        			    img.setPixel(x, img.getHeight() -1 - y, p)
 
-	        win = ImageWin(img.getWidth(),img.getHeight())
+	            win = ImageWin(img.getWidth(),img.getHeight())
                 img.draw(win)
 
         .. tab:: Discussion

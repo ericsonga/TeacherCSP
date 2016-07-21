@@ -198,7 +198,7 @@ Below is a selection of images that you can use in the programs in this section.
 
         .. tab:: Question
 
-           Fix the indention in the code below so that it runs correctly.  It does a primitive form of edge detection.
+           Fix the indention in the code below so that it runs correctly.  It does a primitive form of edge detection by getting all of the pixels (except for the last row) and all the pixels to the right of those and determining if the difference between the average of the rgb values for the pixel and the pixel to the right are substantially different.
 
            .. activecode::  ch15ex3q
                 :nocodelens:
@@ -462,7 +462,7 @@ Below is a selection of images that you can use in the programs in this section.
 
         .. tab:: Question
 
-            Fix the indentation so that the code puts the motorcycle on the beach.
+            Fix the indentation so that the code puts the motorcycle on the beach. The code checks if the pixel isn't white in the first image, and if it's not, it places that pixel in the same location on the second image.
 
             .. activecode::  ch15ex6q
                 :nocodelens:
@@ -997,81 +997,85 @@ Below is a selection of images that you can use in the programs in this section.
 
         .. tab:: Question
 
-            Fix the 5 errors in the code so that it edges the motorcycle.
+            Fix the 5 errors in the procedure so that it edges the motorcycle which means the image should only have 2 colors. The motorcycle should be one color, everything else should be the other color.
 
             .. activecode::  ch15ex12q
                 :nocodelens:
 
-                from image import *
+                def edger(img):
+                    # LOOP THROUGH ALL BUT LAST COLUMN
+                    for x in range(img.getWidth() ):
+                        for y in range(img.getHeight()):
+                            p = img.getPixel(x, y)
+                            p2 = img.getPixel(x + 1, y)
+                            r1 = p.getRed()
+                            g1 = p.getGreen()
+                            b1 = p.getBlue()
+                            average1 = (r1 + g1 + b1) / 3
+                            r2 = p2.getRed()
+                            g2 = p2.getGreen()
+                            b2 = p2.getBlue()
+                            average2 = (r2 + g2 + b2) / 3
 
-                # CREATE AN IMAGE FROM A FILE
-                img = Image(motorcycle.jpg)
+                            # VALUES FOR THE NEW COLOR
+                            if abs(average2 - average1) > 10
+                                newPixel = Pixel(0, 0, 0)
+                            else:
+                                newPixel = Pixel(255, 255, 255)
 
-                # LOOP THROUGH ALL BUT LAST COLUMN
-                for x in range(img.getWidth() ):
-                    for y in range(img.getHeight()):
-                        p = img.getPixel(x, y)
-                        p2 = img.getPixel(x + 1, y)
-                        r1 = p.getRed()
-                        g1 = p.getGreen()
-                        b1 = p.getBlue()
-                        average1 = (r1 + g1 + b1) / 3
-                        r2 = p2.getRed()
-                        g2 = p2.getGreen()
-                        b2 = p2.getBlue()
-                        average2 = (r2 + g2 + b2) / 3
+                            # CHANGE THE IMAGE
+                            img.setPixel(x, y, newPixel)
 
-                        # VALUES FOR THE NEW COLOR
-                        if abs(average2 - average1) > 10
-                            newPixel = Pixel(0, 0, 0)
-                        else:
-                            newPixel = Pixel(255, 255, 255)
+                            # SHOW THE CHANGED IMAGE
+                            win = ImageWin(img.getWidth(),img.getHeight())
+                            img.draw(win)
 
-                        # CHANGE THE IMAGE
-                        img.setPixel(x, y, newPixel)
+                    from image import *
 
-                        # SHOW THE CHANGED IMAGE
-                        win = ImageWin(img.getWidth(),img.getHeight())
-                        img.draw(win)
+                    # CREATE AN IMAGE FROM A FILE
+                    img = Image(motorcycle.jpg)
+                    edger(img)
 
         .. tab:: Answer
 
-            The jpg file should be in quotations. You have to change line 7 to ``for x in range(img.getWidth() - 1):``. Add a ``:`` after the if statement. Take the 2 lines where you show the changed image outside of the body of both for loops.
+            The jpg file should be in quotations. You have to change line 3 to ``for x in range(img.getWidth() - 1):``. Add a ``:`` after the if statement. Take the 2 lines where you show the changed image outside of the body of both for loops.
 
             .. activecode::  ch15ex12a
                 :nocodelens:
+
+                def edger(img):
+                    # LOOP THROUGH ALL BUT LAST COLUMN
+                    for x in range(img.getWidth() - 1):
+                        for y in range(img.getHeight()):
+                            p = img.getPixel(x, y)
+                            p2 = img.getPixel(x + 1, y)
+                            r1 = p.getRed()
+                            g1 = p.getGreen()
+                            b1 = p.getBlue()
+                            average1 = (r1 + g1 + b1) / 3
+                            r2 = p2.getRed()
+                            g2 = p2.getGreen()
+                            b2 = p2.getBlue()
+                            average2 = (r2 + g2 + b2) / 3
+
+                            # VALUES FOR THE NEW COLOR
+                            if abs(average2 - average1) > 10:
+                                newPixel = Pixel(0, 0, 0)
+                            else:
+                                newPixel = Pixel(255, 255, 255)
+
+                            # CHANGE THE IMAGE
+                            img.setPixel(x, y, newPixel)
+
+                    # SHOW THE CHANGED IMAGE
+                    win = ImageWin(img.getWidth(),img.getHeight())
+                    img.draw(win)
 
                 from image import *
 
                 # CREATE AN IMAGE FROM A FILE
                 img = Image("motorcycle.jpg")
-
-                # LOOP THROUGH ALL BUT LAST COLUMN
-                for x in range(img.getWidth() - 1):
-                    for y in range(img.getHeight()):
-                        p = img.getPixel(x, y)
-                        p2 = img.getPixel(x + 1, y)
-                        r1 = p.getRed()
-                        g1 = p.getGreen()
-                        b1 = p.getBlue()
-                        average1 = (r1 + g1 + b1) / 3
-                        r2 = p2.getRed()
-                        g2 = p2.getGreen()
-                        b2 = p2.getBlue()
-                        average2 = (r2 + g2 + b2) / 3
-
-                        # VALUES FOR THE NEW COLOR
-                        if abs(average2 - average1) > 10:
-                            newPixel = Pixel(0, 0, 0)
-                        else:
-                            newPixel = Pixel(255, 255, 255)
-
-                        # CHANGE THE IMAGE
-                        img.setPixel(x, y, newPixel)
-
-                # SHOW THE CHANGED IMAGE
-                win = ImageWin(img.getWidth(),img.getHeight())
-                img.draw(win)
+                edger(img)
 
         .. tab:: Discussion
 
@@ -1640,7 +1644,7 @@ Below is a selection of images that you can use in the programs in this section.
                     img.draw(win)
 
                 redToGray("gal2.jpg")
-                
+
         .. tab:: Discussion
 
             .. disqus::

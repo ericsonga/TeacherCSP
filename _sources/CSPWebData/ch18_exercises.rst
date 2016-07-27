@@ -407,7 +407,6 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
        Watertown, SD :18 :11
        Weirton-Steubenville, WV-OH :20 :12
        Wenatchee, WA :17 :10
-       Wheeling, WV-OH :20 :12
        Wichita, KS :16 :9
        Wilmington, NC :14 :9
        Winchester, VA-WV :16 :10
@@ -419,6 +418,78 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
        Yuba City, CA :12 :7
        Yuma, AZ :14 :9
        </pre>
+
+This data set shows stats from the NBA in the order: Name, Team, Age, Games Played, Games Won, Average Minutes per Game, Average Points per Game
+
+::
+
+      Walter Tavares,ATL,24,11,7,6.6,2.3
+      Mike Muscala,ATL,24,60,34,9.4,3.3
+      Paul Millsap,ATL,31,81,48,32.7,17.1
+      Kent Bazemore,ATL,26,75,44,27.8,11.6
+      Kirk Hinrich,ATL,35,46,26,13.7,3
+      Al Horford,ATL,30,82,48,32.1,15.2
+      Thabo Sefolosha,ATL,32,75,42,23.4,6.4
+      Tim Hardaway Jr.,ATL,24,51,29,16.9,6.4
+      Lamar Patterson,ATL,24,35,23,11.3,2.4
+
+
+If you want to see **all** of the data click on the *Show* button below.  Once it appears, you can hide it again by clicking on the *Hide* button.
+
+.. reveal:: pol_Data1
+   :showtitle: Show
+   :hidetitle: Hide
+
+   .. raw:: html
+
+      <pre id="sports.txt">
+      Walter Tavares,ATL,24,11,7,6.6,2.3
+      Mike Muscala,ATL,24,60,34,9.4,3.3
+      Paul Millsap,ATL,31,81,48,32.7,17.1
+      Kent Bazemore,ATL,26,75,44,27.8,11.6
+      Kirk Hinrich,ATL,35,46,26,13.7,3
+      Al Horford,ATL,30,82,48,32.1,15.2
+      Thabo Sefolosha,ATL,32,75,42,23.4,6.4
+      Tim Hardaway Jr.,ATL,24,51,29,16.9,6.4
+      Lamar Patterson,ATL,24,35,23,11.3,2.4
+      Mike Scott,ATL,27,75,46,15.3,6.2
+      Dennis Schroder,ATL,22,80,47,20.3,11
+      Kris Humphries,ATL,31,53,29,15.7,6.5
+      Jeff Teague,ATL,28,79,47,28.5,15.7
+      Tiago Splitter,ATL,31,36,21,16.1,5.6
+      Kyle Korver,ATL,35,80,46,30,9.2
+      Tristan Thompson,CLE,25,82,57,27.7,7.8
+      Sasha Kaun,CLE,31,25,18,3.8,0.9
+      Kyrie Irving,CLE,24,53,37,31.5,19.6
+      Jordan McRae,CLE,25,22,10,8.9,4.5
+      Jared Cunningham,CLE,25,44,31,9.3,2.7
+      Channing Frye,CLE,33,70,35,17.1,6.1
+      Kevin Love,CLE,27,77,53,31.5,16
+      James Jones,CLE,35,48,33,9.7,3.7
+      Dahntay Jones,CLE,35,1,0,42.4,13
+      Richard Jefferson,CLE,36,74,51,17.9,5.5
+      Joe Harris,CLE,24,5,5,3,0.6
+      Timofey Mozgov,CLE,29,76,52,17.4,6.3
+      Iman Shumpert,CLE,26,54,39,24.4,5.8
+      Mo Williams,CLE,33,41,27,18.2,8.2
+      J.R. Smith,CLE,30,77,53,30.7,12.4
+      LeBron James,CLE,31,76,56,35.6,25.3
+      Matthew Dellavedova,CLE,25,76,54,24.6,7.5
+      Stephen Curry,GSW,28,79,71,34.2,30.1
+      Marreese Speights,GSW,28,72,64,11.6,7.1
+      Brandon Rush,GSW,30,72,63,14.6,4.2
+      Klay Thompson,GSW,26,80,71,33.3,22.1
+      Draymond Green,GSW,26,81,73,34.7,14
+      James Michael McAdoo,GSW,23,41,37,6.4,2.9
+      Ian Clark,GSW,25,66,59,8.8,3.6
+      Andrew Bogut,GSW,31,70,62,20.7,5.4
+      Leandro Barbosa,GSW,33,68,60,15.9,6.4
+      Harrison Barnes,GSW,24,66,59,30.9,11.7
+      Festus Ezeli,GSW,26,46,42,16.7,7
+      Kevon Looney,GSW,20,5,4,4.1,1.8
+      Shaun Livingston,GSW,30,78,69,19.5,6.3
+      Andre Iguodala,GSW,32,65,59,26.6,7
+      Anderson Varejao,GSW,33,53,41,9.4,2.6
 
 #.
 
@@ -637,7 +708,7 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch18ex9q
+                :identifier: teachercsp_ch18ex5q
 
 #.
 
@@ -755,7 +826,7 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
             .. disqus::
                 :shortname: cslearn4u
-                :identifier: teachercsp_ch18ex5q
+                :identifier: teachercsp_ch18ex7q
 
 #.
 
@@ -763,13 +834,34 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
         .. tab:: Question
 
+            Write a procedure that takes in the file name as a parameter and prints out all the cities that start with a vowel (a,e,i,o, or u) and their associated pollution values.
+
             .. activecode::  ch18ex8q
                 :nocodelens:
 
         .. tab:: Answer
 
+            Define a procedure like shown below
+
             .. activecode::  ch18ex8a
                 :nocodelens:
+
+                def vowelFinder(file):
+                    inFile = open(file,"r")
+                    line = inFile.readline()
+                    while line:
+                        values = line.split(":")
+                        city = values[0]
+                        if (city.find("A") == 0 or city.find("E") == 0):
+                            print('City: ', city, "Pollution values:",values[1],values[2])
+                        if (city.find("I") == 0 or city.find("O") == 0):
+                            print('City: ', city, "Pollution values:",values[1],values[2])
+                        if (city.find("U") == 0):
+                            print('City: ', city, "Pollution values:",values[1],values[2])
+
+                        line = inFile.readline()
+
+                    inFile.close()
 
         .. tab:: Discussion
 
@@ -826,7 +918,7 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch18ex7q
+                :identifier: teachercsp_ch18ex9q
 
 #.
 
@@ -834,13 +926,27 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
         .. tab:: Question
 
-            .. activecode::  ch18ex10q
+           Write a function that finds the maximum value in a list.  Pass in the list and return the maximum value.  Call the function and print the result.
+
+           .. activecode::  ch18ex10q
                 :nocodelens:
 
         .. tab:: Answer
 
+            Write the function as shown below.  Be sure to set the initial value to something from the list.  Call the function and print the result.
+
             .. activecode::  ch18ex10a
                 :nocodelens:
+
+                def findMax(theList):
+                    max = theList[0]
+                    for value in theList:
+                        if value > max:
+                            max = value
+                    return max
+
+                print(findMax([-30, 20, -50, 100, -100]))
+
 
         .. tab:: Discussion
 
@@ -905,36 +1011,16 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
         .. tab:: Question
 
-            .. activecode::  ch18ex12q
-                :nocodelens:
-
-        .. tab:: Answer
-
-            .. activecode::  ch18ex12a
-                :nocodelens:
-
-        .. tab:: Discussion
-
-            .. disqus::
-                :shortname: teachercsp
-                :identifier: teachercsp_ch18ex12q
-
-#.
-
-    .. tabbed:: ch18ex13t
-
-        .. tab:: Question
-
            Write a procedure that takes the name of a city and prints the pollution values for that city if it is found.
 
-           .. activecode::  ch18ex13q
+           .. activecode::  ch18ex12q
                 :nocodelens:
 
         .. tab:: Answer
 
             Define the procedure and call it.  Be sure to pass the city name to the procedure.
 
-            .. activecode::  ch18ex13a
+            .. activecode::  ch18ex12a
                 :nocodelens
 
                 def printPollution(inFile,cityName):
@@ -957,6 +1043,62 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
             .. disqus::
                 :shortname: teachercsp
+                :identifier: teachercsp_ch18ex12q
+
+#.
+
+    .. tabbed:: ch18ex13t
+
+        .. tab:: Question
+
+            Complete the code at the ``#`` to figure out who lost the most games. Remember, games lost = games played - games won. The procedure should print out the name of the player and how many games they lost. Don't worry about ties, it should print only one name and score.
+
+            .. activecode::  ch18ex13q
+                :nocodelens:
+
+                def gamesLost(file):
+                    maxLost = 0
+                    lines = file.readlines()
+                    for # in lines:
+                        values = line.split(#)
+                        gamesPlayed = float(values[#])
+                        gamesWon = float(values[4])
+                        gamesLost = gamesPlayed # gamesLost
+                        if (gamesLost # maxLost):
+                            maxLost = gamesLost
+                            player = values[#]
+                    print(player + " lost " + maxLost)
+
+                file = open("sports.txt", "r")
+                gamesLost(file)
+
+        .. tab:: Answer
+
+            Complete as shown below.
+
+            .. activecode::  ch18ex13a
+                :nocodelens:
+
+                def gamesLost(file):
+                    maxLost = 0
+                    lines = file.readlines()
+                    for line in lines:
+                        values = line.split(",")
+                        gamesPlayed = float(values[3])
+                        gamesWon = float(values[4])
+                        gamesLost = gamesPlayed - gamesLost
+                        if (gamesLost > maxLost):
+                            maxLost = gamesLost
+                            player = values[0]
+                    print(player + " lost " + maxLost)
+
+                file = open("sports.txt", "r")
+                gamesLost(file)
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: teachercsp
                 :identifier: teachercsp_ch18ex13q
 
 #.
@@ -965,32 +1107,37 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
         .. tab:: Question
 
-            Write a procedure that takes in the file name as a parameter and prints out all the cities that start with a vowel (a,e,i,o, or u) and their associated pollution values.
+            Fix the errors below so that the procedure prints all the names of the players who averaged more than 10 points a game.
 
             .. activecode::  ch18ex14q
                 :nocodelens:
 
+                def playerScore(file):
+                    lines = file.readlines()
+                    for lines in lines:
+                    values = line.split()
+                    score = str(line[7])
+                    if score < 10:
+                        print(line[0])
+                file = open("sports.txt", "r")
+                playerScore(file)
+
         .. tab:: Answer
+
+            Fix the indentation of the body of the for loop. Line 3 should be ``line in lines`` instead of ``lines in lines``. Line 4 should be ``split(",")``. Line 5 should be ``float(line[6])``. Line 6 should be ``>``.
 
             .. activecode::  ch18ex14a
                 :nocodelens:
 
-                def vowelFinder(file):
-                    inFile = open(file,"r")
-                    line = inFile.readline()
-                    while line:
-                        values = line.split(":")
-                        city = values[0]
-                        if (city.find("A") == 0 or city.find("E") == 0):
-                            print('City: ', city, "Pollution values:",values[1],values[2])
-                        if (city.find("I") == 0 or city.find("O") == 0):
-                            print('City: ', city, "Pollution values:",values[1],values[2])
-                        if (city.find("U") == 0):
-                            print('City: ', city, "Pollution values:",values[1],values[2])
-
-                        line = inFile.readline()
-
-                    inFile.close()
+                def playerScore(file):
+                    lines = file.readlines()
+                    for lines in lines:
+                        values = line.split()
+                        score = str(line[7])
+                        if score < 10:
+                            print(line[0])
+                file = open("sports.txt", "r")
+                playerScore(file)
 
         .. tab:: Discussion
 
@@ -1004,28 +1151,39 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
         .. tab:: Question
 
-           Write a function that takes a list and returns the minimum value in the list.
+            The code currently prints the player with the least minutes per game. Change it so it prints the player with the most minutes per game.
 
-           .. activecode::  ch18ex15q
+            .. activecode::  ch18ex15q
                 :nocodelens:
 
+                file = open("sports.txt". "r")
+                lines = file.readlines()
+                minMin = 100
+                for line in lines:
+                    values = line.split(",")
+                    minutes = values[5]
+                    if minutes < minMin:
+                        minMin = minutes
+                        player = values[0]
+                print(player)
 
         .. tab:: Answer
 
-           Write the function as shown below.  Be sure to set the initial value to something from the list.  Call the function and print the result.
+            Change line 3 to ``0`` and line 7 to ``>``.
 
             .. activecode::  ch18ex15a
                 :nocodelens:
 
-                def findMin(theList):
-                    min = theList[0]
-                    for value in theList:
-                        if value < min:
-                            min = value
-                    return min
-
-                print(findMin([-30, 20, -50, 100, -100]))
-
+                file = open("sports.txt". "r")
+                lines = file.readlines()
+                minMin = 0
+                for line in lines:
+                    values = line.split(",")
+                    minutes = values[5]
+                    if minutes > minMin:
+                        minMin = minutes
+                        player = values[0]
+                print(player)
 
         .. tab:: Discussion
 
@@ -1039,13 +1197,35 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
         .. tab:: Question
 
+            The code below prints all the names of the players whose first names start with "J". Change it to print the name of the players whose last names start with "J". (Hint: you need to add two lines after line 5 and change something on line 6)
+
             .. activecode::  ch18ex16q
                 :nocodelens:
 
+                file = open("sports.txt", "r")
+                lines = file.readlines()
+                for line in lines:
+                    values = line.split(",")
+                    name = values[0]
+                    if name[0] == "J":
+                        print(name)
+
         .. tab:: Answer
+
+            Split the name by the space and find the first letter of the second item in the new list.
 
             .. activecode::  ch18ex16a
                 :nocodelens:
+
+                file = open("sports.txt", "r")
+                lines = file.readlines()
+                for line in lines:
+                    values = line.split(",")
+                    name = values[0]
+                    lastName = name.split(" ")
+                    last = lastName[1]
+                    if last[0] == "J":
+                        print(name)
 
         .. tab:: Discussion
 
@@ -1059,28 +1239,32 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
         .. tab:: Question
 
-           Write a function that finds the maximum value in a list.  Pass in the list and return the maximum value.  Call the function and print the result.
+            Write a procedure that takes in a file and a capital letter and prints the average of the average points scored by all players whose names start with that letter.
 
-           .. activecode::  ch18ex17q
+            .. activecode::  ch18ex17q
                 :nocodelens:
 
         .. tab:: Answer
 
-            Write the function as shown below.  Be sure to set the initial value to something from the list.  Call the function and print the result.
+            Write a procedure like shown below.
 
             .. activecode::  ch18ex17a
                 :nocodelens:
 
-                def findMax(theList):
-                    max = theList[0]
-                    for value in theList:
-                        if value > max:
-                            max = value
-                    return max
-
-                print(findMax([-30, 20, -50, 100, -100]))
-
-
+                def namePoints(file, letter):
+                    file = open(file, "r")
+                    lines = file.readlines()
+                    sum = 0
+                    count = 0
+                    for line in lines:
+                        values = line.split(",")
+                        points = float(values[6])
+                        if values[0].find(letter) > 0:
+                            sum = sum + points
+                            count += 1
+                    average = sum / count
+                    print(average)
+                    
         .. tab:: Discussion
 
             .. disqus::
@@ -1093,13 +1277,34 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
         .. tab:: Question
 
+            Write a function that takes a file name and the abbreviation for a team (i.e. ATL, GSW, CLE) as parameters and returns the average age of the members of that team. (Hint: Use a counter variable to keep track of how many players are on the team)
+
             .. activecode::  ch18ex18q
                 :nocodelens:
 
         .. tab:: Answer
 
+            Define a function like below.
+
             .. activecode::  ch18ex18a
                 :nocodelens:
+
+                def teamAge(file, team):
+                    lines = file.readlines()
+                    age = 0
+                    counter = 0
+                    for line in lines:
+                        values = line.strip(",")
+                        city = values[1]
+                        if city == team:
+                            playerAge = float(values[2])
+                            age = age + playerAge
+                            counter += 1
+                    averageAge = age / counter
+                    return averageAge
+
+                file = open("sports.txt", "r")
+                print(teamAge(file, "ATL"))
 
         .. tab:: Discussion
 
@@ -1113,26 +1318,32 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
         .. tab:: Question
 
-           Write a function that calculates the average of all values in the list.  Return the average.
+            Write a function that returns the players with the most points per minute. (Points per game / minutes per game = points per minute).
 
            .. activecode::  ch18ex19q
                :nocodelens:
 
         .. tab:: Answer
 
-            Create a function and pass in the list.  Accumulate the sum and calculate the average and return it.  Call the function and print the result.
+            Define a function like below.
 
             .. activecode::  ch18ex19a
                 :nocodelens:
 
-                def getAverage(theList):
-                    sum = 0
-                    for item in theList:
-                        sum = sum + item
-                    return sum / len(theList)
+                def pointsPerMinute(file):
+                    lines = file.readlines()
+                    maxPointsPerMinute = 0
+                    for line in lines:
+                        values = line.split(",")
+                        points = float(values[6])
+                        minutes = float(values[5])
+                        ppm = points/minutes
+                        if ppm > maxPointsPerMinute:
+                            maxPointsPerMinute = ppm
+                    return maxPointsPerMinute
 
-                print(getAverage([80, 90, 70]))
-
+                file = open("sports.txt", "r")
+                print(pointsPerMinute(file))
 
         .. tab:: Discussion
 
@@ -1146,13 +1357,35 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
         .. tab:: Question
 
+            Write a function that takes a file as a parameter and finds the oldest player who scored the most points. Return the name, age, and number of points.
+
             .. activecode::  ch18ex20q
                 :nocodelens:
 
         .. tab:: Answer
 
+            Define a function like below.
+
             .. activecode::  ch18ex20a
                 :nocodelens:
+
+                def oldPoints(file):
+                    file = open(file, "r")
+                    lines = file.readlines()
+                    maxAge = 0
+                    maxPoints = 0
+                    for line in lines:
+                        values = line.split(",")
+                        name = float(values[0])
+                        points = float(values[6])
+                        age = float(values[2])
+                        if age >= maxAge:
+                            maxAge = age
+                            if points > maxPoints:
+                                maxPoints = points
+                    return name + ", " + maxAge + " years old, scored" + maxPoints
+
+                print(oldPoints("sports.txt"))
 
         .. tab:: Discussion
 

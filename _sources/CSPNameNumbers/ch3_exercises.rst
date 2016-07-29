@@ -457,6 +457,7 @@ Chapter 3 Exercises
         .. tab:: Answer
 
             The time on the clock can be represented as a modulus of 12.
+
             .. activecode::  ch3ex12a
                 :nocodelens:
 

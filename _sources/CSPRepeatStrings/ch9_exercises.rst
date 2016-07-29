@@ -87,7 +87,7 @@ Chapter 9 Exercises
 
         .. tab:: Answer
 
-            In line 3, ``newString`` should equal ``newString + letter + '' ``. The order does matter.
+            In line 3, ``newString`` should equal ``newString + letter + " "``. The order does matter.
 
             .. activecode::  ch9ex2a
                 :nocodelens:

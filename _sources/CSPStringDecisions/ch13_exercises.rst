@@ -268,6 +268,7 @@ Chapter 13 Exercises
         .. tab:: Answer
 
             Use ``elif`` clause for the second one.
+            
             .. activecode::  ch13ex6a
                 :nocodelens:
 

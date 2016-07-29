@@ -931,7 +931,7 @@ Chapter 14 Exercises
 
         .. tab:: Answer
 
-            The if staement should be ``mia.xcor() - jaz.xcor() < 40''.
+            The if staement should be ``mia.xcor() - jaz.xcor() < 40``.
 
             .. activecode::  ch14ex14a
                 :nocodelens:
@@ -1230,7 +1230,7 @@ Chapter 14 Exercises
 
         .. tab:: Question
 
-            Write code that uses 2 turtles and a for loop to get a range of numbers. You should change the color of the based off if the number from the for loop is even or odd. The two turtles should move towards each other but turn away and move when they are about to intersect. 
+            Write code that uses 2 turtles and a for loop to get a range of numbers. You should change the color of the based off if the number from the for loop is even or odd. The two turtles should move towards each other but turn away and move when they are about to intersect.
 
             .. activecode::  ch14ex20q
                 :nocodelens:

@@ -570,7 +570,7 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
         .. tab:: Answer
 
             In line 10, ``city`` should equal ``values[0]``. In line 11, it should be ``0`` not ``-1``. Indent the count so it is in the body of the if statement.
-            
+
             .. activecode::  ch18ex2a
                 :nocodelens:
 
@@ -723,7 +723,7 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
             Indent lines 8 through 12 as shown below.
 
-            .. activecode::  ch18ex9a
+            .. activecode::  ch18ex5a
                 :nocodelens:
 
                 inFile = open("uspoll.txt","r")

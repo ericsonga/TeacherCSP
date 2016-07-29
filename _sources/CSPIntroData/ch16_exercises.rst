@@ -192,7 +192,7 @@ Chapter 16 Exercises
 
             Add a ``,`` between 6 and 8 on line 7.  Change the ``'`` to a ``"`` on line 2.  Put a ``[`` before the 0 on line 3.  Add ``(`` before ``items`` and ``)`` after on line 5.
 
-            .. activecode::  ch16ex9a
+            .. activecode::  ch16ex5a
                 :nocodelens:
 
                 def itemLister(itemList):
@@ -207,7 +207,7 @@ Chapter 16 Exercises
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch16ex9q
+                :identifier: teachercsp_ch16ex5q
 
 #.
 
@@ -288,7 +288,7 @@ Chapter 16 Exercises
 
             .. disqus::
                 :shortname: cslearn4u
-                :identifier: teachercsp_ch16ex5q
+                :identifier: teachercsp_ch16ex7q
 
 #.
 
@@ -376,7 +376,7 @@ Chapter 16 Exercises
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch16ex7q
+                :identifier: teachercsp_ch16ex9q
 
 #.
 
@@ -563,11 +563,8 @@ Chapter 16 Exercises
 
         .. tab:: Question
 
-<<<<<<< HEAD
-            Fix the errors so that the list ``slowly`` prints the same exact list as ``source``
-=======
             Fix the errors so that the code individually adds each item from ``source`` to ``newList``. Make the range decrement, so it starts from the end, but keep ``newList`` in the same order as ``source``.
->>>>>>> 23a72c28d1336d1fc45ec6d536b0df25571e7ef8
+
 
             .. activecode::  ch16ex14q
                 :nocodelens:

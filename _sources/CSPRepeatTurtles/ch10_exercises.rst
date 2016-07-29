@@ -68,11 +68,11 @@ Chapter 10 Exercises
             .. activecode::  ch10ex2q
                 :nocodelens:
 
-                from turtle import *
-                space = Screen()
-                alisha = Turtle()
-                alisha.setheading(90)
-                for sides in [1,2,3,4]:
+                from turtle import *      # use the turtle library
+                space = Screen()          # create a turtle space
+                alisha = Turtle()         # create a turtle named alisha
+                alisha.setheading(90)     # point due north
+                for sides in [1,2,3,4]:   # repeat the indented lines 4 times
                     alisha.forward(100)
                     alisha.right(90)
 
@@ -83,11 +83,11 @@ Chapter 10 Exercises
             .. activecode::  ch10ex2a
                 :nocodelens:
 
-                from turtle import *
-                space = Screen()
-                alisha = Turtle()
-                alisha.setheading(90)
-                for sides in [1,2,3]:
+                from turtle import *      # use the turtle library
+                space = Screen()          # create a turtle space
+                alisha = Turtle()         # create a turtle named alisha
+                alisha.setheading(90)     # point due north
+                for sides in [1,2,3]:     # repeat the indented lines 3 times
                     alisha.forward(100)
                     alisha.right(120)
 
@@ -504,8 +504,8 @@ Chapter 10 Exercises
                 :nocodelens:
 
                 from turtle import *
-                for sys import *
-                setExecutionLimit(50000)
+                for sys import *              # use the system library
+                setExecutionLimit(50000)      # let this take up to 50 seconds
                 space = Screen()
                 t = x
                 t.setHeading(90)
@@ -526,8 +526,8 @@ Chapter 10 Exercises
                 :nocodelens:
 
                 from turtle import *
-                for sys import *
-                setExecutionLimit(50000)
+                for sys import *              # use the system library
+                setExecutionLimit(50000)      # let this take up to 50 seconds
                 space = Screen()
                 t = Turtle()
                 t.setHeading(90)
@@ -694,8 +694,8 @@ Chapter 10 Exercises
                 :nocodelens:
 
                 from turtle import *
-                from sys import *
-                setExecutionLimit(50000)
+                from sys import *               # use the system library
+                setExecutionLimit(50000)        # let this take up to 50 seconds
                 space = Screen()
                 zoe = Turtle()
 
@@ -707,8 +707,8 @@ Chapter 10 Exercises
                 :nocodelens:
 
                 from turtle import *
-                from sys import *
-                setExecutionLimit(50000)
+                from sys import *               # use the system library
+                setExecutionLimit(50000)        #let this take up to 50 seconds
                 space = Screen()
                 zoe = Turtle()
                 zoe.setheading(90)

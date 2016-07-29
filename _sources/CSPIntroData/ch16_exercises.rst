@@ -133,29 +133,35 @@ Chapter 16 Exercises
 
         .. tab:: Question
 
-            Fix the errors so that it prints "My name is JohnJohn" and "19".
+            Fix the errors so that the procedure prints "My name is JohnJohn" and "19".
 
             .. activecode::  ch16ex4q
                 :nocodelens:
 
-                name = John
+                def nameProcedure(name):
                 start = "My name is"
                 combined = start * (name * 2)
                 print(combined)
                 print(len(combined)
 
+
+                nameProcedure(John)
+
         .. tab:: Answer
 
-            Add quotations around John on line 1. Add a space after "is" in line 2. In line 3, change the ``*`` after start to a ``+``. In line 5 add a ``)`` after combined.
+            Add quotations around John on line 8. Add a space after "is" in line 2. In line 3, change the ``*`` after start to a ``+``. In line 5 add a ``)`` after combined. Indent lines 2 through 5.
 
             .. activecode::  ch16ex4a
                 :nocodelens:
 
-                name = "John"
-                start = "My name is "
-                combined = start + (name * 2)
-                print(combined)
-                print(len(combined))
+                def nameProcedure(name):
+                    start = "My name is "
+                    combined = start + (name * 2)
+                    print(combined)
+                    print(len(combined))
+
+
+                nameProcedure("John")
 
         .. tab:: Discussion
 
@@ -174,24 +180,28 @@ Chapter 16 Exercises
            .. activecode::  ch16ex5q
                 :nocodelens:
 
-               items = [2,4,6 8]
-               items[0] = "First item'
-               items[1] = items0]
-               items[2] = items[2] + 1
-               print items
+               def itemLister(itemList):
+                   items[0] = "First item'
+                   items[1] = items0]
+                   items[2] = items[2] + 1
+                   print items
+
+                itemLister([2,4,6 8])
 
         .. tab:: Answer
 
-            Add a ``,`` between 6 and 8 on line 1.  Change the ``'`` to a ``"`` on line 2.  Put a ``[`` before the 0 on line 3.  Add ``(`` before ``items`` and ``)`` after on line 5.
+            Add a ``,`` between 6 and 8 on line 7.  Change the ``'`` to a ``"`` on line 2.  Put a ``[`` before the 0 on line 3.  Add ``(`` before ``items`` and ``)`` after on line 5.
 
             .. activecode::  ch16ex9a
                 :nocodelens:
 
-                items = [2,4,6,8]
-                items[0] = "First item"
-                items[1] = items[0]
-                items[2] = items[2] + 1
-                print(items)
+                def itemLister(itemList):
+                    items[0] = "First item"
+                    items[1] = items[0]
+                    items[2] = items[2] + 1
+                    print(items)
+
+                itemLister([2,4,6,8])
 
         .. tab:: Discussion
 
@@ -205,29 +215,37 @@ Chapter 16 Exercises
 
         .. tab:: Question
 
-            On line 4, add 2 of the 3 lists together so that the code prints "4".
+            Complete the code on lines 4 and 5 so that the function returns the average of a list of integers.
 
             .. activecode::  ch16ex6q
                 :nocodelens:
 
-                list1 = [6, "six", "6"]
-                list2 = ["apple", "banana", "orange", "grape"]
-                list3 = ["hi"]
-                newList =
-                print(len(newList))
+                def gradeAverage(aList):
+                    sum = 0
+                    for num in aList:
+
+                    average =
+                    return average
+
+                aList = [99, 100, 74, 63, 100, 100]
+                print(gradeAverage(aList))
 
         .. tab:: Answer
 
-            Add the first and third list together.
+            On line 4, add ``sum = sum + num`` and on line 5, add ``sum/ len(aList)``.
 
             .. activecode::  ch16ex6a
                 :nocodelens:
 
-                list1 = [6, "six", "6"]
-                list2 = ["apple", "banana", "orange", "grape"]
-                list3 = ["hi"]
-                newList = list1 + list3
-                print(len(newList))
+                def gradeAverage(aList):
+                    sum = 0
+                    for num in aList:
+                        sum = sum + num
+                    average =  sum / len(aList)
+                    return average
+
+                aList = [99, 100, 74, 63, 100, 100]
+                print(gradeAverage(aList))
 
         .. tab:: Discussion
 
@@ -545,23 +563,27 @@ Chapter 16 Exercises
 
         .. tab:: Question
 
+<<<<<<< HEAD
             Fix the errors so that the list ``slowly`` prints the same exact list as ``source``
+=======
+            Fix the errors so that the code individually adds each item from ``source`` to ``newList``. Make the range decrement, so it starts from the end, but keep ``newList`` in the same order as ``source``.
+>>>>>>> 23a72c28d1336d1fc45ec6d536b0df25571e7ef8
 
             .. activecode::  ch16ex14q
                 :nocodelens:
 
                 # initialize the variables
                 source = ["This","is","a","list"]
-                slowly = []
+                newList = []
 
                 # loop from the last index to the first (0)
                 for index in range(len(source), 1, -1):
 
                 # append the lists
-                slowly = slowly + [source[index]]
+                newList = newList + [source[index]]
 
                 # print the current value of the list
-                print(slowly)
+                print(newList)
 
         .. tab:: Answer
 
@@ -572,16 +594,16 @@ Chapter 16 Exercises
 
                 # initialize the variables
                 source = ["This","is","a","list"]
-                slowly = []
+                newList = []
 
                 # loop from the last index to the first (0)
                 for index in range(len(source) - 1, -1, -1):
 
                     # append the lists
-                    slowly = [source[index]] + slowly
+                    newList = [source[index]] + newList
 
-                    # print the current value of the list
-                    print(slowly)
+                # print the current value of the list
+                print(newList)
 
         .. tab:: Discussion
 

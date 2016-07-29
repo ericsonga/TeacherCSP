@@ -94,64 +94,74 @@ Chapter 14 Exercises
             .. activecode::  ch14ex2q
                 :nocodelens:
 
+                def draw(jaz, maxX):
+                    for x in range(3):
+                        jaz.forward(100)
+                        jaz.right(120)
+                        jaz.forward(100)
+                        jaz.left(120)
+                        if (jaz.xcor() <= maxX):
+                            jaz.penup()
+                            jaz.goto(-1 * maxX,jaz.ycor() - 100)
+                            jaz.pendown()
+
+                def turtleSetup(width, jaz):
+                    space.setup(width,width)  # set the space width and height
+                    maxX = width / 2          # set the max x value to half the width
+                    jaz.shape('turtle')
+                    jaz.penup()
+                    jaz.goto(-1 * maxX,100)
+                    jaz.pendown()
+                    jaz.left(60)
+                    draw(jaz, maxX)
+
+
                 from turtle import *      # use the turtle library
                 from sys import *         # use the system library
                 setExecutionLimit(50000)  # let this take up to 50 seconds
                 space = Screen()          # create a turtle screen (space)
-
-                width = 400               # set the desired width
-                space.setup(width,width)  # set the space width and height
-                maxX = width / 2          # set the max x value to half the width
-
                 jaz = Turtle()
-                jaz.shape('turtle')
-                jaz.penup()
-                jaz.goto(-1 * maxX,100)
-                jaz.pendown()
-                jaz.left(60)
+                width = 400
 
-                for x in range(3):
-                    jaz.forward(100)
-                    jaz.right(120)
-                    jaz.forward(100)
-                    jaz.left(120)
-                    if (jaz.xcor() <= maxX):
-                        jaz.penup()
-                        jaz.goto(-1 * maxX,jaz.ycor() - 100)
-                        jaz.pendown()
+                turtleSetup(width, jaz)
 
         .. tab:: Answer
 
+            On line 7, change ``<=`` to ``>=``.
 
             .. activecode::  ch14ex2a
                 :nocodelens:
 
+                def draw(jaz, maxX):
+                    for x in range(3):
+                        jaz.forward(100)
+                        jaz.right(120)
+                        jaz.forward(100)
+                        jaz.left(120)
+                        if (jaz.xcor() >= maxX):
+                            jaz.penup()
+                            jaz.goto(-1 * maxX,jaz.ycor() - 100)
+                            jaz.pendown()
+
+                def turtleSetup(width, jaz):
+                    space.setup(width,width)  # set the space width and height
+                    maxX = width / 2          # set the max x value to half the width
+                    jaz.shape('turtle')
+                    jaz.penup()
+                    jaz.goto(-1 * maxX,100)
+                    jaz.pendown()
+                    jaz.left(60)
+                    draw(jaz, maxX)
+
+
                 from turtle import *      # use the turtle library
                 from sys import *         # use the system library
                 setExecutionLimit(50000)  # let this take up to 50 seconds
                 space = Screen()          # create a turtle screen (space)
-
-                width = 400               # set the desired width
-                space.setup(width,width)  # set the space width and height
-                maxX = width / 2          # set the max x value to half the width
-
                 jaz = Turtle()
-                jaz.shape('turtle')
-                jaz.penup()
-                jaz.goto(-1 * maxX,100)
-                jaz.pendown()
-                jaz.left(60)
+                width = 400
 
-                for x in range(3):
-                    jaz.forward(100)
-                    jaz.right(120)
-                    jaz.forward(100)
-                    jaz.left(120)
-                    if (jaz.xcor() >= maxX):
-                        jaz.penup()
-                        jaz.goto(-1 * maxX,jaz.ycor() - 100)
-                        jaz.pendown()
-
+                turtleSetup(width, jaz)
         .. tab:: Discussion
 
             .. disqus::
@@ -313,39 +323,65 @@ Chapter 14 Exercises
            .. activecode::  ch14ex5q
                 :nocodelens:
 
-                from turtle *             # use the turtle library
+                def turtleLoop(jaz, maxX)
+                    for x in range(10):       # repeat the body 10 times
+                        jaz.forward100)           # go forward 100
+                        jaz.right(120)             # turn right 120 degrees
+                        jaz.forward(100)           # go forward 100
+                        jaz.left(120              # turn left 120 degrees
+                        if (jaz.xcor() >= maxX):   # if at right edge of space
+                            jaz.penup()                # pick up the pen
+                            jaz.goto(-1 * maxX,jaz.ycor() - 100)  # move left & down
+                            jaz.pendown()              # put the pen down
+
+                def turtleProcedure(width, jaz)
+                    space.setup(width,width)  # set the space width and height
+                    maxX = width / 2          # set the max x value to half the width
+                    jaz.shape('turtle')       # set the shape for jaz to turtle
+                    jaz.penup()               # pick up the pen (don't draw)
+                    jaz.goto(-1 * maxX,100)   # go to the left side of the space
+                    jaz.penDown()             # put the pen down to draw with
+                    jaz.left(60)              # turn the turtle left 60 degrees
+                    turtleLoop(jaz, maxX)     # call the other function
+
+
+                from turtle  *      # use the turtle library
                 from sys import *         # use the system library
                 setExecutionLimit(50000)  # let this take up to 50 seconds
-                space = Screen()          # create a turtle screen (space)
+                Space = Screen()          # create a turtle screen (space)
 
                 width = 400               # set the desired width
-                Space.setup(width,width)  # set the space width and height
-                maxX = width / 2          # set the max x value to half the width
-
                 jaz = Turtle()            # create a turtle named jaz
-                jaz.shape('turtle')       # set the shape for jaz to turtle
-                jaz.penup()               # pick up the pen (don't draw)
-                jaz.goto(-1 * maxX,100)   # go to the left side of the space
-                jaz.penDown()             # put the pen down to draw with
-                jaz.left(60)              # turn the turtle left 60 degrees
-
-                for x in range(10):       # repeat the body 10 times
-                    jaz.forward 100)           # go forward 100
-                    jaz.right(120)             # turn right 120 degrees
-                    jaz.forward(100)           # go forward 100
-                    jaz.left(120              # turn left 120 degrees
-                    if (jaz.xcor() >= maxX):   # if at right edge of space
-                        jaz.penup()                # pick up the pen
-                        jaz.goto(-1 * maxX,jaz.ycor() - 100)  # move left & down
-                        jaz.pendown()              # put the pen down
-
+                turtleProcedure(width,jaz)
 
         .. tab:: Answer
 
-            Add ``import`` on line 1.  Change line 7 to ``space``.  Change line 14 to ``pendown``.  Add a ``(`` before the ``100`` on line 18.  Add a ``)`` on line 21.
+            Add ``import`` on line 23.  Change line 26 to ``space``.  Change line 18 to ``pendown``.  Add a ``(`` before the ``100`` on line 3.  Add a ``)`` on line 6.
 
             .. activecode::  ch14ex5a
                 :nocodelens:
+
+                def turtleLoop(jaz, maxX)
+                    for x in range(10):       # repeat the body 10 times
+                        jaz.forward(100)           # go forward 100
+                        jaz.right(120)             # turn right 120 degrees
+                        jaz.forward(100)           # go forward 100
+                        jaz.left(120)              # turn left 120 degrees
+                        if (jaz.xcor() >= maxX):   # if at right edge of space
+                            jaz.penup()                # pick up the pen
+                            jaz.goto(-1 * maxX,jaz.ycor() - 100)  # move left & down
+                            jaz.pendown()              # put the pen down
+
+                def turtleProcedure(width, jaz)
+                    space.setup(width,width)  # set the space width and height
+                    maxX = width / 2          # set the max x value to half the width
+                    jaz.shape('turtle')       # set the shape for jaz to turtle
+                    jaz.penup()               # pick up the pen (don't draw)
+                    jaz.goto(-1 * maxX,100)   # go to the left side of the space
+                    jaz.pendown()             # put the pen down to draw with
+                    jaz.left(60)              # turn the turtle left 60 degrees
+                    turtleLoop(jaz, maxX)     # call the other function
+
 
                 from turtle import *      # use the turtle library
                 from sys import *         # use the system library
@@ -353,26 +389,8 @@ Chapter 14 Exercises
                 space = Screen()          # create a turtle screen (space)
 
                 width = 400               # set the desired width
-                space.setup(width,width)  # set the space width and height
-                maxX = width / 2          # set the max x value to half the width
-
                 jaz = Turtle()            # create a turtle named jaz
-                jaz.shape('turtle')       # set the shape for jaz to turtle
-                jaz.penup()               # pick up the pen (don't draw)
-                jaz.goto(-1 * maxX,100)   # go to the left side of the space
-                jaz.pendown()             # put the pen down to draw with
-                jaz.left(60)              # turn the turtle left 60 degrees
-
-                for x in range(10):       # repeat the body 10 times
-                    jaz.forward(100)           # go forward 100
-                    jaz.right(120)             # turn right 120 degrees
-                    jaz.forward(100)           # go forward 100
-                    jaz.left(120)              # turn left 120 degrees
-                    if (jaz.xcor() >= maxX):   # if at right edge of space
-                        jaz.penup()                # pick up the pen
-                        jaz.goto(-1 * maxX,jaz.ycor() - 100)  # move left & down
-                        jaz.pendown()              # put the pen down
-
+                turtleProcedure(width,jaz)
 
         .. tab:: Discussion
 
@@ -654,7 +672,7 @@ Chapter 14 Exercises
 
         .. tab:: Question
 
-            Change and fix the code below so that it draws random, connected black and red lines only in the bottom right half.
+            Change and fix the code below so that it draws random, but connected black and red lines (it should look like scribbling) only in the bottom right half of the drawing window.
 
             .. activecode::  ch14ex10q
                 :nocodelens:
@@ -716,7 +734,7 @@ Chapter 14 Exercises
 
         .. tab:: Question
 
-           The following code stamps a circle of turtles.  Change the following code to use a different color per stamp and use at least 3 colors.  You can use a counter and reset the counter to 0 after it reaches the number of colors.  Use ``if``, ``elif``, and ``else``.
+           The following code stamps a circle of turtles.  Change the following code to use a different color per stamp and use at least 3 colors.  You can use a counter and reset the counter to 0 after it reaches the number of colors (i.e. use a for loop and change color based off divisibility of each number).  Use ``if``, ``elif``, and ``else``.
 
            .. activecode::  ch14ex11q
                 :nocodelens:
@@ -770,7 +788,7 @@ Chapter 14 Exercises
 
         .. tab:: Question
 
-            Add to the code so that  ``num`` is a random number between 1 and 3 (inclusive), and change the 3 if clauses to be if, elif, and else. The code should draw random lines in 3 different colors determined by ``num``.
+            Add to the code so that  ``num`` is a random number between 1 and 3 (inclusive), and change the if clauses to be if, elif, and else. The code should draw random lines with 3 different colors based off the value of ``num``.
 
             .. activecode::  ch14ex12q
                 :nocodelens:
@@ -890,7 +908,7 @@ Chapter 14 Exercises
 
         .. tab:: Question
 
-            The code currently makes the two turtles just draw a circle. Fix it so that the turtles move towards each other and spin away when they get close and then move.
+            The code currently makes the two turtles just draw a circle. Fix the errors on line 13 so that the turtles move towards each other and spin away when they get close and then move.
 
             .. activecode::  ch14ex14q
                 :nocodelens:
@@ -912,6 +930,7 @@ Chapter 14 Exercises
                         mia.right(45)
 
         .. tab:: Answer
+
             The if staement should be ``mia.xcor() - jaz.xcor() < 40''.
 
             .. activecode::  ch14ex14a
@@ -945,7 +964,7 @@ Chapter 14 Exercises
 
         .. tab:: Question
 
-           The following code draws vertical stripes alternating between red and black.  Change the code below to use 5 different colors.  Use ``y % 5`` to get 5 possible values.
+           The following code draws vertical stripes alternating between red and black.  Change and add code below to use 5 different colors.  Use ``y % 5`` instead of ``y % 2`` to get 5 possible values.
 
            .. activecode::  ch14ex15q
                 :nocodelens:
@@ -1018,26 +1037,33 @@ Chapter 14 Exercises
 
         .. tab:: Question
 
-            Complete and add to the code so that when the turtles collide, they move away, then turn so that they move in the same direction.
+            Complete and add to the ``turtleLoop`` procedure so that when the turtles collide, they move away, then turn so that they move in the same direction. It should look like a mirror image divided across the vertical axis.
 
             .. activecode::  ch14ex16q
                 :nocodelens:
 
+                def turtleLoop(jaz,mia):
+                    for x in range(20):
+                        jaz.forward(10)
+                        mia.forward(10)
+                        if (mia.xcor() - jaz.xcor() < 30):
+
+
+                def turtleDraw(jaz, mia):
+                    jaz.shape('turtle')
+                    mia.shape('turtle')
+                    mia.color('red')
+                    mia.penup()
+                    mia.goto(100,0)
+                    mia.pendown()
+                    mia.right(180)
+                    turtleLoop(jaz,mia)
+
                 from turtle import *
                 space = Screen()
                 jaz = Turtle()
-                jaz.shape('turtle')
                 mia = Turtle()
-                mia.shape('turtle')
-                mia.color('red')
-                mia.penup()
-                mia.goto(100,0)
-                mia.pendown()
-                mia.right(180)
-                for x in range(20):
-                    jaz.forward(10)
-                    mia.forward(10)
-                    if
+                turtleDraw(jaz,mia)
 
         .. tab:: Answer
 
@@ -1046,25 +1072,31 @@ Chapter 14 Exercises
             .. activecode::  ch14ex16a
                 :nocodelens:
 
+                def turtleLoop(jaz,mia):
+                    for x in range(20):
+                        jaz.forward(10)
+                        mia.forward(10)
+                        if (mia.xcor() - jaz.xcor() < 30):
+                            jaz.backward(50)
+                            mia.backward(50)
+                            jaz.right(45)
+                            mia.left(45)
+
+                def turtleDraw(jaz, mia):
+                    jaz.shape('turtle')
+                    mia.shape('turtle')
+                    mia.color('red')
+                    mia.penup()
+                    mia.goto(100,0)
+                    mia.pendown()
+                    mia.right(180)
+                    turtleLoop(jaz,mia)
+
                 from turtle import *
                 space = Screen()
                 jaz = Turtle()
-                jaz.shape('turtle')
                 mia = Turtle()
-                mia.shape('turtle')
-                mia.color('red')
-                mia.penup()
-                mia.goto(100,0)
-                mia.pendown()
-                mia.right(180)
-                for x in range(20):
-                    jaz.forward(10)
-                    mia.forward(10)
-                    if (mia.xcor() - jaz.xcor() < 30):
-                        jaz.backward(50)
-                        mia.backward(50)
-                        jaz.right(45)
-                        mia.left(45)
+                turtleDraw(jaz,mia)
 
         .. tab:: Discussion
 
@@ -1198,7 +1230,7 @@ Chapter 14 Exercises
 
         .. tab:: Question
 
-            Write code that uses 2 turtles, a for loop and determines the color of the turtles based off if a number is even or odd. The two turtles        should move towards each other but turn away and move when they are about to intersect.
+            Write code that uses 2 turtles and a for loop to get a range of numbers. You should change the color of the based off if the number from the for loop is even or odd. The two turtles should move towards each other but turn away and move when they are about to intersect. 
 
             .. activecode::  ch14ex20q
                 :nocodelens:

@@ -496,7 +496,7 @@ Chapter 16 Exercises
 
         .. tab:: Answer
 
-            Change  ``numbers`` to equal ``range(1,51,5) and the range in the for loop to (0,len(numbers)).
+            Change  ``numbers`` to equal ``range(1,51,5)`` and the range in the for loop to (0,len(numbers)).
 
             .. activecode::  ch16ex12a
                 :nocodelens:

@@ -546,13 +546,49 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
         .. tab:: Question
 
+            Fix the errors in the code below so that it prints the average PM values of only the cities that start with "A".
+
             .. activecode::  ch18ex2q
                 :nocodelens:
 
+                inFile = open("uspoll.txt","r")
+                lines = inFile.readlines()
+                inFile.close()
+
+                total25 = 0
+                count = 1.0
+                for line in lines:
+                    values = line.split(":")
+                    new25 = float(values[2])
+                    city = values[1]
+                    if (city.find("A") == -1):
+                        total25 = total25 + new25
+                    count = count + 1
+
+                print("Average PM 2.5 value for cities that start with "A" is ", total25/count)
+
         .. tab:: Answer
 
+            In line 10, ``city`` should equal ``values[0]``. In line 11, it should be ``0`` not ``-1``. Indent the count so it is in the body of the if statement.
+            
             .. activecode::  ch18ex2a
                 :nocodelens:
+
+                inFile = open("uspoll.txt","r")
+                lines = inFile.readlines()
+                inFile.close()
+
+                total25 = 0
+                count = 1.0
+                for line in lines:
+                    values = line.split(":")
+                    new25 = float(values[2])
+                    city = values[0]
+                    if (city.find("A") == 0):
+                        total25 = total25 + new25
+                        count = count + 1
+
+                print("Average PM 2.5 value for cities that start with "A" is ", total25/count)
 
         .. tab:: Discussion
 
@@ -1264,7 +1300,7 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
                             count += 1
                     average = sum / count
                     print(average)
-                    
+
         .. tab:: Discussion
 
             .. disqus::

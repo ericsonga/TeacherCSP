@@ -546,6 +546,7 @@ Chapter 16 Exercises
         .. tab:: Question
 
             Fix the errors so that the list ``slowly`` prints the same exact list as ``source``
+
             .. activecode::  ch16ex14q
                 :nocodelens:
 

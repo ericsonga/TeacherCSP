@@ -423,42 +423,24 @@ square(malik)           # draw a square with malik
 
 </li>
 <li><div id='ch6ex2t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>There are 2 syntax errors in the following code.  Fix the errors so that it runs.</p>
+<p>Fix the errors so it runs and returns the perimeter of a rectangle.</p>
 
 <textarea data-component="activecode" id=ch6ex2q data-lang="python"    data-timelimit=25000   data-audio=''     >
-def square(turtle)
-    turtle.forward(100)
-    turtle.right(90)
-    turtle.forward(100)
-    turtle.right(90)
-    turtle.forward(100)
-    turtle.right(90)
-    turtle.forward(100)
-    turtle.right(90)
+def recPerimeter(length, width)
+perimeter = 2 * (length + width)
+Return recPerimeter
 
-from turtle import *    # use the turtle library
-space = Screen()        # create a turtle screen
-malik = Turtle()        # create a turtle named malik
-square()                # draw a square with malik
+print(recPerimeter(2,4))
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>There must be a <code class="docutils literal"><span class="pre">:</span></code> at the end of the procedure definition.  You also have to pass malik to the square procedure as shown below.</p>
+<p>Indentation needs to be fixed and there needs to be a colon after the function name.  <code class="docutils literal"><span class="pre">return</span></code> should be lowercase and you should return the variable in the function not the function name.</p>
 
 <textarea data-component="activecode" id=ch6ex2a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def square(turtle):
-    turtle.forward(100)
-    turtle.right(90)
-    turtle.forward(100)
-    turtle.right(90)
-    turtle.forward(100)
-    turtle.right(90)
-    turtle.forward(100)
-    turtle.right(90)
+def recPerimeter(length, width):
+        perimeter = 2 * (length + width)
+        return perimeter
 
-from turtle import *    # use the turtle library
-space = Screen()        # create a turtle screen
-malik = Turtle()        # create a turtle named malik
-square(malik)           # draw a square with malik
+print(recPerimeter(2,4))
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -503,50 +485,42 @@ square(malik)           # draw a square with malik
 
 </li>
 <li><div id='ch6ex3t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>The following code has 4 syntax errors.  Fix the errors so that the code runs.</p>
+<p>There are 2 syntax errors in the following code.  Fix the errors so that it runs.</p>
 
 <textarea data-component="activecode" id=ch6ex3q data-lang="python"    data-timelimit=25000   data-audio=''     >
-def square(turtle,size):
-    turtle.forward(size)
+def square(turtle)
+    turtle.forward(100)
     turtle.right(90)
-    turtle.forward(size)
+    turtle.forward(100)
     turtle.right(90)
-    turtle.forward(size)
+    turtle.forward(100)
     turtle.right(90)
-    turtle.forward(size)
+    turtle.forward(100)
     turtle.right(90)
-
 
 from turtle import *    # use the turtle library
-space = Screen()        # create a turtle screen (space)
+space = Screen()        # create a turtle screen
 malik = Turtle()        # create a turtle named malik
-square(Malik, 100)      # draw a square of size 100
-square(Malik, 75)       # draw a square of size 75
-square(Malik, 50)       # draw a square of size 50
-square(Malik, 25)       # draw a square of size 25
+square()                # draw a square with malik
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>You must change the <code class="docutils literal"><span class="pre">Malik</span></code> to <code class="docutils literal"><span class="pre">malik</span></code> on the calls to square.  Remember that Python is case sensitive.</p>
+<p>There must be a <code class="docutils literal"><span class="pre">:</span></code> at the end of the procedure definition.  You also have to pass malik to the square procedure as shown below.</p>
 
 <textarea data-component="activecode" id=ch6ex3a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def square(turtle,size):
-    turtle.forward(size)
+def square(turtle):
+    turtle.forward(100)
     turtle.right(90)
-    turtle.forward(size)
+    turtle.forward(100)
     turtle.right(90)
-    turtle.forward(size)
+    turtle.forward(100)
     turtle.right(90)
-    turtle.forward(size)
+    turtle.forward(100)
     turtle.right(90)
-
 
 from turtle import *    # use the turtle library
-space = Screen()        # create a turtle screen (space)
+space = Screen()        # create a turtle screen
 malik = Turtle()        # create a turtle named malik
-square(malik, 100)      # draw a square of size 100
-square(malik, 75)       # draw a square of size 75
-square(malik, 50)       # draw a square of size 50
-square(malik, 25)       # draw a square of size 25
+square(malik)           # draw a square with malik
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -569,7 +543,7 @@ square(malik, 25)       # draw a square of size 25
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'cslearn4u';    
+            disqus_shortname = 'teachercsp';    
             disqus_identifier = 'teachercsp_ch6ex3q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch6ex3q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -591,50 +565,26 @@ square(malik, 25)       # draw a square of size 25
 
 </li>
 <li><div id='ch6ex4t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>The following code has three lines that need to be changed.  Fix the code to run correctly.</p>
+<p>Fix the errors so the code runs and returns the area of a square.</p>
 
 <textarea data-component="activecode" id=ch6ex4q data-lang="python"    data-timelimit=25000   data-audio=''     >
-def square(turtle,size):
-    turtle.forward(size)
-    turtle.right(90)
-    turtle.forward(size)
-    turtle.right(90)
-    turtle.forward(size)
-    turtle.right(90)
-    turtle.forward(size)
-    turtle.right(90)
+x = squareArea(5)
 
-
-from turtle import *    # use the turtle library
-space = Screen()        # create a turtle screen (space)
-malik = Turtle()        # create a turtle named malik
-square(100, malik)      # draw a square of size 100
-square(malik)               # draw a square of size 75
-square(50)          # draw a square of size 50
-square(malik, 25)       # draw a square of size 25
+Def squareArea(sideLength):
+        area = length * length
+        return area
+print(x)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>You have to pass the turtle first and then the size separated by a <code class="docutils literal"><span class="pre">,</span></code>.</p>
+<p>&#8216;&#8217;def&#8217;&#8217; should be lowercase. The call to the function should occur after the function is defined.</p>
 
 <textarea data-component="activecode" id=ch6ex4a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def square(turtle,size):
-    turtle.forward(size)
-    turtle.right(90)
-    turtle.forward(size)
-    turtle.right(90)
-    turtle.forward(size)
-    turtle.right(90)
-    turtle.forward(size)
-    turtle.right(90)
+def squareArea(sideLength):
+        area = sideLength * sideLength
+        return area
 
-
-from turtle import *    # use the turtle library
-space = Screen()        # create a turtle screen (space)
-malik = Turtle()        # create a turtle named malik
-square(malik, 100)      # draw a square of size 100
-square(malik, 75)       # draw a square of size 75
-square(malik, 50)       # draw a square of size 50
-square(malik, 25)       # draw a square of size 25
+x = squareArea(5)
+print(x)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -679,29 +629,33 @@ square(malik, 25)       # draw a square of size 25
 
 </li>
 <li><div id='ch6ex5t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Change the square procedure below to take a size parameter and have the turtle go forward by the specified size each time.</p>
+<p>The following code has 4 syntax errors.  Fix the errors so that the code runs.</p>
 
 <textarea data-component="activecode" id=ch6ex5q data-lang="python"    data-timelimit=25000   data-audio=''     >
-def square(turtle):
-    turtle.forward(100)
+def square(turtle,size):
+    turtle.forward(size)
     turtle.right(90)
-    turtle.forward(100)
+    turtle.forward(size)
     turtle.right(90)
-    turtle.forward(100)
+    turtle.forward(size)
     turtle.right(90)
-    turtle.forward(100)
+    turtle.forward(size)
     turtle.right(90)
 
+
 from turtle import *    # use the turtle library
-space = Screen()        # create a turtle screen
+space = Screen()        # create a turtle screen (space)
 malik = Turtle()        # create a turtle named malik
-square(malik)           # draw a square with malik
+square(Malik, 100)      # draw a square of size 100
+square(Malik, 75)       # draw a square of size 75
+square(Malik, 50)       # draw a square of size 50
+square(Malik, 25)       # draw a square of size 25
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Add the <code class="docutils literal"><span class="pre">size</span></code> parameter to the procedure defintion and be sure to add a value for the size when you call the procedure as well.</p>
+<p>You must change the <code class="docutils literal"><span class="pre">Malik</span></code> to <code class="docutils literal"><span class="pre">malik</span></code> on the calls to square.  Remember that Python is case sensitive.</p>
 
 <textarea data-component="activecode" id=ch6ex5a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def square(turtle, size):
+def square(turtle,size):
     turtle.forward(size)
     turtle.right(90)
     turtle.forward(size)
@@ -711,10 +665,14 @@ def square(turtle, size):
     turtle.forward(size)
     turtle.right(90)
 
+
 from turtle import *    # use the turtle library
-space = Screen()        # create a turtle screen
+space = Screen()        # create a turtle screen (space)
 malik = Turtle()        # create a turtle named malik
-square(malik,50)       # draw a square with malik
+square(malik, 100)      # draw a square of size 100
+square(malik, 75)       # draw a square of size 75
+square(malik, 50)       # draw a square of size 50
+square(malik, 25)       # draw a square of size 25
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -737,7 +695,7 @@ square(malik,50)       # draw a square with malik
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'teachercsp';    
+            disqus_shortname = 'cslearn4u';    
             disqus_identifier = 'teachercsp_ch6ex5q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch6ex5q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -759,26 +717,42 @@ square(malik,50)       # draw a square with malik
 
 </li>
 <li><div id='ch6ex6t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Change the code below to create a function that calculates the cost of a trip.  It should take the <code class="docutils literal"><span class="pre">miles</span></code>, <code class="docutils literal"><span class="pre">milesPerGallon</span></code>, and <code class="docutils literal"><span class="pre">pricePerGallon</span></code> as parameters and should return the cost of the trip.</p>
+<p>Change the code to take 3 parameters, a turtle, a size that tells it how far to go, and an angle it tells the turtle to turn.</p>
 
 <textarea data-component="activecode" id=ch6ex6q data-lang="python"    data-timelimit=25000   data-audio=''     >
-miles = 500
-milesPerGallon = 26
-numGallons = miles / milesPerGallon
-pricePerGallon = 3.45
-total = numGallons * pricePerGallon
-print(total)
+def move(turtle):
+    turtle.forward(100)
+    turtle.right(90)
+    turtle.forward(100)
+    turtle.right(90)
+    turtle.forward(100)
+    turtle.right(90)
+    turtle.forward(100)
+    turtle.right(90)
+
+from turtle import *
+space = Screen()
+t = Turtle()
+move(t, 100, 90)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Add a function definition that takes as parameters <code class="docutils literal"><span class="pre">miles</span></code>, <code class="docutils literal"><span class="pre">milesPerGallon</span></code>, and <code class="docutils literal"><span class="pre">pricePerGallon</span></code>.  Don&#8217;t forget to call the function to test it.</p>
+<p>Add both the <code class="docutils literal"><span class="pre">distance</span></code> and <code class="docutils literal"><span class="pre">angle</span></code> parameters to the function definition.</p>
 
 <textarea data-component="activecode" id=ch6ex6a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def costOfTrip(miles, milesPerGallon, pricePerGallon):
-    numGallons = miles / milesPerGallon
-    total = numGallons * pricePerGallon
-    return(total)
+def move(turtle, distance, angle):
+    turtle.forward(distance)
+    turtle.right(angle)
+    turtle.forward(distance)
+    turtle.right(angle)
+    turtle.forward(distance)
+    turtle.right(angle)
+    turtle.forward(distance)
+    turtle.right(angle)
 
-print("The cost of the trip is " + str(costOfTrip(500,26,3.45)))
+from turtle import *
+space = Screen()
+t = Turtle()
+move(t, 100, 90)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -823,26 +797,50 @@ print("The cost of the trip is " + str(costOfTrip(500,26,3.45)))
 
 </li>
 <li><div id='ch6ex7t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Change the code below to create a function to return the number of miles you can drive.  It will take as input (parameters) the <code class="docutils literal"><span class="pre">tankCapacity</span></code>, <code class="docutils literal"><span class="pre">theAmountLeft</span></code>, and the <code class="docutils literal"><span class="pre">milesPerGallon</span></code>.</p>
+<p>The following code has three lines that need to be changed.  Fix the code to run correctly.</p>
 
 <textarea data-component="activecode" id=ch6ex7q data-lang="python"    data-timelimit=25000   data-audio=''     >
-tankCapacity = 10
-amountLeft = 0.25
-numGallons = tankCapacity * amountLeft
-milesPerGallon = 32
-numMiles = numGallons * milesPerGallon
-print(numMiles)
+def square(turtle,size):
+    turtle.forward(size)
+    turtle.right(90)
+    turtle.forward(size)
+    turtle.right(90)
+    turtle.forward(size)
+    turtle.right(90)
+    turtle.forward(size)
+    turtle.right(90)
+
+
+from turtle import *    # use the turtle library
+space = Screen()        # create a turtle screen (space)
+malik = Turtle()        # create a turtle named malik
+square(100, malik)      # draw a square of size 100
+square(malik)               # draw a square of size 75
+square(50)          # draw a square of size 50
+square(malik, 25)       # draw a square of size 25
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Add a function definition that takes as parameters <code class="docutils literal"><span class="pre">tankCapacity</span></code>,``amountLeft``, and <code class="docutils literal"><span class="pre">milesPerGallon</span></code>.  Be sure to call the function to test it.</p>
+<p>You have to pass the turtle first and then the size separated by a <code class="docutils literal"><span class="pre">,</span></code>.</p>
 
 <textarea data-component="activecode" id=ch6ex7a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def calcNumMiles(tankCapacity,amountLeft, milesPerGallon):
-    numGallons = tankCapacity * amountLeft
-    numMiles = numGallons * milesPerGallon
-    return(numMiles)
+def square(turtle,size):
+    turtle.forward(size)
+    turtle.right(90)
+    turtle.forward(size)
+    turtle.right(90)
+    turtle.forward(size)
+    turtle.right(90)
+    turtle.forward(size)
+    turtle.right(90)
 
-print("The number of miles you can go is " + str(calcNumMiles(10,0.25,32)))
+
+from turtle import *    # use the turtle library
+space = Screen()        # create a turtle screen (space)
+malik = Turtle()        # create a turtle named malik
+square(malik, 100)      # draw a square of size 100
+square(malik, 75)       # draw a square of size 75
+square(malik, 50)       # draw a square of size 50
+square(malik, 25)       # draw a square of size 25
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -887,29 +885,22 @@ print("The number of miles you can go is " + str(calcNumMiles(10,0.25,32)))
 
 </li>
 <li><div id='ch6ex8t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Create a procedure to draw a rectangle and call it.  Be sure to take the <code class="docutils literal"><span class="pre">width</span></code> and <code class="docutils literal"><span class="pre">height</span></code> of the rectangle as input to the procedure.</p>
+<p>Fix the errors so it prints <code class="docutils literal"><span class="pre">&quot;My</span> <span class="pre">name</span> <span class="pre">is</span> <span class="pre">John</span> <span class="pre">and</span> <span class="pre">I</span> <span class="pre">am</span> <span class="pre">18</span> <span class="pre">years</span> <span class="pre">old&quot;</span></code>.</p>
 
 <textarea data-component="activecode" id=ch6ex8q data-lang="python"    data-timelimit=25000   data-audio=''     >
+def nameAndAge(nameString, ageInt):
+        print(My name is "nameString" and I am + "str(ageInt)" + years old)
 
-
+print(nameAndAge(18, "John"))
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Create the procedure and be sure to call it to test it.</p>
+<p>It&#8217;s a function so you need to return not print. Also, fix the errors in returning the values. Then in the call to the function, make sure the string is the first argument and the age the second.</p>
 
 <textarea data-component="activecode" id=ch6ex8a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def rectangle(turtle, width, height):
-    turtle.forward(width)
-    turtle.right(90)
-    turtle.forward(height)
-    turtle.right(90)
-    turtle.forward(width)
-    turtle.right(90)
-    turtle.forward(height)
+def nameAndAge(nameString, ageInt):
+        return("My name is " + nameString + " and I am  " + str(ageInt) + "  years old")
 
-from turtle import *    # use the turtle library
-space = Screen()        # create a turtle screen
-malik = Turtle()        # create a turtle named malik
-rectangle(malik, 100, 80)    # draw a rectangle with malik
+print(nameAndAge("John", 18))
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -954,28 +945,42 @@ rectangle(malik, 100, 80)    # draw a rectangle with malik
 
 </li>
 <li><div id='ch6ex9t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Create a procedure to draw a triangle and call it.  Be sure to take the length of each side of the triangle as input to the procedure.</p>
+<p>Change the square procedure below to take a size parameter and have the turtle go forward by the specified size each time.</p>
 
 <textarea data-component="activecode" id=ch6ex9q data-lang="python"    data-timelimit=25000   data-audio=''     >
-
-
-</textarea>
-</div><div data-component="tab" data-tabname="Answer" >
-<p>Create the procedure and be sure to call it to test it.</p>
-
-<textarea data-component="activecode" id=ch6ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def triangle(turtle, size):
-    turtle.left(60)
-    turtle.forward(size)
-    turtle.right(120)
-    turtle.forward(size)
-    turtle.right(120)
-    turtle.forward(size)
+def square(turtle):
+    turtle.forward(100)
+    turtle.right(90)
+    turtle.forward(100)
+    turtle.right(90)
+    turtle.forward(100)
+    turtle.right(90)
+    turtle.forward(100)
+    turtle.right(90)
 
 from turtle import *    # use the turtle library
 space = Screen()        # create a turtle screen
 malik = Turtle()        # create a turtle named malik
-triangle(malik, 100)    # draw a triangle with malik
+square(malik)           # draw a square with malik
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Add the <code class="docutils literal"><span class="pre">size</span></code> parameter to the procedure defintion and be sure to add a value for the size when you call the procedure as well.</p>
+
+<textarea data-component="activecode" id=ch6ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def square(turtle, size):
+    turtle.forward(size)
+    turtle.right(90)
+    turtle.forward(size)
+    turtle.right(90)
+    turtle.forward(size)
+    turtle.right(90)
+    turtle.forward(size)
+    turtle.right(90)
+
+from turtle import *    # use the turtle library
+space = Screen()        # create a turtle screen
+malik = Turtle()        # create a turtle named malik
+square(malik,50)       # draw a square with malik
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -1020,27 +1025,22 @@ triangle(malik, 100)    # draw a triangle with malik
 
 </li>
 <li><div id='ch6ex10t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write the code below to create a procedure that prints a mad lib.  You can ask the user for input and then pass that input into the procedure.</p>
+<p>Change the code so the function takes parameters for the length and base and then call the function and print the result.</p>
 
 <textarea data-component="activecode" id=ch6ex10q data-lang="python"    data-timelimit=25000   data-audio=''     >
-
-
+def areaTriangle():
+   length = 5
+   base = 4
+   return (5 * 4) / 2
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Create the procedure and be sure to call it to test it.</p>
+<p>Add the parameters for <code class="docutils literal"><span class="pre">length</span></code> and <code class="docutils literal"><span class="pre">base</span></code> and call the function inside the print statement.</p>
 
 <textarea data-component="activecode" id=ch6ex10a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def printMadLib(place,verb,action,color,animal):
-    print("Once upon a time in " + place + ", I was " +
-          verb + "ing and I " + action + " because a " +
-          color + " " + animal + " was also " + verb + "ing.")
+def areaTriangle(length, base):
+        return (length * base) / 2
 
-place = input("Enter the name of a place.")
-verb = input("Enter a verb.")
-action = input("Enter an action.")
-color = input("Enter your favorite color.")
-animal = input("What is your favorite animal?")
-printMadLib(place,verb,action,color,animal)
+print(areaTriangle(5,4))
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -1079,6 +1079,659 @@ printMadLib(place,verb,action,color,animal)
 <a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch6ex10q" onclick="teachercsp_ch6ex10q_disqus(this);">Show Comments</a>
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch6ex10q']").attr('data-disqus-identifier', 'teachercsp_ch6ex10q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch6ex11t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Change the code below to create a function that calculates the cost of a trip.  It should take the <code class="docutils literal"><span class="pre">miles</span></code>, <code class="docutils literal"><span class="pre">milesPerGallon</span></code>, and <code class="docutils literal"><span class="pre">pricePerGallon</span></code> as parameters and should return the cost of the trip.</p>
+
+<textarea data-component="activecode" id=ch6ex11q data-lang="python"    data-timelimit=25000   data-audio=''     >
+miles = 500
+milesPerGallon = 26
+numGallons = miles / milesPerGallon
+pricePerGallon = 3.45
+total = numGallons * pricePerGallon
+print(total)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Add a function definition that takes as parameters <code class="docutils literal"><span class="pre">miles</span></code>, <code class="docutils literal"><span class="pre">milesPerGallon</span></code>, and <code class="docutils literal"><span class="pre">pricePerGallon</span></code>.  Don&#8217;t forget to call the function to test it.</p>
+
+<textarea data-component="activecode" id=ch6ex11a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def costOfTrip(miles, milesPerGallon, pricePerGallon):
+    numGallons = miles / milesPerGallon
+    total = numGallons * pricePerGallon
+    return(total)
+
+print("The cost of the trip is " + str(costOfTrip(500,26,3.45)))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch6ex11q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch6ex11q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch6ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch6ex11q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch6ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch6ex11q" onclick="teachercsp_ch6ex11q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch6ex11q']").attr('data-disqus-identifier', 'teachercsp_ch6ex11q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch6ex12t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix the errors in the procedure and call it.</p>
+
+<textarea data-component="activecode" id=ch6ex12q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from turtle import *
+space = Screen()
+t = Turtle()
+t2 = Turtle()
+turtleDrawing(t, t2, 100, 45)
+
+turtleDrawing def(turtle, turtle2, distance, angle)
+        turtle.left(angle)
+        turtle2.right(angle)
+        turtle.forward(turtle2)
+        turtle2.forward(turtle)
+        return distance
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>The procedure has to be defined before you can call it. Also, in the procedure, make sure the turtle methods are using the <code class="docutils literal"><span class="pre">distance</span></code> and <code class="docutils literal"><span class="pre">angle</span></code> parameters.</p>
+
+<textarea data-component="activecode" id=ch6ex12a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def turtleDrawing(turtle, turtle2, distance, angle):
+        turtle.left(angle)
+        turtle2.right(angle)
+        turtle.forward(distance)
+        turtle2.forward(distance)
+
+from turtle import *
+space = Screen()
+t = Turtle()
+t2 = Turtle()
+turtleDrawing(t, t2, 100, 45)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch6ex12q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch6ex12q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch6ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch6ex12q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch6ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch6ex12q" onclick="teachercsp_ch6ex12q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch6ex12q']").attr('data-disqus-identifier', 'teachercsp_ch6ex12q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch6ex13t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Change the code below to create a function to return the number of miles you can drive.  It will take as input (parameters) the <code class="docutils literal"><span class="pre">tankCapacity</span></code>, <code class="docutils literal"><span class="pre">theAmountLeft</span></code>, and the <code class="docutils literal"><span class="pre">milesPerGallon</span></code>.</p>
+
+<textarea data-component="activecode" id=ch6ex13q data-lang="python"    data-timelimit=25000   data-audio=''     >
+tankCapacity = 10
+amountLeft = 0.25
+numGallons = tankCapacity * amountLeft
+milesPerGallon = 32
+numMiles = numGallons * milesPerGallon
+print(numMiles)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Add a function definition that takes as parameters <code class="docutils literal"><span class="pre">tankCapacity</span></code>,``amountLeft``, and <code class="docutils literal"><span class="pre">milesPerGallon</span></code>.  Be sure to call the function to test it.</p>
+
+<textarea data-component="activecode" id=ch6ex13a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def calcNumMiles(tankCapacity,amountLeft, milesPerGallon):
+    numGallons = tankCapacity * amountLeft
+    numMiles = numGallons * milesPerGallon
+    return(numMiles)
+
+print("The number of miles you can go is " + str(calcNumMiles(10,0.25,32)))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch6ex13q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch6ex13q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch6ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch6ex13q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch6ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch6ex13q" onclick="teachercsp_ch6ex13q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch6ex13q']").attr('data-disqus-identifier', 'teachercsp_ch6ex13q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch6ex14t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Complete and change the code to be a function with 2 parameters that returns the time taken to travel and call the function</p>
+
+<textarea data-component="activecode" id=ch6ex14q data-lang="python"    data-timelimit=25000   data-audio=''     >
+speed = 5
+distance = 25
+timeTakenToTravel =
+print(timeTakenToTravel)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Take <code class="docutils literal"><span class="pre">speed</span></code> and <code class="docutils literal"><span class="pre">distance</span></code> as parameters and return <code class="docutils literal"><span class="pre">distance</span> <span class="pre">/</span> <span class="pre">speed</span></code>. When calling the function, make sure the arguments are in the right order.</p>
+
+<textarea data-component="activecode" id=ch6ex14a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def timeTaken(speed, distance):
+        return distance / speed
+
+print(timeTaken(5,25))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch6ex14q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch6ex14q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch6ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch6ex14q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch6ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch6ex14q" onclick="teachercsp_ch6ex14q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch6ex14q']").attr('data-disqus-identifier', 'teachercsp_ch6ex14q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch6ex15t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Create a procedure to draw a rectangle and call it.  Be sure to take the <code class="docutils literal"><span class="pre">width</span></code> and <code class="docutils literal"><span class="pre">height</span></code> of the rectangle as input to the procedure.</p>
+
+<textarea data-component="activecode" id=ch6ex15q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Create the procedure and be sure to call it to test it.</p>
+
+<textarea data-component="activecode" id=ch6ex15a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def rectangle(turtle, width, height):
+    turtle.forward(width)
+    turtle.right(90)
+    turtle.forward(height)
+    turtle.right(90)
+    turtle.forward(width)
+    turtle.right(90)
+    turtle.forward(height)
+
+from turtle import *    # use the turtle library
+space = Screen()        # create a turtle screen
+malik = Turtle()        # create a turtle named malik
+rectangle(malik, 100, 80)    # draw a rectangle with malik
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch6ex15q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch6ex15q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch6ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch6ex15q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch6ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch6ex15q" onclick="teachercsp_ch6ex15q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch6ex15q']").attr('data-disqus-identifier', 'teachercsp_ch6ex15q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch6ex16t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Create a procedure that takes 2 parameters, a string that you get from a user input and an int. Make the procedure print the string the number of times the int parameter gives and call the procedure.</p>
+
+<textarea data-component="activecode" id=ch6ex16q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Procedure means you want to print not return. Have a string and an int parameter and print the product of the two. When calling the procedure, first get the user input and then pass that input as an argument.</p>
+
+<textarea data-component="activecode" id=ch6ex16a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def userProcedure(aString, bInt):
+        print(aString * bInt)
+
+userInput = input("give me a string")
+userProcedure(userInput, 7)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch6ex16q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch6ex16q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch6ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch6ex16q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch6ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch6ex16q" onclick="teachercsp_ch6ex16q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch6ex16q']").attr('data-disqus-identifier', 'teachercsp_ch6ex16q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch6ex17t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Create a procedure to draw a triangle and call it.  Be sure to take the length of each side of the triangle as input to the procedure.</p>
+
+<textarea data-component="activecode" id=ch6ex17q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Create the procedure and be sure to call it to test it.</p>
+
+<textarea data-component="activecode" id=ch6ex17a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def triangle(turtle, size):
+    turtle.left(60)
+    turtle.forward(size)
+    turtle.right(120)
+    turtle.forward(size)
+    turtle.right(120)
+    turtle.forward(size)
+
+from turtle import *    # use the turtle library
+space = Screen()        # create a turtle screen
+malik = Turtle()        # create a turtle named malik
+triangle(malik, 100)    # draw a triangle with malik
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch6ex17q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch6ex17q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch6ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch6ex17q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch6ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch6ex17q" onclick="teachercsp_ch6ex17q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch6ex17q']").attr('data-disqus-identifier', 'teachercsp_ch6ex17q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch6ex18t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Create a procedure that takes 7 paramters (turtle, distance, angle, and 4 color strings) and call the procedure to draw a square in 4 different colors.</p>
+
+<textarea data-component="activecode" id=ch6ex18q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Take a parameter for the turtle, distance, and the 4 colors. When you call the procedure make sure the arguments are in the right order.</p>
+
+<textarea data-component="activecode" id=ch6ex18a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def coloredSquare(turtle, distance, angle, color1, color2, color3, color4):
+        turtle.color(color1)
+        turtle.forward(distance)
+        turtle.left(angle)
+        turtle.color(color2)
+        turtle.forward(distance)
+        turtle.left(angle)
+        turtle.color(color3)
+        turtle.forward(distance)
+        turtle.left(angle)
+        turtle.color(color4)
+        turtle.forward(distance)
+
+from turtle import *
+space = Screen()
+t = Turtle()
+coloredSquare(t, 100, 90, "blue", "red", "green", "yellow")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch6ex18q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch6ex18q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch6ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch6ex18q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch6ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch6ex18q" onclick="teachercsp_ch6ex18q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch6ex18q']").attr('data-disqus-identifier', 'teachercsp_ch6ex18q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch6ex19t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write the code below to create a procedure that prints a mad lib.  You can ask the user for input and then pass that input into the procedure.</p>
+
+<textarea data-component="activecode" id=ch6ex19q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Create the procedure and be sure to call it to test it.</p>
+
+<textarea data-component="activecode" id=ch6ex19a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def printMadLib(place,verb,action,color,animal):
+    print("Once upon a time in " + place + ", I was " +
+          verb + "ing and I " + action + " because a " +
+          color + " " + animal + " was also " + verb + "ing.")
+
+place = input("Enter the name of a place.")
+verb = input("Enter a verb.")
+action = input("Enter an action.")
+color = input("Enter your favorite color.")
+animal = input("What is your favorite animal?")
+printMadLib(place,verb,action,color,animal)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch6ex19q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch6ex19q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch6ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch6ex19q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch6ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch6ex19q" onclick="teachercsp_ch6ex19q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch6ex19q']").attr('data-disqus-identifier', 'teachercsp_ch6ex19q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch6ex20t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a function that takes the current hour, current minute, an int to be added to the current hour, and an int to be added to the current minute, and return a string with the new hour and minute (standard 12 hour time; if minutes exceed 60, it should go to the hour) and call the function.</p>
+
+<textarea data-component="activecode" id=ch6ex20q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Make sure the function takes in the 4 parameters. Use the mod function to make sure minutes and hours don&#8217;t exceed 60 and 12, respectively. The total minutes minus the remaining minutes (from the mod function) gives the number of hours made from the extra minutes.</p>
+
+<textarea data-component="activecode" id=ch6ex20a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def newTime(currentHour, currentMinute, intHour, intMinute):
+        minutes = currentMinute + intMinute
+        remainingMinutes = minutes % 60
+        hoursFromMinutes = minutes - remainingMinutes
+        newHour = (currentHour + intHour + hoursFromMinutes) % 12
+        return (str(newHour) + " hour(s) and " + str(remainingMinutes) + " minute(s)"
+
+print(newTime(1, 30, 5, 50))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch6ex20q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch6ex20q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch6ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch6ex20q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch6ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch6ex20q" onclick="teachercsp_ch6ex20q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch6ex20q']").attr('data-disqus-identifier', 'teachercsp_ch6ex20q_' + eBookConfig.course);
 </script>
 </div>
     </div>

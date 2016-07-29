@@ -815,40 +815,16 @@ inFile.close()
 
 </li>
 <li><div id='ch18ex2t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix the 5 errors in the code below so that it runs and prints the largest PM 2.5 value and the city that has that value.</p>
 
 <textarea data-component="activecode" id=ch18ex2q data-lang="python"    data-timelimit=25000   data-audio=''     >
-inFile = open("uspoll.txt","r"
-lines = inFile.readlines()
-inFile.Close()
 
-maxCity = ''
-max25 =   # initialize max25
-for line  lines:
-    values = line.split(":")
-    new25 = float(values[2]) # get the current value
-    if new25 > max25
-        maxCity = values[0]
-        max25 = new25 # save the new maximum
-print("Largest PM 2.5 value is ",max25," in ",maxCity)
+
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Add a <code class="docutils literal"><span class="pre">)</span></code> at the end of line 1.  Change line 3 to <code class="docutils literal"><span class="pre">close</span></code>.  Set <code class="docutils literal"><span class="pre">max25</span></code> to <code class="docutils literal"><span class="pre">0</span></code> in line 6.  Add <code class="docutils literal"><span class="pre">in</span></code> on line 7 before <code class="docutils literal"><span class="pre">lines</span></code>.  Add <code class="docutils literal"><span class="pre">:</span></code> at the end of line 10.</p>
 
 <textarea data-component="activecode" id=ch18ex2a data-lang="python"    data-timelimit=25000   data-audio=''     >
-inFile = open("uspoll.txt","r")
-lines = inFile.readlines()
-inFile.close()
 
-maxCity = ''
-max25 = 0 # initialize max25
-for line in lines:
-    values = line.split(":")
-    new25 = float(values[2]) # get the current value
-    if new25 > max25:
-        maxCity = values[0]
-        max25 = new25 # save the new maximum
-print("Largest PM 2.5 value is ",max25," in ",maxCity)
+
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -893,118 +869,40 @@ print("Largest PM 2.5 value is ",max25," in ",maxCity)
 
 </li>
 <li><div id='ch18ex3t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix the indention below for the code to correctly find and print the lowest 2.5 value and city.</p>
+<p>Fix the 5 errors in the code below so that it runs and prints the largest PM 2.5 value and the city that has that value.</p>
 
 <textarea data-component="activecode" id=ch18ex3q data-lang="python"    data-timelimit=25000   data-audio=''     >
-inFile = open("uspoll.txt","r")
+inFile = open("uspoll.txt","r"
 lines = inFile.readlines()
-inFile.close()
+inFile.Close()
 
-minCity = ''
-min25 = 500
-for line in lines:
-values = line.split(":")
-new25 = float(values[2]) # set the value for new25 to be the current PM 2.5 value
-if new25 < min25:
-minCity = values[0] # Save the minimum city and state
-min25 = new25 # save the minimum PM 2.5 value
-print("Smallest PM 2.5 ",min25," in ",minCity)
+maxCity = ''
+max25 =   # initialize max25
+for line  lines:
+    values = line.split(":")
+    new25 = float(values[2]) # get the current value
+    if new25 > max25
+        maxCity = values[0]
+        max25 = new25 # save the new maximum
+print("Largest PM 2.5 value is ",max25," in ",maxCity)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Indent lines 8 through 12 as shown below.</p>
+<p>Add a <code class="docutils literal"><span class="pre">)</span></code> at the end of line 1.  Change line 3 to <code class="docutils literal"><span class="pre">close</span></code>.  Set <code class="docutils literal"><span class="pre">max25</span></code> to <code class="docutils literal"><span class="pre">0</span></code> in line 6.  Add <code class="docutils literal"><span class="pre">in</span></code> on line 7 before <code class="docutils literal"><span class="pre">lines</span></code>.  Add <code class="docutils literal"><span class="pre">:</span></code> at the end of line 10.</p>
 
-<textarea data-component="activecode" id=ch18ex5a data-lang="python"    data-timelimit=25000   data-audio=''     >
+<textarea data-component="activecode" id=ch18ex3a data-lang="python"    data-timelimit=25000   data-audio=''     >
 inFile = open("uspoll.txt","r")
 lines = inFile.readlines()
 inFile.close()
 
-minCity = ''
-min25 = 500
+maxCity = ''
+max25 = 0 # initialize max25
 for line in lines:
     values = line.split(":")
-    new25 = float(values[2]) # set the value for new25 to be the current PM 2.5 value
-    if new25 < min25:
-        minCity = values[0] # Save the minimum city and state
-        min25 = new25 # save the minimum PM 2.5 value
-print("Smallest PM 2.5 ",min25," in ",minCity)
-</textarea>
-</div><div data-component="tab" data-tabname="Discussion" >
-<script type="text/javascript">
-    function teachercsp_ch18ex5q_disqus(source) { 
-        if (window.DISQUS) {
-
-            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
-
-            //if Disqus exists, call it's reset method with new parameters
-            DISQUS.reset({
-                reload: true,
-                config: function () {
-                    this.page.identifier = 'teachercsp_ch18ex5q_' + eBookConfig.course;
-                    this.page.url = 'http://teachercsp_ch18ex5q_'+eBookConfig.course+'.interactivepython.com/#!';
-                }
-            });
-
-        } else {
-            //insert a wrapper in HTML after the relevant "show comments" link
-            $('<div id="disqus_thread"></div>').insertAfter(source);
-
-            // set Disqus required vars
-            disqus_shortname = 'teachercsp';    
-            disqus_identifier = 'teachercsp_ch18ex5q_' + eBookConfig.course;
-            disqus_url = 'http://teachercsp_ch18ex5q_'+eBookConfig.course+'.interactivepython.com/#!';
-
-            //append the Disqus embed script to HTML
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            $('head').append(dsq);
-
-        }
-    }
-</script>
-
-<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch18ex5q" onclick="teachercsp_ch18ex5q_disqus(this);">Show Comments</a>
-<script type='text/javascript'>
-    $("a[data-disqus-identifier='teachercsp_ch18ex5q']").attr('data-disqus-identifier', 'teachercsp_ch18ex5q_' + eBookConfig.course);
-</script>
-</div>
-    </div>
-
-</li>
-<li><div id='ch18ex4t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix the indention on the lines below so that it correctly prints the average PM 2.5 value.</p>
-
-<textarea data-component="activecode" id=ch18ex4q data-lang="python"    data-timelimit=25000   data-audio=''     >
-inFile = open("uspoll.txt","r")
-lines = inFile.readlines()
-inFile.close()
-
-total25 = 0
-count = 1.0
-for line in lines:
-values = line.split(":")
-new25 = float(values[2])
-total25 = total25 + new25
-count = count + 1
-
-print("Average PM 2.5 value is ",total25/count)
-</textarea>
-</div><div data-component="tab" data-tabname="Answer" >
-<p>Fix the indention on lines 8-11 as shown below.</p>
-
-<textarea data-component="activecode" id=ch18ex4a data-lang="python"    data-timelimit=25000   data-audio=''     >
-inFile = open("uspoll.txt","r")
-lines = inFile.readlines()
-inFile.close()
-
-total25 = 0
-count = 1.0
-for line in lines:
-    values = line.split(":")
-    new25 = float(values[2])
-    total25 = total25 + new25
-    count = count + 1
-
-print("Average PM 2.5 value is ",total25/count)
+    new25 = float(values[2]) # get the current value
+    if new25 > max25:
+        maxCity = values[0]
+        max25 = new25 # save the new maximum
+print("Largest PM 2.5 value is ",max25," in ",maxCity)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -1027,7 +925,7 @@ print("Average PM 2.5 value is ",total25/count)
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'cslearn4u';    
+            disqus_shortname = 'teachercsp';    
             disqus_identifier = 'teachercsp_ch18ex3q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch18ex3q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -1048,39 +946,33 @@ print("Average PM 2.5 value is ",total25/count)
     </div>
 
 </li>
-<li><div id='ch18ex5t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Turn the following code into a procedure.  Pass the input file and the amount of PM 10 to the procedure. It will print the city name and the pollution values for all cities that have that much PM 10 pollution or more.</p>
+<li><div id='ch18ex4t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>The code below prints all the lines that start with an &#8220;A&#8221;. Change it so that it prints out all lines that start with &#8220;A&#8221; or &#8220;B&#8221;.</p>
 
-<textarea data-component="activecode" id=ch18ex5q data-lang="python"    data-timelimit=25000   data-audio=''     >
+<textarea data-component="activecode" id=ch18ex4q data-lang="python"    data-timelimit=25000   data-audio=''     >
+# read all the lines
 inFile = open("uspoll.txt","r")
-line = inFile.readline()
-while line:
-    values = line.split(":")
-    pollution = float(values[1])
-    if (pollution > 25):
-        print('City: ', values[0])
-        print("Pollution values:",values[1],values[2])
-    line = inFile.readline()
-
+lines = inFile.readlines()
 inFile.close()
+
+# loop through the lines
+for line in lines:
+    if line[0] == "A":
+        print(line)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the procedure as shown below.  Be sure to call the procedure to test it.</p>
+<p>Add  an <code class="docutils literal"><span class="pre">or</span></code> clause or an <code class="docutils literal"><span class="pre">elif</span></code>.</p>
 
-<textarea data-component="activecode" id=ch18ex5a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def findPM10GreaterThan(inFile, amount):
-    line = inFile.readline()
-    while line:
-        values = line.split(":")
-        pollution = float(values[1])
-        if (pollution > amount):
-            print('City: ', values[0])
-            print("Pollution values:",values[1],values[2])
-        line = inFile.readline()
-
+<textarea data-component="activecode" id=ch18ex4a data-lang="python"    data-timelimit=25000   data-audio=''     >
+# read all the lines
 inFile = open("uspoll.txt","r")
-findPM10GreaterThan(inFile,25)
+lines = inFile.readlines()
 inFile.close()
+
+# loop through the lines
+for line in lines:
+    if line[0] == "A" or line[0] == "B":
+        print(line)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -1124,39 +1016,133 @@ inFile.close()
     </div>
 
 </li>
-<li><div id='ch18ex6t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Change the following code into a procedure that prints the city name and pollution values for all cities that have a PM 2.5 of less than some passed value.  Pass in the input file and the amount of pollution.</p>
+<li><div id='ch18ex5t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix the indention below for the code to correctly find and print the lowest 2.5 value and city.</p>
 
-<textarea data-component="activecode" id=ch18ex6q data-lang="python"    data-timelimit=25000   data-audio=''     >
+<textarea data-component="activecode" id=ch18ex5q data-lang="python"    data-timelimit=25000   data-audio=''     >
 inFile = open("uspoll.txt","r")
-line = inFile.readline()
-while line:
-    values = line.split(":")
-    pollution = float(values[2])
-    if (pollution < 5):
-        print('City: ', values[0])
-        print("Pollution values:",values[1],values[2])
-    line = inFile.readline()
-
+lines = inFile.readlines()
 inFile.close()
+
+minCity = ''
+min25 = 500
+for line in lines:
+values = line.split(":")
+new25 = float(values[2]) # set the value for new25 to be the current PM 2.5 value
+if new25 < min25:
+minCity = values[0] # Save the minimum city and state
+min25 = new25 # save the minimum PM 2.5 value
+print("Smallest PM 2.5 ",min25," in ",minCity)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define a procedure that takes the input file and the amount.  Print all the cities that have lower than the passed amount for PM 2.5.</p>
+<p>Indent lines 8 through 12 as shown below.</p>
+
+<textarea data-component="activecode" id=ch18ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
+inFile = open("uspoll.txt","r")
+lines = inFile.readlines()
+inFile.close()
+
+minCity = ''
+min25 = 500
+for line in lines:
+    values = line.split(":")
+    new25 = float(values[2]) # set the value for new25 to be the current PM 2.5 value
+    if new25 < min25:
+        minCity = values[0] # Save the minimum city and state
+        min25 = new25 # save the minimum PM 2.5 value
+print("Smallest PM 2.5 ",min25," in ",minCity)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch18ex9q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch18ex9q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch18ex9q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch18ex9q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch18ex9q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch18ex9q" onclick="teachercsp_ch18ex9q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch18ex9q']").attr('data-disqus-identifier', 'teachercsp_ch18ex9q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch18ex6t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix the code so that it prints out the min value and the cities only when the min value is even.</p>
+
+<textarea data-component="activecode" id=ch18ex6q data-lang="python"    data-timelimit=25000   data-audio=''     >
+# read all the lines
+inFile = open("uspoll.txt", r)
+lines = inFile.readline
+inFile.close()
+
+# loop through the lines
+for line in lines:
+
+    # split at :
+    values = line.split(" ")
+
+    # get the min PM 2.5 pollution and the city
+    num = str(values[2])
+    city = values[0]
+
+    # check if even
+    if num % 2 == 0:
+
+    # print the values
+    print("Even min PM 2.5 ", num ," in ", city)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>On line 2, put the &#8220;r&#8221; in quotations. On line 3, change <code class="docutils literal"><span class="pre">readline</span></code> to <code class="docutils literal"><span class="pre">readlines()</span></code>. On line 10, split on the &#8221;:&#8221; not a space. On the last line, indent the print statement to be in the body of the if clause.</p>
 
 <textarea data-component="activecode" id=ch18ex6a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def findPM25LessThan(inFile, amount):
-    line = inFile.readline()
-    while line:
-        values = line.split(":")
-        pollution = float(values[2])
-        if (pollution < amount):
-            print('City: ', values[0])
-            print("Pollution values:",values[1],values[2])
-        line = inFile.readline()
-
+# read all the lines
 inFile = open("uspoll.txt","r")
-findPM25LessThan(inFile,5)
+lines = inFile.readlines()
 inFile.close()
+
+# loop through the lines
+for line in lines:
+
+    # split at :
+    values = line.split(":")
+
+    # get the min PM 2.5 pollution and the city
+    num = float(values[2])
+    city = values[0]
+
+    # check if even
+    if num % 2 == 0:
+
+        # print the values
+        print("Even min PM 2.5 ", num ," in ", city)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -1201,29 +1187,169 @@ inFile.close()
 
 </li>
 <li><div id='ch18ex7t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write a procedure that takes the name of a city and prints the pollution values for that city if it is found.</p>
+<p>Fix the indention on the lines below so that it correctly prints the average PM 2.5 value.</p>
 
 <textarea data-component="activecode" id=ch18ex7q data-lang="python"    data-timelimit=25000   data-audio=''     >
+inFile = open("uspoll.txt","r")
+lines = inFile.readlines()
+inFile.close()
+
+total25 = 0
+count = 1.0
+for line in lines:
+values = line.split(":")
+new25 = float(values[2])
+total25 = total25 + new25
+count = count + 1
+
+print("Average PM 2.5 value is ",total25/count)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Fix the indention on lines 8-11 as shown below.</p>
+
+<textarea data-component="activecode" id=ch18ex7a data-lang="python"    data-timelimit=25000   data-audio=''     >
+inFile = open("uspoll.txt","r")
+lines = inFile.readlines()
+inFile.close()
+
+total25 = 0
+count = 1.0
+for line in lines:
+    values = line.split(":")
+    new25 = float(values[2])
+    total25 = total25 + new25
+    count = count + 1
+
+print("Average PM 2.5 value is ",total25/count)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch18ex5q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch18ex5q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch18ex5q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'cslearn4u';    
+            disqus_identifier = 'teachercsp_ch18ex5q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch18ex5q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch18ex5q" onclick="teachercsp_ch18ex5q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch18ex5q']").attr('data-disqus-identifier', 'teachercsp_ch18ex5q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch18ex8t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+
+<textarea data-component="activecode" id=ch18ex8q data-lang="python"    data-timelimit=25000   data-audio=''     >
 
 
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the procedure and call it.  Be sure to pass the city name to the procedure.</p>
 
-<textarea data-component="activecode" id=ch18ex7a data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
-def printPollution(inFile,cityName):
+<textarea data-component="activecode" id=ch18ex8a data-lang="python"    data-timelimit=25000   data-audio=''     >
 
-    lines = inFile.readlines()
 
-    for line in lines:
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch18ex8q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch18ex8q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch18ex8q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch18ex8q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch18ex8q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch18ex8q" onclick="teachercsp_ch18ex8q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch18ex8q']").attr('data-disqus-identifier', 'teachercsp_ch18ex8q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch18ex9t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Turn the following code into a procedure.  Pass the input file and the amount of PM 10 to the procedure. It will print the city name and the pollution values for all cities that have that much PM 10 pollution or more.</p>
+
+<textarea data-component="activecode" id=ch18ex9q data-lang="python"    data-timelimit=25000   data-audio=''     >
+inFile = open("uspoll.txt","r")
+line = inFile.readline()
+while line:
+    values = line.split(":")
+    pollution = float(values[1])
+    if (pollution > 25):
+        print('City: ', values[0])
+        print("Pollution values:",values[1],values[2])
+    line = inFile.readline()
+
+inFile.close()
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the procedure as shown below.  Be sure to call the procedure to test it.</p>
+
+<textarea data-component="activecode" id=ch18ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def findPM10GreaterThan(inFile, amount):
+    line = inFile.readline()
+    while line:
         values = line.split(":")
-        city = values[0]
-        if (city.find(cityName) == 0):
-            print('City: ', city)
+        pollution = float(values[1])
+        if (pollution > amount):
+            print('City: ', values[0])
             print("Pollution values:",values[1],values[2])
+        line = inFile.readline()
 
 inFile = open("uspoll.txt","r")
-printPollution(inFile, "Albany, GA")
+findPM10GreaterThan(inFile,25)
 inFile.close()
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
@@ -1268,150 +1394,17 @@ inFile.close()
     </div>
 
 </li>
-<li><div id='ch18ex8t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write a function that takes a list and returns the minimum value in the list.</p>
-
-<textarea data-component="activecode" id=ch18ex8q data-lang="python"    data-timelimit=25000   data-audio=''     >
-
-
-</textarea>
-</div><div data-component="tab" data-tabname="Answer" >
-<p>Write the function as shown below.  Be sure to set the initial value to something from the list.  Call the function and print the result.</p>
-<blockquote>
-<div>
-<textarea data-component="activecode" id=ch18ex8a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def findMin(theList):
-    min = theList[0]
-    for value in theList:
-        if value < min:
-            min = value
-    return min
-
-print(findMin([-30, 20, -50, 100, -100]))
-</textarea>
-</div></blockquote>
-</div><div data-component="tab" data-tabname="Discussion" >
-<script type="text/javascript">
-    function teachercsp_ch18ex8q_disqus(source) { 
-        if (window.DISQUS) {
-
-            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
-
-            //if Disqus exists, call it's reset method with new parameters
-            DISQUS.reset({
-                reload: true,
-                config: function () {
-                    this.page.identifier = 'teachercsp_ch18ex8q_' + eBookConfig.course;
-                    this.page.url = 'http://teachercsp_ch18ex8q_'+eBookConfig.course+'.interactivepython.com/#!';
-                }
-            });
-
-        } else {
-            //insert a wrapper in HTML after the relevant "show comments" link
-            $('<div id="disqus_thread"></div>').insertAfter(source);
-
-            // set Disqus required vars
-            disqus_shortname = 'teachercsp';    
-            disqus_identifier = 'teachercsp_ch18ex8q_' + eBookConfig.course;
-            disqus_url = 'http://teachercsp_ch18ex8q_'+eBookConfig.course+'.interactivepython.com/#!';
-
-            //append the Disqus embed script to HTML
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            $('head').append(dsq);
-
-        }
-    }
-</script>
-
-<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch18ex8q" onclick="teachercsp_ch18ex8q_disqus(this);">Show Comments</a>
-<script type='text/javascript'>
-    $("a[data-disqus-identifier='teachercsp_ch18ex8q']").attr('data-disqus-identifier', 'teachercsp_ch18ex8q_' + eBookConfig.course);
-</script>
-</div>
-    </div>
-
-</li>
-<li><div id='ch18ex9t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write a function that finds the maximum value in a list.  Pass in the list and return the maximum value.  Call the function and print the result.</p>
-
-<textarea data-component="activecode" id=ch18ex9q data-lang="python"    data-timelimit=25000   data-audio=''     >
-
-
-</textarea>
-</div><div data-component="tab" data-tabname="Answer" >
-<p>Write the function as shown below.  Be sure to set the initial value to something from the list.  Call the function and print the result.</p>
-
-<textarea data-component="activecode" id=ch18ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def findMax(theList):
-    max = theList[0]
-    for value in theList:
-        if value > max:
-            max = value
-    return max
-
-print(findMax([-30, 20, -50, 100, -100]))
-</textarea>
-</div><div data-component="tab" data-tabname="Discussion" >
-<script type="text/javascript">
-    function teachercsp_ch18ex9q_disqus(source) { 
-        if (window.DISQUS) {
-
-            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
-
-            //if Disqus exists, call it's reset method with new parameters
-            DISQUS.reset({
-                reload: true,
-                config: function () {
-                    this.page.identifier = 'teachercsp_ch18ex9q_' + eBookConfig.course;
-                    this.page.url = 'http://teachercsp_ch18ex9q_'+eBookConfig.course+'.interactivepython.com/#!';
-                }
-            });
-
-        } else {
-            //insert a wrapper in HTML after the relevant "show comments" link
-            $('<div id="disqus_thread"></div>').insertAfter(source);
-
-            // set Disqus required vars
-            disqus_shortname = 'teachercsp';    
-            disqus_identifier = 'teachercsp_ch18ex9q_' + eBookConfig.course;
-            disqus_url = 'http://teachercsp_ch18ex9q_'+eBookConfig.course+'.interactivepython.com/#!';
-
-            //append the Disqus embed script to HTML
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            $('head').append(dsq);
-
-        }
-    }
-</script>
-
-<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch18ex9q" onclick="teachercsp_ch18ex9q_disqus(this);">Show Comments</a>
-<script type='text/javascript'>
-    $("a[data-disqus-identifier='teachercsp_ch18ex9q']").attr('data-disqus-identifier', 'teachercsp_ch18ex9q_' + eBookConfig.course);
-</script>
-</div>
-    </div>
-
-</li>
 <li><div id='ch18ex10t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write a function that calculates the average of all values in the list.  Return the average.</p>
 
 <textarea data-component="activecode" id=ch18ex10q data-lang="python"    data-timelimit=25000   data-audio=''     >
 
 
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Create a function and pass in the list.  Accumulate the sum and calculate the average and return it.  Call the function and print the result.</p>
 
 <textarea data-component="activecode" id=ch18ex10a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def getAverage(theList):
-    sum = 0
-    for item in theList:
-        sum = sum + item
-    return sum / len(theList)
 
-print(getAverage([80, 90, 70]))
+
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -1450,6 +1443,622 @@ print(getAverage([80, 90, 70]))
 <a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch18ex10q" onclick="teachercsp_ch18ex10q_disqus(this);">Show Comments</a>
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch18ex10q']").attr('data-disqus-identifier', 'teachercsp_ch18ex10q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch18ex11t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Change the following code into a procedure that prints the city name and pollution values for all cities that have a PM 2.5 of less than some passed value.  Pass in the input file and the amount of pollution.</p>
+
+<textarea data-component="activecode" id=ch18ex11q data-lang="python"    data-timelimit=25000   data-audio=''     >
+inFile = open("uspoll.txt","r")
+line = inFile.readline()
+while line:
+    values = line.split(":")
+    pollution = float(values[2])
+    if (pollution < 5):
+        print('City: ', values[0])
+        print("Pollution values:",values[1],values[2])
+    line = inFile.readline()
+
+inFile.close()
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define a procedure that takes the input file and the amount.  Print all the cities that have lower than the passed amount for PM 2.5.</p>
+
+<textarea data-component="activecode" id=ch18ex11a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def findPM25LessThan(inFile, amount):
+    line = inFile.readline()
+    while line:
+        values = line.split(":")
+        pollution = float(values[2])
+        if (pollution < amount):
+            print('City: ', values[0])
+            print("Pollution values:",values[1],values[2])
+        line = inFile.readline()
+
+inFile = open("uspoll.txt","r")
+findPM25LessThan(inFile,5)
+inFile.close()
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch18ex11q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch18ex11q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch18ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch18ex11q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch18ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch18ex11q" onclick="teachercsp_ch18ex11q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch18ex11q']").attr('data-disqus-identifier', 'teachercsp_ch18ex11q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch18ex12t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+
+<textarea data-component="activecode" id=ch18ex12q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+
+<textarea data-component="activecode" id=ch18ex12a data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch18ex12q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch18ex12q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch18ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch18ex12q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch18ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch18ex12q" onclick="teachercsp_ch18ex12q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch18ex12q']").attr('data-disqus-identifier', 'teachercsp_ch18ex12q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch18ex13t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a procedure that takes the name of a city and prints the pollution values for that city if it is found.</p>
+
+<textarea data-component="activecode" id=ch18ex13q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the procedure and call it.  Be sure to pass the city name to the procedure.</p>
+
+<textarea data-component="activecode" id=ch18ex13a data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+def printPollution(inFile,cityName):
+
+    lines = inFile.readlines()
+
+    for line in lines:
+        values = line.split(":")
+        city = values[0]
+        if (city.find(cityName) == 0):
+            print('City: ', city)
+            print("Pollution values:",values[1],values[2])
+
+inFile = open("uspoll.txt","r")
+printPollution(inFile, "Albany, GA")
+inFile.close()
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch18ex13q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch18ex13q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch18ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch18ex13q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch18ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch18ex13q" onclick="teachercsp_ch18ex13q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch18ex13q']").attr('data-disqus-identifier', 'teachercsp_ch18ex13q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch18ex14t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a procedure that takes in the file name as a parameter and prints out all the cities that start with a vowel (a,e,i,o, or u) and their associated pollution values.</p>
+
+<textarea data-component="activecode" id=ch18ex14q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+
+<textarea data-component="activecode" id=ch18ex14a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def vowelFinder(file):
+    inFile = open(file,"r")
+    line = inFile.readline()
+    while line:
+        values = line.split(":")
+        city = values[0]
+        if (city.find("A") == 0 or city.find("E") == 0):
+            print('City: ', city, "Pollution values:",values[1],values[2])
+        if (city.find("I") == 0 or city.find("O") == 0):
+            print('City: ', city, "Pollution values:",values[1],values[2])
+        if (city.find("U") == 0):
+            print('City: ', city, "Pollution values:",values[1],values[2])
+
+        line = inFile.readline()
+
+    inFile.close()
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch18ex14q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch18ex14q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch18ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch18ex14q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch18ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch18ex14q" onclick="teachercsp_ch18ex14q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch18ex14q']").attr('data-disqus-identifier', 'teachercsp_ch18ex14q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch18ex15t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a function that takes a list and returns the minimum value in the list.</p>
+
+<textarea data-component="activecode" id=ch18ex15q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Write the function as shown below.  Be sure to set the initial value to something from the list.  Call the function and print the result.</p>
+<blockquote>
+<div>
+<textarea data-component="activecode" id=ch18ex15a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def findMin(theList):
+    min = theList[0]
+    for value in theList:
+        if value < min:
+            min = value
+    return min
+
+print(findMin([-30, 20, -50, 100, -100]))
+</textarea>
+</div></blockquote>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch18ex15q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch18ex15q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch18ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch18ex15q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch18ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch18ex15q" onclick="teachercsp_ch18ex15q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch18ex15q']").attr('data-disqus-identifier', 'teachercsp_ch18ex15q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch18ex16t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+
+<textarea data-component="activecode" id=ch18ex16q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+
+<textarea data-component="activecode" id=ch18ex16a data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch18ex16q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch18ex16q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch18ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch18ex16q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch18ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch18ex16q" onclick="teachercsp_ch18ex16q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch18ex16q']").attr('data-disqus-identifier', 'teachercsp_ch18ex16q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch18ex17t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a function that finds the maximum value in a list.  Pass in the list and return the maximum value.  Call the function and print the result.</p>
+
+<textarea data-component="activecode" id=ch18ex17q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Write the function as shown below.  Be sure to set the initial value to something from the list.  Call the function and print the result.</p>
+
+<textarea data-component="activecode" id=ch18ex17a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def findMax(theList):
+    max = theList[0]
+    for value in theList:
+        if value > max:
+            max = value
+    return max
+
+print(findMax([-30, 20, -50, 100, -100]))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch18ex17q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch18ex17q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch18ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch18ex17q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch18ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch18ex17q" onclick="teachercsp_ch18ex17q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch18ex17q']").attr('data-disqus-identifier', 'teachercsp_ch18ex17q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch18ex18t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+
+<textarea data-component="activecode" id=ch18ex18q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+
+<textarea data-component="activecode" id=ch18ex18a data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch18ex18q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch18ex18q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch18ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch18ex18q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch18ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch18ex18q" onclick="teachercsp_ch18ex18q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch18ex18q']").attr('data-disqus-identifier', 'teachercsp_ch18ex18q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch18ex19t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a function that calculates the average of all values in the list.  Return the average.</p>
+
+<textarea data-component="activecode" id=ch18ex19q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Create a function and pass in the list.  Accumulate the sum and calculate the average and return it.  Call the function and print the result.</p>
+
+<textarea data-component="activecode" id=ch18ex19a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def getAverage(theList):
+    sum = 0
+    for item in theList:
+        sum = sum + item
+    return sum / len(theList)
+
+print(getAverage([80, 90, 70]))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch18ex19q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch18ex19q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch18ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch18ex19q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch18ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch18ex19q" onclick="teachercsp_ch18ex19q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch18ex19q']").attr('data-disqus-identifier', 'teachercsp_ch18ex19q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch18ex20t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+
+<textarea data-component="activecode" id=ch18ex20q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+
+<textarea data-component="activecode" id=ch18ex20a data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch18ex20q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch18ex20q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch18ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch18ex20q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch18ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch18ex20q" onclick="teachercsp_ch18ex20q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch18ex20q']").attr('data-disqus-identifier', 'teachercsp_ch18ex20q_' + eBookConfig.course);
 </script>
 </div>
     </div>

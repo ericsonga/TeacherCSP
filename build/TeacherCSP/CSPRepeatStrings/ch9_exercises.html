@@ -415,33 +415,23 @@ print(newString)
 
 </li>
 <li><div id='ch9ex2t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix the indention on 4 lines below to correctly print the reverse of the string.  It should print: &#8221;!yadhtriB yppaH.&#8221;</p>
+<p>The code currently prints the reverse of a string. Change it so that it prints the string in the correct order, but every character is separated by a space (there should even be a space between a space and the next character).</p>
 
 <textarea data-component="activecode" id=ch9ex2q data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: INITIALIZE ACCUMULATORS
 newString = ""
-# STEP 2: GET DATA
-    phrase = "Happy Birthday!"
-# STEP 3: LOOP THROUGH THE DATA
+phrase = "This is a string."
 for letter in phrase:
-# STEP 4: ACCUMULATE
-newString = letter + newString
-# STEP 5: PROCESS RESULT
-    print(newString)
+    newString = letter + newString
+print(newString)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change the indention on lines 4, 7, 8, and 10 as shown below.</p>
+<p>In line 3, <code class="docutils literal"><span class="pre">newString</span></code> should equal <a href="#id1"><span class="problematic" id="id2">``</span></a>newString + letter + &#8216;&#8217; <a href="#id3"><span class="problematic" id="id4">``</span></a>. The order does matter.</p>
 
 <textarea data-component="activecode" id=ch9ex2a data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: INITIALIZE ACCUMULATORS
 newString = ""
-# STEP 2: GET DATA
-phrase = "Happy Birthday!"
-# STEP 3: LOOP THROUGH THE DATA
+phrase = "This is a string."
 for letter in phrase:
-    # STEP 4: ACCUMULATE
-    newString = letter + newString
-# STEP 5: PROCESS RESULT
+    newString = newString + letter + " "
 print(newString)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
@@ -487,32 +477,32 @@ print(newString)
 
 </li>
 <li><div id='ch9ex3t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix 4 errors in the code below to correctly print the mirror of the text in phrase.  Is should print: &#8220;tset a si sihTThis is a test.&#8221;</p>
+<p>Fix the indention on 4 lines below to correctly print the reverse of the string.  It should print: &#8221;!yadhtriB yppaH.&#8221;</p>
 
 <textarea data-component="activecode" id=ch9ex3q data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: INITIALIZE ACCUMULATOR
-newString =
-# STEP 2: GET DATA
-phrase = "This is a test"
-# STEP 3: LOOP THROUGH THE DATA
-for l in phrase:
-    # STEP 4: ACCUMULATE
-    newString = letter + newString  letter
-# STEP 5: PROCESS RESULT
-print()
-</textarea>
-</div><div data-component="tab" data-tabname="Answer" >
-<p>Initialize <code class="docutils literal"><span class="pre">newString</span></code> to the empty string in line 2.  Change <code class="docutils literal"><span class="pre">l</span></code> to <code class="docutils literal"><span class="pre">letter</span></code> in line 6.  Add a <code class="docutils literal"><span class="pre">+</span></code> in line 8.  Add <code class="docutils literal"><span class="pre">newString</span></code> on line 10.</p>
-
-<textarea data-component="activecode" id=ch9ex3a data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: INITIALIZE ACCUMULATOR
+# STEP 1: INITIALIZE ACCUMULATORS
 newString = ""
 # STEP 2: GET DATA
-phrase = "This is a test"
+    phrase = "Happy Birthday!"
+# STEP 3: LOOP THROUGH THE DATA
+for letter in phrase:
+# STEP 4: ACCUMULATE
+newString = letter + newString
+# STEP 5: PROCESS RESULT
+    print(newString)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Change the indention on lines 4, 7, 8, and 10 as shown below.</p>
+
+<textarea data-component="activecode" id=ch9ex3a data-lang="python"    data-timelimit=25000   data-audio=''     >
+# STEP 1: INITIALIZE ACCUMULATORS
+newString = ""
+# STEP 2: GET DATA
+phrase = "Happy Birthday!"
 # STEP 3: LOOP THROUGH THE DATA
 for letter in phrase:
     # STEP 4: ACCUMULATE
-    newString = letter + newString + letter
+    newString = letter + newString
 # STEP 5: PROCESS RESULT
 print(newString)
 </textarea>
@@ -537,7 +527,7 @@ print(newString)
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'cslearn4u';    
+            disqus_shortname = 'teachercsp';    
             disqus_identifier = 'teachercsp_ch9ex3q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch9ex3q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -559,25 +549,24 @@ print(newString)
 
 </li>
 <li><div id='ch9ex4t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>The code below is supposed to replace all 1&#8217;s with i&#8217;s, but it is in an infinite loop.  You can reload the page to stop the infinite loop.  Add a line to make the code work.  It should print: &#8220;This is a string.&#8221;</p>
+<p>Fix the errors in the code to correctly print the reverse of the string. It should print: &#8221;!gnirts a m&#8217;I ,kool yeH&#8221;</p>
 
 <textarea data-component="activecode" id=ch9ex4q data-lang="python"    data-timelimit=25000   data-audio=''     >
-str = "Th1s is a str1ng"
-pos = str.find("1")
-while pos >= 0:
-    str = str[0:pos] + "i" + str[pos+1:len(str)]
-print(str)
+phrase = "Hey look, I'm a string!"
+for letter in phrase:
+    newString = ""
+    newString = newString + phrase
+    print(phrase)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Add line 5 as shown below.</p>
+<p><code class="docutils literal"><span class="pre">newString</span></code> should be initialized outside of the for loop. Inside the for loop, it should equal <code class="docutils literal"><span class="pre">letter</span> <span class="pre">+</span> <span class="pre">newString</span></code> and the print statement should be outside the for loop and it should print the <code class="docutils literal"><span class="pre">newString</span></code></p>
 
 <textarea data-component="activecode" id=ch9ex4a data-lang="python"    data-timelimit=25000   data-audio=''     >
-str = "Th1s is a str1ng"
-pos = str.find("1")
-while pos >= 0:
-    str = str[0:pos] + "i" + str[pos+1:len(str)]
-    pos = str.find("1")
-print(str)
+newString = ""
+phrase = "Hey look, I'm a string!"
+for letter in phrase:
+    newString = letter + newString
+print(newString)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -622,30 +611,34 @@ print(str)
 
 </li>
 <li><div id='ch9ex5t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>The program below is supposed to encode the text in message, but it has 5 errors.  Fix the errors so that it prints: &#8220;nvvg.nv.zg.nrwmrtsg.&#8221;</p>
+<p>Fix 4 errors in the code below to correctly print the mirror of the text in phrase.  It should print: &#8220;tset a si sihTThis is a test.&#8221;</p>
 
 <textarea data-component="activecode" id=ch9ex5q data-lang="python"    data-timelimit=25000   data-audio=''     >
-message = "meet me at midnight"
-str = "abcdefghijklmnopqrstuvwxyz.
-eStr = zyxwvutsrqponmlkjihgfedcba ."
-encodedMessage = message
-for letter in message
-    pos = str.find(letter)
-    encodedMessage = encodedMessage + eStr[pos:pos+1]
-print encodedMessage)
+# STEP 1: INITIALIZE ACCUMULATOR
+newString =
+# STEP 2: GET DATA
+phrase = "This is a test"
+# STEP 3: LOOP THROUGH THE DATA
+for l in phrase:
+    # STEP 4: ACCUMULATE
+    newString = letter + newString  letter
+# STEP 5: PROCESS RESULT
+print()
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change line 2 to end in <code class="docutils literal"><span class="pre">&quot;</span></code>.  Change line 3 to start the string with <code class="docutils literal"><span class="pre">&quot;</span></code>.  Change line 4 to set <code class="docutils literal"><span class="pre">encodeMesage</span></code> to the empty string to start.  Add <code class="docutils literal"><span class="pre">:</span></code> at the end of line 5.  Add <code class="docutils literal"><span class="pre">(</span></code> on line 8.</p>
+<p>Initialize <code class="docutils literal"><span class="pre">newString</span></code> to the empty string in line 2.  Change <code class="docutils literal"><span class="pre">l</span></code> to <code class="docutils literal"><span class="pre">letter</span></code> in line 6.  Add a <code class="docutils literal"><span class="pre">+</span></code> in line 8.  Add <code class="docutils literal"><span class="pre">newString</span></code> on line 10.</p>
 
 <textarea data-component="activecode" id=ch9ex5a data-lang="python"    data-timelimit=25000   data-audio=''     >
-message = "meet me at midnight"
-str = "abcdefghijklmnopqrstuvwxyz. "
-eStr = "zyxwvutsrqponmlkjihgfedcba ."
-encodedMessage = ""
-for letter in message:
-    pos = str.find(letter)
-    encodedMessage = encodedMessage + eStr[pos:pos+1]
-print(encodedMessage)
+# STEP 1: INITIALIZE ACCUMULATOR
+newString = ""
+# STEP 2: GET DATA
+phrase = "This is a test"
+# STEP 3: LOOP THROUGH THE DATA
+for letter in phrase:
+    # STEP 4: ACCUMULATE
+    newString = letter + newString + letter
+# STEP 5: PROCESS RESULT
+print(newString)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -668,7 +661,7 @@ print(encodedMessage)
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'teachercsp';    
+            disqus_shortname = 'cslearn4u';    
             disqus_identifier = 'teachercsp_ch9ex5q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch9ex5q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -690,38 +683,24 @@ print(encodedMessage)
 
 </li>
 <li><div id='ch9ex6t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Rewrite the following code to create a function that takes a string and returns the reverse of the string.  It should print: &#8221;!yadhtriB yppaH.&#8221;</p>
+<p>The code currently prints each letter of the string twice in a row. Change it so that it prints the mirror of the string. It should print: &#8221;!rorrim a ni gnikool ekil s&#8217;tIIt&#8217;s like looking in a mirror!&#8221;</p>
 
 <textarea data-component="activecode" id=ch9ex6q data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: INITIALIZE ACCUMULATORS
 newString = ""
-# STEP 2: GET DATA
-phrase = "Happy Birthday!"
-# STEP 3: LOOP THROUGH THE DATA
+phrase = "It's like looking in a mirror!"
 for letter in phrase:
-    # STEP 4: ACCUMULATE
-    newString = letter + newString
-# STEP 5: PROCESS RESULT
+    newString = newString + letter + letter
 print(newString)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the function as shown below.  Call the function and print the result.</p>
+<p>Change line 4 to be <code class="docutils literal"><span class="pre">newString</span> <span class="pre">=</span> <span class="pre">letter</span> <span class="pre">+</span> <span class="pre">newString</span> <span class="pre">+</span> <span class="pre">newString</span></code></p>
 
 <textarea data-component="activecode" id=ch9ex6a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def reverse(phrase):
-    # STEP 1: INITIALIZE ACCUMULATORS
-    newString = ""
-
-    # STEP 3: LOOP THROUGH THE DATA
-    for letter in phrase:
-
-       # STEP 4: ACCUMULATE
-       newString = letter + newString
-
-    # STEP 5: PROCESS RESULT
-    return(newString)
-
-print(reverse("Happy Birthday!"))
+newString = ""
+phrase = "It's like looking in a mirror!"
+for letter in phrase:
+    newString = letter + newString + letter
+print(newString)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -766,37 +745,25 @@ print(reverse("Happy Birthday!"))
 
 </li>
 <li><div id='ch9ex7t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Rewrite the following code to create a function that takes a string and returns the mirror of the string.  It should print: &#8221;!ssalC iHHi Class!&#8221;.</p>
+<p>The code below is supposed to replace all 1&#8217;s with i&#8217;s, but it is in an infinite loop.  You can reload the page to stop the infinite loop.  Add a line to make the code work.  It should print: &#8220;This is a string.&#8221;</p>
 
 <textarea data-component="activecode" id=ch9ex7q data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: INITIALIZE ACCUMULATOR
-newString = ""
-# STEP 2: GET DATA
-phrase = "This is a test"
-# STEP 3: LOOP THROUGH THE DATA
-for letter in phrase:
-    # STEP 4: ACCUMULATE
-    newString = letter + newString + letter
-# STEP 5: PROCESS RESULT
-print(newString)
+str = "Th1s is a str1ng"
+pos = str.find("1")
+while pos >= 0:
+    str = str[0:pos] + "i" + str[pos+1:len(str)]
+print(str)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the function as shown below.  Call the function and print the result.</p>
+<p>Add line 5 as shown below.</p>
 
 <textarea data-component="activecode" id=ch9ex7a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def mirror(phrase):
-
-    # STEP 1: INITIALIZE ACCUMULATOR
-    newString = ""
-
-    # STEP 3: LOOP THROUGH THE DATA
-    for letter in phrase:
-        # STEP 4: ACCUMULATE
-        newString = letter + newString + letter
-    # STEP 5: PROCESS RESULT
-    return(newString)
-
-print(mirror("Hi Class!"))
+str = "Th1s is a str1ng"
+pos = str.find("1")
+while pos >= 0:
+    str = str[0:pos] + "i" + str[pos+1:len(str)]
+    pos = str.find("1")
+print(str)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -841,32 +808,24 @@ print(mirror("Hi Class!"))
 
 </li>
 <li><div id='ch9ex8t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Modify the code below to create a function that will that will take a message and return an encoded message.  It should print: &#8220;nvvg.nv.zg.nrwmrtsg.&#8221;</p>
+<p>Fix the errors so that the code prints &#8220;I&#8217;m just a string.&#8221;</p>
 
 <textarea data-component="activecode" id=ch9ex8q data-lang="python"    data-timelimit=25000   data-audio=''     >
-message = "meet me at midnight"
-str = "abcdefghijklmnopqrstuvwxyz. "
-eStr = "zyxwvutsrqponmlkjihgfedcba ."
-encodedMessage = ""
-for letter in message:
-    pos = str.find(letter)
-    encodedMessage = encodedMessage + eStr[pos:pos+1]
-print(encodedMessage)
+newString = "  "
+phrase = "I'm just a string."
+for phrase in letter
+    letter = letter + newString
+print(newString)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the function as shown below and be sure to return the encoded string.  Call the function and print the result.</p>
+<p>newString should not be initialized with spaces. On line 3, it should be &#8220;for letter in phrase:&#8221;. Line 4 should be &#8220;newString = newString + letter&#8221;.</p>
 
 <textarea data-component="activecode" id=ch9ex8a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def encode(message):
-    str = "abcdefghijklmnopqrstuvwxyz. "
-    eStr = "zyxwvutsrqponmlkjihgfedcba ."
-    encodedMessage = ""
-    for letter in message:
-        pos = str.find(letter)
-        encodedMessage = encodedMessage + eStr[pos:pos+1]
-    return(encodedMessage)
-
-print(encode("The password is touchdown."))
+newString = ""
+phrase = "I'm just a string."
+for letter in phrase:
+    newString = newString + letter
+print(newString)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -911,32 +870,30 @@ print(encode("The password is touchdown."))
 
 </li>
 <li><div id='ch9ex9t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Modify the code below to create a function that returns the decoded input string.  It should print: &#8220;meet me at midnight.&#8221;</p>
+<p>The program below is supposed to encode the text in message, but it has 5 errors.  Fix the errors so that it prints: &#8220;nvvg.nv.zg.nrwmrtsg.&#8221;</p>
 
 <textarea data-component="activecode" id=ch9ex9q data-lang="python"    data-timelimit=25000   data-audio=''     >
-message = ""
-str = "abcdefghijklmnopqrstuvwxyz. "
-eStr = "zyxwvutsrqponmlkjihgfedcba ."
-encodedMessage = "nvvg.nv.zg.nrwmrtsg"
-for letter in encodedMessage:
-    pos = eStr.find(letter)
-    message = message + str[pos:pos+1]
-print(message)
+message = "meet me at midnight"
+str = "abcdefghijklmnopqrstuvwxyz.
+eStr = zyxwvutsrqponmlkjihgfedcba ."
+encodedMessage = message
+for letter in message
+    pos = str.find(letter)
+    encodedMessage = encodedMessage + eStr[pos:pos+1]
+print encodedMessage)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the function as shown below.  Be sure to return the decoded message.  Call the function and print the result.</p>
+<p>Change line 2 to end in <code class="docutils literal"><span class="pre">&quot;</span></code>.  Change line 3 to start the string with <code class="docutils literal"><span class="pre">&quot;</span></code>.  Change line 4 to set <code class="docutils literal"><span class="pre">encodeMesage</span></code> to the empty string to start.  Add <code class="docutils literal"><span class="pre">:</span></code> at the end of line 5.  Add <code class="docutils literal"><span class="pre">(</span></code> on line 8.</p>
 
 <textarea data-component="activecode" id=ch9ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def decode(eMessage):
-    message = ""
-    str = "abcdefghijklmnopqrstuvwxyz. "
-    eStr = "zyxwvutsrqponmlkjihgfedcba ."
-    for letter in eMessage:
-        pos = eStr.find(letter)
-        message = message + str[pos:pos+1]
-    return(message)
-
-print(decode("nvvg.nv.zg.nrwmrtsg"))
+message = "meet me at midnight"
+str = "abcdefghijklmnopqrstuvwxyz. "
+eStr = "zyxwvutsrqponmlkjihgfedcba ."
+encodedMessage = ""
+for letter in message:
+    pos = str.find(letter)
+    encodedMessage = encodedMessage + eStr[pos:pos+1]
+print(encodedMessage)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -981,25 +938,25 @@ print(decode("nvvg.nv.zg.nrwmrtsg"))
 
 </li>
 <li><div id='ch9ex10t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Create another function that encodes a string.  Pass in both the string to be encoded <em>and</em> the string to use to encode the string as well.</p>
+<p>The code currently prints &#8220;This is a striniThis is a string&#8221;. Fix the error so that it replaces every &#8220;1&#8221; with &#8220;i&#8221; and prints &#8220;This is a string&#8221;.</p>
 
 <textarea data-component="activecode" id=ch9ex10q data-lang="python"    data-timelimit=25000   data-audio=''     >
-
-
+str = "Th1s is a str1ng"
+pos = str.find("1")
+while pos >= 0:
+    pos = str.find("1")
+    str = str[0:pos] + "i" + str[pos+1:len(str)]
+print(str)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Create a function similar to the encode function above, but change it to take two input values.</p>
 
 <textarea data-component="activecode" id=ch9ex10a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def encode2(message, eStr):
-    str = "abcdefghijklmnopqrstuvwxyz. "
-    encodedMessage = ""
-    for letter in message:
-        pos = str.find(letter)
-        encodedMessage = encodedMessage + eStr[pos:pos+1]
-    return(encodedMessage)
-
-print(encode2("This is a test", "zyxwvutsrqponmlkjihgfedcba ."))
+str = "Th1s is a str1ng"
+pos = str.find("1")
+while pos >= 0:
+    str = str[0:pos] + "i" + str[pos+1:len(str)]
+    pos = str.find("1")
+print(str)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -1038,6 +995,695 @@ print(encode2("This is a test", "zyxwvutsrqponmlkjihgfedcba ."))
 <a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch9ex10q" onclick="teachercsp_ch9ex10q_disqus(this);">Show Comments</a>
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch9ex10q']").attr('data-disqus-identifier', 'teachercsp_ch9ex10q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch9ex11t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Rewrite the following code to create a function that takes a string and returns the reverse of the string.  It should print: &#8221;!yadhtriB yppaH.&#8221;</p>
+
+<textarea data-component="activecode" id=ch9ex11q data-lang="python"    data-timelimit=25000   data-audio=''     >
+# STEP 1: INITIALIZE ACCUMULATORS
+newString = ""
+# STEP 2: GET DATA
+phrase = "Happy Birthday!"
+# STEP 3: LOOP THROUGH THE DATA
+for letter in phrase:
+    # STEP 4: ACCUMULATE
+    newString = letter + newString
+# STEP 5: PROCESS RESULT
+print(newString)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the function as shown below.  Call the function and print the result.</p>
+
+<textarea data-component="activecode" id=ch9ex11a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def reverse(phrase):
+    # STEP 1: INITIALIZE ACCUMULATORS
+    newString = ""
+
+    # STEP 3: LOOP THROUGH THE DATA
+    for letter in phrase:
+
+       # STEP 4: ACCUMULATE
+       newString = letter + newString
+
+    # STEP 5: PROCESS RESULT
+    return(newString)
+
+print(reverse("Happy Birthday!"))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch9ex11q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch9ex11q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch9ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch9ex11q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch9ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch9ex11q" onclick="teachercsp_ch9ex11q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch9ex11q']").attr('data-disqus-identifier', 'teachercsp_ch9ex11q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch9ex12t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix the errors in the code so that it replaces the misspelled word &#8220;recieved&#8221; with the correct spelling &#8220;received&#8221;</p>
+
+<textarea data-component="activecode" id=ch9ex12q data-lang="python"    data-timelimit=25000   data-audio=''     >
+str = "He recieved candy"
+pos = str.find("received")
+while pos >= 0:
+    str = str[0:pos+len("recieved")] + "received" + str[pos:len(str)]
+    pos = str.find("recieved")
+print(str)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>In line 2, make sure to find the position of the misspelled word. In line 4, <code class="docutils literal"><span class="pre">str</span> <span class="pre">=</span> <span class="pre">str[0:pos]</span> <span class="pre">+</span> <span class="pre">&quot;received&quot;</span> <span class="pre">+</span> <span class="pre">str[pos+len(&quot;recieved&quot;):len(str)]</span></code>.</p>
+
+<textarea data-component="activecode" id=ch9ex12a data-lang="python"    data-timelimit=25000   data-audio=''     >
+str = "He recieved candy"
+pos = str.find("recieved")
+while pos >= 0:
+    str = str[0:pos] + "received" + str[pos+len("recieved"):len(str)]
+    pos = str.find("recieved")
+print(str)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch9ex12q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch9ex12q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch9ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch9ex12q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch9ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch9ex12q" onclick="teachercsp_ch9ex12q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch9ex12q']").attr('data-disqus-identifier', 'teachercsp_ch9ex12q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch9ex13t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Rewrite the following code to create a function that takes a string and returns the mirror of the string.  It should print: &#8221;!ssalC iHHi Class!&#8221;.</p>
+
+<textarea data-component="activecode" id=ch9ex13q data-lang="python"    data-timelimit=25000   data-audio=''     >
+# STEP 1: INITIALIZE ACCUMULATOR
+newString = ""
+# STEP 2: GET DATA
+phrase = "This is a test"
+# STEP 3: LOOP THROUGH THE DATA
+for letter in phrase:
+    # STEP 4: ACCUMULATE
+    newString = letter + newString + letter
+# STEP 5: PROCESS RESULT
+print(newString)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the function as shown below.  Call the function and print the result.</p>
+
+<textarea data-component="activecode" id=ch9ex13a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def mirror(phrase):
+
+    # STEP 1: INITIALIZE ACCUMULATOR
+    newString = ""
+
+    # STEP 3: LOOP THROUGH THE DATA
+    for letter in phrase:
+        # STEP 4: ACCUMULATE
+        newString = letter + newString + letter
+    # STEP 5: PROCESS RESULT
+    return(newString)
+
+print(mirror("Hi Class!"))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch9ex13q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch9ex13q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch9ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch9ex13q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch9ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch9ex13q" onclick="teachercsp_ch9ex13q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch9ex13q']").attr('data-disqus-identifier', 'teachercsp_ch9ex13q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch9ex14t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Complete the code to change all the periods to commas.</p>
+
+<textarea data-component="activecode" id=ch9ex14q data-lang="python"    data-timelimit=25000   data-audio=''     >
+str = "I like to eat. sleep. learn. and code!"
+pos = str.
+while pos >= :
+    str = str[0:pos] +   + str[  :len(str)]
+    pos =
+print(str)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>On line 2, use the find method to find the period. On line 3, <code class="docutils literal"><span class="pre">pos</span></code> should be greater than or equal to 0. Line 4 should be &#8220;str = str[0:pos] + &#8221;,&#8221; + str[pos+len(&#8221;.&#8221;):len(str)]&#8221; and line 5 should find the next period.</p>
+
+<textarea data-component="activecode" id=ch9ex14a data-lang="python"    data-timelimit=25000   data-audio=''     >
+str = "I like to eat. sleep. learn. and code!"
+pos = str.find(".")
+while pos >= 0:
+    str = str[0:pos] + "," + str[pos+len("."):len(str)]
+    pos = str.find(".")
+print(str)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch9ex14q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch9ex14q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch9ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch9ex14q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch9ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch9ex14q" onclick="teachercsp_ch9ex14q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch9ex14q']").attr('data-disqus-identifier', 'teachercsp_ch9ex14q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch9ex15t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Modify the code below to create a function that will that will take a message and return an encoded message.  It should print: &#8220;nvvg.nv.zg.nrwmrtsg.&#8221;</p>
+
+<textarea data-component="activecode" id=ch9ex15q data-lang="python"    data-timelimit=25000   data-audio=''     >
+message = "meet me at midnight"
+str = "abcdefghijklmnopqrstuvwxyz. "
+eStr = "zyxwvutsrqponmlkjihgfedcba ."
+encodedMessage = ""
+for letter in message:
+    pos = str.find(letter)
+    encodedMessage = encodedMessage + eStr[pos:pos+1]
+print(encodedMessage)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the function as shown below and be sure to return the encoded string.  Call the function and print the result.</p>
+
+<textarea data-component="activecode" id=ch9ex15a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def encode(message):
+    str = "abcdefghijklmnopqrstuvwxyz. "
+    eStr = "zyxwvutsrqponmlkjihgfedcba ."
+    encodedMessage = ""
+    for letter in message:
+        pos = str.find(letter)
+        encodedMessage = encodedMessage + eStr[pos:pos+1]
+    return(encodedMessage)
+
+print(encode("The password is touchdown."))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch9ex15q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch9ex15q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch9ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch9ex15q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch9ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch9ex15q" onclick="teachercsp_ch9ex15q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch9ex15q']").attr('data-disqus-identifier', 'teachercsp_ch9ex15q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch9ex16t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Rewrite and fix the errors in the code to be a procedure that takes in a string and prints the reverse of the string and the mirror of the string. Make sure to call the procedure.</p>
+
+<textarea data-component="activecode" id=ch9ex16q data-lang="python"    data-timelimit=25000   data-audio=''     >
+reverseString = ""
+mirrorString = " "
+phrase = "This is the string"
+for phrase in phrase:
+    reverseString = reverseString + letter
+    mirrorString = letter + letter + reverseString
+print(reverseString)
+print(mirrorString)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p><code class="docutils literal"><span class="pre">mirrorString</span></code> in line 2 should not be set equal to a string of a space. The for loop should be &#8220;for letter in phrase&#8221;. <code class="docutils literal"><span class="pre">reverseString</span></code> should equal <code class="docutils literal"><span class="pre">letter</span> <span class="pre">+</span> <span class="pre">reverseString</span></code> and <code class="docutils literal"><span class="pre">mirrorString</span></code> should equal <code class="docutils literal"><span class="pre">letter</span> <span class="pre">+</span> <span class="pre">mirrorString</span> <span class="pre">+</span> <span class="pre">letter</span></code>.</p>
+
+<textarea data-component="activecode" id=ch9ex16a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def aProcedure(phrase):
+    reverseString = ""
+    mirrorString = ""
+    for letter in phrase:
+        reverseString = letter + reverseString
+        mirrorString = letter + reverseString + letter
+    print(reverseString)
+    print(mirrorString)
+
+phrase = "This is the string"
+aProcedure(phrase)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch9ex16q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch9ex16q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch9ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch9ex16q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch9ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch9ex16q" onclick="teachercsp_ch9ex16q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch9ex16q']").attr('data-disqus-identifier', 'teachercsp_ch9ex16q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch9ex17t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Modify the code below to create a function that returns the decoded input string.  It should print: &#8220;meet me at midnight.&#8221;</p>
+
+<textarea data-component="activecode" id=ch9ex17q data-lang="python"    data-timelimit=25000   data-audio=''     >
+message = ""
+str = "abcdefghijklmnopqrstuvwxyz. "
+eStr = "zyxwvutsrqponmlkjihgfedcba ."
+encodedMessage = "nvvg.nv.zg.nrwmrtsg"
+for letter in encodedMessage:
+    pos = eStr.find(letter)
+    message = message + str[pos:pos+1]
+print(message)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the function as shown below.  Be sure to return the decoded message.  Call the function and print the result.</p>
+
+<textarea data-component="activecode" id=ch9ex17a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def decode(eMessage):
+    message = ""
+    str = "abcdefghijklmnopqrstuvwxyz. "
+    eStr = "zyxwvutsrqponmlkjihgfedcba ."
+    for letter in eMessage:
+        pos = eStr.find(letter)
+        message = message + str[pos:pos+1]
+    return(message)
+
+print(decode("nvvg.nv.zg.nrwmrtsg"))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch9ex17q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch9ex17q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch9ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch9ex17q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch9ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch9ex17q" onclick="teachercsp_ch9ex17q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch9ex17q']").attr('data-disqus-identifier', 'teachercsp_ch9ex17q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch9ex18t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Finish the code so that it prints the mirror of the string with the correct way then the reverse. It should print: &#8220;This is a mirror!!rorrim a si sihT&#8221;</p>
+
+<textarea data-component="activecode" id=ch9ex18q data-lang="python"    data-timelimit=25000   data-audio=''     >
+newString = ""
+aString = ""
+phrase = "This is a mirror!"
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+
+<textarea data-component="activecode" id=ch9ex18a data-lang="python"    data-timelimit=25000   data-audio=''     >
+newString = ""
+aString = ""
+phrase = "This is a mirror!"
+for letter in phrase:
+        newString = letter + newString
+for letter in newString:
+        aString = letter + aString + letter
+print(aString)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch9ex18q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch9ex18q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch9ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch9ex18q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch9ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch9ex18q" onclick="teachercsp_ch9ex18q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch9ex18q']").attr('data-disqus-identifier', 'teachercsp_ch9ex18q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch9ex19t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Create another function that encodes a string.  Pass in both the string to be encoded <em>and</em> the string to use to encode the string as well.</p>
+
+<textarea data-component="activecode" id=ch9ex19q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Create a function similar to the encode function above, but change it to take two input values.</p>
+
+<textarea data-component="activecode" id=ch9ex19a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def encode2(message, eStr):
+    str = "abcdefghijklmnopqrstuvwxyz. "
+    encodedMessage = ""
+    for letter in message:
+        pos = str.find(letter)
+        encodedMessage = encodedMessage + eStr[pos:pos+1]
+    return(encodedMessage)
+
+print(encode2("This is a test", "zyxwvutsrqponmlkjihgfedcba ."))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch9ex19q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch9ex19q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch9ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch9ex19q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch9ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch9ex19q" onclick="teachercsp_ch9ex19q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch9ex19q']").attr('data-disqus-identifier', 'teachercsp_ch9ex19q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch9ex20t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Here&#8217;s the code to encode a message. Write code underneath it to decode the encoded message and print it.</p>
+
+<textarea data-component="activecode" id=ch9ex20q data-lang="python"    data-timelimit=25000   data-audio=''     >
+message = "meet me at midnight"
+str = "abcdefghijklmnopqrstuvwxyz. "
+eStr = "zyxwvutsrqponmlkjihgfedcba ."
+encodedMessage = ""
+for letter in message:
+    pos = str.find(letter)
+    encodedMessage = encodedMessage + eStr[pos:pos+1]
+print(encodedMessage)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Initialize decodedMessage and then iterate through encodedMessage and in the body of the for loop, just switch eStr and str from the encoded message.</p>
+
+<textarea data-component="activecode" id=ch9ex20a data-lang="python"    data-timelimit=25000   data-audio=''     >
+message = "meet me at midnight"
+str = "abcdefghijklmnopqrstuvwxyz. "
+eStr = "zyxwvutsrqponmlkjihgfedcba ."
+encodedMessage = ""
+for letter in message:
+    pos = str.find(letter)
+    encodedMessage = encodedMessage + eStr[pos:pos+1]
+print(encodedMessage)
+
+decodedMessage = ""
+for letter in encodedMessage:
+    pos = eStr.find(letter)
+    decodedMessage = decodedMessage + str[pos:pos+1]
+print(decodedMessage)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch9ex20q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch9ex20q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch9ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch9ex20q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch9ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch9ex20q" onclick="teachercsp_ch9ex20q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch9ex20q']").attr('data-disqus-identifier', 'teachercsp_ch9ex20q_' + eBookConfig.course);
 </script>
 </div>
     </div>

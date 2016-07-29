@@ -435,66 +435,32 @@ print(ending)
 
 </li>
 <li><div id='ch17ex2t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix the 6 syntax errors in the code below so that it runs.  It will print a story.</p>
+<p>Fix the errors so that it prints the first and last name only.</p>
 
 <textarea data-component="activecode" id=ch17ex2q data-lang="python"    data-timelimit=25000   data-audio=''     >
 # create the input
-input = "Pat,Smith girl,65 Elm Street,eat"
+input = "Pat,Smith,girl,65 Elm Street,eat'
 
-# split at the comma
-pieces = input.split(",)
+# split on the comma
+pieces = input.split(,)
 
-# initialize the variables
-firstName = pieces[0]
-lastName = pieces[1
-gender = pieces[2]
-address = pieces[3]
-verb = pieces[4]
-
-# create the story
-start = "Once there was a " + gender + " named " + firstName + "."
-next1 = "A good " + gender + " living at " + address + "."
-next2 = "One day, a wicked witch came to the "  lastName + " house."
-next3 = "The wicked witch was planning to " + verb + " " + firstName + "!"
-ending = "But " + firstName + " was smart and avoided the wicked witch."
-
-# print the story
-print(start)
-print next1
-print(next2)
-print(next3)
-print(ending)
+# print the values
+print("First name is:" + pieces)
+print("Last name is:" + pieces[2])
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Add a comma before <code class="docutils literal"><span class="pre">girl</span></code> on line 2.  Add a <code class="docutils literal"><span class="pre">&quot;</span></code> before the <code class="docutils literal"><span class="pre">)</span></code> on line 5.  Add a <code class="docutils literal"><span class="pre">]</span></code> at the end of line 9.  Add a <code class="docutils literal"><span class="pre">+</span></code> in line 17.  Add a <code class="docutils literal"><span class="pre">(</span></code> and a <code class="docutils literal"><span class="pre">)</span></code> on line 23.</p>
+<p>Fix the quotation mark in the second line. In the fifth line add quotations around the comma. Print <code class="docutils literal"><span class="pre">pieces[0]</span></code> and  <code class="docutils literal"><span class="pre">pieces[1]</span></code>.</p>
 
 <textarea data-component="activecode" id=ch17ex2a data-lang="python"    data-timelimit=25000   data-audio=''     >
 # create the input
 input = "Pat,Smith,girl,65 Elm Street,eat"
 
-# split at the comma
+# split on the comma
 pieces = input.split(",")
 
-# initialize the variables
-firstName = pieces[0]
-lastName = pieces[1]
-gender = pieces[2]
-address = pieces[3]
-verb = pieces[4]
-
-# create the story
-start = "Once there was a " + gender + " named " + firstName + "."
-next1 = "A good " + gender + " living at " + address + "."
-next2 = "One day, a wicked witch came to the " + lastName + " house."
-next3 = "The wicked witch was planning to " + verb + " " + firstName + "!"
-ending = "But " + firstName + " was smart and avoided the wicked witch."
-
-# print the story
-print(start)
-print(next1)
-print(next2)
-print(next3)
-print(ending)
+# print the values
+print("First name is:" + pieces[0])
+print("Last name is:" + pieces[1])
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -539,9 +505,216 @@ print(ending)
 
 </li>
 <li><div id='ch17ex3t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix the 6 syntax errors in the code below so that it runs.  It will print a story.</p>
+
+<textarea data-component="activecode" id=ch17ex3q data-lang="python"    data-timelimit=25000   data-audio=''     >
+# create the input
+input = "Pat,Smith girl,65 Elm Street,eat"
+
+# split at the comma
+pieces = input.split(",)
+
+# initialize the variables
+firstName = pieces[0]
+lastName = pieces[1
+gender = pieces[2]
+address = pieces[3]
+verb = pieces[4]
+
+# create the story
+start = "Once there was a " + gender + " named " + firstName + "."
+next1 = "A good " + gender + " living at " + address + "."
+next2 = "One day, a wicked witch came to the "  lastName + " house."
+next3 = "The wicked witch was planning to " + verb + " " + firstName + "!"
+ending = "But " + firstName + " was smart and avoided the wicked witch."
+
+# print the story
+print(start)
+print next1
+print(next2)
+print(next3)
+print(ending)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Add a comma before <code class="docutils literal"><span class="pre">girl</span></code> on line 2.  Add a <code class="docutils literal"><span class="pre">&quot;</span></code> before the <code class="docutils literal"><span class="pre">)</span></code> on line 5.  Add a <code class="docutils literal"><span class="pre">]</span></code> at the end of line 9.  Add a <code class="docutils literal"><span class="pre">+</span></code> in line 17.  Add a <code class="docutils literal"><span class="pre">(</span></code> and a <code class="docutils literal"><span class="pre">)</span></code> on line 23.</p>
+
+<textarea data-component="activecode" id=ch17ex3a data-lang="python"    data-timelimit=25000   data-audio=''     >
+# create the input
+input = "Pat,Smith,girl,65 Elm Street,eat"
+
+# split at the comma
+pieces = input.split(",")
+
+# initialize the variables
+firstName = pieces[0]
+lastName = pieces[1]
+gender = pieces[2]
+address = pieces[3]
+verb = pieces[4]
+
+# create the story
+start = "Once there was a " + gender + " named " + firstName + "."
+next1 = "A good " + gender + " living at " + address + "."
+next2 = "One day, a wicked witch came to the " + lastName + " house."
+next3 = "The wicked witch was planning to " + verb + " " + firstName + "!"
+ending = "But " + firstName + " was smart and avoided the wicked witch."
+
+# print the story
+print(start)
+print(next1)
+print(next2)
+print(next3)
+print(ending)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch17ex3q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch17ex3q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch17ex3q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch17ex3q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch17ex3q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch17ex3q" onclick="teachercsp_ch17ex3q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch17ex3q']").attr('data-disqus-identifier', 'teachercsp_ch17ex3q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch17ex4t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Complete the code on lines 8 - 12 to initialize the variables correctly according to the order of the input.</p>
+
+<textarea data-component="activecode" id=ch17ex4q data-lang="python"    data-timelimit=25000   data-audio=''     >
+# create the input
+input = "eat, Elm Street, girl, Pat, Smith"
+
+# split at the comma
+pieces = input.split(",")
+
+# initialize the variables
+firstName =
+lastName =
+gender =
+address =
+verb =
+
+# create the story
+start = "Once there was a " + gender + " named " + firstName + "."
+next1 = "A good " + gender + " living at " + address + "."
+next2 = "One day, a wicked witch came to the " + lastName + " house."
+next3 = "The wicked witch was planning to " + verb + " " + firstName + "!"
+ending = "But " + firstName + " was smart and avoided the wicked witch."
+
+# print the story
+print(start)
+print(next1)
+print(next2)
+print(next3)
+print(ending)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+
+<textarea data-component="activecode" id=ch17ex4a data-lang="python"    data-timelimit=25000   data-audio=''     >
+# create the input
+input = "eat, Elm Street, girl, Pat, Smith"
+
+# split at the comma
+pieces = input.split(",")
+
+# initialize the variables
+firstName = pieces[3]
+lastName = pieces[4]
+gender = pieces[2]
+address = pieces[1]
+verb = pieces[0]
+
+# create the story
+start = "Once there was a " + gender + " named " + firstName + "."
+next1 = "A good " + gender + " living at " + address + "."
+next2 = "One day, a wicked witch came to the " + lastName + " house."
+next3 = "The wicked witch was planning to " + verb + " " + firstName + "!"
+ending = "But " + firstName + " was smart and avoided the wicked witch."
+
+# print the story
+print(start)
+print(next1)
+print(next2)
+print(next3)
+print(ending)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch17ex4q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch17ex4q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch17ex4q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch17ex4q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch17ex4q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch17ex4q" onclick="teachercsp_ch17ex4q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch17ex4q']").attr('data-disqus-identifier', 'teachercsp_ch17ex4q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch17ex5t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
 <p>Indent 6 lines and fix the call to the procedure so that it works correctly.  It will print a story.</p>
 
-<textarea data-component="activecode" id=ch17ex3q data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+<textarea data-component="activecode" id=ch17ex5q data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
 def witchStory (firstName, lastName, gender, address, verb):
 
 # create the story
@@ -626,176 +799,69 @@ witchStory("Abe", "Brown", "boy", "1313 Maple Lane", "trick")
     </div>
 
 </li>
-<li><div id='ch17ex4t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Change 4 lines in the code below so that runs correctly without any errors.  It will print a poem.</p>
-
-<textarea data-component="activecode" id=ch17ex4q data-lang="python"    data-timelimit=25000   data-audio=''     >
-input = "Roses,Violets,Sugar,Sue"
-pieces = input.split(",")
-flower1 = pieces[1]
-flower2 = pieces[2]
-spice = pieces[3]
-name = pieces[4]
-line1 = flower1 + " are red"
-line2 = flower2 + " are blue"
-line3 = spice + " is sweet"
-line4 = "And so it " + name
-print(line1)
-print(line2)
-print(line3)
-print(line4)
-</textarea>
-</div><div data-component="tab" data-tabname="Answer" >
-<p>Fix the indices on lines 3-6 as shown below.</p>
-
-<textarea data-component="activecode" id=ch17ex4a data-lang="python"    data-timelimit=25000   data-audio=''     >
-input = "Roses,Violets,Sugar,Sue"
-pieces = input.split(",")
-flower1 = pieces[0]
-flower2 = pieces[1]
-spice = pieces[2]
-name = pieces[3]
-line1 = flower1 + " are red"
-line2 = flower2 + " are blue"
-line3 = spice + " is sweet"
-line4 = "And so it " + name
-print(line1)
-print(line2)
-print(line3)
-print(line4)
-</textarea>
-</div><div data-component="tab" data-tabname="Discussion" >
-<script type="text/javascript">
-    function teachercsp_ch17ex3q_disqus(source) { 
-        if (window.DISQUS) {
-
-            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
-
-            //if Disqus exists, call it's reset method with new parameters
-            DISQUS.reset({
-                reload: true,
-                config: function () {
-                    this.page.identifier = 'teachercsp_ch17ex3q_' + eBookConfig.course;
-                    this.page.url = 'http://teachercsp_ch17ex3q_'+eBookConfig.course+'.interactivepython.com/#!';
-                }
-            });
-
-        } else {
-            //insert a wrapper in HTML after the relevant "show comments" link
-            $('<div id="disqus_thread"></div>').insertAfter(source);
-
-            // set Disqus required vars
-            disqus_shortname = 'cslearn4u';    
-            disqus_identifier = 'teachercsp_ch17ex3q_' + eBookConfig.course;
-            disqus_url = 'http://teachercsp_ch17ex3q_'+eBookConfig.course+'.interactivepython.com/#!';
-
-            //append the Disqus embed script to HTML
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            $('head').append(dsq);
-
-        }
-    }
-</script>
-
-<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch17ex3q" onclick="teachercsp_ch17ex3q_disqus(this);">Show Comments</a>
-<script type='text/javascript'>
-    $("a[data-disqus-identifier='teachercsp_ch17ex3q']").attr('data-disqus-identifier', 'teachercsp_ch17ex3q_' + eBookConfig.course);
-</script>
-</div>
-    </div>
-
-</li>
-<li><div id='ch17ex5t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Turn the following code into a function. It finds the name in a string and prints it.  Pass in the string and return the name if it is found and &#8220;Unknown&#8221; if not.  Be sure to call the function to test it.  Test it both when the name is there and when it isn&#8217;t.</p>
-
-<textarea data-component="activecode" id=ch17ex5q data-lang="python"    data-timelimit=25000   data-audio=''     >
-namePart = "name: Anu Gao"
-posName = namePart.find("name:")
-if (posName > -1):
-    name = namePart[posName+6:len(namePart)]
-else:
-    name = "Unknown"
-print(name)
-</textarea>
-</div><div data-component="tab" data-tabname="Answer" >
-<p>Define the function as shown below.  Be sure to call the function to test it.  Test it both when the name is there and when it isn&#8217;t.</p>
-
-<textarea data-component="activecode" id=ch17ex5a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def getName(namePart):
-
-    posName = namePart.find("name:")
-    if (posName > -1):
-        name = namePart[posName+6:len(namePart)]
-    else:
-        name = "Unknown"
-    return name
-
-print(getName("The name: Jasmine Brown"))
-print(getName("Jasmine Brown"))
-</textarea>
-</div><div data-component="tab" data-tabname="Discussion" >
-<script type="text/javascript">
-    function teachercsp_ch17ex4q_disqus(source) { 
-        if (window.DISQUS) {
-
-            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
-
-            //if Disqus exists, call it's reset method with new parameters
-            DISQUS.reset({
-                reload: true,
-                config: function () {
-                    this.page.identifier = 'teachercsp_ch17ex4q_' + eBookConfig.course;
-                    this.page.url = 'http://teachercsp_ch17ex4q_'+eBookConfig.course+'.interactivepython.com/#!';
-                }
-            });
-
-        } else {
-            //insert a wrapper in HTML after the relevant "show comments" link
-            $('<div id="disqus_thread"></div>').insertAfter(source);
-
-            // set Disqus required vars
-            disqus_shortname = 'teachercsp';    
-            disqus_identifier = 'teachercsp_ch17ex4q_' + eBookConfig.course;
-            disqus_url = 'http://teachercsp_ch17ex4q_'+eBookConfig.course+'.interactivepython.com/#!';
-
-            //append the Disqus embed script to HTML
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            $('head').append(dsq);
-
-        }
-    }
-</script>
-
-<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch17ex4q" onclick="teachercsp_ch17ex4q_disqus(this);">Show Comments</a>
-<script type='text/javascript'>
-    $("a[data-disqus-identifier='teachercsp_ch17ex4q']").attr('data-disqus-identifier', 'teachercsp_ch17ex4q_' + eBookConfig.course);
-</script>
-</div>
-    </div>
-
-</li>
 <li><div id='ch17ex6t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Change the following code into a function that prints a crazy headline.  It should take the values as parameters. Be sure to call the function to test it.</p>
+<p>The input is a list of strings, add code below it (and fix indentation and variable names if needed) so that the code will print a story for each string in the list.</p>
 
 <textarea data-component="activecode" id=ch17ex6q data-lang="python"    data-timelimit=25000   data-audio=''     >
-input = "Elvis, alien, blue"
+# create the input
+input = ["Pat,Smith,girl,65 Elm Street,eat", "John,Doe,Boy,25,123 Candy Lane, tickle"]
+
+# split at the comma
 pieces = input.split(",")
-name = pieces[0]
-thing = pieces[1]
-color = pieces[2]
-headline = name + " was abducted by a " + color + " " + thing + "."
-print(headline)
+
+# initialize the variables
+firstName = pieces[0]
+lastName = pieces[1]
+gender = pieces[2]
+address = pieces[3]
+verb = pieces[4]
+
+# create the story
+start = "Once there was a " + gender + " named " + firstName + "."
+next1 = "A good " + gender + " living at " + address + "."
+next2 = "One day, a wicked witch came to the " + lastName + " house."
+next3 = "The wicked witch was planning to " + verb + " " + firstName + "!"
+ending = "But " + firstName + " was smart and avoided the wicked witch."
+
+# print the story
+print(start)
+print(next1)
+print(next2)
+print(next3)
+print(ending)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define a function that takes a list and then call the function and pass in the list.  Print the result.</p>
+<p>Add a for loop, fix the indentation to put everything besides input in the body of the for loop, and change pieces to equal <code class="docutils literal"><span class="pre">i.split(&quot;,&quot;)</span></code> where i is each element in the string list.</p>
 
 <textarea data-component="activecode" id=ch17ex6a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def getHeadline(name, thing, color):
-   return name + " was abducted by a " + color + " " + thing + "."
+# create the input
+input = ["Pat,Smith,girl,65 Elm Street,eat", "John,Doe,Boy,25,123 Candy Lane, tickle"]
 
-print(getHeadline("Elvis", "alien", "blue"))
+for i in input:
+
+    # split at the comma
+    pieces = i.split(",")
+
+    # initialize the variables
+    firstName = pieces[0]
+    lastName = pieces[1]
+    gender = pieces[2]
+    address = pieces[3]
+    verb = pieces[4]
+
+    # create the story
+    start = "Once there was a " + gender + " named " + firstName + "."
+    next1 = "A good " + gender + " living at " + address + "."
+    next2 = "One day, a wicked witch came to the " + lastName + " house."
+    next3 = "The wicked witch was planning to " + verb + " " + firstName + "!"
+    ending = "But " + firstName + " was smart and avoided the wicked witch."
+
+    # print the story
+    print(start)
+    print(next1)
+    print(next2)
+    print(next3)
+    print(ending)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -840,30 +906,42 @@ print(getHeadline("Elvis", "alien", "blue"))
 
 </li>
 <li><div id='ch17ex7t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Change the following into a procedure that prints the following story.  Pass in the values that can change.</p>
+<p>Change 4 lines in the code below so that runs correctly without any errors.  It will print a poem.</p>
 
 <textarea data-component="activecode" id=ch17ex7q data-lang="python"    data-timelimit=25000   data-audio=''     >
-input = "Jay,shoes"
+input = "Roses,Violets,Sugar,Sue"
 pieces = input.split(",")
-name = pieces[0]
-item = pieces[1]
-print("One day " + name + " went shopping.")
-print("He wanted to buy " + item + ".")
-print("But, he didn't like any.")
-print("So, " + name + " went home.")
+flower1 = pieces[1]
+flower2 = pieces[2]
+spice = pieces[3]
+name = pieces[4]
+line1 = flower1 + " are red"
+line2 = flower2 + " are blue"
+line3 = spice + " is sweet"
+line4 = "And so it " + name
+print(line1)
+print(line2)
+print(line3)
+print(line4)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the procedure and call it.  Be sure to pass the name and item.</p>
+<p>Fix the indices on lines 3-6 as shown below.</p>
 
-<textarea data-component="activecode" id=ch17ex7a data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
-def tellStory(name, item):
-
-    print("One day " + name + " went shopping.")
-    print("He wanted to buy " + item + ".")
-    print("But, he didn't like any.")
-    print("So, " + name + " went home.")
-
-tellStory("Blake", "pants")
+<textarea data-component="activecode" id=ch17ex7a data-lang="python"    data-timelimit=25000   data-audio=''     >
+input = "Roses,Violets,Sugar,Sue"
+pieces = input.split(",")
+flower1 = pieces[0]
+flower2 = pieces[1]
+spice = pieces[2]
+name = pieces[3]
+line1 = flower1 + " are red"
+line2 = flower2 + " are blue"
+line3 = spice + " is sweet"
+line4 = "And so it " + name
+print(line1)
+print(line2)
+print(line3)
+print(line4)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -886,7 +964,7 @@ tellStory("Blake", "pants")
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'teachercsp';    
+            disqus_shortname = 'cslearn4u';    
             disqus_identifier = 'teachercsp_ch17ex7q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch17ex7q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -908,29 +986,67 @@ tellStory("Blake", "pants")
 
 </li>
 <li><div id='ch17ex8t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write a personalized story.  It should start with a string of input and split that string to get the parts it needs for the story.  For example, define a name, animal, animal name, and animal adjective and create a story from that.</p>
+<p>Fix the 6 errors so that the code prints the story properly.</p>
 
 <textarea data-component="activecode" id=ch17ex8q data-lang="python"    data-timelimit=25000   data-audio=''     >
+# create the input
+input = "Abe,Brown,boy,1313 Maple Lane,trick"
 
+# split at the comma
+pieces = input.split(,)
 
+# initialize the variables
+firstName = pieces[1]
+lastName = pieces[2]
+gender = pieces[3]
+address = pieces[5]
+verb = pieces[-1]
+
+# create the story
+start = "Once there was a "  gender + " named " + firstName + "."
+next1 = "A good " + gender + " living at " + address + "."
+next2 = "One day, a wicked witch came to the " + lastName + " house."
+next3 = "The wicked witch was planning to " + verb + " " + firstName + "!"
+ending = "But " + firstName + " was smart and avoided the wicked witch."
+
+# print the story
+print("start")
+print(next1)
+print(next2)
+print(next3)
+print(ending)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Here is one example.  Look for a string with values separated with a comma.  Look for use of the <code class="docutils literal"><span class="pre">split</span></code> function.  Look for getting the values out of the list.</p>
-<blockquote>
-<div>
+<p>On line 5, add quotations around the comma. On lines 8 - 11, fix the index positions. On line 15, add a plus sign before &#8220;gender&#8221;.</p>
+
 <textarea data-component="activecode" id=ch17ex8a data-lang="python"    data-timelimit=25000   data-audio=''     >
-input = "Barb, horse, Sport, tall"
+# create the input
+input = "Abe,Brown,boy,1313 Maple Lane,trick"
+
+# split at the comma
 pieces = input.split(",")
-name = pieces[0]
-animal = pieces[1]
-animalName = pieces[2]
-description = pieces[3]
-line1 = "Once upon a time there was a girl named, " + name + "."
-line2 = "She had a " + description + " " + animal + " named " + animalName + "."
-print(line1)
-print(line2)
+
+# initialize the variables
+firstName = pieces[0]
+lastName = pieces[1]
+gender = pieces[2]
+address = pieces[3]
+verb = pieces[-1]
+
+# create the story
+start = "Once there was a " + gender + " named " + firstName + "."
+next1 = "A good " + gender + " living at " + address + "."
+next2 = "One day, a wicked witch came to the " + lastName + " house."
+next3 = "The wicked witch was planning to " + verb + " " + firstName + "!"
+ending = "But " + firstName + " was smart and avoided the wicked witch."
+
+# print the story
+print(start)
+print(next1)
+print(next2)
+print(next3)
+print(ending)
 </textarea>
-</div></blockquote>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
     function teachercsp_ch17ex8q_disqus(source) { 
@@ -974,24 +1090,32 @@ print(line2)
 
 </li>
 <li><div id='ch17ex9t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write a procedure that prints a personalized story.  It should take as input the items that will allow you to personalize a story.</p>
+<p>Turn the following code into a function. It finds the name in a string and prints it.  Pass in the string and return the name if it is found and &#8220;Unknown&#8221; if not.  Be sure to call the function to test it.  Test it both when the name is there and when it isn&#8217;t.</p>
 
 <textarea data-component="activecode" id=ch17ex9q data-lang="python"    data-timelimit=25000   data-audio=''     >
-
-
+namePart = "name: Anu Gao"
+posName = namePart.find("name:")
+if (posName > -1):
+    name = namePart[posName+6:len(namePart)]
+else:
+    name = "Unknown"
+print(name)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>The example below is one possible procedure.  Be sure to call it to test it.</p>
+<p>Define the function as shown below.  Be sure to call the function to test it.  Test it both when the name is there and when it isn&#8217;t.</p>
 
 <textarea data-component="activecode" id=ch17ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def tellAnimalStory(name, animal, animalName, description):
+def getName(namePart):
 
-    line1 = "Once upon a time there was a girl named, " + name + "."
-    line2 = "She had a " + description + " " + animal + " named " + animalName + "."
-    print(line1)
-    print(line2)
+    posName = namePart.find("name:")
+    if (posName > -1):
+        name = namePart[posName+6:len(namePart)]
+    else:
+        name = "Unknown"
+    return name
 
-tellAnimalStory("Barb","horse","Sport","handsome")
+print(getName("The name: Jasmine Brown"))
+print(getName("Jasmine Brown"))
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -1036,30 +1160,60 @@ tellAnimalStory("Barb","horse","Sport","handsome")
 
 </li>
 <li><div id='ch17ex10t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write a procedure that prints a personalized story.  It should take as input the items that will allow you to personalize a story.  It should also take a gender and vary the story based on the gender.</p>
+<p>The procedure below takes a string and splits it to create a story. Change it so that it takes multiple strings, so it creates the story without having to use split.</p>
 
 <textarea data-component="activecode" id=ch17ex10q data-lang="python"    data-timelimit=25000   data-audio=''     >
+def witchStory (input):
 
+    # split at the comma
+    pieces = input.split(",")
 
+    # initialize the variables
+    firstName = pieces[0]
+    lastName = pieces[1]
+    gender = pieces[2]
+    address = pieces[3]
+    verb = pieces[4]
+
+    # create the story
+    start = "Once there was a " + gender + " named " + firstName + "."
+    next1 = "A good " + gender + " living at " + address + "."
+    next2 = "One day, a wicked witch came to the " + lastName + " house."
+    next3 = "The wicked witch was planning to " + verb + " " + firstName + "!"
+    ending = "But " + firstName + " was smart and avoided the wicked witch."
+
+    # print the story
+    print(start)
+    print(next1)
+    print(next2)
+    print(next3)
+    print(ending)
+
+# call the procedure
+witchStory("Abe,Brown,boy,1313 Maple Lane,trick")
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Here is one example.  Look for a conditional with two options (if and else).</p>
+<p>Create the procedure as shown below.</p>
 
 <textarea data-component="activecode" id=ch17ex10a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def tellAnimalStory(name, gender, animal, animalName, description):
+def witchStory (firstName, lastName, gender, address, verb):
 
-    if (gender.find("female") > -1):
-        line1 = "Once upon a time there was a girl named, " + name + "."
-        line2 = "She had a " + description + " " + animal + " named " + animalName + "."
-    else:
-        line1 = "Once upon a time there was a boy name, " + name + "."
-        line2 = "He had a " + description + " " + animal + " named " + animalName + "."
+    # create the story
+    start = "Once there was a " + gender + " named " + firstName + "."
+    next1 = "A good " + gender + " living at " + address + "."
+    next2 = "One day, a wicked witch came to the " + lastName + " house."
+    next3 = "The wicked witch was planning to " + verb + " " + firstName + "!"
+    ending = "But " + firstName + " was smart and avoided the wicked witch."
 
-    print(line1)
-    print(line2)
+    # print the story
+    print(start)
+    print(next1)
+    print(next2)
+    print(next3)
+    print(ending)
 
-tellAnimalStory("Barb", "female", "horse","Sport","handsome")
-tellAnimalStory("Mark", "male", "dog","Baxter","funny")
+# call the procedure
+witchStory("Abe", "Brown", "boy", "1313 Maple Lane", "trick")
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -1098,6 +1252,686 @@ tellAnimalStory("Mark", "male", "dog","Baxter","funny")
 <a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch17ex10q" onclick="teachercsp_ch17ex10q_disqus(this);">Show Comments</a>
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch17ex10q']").attr('data-disqus-identifier', 'teachercsp_ch17ex10q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch17ex11t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Change the following code into a function that prints a crazy headline.  It should take the values as parameters. Be sure to call the function to test it.</p>
+
+<textarea data-component="activecode" id=ch17ex11q data-lang="python"    data-timelimit=25000   data-audio=''     >
+input = "Elvis, alien, blue"
+pieces = input.split(",")
+name = pieces[0]
+thing = pieces[1]
+color = pieces[2]
+headline = name + " was abducted by a " + color + " " + thing + "."
+print(headline)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define a function that takes a list and then call the function and pass in the list.  Print the result.</p>
+
+<textarea data-component="activecode" id=ch17ex11a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def getHeadline(name, thing, color):
+   return name + " was abducted by a " + color + " " + thing + "."
+
+print(getHeadline("Elvis", "alien", "blue"))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch17ex11q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch17ex11q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch17ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch17ex11q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch17ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch17ex11q" onclick="teachercsp_ch17ex11q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch17ex11q']").attr('data-disqus-identifier', 'teachercsp_ch17ex11q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch17ex12t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix the 3 errors to make the code print out the age.</p>
+
+<textarea data-component="activecode" id=ch17ex12q data-lang="python"    data-timelimit=25000   data-audio=''     >
+agePart = "Their age: 17"
+posAge = agePart.find("age:")
+if (posAge < 0):
+    age = agePart[posAge:len(agePart)]
+else:
+    age = "Unknown"
+print(age)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>In the if clause, check if the <code class="docutils literal"><span class="pre">posAge</span> <span class="pre">&gt;</span> <span class="pre">-1</span></code>. In the body of the if clause, set the substring to be <code class="docutils literal"><span class="pre">posAge</span> <span class="pre">+</span> <span class="pre">6:len(agePart_)</span></code>.</p>
+
+<textarea data-component="activecode" id=ch17ex12a data-lang="python"    data-timelimit=25000   data-audio=''     >
+agePart = "Their age: 17"
+posAge = agePart.find("age:")
+if (posAge > -1):
+    age = agePart[posAge+5:len(agePart)]
+else:
+    age = "Unknown"
+print(age)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch17ex12q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch17ex12q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch17ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch17ex12q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch17ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch17ex12q" onclick="teachercsp_ch17ex12q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch17ex12q']").attr('data-disqus-identifier', 'teachercsp_ch17ex12q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch17ex13t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Change the following into a procedure that prints the following story.  Pass in the values that can change.</p>
+
+<textarea data-component="activecode" id=ch17ex13q data-lang="python"    data-timelimit=25000   data-audio=''     >
+input = "Jay,shoes"
+pieces = input.split(",")
+name = pieces[0]
+item = pieces[1]
+print("One day " + name + " went shopping.")
+print("He wanted to buy " + item + ".")
+print("But, he didn't like any.")
+print("So, " + name + " went home.")
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the procedure and call it.  Be sure to pass the name and item.</p>
+
+<textarea data-component="activecode" id=ch17ex13a data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+def tellStory(name, item):
+
+    print("One day " + name + " went shopping.")
+    print("He wanted to buy " + item + ".")
+    print("But, he didn't like any.")
+    print("So, " + name + " went home.")
+
+tellStory("Blake", "pants")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch17ex13q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch17ex13q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch17ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch17ex13q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch17ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch17ex13q" onclick="teachercsp_ch17ex13q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch17ex13q']").attr('data-disqus-identifier', 'teachercsp_ch17ex13q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch17ex14t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Change the following into a procedure that takes one string in the format &#8220;name: Bob, age: 10&#8221;. The procedure should print the name and age.</p>
+
+<textarea data-component="activecode" id=ch17ex14q data-lang="python"    data-timelimit=25000   data-audio=''     >
+agePart = "Their age: 17"
+posAge = agePart.find("age:")
+if (posAge > -1):
+    age = agePart[posAge+5:len(agePart)]
+else:
+    age = "Unknown"
+print(age)
+
+namePart = "name: Anu Gao"
+posName = namePart.find("name:")
+if (posName > -1):
+    name = namePart[posName+6:len(namePart)]
+else:
+    name = "Unknown"
+print(name)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define procedure as shown below.</p>
+
+<textarea data-component="activecode" id=ch17ex14a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def aProcedure(aString):
+    aList = aString.split(",")
+    agePart = aList[1]
+    namePart = aList[0]
+
+    posAge = agePart.find("age:")
+    if (posAge > -1):
+        age = agePart[posAge+5:len(agePart)]
+    else:
+        age = "Unknown"
+    posName = namePart.find("name:")
+    if (posName > -1):
+        name = namePart[posName+6:len(namePart)]
+    else:
+        name = "Unknown"
+    print(name + "," + age)
+
+aProcedure("name: Bob,age: 10")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch17ex14q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch17ex14q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch17ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch17ex14q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch17ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch17ex14q" onclick="teachercsp_ch17ex14q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch17ex14q']").attr('data-disqus-identifier', 'teachercsp_ch17ex14q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch17ex15t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a personalized story.  It should start with a string of input and split that string to get the parts it needs for the story.  For example, define a name, animal, animal name, and animal adjective and create a story from that.</p>
+
+<textarea data-component="activecode" id=ch17ex15q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Here is one example.  Look for a string with values separated with a comma.  Look for use of the <code class="docutils literal"><span class="pre">split</span></code> function.  Look for getting the values out of the list.</p>
+<blockquote>
+<div>
+<textarea data-component="activecode" id=ch17ex15a data-lang="python"    data-timelimit=25000   data-audio=''     >
+input = "Barb, horse, Sport, tall"
+pieces = input.split(",")
+name = pieces[0]
+animal = pieces[1]
+animalName = pieces[2]
+description = pieces[3]
+line1 = "Once upon a time there was a girl named, " + name + "."
+line2 = "She had a " + description + " " + animal + " named " + animalName + "."
+print(line1)
+print(line2)
+</textarea>
+</div></blockquote>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch17ex15q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch17ex15q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch17ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch17ex15q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch17ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch17ex15q" onclick="teachercsp_ch17ex15q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch17ex15q']").attr('data-disqus-identifier', 'teachercsp_ch17ex15q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch17ex16t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a procedure that takes in a string with 2 adjectives, a noun, and a verb separated by a comma (ex: &#8220;crazy,blue,banana,runs&#8221;) in that order and prints a sentence using all 4 words.</p>
+
+<textarea data-component="activecode" id=ch17ex16q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define a procedure similar to the one below.</p>
+
+<textarea data-component="activecode" id=ch17ex16a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def aProcedure(aString):
+    pieces = aString.split(",")
+    adj1 = pieces[0]
+    adj2 = pieces[1]
+    noun = pieces[2]
+    verb = pieces[3]
+    sentence = "The " + adj1 + " and " + adj2 + " " + noun + " " + verb + "."
+    print(sentence)
+aProcedure("crazy,blue,banana,runs")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch17ex16q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch17ex16q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch17ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch17ex16q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch17ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch17ex16q" onclick="teachercsp_ch17ex16q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch17ex16q']").attr('data-disqus-identifier', 'teachercsp_ch17ex16q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch17ex17t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a procedure that prints a personalized story.  It should take as input the items that will allow you to personalize a story.</p>
+
+<textarea data-component="activecode" id=ch17ex17q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>The example below is one possible procedure.  Be sure to call it to test it.</p>
+
+<textarea data-component="activecode" id=ch17ex17a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def tellAnimalStory(name, animal, animalName, description):
+
+    line1 = "Once upon a time there was a girl named, " + name + "."
+    line2 = "She had a " + description + " " + animal + " named " + animalName + "."
+    print(line1)
+    print(line2)
+
+tellAnimalStory("Barb","horse","Sport","handsome")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch17ex17q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch17ex17q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch17ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch17ex17q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch17ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch17ex17q" onclick="teachercsp_ch17ex17q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch17ex17q']").attr('data-disqus-identifier', 'teachercsp_ch17ex17q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch17ex18t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a procedure that takes in a name, age, and 2 verbs. If the age is less than 10, print a sentence using the name, age, and first verb. Otherwise print a sentence using the name, age, and second verb.</p>
+
+<textarea data-component="activecode" id=ch17ex18q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define a procedure similar to the one below.</p>
+
+<textarea data-component="activecode" id=ch17ex18a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def aSentence(name, age, verb1, verb2):
+    if age < 10:
+        print(name + " who is " + age + " " + verb1)
+    else:
+        print(name + " who is " + age + " " + verb1)
+aSentence("John", 10, "runs", "sleeps")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch17ex18q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch17ex18q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch17ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch17ex18q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch17ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch17ex18q" onclick="teachercsp_ch17ex18q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch17ex18q']").attr('data-disqus-identifier', 'teachercsp_ch17ex18q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch17ex19t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a procedure that prints a personalized story.  It should take as input the items that will allow you to personalize a story.  It should also take a gender and vary the story based on the gender.</p>
+
+<textarea data-component="activecode" id=ch17ex19q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Here is one example.  Look for a conditional with two options (if and else).</p>
+
+<textarea data-component="activecode" id=ch17ex19a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def tellAnimalStory(name, gender, animal, animalName, description):
+
+    if (gender.find("female") > -1):
+        line1 = "Once upon a time there was a girl named, " + name + "."
+        line2 = "She had a " + description + " " + animal + " named " + animalName + "."
+    else:
+        line1 = "Once upon a time there was a boy name, " + name + "."
+        line2 = "He had a " + description + " " + animal + " named " + animalName + "."
+
+    print(line1)
+    print(line2)
+
+tellAnimalStory("Barb", "female", "horse","Sport","handsome")
+tellAnimalStory("Mark", "male", "dog","Baxter","funny")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch17ex19q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch17ex19q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch17ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch17ex19q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch17ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch17ex19q" onclick="teachercsp_ch17ex19q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch17ex19q']").attr('data-disqus-identifier', 'teachercsp_ch17ex19q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch17ex20t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Create a procedure that takes in a string like &#8220;name: Bob,age: 10,verb: dance&#8221; and prints out a sentence with just the name, age, and verb.</p>
+
+<textarea data-component="activecode" id=ch17ex20q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define a procedure similar to below.</p>
+
+<textarea data-component="activecode" id=ch17ex20a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def aProcedure(aString):
+    aList = aString.split(",")
+    agePart = aList[1]
+    namePart = aList[0]
+    verbPart = aList[2]
+
+    posName = namePart.find("name:")
+    if (posName > -1):
+    n   ame = namePart[posName+6:len(namePart)]
+    else:
+        name = "Unknown"
+    posAge = agePart.find("age:")
+    if (posAge > -1):
+        age = agePart[posAge+5:len(agePart)]
+    else:
+        age = "Unknown"
+    posVerb = verbPart.find("verb:")
+    if (posVerb > -1):
+        verb = agePart[posVerb+6:len(agePart)]
+    else:
+        verb = "Unknown"
+
+    print(name + " who is " + age + " likes to " + verb)
+
+aProcedure("name: Bob,age: 10,verb: dance")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch17ex20q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch17ex20q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch17ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch17ex20q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch17ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch17ex20q" onclick="teachercsp_ch17ex20q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch17ex20q']").attr('data-disqus-identifier', 'teachercsp_ch17ex20q_' + eBookConfig.course);
 </script>
 </div>
     </div>

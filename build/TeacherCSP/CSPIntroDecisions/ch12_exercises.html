@@ -403,32 +403,20 @@ print ("All done")
 
 </li>
 <li><div id='ch12ex2t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix the indention in the code below to use a price of 1.45 if the weight is less than 1 and a price of 1.15 otherwise.  There is also one syntax error.</p>
+<p>The code currently prints &#8220;Hello&#8221; when the number is less than 3. Change it so that it prints &#8220;Hello&#8221; when the number is equal to 3.</p>
 
 <textarea data-component="activecode" id=ch12ex2q data-lang="python"    data-timelimit=25000   data-audio=''     >
-weight = 0.5
-if weight < 1:
-price = 1.45
-if weight >= 1
-price = 1.15
-total = weight * price
-print(weight)
-print(price)
-print(total)
+x = 3
+if x < 3:
+    print("Hello")
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change the indention on lines 3 and 5 and add a <code class="docutils literal"><span class="pre">:</span></code> at the end of line 4.</p>
+<p>Change the less than sign to <code class="docutils literal"><span class="pre">==</span></code>.</p>
 
 <textarea data-component="activecode" id=ch12ex2a data-lang="python"    data-timelimit=25000   data-audio=''     >
-weight = 0.5
-if weight < 1:
-    price = 1.45
-if weight >= 1:
-    price = 1.15
-total = weight * price
-print(weight)
-print(price)
-print(total)
+x = 3
+if x == 3:
+    print("Hello")
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -473,30 +461,28 @@ print(total)
 
 </li>
 <li><div id='ch12ex3t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix 3 errors with indention in the code below to correctly set the price to 1.5 if the weight is less than 2 and otherwise set it to 1.3.</p>
+<p>Fix the indention in the code below to use a price of 1.45 if the weight is less than 1 and a price of 1.15 otherwise.  There is also one syntax error.</p>
 
 <textarea data-component="activecode" id=ch12ex3q data-lang="python"    data-timelimit=25000   data-audio=''     >
 weight = 0.5
-numItems = 5
-if weight < 2:
-price = 1.50
-if weight >= 2:
-price = 1.30
+if weight < 1:
+price = 1.45
+if weight >= 1
+price = 1.15
 total = weight * price
 print(weight)
-    print(price)
+print(price)
 print(total)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Indent lines 4 and 6.  Remove the indention on line 9.</p>
+<p>Change the indention on lines 3 and 5 and add a <code class="docutils literal"><span class="pre">:</span></code> at the end of line 4.</p>
 
 <textarea data-component="activecode" id=ch12ex3a data-lang="python"    data-timelimit=25000   data-audio=''     >
 weight = 0.5
-numItems = 5
-if weight < 2:
-    price = 1.50
-if weight >= 2:
-    price = 1.30
+if weight < 1:
+    price = 1.45
+if weight >= 1:
+    price = 1.15
 total = weight * price
 print(weight)
 print(price)
@@ -523,7 +509,7 @@ print(total)
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'cslearn4u';    
+            disqus_shortname = 'teachercsp';    
             disqus_identifier = 'teachercsp_ch12ex3q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch12ex3q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -545,22 +531,30 @@ print(total)
 
 </li>
 <li><div id='ch12ex4t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix 4 errors in the code below to print &#8220;x is a number from  1 to 10&#8221; when x is greater than or equal to 1 and less than or equal to 10.</p>
+<p>Fill in line 1 with a weight that will make the total equal 1, and fix the indentation errors.</p>
 
 <textarea data-component="activecode" id=ch12ex4q data-lang="python"    data-timelimit=25000   data-audio=''     >
-x = 3
-if x > 1 and x <= 10
-print ("x is a number from 1 to 10")
-    print ("All done")
+weight =
+
+if weight >= .5:
+price = 2
+if weight < .5:
+price = 1
+    total = weight * price
+    print(total)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change line 2 to <code class="docutils literal"><span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">1</span></code> and add a <code class="docutils literal"><span class="pre">:</span></code> at the end of the line.  Indent line 3.  Remove the indent on line 4.</p>
+<p>The weight should be .5, and the indentation should look like below.</p>
 
 <textarea data-component="activecode" id=ch12ex4a data-lang="python"    data-timelimit=25000   data-audio=''     >
-x = 3
-if x >= 1 and x <= 10:
-    print ("x is a number from 1 to 10")
-print ("All done")
+weight = .5
+
+if weight >= 1:
+    price = 4
+if weight < 1:
+    price = 2
+total = weight * price
+print(total)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -605,24 +599,34 @@ print ("All done")
 
 </li>
 <li><div id='ch12ex5t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Finish the conditional on line 3 to print &#8220;You can go out!&#8221; if either cleanedRoom or finishedHomework is true (not 0). It should always print &#8220;All done&#8221; as well.</p>
+<p>Fix 3 errors with indention in the code below to correctly set the price to 1.5 if the weight is less than 2 and otherwise set it to 1.3.</p>
 
 <textarea data-component="activecode" id=ch12ex5q data-lang="python"    data-timelimit=25000   data-audio=''     >
-cleanedRoom = 1
-finishedHomework = 0
-if
-    print ("You can go out!")
-print ("All done")
+weight = 0.5
+numItems = 5
+if weight < 2:
+price = 1.50
+if weight >= 2:
+price = 1.30
+total = weight * price
+print(weight)
+    print(price)
+print(total)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Add <code class="docutils literal"><span class="pre">cleanedRoom</span> <span class="pre">or</span> <span class="pre">finishedHomework:</span></code> to line 3.</p>
+<p>Indent lines 4 and 6.  Remove the indention on line 9.</p>
 
 <textarea data-component="activecode" id=ch12ex5a data-lang="python"    data-timelimit=25000   data-audio=''     >
-cleanedRoom = 1
-finishedHomework = 0
-if cleanedRoom or finishedHomework:
-    print ("You can go out!")
-print ("All done")
+weight = 0.5
+numItems = 5
+if weight < 2:
+    price = 1.50
+if weight >= 2:
+    price = 1.30
+total = weight * price
+print(weight)
+print(price)
+print(total)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -645,7 +649,7 @@ print ("All done")
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'teachercsp';    
+            disqus_shortname = 'cslearn4u';    
             disqus_identifier = 'teachercsp_ch12ex5q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch12ex5q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -667,32 +671,24 @@ print ("All done")
 
 </li>
 <li><div id='ch12ex6t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix 5 errors in the following code to set the price to 1.45 if the weight is less than or equal to 1 and otherwise set it to 1.15.</p>
+<p>The code currently does not do anything if the number is equal to 2. Fix it so that it prints &#8220;Hey&#8221; if the number is 2.</p>
 
 <textarea data-component="activecode" id=ch12ex6q data-lang="python"    data-timelimit=25000   data-audio=''     >
-weight = 0.5
-if weight < 1:
-price = 1.45
-if weight > 1:
-price = 1.15
-total = weight * price
-print(weigh)
-print(Price)
-print(total)
+number = 2
+if x < 2:
+    print("Hello")
+if x > 2:
+    print("Hey")
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Indent lines 3 and 5.  Change line 2 to <code class="docutils literal"><span class="pre">&lt;=</span></code>.  Change line 7 to <code class="docutils literal"><span class="pre">weight</span></code>.  Change line 8 to <code class="docutils literal"><span class="pre">price</span></code>.</p>
+<p>Make the second clause <code class="docutils literal"><span class="pre">&lt;=</span></code></p>
 
 <textarea data-component="activecode" id=ch12ex6a data-lang="python"    data-timelimit=25000   data-audio=''     >
-weight = 0.5
-if weight <= 1:
-    price = 1.45
-if weight > 1:
-    price = 1.15
-total = weight * price
-print(weight)
-print(price)
-print(total)
+number = 2
+if x < 2:
+    print("Hello")
+if x >= 2:
+    print("Hey")
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -737,38 +733,22 @@ print(total)
 
 </li>
 <li><div id='ch12ex7t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Change 3 lines in the code below to correctly set the grade so that a 90 and above is an A, 80-89 is a B, 70 - 79 is a C, 60-69 is a D and below 60 is an E.</p>
+<p>Fix 4 errors in the code below to print &#8220;x is a number from  1 to 10&#8221; when x is greater than or equal to 1 and less than or equal to 10.</p>
 
 <textarea data-component="activecode" id=ch12ex7q data-lang="python"    data-timelimit=25000   data-audio=''     >
-score = 93
-if score >= 90:
-    grade = "A"
-if score >= 80:
-    grade = "B"
-if score >= 70:
-    grade = "C"
-if score >= 60:
-    grade = "D"
-if score < 60:
-   grade = "E"
-print(grade)
+x = 3
+if x > 1 and x <= 10
+print ("x is a number from 1 to 10")
+    print ("All done")
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change lines 4, 6, and 8 as shown below.</p>
+<p>Change line 2 to <code class="docutils literal"><span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">1</span></code> and add a <code class="docutils literal"><span class="pre">:</span></code> at the end of the line.  Indent line 3.  Remove the indent on line 4.</p>
 
-<textarea data-component="activecode" id=ch12ex7a data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
-score = 93
-if score >= 90:
-    grade = "A"
-if score >= 80 and score <= 89:
-    grade = "B"
-if score >= 70 and score <= 79:
-    grade = "C"
-if score >= 60 and score <= 69:
-    grade = "D"
-if score < 60:
-   grade = "E"
-print(grade)
+<textarea data-component="activecode" id=ch12ex7a data-lang="python"    data-timelimit=25000   data-audio=''     >
+x = 3
+if x >= 1 and x <= 10:
+    print ("x is a number from 1 to 10")
+print ("All done")
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -813,32 +793,20 @@ print(grade)
 
 </li>
 <li><div id='ch12ex8t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix 5 errors in the following code to set price to 1.45 if weight is less than 1 and otherwise set it to 1.15.</p>
+<p>The following code prints &#8220;This is not 8&#8221; when the number is not 8. Change the if statement, so that it does the same thing but only uses one expression (No &#8220;and&#8221; or &#8220;or&#8221;).</p>
 
 <textarea data-component="activecode" id=ch12ex8q data-lang="python"    data-timelimit=25000   data-audio=''     >
-weight = 0.5
-if weight < 1
-price = 1.45
-else
-price = 1.15
-total = weight * price
-print(weight)
-print(price
-print(Total)
+x = 8
+if x < 8 or x > 8:
+    print("This is not 8")
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Add <code class="docutils literal"><span class="pre">:</span></code> at the end of lines 2 and 4.  Indent lines 3 and 5.  Add a <code class="docutils literal"><span class="pre">)</span></code> at the end of line 8.  Change line 9 to <code class="docutils literal"><span class="pre">total</span></code>.</p>
+<p>Change it to <code class="docutils literal"><span class="pre">x</span> <span class="pre">!=</span> <span class="pre">8</span></code>.</p>
 
 <textarea data-component="activecode" id=ch12ex8a data-lang="python"    data-timelimit=25000   data-audio=''     >
-weight = 0.5
-if weight < 1:
-    price = 1.45
-else:
-    price = 1.15
-total = weight * price
-print(weight)
-print(price)
-print(total)
+x = 8
+if x != 8:
+    print("This is not 8")
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -883,24 +851,24 @@ print(total)
 
 </li>
 <li><div id='ch12ex9t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write a procedure that will print out &#8220;even&#8221; if the passed value is even and &#8220;odd&#8221; if the passed value is odd.  Test both possibilities.</p>
+<p>Finish the conditional on line 3 to print &#8220;You can go out!&#8221; if either cleanedRoom or finishedHomework is true (not 0). It should always print &#8220;All done&#8221; as well.</p>
 
 <textarea data-component="activecode" id=ch12ex9q data-lang="python"    data-timelimit=25000   data-audio=''     >
-
-
+cleanedRoom = 1
+finishedHomework = 0
+if
+    print ("You can go out!")
+print ("All done")
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the procedure as shown below and be sure to test it.</p>
+<p>Add <code class="docutils literal"><span class="pre">cleanedRoom</span> <span class="pre">or</span> <span class="pre">finishedHomework:</span></code> to line 3.</p>
 
 <textarea data-component="activecode" id=ch12ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def printIfEvenOrOdd(x):
-    if x % 2 == 0:
-        print("x is even")
-    else:
-        print("x is odd")
-
-printIfEvenOrOdd(92)
-printIfEvenOrOdd(5)
+cleanedRoom = 1
+finishedHomework = 0
+if cleanedRoom or finishedHomework:
+    print ("You can go out!")
+print ("All done")
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -945,39 +913,20 @@ printIfEvenOrOdd(5)
 
 </li>
 <li><div id='ch12ex10t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write a function that takes a number for a grade and returns a string grade.  It should return E for any value below 60, D for 61 to 69, C for 70 to 79, B for 80 to 89 and A for 90 and above.  Write code to test each grade range.</p>
+<p>Complete the conditional and fix the errors so that it prints &#8220;Good job&#8221; when the number is between 1 and 10 (inclusive) or is 15.</p>
 
 <textarea data-component="activecode" id=ch12ex10q data-lang="python"    data-timelimit=25000   data-audio=''     >
-
-
+x = 8
+    if
+print("Good job")
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Create a function as shown below.  Call it to test it and print the result.</p>
+<p>Switch the indentation levels of lines 2 and 3, and use the conditional below.</p>
 
 <textarea data-component="activecode" id=ch12ex10a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def getGrade(x):
-    if x >= 90:
-       return "A"
-    if x >= 80 and x < 90:
-       return "B"
-    if x >= 70 and x < 80:
-       return "C"
-    if x >= 60 and x < 70:
-       return "D"
-    if x < 60:
-       return "E"
-
-print(getGrade(95))
-print(getGrade(90))
-print(getGrade(85))
-print(getGrade(80))
-print(getGrade(75))
-print(getGrade(70))
-print(getGrade(65))
-print(getGrade(60))
-print(getGrade(55))
-print(getGrade(50))
-print(getGrade(0))
+x = 8
+if (x >= 1 and x <= 1) or x == 15:
+    print("Good job")
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -1016,6 +965,678 @@ print(getGrade(0))
 <a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch12ex10q" onclick="teachercsp_ch12ex10q_disqus(this);">Show Comments</a>
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch12ex10q']").attr('data-disqus-identifier', 'teachercsp_ch12ex10q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch12ex11t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix 5 errors in the following code to set the price to 1.45 if the weight is less than or equal to 1 and otherwise set it to 1.15.</p>
+
+<textarea data-component="activecode" id=ch12ex11q data-lang="python"    data-timelimit=25000   data-audio=''     >
+weight = 0.5
+if weight < 1:
+price = 1.45
+if weight > 1:
+price = 1.15
+total = weight * price
+print(weigh)
+print(Price)
+print(total)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Indent lines 3 and 5.  Change line 2 to <code class="docutils literal"><span class="pre">&lt;=</span></code>.  Change line 7 to <code class="docutils literal"><span class="pre">weight</span></code>.  Change line 8 to <code class="docutils literal"><span class="pre">price</span></code>.</p>
+
+<textarea data-component="activecode" id=ch12ex11a data-lang="python"    data-timelimit=25000   data-audio=''     >
+weight = 0.5
+if weight <= 1:
+    price = 1.45
+if weight > 1:
+    price = 1.15
+total = weight * price
+print(weight)
+print(price)
+print(total)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch12ex11q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch12ex11q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch12ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch12ex11q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch12ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch12ex11q" onclick="teachercsp_ch12ex11q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch12ex11q']").attr('data-disqus-identifier', 'teachercsp_ch12ex11q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch12ex12t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix the indentation below, so that the code sets the price based off the weight, then checks if the total is greater than the amount in your wallet.</p>
+
+<textarea data-component="activecode" id=ch12ex12q data-lang="python"    data-timelimit=25000   data-audio=''     >
+weight = 0.5
+numItems = 5
+wallet = 2
+
+if weight < 1:
+    price = 1.45
+    if weight >= 1:
+    price = 1.15
+    total = numItems * price
+    if total > wallet:
+    print("You have no money")
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Fix the indentation so it looks like below.</p>
+
+<textarea data-component="activecode" id=ch12ex12a data-lang="python"    data-timelimit=25000   data-audio=''     >
+weight = 0.5
+numItems = 5
+wallet = 2
+
+if weight < 1:
+    price = 1.45
+if weight >= 1:
+    price = 1.15
+total = numItems * price
+if total > wallet:
+    print("You have no money")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch12ex12q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch12ex12q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch12ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch12ex12q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch12ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch12ex12q" onclick="teachercsp_ch12ex12q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch12ex12q']").attr('data-disqus-identifier', 'teachercsp_ch12ex12q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch12ex13t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Change 3 lines in the code below to correctly set the grade so that a 90 and above is an A, 80-89 is a B, 70 - 79 is a C, 60-69 is a D and below 60 is an E.</p>
+
+<textarea data-component="activecode" id=ch12ex13q data-lang="python"    data-timelimit=25000   data-audio=''     >
+score = 93
+if score >= 90:
+    grade = "A"
+if score >= 80:
+    grade = "B"
+if score >= 70:
+    grade = "C"
+if score >= 60:
+    grade = "D"
+if score < 60:
+   grade = "E"
+print(grade)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Change lines 4, 6, and 8 as shown below.</p>
+
+<textarea data-component="activecode" id=ch12ex13a data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+score = 93
+if score >= 90:
+    grade = "A"
+if score >= 80 and score <= 89:
+    grade = "B"
+if score >= 70 and score <= 79:
+    grade = "C"
+if score >= 60 and score <= 69:
+    grade = "D"
+if score < 60:
+   grade = "E"
+print(grade)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch12ex13q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch12ex13q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch12ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch12ex13q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch12ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch12ex13q" onclick="teachercsp_ch12ex13q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch12ex13q']").attr('data-disqus-identifier', 'teachercsp_ch12ex13q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch12ex14t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix the errors in the code, and change it, so there&#8217;s only 1 if statement. The code should print &#8220;The number is 5&#8221; when the number is 5, and should print &#8220;The number is NOT 5&#8221; when it is not.</p>
+
+<textarea data-component="activecode" id=ch12ex14q data-lang="python"    data-timelimit=25000   data-audio=''     >
+x = 5
+if x == 5:
+print("The number is 5")
+if x != 5:
+print("The number is NOT 5")
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Fix the indentation and change the second if statement to an else statement.</p>
+
+<textarea data-component="activecode" id=ch12ex14a data-lang="python"    data-timelimit=25000   data-audio=''     >
+x = 5
+if x == 5:
+    print("The number is 5")
+else:
+    print("The number is NOT 5")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch12ex14q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch12ex14q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch12ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch12ex14q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch12ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch12ex14q" onclick="teachercsp_ch12ex14q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch12ex14q']").attr('data-disqus-identifier', 'teachercsp_ch12ex14q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch12ex15t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix 5 errors in the following code to set price to 1.45 if weight is less than 1 and otherwise set it to 1.15.</p>
+
+<textarea data-component="activecode" id=ch12ex15q data-lang="python"    data-timelimit=25000   data-audio=''     >
+weight = 0.5
+if weight < 1
+price = 1.45
+else
+price = 1.15
+total = weight * price
+print(weight)
+print(price
+print(Total)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Add <code class="docutils literal"><span class="pre">:</span></code> at the end of lines 2 and 4.  Indent lines 3 and 5.  Add a <code class="docutils literal"><span class="pre">)</span></code> at the end of line 8.  Change line 9 to <code class="docutils literal"><span class="pre">total</span></code>.</p>
+
+<textarea data-component="activecode" id=ch12ex15a data-lang="python"    data-timelimit=25000   data-audio=''     >
+weight = 0.5
+if weight < 1:
+    price = 1.45
+else:
+    price = 1.15
+total = weight * price
+print(weight)
+print(price)
+print(total)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch12ex15q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch12ex15q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch12ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch12ex15q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch12ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch12ex15q" onclick="teachercsp_ch12ex15q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch12ex15q']").attr('data-disqus-identifier', 'teachercsp_ch12ex15q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch12ex16t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Complete and finish the code on lines 1 and 4 so that the code prints &#8220;Hi&#8221;.</p>
+
+<textarea data-component="activecode" id=ch12ex16q data-lang="python"    data-timelimit=25000   data-audio=''     >
+x =
+if not x != 3:
+    print("Hi")
+
+    print("Hello")
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Line 1 should be x = 3, and line 4 should be else.</p>
+
+<textarea data-component="activecode" id=ch12ex16a data-lang="python"    data-timelimit=25000   data-audio=''     >
+x = 3
+if not x != 3:
+    print("Hi")
+else:
+    print("Hello")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch12ex16q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch12ex16q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch12ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch12ex16q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch12ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch12ex16q" onclick="teachercsp_ch12ex16q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch12ex16q']").attr('data-disqus-identifier', 'teachercsp_ch12ex16q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch12ex17t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a procedure that will print out &#8220;even&#8221; if the passed value is even and &#8220;odd&#8221; if the passed value is odd.  Test both possibilities.</p>
+
+<textarea data-component="activecode" id=ch12ex17q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the procedure as shown below and be sure to test it.</p>
+
+<textarea data-component="activecode" id=ch12ex17a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def printIfEvenOrOdd(x):
+    if x % 2 == 0:
+        print("x is even")
+    else:
+        print("x is odd")
+
+printIfEvenOrOdd(92)
+printIfEvenOrOdd(5)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch12ex17q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch12ex17q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch12ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch12ex17q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch12ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch12ex17q" onclick="teachercsp_ch12ex17q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch12ex17q']").attr('data-disqus-identifier', 'teachercsp_ch12ex17q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch12ex18t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a procedure that takes 2 ints, total price, and amount in wallet. Print &#8220;You have enough money&#8221; if the difference between the wallet and price is 0 or greater; otherwise, print &#8220;Get more money&#8221;</p>
+
+<textarea data-component="activecode" id=ch12ex18q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Do as shown below.</p>
+
+<textarea data-component="activecode" id=ch12ex18a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def aProcedure(price, wallet):
+    if (wallet - price) >= 0:
+        print("You have enough money")
+    else:
+        print("Get more money")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch12ex18q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch12ex18q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch12ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch12ex18q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch12ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch12ex18q" onclick="teachercsp_ch12ex18q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch12ex18q']").attr('data-disqus-identifier', 'teachercsp_ch12ex18q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch12ex19t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a function that takes a number for a grade and returns a string grade.  It should return E for any value below 60, D for 61 to 69, C for 70 to 79, B for 80 to 89 and A for 90 and above.  Write code to test each grade range.</p>
+
+<textarea data-component="activecode" id=ch12ex19q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Create a function as shown below.  Call it to test it and print the result.</p>
+
+<textarea data-component="activecode" id=ch12ex19a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def getGrade(x):
+    if x >= 90:
+       return "A"
+    if x >= 80 and x < 90:
+       return "B"
+    if x >= 70 and x < 80:
+       return "C"
+    if x >= 60 and x < 70:
+       return "D"
+    if x < 60:
+       return "E"
+
+print(getGrade(95))
+print(getGrade(90))
+print(getGrade(85))
+print(getGrade(80))
+print(getGrade(75))
+print(getGrade(70))
+print(getGrade(65))
+print(getGrade(60))
+print(getGrade(55))
+print(getGrade(50))
+print(getGrade(0))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch12ex19q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch12ex19q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch12ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch12ex19q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch12ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch12ex19q" onclick="teachercsp_ch12ex19q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch12ex19q']").attr('data-disqus-identifier', 'teachercsp_ch12ex19q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch12ex20t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write code that prints &#8220;Fizz&#8221; when the number is divisible by 3, &#8220;Buzz&#8221; when it is divisible by 5, and &#8220;FizzBuzz&#8221; when it is divisible by 3 and 5  (If a number is divisible by 3 and 5, it should also print &#8220;Fizz&#8221; and &#8220;Buzz&#8221;).</p>
+
+<textarea data-component="activecode" id=ch12ex20q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+
+<textarea data-component="activecode" id=ch12ex20a data-lang="python"    data-timelimit=25000   data-audio=''     >
+x = 3
+if x % 3 == 0:
+    print("Fizz")
+if x % 5 == 0:
+    print("Buzz")
+if x % 3 == 0 and x % 5 == 0:
+    print("FizzBuzz")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch12ex20q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch12ex20q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch12ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch12ex20q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch12ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch12ex20q" onclick="teachercsp_ch12ex20q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch12ex20q']").attr('data-disqus-identifier', 'teachercsp_ch12ex20q_' + eBookConfig.course);
 </script>
 </div>
     </div>

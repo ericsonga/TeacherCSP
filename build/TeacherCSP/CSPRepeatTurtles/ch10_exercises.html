@@ -409,34 +409,28 @@ for sides in [1,2,3,4]: # repeat the indented lines 4 times
 
 </li>
 <li><div id='ch10ex2t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix the code below to draw a rectangle. You will need to fix the indention on 3 lines.</p>
+<p>The code currently draws a square. Change it so that it draws a triangle.</p>
 
 <textarea data-component="activecode" id=ch10ex2q data-lang="python"    data-timelimit=25000   data-audio=''     >
 from turtle import *
-    space = Screen()
-carlos = Turtle()
-
-# repeat 2 times
-for i in [1,2]:
-    carlos.forward(175)
-    carlos.right(90)
-carlos.forward(150)
-carlos.right(90)
+space = Screen()
+alisha = Turtle()
+alisha.setheading(90)
+for sides in [1,2,3,4]:
+    alisha.forward(100)
+    alisha.right(90)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change the indention on lines 2, 9 and 10 as shown below.</p>
+<p>Change the list to only have 3 items in it and change the angle to be 120.</p>
 
 <textarea data-component="activecode" id=ch10ex2a data-lang="python"    data-timelimit=25000   data-audio=''     >
 from turtle import *
 space = Screen()
-carlos = Turtle()
-
-# repeat 2 times
-for i in [1,2]:
-    carlos.forward(175)
-    carlos.right(90)
-    carlos.forward(150)
-    carlos.right(90)
+alisha = Turtle()
+alisha.setheading(90)
+for sides in [1,2,3]:
+    alisha.forward(100)
+    alisha.right(120)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -481,28 +475,34 @@ for i in [1,2]:
 
 </li>
 <li><div id='ch10ex3t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fill in values for <code class="docutils literal"><span class="pre">x</span></code> on line 5 and <code class="docutils literal"><span class="pre">y</span></code> on line 7 to allow the code below to correctly draw a pentagon.</p>
+<p>Fix the code below to draw a rectangle. You will need to fix the indention on 3 lines.</p>
 
 <textarea data-component="activecode" id=ch10ex3q data-lang="python"    data-timelimit=25000   data-audio=''     >
-from turtle import *    # use the turtle library
-space = Screen()        # create a turtle space
-will = Turtle()                 # create a turtle named will
-will.setheading(90)     # point due north
-for sides in range(x):  # repeat the indented lines
-    will.forward(100)           # move forward by 100 units
-    will.right(y)
+from turtle import *
+    space = Screen()
+carlos = Turtle()
+
+# repeat 2 times
+for i in [1,2]:
+    carlos.forward(175)
+    carlos.right(90)
+carlos.forward(150)
+carlos.right(90)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change <code class="docutils literal"><span class="pre">x</span></code> to <code class="docutils literal"><span class="pre">5</span></code> and <code class="docutils literal"><span class="pre">y</span></code> to <code class="docutils literal"><span class="pre">72</span></code>.</p>
+<p>Change the indention on lines 2, 9 and 10 as shown below.</p>
 
 <textarea data-component="activecode" id=ch10ex3a data-lang="python"    data-timelimit=25000   data-audio=''     >
-from turtle import *    # use the turtle library
-space = Screen()        # create a turtle space
-will = Turtle()                 # create a turtle named will
-will.setheading(90)     # point due north
-for sides in range(5):  # repeat the indented lines 5 times
-    will.forward(100)           # move forward by 100 units
-    will.right(72)              # turn by 72 degrees
+from turtle import *
+space = Screen()
+carlos = Turtle()
+
+# repeat 2 times
+for i in [1,2]:
+    carlos.forward(175)
+    carlos.right(90)
+    carlos.forward(150)
+    carlos.right(90)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -525,7 +525,7 @@ for sides in range(5):  # repeat the indented lines 5 times
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'cslearn4u';    
+            disqus_shortname = 'teachercsp';    
             disqus_identifier = 'teachercsp_ch10ex3q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch10ex3q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -547,30 +547,28 @@ for sides in range(5):  # repeat the indented lines 5 times
 
 </li>
 <li><div id='ch10ex4t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Finish the code on lines 1, 2, 3, 6 and 8 below to correctly draw a triangle.</p>
+<p>Fix the errors in the code so that it draws a square.</p>
 
 <textarea data-component="activecode" id=ch10ex4q data-lang="python"    data-timelimit=25000   data-audio=''     >
-from
-space =
-marie =
-
-# repeat
-for i in range():
-    marie.forward(100)
-    marie.left()
+from turtle import *
+space = Screen()
+liz = Turtle()
+liz.setheading(90)
+for sides in range(5)
+    liz.forward(90)
+liz.right(100)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Add <code class="docutils literal"><span class="pre">turtle</span> <span class="pre">import</span> <span class="pre">*</span></code> to the end of line 1.  Add <code class="docutils literal"><span class="pre">Screen()</span></code> to the end of line 2.  Add <code class="docutils literal"><span class="pre">Turtle()</span></code> at the end of line 3.  Set line 6 to repeat 3 times.  Set line 8 to turn left 120 degrees.</p>
+<p>It should be range(4) and add a colon afterwards. Fix the indentation on the last line to be in the for loop, and switch the two numbers in the <code class="docutils literal"><span class="pre">forward</span></code> and <code class="docutils literal"><span class="pre">right</span></code> methods.</p>
 
 <textarea data-component="activecode" id=ch10ex4a data-lang="python"    data-timelimit=25000   data-audio=''     >
 from turtle import *
 space = Screen()
-marie = Turtle()
-
-# repeat 3 times
-for i in range(3):
-    marie.forward(100)
-    marie.left(120)
+liz = Turtle()
+liz.setheading(90)
+for sides in range(4):
+    liz.forward(100)
+    liz.right(90)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -615,44 +613,28 @@ for i in range(3):
 
 </li>
 <li><div id='ch10ex5t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix the indention in the code below to correctly draw 20 pentagons.</p>
+<p>Fill in values for <code class="docutils literal"><span class="pre">x</span></code> on line 5 and <code class="docutils literal"><span class="pre">y</span></code> on line 7 to allow the code below to correctly draw a pentagon.</p>
 
 <textarea data-component="activecode" id=ch10ex5q data-lang="python"    data-timelimit=25000   data-audio=''     >
-from turtle import *     # use the turtle library
-from sys import *        # use the system library
-setExecutionLimit(50000) # let this take up to 50 seconds
-space = Screen()         # create a turtle space
-zoe = Turtle()           # create a turtle named zoe
-zoe.setheading(90)       # point due north
-
-for repeats in range(20):   # draw the pattern 20 times
-    zoe.forward(10)             # Offset the shapes a bit
-    zoe.right(18)               # And turn each one a bit
-
-# This part makes a pentagon
-for sides in range(5):    # repeat 5 times
-    zoe.forward(50)         # move forward by 50 unit
-    zoe.right(72)           # turn by 72 degrees
+from turtle import *    # use the turtle library
+space = Screen()        # create a turtle space
+will = Turtle()                 # create a turtle named will
+will.setheading(90)     # point due north
+for sides in range(x):  # repeat the indented lines
+    will.forward(100)           # move forward by 100 units
+    will.right(y)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Indent lines 13-15 as shown below.</p>
+<p>Change <code class="docutils literal"><span class="pre">x</span></code> to <code class="docutils literal"><span class="pre">5</span></code> and <code class="docutils literal"><span class="pre">y</span></code> to <code class="docutils literal"><span class="pre">72</span></code>.</p>
 
 <textarea data-component="activecode" id=ch10ex5a data-lang="python"    data-timelimit=25000   data-audio=''     >
-from turtle import *     # use the turtle library
-from sys import *        # use the system library
-setExecutionLimit(50000) # let this take up to 50 seconds
-space = Screen()         # create a turtle space
-zoe = Turtle()           # create a turtle named zoe
-zoe.setheading(90)       # point due north
-
-for repeats in range(20):   # draw the pattern 20 times
-    zoe.forward(10)             # Offset the shapes a bit
-    zoe.right(18)               # And turn each one a bit
-
-    # This part makes a pentagon
-    for sides in range(5):    # repeat 5 times
-        zoe.forward(50)         # move forward by 50 unit
-        zoe.right(72)           # turn by 72 degrees
+from turtle import *    # use the turtle library
+space = Screen()        # create a turtle space
+will = Turtle()                 # create a turtle named will
+will.setheading(90)     # point due north
+for sides in range(5):  # repeat the indented lines 5 times
+    will.forward(100)           # move forward by 100 units
+    will.right(72)              # turn by 72 degrees
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -675,7 +657,7 @@ for repeats in range(20):   # draw the pattern 20 times
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'teachercsp';    
+            disqus_shortname = 'cslearn4u';    
             disqus_identifier = 'teachercsp_ch10ex5q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch10ex5q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -697,34 +679,28 @@ for repeats in range(20):   # draw the pattern 20 times
 
 </li>
 <li><div id='ch10ex6t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix the following code below to draw a circle of turtles using the <code class="docutils literal"><span class="pre">stamp</span></code> procedure.  You will need to change 3 lines.</p>
+<p>Complete the code on lines 5 and 7 to draw a hexagon.</p>
 
 <textarea data-component="activecode" id=ch10ex6q data-lang="python"    data-timelimit=25000   data-audio=''     >
 from turtle import *
 space = Screen()
-jose = Turtle()
-jose.shape("turtle")
-jose.
-for size in range():
-    jose.forward(50)
-    jose.stamp()
-    jose.forward()
-    jose.right(36)
+mia = Turtle()
+mia.setheading(90)
+for sides in
+    mia.forward(40)
+    mia.
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>On line 5 add <code class="docutils literal"><span class="pre">penup()</span></code>.  On line 6 change it to <code class="docutils literal"><span class="pre">(10)</span></code>.  On line 9 change it to <code class="docutils literal"><span class="pre">(-50)</span></code>.</p>
+<p>Line 5 needs to say &#8220;for sides in range(6)&#8221; and line 7 has to have the turtle turning right by 60.</p>
 
 <textarea data-component="activecode" id=ch10ex6a data-lang="python"    data-timelimit=25000   data-audio=''     >
 from turtle import *
 space = Screen()
-jose = Turtle()
-jose.shape("turtle")
-jose.penup()
-for size in range(10):
-    jose.forward(50)
-    jose.stamp()
-    jose.forward(-50)
-    jose.right(36)
+mia = Turtle()
+mia.setheading(90)
+for sides in range(6):
+    mia.forward(40)
+    mia.right(60)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -769,30 +745,30 @@ for size in range(10):
 
 </li>
 <li><div id='ch10ex7t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Rewrite the following code to create a procedure to draw a square with a turtle.  Pass the turtle and the size of the square as input (parameters) to the procedure.</p>
+<p>Finish the code on lines 1, 2, 3, 6 and 8 below to correctly draw a triangle.</p>
 
 <textarea data-component="activecode" id=ch10ex7q data-lang="python"    data-timelimit=25000   data-audio=''     >
-from turtle import *    # use the turtle library
-space = Screen()                # create a turtle space
-alisha = Turtle()               # create a turtle named alisha
-alisha.setheading(90)   # point due north
-for sides in [1,2,3,4]: # repeat the indented lines 4 times
-    alisha.forward(100)         # move forward by 100 units
-    alisha.right(90)            # turn by 90 degrees
+from
+space =
+marie =
+
+# repeat
+for i in range():
+    marie.forward(100)
+    marie.left()
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the procedure as shown below.  Create a turtle and do all set-up before calling the procedure.</p>
+<p>Add <code class="docutils literal"><span class="pre">turtle</span> <span class="pre">import</span> <span class="pre">*</span></code> to the end of line 1.  Add <code class="docutils literal"><span class="pre">Screen()</span></code> to the end of line 2.  Add <code class="docutils literal"><span class="pre">Turtle()</span></code> at the end of line 3.  Set line 6 to repeat 3 times.  Set line 8 to turn left 120 degrees.</p>
 
-<textarea data-component="activecode" id=ch10ex7a data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
-def drawSquare(turtle,size):
-    for sides in [1,2,3,4]:     # repeat the indented lines 4 times
-        turtle.forward(size)    # move forward by 100 units
-        turtle.right(90)        # turn by 90 degrees
+<textarea data-component="activecode" id=ch10ex7a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from turtle import *
+space = Screen()
+marie = Turtle()
 
-from turtle import *    # use the turtle library
-space = Screen()                # create a turtle space
-alisha = Turtle()               # create a turtle named alisha
-drawSquare(alisha,50)
+# repeat 3 times
+for i in range(3):
+    marie.forward(100)
+    marie.left(120)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -837,35 +813,24 @@ drawSquare(alisha,50)
 
 </li>
 <li><div id='ch10ex8t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Rewrite the following code to create a procedure to draw a rectangle with a turtle.  Pass the turtle and the length and width of the rectangle as parameters to the procedure.</p>
+<p>Finish the code to draw a 15 sided figure with each side having a length of 40.</p>
 
 <textarea data-component="activecode" id=ch10ex8q data-lang="python"    data-timelimit=25000   data-audio=''     >
 from turtle import *
 space = Screen()
-carlos = Turtle()
-
-# repeat 2 times
-for i in [1,2]:
-    carlos.forward(175)
-    carlos.right(90)
-    carlos.forward(150)
-    carlos.right(90)
+hi = Turtle()
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the procedure to draw a rectangle given a turtle, the length, and the width.  Call the procedure to test it.</p>
+<p>You need a for loop that iterates through 15 elements. In the body of the loop, the turtle must go forward 40 and turn left 24.</p>
 
 <textarea data-component="activecode" id=ch10ex8a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def drawRectangle(turtle,length,width):
-    for i in [1,2]:
-        turtle.forward(length)
-        turtle.right(90)
-        turtle.forward(width)
-        turtle.right(90)
-
 from turtle import *
 space = Screen()
-carlos = Turtle()
-drawRectangle(carlos,50,100)
+hi = Turtle()
+
+for i in range(15):
+    hi.forward(40)
+    hi.left(24)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -910,28 +875,44 @@ drawRectangle(carlos,50,100)
 
 </li>
 <li><div id='ch10ex9t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Create a procedure to draw 4 turtles at the 4 corners of a square using the <code class="docutils literal"><span class="pre">stamp</span></code> procedure.</p>
+<p>Fix the indention in the code below to correctly draw 20 pentagons.</p>
 
 <textarea data-component="activecode" id=ch10ex9q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from turtle import *     # use the turtle library
+from sys import *        # use the system library
+setExecutionLimit(50000) # let this take up to 50 seconds
+space = Screen()         # create a turtle space
+zoe = Turtle()           # create a turtle named zoe
+zoe.setheading(90)       # point due north
 
+for repeats in range(20):   # draw the pattern 20 times
+    zoe.forward(10)             # Offset the shapes a bit
+    zoe.right(18)               # And turn each one a bit
 
+# This part makes a pentagon
+for sides in range(5):    # repeat 5 times
+    zoe.forward(50)         # move forward by 50 unit
+    zoe.right(72)           # turn by 72 degrees
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the procedure as shown below.</p>
+<p>Indent lines 13-15 as shown below.</p>
 
 <textarea data-component="activecode" id=ch10ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def drawStampSquare(turtle,size):
-    turtle.penup()
-    turtle.shape("turtle")
-    for sides in range(4):      # repeat the indented lines 4 times
-        turtle.forward(size)    # move forward by 100 units
-        turtle.stamp()
-        turtle.right(90)        # turn by 90 degrees
+from turtle import *     # use the turtle library
+from sys import *        # use the system library
+setExecutionLimit(50000) # let this take up to 50 seconds
+space = Screen()         # create a turtle space
+zoe = Turtle()           # create a turtle named zoe
+zoe.setheading(90)       # point due north
 
-from turtle import *
-space = Screen()
-carlos = Turtle()
-drawStampSquare(carlos,50)
+for repeats in range(20):   # draw the pattern 20 times
+    zoe.forward(10)             # Offset the shapes a bit
+    zoe.right(18)               # And turn each one a bit
+
+    # This part makes a pentagon
+    for sides in range(5):    # repeat 5 times
+        zoe.forward(50)         # move forward by 50 unit
+        zoe.right(72)           # turn by 72 degrees
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -976,28 +957,31 @@ drawStampSquare(carlos,50)
 
 </li>
 <li><div id='ch10ex10t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write a procedure that takes a turtle and a number of sides as parameters and draws a polygon with that number of sides.</p>
+<p>The procedure below draws a square. Write code that uses the procedure to draw two squares connected by a line 10 units in length.</p>
 
 <textarea data-component="activecode" id=ch10ex10q data-lang="python"    data-timelimit=25000   data-audio=''     >
-
-
+def square(aTurtle):
+    for sides in range(4):
+        aTurtle.forward(100)
+        aTurtle.right(90)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Create a procedure as shown below.  Call it to test it.</p>
+<p>Call the statements needed to create a turtle. Then use a for loop with a range of 2 and call the function inside the for loop with a turtle right and forward method in there too.</p>
 
 <textarea data-component="activecode" id=ch10ex10a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def drawPolygon(turtle,numSides):
-    angle = 360 / numSides
-    for x in range(numSides):
-        turtle.forward(25)
-        turtle.right(angle)
-
 from turtle import *
 space = Screen()
-carlos = Turtle()
-drawPolygon(carlos,7)
-carlos.forward(100)
-drawPolygon(carlos,9)
+t = Turtle()
+
+def square(aTurtle):
+    for sides in range(4):
+        aTurtle.forward(100)
+        aTurtle.right(90)
+
+for i in range(2):
+    square(t)
+    t.right(90)
+    t.forward(100)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -1036,6 +1020,712 @@ drawPolygon(carlos,9)
 <a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch10ex10q" onclick="teachercsp_ch10ex10q_disqus(this);">Show Comments</a>
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch10ex10q']").attr('data-disqus-identifier', 'teachercsp_ch10ex10q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch10ex11t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix the following code below to draw a circle of turtles using the <code class="docutils literal"><span class="pre">stamp</span></code> procedure.  You will need to change 3 lines.</p>
+
+<textarea data-component="activecode" id=ch10ex11q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from turtle import *
+space = Screen()
+jose = Turtle()
+jose.shape("turtle")
+jose.
+for size in range():
+    jose.forward(50)
+    jose.stamp()
+    jose.forward()
+    jose.right(36)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>On line 5 add <code class="docutils literal"><span class="pre">penup()</span></code>.  On line 6 change it to <code class="docutils literal"><span class="pre">(10)</span></code>.  On line 9 change it to <code class="docutils literal"><span class="pre">(-50)</span></code>.</p>
+
+<textarea data-component="activecode" id=ch10ex11a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from turtle import *
+space = Screen()
+jose = Turtle()
+jose.shape("turtle")
+jose.penup()
+for size in range(10):
+    jose.forward(50)
+    jose.stamp()
+    jose.forward(-50)
+    jose.right(36)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch10ex11q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch10ex11q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch10ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch10ex11q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch10ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch10ex11q" onclick="teachercsp_ch10ex11q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch10ex11q']").attr('data-disqus-identifier', 'teachercsp_ch10ex11q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch10ex12t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<blockquote>
+<div><p>Complete the code where the <code class="docutils literal"><span class="pre">x's</span></code> are in order to draw 20 triangles.</p>
+</div></blockquote>
+
+<textarea data-component="activecode" id=ch10ex12q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from turtle import *
+for sys import *
+setExecutionLimit(50000)
+space = Screen()
+t = x
+t.setHeading(90)
+for repeats in range(x):
+    t.color("blue")
+    t.forward(10)
+    t.left(18)
+    for sides in range(x):
+        t.color("green")
+        t.forward(x)
+        t.right(x)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>You need to call the Turtle() and then set the range to 20, then the next range to 3 and make the turtle go foward 60 and right 120.</p>
+
+<textarea data-component="activecode" id=ch10ex12a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from turtle import *
+for sys import *
+setExecutionLimit(50000)
+space = Screen()
+t = Turtle()
+t.setHeading(90)
+for repeats in range(20):
+    t.color("blue")
+    t.forward(10)
+    t.left(18)
+    for sides in range(3):
+        t.color("green")
+        t.forward(60)
+        t.right(120)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch10ex12q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch10ex12q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch10ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch10ex12q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch10ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch10ex12q" onclick="teachercsp_ch10ex12q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch10ex12q']").attr('data-disqus-identifier', 'teachercsp_ch10ex12q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch10ex13t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Rewrite the following code to create a procedure to draw a square with a turtle.  Pass the turtle and the size of the square as input (parameters) to the procedure.</p>
+
+<textarea data-component="activecode" id=ch10ex13q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from turtle import *    # use the turtle library
+space = Screen()                # create a turtle space
+alisha = Turtle()               # create a turtle named alisha
+alisha.setheading(90)   # point due north
+for sides in [1,2,3,4]: # repeat the indented lines 4 times
+    alisha.forward(100)         # move forward by 100 units
+    alisha.right(90)            # turn by 90 degrees
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the procedure as shown below.  Create a turtle and do all set-up before calling the procedure.</p>
+
+<textarea data-component="activecode" id=ch10ex13a data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+def drawSquare(turtle,size):
+    for sides in [1,2,3,4]:     # repeat the indented lines 4 times
+        turtle.forward(size)    # move forward by 100 units
+        turtle.right(90)        # turn by 90 degrees
+
+from turtle import *    # use the turtle library
+space = Screen()                # create a turtle space
+alisha = Turtle()               # create a turtle named alisha
+drawSquare(alisha,50)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch10ex13q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch10ex13q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch10ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch10ex13q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch10ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch10ex13q" onclick="teachercsp_ch10ex13q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch10ex13q']").attr('data-disqus-identifier', 'teachercsp_ch10ex13q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch10ex14t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Currently, the code has a turtle drawing a straight line. Add 2 lines of code (1 before the loop and 1 in the loop) to make the turtle stamp in the line.</p>
+
+<textarea data-component="activecode" id=ch10ex14q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from turtle import *
+space = Screen()
+tess = Turtle()
+tess.color("blue")
+tess.shape("turtle")
+
+
+for size in range(5, 60, 2):
+
+    tess.forward(size)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>You have to add a penup statement before the loop and a stamp statement in the loop.</p>
+
+<textarea data-component="activecode" id=ch10ex14a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from turtle import *
+space = Screen()
+tess = Turtle()
+tess.color("blue")
+tess.shape("turtle")
+
+tess.penup()
+for size in range(5, 60, 2):
+    tess.stamp()
+    tess.forward(size)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch10ex14q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch10ex14q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch10ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch10ex14q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch10ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch10ex14q" onclick="teachercsp_ch10ex14q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch10ex14q']").attr('data-disqus-identifier', 'teachercsp_ch10ex14q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch10ex15t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Rewrite the following code to create a procedure to draw a rectangle with a turtle.  Pass the turtle and the length and width of the rectangle as parameters to the procedure.</p>
+
+<textarea data-component="activecode" id=ch10ex15q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from turtle import *
+space = Screen()
+carlos = Turtle()
+
+# repeat 2 times
+for i in [1,2]:
+    carlos.forward(175)
+    carlos.right(90)
+    carlos.forward(150)
+    carlos.right(90)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the procedure to draw a rectangle given a turtle, the length, and the width.  Call the procedure to test it.</p>
+
+<textarea data-component="activecode" id=ch10ex15a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def drawRectangle(turtle,length,width):
+    for i in [1,2]:
+        turtle.forward(length)
+        turtle.right(90)
+        turtle.forward(width)
+        turtle.right(90)
+
+from turtle import *
+space = Screen()
+carlos = Turtle()
+drawRectangle(carlos,50,100)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch10ex15q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch10ex15q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch10ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch10ex15q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch10ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch10ex15q" onclick="teachercsp_ch10ex15q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch10ex15q']").attr('data-disqus-identifier', 'teachercsp_ch10ex15q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch10ex16t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Complete the code so that the turtle stamps a square pattern 20 times (it should look like a circle enclosing a couple of circles if you use a turn angle of 18)</p>
+
+<textarea data-component="activecode" id=ch10ex16q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from turtle import *
+from sys import *
+setExecutionLimit(50000)
+space = Screen()
+zoe = Turtle()
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Make sure to use penup before the loop. Inside the loop, there should be another loop, and you should call the stamp method inside both loops.</p>
+
+<textarea data-component="activecode" id=ch10ex16a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from turtle import *
+from sys import *
+setExecutionLimit(50000)
+space = Screen()
+zoe = Turtle()
+zoe.setheading(90)
+zoe.penup()
+
+for repeats in range(20):
+    zoe.stamp()
+    zoe.forward(10)
+    zoe.right(18)
+    for sides in range(4):
+      zoe.stamp()
+      zoe.forward(50)
+      zoe.right(90)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch10ex16q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch10ex16q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch10ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch10ex16q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch10ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch10ex16q" onclick="teachercsp_ch10ex16q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch10ex16q']").attr('data-disqus-identifier', 'teachercsp_ch10ex16q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch10ex17t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Create a procedure to draw 4 turtles at the 4 corners of a square using the <code class="docutils literal"><span class="pre">stamp</span></code> procedure.</p>
+
+<textarea data-component="activecode" id=ch10ex17q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the procedure as shown below.</p>
+
+<textarea data-component="activecode" id=ch10ex17a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def drawStampSquare(turtle,size):
+    turtle.penup()
+    turtle.shape("turtle")
+    for sides in range(4):      # repeat the indented lines 4 times
+        turtle.forward(size)    # move forward by 100 units
+        turtle.stamp()
+        turtle.right(90)        # turn by 90 degrees
+
+from turtle import *
+space = Screen()
+carlos = Turtle()
+drawStampSquare(carlos,50)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch10ex17q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch10ex17q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch10ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch10ex17q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch10ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch10ex17q" onclick="teachercsp_ch10ex17q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch10ex17q']").attr('data-disqus-identifier', 'teachercsp_ch10ex17q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch10ex18t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Create a procedure that takes in a turtle and integer parameter. The procedure should stamp a turtle shape into a circle in 20 steps with the forward number being equal to the parameter.</p>
+
+<textarea data-component="activecode" id=ch10ex18q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>In the procedure, have the two parameters. Change the turtle shape to &#8220;turtle&#8221; and use penup. Then have a loop for range of 20. Inside the loop make the turtle go forward by the int parameter value. Use the stamp method and then the turn right by 18.</p>
+
+<textarea data-component="activecode" id=ch10ex18a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def circle(turt, num):
+    turt.shape("turtle")
+    turt.penup()
+    for size in range(20):
+        turt.forward(num)
+        turt.stamp()
+        turt.right(18)
+
+from turtle import *
+space = Screen()
+tess = Turtle()
+
+circle(turt, 20)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch10ex18q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch10ex18q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch10ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch10ex18q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch10ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch10ex18q" onclick="teachercsp_ch10ex18q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch10ex18q']").attr('data-disqus-identifier', 'teachercsp_ch10ex18q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch10ex19t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a procedure that takes a turtle and a number of sides as parameters and draws a polygon with that number of sides.</p>
+
+<textarea data-component="activecode" id=ch10ex19q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Create a procedure as shown below.  Call it to test it.</p>
+
+<textarea data-component="activecode" id=ch10ex19a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def drawPolygon(turtle,numSides):
+    angle = 360 / numSides
+    for x in range(numSides):
+        turtle.forward(25)
+        turtle.right(angle)
+
+from turtle import *
+space = Screen()
+carlos = Turtle()
+drawPolygon(carlos,7)
+carlos.forward(100)
+drawPolygon(carlos,9)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch10ex19q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch10ex19q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch10ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch10ex19q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch10ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch10ex19q" onclick="teachercsp_ch10ex19q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch10ex19q']").attr('data-disqus-identifier', 'teachercsp_ch10ex19q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch10ex20t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a procedure that takes a turtle, an int for the number of sides for a polygon, and an int for the number of times to draw that polygon. The procedure should draw that polygon that number of times in a circular path.</p>
+
+<textarea data-component="activecode" id=ch10ex20q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+
+<textarea data-component="activecode" id=ch10ex20a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def drawShape(turtle, numSides, numTimes):
+    anglePolygon = 360 / numSides
+    circleShape = 360 / numTimes
+    for x in range(numTimes):
+        turtle.forward(20)
+        turtle.right(circleShape)
+        for y in range(numSides):
+            turtle.forward(30)
+            turtle.right(anglePolygon)
+
+from turtle import *
+space = Screen()
+t = Turtle()
+drawShape(t, 3, 20)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch10ex20q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch10ex20q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch10ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch10ex20q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch10ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch10ex20q" onclick="teachercsp_ch10ex20q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch10ex20q']").attr('data-disqus-identifier', 'teachercsp_ch10ex20q_' + eBookConfig.course);
 </script>
 </div>
     </div>

@@ -403,26 +403,22 @@ while counter >= 0:
 
 </li>
 <li><div id='ch8ex2t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Make 5 changes to the code below to correctly print a count up from -10 to 0.</p>
+<p>The following code will loop infinitely. Make one change that will make it loop only 5 times.</p>
 
 <textarea data-component="activecode" id=ch8ex2q data-lang="python"    data-timelimit=25000   data-audio=''     >
-output = ""
-x = -10
-while x < 0
-    x = x - 1
-output = output + str(x) + " "
-print(output)
+x = 5
+while x > 0:
+    print(x)
+    x = x + 1
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change the <code class="docutils literal"><span class="pre">while</span></code> to less than or equal zero.  Add a <code class="docutils literal"><span class="pre">:</span></code> at the end.  Change it to <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code> and move it after <code class="docutils literal"><span class="pre">output</span> <span class="pre">=</span> <span class="pre">output</span> <span class="pre">+</span> <span class="pre">str(x)</span> <span class="pre">+</span> <span class="pre">&quot;</span> <span class="pre">&quot;</span></code>.  Indent the <code class="docutils literal"><span class="pre">output</span> <span class="pre">=</span> <span class="pre">output</span> <span class="pre">+</span> <span class="pre">str(x)</span> <span class="pre">+</span> <span class="pre">&quot;</span> <span class="pre">&quot;</span></code>.</p>
+<p>Since, x is already greater than zero, it will keep looping. Change line 4 to be <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p>
 
 <textarea data-component="activecode" id=ch8ex2a data-lang="python"    data-timelimit=25000   data-audio=''     >
-output = ""
-x = -10
-while x <= 0:
-    output = output + str(x) + " "
-    x = x + 1
-print(output)
+x = 5
+while x > 0:
+    print(x)
+    x = x - 1
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -467,23 +463,23 @@ print(output)
 
 </li>
 <li><div id='ch8ex3t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Finish lines 1 and 5 so that the following code correct prints all the values from -5 to -1.</p>
+<p>Make 5 changes to the code below to correctly print a count up from -10 to 0.</p>
 
 <textarea data-component="activecode" id=ch8ex3q data-lang="python"    data-timelimit=25000   data-audio=''     >
-output =
-x = -5
-while x < 0:
-    output = output + str(x) + " "
-    x =
+output = ""
+x = -10
+while x < 0
+    x = x - 1
+output = output + str(x) + " "
 print(output)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change line 1 to set output to the empty string (<code class="docutils literal"><span class="pre">&quot;&quot;</span></code>).  Change line 5 to <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>.</p>
+<p>Change the <code class="docutils literal"><span class="pre">while</span></code> to less than or equal zero.  Add a <code class="docutils literal"><span class="pre">:</span></code> at the end.  Change it to <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code> and move it after <code class="docutils literal"><span class="pre">output</span> <span class="pre">=</span> <span class="pre">output</span> <span class="pre">+</span> <span class="pre">str(x)</span> <span class="pre">+</span> <span class="pre">&quot;</span> <span class="pre">&quot;</span></code>.  Indent the <code class="docutils literal"><span class="pre">output</span> <span class="pre">=</span> <span class="pre">output</span> <span class="pre">+</span> <span class="pre">str(x)</span> <span class="pre">+</span> <span class="pre">&quot;</span> <span class="pre">&quot;</span></code>.</p>
 
 <textarea data-component="activecode" id=ch8ex3a data-lang="python"    data-timelimit=25000   data-audio=''     >
 output = ""
-x = -5
-while x < 0:
+x = -10
+while x <= 0:
     output = output + str(x) + " "
     x = x + 1
 print(output)
@@ -509,7 +505,7 @@ print(output)
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'cslearn4u';    
+            disqus_shortname = 'teachercsp';    
             disqus_identifier = 'teachercsp_ch8ex3q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch8ex3q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -531,30 +527,20 @@ print(output)
 
 </li>
 <li><div id='ch8ex4t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>The code below is supposed to print an estimate of the square root.  But, the indention is wrong on 4 lines.  Fix it.</p>
+<p>Fix the errors in the code below so that it uses 2 loops to print 8 lines of <code class="docutils literal"><span class="pre">*</span></code>.</p>
 
 <textarea data-component="activecode" id=ch8ex4q data-lang="python"    data-timelimit=25000   data-audio=''     >
-target = 6
-    guess = 2
-guessSquared = guess * guess
-while abs(target-guessSquared) > 0.01:
-    closer = target / guess
-guess = (guess + closer) / 2.0
-        guessSquared = guess * guess
-    print("Square root of", target,"is", guess)
+for x in range(1,2)
+while x in range(0,4):
+print("*")
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Don&#8217;t indent line 2.  Indent line 6 under line 5.  Indent line 7 at the same level as line 5.  Don&#8217;t indent line 8.</p>
+<p>The first loop should be from range 0 to 2 (or any two numbers that are 2 numbers apart). Line 1 should also have a colon at the end and line 2 should be indented and a for loop instead of a while. Line 3 should be indented 8 spaces.</p>
 
 <textarea data-component="activecode" id=ch8ex4a data-lang="python"    data-timelimit=25000   data-audio=''     >
-target = 6
-guess = 2
-guessSquared = guess * guess
-while abs(target-guessSquared) > 0.01:
-    closer = target / guess
-    guess = (guess + closer) / 2.0
-    guessSquared = guess * guess
-print("Square root of", target,"is", guess)
+for x in range(0,2):
+    while x in range(0,4):
+        print("*")
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -599,20 +585,26 @@ print("Square root of", target,"is", guess)
 
 </li>
 <li><div id='ch8ex5t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>The program below is supposed to print the times tables for 1 to 3, but there are 5 errors.  Fix the errors.</p>
+<p>Finish lines 1 and 5 so that the following code correct prints all the values from -5 to -1.</p>
 
 <textarea data-component="activecode" id=ch8ex5q data-lang="python"    data-timelimit=25000   data-audio=''     >
-for x in range(1,3):
-     for y in range(1,10)
-         print(str(x) + " * " str(y) + " = " x*y)
+output =
+x = -5
+while x < 0:
+    output = output + str(x) + " "
+    x =
+print(output)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change line 1 to end the range at 4.  Change line 2 to end the range at 11 and add the <code class="docutils literal"><span class="pre">:</span></code> at the end.  Fill in the missing <code class="docutils literal"><span class="pre">+</span></code> between strings in line 3 and add <code class="docutils literal"><span class="pre">str(x*y)</span></code>.</p>
+<p>Change line 1 to set output to the empty string (<code class="docutils literal"><span class="pre">&quot;&quot;</span></code>).  Change line 5 to <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code>.</p>
 
 <textarea data-component="activecode" id=ch8ex5a data-lang="python"    data-timelimit=25000   data-audio=''     >
-for x in range(1,4):
-     for y in range(1,11):
-         print(str(x) + " * " + str(y) + " = " + str(x*y))
+output = ""
+x = -5
+while x < 0:
+    output = output + str(x) + " "
+    x = x + 1
+print(output)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -635,7 +627,7 @@ for x in range(1,4):
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'teachercsp';    
+            disqus_shortname = 'cslearn4u';    
             disqus_identifier = 'teachercsp_ch8ex5q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch8ex5q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -657,25 +649,26 @@ for x in range(1,4):
 
 </li>
 <li><div id='ch8ex6t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Rewrite the following code to use a while loop instead of a for loop.</p>
+<p>Complete the code on lines 4 and 6 so that it prints the number 6.</p>
 
 <textarea data-component="activecode" id=ch8ex6q data-lang="python"    data-timelimit=25000   data-audio=''     >
-product = 1  # Start out with nothing
-numbers = range(1,11)
-for number in numbers:
-    product = product * number
-print(product)
+x = 3
+i = 0
+while i < 3:
+    x =
+    i = i + 1
+print()
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change line 2 to create number and set it to 1.  Change line 3 to loop while the number is less than 11.  Add a line before the print statement to increment number.</p>
+<p>Line 4 should be <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code> and line 6 should print x.</p>
 
 <textarea data-component="activecode" id=ch8ex6a data-lang="python"    data-timelimit=25000   data-audio=''     >
-product = 1  # Start out with nothing
-number = 1
-while number < 11:
-    product = product * number
-    number = number + 1
-print(product)
+x = 3
+i = 0
+while i < 3:
+    x = x + 1
+    i = i + 1
+print(x)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -720,36 +713,30 @@ print(product)
 
 </li>
 <li><div id='ch8ex7t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Rewrite the following code to use a while loop instead of a for loop.</p>
+<p>The code below is supposed to print an estimate of the square root.  But, the indention is wrong on 4 lines.  Fix it.</p>
 
 <textarea data-component="activecode" id=ch8ex7q data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: INITIALIZE ACCUMULATOR
-product = 1  # init product to 1
-# STEP 2: GET DATA
-numbers = range(10,21,2)
-# STEP 3: LOOP THROUGH THE DATA
-for number in numbers:
-    # STEP 4: ACCUMULATE
-   product = product * number
-# STEP 5: PROCESS RESULT
-print(product)
+target = 6
+    guess = 2
+guessSquared = guess * guess
+while abs(target-guessSquared) > 0.01:
+    closer = target / guess
+guess = (guess + closer) / 2.0
+        guessSquared = guess * guess
+    print("Square root of", target,"is", guess)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change line 4 to only create and initialize number.  Change line 6 to loop while number is less than 21.  Add a step 5 where the value of number is set to the current value plus 2.</p>
+<p>Don&#8217;t indent line 2.  Indent line 6 under line 5.  Indent line 7 at the same level as line 5.  Don&#8217;t indent line 8.</p>
 
 <textarea data-component="activecode" id=ch8ex7a data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: INITIALIZE ACCUMULATOR
-product = 1  # init product to 1
-# STEP 2: INIT THE DATA
-number = 10
-# STEP 3: LOOP THROUGH THE DATA
-while number < 21:
-    # STEP 4: ACCUMULATE
-    product = product * number
-    # STEP 5: change the number
-    number = number + 2
-# STEP 6: PROCESS RESULT
-print(product)
+target = 6
+guess = 2
+guessSquared = guess * guess
+while abs(target-guessSquared) > 0.01:
+    closer = target / guess
+    guess = (guess + closer) / 2.0
+    guessSquared = guess * guess
+print("Square root of", target,"is", guess)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -794,38 +781,29 @@ print(product)
 
 </li>
 <li><div id='ch8ex8t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Modify the code below to create a function that will take numbers as input until you enter a negative number and then will return the average of the numbers.</p>
+<p>The function currently takes a start and stop argument and uses a for loop to find the sum of all the numbers between them (inclusive). Change the for loop to a while loop while still using the parameters.</p>
 
 <textarea data-component="activecode" id=ch8ex8q data-lang="python"    data-timelimit=25000   data-audio=''     >
-sum = 0
-count = 0
-message = "Enter an integer or a negative number to stop"
-value = input(message)
-while int(value) > 0:
-    print("You entered " + value)
-    sum = sum + int(value)
-    count = count + 1
-    value = input(message)
-print("The sum is: " + str(sum) +
-      " the average is: " + str(sum / count))
+def sumFunc(start, stop):
+    sum = 0
+    for num in range(start, stop + 1):
+        sum = sum + num
+    return sum
+
+print(sumFunc(1,10))
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the function.  Return the sum divided by the count.  Call the function and print the result.</p>
+<p>Initialize num to be equal to the start argument. Make the while loop check to see if num is less than or equal to the stop argument. In the body of the while loop, make sure to increment num by 1.</p>
 
 <textarea data-component="activecode" id=ch8ex8a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def calculateAverage():
+def sumFunc(start, stop):
     sum = 0
-    count = 0
-    message = "Enter an integer or a negative number to stop"
-    value = input(message)
-    while int(value) > 0:
-        print("You entered " + value)
-        sum = sum + int(value)
-        count = count + 1
-        value = input(message)
-    return(sum / count)
-
-print(calculateAverage())
+    num = start
+    while num <= stop:
+        sum = sum + num
+        num = num + 1
+    return sum
+print(sumFunc(1,10))
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -870,25 +848,20 @@ print(calculateAverage())
 
 </li>
 <li><div id='ch8ex9t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Create a function to calculate and return the sum of all of the even numbers from 0 to the passed number (inclusive) using a while loop.</p>
+<p>The program below is supposed to print the times tables for 1 to 3, but there are 5 errors.  Fix the errors.</p>
 
 <textarea data-component="activecode" id=ch8ex9q data-lang="python"    data-timelimit=25000   data-audio=''     >
-
-
+for x in range(1,3):
+     for y in range(1,10)
+         print(str(x) + " * " str(y) + " = " x*y)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Create the function and be sure to call it to test it.</p>
+<p>Change line 1 to end the range at 4.  Change line 2 to end the range at 11 and add the <code class="docutils literal"><span class="pre">:</span></code> at the end.  Fill in the missing <code class="docutils literal"><span class="pre">+</span></code> between strings in line 3 and add <code class="docutils literal"><span class="pre">str(x*y)</span></code>.</p>
 
 <textarea data-component="activecode" id=ch8ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def calculateSum(lastNum):
-    sum = 0
-    num = 0
-    while (num <= lastNum):
-        sum = sum + num
-        num = num + 2
-    return sum
-
-print(calculateSum(10))
+for x in range(1,4):
+     for y in range(1,11):
+         print(str(x) + " * " + str(y) + " = " + str(x*y))
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -933,24 +906,23 @@ print(calculateSum(10))
 
 </li>
 <li><div id='ch8ex10t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Create a procedure to print stars and spaces in a roughly square pattern and have it take as input the number of stars on a side.  Use a nested loop to do this.</p>
+<p>Rewrite the code for the multiplication table from 1 to 2 using a while loop and a for loop instead.</p>
 
 <textarea data-component="activecode" id=ch8ex10q data-lang="python"    data-timelimit=25000   data-audio=''     >
-
-
+for x in range(1,4):
+     for y in range(1,11):
+         print(str(x) + " * " + str(y) + " = " + str(x*y))
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Create the procedure and be sure to call it to test it.</p>
+<p>Can do in either order, but make sure the variable is being incremented for the while loop in the correct place.</p>
 
 <textarea data-component="activecode" id=ch8ex10a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def printSquare(numStars):
-    for x in range(0,numStars):
-        line = ""
-        for y in range(0,numStars):
-            line = line + ' *'
-        print(line)
+x = 1
 
-printSquare(6)
+while x < 3:
+    for y in range(1,11):
+        print(str(x) + " * " + str(y) + " = " + str(x*y))
+    x += 1
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -989,6 +961,660 @@ printSquare(6)
 <a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch8ex10q" onclick="teachercsp_ch8ex10q_disqus(this);">Show Comments</a>
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch8ex10q']").attr('data-disqus-identifier', 'teachercsp_ch8ex10q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch8ex11t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Rewrite the following code to use a while loop instead of a for loop.</p>
+
+<textarea data-component="activecode" id=ch8ex11q data-lang="python"    data-timelimit=25000   data-audio=''     >
+product = 1  # Start out with nothing
+numbers = range(1,11)
+for number in numbers:
+    product = product * number
+print(product)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Change line 2 to create number and set it to 1.  Change line 3 to loop while the number is less than 11.  Add a line before the print statement to increment number.</p>
+
+<textarea data-component="activecode" id=ch8ex11a data-lang="python"    data-timelimit=25000   data-audio=''     >
+product = 1  # Start out with nothing
+number = 1
+while number < 11:
+    product = product * number
+    number = number + 1
+print(product)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch8ex11q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch8ex11q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch8ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch8ex11q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch8ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch8ex11q" onclick="teachercsp_ch8ex11q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch8ex11q']").attr('data-disqus-identifier', 'teachercsp_ch8ex11q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch8ex12t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix the errors so that the code gets the average of the numbers from 1 to 10.</p>
+
+<textarea data-component="activecode" id=ch8ex12q data-lang="python"    data-timelimit=25000   data-audio=''     >
+sum = 10
+x = 0
+while x < 11:
+sum =  x
+x = x + 1
+average = sum / 2
+print(average)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Set sum equal to 0 and x equal to 1. Indent lines 4 and 5 and on line 4, sum should equal sum plus x. The average is equal to the sum divided by x.</p>
+
+<textarea data-component="activecode" id=ch8ex12a data-lang="python"    data-timelimit=25000   data-audio=''     >
+sum = 0
+x = 1
+while x < 11:
+    sum = sum + x
+    x = x + 1
+average = sum / x
+print(average)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch8ex12q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch8ex12q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch8ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch8ex12q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch8ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch8ex12q" onclick="teachercsp_ch8ex12q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch8ex12q']").attr('data-disqus-identifier', 'teachercsp_ch8ex12q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch8ex13t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Rewrite the following code to use a while loop instead of a for loop.</p>
+
+<textarea data-component="activecode" id=ch8ex13q data-lang="python"    data-timelimit=25000   data-audio=''     >
+# STEP 1: INITIALIZE ACCUMULATOR
+product = 1  # init product to 1
+# STEP 2: GET DATA
+numbers = range(10,21,2)
+# STEP 3: LOOP THROUGH THE DATA
+for number in numbers:
+    # STEP 4: ACCUMULATE
+   product = product * number
+# STEP 5: PROCESS RESULT
+print(product)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Change line 4 to only create and initialize number.  Change line 6 to loop while number is less than 21.  Add a step 5 where the value of number is set to the current value plus 2.</p>
+
+<textarea data-component="activecode" id=ch8ex13a data-lang="python"    data-timelimit=25000   data-audio=''     >
+# STEP 1: INITIALIZE ACCUMULATOR
+product = 1  # init product to 1
+# STEP 2: INIT THE DATA
+number = 10
+# STEP 3: LOOP THROUGH THE DATA
+while number < 21:
+    # STEP 4: ACCUMULATE
+    product = product * number
+    # STEP 5: change the number
+    number = number + 2
+# STEP 6: PROCESS RESULT
+print(product)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch8ex13q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch8ex13q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch8ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch8ex13q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch8ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch8ex13q" onclick="teachercsp_ch8ex13q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch8ex13q']").attr('data-disqus-identifier', 'teachercsp_ch8ex13q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch8ex14t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>The code below currently enters a loop where it keeps printing even. Fix the code so that it prints Even and Odd for numbers 0 to 9.</p>
+
+<textarea data-component="activecode" id=ch8ex14q data-lang="python"    data-timelimit=25000   data-audio=''     >
+number = 0
+while number < 10:
+    while number % 2 == 0:
+        print("Even")
+    while number % 2 != 0:
+        print("Odd")
+    number += 1
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>You have to increment the counter in the body of each inner loop.</p>
+
+<textarea data-component="activecode" id=ch8ex14a data-lang="python"    data-timelimit=25000   data-audio=''     >
+number = 0
+while number < 10:
+    while number % 2 == 0:
+        print("Even")
+        number += 1
+    while number % 2 != 0:
+        print("Odd")
+        number += 1
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch8ex14q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch8ex14q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch8ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch8ex14q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch8ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch8ex14q" onclick="teachercsp_ch8ex14q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch8ex14q']").attr('data-disqus-identifier', 'teachercsp_ch8ex14q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch8ex15t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Modify the code below to create a function that will take numbers as input until you enter a negative number and then will return the average of the numbers.</p>
+
+<textarea data-component="activecode" id=ch8ex15q data-lang="python"    data-timelimit=25000   data-audio=''     >
+sum = 0
+count = 0
+message = "Enter an integer or a negative number to stop"
+value = input(message)
+while int(value) > 0:
+    print("You entered " + value)
+    sum = sum + int(value)
+    count = count + 1
+    value = input(message)
+print("The sum is: " + str(sum) +
+      " the average is: " + str(sum / count))
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the function.  Return the sum divided by the count.  Call the function and print the result.</p>
+
+<textarea data-component="activecode" id=ch8ex15a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def calculateAverage():
+    sum = 0
+    count = 0
+    message = "Enter an integer or a negative number to stop"
+    value = input(message)
+    while int(value) > 0:
+        print("You entered " + value)
+        sum = sum + int(value)
+        count = count + 1
+        value = input(message)
+    return(sum / count)
+
+print(calculateAverage())
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch8ex15q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch8ex15q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch8ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch8ex15q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch8ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch8ex15q" onclick="teachercsp_ch8ex15q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch8ex15q']").attr('data-disqus-identifier', 'teachercsp_ch8ex15q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch8ex16t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix and change the code so it prints a table of division instead of multiplication for -10 to -1.</p>
+
+<textarea data-component="activecode" id=ch8ex16q data-lang="python"    data-timelimit=25000   data-audio=''     >
+for x in range(0,11)
+for y in range(0,11):
+print(str(x) + " * " + str(y) + " = " + str(x*y))
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Change the range in line 1 from -10 to 0 and add the colon. Fix the indentation in the rest of the lines and in line 3 change the string and operator to reflect division</p>
+
+<textarea data-component="activecode" id=ch8ex16a data-lang="python"    data-timelimit=25000   data-audio=''     >
+for x in range(-10, 0):
+    for y in range(0,11):
+        print(str(x) + " / " + str(y) + " = " + str(x/y))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch8ex16q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch8ex16q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch8ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch8ex16q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch8ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch8ex16q" onclick="teachercsp_ch8ex16q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch8ex16q']").attr('data-disqus-identifier', 'teachercsp_ch8ex16q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch8ex17t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Create a function to calculate and return the sum of all of the even numbers from 0 to the passed number (inclusive) using a while loop.</p>
+
+<textarea data-component="activecode" id=ch8ex17q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Create the function and be sure to call it to test it.</p>
+
+<textarea data-component="activecode" id=ch8ex17a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def calculateSum(lastNum):
+    sum = 0
+    num = 0
+    while (num <= lastNum):
+        sum = sum + num
+        num = num + 2
+    return sum
+
+print(calculateSum(10))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch8ex17q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch8ex17q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch8ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch8ex17q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch8ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch8ex17q" onclick="teachercsp_ch8ex17q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch8ex17q']").attr('data-disqus-identifier', 'teachercsp_ch8ex17q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch8ex18t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a procedure that takes a user input and keeps asking for a user input until the input is &#8220;Hello&#8221;. If the input is not hello, it should print &#8220;This is you n wrong try.&#8221; where n is the number of times they have put an input in. If they type &#8220;Hello&#8221;, the procedure should print &#8220;Success!&#8221;. Hint: <code class="docutils literal"><span class="pre">!=</span></code> means does not equal</p>
+
+<textarea data-component="activecode" id=ch8ex18q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>In the procedure, get an input and initialize the count. Then create the while loop with the condition that the input does not equal &#8220;Hello&#8221;. Increment count first in the loop if count was initialized as 0. Increment it last if count was initialized as 1. Ask for input again in the body of the while loop.</p>
+
+<textarea data-component="activecode" id=ch8ex18a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def inputFunc():
+    userInput = input("Give me a string")
+    count = 0
+    while userInput != "Hello":
+        count += 1
+        print("This is your " + count + " wrong try.")
+        userInput = input("Give me a string")
+    print("Success!")
+
+inputFunc()
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch8ex18q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch8ex18q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch8ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch8ex18q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch8ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch8ex18q" onclick="teachercsp_ch8ex18q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch8ex18q']").attr('data-disqus-identifier', 'teachercsp_ch8ex18q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch8ex19t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Create a procedure to print stars and spaces in a roughly square pattern and have it take as input the number of stars on a side.  Use a nested loop to do this.</p>
+
+<textarea data-component="activecode" id=ch8ex19q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Create the procedure and be sure to call it to test it.</p>
+
+<textarea data-component="activecode" id=ch8ex19a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def printSquare(numStars):
+    for x in range(0,numStars):
+        line = ""
+        for y in range(0,numStars):
+            line = line + ' *'
+        print(line)
+
+printSquare(6)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch8ex19q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch8ex19q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch8ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch8ex19q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch8ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch8ex19q" onclick="teachercsp_ch8ex19q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch8ex19q']").attr('data-disqus-identifier', 'teachercsp_ch8ex19q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch8ex20t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a procedure that takes an int argument and uses a while loop to create a right-triangle like shape out of <code class="docutils literal"><span class="pre">*</span></code>. The first row should have 1 star and the last should have n stars where n is the argument passed.</p>
+
+<textarea data-component="activecode" id=ch8ex20q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Assign a counter variable to 1 and increment it in the body of the while loop.</p>
+
+<textarea data-component="activecode" id=ch8ex20a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def triangleDraw(n):
+    x = 1
+    while x <= n:
+        print("*" * x)
+        x += 1
+
+triangleDraw(6)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch8ex20q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch8ex20q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch8ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch8ex20q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch8ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch8ex20q" onclick="teachercsp_ch8ex20q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch8ex20q']").attr('data-disqus-identifier', 'teachercsp_ch8ex20q_' + eBookConfig.course);
 </script>
 </div>
     </div>

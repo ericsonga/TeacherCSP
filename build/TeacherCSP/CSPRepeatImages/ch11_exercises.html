@@ -447,67 +447,35 @@ img.draw(win)
 
 </li>
 <li><div id='ch11ex2t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix the indention below to correctly set the red to the green, the green to the blue, and the blue to the red.</p>
+<p>The code below makes the image have a green-blue tint. Change 1 thing in order to make it have a red tint instead.</p>
 
 <textarea data-component="activecode" id=ch11ex2q data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: USE THE IMAGE LIBRARY
 from image import *
+img = Image("puppy.jpg")
+pixelList = img.getPixels()
+for p in pixelList:
+    p.setRed(0)
+    img.updatePixel(p)
 
-# STEP 2: PICK THE IMAGE
-img = Image("beach.jpg")
-
-# STEP 3: LOOP THROUGH THE PIXELS
-pixels = img.getPixels()
-for p in pixels:
-
-# STEP 4: GET THE DATA
-r = p.getRed()
-g = p.getGreen()
-b = p.getBlue()
-
-# STEP 5: MODIFY THE COLOR
-p.setRed(g)
-p.setGreen(b)
-p.setBlue(r)
-
-# STEP 6: UPDATE THE IMAGE
-img.updatePixel(p)
-
-# STEP 7: SHOW THE RESULT
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change the indention on lines 11-22 as shown below.</p>
-
+<p>Set the Red pixel to be 255.</p>
+<blockquote>
+<div>
 <textarea data-component="activecode" id=ch11ex2a data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: USE THE IMAGE LIBRARY
 from image import *
-
-# STEP 2: PICK THE IMAGE
-img = Image("beach.jpg")
-
-# STEP 3: LOOP THROUGH THE PIXELS
-pixels = img.getPixels()
-for p in pixels:
-
-    # STEP 4: GET THE DATA
-    r = p.getRed()
-    g = p.getGreen()
-    b = p.getBlue()
-
-    # STEP 5: MODIFY THE COLOR
-    p.setRed(g)
-    p.setGreen(b)
-    p.setBlue(r)
-
-    # STEP 6: UPDATE THE IMAGE
+img = Image("puppy.jpg")
+pixelList = img.getPixels()
+for p in pixelList:
+    p.setRed(255)
     img.updatePixel(p)
 
-# STEP 7: SHOW THE RESULT
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
 </textarea>
+</div></blockquote>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
     function teachercsp_ch11ex2q_disqus(source) { 
@@ -551,7 +519,7 @@ img.draw(win)
 
 </li>
 <li><div id='ch11ex3t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fill in the missing code on lines 9, 12, and 18 below to set the red to half the original value in all pixels in the picture.</p>
+<p>Fix the indention below to correctly set the red to the green, the green to the blue, and the blue to the red.</p>
 
 <textarea data-component="activecode" id=ch11ex3q data-lang="python"    data-timelimit=25000   data-audio=''     >
 # STEP 1: USE THE IMAGE LIBRARY
@@ -561,24 +529,28 @@ from image import *
 img = Image("beach.jpg")
 
 # STEP 3: LOOP THROUGH THE PIXELS
-pixels = img.getPixels();
-for p
+pixels = img.getPixels()
+for p in pixels:
 
-    # STEP 4: GET THE DATA
-    r = p.
+# STEP 4: GET THE DATA
+r = p.getRed()
+g = p.getGreen()
+b = p.getBlue()
 
-    # STEP 5: MODIFY THE COLOR
-    p.setRed(r * 0.5);
+# STEP 5: MODIFY THE COLOR
+p.setRed(g)
+p.setGreen(b)
+p.setBlue(r)
 
-    # STEP 6: UPDATE THE IMAGE
-    img.
+# STEP 6: UPDATE THE IMAGE
+img.updatePixel(p)
 
 # STEP 7: SHOW THE RESULT
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Add <code class="docutils literal"><span class="pre">in</span> <span class="pre">pixels:</span></code> to line 9.  Add <code class="docutils literal"><span class="pre">getRed()</span></code> to line 12.  Add <code class="docutils literal"><span class="pre">updatePixel(p)</span></code> to line 18.</p>
+<p>Change the indention on lines 11-22 as shown below.</p>
 
 <textarea data-component="activecode" id=ch11ex3a data-lang="python"    data-timelimit=25000   data-audio=''     >
 # STEP 1: USE THE IMAGE LIBRARY
@@ -588,14 +560,18 @@ from image import *
 img = Image("beach.jpg")
 
 # STEP 3: LOOP THROUGH THE PIXELS
-pixels = img.getPixels();
+pixels = img.getPixels()
 for p in pixels:
 
     # STEP 4: GET THE DATA
     r = p.getRed()
+    g = p.getGreen()
+    b = p.getBlue()
 
     # STEP 5: MODIFY THE COLOR
-    p.setRed(r * 0.5);
+    p.setRed(g)
+    p.setGreen(b)
+    p.setBlue(r)
 
     # STEP 6: UPDATE THE IMAGE
     img.updatePixel(p)
@@ -625,7 +601,7 @@ img.draw(win)
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'cslearn4u';    
+            disqus_shortname = 'teachercsp';    
             disqus_identifier = 'teachercsp_ch11ex3q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch11ex3q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -647,56 +623,48 @@ img.draw(win)
 
 </li>
 <li><div id='ch11ex4t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix the indention in the code below so that it correctly increases the red in each pixel in the picture by 1.5.</p>
+<p>Fix the 5 errors in the code, so that the Red pixels get the value of the green, the green get the value of blue, and the blue get the value of the red. (The cat should look purple and gray)</p>
 
 <textarea data-component="activecode" id=ch11ex4q data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: USE THE IMAGE LIBRARY
 from image import *
+img = Image("kitten")
 
-    # STEP 2: PICK THE IMAGE
-    img = Image("beach.jpg")
+pixels = img.getPixels()
+for p in pixel:
 
-# STEP 3: LOOP THROUGH THE PIXELS
-pixels = img.getPixels();
-for p in pixels:
+    r = p.getred()
+    b = p.getGreen()
+    g = p.getBlue()
 
-    # STEP 4: GET THE DATA
-    r = p.getRed()
+    p.setRed(g)
+    p.setGreen(b)
+    p.setBlue(r)
 
-# STEP 5: MODIFY THE COLOR
-p.setRed(r * 1.5);
-
-    # STEP 6: UPDATE THE IMAGE
     img.updatePixel(p)
 
-# STEP 7: SHOW THE RESULT
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Remove the indention on lines 4-5.  Add indention on lines 14-15.</p>
+<p>The image passed should have the <code class="docutils literal"><span class="pre">.jpg</span></code> at the end. Make sure the <code class="docutils literal"><span class="pre">r,g,b</span></code> variables are correctly set to represent red, green, and blue. In the for loop header, make sure it&#8217;s looping through pixels not pixel, and it should be <code class="docutils literal"><span class="pre">setRed()</span></code> not <code class="docutils literal"><span class="pre">setred()</span></code>.</p>
 
 <textarea data-component="activecode" id=ch11ex4a data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: USE THE IMAGE LIBRARY
 from image import *
+img = Image("kitten.jpg")
 
-# STEP 2: PICK THE IMAGE
-img = Image("beach.jpg")
-
-# STEP 3: LOOP THROUGH THE PIXELS
-pixels = img.getPixels();
+pixels = img.getPixels()
 for p in pixels:
 
-    # STEP 4: GET THE DATA
     r = p.getRed()
+    b = p.getBlue()
+    g = p.getGreen()
 
-    # STEP 5: MODIFY THE COLOR
-    p.setRed(r * 1.5);
+    p.setRed(g)
+    p.setGreen(b)
+    p.setBlue(r)
 
-    # STEP 6: UPDATE THE IMAGE
     img.updatePixel(p)
 
-# STEP 7: SHOW THE RESULT
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
 </textarea>
@@ -743,7 +711,7 @@ img.draw(win)
 
 </li>
 <li><div id='ch11ex5t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix the code below to correctly set the green and blue values to 0.75 times their current values.</p>
+<p>Fill in the missing code on lines 9, 12, and 18 below to set the red to half the original value in all pixels in the picture.</p>
 
 <textarea data-component="activecode" id=ch11ex5q data-lang="python"    data-timelimit=25000   data-audio=''     >
 # STEP 1: USE THE IMAGE LIBRARY
@@ -754,22 +722,23 @@ img = Image("beach.jpg")
 
 # STEP 3: LOOP THROUGH THE PIXELS
 pixels = img.getPixels();
-for p in pixels:
+for p
 
-    p.setGreen(g * 0)
-    p.setBlue(b * 0)
-    g = p.getGreen()
-    b = p.getBlue()
+    # STEP 4: GET THE DATA
+    r = p.
+
+    # STEP 5: MODIFY THE COLOR
+    p.setRed(r * 0.5);
 
     # STEP 6: UPDATE THE IMAGE
-    img.updatePixel(p)
+    img.
 
 # STEP 7: SHOW THE RESULT
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Get the values into <code class="docutils literal"><span class="pre">g</span></code> and <code class="docutils literal"><span class="pre">b</span></code> before you try to use them.  Multiply the old values by <code class="docutils literal"><span class="pre">0.75</span></code> instead of <code class="docutils literal"><span class="pre">0</span></code>.</p>
+<p>Add <code class="docutils literal"><span class="pre">in</span> <span class="pre">pixels:</span></code> to line 9.  Add <code class="docutils literal"><span class="pre">getRed()</span></code> to line 12.  Add <code class="docutils literal"><span class="pre">updatePixel(p)</span></code> to line 18.</p>
 
 <textarea data-component="activecode" id=ch11ex5a data-lang="python"    data-timelimit=25000   data-audio=''     >
 # STEP 1: USE THE IMAGE LIBRARY
@@ -783,12 +752,10 @@ pixels = img.getPixels();
 for p in pixels:
 
     # STEP 4: GET THE DATA
-    g = p.getGreen()
-    b = p.getBlue()
+    r = p.getRed()
 
     # STEP 5: MODIFY THE COLOR
-    p.setGreen(g * 0.75)
-    p.setBlue(b * 0.75)
+    p.setRed(r * 0.5);
 
     # STEP 6: UPDATE THE IMAGE
     img.updatePixel(p)
@@ -818,7 +785,7 @@ img.draw(win)
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'teachercsp';    
+            disqus_shortname = 'cslearn4u';    
             disqus_identifier = 'teachercsp_ch11ex5q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch11ex5q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -840,54 +807,44 @@ img.draw(win)
 
 </li>
 <li><div id='ch11ex6t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Change the following code to set the red to 0 for all pixels in the left half of the picture.</p>
+<p>Complete the code in order to set the blue value to an eigth of the green value plus an eight of the red value.</p>
 
 <textarea data-component="activecode" id=ch11ex6q data-lang="python"    data-timelimit=25000   data-audio=''     >
 from image import *
+img = Image("swan.jpg")
 
-# CREATE AN IMAGE FROM A FILE
-img = Image("gal2.jpg")
+pixels = img.getPixels()
+for
 
-# LOOP THROUGH THE PIXELS
-for x in range(img.getWidth()):
-    for y in range(img.getHeight()):
+    b = p.get
+    g = p.get
+    r = p.get
 
-        # GET THE DATA
-        p = img.getPixel(x, y)
+    p.set
 
-        # SET THE RED TO 0
-        p.setRed(0)
+    img.updatePixel(p)
 
-        # UPDATE THE IMAGE
-        img.updatePixel(p)
-
-# SHOW THE RESULT
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change line 7 to <code class="docutils literal"><span class="pre">int(img.getWidth()</span> <span class="pre">/</span> <span class="pre">2)):</span></code>.</p>
+<p>Complete the for loop header to iterate through pixels. Get the values for the blue, red, and green pixels. Set the blue pixels to the sum of an eighth of both the red and green pixels.</p>
 
 <textarea data-component="activecode" id=ch11ex6a data-lang="python"    data-timelimit=25000   data-audio=''     >
 from image import *
+img = Image("swan.jpg")
 
-# CREATE AN IMAGE FROM A FILE
-img = Image("gal2.jpg")
+pixels = img.getPixels()
+for p in pixels:
 
-# LOOP THROUGH THE PIXELS
-for x in range(int(img.getWidth() / 2)):
-    for y in range(img.getHeight()):
+    b = p.getBlue()
+    g = p.getGreen()
+    r = p.getRed()
 
-        # GET THE DATA
-        p = img.getPixel(x, y)
+    p.setBlue((g/8)+(r/8))
 
-        # SET THE RED TO 0
-        p.setRed(0)
+    img.updatePixel(p)
 
-        # UPDATE THE IMAGE
-        img.updatePixel(p)
-
-# SHOW THE RESULT
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
 </textarea>
@@ -934,54 +891,56 @@ img.draw(win)
 
 </li>
 <li><div id='ch11ex7t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Change the code below to set the red value in the pixels in the bottom half of the picture to 0.</p>
+<p>Fix the indention in the code below so that it correctly increases the red in each pixel in the picture by 1.5.</p>
 
 <textarea data-component="activecode" id=ch11ex7q data-lang="python"    data-timelimit=25000   data-audio=''     >
+# STEP 1: USE THE IMAGE LIBRARY
 from image import *
 
-# CREATE AN IMAGE FROM A FILE
-img = Image("gal2.jpg")
+    # STEP 2: PICK THE IMAGE
+    img = Image("beach.jpg")
 
-# LOOP THROUGH THE PIXELS
-for x in range(img.getWidth()):
-    for y in range(img.getHeight()):
+# STEP 3: LOOP THROUGH THE PIXELS
+pixels = img.getPixels();
+for p in pixels:
 
-        # GET THE DATA
-        p = img.getPixel(x, y)
+    # STEP 4: GET THE DATA
+    r = p.getRed()
 
-        # SET THE RED TO 0
-        p.setRed(0)
+# STEP 5: MODIFY THE COLOR
+p.setRed(r * 1.5);
 
-        # UPDATE THE IMAGE
-        img.updatePixel(p)
+    # STEP 6: UPDATE THE IMAGE
+    img.updatePixel(p)
 
-# SHOW THE RESULT
+# STEP 7: SHOW THE RESULT
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change line 8 to <code class="docutils literal"><span class="pre">(int(img.getHeight()</span> <span class="pre">/</span> <span class="pre">2),</span> <span class="pre">img.getHeight())</span></code>.</p>
+<p>Remove the indention on lines 4-5.  Add indention on lines 14-15.</p>
 
-<textarea data-component="activecode" id=ch11ex7a data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+<textarea data-component="activecode" id=ch11ex7a data-lang="python"    data-timelimit=25000   data-audio=''     >
+# STEP 1: USE THE IMAGE LIBRARY
 from image import *
 
-# CREATE AN IMAGE FROM A FILE
-img = Image("gal2.jpg")
+# STEP 2: PICK THE IMAGE
+img = Image("beach.jpg")
 
-# LOOP THROUGH THE PIXELS
-for x in range(img.getWidth()):
-    for y in range(int(img.getHeight() / 2), img.getHeight()):
+# STEP 3: LOOP THROUGH THE PIXELS
+pixels = img.getPixels();
+for p in pixels:
 
-        # GET THE DATA
-        p = img.getPixel(x, y)
+    # STEP 4: GET THE DATA
+    r = p.getRed()
 
-        # SET THE RED TO 0
-        p.setRed(0)
+    # STEP 5: MODIFY THE COLOR
+    p.setRed(r * 1.5);
 
-        # UPDATE THE IMAGE
-        img.updatePixel(p)
+    # STEP 6: UPDATE THE IMAGE
+    img.updatePixel(p)
 
-# SHOW THE RESULT
+# STEP 7: SHOW THE RESULT
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
 </textarea>
@@ -1028,52 +987,53 @@ img.draw(win)
 
 </li>
 <li><div id='ch11ex8t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Change the following code into a procedure to keep only the green values in all pixels in a picture.</p>
+<p>This code is supposed to make the picture completely black; however, it is taking forever when it should only take a few seconds. Fix the code (without adding anything new) so that it runs in a few seconds.</p>
 
 <textarea data-component="activecode" id=ch11ex8q data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: USE THE IMAGE LIBRARY
 from image import *
+img = Image("motorcycle.jpg")
 
-# STEP 2: PICK THE IMAGE
-img = Image("beach.jpg")
-
-# STEP 3: LOOP THROUGH THE PIXELS
-pixels = img.getPixels();
+pixels = img.getPixels()
 for p in pixels:
 
-    # STEP 5: MODIFY THE COLOR
+    r = p.getRed()
+    b = p.getBlue()
+    g = p.getGreen()
+
     p.setRed(0)
+    p.setGreen(0)
     p.setBlue(0)
 
-    # STEP 6: UPDATE THE IMAGE
     img.updatePixel(p)
 
-# STEP 7: SHOW THE RESULT
-win = ImageWin(img.getWidth(),img.getHeight())
-img.draw(win)
+    win = ImageWin(img.getWidth(),img.getHeight())
+    img.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define a procedure to keep only the green values (set the red and blue to 0) in an image.  Pass the image to the procedure.  Do the import, create the image, call the prodecure, and show the result.</p>
-
+<p>The last two lines should be outside the for loop.</p>
+<blockquote>
+<div>
 <textarea data-component="activecode" id=ch11ex8a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def keepOnlyGreen(img):
-
-    # loop through all the pixels
-    pixels = img.getPixels();
-    for p in pixels:
-
-        p.setRed(0)
-        p.setBlue(0)
-
-        # change the pixel color at the current location
-        img.updatePixel(p)
-
 from image import *
-img = Image("beach.jpg")
-keepOnlyGreen(img)
+img = Image("motorcycle.jpg")
+
+pixels = img.getPixels()
+for p in pixels:
+
+    r = p.getRed()
+    b = p.getBlue()
+    g = p.getGreen()
+
+    p.setRed(0)
+    p.setGreen(0)
+    p.setBlue(0)
+
+    img.updatePixel(p)
+
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
 </textarea>
+</div></blockquote>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
     function teachercsp_ch11ex8q_disqus(source) { 
@@ -1117,37 +1077,57 @@ img.draw(win)
 
 </li>
 <li><div id='ch11ex9t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Define a procedure to negate an image.  See Image_Negate_Quarter from Chapter 11 section 7 for how to create a negative of an image.  Pass the image to the procedure.  Do the import, create the image, call the prodecure, and show the result.</p>
+<p>Fix the code below to correctly set the green and blue values to 0.75 times their current values.</p>
 
 <textarea data-component="activecode" id=ch11ex9q data-lang="python"    data-timelimit=25000   data-audio=''     >
+# STEP 1: USE THE IMAGE LIBRARY
+from image import *
 
+# STEP 2: PICK THE IMAGE
+img = Image("beach.jpg")
 
+# STEP 3: LOOP THROUGH THE PIXELS
+pixels = img.getPixels();
+for p in pixels:
+
+    p.setGreen(g * 0)
+    p.setBlue(b * 0)
+    g = p.getGreen()
+    b = p.getBlue()
+
+    # STEP 6: UPDATE THE IMAGE
+    img.updatePixel(p)
+
+# STEP 7: SHOW THE RESULT
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the procedure as shown below.</p>
+<p>Get the values into <code class="docutils literal"><span class="pre">g</span></code> and <code class="docutils literal"><span class="pre">b</span></code> before you try to use them.  Multiply the old values by <code class="docutils literal"><span class="pre">0.75</span></code> instead of <code class="docutils literal"><span class="pre">0</span></code>.</p>
 
 <textarea data-component="activecode" id=ch11ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def negate(img):
-
-    # loop through all the pixels
-    for x in range(img.getWidth()):
-        for y in range(img.getHeight()):
-
-            # get the red, green, and blue at the current pixel
-            p = img.getPixel(x, y)
-            r = p.getRed()
-            g = p.getGreen()
-            b = p.getBlue()
-
-            # create a new pixel with the negated color
-            newPixel = Pixel(255-r, 255-g, 255-b)
-
-            # change the pixel color at the current location
-            img.setPixel(x, y, newPixel)
-
+# STEP 1: USE THE IMAGE LIBRARY
 from image import *
-img = Image("vangogh.jpg")
-negate(img)
+
+# STEP 2: PICK THE IMAGE
+img = Image("beach.jpg")
+
+# STEP 3: LOOP THROUGH THE PIXELS
+pixels = img.getPixels();
+for p in pixels:
+
+    # STEP 4: GET THE DATA
+    g = p.getGreen()
+    b = p.getBlue()
+
+    # STEP 5: MODIFY THE COLOR
+    p.setGreen(g * 0.75)
+    p.setBlue(b * 0.75)
+
+    # STEP 6: UPDATE THE IMAGE
+    img.updatePixel(p)
+
+# STEP 7: SHOW THE RESULT
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
 </textarea>
@@ -1194,28 +1174,49 @@ img.draw(win)
 
 </li>
 <li><div id='ch11ex10t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write a procedure to mirror an image from left to right around a vertical line in the middle of the image.  Pass the image to the procedure.  Do the import, create the image, call the prodecure, and show the result.</p>
+<p>The code below sets all the pixels to half their original values with one for loop. Change the code so it uses 2 for loops that utilize the range function (1 for loop should be nested in the other).</p>
 
 <textarea data-component="activecode" id=ch11ex10q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+img = Image("baby.jpg")
 
+pixels = img.getPixels()
+for p in pixels:
 
+    r = p.getRed()
+    b = p.getBlue()
+    g = p.getGreen()
+
+    p.setRed(r/2)
+    p.setGreen(g/2)
+    p.setBlue(b/2)
+
+    img.updatePixel(p)
+
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Create a procedure as shown below.  Call it to test it.</p>
+<p>Change the for loop to iterate through the range of the width and then the nested loop should iterate through the range of the height. Call the get pixel method inside the for loop as shown below.</p>
 
 <textarea data-component="activecode" id=ch11ex10a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def mirrorLeftToRight(img):
-
-    # loop through the pixels from 0 to half the width
-    for x in range(int(img.getWidth() / 2)):
-        for y in range(img.getHeight()):
-
-            p = img.getPixel(x, y)
-            img.setPixel(img.getWidth() - 1 - x, y, p)
-
 from image import *
-img = Image("vangogh.jpg")
-mirrorLeftToRight(img)
+img = Image("baby.jpg")
+
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+        p = img.getPixel(x,y)
+
+        r = p.getRed()
+        b = p.getBlue()
+        g = p.getGreen()
+
+        p.setRed(r/2)
+        p.setGreen(g/2)
+        p.setBlue(b/2)
+
+        img.updatePixel(p)
+
 win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
 </textarea>
@@ -1256,6 +1257,817 @@ img.draw(win)
 <a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch11ex10q" onclick="teachercsp_ch11ex10q_disqus(this);">Show Comments</a>
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch11ex10q']").attr('data-disqus-identifier', 'teachercsp_ch11ex10q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch11ex11t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Change the following code to set the red to 0 for all pixels in the left half of the picture.</p>
+
+<textarea data-component="activecode" id=ch11ex11q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("gal2.jpg")
+
+# LOOP THROUGH THE PIXELS
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+
+        # GET THE DATA
+        p = img.getPixel(x, y)
+
+        # SET THE RED TO 0
+        p.setRed(0)
+
+        # UPDATE THE IMAGE
+        img.updatePixel(p)
+
+# SHOW THE RESULT
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Change line 7 to <code class="docutils literal"><span class="pre">int(img.getWidth()</span> <span class="pre">/</span> <span class="pre">2)):</span></code>.</p>
+
+<textarea data-component="activecode" id=ch11ex11a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("gal2.jpg")
+
+# LOOP THROUGH THE PIXELS
+for x in range(int(img.getWidth() / 2)):
+    for y in range(img.getHeight()):
+
+        # GET THE DATA
+        p = img.getPixel(x, y)
+
+        # SET THE RED TO 0
+        p.setRed(0)
+
+        # UPDATE THE IMAGE
+        img.updatePixel(p)
+
+# SHOW THE RESULT
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch11ex11q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch11ex11q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch11ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch11ex11q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch11ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch11ex11q" onclick="teachercsp_ch11ex11q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch11ex11q']").attr('data-disqus-identifier', 'teachercsp_ch11ex11q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch11ex12t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>The code below makes the whole image have a blue-green tint. Change the code so that it makes an only blue tint in the bottom left corner.</p>
+<blockquote>
+<div>
+<textarea data-component="activecode" id=ch11ex12q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+img = Image("vangogh.jpg")
+
+for x in range(int(img.getWidth()):
+    for y in range(int(img.getHeight()):
+
+        p = img.getPixel(x, y)
+
+        p.setRed(0)
+
+        img.updatePixel(p)
+
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div></blockquote>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>You have to iterate through the first half of the image width and the second half of the image height. Also, in the body of the loop, set the green pixel to 0 too.</p>
+<blockquote>
+<div>
+<textarea data-component="activecode" id=ch11ex12a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+img = Image("vangogh.jpg")
+
+for x in range(int(img.getWidth()/2)):
+    for y in range(int(img.getHeight() / 2), img.getHeight()):
+
+        p = img.getPixel(x, y)
+
+        p.setRed(0)
+        p.setGreen(0)
+        img.updatePixel(p)
+
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div></blockquote>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch11ex12q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch11ex12q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch11ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch11ex12q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch11ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch11ex12q" onclick="teachercsp_ch11ex12q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch11ex12q']").attr('data-disqus-identifier', 'teachercsp_ch11ex12q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch11ex13t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Change the code below to set the red value in the pixels in the bottom half of the picture to 0.</p>
+
+<textarea data-component="activecode" id=ch11ex13q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("gal2.jpg")
+
+# LOOP THROUGH THE PIXELS
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+
+        # GET THE DATA
+        p = img.getPixel(x, y)
+
+        # SET THE RED TO 0
+        p.setRed(0)
+
+        # UPDATE THE IMAGE
+        img.updatePixel(p)
+
+# SHOW THE RESULT
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Change line 8 to <code class="docutils literal"><span class="pre">(int(img.getHeight()</span> <span class="pre">/</span> <span class="pre">2),</span> <span class="pre">img.getHeight())</span></code>.</p>
+
+<textarea data-component="activecode" id=ch11ex13a data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("gal2.jpg")
+
+# LOOP THROUGH THE PIXELS
+for x in range(img.getWidth()):
+    for y in range(int(img.getHeight() / 2), img.getHeight()):
+
+        # GET THE DATA
+        p = img.getPixel(x, y)
+
+        # SET THE RED TO 0
+        p.setRed(0)
+
+        # UPDATE THE IMAGE
+        img.updatePixel(p)
+
+# SHOW THE RESULT
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch11ex13q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch11ex13q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch11ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch11ex13q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch11ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch11ex13q" onclick="teachercsp_ch11ex13q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch11ex13q']").attr('data-disqus-identifier', 'teachercsp_ch11ex13q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch11ex14t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>The code below makes the whole image seem red. Change it, so that only every 5 pixels get changed, so that it will look like a red grid.</p>
+
+<textarea data-component="activecode" id=ch11ex14q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+img = Image("guy1.jpg")
+
+for x in range(int(img.getWidth())):
+    for y in range(img.getHeight()):
+
+    p = img.getPixel(x, y)
+
+    p.setGreen(0)
+    p.setBlue(0)
+    img.updatePixel(p)
+
+    win = ImageWin(img.getWidth(),img.getHeight())
+    img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>In the for loops, add an argument of 0 before the existing argument and add a 5 after the existing argument in the range method.</p>
+
+<textarea data-component="activecode" id=ch11ex14a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+img = Image("guy1.jpg")
+
+for x in range(0, int(img.getWidth()), 5):
+    for y in range(0, img.getHeight(), 5):
+
+    p = img.getPixel(x, y)
+
+    p.setGreen(0)
+    p.setBlue(0)
+    img.updatePixel(p)
+
+    win = ImageWin(img.getWidth(),img.getHeight())
+    img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch11ex14q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch11ex14q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch11ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch11ex14q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch11ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch11ex14q" onclick="teachercsp_ch11ex14q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch11ex14q']").attr('data-disqus-identifier', 'teachercsp_ch11ex14q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch11ex15t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Change the following code into a procedure to keep only the green values in all pixels in a picture.</p>
+
+<textarea data-component="activecode" id=ch11ex15q data-lang="python"    data-timelimit=25000   data-audio=''     >
+# STEP 1: USE THE IMAGE LIBRARY
+from image import *
+
+# STEP 2: PICK THE IMAGE
+img = Image("beach.jpg")
+
+# STEP 3: LOOP THROUGH THE PIXELS
+pixels = img.getPixels();
+for p in pixels:
+
+    # STEP 5: MODIFY THE COLOR
+    p.setRed(0)
+    p.setBlue(0)
+
+    # STEP 6: UPDATE THE IMAGE
+    img.updatePixel(p)
+
+# STEP 7: SHOW THE RESULT
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define a procedure to keep only the green values (set the red and blue to 0) in an image.  Pass the image to the procedure.  Do the import, create the image, call the prodecure, and show the result.</p>
+
+<textarea data-component="activecode" id=ch11ex15a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def keepOnlyGreen(img):
+
+    # loop through all the pixels
+    pixels = img.getPixels();
+    for p in pixels:
+
+        p.setRed(0)
+        p.setBlue(0)
+
+        # change the pixel color at the current location
+        img.updatePixel(p)
+
+from image import *
+img = Image("beach.jpg")
+keepOnlyGreen(img)
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch11ex15q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch11ex15q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch11ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch11ex15q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch11ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch11ex15q" onclick="teachercsp_ch11ex15q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch11ex15q']").attr('data-disqus-identifier', 'teachercsp_ch11ex15q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch11ex16t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>A grayscale picture is when the red, green, and blue value of a pixel are all equal to the average of the original pixel value. Write the code to turn the left half of an image into gray scale.</p>
+
+<textarea data-component="activecode" id=ch11ex16q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Iterate through only half of the width. Set each color to the average value of the original pixel values.</p>
+<blockquote>
+<div>
+<textarea data-component="activecode" id=ch11ex16a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+img = Image("beach.jpg")
+
+for x in range(int(img.getWidth()/2)):
+    for y in range(img.getHeight()):
+        p = img.getPixel(x,y)
+
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+        avg = (r + g + b)/3
+
+        p.setRed(avg)
+        p.setGreen(avg)
+        p.setBlue(avg)
+
+
+        img.updatePixel(p)
+
+
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div></blockquote>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch11ex16q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch11ex16q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch11ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch11ex16q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch11ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch11ex16q" onclick="teachercsp_ch11ex16q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch11ex16q']").attr('data-disqus-identifier', 'teachercsp_ch11ex16q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch11ex17t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Define a procedure to negate an image.  See Image_Negate_Quarter from Chapter 11 section 7 for how to create a negative of an image.  Pass the image to the procedure.  Do the import, create the image, call the prodecure, and show the result.</p>
+
+<textarea data-component="activecode" id=ch11ex17q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the procedure as shown below.</p>
+
+<textarea data-component="activecode" id=ch11ex17a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def negate(img):
+
+    # loop through all the pixels
+    for x in range(img.getWidth()):
+        for y in range(img.getHeight()):
+
+            # get the red, green, and blue at the current pixel
+            p = img.getPixel(x, y)
+            r = p.getRed()
+            g = p.getGreen()
+            b = p.getBlue()
+
+            # create a new pixel with the negated color
+            newPixel = Pixel(255-r, 255-g, 255-b)
+
+            # change the pixel color at the current location
+            img.setPixel(x, y, newPixel)
+
+from image import *
+img = Image("vangogh.jpg")
+negate(img)
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch11ex17q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch11ex17q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch11ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch11ex17q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch11ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch11ex17q" onclick="teachercsp_ch11ex17q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch11ex17q']").attr('data-disqus-identifier', 'teachercsp_ch11ex17q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch11ex18t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write code that takes the top half of an image and replicates it in the bottom half.</p>
+<blockquote>
+<div>
+<textarea data-component="activecode" id=ch11ex18q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div></blockquote>
+</div><div data-component="tab" data-tabname="Answer" >
+
+<textarea data-component="activecode" id=ch11ex18a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+img = Image("vangogh.jpg")
+
+for x in range(int(img.getWidth()):
+    for y in range(int(img.getHeight()/2)):
+
+        p = img.getPixel(x, y)
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        newPixel = Pixel(r, g, b)
+        img.setPixel(x, y + int(img.getHeight()/2), newPixel)
+
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch11ex18q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch11ex18q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch11ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch11ex18q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch11ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch11ex18q" onclick="teachercsp_ch11ex18q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch11ex18q']").attr('data-disqus-identifier', 'teachercsp_ch11ex18q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch11ex19t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a procedure to mirror an image from left to right around a vertical line in the middle of the image.  Pass the image to the procedure.  Do the import, create the image, call the prodecure, and show the result.</p>
+
+<textarea data-component="activecode" id=ch11ex19q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Create a procedure as shown below.  Call it to test it.</p>
+
+<textarea data-component="activecode" id=ch11ex19a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def mirrorLeftToRight(img):
+
+    # loop through the pixels from 0 to half the width
+    for x in range(int(img.getWidth() / 2)):
+        for y in range(img.getHeight()):
+
+            p = img.getPixel(x, y)
+            img.setPixel(img.getWidth() - 1 - x, y, p)
+
+from image import *
+img = Image("vangogh.jpg")
+mirrorLeftToRight(img)
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch11ex19q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch11ex19q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch11ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch11ex19q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch11ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch11ex19q" onclick="teachercsp_ch11ex19q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch11ex19q']").attr('data-disqus-identifier', 'teachercsp_ch11ex19q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch11ex20t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write code that flips the image across a horizontal line.</p>
+<blockquote>
+<div>
+<textarea data-component="activecode" id=ch11ex20q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div></blockquote>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Follow the code below.</p>
+
+<textarea data-component="activecode" id=ch11ex20a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+img = Image("motorcycle.jpg")
+
+last = min(img.getWidth(), img.getHeight())
+for x in range(last):
+    for y in range(int(last/2)):
+
+        p = img.getPixel(x, y)
+
+        img.setPixel(x, img.getHeight() -1 - y, p)
+
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch11ex20q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch11ex20q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch11ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch11ex20q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch11ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch11ex20q" onclick="teachercsp_ch11ex20q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch11ex20q']").attr('data-disqus-identifier', 'teachercsp_ch11ex20q_' + eBookConfig.course);
 </script>
 </div>
     </div>

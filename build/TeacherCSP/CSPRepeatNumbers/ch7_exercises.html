@@ -405,27 +405,24 @@ print(sum)
 
 </li>
 <li><div id='ch7ex2t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Change the code below into a function that returns the sum of a list of numbers.  Pass the list of numbers as a parameter and print the result of calling the function.</p>
+<p>Fix the errors in the code so that it prints the sum of all the numbers 1 to 10.</p>
 
 <textarea data-component="activecode" id=ch7ex2q data-lang="python"    data-timelimit=25000   data-audio=''     >
-sum = 0  # Start out with nothing
-thingsToAdd = [1,2,3,4,5]
-for number in thingsToAdd:
-    sum = sum + number
+sum = 0
+numList = range(1,10)
+for number in numList:
+    sum = number
 print(sum)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Create a function as shown below that takes a list of numbers as input. Return the sum.  Call the function with a list of numbers from 1 to 5 and print the result to test the function.</p>
+<p>On line 2, the range has to be (1,11) because the second number is not inclusive. Also, the sum has to be equal to the sum plus the new number. Otherwise the sum would just be the last number in the iteration.</p>
 
 <textarea data-component="activecode" id=ch7ex2a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def sumNums(numList):
-    sum = 0
-    for number in numList:
+sum = 0
+numList = range(1,11)
+for number in numList:
         sum = sum + number
-    return sum
-
-aList = [1,2,3,4,5]
-print(sumNums(aList))
+print(sum)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -470,23 +467,27 @@ print(sumNums(aList))
 
 </li>
 <li><div id='ch7ex3t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fill in the missing code on lines 3 and 4 to loop through the list of numbers and calculate the product.  Add a line at the end to print the value in <code class="docutils literal"><span class="pre">product</span></code>.</p>
+<p>Change the code below into a function that returns the sum of a list of numbers.  Pass the list of numbers as a parameter and print the result of calling the function.</p>
 
 <textarea data-component="activecode" id=ch7ex3q data-lang="python"    data-timelimit=25000   data-audio=''     >
-product = 1  # Start out with nothing
-numbers = [1,2,3,4,5]
-for in numbers:
-    product = product *
+sum = 0  # Start out with nothing
+thingsToAdd = [1,2,3,4,5]
+for number in thingsToAdd:
+    sum = sum + number
+print(sum)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change line 3 to create a variable <code class="docutils literal"><span class="pre">number</span></code> that will take on the next value in the list each time through the loop.  Set <code class="docutils literal"><span class="pre">product</span></code> in line 4 to <code class="docutils literal"><span class="pre">product</span> <span class="pre">*</span> <span class="pre">number</span></code>.  Print the result when the loop has finished.</p>
+<p>Create a function as shown below that takes a list of numbers as input. Return the sum.  Call the function with a list of numbers from 1 to 5 and print the result to test the function.</p>
 
 <textarea data-component="activecode" id=ch7ex3a data-lang="python"    data-timelimit=25000   data-audio=''     >
-product = 1  # Start out with nothing
-numbers = [1,2,3,4,5]
-for number in numbers:
-    product = product * number
-print(product)
+def sumNums(numList):
+    sum = 0
+    for number in numList:
+        sum = sum + number
+    return sum
+
+aList = [1,2,3,4,5]
+print(sumNums(aList))
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -509,7 +510,7 @@ print(product)
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'cslearn4u';    
+            disqus_shortname = 'teachercsp';    
             disqus_identifier = 'teachercsp_ch7ex3q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch7ex3q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -531,27 +532,24 @@ print(product)
 
 </li>
 <li><div id='ch7ex4t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Modify the code below to create a function that calculates the product of a list of numbers and returns it. Have the function take a list of numbers as a parameter.  Call the function to test it and print the result of calling the function.</p>
+<p>Fix the errors in the code so that it prints the product of every 5 numbers between 5 and 25.</p>
 
 <textarea data-component="activecode" id=ch7ex4q data-lang="python"    data-timelimit=25000   data-audio=''     >
-product = 1  # Start out with 1
-numbers = [1,2,3,4,5]
+product = 0
+numbers = len(4,25,5)
 for number in numbers:
-    product = product * number
+        product = product + number
 print(product)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the function and create a parameter to take a list of numbers called <code class="docutils literal"><span class="pre">numbers</span></code>.  Print the result of calling the function with a list of numbers.</p>
+<p>Product should be initialized to equal 1 on line 1. On line 2, it should be the range function, and it should be <code class="docutils literal"><span class="pre">range(5,26,5)</span></code> because the first number is inclusive and the second is exclusive.</p>
 
 <textarea data-component="activecode" id=ch7ex4a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def calculateProduct(numbers):
-    product = 1  # Start out with 1
-    for number in numbers:
+product = 1
+numbers = range(5,26,5)
+for number in numbers:
         product = product * number
-    return(product)
-
-numbers = [1,2,3,4,5]
-print(calculateProduct(numbers))
+print(product)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -596,34 +594,23 @@ print(calculateProduct(numbers))
 
 </li>
 <li><div id='ch7ex5t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fill in the code below on lines 2, 4, and 6 to correctly add up and print the sum of all the even numbers from 0 to 10 (inclusive).</p>
+<p>Fill in the missing code on lines 3 and 4 to loop through the list of numbers and calculate the product.  Add a line at the end to print the value in <code class="docutils literal"><span class="pre">product</span></code>.</p>
 
 <textarea data-component="activecode" id=ch7ex5q data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: INITIALIZE ACCUMULATOR
-sum =   # Start out with nothing
-# STEP 2: GET DATA
-numbers = range()
-# STEP 3: LOOP THROUGH THE DATA
-for number in numbers:
-    # STEP 4: ACCUMULATE
-   sum = sum +
-# STEP 5: PROCESS RESULT
-print(sum)
+product = 1  # Start out with nothing
+numbers = [1,2,3,4,5]
+for in numbers:
+    product = product *
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Initialize the sum to 0.  Create a range from 0 to 11 with a step of 2.  Set the sum to the current value of sum plus the value of number.</p>
+<p>Change line 3 to create a variable <code class="docutils literal"><span class="pre">number</span></code> that will take on the next value in the list each time through the loop.  Set <code class="docutils literal"><span class="pre">product</span></code> in line 4 to <code class="docutils literal"><span class="pre">product</span> <span class="pre">*</span> <span class="pre">number</span></code>.  Print the result when the loop has finished.</p>
 
 <textarea data-component="activecode" id=ch7ex5a data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: INITIALIZE ACCUMULATOR
-sum = 0  # Start out with nothing
-# STEP 2: GET DATA
-numbers = range(0,11,2)
-# STEP 3: LOOP THROUGH THE DATA
+product = 1  # Start out with nothing
+numbers = [1,2,3,4,5]
 for number in numbers:
-    # STEP 4: ACCUMULATE
-    sum = sum + number
-# STEP 5: PROCESS RESULT
-print(sum)
+    product = product * number
+print(product)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -646,7 +633,7 @@ print(sum)
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'teachercsp';    
+            disqus_shortname = 'cslearn4u';    
             disqus_identifier = 'teachercsp_ch7ex5q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch7ex5q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -668,37 +655,24 @@ print(sum)
 
 </li>
 <li><div id='ch7ex6t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Define a function to calculate the sum of the even numbers from 0 to the passed number.  Return the sum from the function.  Call the function and print the result.</p>
+<p>Fix the errors in the code so that it prints the sum of all the odd numbers 1 through 20.</p>
 
 <textarea data-component="activecode" id=ch7ex6q data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: INITIALIZE ACCUMULATOR
-sum = 0  # Start out with nothing
-# STEP 2: GET DATA
-numbers = range(0,21,2)
-# STEP 3: LOOP THROUGH THE DATA
-for number in numbers:
-    # STEP 4: ACCUMULATE
-   sum = sum + number
-# STEP 5: PROCESS RESULT
+sum = 1
+numbers = range(1,21,1)
+for numbers in number:
+sum = sum + number
 print(sum)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define a function that takes the <code class="docutils literal"><span class="pre">lastNum</span></code> as a parameter.  Get a list of the even numbers between 0 and lastNum using <code class="docutils literal"><span class="pre">range(0,lastNum+1,2)</span></code>.  Return the sum.  Call the function and print the result.</p>
+<p>In line 1, sum should be initialized to equal 0. In line 2, the third argument of the range function should be 2 because it is the step size.</p>
 
 <textarea data-component="activecode" id=ch7ex6a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def sumEvens(lastNum):
-    # STEP 1: INITIALIZE ACCUMULATOR
-    sum = 0  # Start out with nothing
-    # STEP 2: GET DATA
-    numbers = range(0,lastNum+1,2)
-    # STEP 3: LOOP THROUGH THE DATA
-    for number in numbers:
-        # STEP 4: ACCUMULATE
+sum = 0
+numbers = range(1,21,2)
+for number in numbers:
         sum = sum + number
-    # STEP 5: PROCESS RESULT
-    return(sum)
-
-print(sumEvens(20))
+print(sum)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -743,34 +717,27 @@ print(sumEvens(20))
 
 </li>
 <li><div id='ch7ex7t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix the code below to correctly calculate and return the product of all of the even numbers from 10 to 20.</p>
+<p>Modify the code below to create a function that calculates the product of a list of numbers and returns it. Have the function take a list of numbers as a parameter.  Call the function to test it and print the result of calling the function.</p>
 
 <textarea data-component="activecode" id=ch7ex7q data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: INITIALIZE ACCUMULATOR
-product = 0  # init product
-# STEP 2: GET DATA
-numbers = range(10,20,2)
-# STEP 3: LOOP THROUGH THE DATA
+product = 1  # Start out with 1
+numbers = [1,2,3,4,5]
 for number in numbers:
-    # STEP 4: ACCUMULATE
-   product = product + number
-# STEP 5: PROCESS RESULT
+    product = product * number
 print(product)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change line 2 to initialze <code class="docutils literal"><span class="pre">product</span></code> to 1 instead of 0.  Change line 4 to <code class="docutils literal"><span class="pre">range(10,21,2)</span></code>.  Change line 8 to <code class="docutils literal"><span class="pre">product</span> <span class="pre">=</span> <span class="pre">product</span> <span class="pre">*</span> <span class="pre">number</span></code>.</p>
+<p>Define the function and create a parameter to take a list of numbers called <code class="docutils literal"><span class="pre">numbers</span></code>.  Print the result of calling the function with a list of numbers.</p>
 
 <textarea data-component="activecode" id=ch7ex7a data-lang="python"    data-timelimit=25000   data-audio=''     >
-# STEP 1: INITIALIZE ACCUMULATOR
-product = 1  # init product to 1
-# STEP 2: GET DATA
-numbers = range(10,21,2)
-# STEP 3: LOOP THROUGH THE DATA
-for number in numbers:
-    # STEP 4: ACCUMULATE
-   product = product * number
-# STEP 5: PROCESS RESULT
-print(product)
+def calculateProduct(numbers):
+    product = 1  # Start out with 1
+    for number in numbers:
+        product = product * number
+    return(product)
+
+numbers = [1,2,3,4,5]
+print(calculateProduct(numbers))
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -815,24 +782,24 @@ print(product)
 
 </li>
 <li><div id='ch7ex8t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Create a procedure to calculate and return the sum of all of the odd numbers from 1 to a passed last number (inclusive).  Call the function to test and it print the result.</p>
+<p>Fix the error in the code so that it takes each string in the list and prints out the sentence &#8220;I like to eat pizza&#8221;.</p>
 
 <textarea data-component="activecode" id=ch7ex8q data-lang="python"    data-timelimit=25000   data-audio=''     >
-
-
+aString = ""
+aList = ["I", "like", "to", "eat", "pizza"]
+for word in aList:
+        aString = word
+        print(aString)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Create the procedure and be sure to call it to test it.</p>
+<p>On line 4, aString should be equal to itself plus the new word.</p>
 
 <textarea data-component="activecode" id=ch7ex8a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def sumOdd(lastNumber):
-    sum = 0
-    numList = range(1,lastNumber+1,2)
-    for num in numList:
-        sum = sum + num
-    return sum
-
-print(sumOdd(13))
+aString = ""
+aList = ["I", "like", "to", "eat", "pizza"]
+for word in aList:
+        aString = aString + word
+print(aString)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -877,24 +844,34 @@ print(sumOdd(13))
 
 </li>
 <li><div id='ch7ex9t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Create a function to calculate and return the product of all of the even numbers from 2 to the passed end number (inclusive).  Be sure to call the function to test it and print the result.</p>
+<p>Fill in the code below on lines 2, 4, and 6 to correctly add up and print the sum of all the even numbers from 0 to 10 (inclusive).</p>
 
 <textarea data-component="activecode" id=ch7ex9q data-lang="python"    data-timelimit=25000   data-audio=''     >
-
-
+# STEP 1: INITIALIZE ACCUMULATOR
+sum =   # Start out with nothing
+# STEP 2: GET DATA
+numbers = range()
+# STEP 3: LOOP THROUGH THE DATA
+for number in numbers:
+    # STEP 4: ACCUMULATE
+   sum = sum +
+# STEP 5: PROCESS RESULT
+print(sum)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Create the procedure and be sure to call it to test it.</p>
+<p>Initialize the sum to 0.  Create a range from 0 to 11 with a step of 2.  Set the sum to the current value of sum plus the value of number.</p>
 
 <textarea data-component="activecode" id=ch7ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def calculateProduct(lastNum):
-    total = 1
-    numList = range(2, lastNum + 1, 2)
-    for num in numList:
-        total = total * num
-    return total
-
-print(calculateProduct(8))
+# STEP 1: INITIALIZE ACCUMULATOR
+sum = 0  # Start out with nothing
+# STEP 2: GET DATA
+numbers = range(0,11,2)
+# STEP 3: LOOP THROUGH THE DATA
+for number in numbers:
+    # STEP 4: ACCUMULATE
+    sum = sum + number
+# STEP 5: PROCESS RESULT
+print(sum)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -939,24 +916,21 @@ print(calculateProduct(8))
 
 </li>
 <li><div id='ch7ex10t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write a function that will take a list of numbers and return the average.  Remember that the average is the sum of all of the numbers in the list divided by the number of items in the list.  You can get the length of a list using the <code class="docutils literal"><span class="pre">len(list)</span></code> function.</p>
+<p>Write code that prints the square of each number 1 through 10 in the format &#8220;1 * 1 = 1&#8221;, etc.</p>
 
 <textarea data-component="activecode" id=ch7ex10q data-lang="python"    data-timelimit=25000   data-audio=''     >
 
 
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Create the function and be sure to call it to test it.</p>
+<p>You need to get a list of the numbers using <code class="docutils literal"><span class="pre">range(1,11)</span></code> and then iterate through the list and multiply each number by itself.</p>
 
 <textarea data-component="activecode" id=ch7ex10a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def getAverage(numList):
-    sum = 0
-    for num in numList:
-        sum = sum + num
-    return sum / len(numList)
-
-numberList = [90, 80, 75, 90, 83]
-print(getAverage(numberList))
+numbers = range(1, 11)
+for number in numbers:
+        numString = number
+        square = str(number * number)
+        print(numString + " * " + numString + " = " + square)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -995,6 +969,663 @@ print(getAverage(numberList))
 <a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch7ex10q" onclick="teachercsp_ch7ex10q_disqus(this);">Show Comments</a>
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch7ex10q']").attr('data-disqus-identifier', 'teachercsp_ch7ex10q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch7ex11t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Define a function to calculate the sum of the even numbers from 0 to the passed number.  Return the sum from the function.  Call the function and print the result.</p>
+
+<textarea data-component="activecode" id=ch7ex11q data-lang="python"    data-timelimit=25000   data-audio=''     >
+# STEP 1: INITIALIZE ACCUMULATOR
+sum = 0  # Start out with nothing
+# STEP 2: GET DATA
+numbers = range(0,21,2)
+# STEP 3: LOOP THROUGH THE DATA
+for number in numbers:
+    # STEP 4: ACCUMULATE
+   sum = sum + number
+# STEP 5: PROCESS RESULT
+print(sum)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define a function that takes the <code class="docutils literal"><span class="pre">lastNum</span></code> as a parameter.  Get a list of the even numbers between 0 and lastNum using <code class="docutils literal"><span class="pre">range(0,lastNum+1,2)</span></code>.  Return the sum.  Call the function and print the result.</p>
+
+<textarea data-component="activecode" id=ch7ex11a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def sumEvens(lastNum):
+    # STEP 1: INITIALIZE ACCUMULATOR
+    sum = 0  # Start out with nothing
+    # STEP 2: GET DATA
+    numbers = range(0,lastNum+1,2)
+    # STEP 3: LOOP THROUGH THE DATA
+    for number in numbers:
+        # STEP 4: ACCUMULATE
+        sum = sum + number
+    # STEP 5: PROCESS RESULT
+    return(sum)
+
+print(sumEvens(20))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch7ex11q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch7ex11q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch7ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch7ex11q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch7ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch7ex11q" onclick="teachercsp_ch7ex11q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch7ex11q']").attr('data-disqus-identifier', 'teachercsp_ch7ex11q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch7ex12t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Create a function that returns the factorial of a passed number and call the function and print the result.</p>
+
+<textarea data-component="activecode" id=ch7ex12q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Use the range function from 1 to n + 1 where n is the parameter given to get a list of the numbers. Then get the product of the product times the number.</p>
+
+<textarea data-component="activecode" id=ch7ex12a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def factorial(n):
+product = 1
+numbers = range(1, n+1)
+for number in numbers:
+        product = product * number
+return product
+print(factorial(5))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch7ex12q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch7ex12q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch7ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch7ex12q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch7ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch7ex12q" onclick="teachercsp_ch7ex12q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch7ex12q']").attr('data-disqus-identifier', 'teachercsp_ch7ex12q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch7ex13t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix the code below to correctly calculate and return the product of all of the even numbers from 10 to 20.</p>
+
+<textarea data-component="activecode" id=ch7ex13q data-lang="python"    data-timelimit=25000   data-audio=''     >
+# STEP 1: INITIALIZE ACCUMULATOR
+product = 0  # init product
+# STEP 2: GET DATA
+numbers = range(10,20,2)
+# STEP 3: LOOP THROUGH THE DATA
+for number in numbers:
+    # STEP 4: ACCUMULATE
+   product = product + number
+# STEP 5: PROCESS RESULT
+print(product)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Change line 2 to initialze <code class="docutils literal"><span class="pre">product</span></code> to 1 instead of 0.  Change line 4 to <code class="docutils literal"><span class="pre">range(10,21,2)</span></code>.  Change line 8 to <code class="docutils literal"><span class="pre">product</span> <span class="pre">=</span> <span class="pre">product</span> <span class="pre">*</span> <span class="pre">number</span></code>.</p>
+
+<textarea data-component="activecode" id=ch7ex13a data-lang="python"    data-timelimit=25000   data-audio=''     >
+# STEP 1: INITIALIZE ACCUMULATOR
+product = 1  # init product to 1
+# STEP 2: GET DATA
+numbers = range(10,21,2)
+# STEP 3: LOOP THROUGH THE DATA
+for number in numbers:
+    # STEP 4: ACCUMULATE
+   product = product * number
+# STEP 5: PROCESS RESULT
+print(product)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch7ex13q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch7ex13q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch7ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch7ex13q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch7ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch7ex13q" onclick="teachercsp_ch7ex13q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch7ex13q']").attr('data-disqus-identifier', 'teachercsp_ch7ex13q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch7ex14t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Create a list of all odd numbers from 1 to 20 and find the average. Then create a list of numbers from 1 to 100 using the average as the increment and print the product of those numbers.</p>
+
+<textarea data-component="activecode" id=ch7ex14q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Use the range function with from 1 to 20 (21 would work too) and a step size of 2. Get the sum of all those numbers and use the length of the list to find the average. Then use the range function again with a step size of the average and find the product of all the numbers in the new list.</p>
+
+<textarea data-component="activecode" id=ch7ex14a data-lang="python"    data-timelimit=25000   data-audio=''     >
+sum = 0
+numbers = range(1,20,2)
+for number in numbers:
+        sum = sum + number
+average = sum / len(numbers)
+product = 1
+numbers2 = range(1,101, average)
+for number in numbers2:
+        product = product * number
+print(product)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch7ex14q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch7ex14q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch7ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch7ex14q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch7ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch7ex14q" onclick="teachercsp_ch7ex14q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch7ex14q']").attr('data-disqus-identifier', 'teachercsp_ch7ex14q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch7ex15t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Create a procedure to calculate and return the sum of all of the odd numbers from 1 to a passed last number (inclusive).  Call the function to test and it print the result.</p>
+
+<textarea data-component="activecode" id=ch7ex15q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Create the procedure and be sure to call it to test it.</p>
+
+<textarea data-component="activecode" id=ch7ex15a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def sumOdd(lastNumber):
+    sum = 0
+    numList = range(1,lastNumber+1,2)
+    for num in numList:
+        sum = sum + num
+    return sum
+
+print(sumOdd(13))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch7ex15q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch7ex15q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch7ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch7ex15q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch7ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch7ex15q" onclick="teachercsp_ch7ex15q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch7ex15q']").attr('data-disqus-identifier', 'teachercsp_ch7ex15q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch7ex16t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Complete the code for a function that takes a list of letters and combines them into a word. It should print &#8220;Hi&#8221;.</p>
+
+<textarea data-component="activecode" id=ch7ex16q data-lang="python"    data-timelimit=25000   data-audio=''     >
+def letterCombiner( ):
+        tempString =
+        for  in letterList:
+                tempString = tempString + letter
+        return
+
+aList = ["H", "i"]
+print(letterCombiner( ))
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>On line 1, you have to put <code class="docutils literal"><span class="pre">letterList</span></code> as a parameter. On line 2, <code class="docutils literal"><span class="pre">tempString</span></code> has to equal an empty string. Line 3 should read <code class="docutils literal"><span class="pre">for</span> <span class="pre">letter</span> <span class="pre">in</span> <span class="pre">letterList</span></code>. Line 5 should return the <code class="docutils literal"><span class="pre">tempString</span></code> and Line 8 should take aList as an argument.</p>
+
+<textarea data-component="activecode" id=ch7ex16a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def letterCombiner(letterList):
+        tempString = ""
+        for letter in letterList:
+                tempString = tempString + letter
+        return tempString
+
+aList = ["H", "i"]
+print(letterCombiner(aList))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch7ex16q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch7ex16q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch7ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch7ex16q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch7ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch7ex16q" onclick="teachercsp_ch7ex16q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch7ex16q']").attr('data-disqus-identifier', 'teachercsp_ch7ex16q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch7ex17t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Create a function to calculate and return the product of all of the even numbers from 2 to the passed end number (inclusive).  Be sure to call the function to test it and print the result.</p>
+
+<textarea data-component="activecode" id=ch7ex17q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Create the procedure and be sure to call it to test it.</p>
+
+<textarea data-component="activecode" id=ch7ex17a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def calculateProduct(lastNum):
+    total = 1
+    numList = range(2, lastNum + 1, 2)
+    for num in numList:
+        total = total * num
+    return total
+
+print(calculateProduct(8))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch7ex17q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch7ex17q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch7ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch7ex17q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch7ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch7ex17q" onclick="teachercsp_ch7ex17q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch7ex17q']").attr('data-disqus-identifier', 'teachercsp_ch7ex17q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch7ex18t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a function that takes two inputs, a start and stop for a range (inclusive). Find the product and the sum of all the numbers and return the average between those two numbers. make a call to the function where you print the result</p>
+
+<textarea data-component="activecode" id=ch7ex18q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>The function should use the range from parameter 1 to parameter 2 + 1 in order to make it inclusive of the given stop argument. Don&#8217;t forget to initialize the product variable as 1 and the sum as 0.</p>
+
+<textarea data-component="activecode" id=ch7ex18a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def aFunc(start, stop):
+        sum = 0
+        product = 1
+        numbers = range(start, stop + 1)
+        for number in numbers:
+                sum = sum + number
+                product = product * number
+        average = (sum + porduct) / 2
+        return average
+print(aFunc(1, 10))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch7ex18q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch7ex18q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch7ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch7ex18q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch7ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch7ex18q" onclick="teachercsp_ch7ex18q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch7ex18q']").attr('data-disqus-identifier', 'teachercsp_ch7ex18q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch7ex19t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a function that will take a list of numbers and return the average.  Remember that the average is the sum of all of the numbers in the list divided by the number of items in the list.  You can get the length of a list using the <code class="docutils literal"><span class="pre">len(list)</span></code> function.</p>
+
+<textarea data-component="activecode" id=ch7ex19q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Create the function and be sure to call it to test it.</p>
+
+<textarea data-component="activecode" id=ch7ex19a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def getAverage(numList):
+    sum = 0
+    for num in numList:
+        sum = sum + num
+    return sum / len(numList)
+
+numberList = [90, 80, 75, 90, 83]
+print(getAverage(numberList))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch7ex19q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch7ex19q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch7ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch7ex19q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch7ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch7ex19q" onclick="teachercsp_ch7ex19q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch7ex19q']").attr('data-disqus-identifier', 'teachercsp_ch7ex19q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch7ex20t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Create a function that takes one integer parameter and gets a list of all the odd numbers in that range and all the even numbers in that range. Find the product of all the even numbers, the sum of all the odd numbers, and then return the difference of the product by the sum and divide by the average of the two. Call the function and print the result.</p>
+
+<textarea data-component="activecode" id=ch7ex20q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>You have to use the range function twice and do two different for loops.</p>
+
+<textarea data-component="activecode" id=ch7ex20a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def aFunc(stop):
+        evens = range(0, stop + 1, 2)
+        odds = range( 1, stop + 1, 2)
+        product = 1
+        sum = 0
+        for n in evens:
+                product = produt * n
+        for n in odds:
+                sum = sum + n
+        difference = product - sum
+        average = (product + sum) / 2
+        return difference/ average
+print(aFunc(10))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch7ex20q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch7ex20q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch7ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch7ex20q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch7ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch7ex20q" onclick="teachercsp_ch7ex20q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch7ex20q']").attr('data-disqus-identifier', 'teachercsp_ch7ex20q_' + eBookConfig.course);
 </script>
 </div>
     </div>

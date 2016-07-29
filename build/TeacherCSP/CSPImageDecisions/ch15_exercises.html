@@ -461,72 +461,60 @@ img.draw(win)
 
 </li>
 <li><div id='ch15ex2t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix the indention in the code below so that it runs correctly.  It does a primitive form of edge detection.</p>
+<p>Fix the code below so that the red in the picture gets changed to blue.</p>
 
 <textarea data-component="activecode" id=ch15ex2q data-lang="python"    data-timelimit=25000   data-audio=''     >
 from image import *
 
 # CREATE AN IMAGE FROM A FILE
-img = Image("swan.jpg")
+img = Image("girl.jpg")
 
-# LOOP THROUGH ALL BUT LAST COLUMN
-for x in range(img.getWidth() - 1):
-    for y in range(img.getHeight()):
-    p = img.getPixel(x, y)
-    p2 = img.getPixel(x + 1, y)
-    r1 = p.getRed()
-    g1 = p.getGreen()
-    b1 = p.getBlue()
-    average1 = (r1 + g1 + b1) / 3
-    r2 = p2.getRed()
-    g2 = p2.getGreen()
-    b2 = p2.getBlue()
-    average2 = (r2 + g2 + b2) / 3
+# LOOP THROUGH ALL PIXELS
+for x in range(img.getWidth()):
+for y in range(img.getHeight()):
+        p = img.getPixel(x, y)
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
 
-    # VALUES FOR THE NEW COLOR
-    if abs(average2 - average1) > 10:
-    newPixel = Pixel(0, 0, 0)
-    else:
-    newPixel = Pixel(255, 255, 255)
+        # VALUES FOR THE NEW COLOR
+        if r < 150 and g > 100 and b > 100:
 
-        # CHANGE THE IMAGE
-        img.setPixel(x, y, newPixel)
+            # CREATE THE COLOR
+            newPixel = Pixel(0, 0, 0)
+
+            # CHANGE THE IMAGE
+            img.setPixel(x, y, newPixel)
 
 # SHOW THE CHANGED IMAGE
-win = ImageWin(img.getWidth(),img.getHeight())
-img.draw(win)
+    win = ImageWin(img.getWidth(),img.getHeight())
+    img.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Indent lines 9 to 24 as shown below.</p>
+<p>Fix the indentation like below and make sure the change occurs when the red value is greater than 150 and the green and blue values are less than 100. Fix the colors of the new pixel by setting it to (0,0,b).</p>
 
 <textarea data-component="activecode" id=ch15ex2a data-lang="python"    data-timelimit=25000   data-audio=''     >
 from image import *
 
 # CREATE AN IMAGE FROM A FILE
-img = Image("swan.jpg")
+img = Image("gal2.jpg")
 
-# LOOP THROUGH ALL BUT LAST COLUMN
-for x in range(img.getWidth() - 1):
+# LOOP THROUGH ALL PIXELS
+for x in range(img.getWidth()):
     for y in range(img.getHeight()):
         p = img.getPixel(x, y)
-        p2 = img.getPixel(x + 1, y)
-        r1 = p.getRed()
-        g1 = p.getGreen()
-        b1 = p.getBlue()
-        average1 = (r1 + g1 + b1) / 3
-        r2 = p2.getRed()
-        g2 = p2.getGreen()
-        b2 = p2.getBlue()
-        average2 = (r2 + g2 + b2) / 3
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
 
         # VALUES FOR THE NEW COLOR
-        if abs(average2 - average1) > 10:
-            newPixel = Pixel(0, 0, 0)
-        else:
-            newPixel = Pixel(255, 255, 255)
+        if r > 200 and g < 100 and b < 100:
 
-        # CHANGE THE IMAGE
-        img.setPixel(x, y, newPixel)
+            # CREATE THE COLOR
+            newPixel = Pixel(0, 0, b)
+
+            # CHANGE THE IMAGE
+            img.setPixel(x, y, newPixel)
 
 # SHOW THE CHANGED IMAGE
 win = ImageWin(img.getWidth(),img.getHeight())
@@ -575,39 +563,33 @@ img.draw(win)
 
 </li>
 <li><div id='ch15ex3t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix the indention in the code below so that it runs correctly.  It posterizes a picture which means that it reduces all the colors in a picture to a small number of colors – like the ones you might use if you were making a poster..</p>
+<p>Fix the indention in the code below so that it runs correctly.  It does a primitive form of edge detection.</p>
 
 <textarea data-component="activecode" id=ch15ex3q data-lang="python"    data-timelimit=25000   data-audio=''     >
 from image import *
 
 # CREATE AN IMAGE FROM A FILE
-img = Image("beach.jpg")
+img = Image("swan.jpg")
 
-# LOOP THROUGH ALL PIXELS
-for x in range(img.getWidth()):
+# LOOP THROUGH ALL BUT LAST COLUMN
+for x in range(img.getWidth() - 1):
     for y in range(img.getHeight()):
-        p = img.getPixel(x, y)
+    p = img.getPixel(x, y)
+    p2 = img.getPixel(x + 1, y)
+    r1 = p.getRed()
+    g1 = p.getGreen()
+    b1 = p.getBlue()
+    average1 = (r1 + g1 + b1) / 3
+    r2 = p2.getRed()
+    g2 = p2.getGreen()
+    b2 = p2.getBlue()
+    average2 = (r2 + g2 + b2) / 3
 
-        r = p.getRed()
-        g = p.getGreen()
-        b = p.getBlue()
-
-        # VALUES FOR THE NEW COLOR
-        if r < 120:
-        r = 0
-        if r >= 120:
-        r = 120
-        if g < 120:
-        g = 0
-        if g >= 120:
-        g = 120
-        if b < 120:
-        b = 0
-        if b >= 120:
-        b = 120
-
-        # CREATE THE COLOR
-        newPixel = Pixel(r,g,b)
+    # VALUES FOR THE NEW COLOR
+    if abs(average2 - average1) > 10:
+    newPixel = Pixel(0, 0, 0)
+    else:
+    newPixel = Pixel(255, 255, 255)
 
         # CHANGE THE IMAGE
         img.setPixel(x, y, newPixel)
@@ -617,39 +599,33 @@ win = ImageWin(img.getWidth(),img.getHeight())
 img.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Indent lines 17, 19, 21, 23, 25, and 27 as shown below.</p>
+<p>Indent lines 9 to 24 as shown below.</p>
 
 <textarea data-component="activecode" id=ch15ex3a data-lang="python"    data-timelimit=25000   data-audio=''     >
 from image import *
 
 # CREATE AN IMAGE FROM A FILE
-img = Image("beach.jpg")
+img = Image("swan.jpg")
 
-# LOOP THROUGH ALL PIXELS
-for x in range(img.getWidth()):
+# LOOP THROUGH ALL BUT LAST COLUMN
+for x in range(img.getWidth() - 1):
     for y in range(img.getHeight()):
         p = img.getPixel(x, y)
-
-        r = p.getRed()
-        g = p.getGreen()
-        b = p.getBlue()
+        p2 = img.getPixel(x + 1, y)
+        r1 = p.getRed()
+        g1 = p.getGreen()
+        b1 = p.getBlue()
+        average1 = (r1 + g1 + b1) / 3
+        r2 = p2.getRed()
+        g2 = p2.getGreen()
+        b2 = p2.getBlue()
+        average2 = (r2 + g2 + b2) / 3
 
         # VALUES FOR THE NEW COLOR
-        if r < 120:
-            r = 0
-        if r >= 120:
-            r = 120
-        if g < 120:
-            g = 0
-        if g >= 120:
-            g = 120
-        if b < 120:
-            b = 0
-        if b >= 120:
-            b = 120
-
-        # CREATE THE COLOR
-        newPixel = Pixel(r,g,b)
+        if abs(average2 - average1) > 10:
+            newPixel = Pixel(0, 0, 0)
+        else:
+            newPixel = Pixel(255, 255, 255)
 
         # CHANGE THE IMAGE
         img.setPixel(x, y, newPixel)
@@ -679,7 +655,7 @@ img.draw(win)
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'cslearn4u';    
+            disqus_shortname = 'teachercsp';    
             disqus_identifier = 'teachercsp_ch15ex3q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch15ex3q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -701,60 +677,62 @@ img.draw(win)
 
 </li>
 <li><div id='ch15ex4t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix 5 errors in the code below. It will copy the non-white pixels from gal1.jpg to guy1.jpg.</p>
+<p>Fix and change the code to change just the background color from white to gray.</p>
 
 <textarea data-component="activecode" id=ch15ex4q data-lang="python"    data-timelimit=25000   data-audio=''     >
-from image import *
+# CREATE AN IMAGE FROM A FILE
+img = Image("gal2.jpg")
 
-# CREATE THE IMAGES
-img1 = Image("gal1.jpg")
-img2 = Image(guy1.jpg")
+# LOOP THROUGH ALL PIXELS
+for x in range(img.getWidth()):
+for y in range(img.getHeight()):
+p = img.getPixel(x, y)
+r = p.getRed()
+g = p.getGreen()
+b = p.getBlue()
 
-# LOOP THROUGH ALL THE PIXELS IN IMG1
-for x in range(img1.getWidth():
-    for y in range(img1.getHeight())
-        p1 = img1.getPixel(x, )
-        r1 = p1.getRed()
-        g1 = p1.getGreen()
-        b1 = p1.getBlue()
+# VALUES FOR THE NEW COLOR
+if r > 0 and g > 0 and b > 0:
 
-        # CHECK IF THE PIXEL ISN'T WHITE
-        if r1 < 250 and g1 < 250  b1 < 250:
+# CREATE THE COLOR
+newPixel = Pixel(100, 100, 100)
 
-            # COPY THE COLOR TO IMG2
-            img2.setPixel(x, y, p1)
+# CHANGE THE IMAGE
+img.setPixel(x, y, p)
 
 # SHOW THE CHANGED IMAGE
-win = ImageWin(img2.getWidth(),img2.getHeight())
-img2.draw(win)
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Add a <code class="docutils literal"><span class="pre">&quot;</span></code> after the <code class="docutils literal"><span class="pre">(</span></code> on line 5.  Add another <code class="docutils literal"><span class="pre">)</span></code> before the <code class="docutils literal"><span class="pre">:</span></code> on line 8.  Add a <code class="docutils literal"><span class="pre">:</span></code> on line 9.  Add a <code class="docutils literal"><span class="pre">y</span></code> after the <code class="docutils literal"><span class="pre">,</span></code> on line 10.  Add an <code class="docutils literal"><span class="pre">and</span></code> on line 16.</p>
+<p>Fix the indentation like below and then make sure the if statement only works for r,g,b values greater than 200. Also, make sure you set the pixel to the new pixel.</p>
 
 <textarea data-component="activecode" id=ch15ex4a data-lang="python"    data-timelimit=25000   data-audio=''     >
 from image import *
 
-# CREATE THE IMAGES
-img1 = Image("gal1.jpg")
-img2 = Image("guy1.jpg")
+# CREATE AN IMAGE FROM A FILE
+img = Image("gal2.jpg")
 
-# LOOP THROUGH ALL THE PIXELS IN IMG1
-for x in range(img1.getWidth()):
-    for y in range(img1.getHeight()):
-        p1 = img1.getPixel(x, y)
-        r1 = p1.getRed()
-        g1 = p1.getGreen()
-        b1 = p1.getBlue()
+# LOOP THROUGH ALL PIXELS
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+        p = img.getPixel(x, y)
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
 
-        # CHECK IF THE PIXEL ISN'T WHITE
-        if r1 < 250 and g1 < 250 and b1 < 250:
+        # VALUES FOR THE NEW COLOR
+        if r > 200 and g > 200 and b > 200:
 
-            # COPY THE COLOR TO IMG2
-            img2.setPixel(x, y, p1)
+            # CREATE THE COLOR
+            newPixel = Pixel(100, 100, 100)
+
+            # CHANGE THE IMAGE
+            img.setPixel(x, y, newPixel)
 
 # SHOW THE CHANGED IMAGE
-win = ImageWin(img2.getWidth(),img2.getHeight())
-img2.draw(win)
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -799,9 +777,51 @@ img2.draw(win)
 
 </li>
 <li><div id='ch15ex5t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Change the code below to use <code class="docutils literal"><span class="pre">if</span></code> and <code class="docutils literal"><span class="pre">else</span></code> rather than two <code class="docutils literal"><span class="pre">if</span></code> statements per color.  It posterizes an image.</p>
+<p>Fix the indention in the code below so that it runs correctly.  It posterizes a picture which means that it reduces all the colors in a picture to a small number of colors – like the ones you might use if you were making a poster..</p>
 
 <textarea data-component="activecode" id=ch15ex5q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("beach.jpg")
+
+# LOOP THROUGH ALL PIXELS
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+        p = img.getPixel(x, y)
+
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        # VALUES FOR THE NEW COLOR
+        if r < 120:
+        r = 0
+        if r >= 120:
+        r = 120
+        if g < 120:
+        g = 0
+        if g >= 120:
+        g = 120
+        if b < 120:
+        b = 0
+        if b >= 120:
+        b = 120
+
+        # CREATE THE COLOR
+        newPixel = Pixel(r,g,b)
+
+        # CHANGE THE IMAGE
+        img.setPixel(x, y, newPixel)
+
+# SHOW THE CHANGED IMAGE
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Indent lines 17, 19, 21, 23, 25, and 27 as shown below.</p>
+
+<textarea data-component="activecode" id=ch15ex5a data-lang="python"    data-timelimit=25000   data-audio=''     >
 from image import *
 
 # CREATE AN IMAGE FROM A FILE
@@ -828,48 +848,6 @@ for x in range(img.getWidth()):
         if b < 120:
             b = 0
         if b >= 120:
-            b = 120
-
-        # CREATE THE COLOR
-        newPixel = Pixel(r,g,b)
-
-        # CHANGE THE IMAGE
-        img.setPixel(x, y, newPixel)
-
-# SHOW THE CHANGED IMAGE
-win = ImageWin(img.getWidth(),img.getHeight())
-img.draw(win)
-</textarea>
-</div><div data-component="tab" data-tabname="Answer" >
-<p>Change lines 18, 22, and 26 as shown below.</p>
-
-<textarea data-component="activecode" id=ch15ex5a data-lang="python"    data-timelimit=25000   data-audio=''     >
-from image import *
-
-# CREATE AN IMAGE FROM A FILE
-img = Image("beach.jpg")
-
-# LOOP THROUGH ALL PIXELS
-for x in range(img.getWidth()):
-    for y in range(img.getHeight()):
-        p = img.getPixel(x, y)
-
-        r = p.getRed()
-        g = p.getGreen()
-        b = p.getBlue()
-
-        # VALUES FOR THE NEW COLOR
-        if r < 120:
-            r = 0
-        else:
-            r = 120
-        if g < 120:
-            g = 0
-        else:
-            g = 120
-        if b < 120:
-            b = 0
-        else:
             b = 120
 
         # CREATE THE COLOR
@@ -903,7 +881,7 @@ img.draw(win)
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'teachercsp';    
+            disqus_shortname = 'cslearn4u';    
             disqus_identifier = 'teachercsp_ch15ex5q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch15ex5q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -925,91 +903,72 @@ img.draw(win)
 
 </li>
 <li><div id='ch15ex6t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Change the following code into a procedure. It posterizes an image. Be sure to call it to test it.</p>
+<p>Fix the indentation so that the code puts the motorcycle on the beach.</p>
 
 <textarea data-component="activecode" id=ch15ex6q data-lang="python"    data-timelimit=25000   data-audio=''     >
 from image import *
 
-# CREATE AN IMAGE FROM A FILE
-img = Image("beach.jpg")
+# CREATE THE IMAGES
+img1 = Image("motorcycle.jpg")
+img2 = Image("beach.jpg")
+width1 = img1.getWidth()
+height1 = img1.getHeight()
+width2= img2.getWidth()
+height2 = img2.getHeight()
+maxWidth = min(width1,width2)
+maxHeight = min(height1,height2)
 
-# LOOP THROUGH ALL PIXELS
-for x in range(img.getWidth()):
-    for y in range(img.getHeight()):
-        p = img.getPixel(x, y)
+# LOOP THROUGH THE PIXELS
+for x in range(maxWidth):
+for y in range(maxHeight):
+p1 = img1.getPixel(x, y)
+r1 = p1.getRed()
+g1 = p1.getGreen()
+b1 = p1.getBlue()
 
-        r = p.getRed()
-        g = p.getGreen()
-        b = p.getBlue()
+# CHECK IF THE PIXEL ISN'T WHITE
+if r1 < 250 and g1 < 250 and b1 < 250:
 
-        # VALUES FOR THE NEW COLOR
-        if r < 120:
-            r = 0
-        if r >= 120:
-            r = 120
-        if g < 120:
-            g = 0
-        if g >= 120:
-            g = 120
-        if b < 120:
-            b = 0
-        if b >= 120:
-            b = 120
-
-        # CREATE THE COLOR
-        newPixel = Pixel(r,g,b)
-
-        # CHANGE THE IMAGE
-        img.setPixel(x, y, newPixel)
+# COPY THE COLOR TO IMG2
+img2.setPixel(x, y, p1)
 
 # SHOW THE CHANGED IMAGE
-win = ImageWin(img.getWidth(),img.getHeight())
-img.draw(win)
+win = ImageWin(img2.getWidth(),img2.getHeight())
+img2.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the procedure and then import the library and create the image.  Pass the image to the posterize procedure.</p>
+<p>Indent like below.</p>
 
 <textarea data-component="activecode" id=ch15ex6a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def posterize(img):
-
-    # LOOP THROUGH ALL PIXELS
-    for x in range(img.getWidth()):
-        for y in range(img.getHeight()):
-            p = img.getPixel(x, y)
-
-            r = p.getRed()
-            g = p.getGreen()
-            b = p.getBlue()
-
-            # VALUES FOR THE NEW COLOR
-            if r < 120:
-                r = 0
-            if r >= 120:
-                r = 120
-            if g < 120:
-                g = 0
-            if g >= 120:
-                g = 120
-            if b < 120:
-                b = 0
-            if b >= 120:
-                b = 120
-
-            # CREATE THE COLOR
-            newPixel = Pixel(r,g,b)
-
-            # CHANGE THE IMAGE
-            img.setPixel(x, y, newPixel)
-
-    # SHOW THE CHANGED IMAGE
-    win = ImageWin(img.getWidth(),img.getHeight())
-    img.draw(win)
-
 from image import *
 
-# CREATE AN IMAGE FROM A FILE
-img = Image("beach.jpg")
-posterize(img)
+# CREATE THE IMAGES
+img1 = Image("motorcycle.jpg")
+img2 = Image("beach.jpg")
+width1 = img1.getWidth()
+height1 = img1.getHeight()
+width2= img2.getWidth()
+height2 = img2.getHeight()
+maxWidth = min(width1,width2)
+maxHeight = min(height1,height2)
+
+# LOOP THROUGH THE PIXELS
+for x in range(maxWidth):
+  for y in range(maxHeight):
+    p1 = img1.getPixel(x, y)
+    r1 = p1.getRed()
+    g1 = p1.getGreen()
+    b1 = p1.getBlue()
+
+    # CHECK IF THE PIXEL ISN'T WHITE
+    if r1 < 250 and g1 < 250 and b1 < 250:
+
+      # COPY THE COLOR TO IMG2
+      img2.setPixel(x, y, p1)
+
+# SHOW THE CHANGED IMAGE
+win = ImageWin(img2.getWidth(),img2.getHeight())
+img2.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -1054,67 +1013,60 @@ posterize(img)
 
 </li>
 <li><div id='ch15ex7t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Change the following into a procedure. It changes areas that are mostly red looking to green.  Be sure to call it to test it.</p>
+<p>Fix 5 errors in the code below. It will copy the non-white pixels from gal1.jpg to guy1.jpg.</p>
 
 <textarea data-component="activecode" id=ch15ex7q data-lang="python"    data-timelimit=25000   data-audio=''     >
 from image import *
 
-# CREATE AN IMAGE FROM A FILE
-img = Image("gal2.jpg")
+# CREATE THE IMAGES
+img1 = Image("gal1.jpg")
+img2 = Image(guy1.jpg")
 
-# LOOP THROUGH ALL PIXELS
-for x in range(img.getWidth()):
-    for y in range(img.getHeight()):
-        p = img.getPixel(x, y)
-        r = p.getRed()
-        g = p.getGreen()
-        b = p.getBlue()
+# LOOP THROUGH ALL THE PIXELS IN IMG1
+for x in range(img1.getWidth():
+    for y in range(img1.getHeight())
+        p1 = img1.getPixel(x, )
+        r1 = p1.getRed()
+        g1 = p1.getGreen()
+        b1 = p1.getBlue()
 
-        # VALUES FOR THE NEW COLOR
-        if r > 200 and g < 100 and b < 100:
+        # CHECK IF THE PIXEL ISN'T WHITE
+        if r1 < 250 and g1 < 250  b1 < 250:
 
-            # CREATE THE COLOR
-            newPixel = Pixel(0, g, b)
-
-            # CHANGE THE IMAGE
-            img.setPixel(x, y, newPixel)
+            # COPY THE COLOR TO IMG2
+            img2.setPixel(x, y, p1)
 
 # SHOW THE CHANGED IMAGE
-win = ImageWin(img.getWidth(),img.getHeight())
-img.draw(win)
+win = ImageWin(img2.getWidth(),img2.getHeight())
+img2.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the procedure and then import the library and create the image.  Pass the image to the changeRedToGreen procedure.</p>
+<p>Add a <code class="docutils literal"><span class="pre">&quot;</span></code> after the <code class="docutils literal"><span class="pre">(</span></code> on line 5.  Add another <code class="docutils literal"><span class="pre">)</span></code> before the <code class="docutils literal"><span class="pre">:</span></code> on line 8.  Add a <code class="docutils literal"><span class="pre">:</span></code> on line 9.  Add a <code class="docutils literal"><span class="pre">y</span></code> after the <code class="docutils literal"><span class="pre">,</span></code> on line 10.  Add an <code class="docutils literal"><span class="pre">and</span></code> on line 16.</p>
 
-<textarea data-component="activecode" id=ch15ex7a data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
-def changeRedToGreen(img):
-
-    # LOOP THROUGH ALL PIXELS
-    for x in range(img.getWidth()):
-        for y in range(img.getHeight()):
-            p = img.getPixel(x, y)
-            r = p.getRed()
-            g = p.getGreen()
-            b = p.getBlue()
-
-            # VALUES FOR THE NEW COLOR
-            if r > 200 and g < 100 and b < 100:
-
-                # CREATE THE COLOR
-                newPixel = Pixel(0, g, b)
-
-                # CHANGE THE IMAGE
-                img.setPixel(x, y, newPixel)
-
-    # SHOW THE CHANGED IMAGE
-    win = ImageWin(img.getWidth(),img.getHeight())
-    img.draw(win)
-
+<textarea data-component="activecode" id=ch15ex7a data-lang="python"    data-timelimit=25000   data-audio=''     >
 from image import *
 
-# CREATE AN IMAGE FROM A FILE
-img = Image("gal2.jpg")
-changeRedToGreen(img)
+# CREATE THE IMAGES
+img1 = Image("gal1.jpg")
+img2 = Image("guy1.jpg")
+
+# LOOP THROUGH ALL THE PIXELS IN IMG1
+for x in range(img1.getWidth()):
+    for y in range(img1.getHeight()):
+        p1 = img1.getPixel(x, y)
+        r1 = p1.getRed()
+        g1 = p1.getGreen()
+        b1 = p1.getBlue()
+
+        # CHECK IF THE PIXEL ISN'T WHITE
+        if r1 < 250 and g1 < 250 and b1 < 250:
+
+            # COPY THE COLOR TO IMG2
+            img2.setPixel(x, y, p1)
+
+# SHOW THE CHANGED IMAGE
+win = ImageWin(img2.getWidth(),img2.getHeight())
+img2.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -1159,59 +1111,72 @@ changeRedToGreen(img)
 
 </li>
 <li><div id='ch15ex8t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write the code to posterize a picture but use 3 values for each color instead of 2.  Use 0 if the current value is less than 85, use 85 if the value is less than 170, else use 170.</p>
+<p>Fix the 5 errors so that a swan in shown on a beach.</p>
 
 <textarea data-component="activecode" id=ch15ex8q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
 
+# CREATE THE IMAGES
+img1 = Image(swan.jpg)
+img2 = Image("beach.jpg")
+width1 = img1.getWidth()
+height1 = img1.getHeight()
+width2= img2.getWidth()
+height2 = img2.getHeight()
+maxWidth = min(width1,width2)
+maxHeight = min(height1,height2)
 
+# LOOP THROUGH THE PIXELS
+for x in range(maxWidth):
+  for y in range(maxHeight):
+    p1 = img1.getPixel()
+    r1 = p1.getRed
+    g1 = p1.getGreen()
+    b1 = p1.getBlue()
+
+    # CHECK IF THE PIXEL ISN'T WHITE
+    if r1 > 100 and g1 > 100 and b1 > 100
+
+      # COPY THE COLOR TO IMG2
+      img2.setPixel(x, y, pixel)
+
+# SHOW THE CHANGED IMAGE
+win = ImageWin(img2.getWidth(),img2.getHeight())
+img2.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>See the code in lines 16-33 for how to do this.</p>
+<p>Add quotations around <code class="docutils literal"><span class="pre">swan.jpg</span></code>. The <code class="docutils literal"><span class="pre">getPixel()</span></code> should be <code class="docutils literal"><span class="pre">getPixel(x,y)</span></code>. It should be <code class="docutils literal"><span class="pre">getRed()</span></code> instead of <code class="docutils literal"><span class="pre">getRed</span></code>. Add a colon after the if statement, and set the new pixel to <code class="docutils literal"><span class="pre">(x,y,p1)</span></code>.</p>
 
 <textarea data-component="activecode" id=ch15ex8a data-lang="python"    data-timelimit=25000   data-audio=''     >
 from image import *
 
-# CREATE AN IMAGE FROM A FILE
-img = Image("beach.jpg")
+# CREATE THE IMAGES
+img1 = Image("swan.jpg")
+img2 = Image("beach.jpg")
+width1 = img1.getWidth()
+height1 = img1.getHeight()
+width2= img2.getWidth()
+height2 = img2.getHeight()
+maxWidth = min(width1,width2)
+maxHeight = min(height1,height2)
 
-# LOOP THROUGH ALL PIXELS
-for x in range(img.getWidth()):
-    for y in range(img.getHeight()):
-        p = img.getPixel(x, y)
+# LOOP THROUGH THE PIXELS
+for x in range(maxWidth):
+  for y in range(maxHeight):
+    p1 = img1.getPixel(x, y)
+    r1 = p1.getRed()
+    g1 = p1.getGreen()
+    b1 = p1.getBlue()
 
-        r = p.getRed()
-        g = p.getGreen()
-        b = p.getBlue()
+    # CHECK IF THE PIXEL ISN'T WHITE
+    if r1 > 100 and g1 > 100 and b1 > 100:
 
-        # VALUES FOR THE NEW COLOR
-        if r < 85:
-            r = 0
-        elif r < 170:
-            r = 85
-        else:
-            r = 170
-        if g < 85:
-            g = 0
-        elif g < 170:
-            g = 85
-        else:
-            g = 170
-        if b < 85:
-            b = 0
-        elif b < 170:
-            b = 85
-        else:
-            b = 170
-
-        # CREATE THE COLOR
-        newPixel = Pixel(r,g,b)
-
-        # CHANGE THE IMAGE
-        img.setPixel(x, y, newPixel)
+      # COPY THE COLOR TO IMG2
+      img2.setPixel(x, y, p1)
 
 # SHOW THE CHANGED IMAGE
-win = ImageWin(img.getWidth(),img.getHeight())
-img.draw(win)
+win = ImageWin(img2.getWidth(),img2.getHeight())
+img2.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -1256,40 +1221,81 @@ img.draw(win)
 
 </li>
 <li><div id='ch15ex9t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write the code to do edge detection on a picture, but compare the curent pixel with the one below it rather than the one to the right.</p>
+<p>Change the code below to use <code class="docutils literal"><span class="pre">if</span></code> and <code class="docutils literal"><span class="pre">else</span></code> rather than two <code class="docutils literal"><span class="pre">if</span></code> statements per color.  It posterizes an image.</p>
 
 <textarea data-component="activecode" id=ch15ex9q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
 
+# CREATE AN IMAGE FROM A FILE
+img = Image("beach.jpg")
 
+# LOOP THROUGH ALL PIXELS
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+        p = img.getPixel(x, y)
+
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        # VALUES FOR THE NEW COLOR
+        if r < 120:
+            r = 0
+        if r >= 120:
+            r = 120
+        if g < 120:
+            g = 0
+        if g >= 120:
+            g = 120
+        if b < 120:
+            b = 0
+        if b >= 120:
+            b = 120
+
+        # CREATE THE COLOR
+        newPixel = Pixel(r,g,b)
+
+        # CHANGE THE IMAGE
+        img.setPixel(x, y, newPixel)
+
+# SHOW THE CHANGED IMAGE
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>See the code below.  Only lines 7 trough 10 needed to change.  We now loop through all the columns and all but one of rows.  We compare the pixel at the current x and y to the one at the same x but y+1.</p>
+<p>Change lines 18, 22, and 26 as shown below.</p>
 
 <textarea data-component="activecode" id=ch15ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
 from image import *
 
 # CREATE AN IMAGE FROM A FILE
-img = Image("swan.jpg")
+img = Image("beach.jpg")
 
-# LOOP THROUGH ALL BUT LAST ROW
+# LOOP THROUGH ALL PIXELS
 for x in range(img.getWidth()):
-    for y in range(img.getHeight() - 1):
+    for y in range(img.getHeight()):
         p = img.getPixel(x, y)
-        p2 = img.getPixel(x, y + 1)
-        r1 = p.getRed()
-        g1 = p.getGreen()
-        b1 = p.getBlue()
-        average1 = (r1 + g1 + b1) / 3
-        r2 = p2.getRed()
-        g2 = p2.getGreen()
-        b2 = p2.getBlue()
-        average2 = (r2 + g2 + b2) / 3
+
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
 
         # VALUES FOR THE NEW COLOR
-        if abs(average2 - average1) > 10:
-            newPixel = Pixel(0, 0, 0)
+        if r < 120:
+            r = 0
         else:
-            newPixel = Pixel(255, 255, 255)
+            r = 120
+        if g < 120:
+            g = 0
+        else:
+            g = 120
+        if b < 120:
+            b = 0
+        else:
+            b = 120
+
+        # CREATE THE COLOR
+        newPixel = Pixel(r,g,b)
 
         # CHANGE THE IMAGE
         img.setPixel(x, y, newPixel)
@@ -1341,44 +1347,76 @@ img.draw(win)
 
 </li>
 <li><div id='ch15ex10t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write a procedure to remove the red on very red pixels (pixels that have a red value greater than 200 and a green and blue value of less than 100).</p>
+<p>Fix the indentation in the code and change it so that it edges the motorcycle but the background is black and the motorcycle edging will be white.</p>
 
 <textarea data-component="activecode" id=ch15ex10q data-lang="python"    data-timelimit=25000   data-audio=''     >
+    from image import *
 
+    # CREATE AN IMAGE FROM A FILE
+    img = Image("motorcycle.jpg")
 
-</textarea>
-</div><div data-component="tab" data-tabname="Answer" >
-<p>Define the procedure and then import the library and create the image.  Pass the image to the removeVeryRed procedure.</p>
+    # LOOP THROUGH ALL BUT LAST COLUMN
+    for x in range(img.getWidth() - 1):
+    for y in range(img.getHeight()):
+    p = img.getPixel(x, y)
+    p2 = img.getPixel(x + 1, y)
+    r1 = p.getRed()
+    g1 = p.getGreen()
+    b1 = p.getBlue()
+    average1 = (r1 + g1 + b1) / 3
+    r2 = p2.getRed()
+    g2 = p2.getGreen()
+    b2 = p2.getBlue()
+    average2 = (r2 + g2 + b2) / 3
 
-<textarea data-component="activecode" id=ch15ex10a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def removeVeryRed(img):
+    # VALUES FOR THE NEW COLOR
+    if abs(average2 - average1) > 10:
+        newPixel = Pixel(0, 0, 0)
+    else:
+        newPixel = Pixel(255, 255, 255)
 
-    # LOOP THROUGH ALL PIXELS
-    for x in range(img.getWidth()):
-        for y in range(img.getHeight()):
-            p = img.getPixel(x, y)
-            r = p.getRed()
-            g = p.getGreen()
-            b = p.getBlue()
-
-            # VALUES FOR THE NEW COLOR
-            if r > 200 and g < 100 and b < 100:
-
-                # CREATE THE COLOR
-                newPixel = Pixel(0, g, b)
-
-                # CHANGE THE IMAGE
-                img.setPixel(x, y, newPixel)
+    # CHANGE THE IMAGE
+    img.setPixel(x, y, newPixel)
 
     # SHOW THE CHANGED IMAGE
     win = ImageWin(img.getWidth(),img.getHeight())
     img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Fix the indentation like below and set the newPixel to be (255,255,255) if the absolute value of the difference of the averages is greater than 10. Otherwise the pixel should be (0,0,0).</p>
 
+<textarea data-component="activecode" id=ch15ex10a data-lang="python"    data-timelimit=25000   data-audio=''     >
 from image import *
 
 # CREATE AN IMAGE FROM A FILE
-img = Image("gal2.jpg")
-removeVeryRed(img)
+img = Image("motorcycle.jpg")
+
+# LOOP THROUGH ALL BUT LAST COLUMN
+for x in range(img.getWidth() - 1):
+    for y in range(img.getHeight()):
+        p = img.getPixel(x, y)
+        p2 = img.getPixel(x + 1, y)
+        r1 = p.getRed()
+        g1 = p.getGreen()
+        b1 = p.getBlue()
+        average1 = (r1 + g1 + b1) / 3
+        r2 = p2.getRed()
+        g2 = p2.getGreen()
+        b2 = p2.getBlue()
+        average2 = (r2 + g2 + b2) / 3
+
+        # VALUES FOR THE NEW COLOR
+        if abs(average2 - average1) > 10:
+            newPixel = Pixel(255, 255, 255)
+        else:
+            newPixel = Pixel(0, 0, 0)
+
+        # CHANGE THE IMAGE
+        img.setPixel(x, y, newPixel)
+
+# SHOW THE CHANGED IMAGE
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -1417,6 +1455,1036 @@ removeVeryRed(img)
 <a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch15ex10q" onclick="teachercsp_ch15ex10q_disqus(this);">Show Comments</a>
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch15ex10q']").attr('data-disqus-identifier', 'teachercsp_ch15ex10q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch15ex11t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Change the following code into a procedure. It posterizes an image. Be sure to call it to test it.</p>
+
+<textarea data-component="activecode" id=ch15ex11q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("beach.jpg")
+
+# LOOP THROUGH ALL PIXELS
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+        p = img.getPixel(x, y)
+
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        # VALUES FOR THE NEW COLOR
+        if r < 120:
+            r = 0
+        if r >= 120:
+            r = 120
+        if g < 120:
+            g = 0
+        if g >= 120:
+            g = 120
+        if b < 120:
+            b = 0
+        if b >= 120:
+            b = 120
+
+        # CREATE THE COLOR
+        newPixel = Pixel(r,g,b)
+
+        # CHANGE THE IMAGE
+        img.setPixel(x, y, newPixel)
+
+# SHOW THE CHANGED IMAGE
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the procedure and then import the library and create the image.  Pass the image to the posterize procedure.</p>
+
+<textarea data-component="activecode" id=ch15ex11a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def posterize(img):
+
+    # LOOP THROUGH ALL PIXELS
+    for x in range(img.getWidth()):
+        for y in range(img.getHeight()):
+            p = img.getPixel(x, y)
+
+            r = p.getRed()
+            g = p.getGreen()
+            b = p.getBlue()
+
+            # VALUES FOR THE NEW COLOR
+            if r < 120:
+                r = 0
+            if r >= 120:
+                r = 120
+            if g < 120:
+                g = 0
+            if g >= 120:
+                g = 120
+            if b < 120:
+                b = 0
+            if b >= 120:
+                b = 120
+
+            # CREATE THE COLOR
+            newPixel = Pixel(r,g,b)
+
+            # CHANGE THE IMAGE
+            img.setPixel(x, y, newPixel)
+
+    # SHOW THE CHANGED IMAGE
+    win = ImageWin(img.getWidth(),img.getHeight())
+    img.draw(win)
+
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("beach.jpg")
+posterize(img)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch15ex11q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch15ex11q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch15ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch15ex11q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch15ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch15ex11q" onclick="teachercsp_ch15ex11q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch15ex11q']").attr('data-disqus-identifier', 'teachercsp_ch15ex11q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch15ex12t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix the 5 errors in the code so that it edges the motorcycle.</p>
+
+<textarea data-component="activecode" id=ch15ex12q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image(motorcycle.jpg)
+
+# LOOP THROUGH ALL BUT LAST COLUMN
+for x in range(img.getWidth() ):
+    for y in range(img.getHeight()):
+        p = img.getPixel(x, y)
+        p2 = img.getPixel(x + 1, y)
+        r1 = p.getRed()
+        g1 = p.getGreen()
+        b1 = p.getBlue()
+        average1 = (r1 + g1 + b1) / 3
+        r2 = p2.getRed()
+        g2 = p2.getGreen()
+        b2 = p2.getBlue()
+        average2 = (r2 + g2 + b2) / 3
+
+        # VALUES FOR THE NEW COLOR
+        if abs(average2 - average1) > 10
+            newPixel = Pixel(0, 0, 0)
+        else:
+            newPixel = Pixel(255, 255, 255)
+
+        # CHANGE THE IMAGE
+        img.setPixel(x, y, newPixel)
+
+        # SHOW THE CHANGED IMAGE
+        win = ImageWin(img.getWidth(),img.getHeight())
+        img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>The jpg file should be in quotations. You have to change line 7 to <code class="docutils literal"><span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">range(img.getWidth()</span> <span class="pre">-</span> <span class="pre">1):</span></code>. Add a <code class="docutils literal"><span class="pre">:</span></code> after the if statement. Take the 2 lines where you show the changed image outside of the body of both for loops.</p>
+
+<textarea data-component="activecode" id=ch15ex12a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("motorcycle.jpg")
+
+# LOOP THROUGH ALL BUT LAST COLUMN
+for x in range(img.getWidth() - 1):
+    for y in range(img.getHeight()):
+        p = img.getPixel(x, y)
+        p2 = img.getPixel(x + 1, y)
+        r1 = p.getRed()
+        g1 = p.getGreen()
+        b1 = p.getBlue()
+        average1 = (r1 + g1 + b1) / 3
+        r2 = p2.getRed()
+        g2 = p2.getGreen()
+        b2 = p2.getBlue()
+        average2 = (r2 + g2 + b2) / 3
+
+        # VALUES FOR THE NEW COLOR
+        if abs(average2 - average1) > 10:
+            newPixel = Pixel(0, 0, 0)
+        else:
+            newPixel = Pixel(255, 255, 255)
+
+        # CHANGE THE IMAGE
+        img.setPixel(x, y, newPixel)
+
+# SHOW THE CHANGED IMAGE
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch15ex12q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch15ex12q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch15ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch15ex12q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch15ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch15ex12q" onclick="teachercsp_ch15ex12q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch15ex12q']").attr('data-disqus-identifier', 'teachercsp_ch15ex12q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch15ex13t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Change the following into a procedure. It changes areas that are mostly red looking to green.  Be sure to call it to test it.</p>
+
+<textarea data-component="activecode" id=ch15ex13q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("gal2.jpg")
+
+# LOOP THROUGH ALL PIXELS
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+        p = img.getPixel(x, y)
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        # VALUES FOR THE NEW COLOR
+        if r > 200 and g < 100 and b < 100:
+
+            # CREATE THE COLOR
+            newPixel = Pixel(0, g, b)
+
+            # CHANGE THE IMAGE
+            img.setPixel(x, y, newPixel)
+
+# SHOW THE CHANGED IMAGE
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the procedure and then import the library and create the image.  Pass the image to the changeRedToGreen procedure.</p>
+
+<textarea data-component="activecode" id=ch15ex13a data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+def changeRedToGreen(img):
+
+    # LOOP THROUGH ALL PIXELS
+    for x in range(img.getWidth()):
+        for y in range(img.getHeight()):
+            p = img.getPixel(x, y)
+            r = p.getRed()
+            g = p.getGreen()
+            b = p.getBlue()
+
+            # VALUES FOR THE NEW COLOR
+            if r > 200 and g < 100 and b < 100:
+
+                # CREATE THE COLOR
+                newPixel = Pixel(0, g, b)
+
+                # CHANGE THE IMAGE
+                img.setPixel(x, y, newPixel)
+
+    # SHOW THE CHANGED IMAGE
+    win = ImageWin(img.getWidth(),img.getHeight())
+    img.draw(win)
+
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("gal2.jpg")
+changeRedToGreen(img)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch15ex13q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch15ex13q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch15ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch15ex13q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch15ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch15ex13q" onclick="teachercsp_ch15ex13q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch15ex13q']").attr('data-disqus-identifier', 'teachercsp_ch15ex13q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch15ex14t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>The code below currently makes the picture gray. Change it so that it posterizes (reduce the number of colors) the image instead.</p>
+
+<textarea data-component="activecode" id=ch15ex14q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("kitten.jpg")
+
+# LOOP THROUGH ALL PIXELS
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+        p = img.getPixel(x, y)
+
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        # VALUES FOR THE NEW COLOR
+        if r < 120:
+            r = 150
+        if r >= 120:
+            r = 200
+        if g < 120:
+            g = 150
+        if g >= 120:
+            g = 200
+        if b < 120:
+            b = 150
+        if b >= 120:
+            b = 200
+
+        # CREATE THE COLOR
+        newPixel = Pixel(r,g,b)
+
+        # CHANGE THE IMAGE
+        img.setPixel(x, y, newPixel)
+
+# SHOW THE CHANGED IMAGE
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Set the values to the new color to 0 if the pixel color is less than 120 and 120 if it is greater than or equal to 120.</p>
+
+<textarea data-component="activecode" id=ch15ex14a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("arch.jpg")
+
+# LOOP THROUGH ALL PIXELS
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+        p = img.getPixel(x, y)
+
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        # VALUES FOR THE NEW COLOR
+        if r < 120:
+            r = 0
+        if r >= 120:
+            r = 120
+        if g < 120:
+            g = 0
+        if g >= 120:
+            g = 120
+        if b < 120:
+            b = 0
+        if b >= 120:
+            b = 120
+
+        # CREATE THE COLOR
+        newPixel = Pixel(r,g,b)
+
+        # CHANGE THE IMAGE
+        img.setPixel(x, y, newPixel)
+
+# SHOW THE CHANGED IMAGE
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch15ex14q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch15ex14q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch15ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch15ex14q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch15ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch15ex14q" onclick="teachercsp_ch15ex14q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch15ex14q']").attr('data-disqus-identifier', 'teachercsp_ch15ex14q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch15ex15t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write the code to posterize a picture but use 3 values for each color instead of 2.  Use 0 if the current value is less than 85, use 85 if the value is less than 170, else use 170.</p>
+
+<textarea data-component="activecode" id=ch15ex15q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>See the code in lines 16-33 for how to do this.</p>
+
+<textarea data-component="activecode" id=ch15ex15a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("beach.jpg")
+
+# LOOP THROUGH ALL PIXELS
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+        p = img.getPixel(x, y)
+
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        # VALUES FOR THE NEW COLOR
+        if r < 85:
+            r = 0
+        elif r < 170:
+            r = 85
+        else:
+            r = 170
+        if g < 85:
+            g = 0
+        elif g < 170:
+            g = 85
+        else:
+            g = 170
+        if b < 85:
+            b = 0
+        elif b < 170:
+            b = 85
+        else:
+            b = 170
+
+        # CREATE THE COLOR
+        newPixel = Pixel(r,g,b)
+
+        # CHANGE THE IMAGE
+        img.setPixel(x, y, newPixel)
+
+# SHOW THE CHANGED IMAGE
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch15ex15q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch15ex15q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch15ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch15ex15q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch15ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch15ex15q" onclick="teachercsp_ch15ex15q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch15ex15q']").attr('data-disqus-identifier', 'teachercsp_ch15ex15q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch15ex16t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix the errors in the code and change the code to use if&#8217;s and else&#8217;s instead of just if&#8217;s.</p>
+
+<textarea data-component="activecode" id=ch15ex16q data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("arch.jpg")
+
+# LOOP THROUGH ALL PIXELS
+for x in range(img.getWidth()
+    for y in range(img.getHeight()):
+        p = img.getPixels(x, y)
+
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        # VALUES FOR THE NEW COLOR
+        if r < 120:
+            r = 0
+        if r >= 120:
+            r = 120
+        if g < 120:
+            g = 0
+        if g >= 120:
+            g = 120
+        if b < 120:
+            b = 0
+        if b >= 120:
+            b = 120
+
+        # CREATE THE COLOR
+        newPixel = Pixel(r,g,b)
+
+# CHANGE THE IMAGE
+img.setPixel(x, y, newPixel)
+
+# SHOW THE CHANGED IMAGE
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>In line 7, add a <code class="docutils literal"><span class="pre">)</span></code> and <code class="docutils literal"><span class="pre">:</span></code> to the end. In line 9, it should be <code class="docutils literal"><span class="pre">getPixel(x,y)</span></code> not <code class="docutils literal"><span class="pre">getPixels(x,y)</span></code>. The change the image line of code should be in the body of the inner for loop. Change all the second if clauses to else clauses.</p>
+
+<textarea data-component="activecode" id=ch15ex16a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("baby.jpg")
+
+# LOOP THROUGH ALL PIXELS
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+        p = img.getPixel(x, y)
+
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        # VALUES FOR THE NEW COLOR
+        if r < 120:
+            r = 0
+        else:
+            r = 120
+        if g < 120:
+            g = 0
+        else:
+            g = 120
+        if b < 120:
+            b = 0
+        else:
+            b = 120
+
+        # CREATE THE COLOR
+        newPixel = Pixel(r,g,b)
+
+        # CHANGE THE IMAGE
+        img.setPixel(x, y, newPixel)
+
+# SHOW THE CHANGED IMAGE
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch15ex16q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch15ex16q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch15ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch15ex16q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch15ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch15ex16q" onclick="teachercsp_ch15ex16q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch15ex16q']").attr('data-disqus-identifier', 'teachercsp_ch15ex16q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch15ex17t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write the code to do edge detection on a picture, but compare the curent pixel with the one below it rather than the one to the right.</p>
+
+<textarea data-component="activecode" id=ch15ex17q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>See the code below.  Only lines 7 trough 10 needed to change.  We now loop through all the columns and all but one of rows.  We compare the pixel at the current x and y to the one at the same x but y+1.</p>
+
+<textarea data-component="activecode" id=ch15ex17a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("swan.jpg")
+
+# LOOP THROUGH ALL BUT LAST ROW
+for x in range(img.getWidth()):
+    for y in range(img.getHeight() - 1):
+        p = img.getPixel(x, y)
+        p2 = img.getPixel(x, y + 1)
+        r1 = p.getRed()
+        g1 = p.getGreen()
+        b1 = p.getBlue()
+        average1 = (r1 + g1 + b1) / 3
+        r2 = p2.getRed()
+        g2 = p2.getGreen()
+        b2 = p2.getBlue()
+        average2 = (r2 + g2 + b2) / 3
+
+        # VALUES FOR THE NEW COLOR
+        if abs(average2 - average1) > 10:
+            newPixel = Pixel(0, 0, 0)
+        else:
+            newPixel = Pixel(255, 255, 255)
+
+        # CHANGE THE IMAGE
+        img.setPixel(x, y, newPixel)
+
+# SHOW THE CHANGED IMAGE
+win = ImageWin(img.getWidth(),img.getHeight())
+img.draw(win)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch15ex17q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch15ex17q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch15ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch15ex17q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch15ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch15ex17q" onclick="teachercsp_ch15ex17q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch15ex17q']").attr('data-disqus-identifier', 'teachercsp_ch15ex17q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch15ex18t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a procedure that takes an image as a parameter and edges it using the colors blue and white.</p>
+
+<textarea data-component="activecode" id=ch15ex18q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define a procedure similar to the one below.</p>
+
+<textarea data-component="activecode" id=ch15ex18a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+def edgePicture(img):
+    img = Image(img)
+    # LOOP THROUGH ALL BUT LAST COLUMN
+    for x in range(img.getWidth() - 1):
+        for y in range(img.getHeight()):
+            p = img.getPixel(x, y)
+            p2 = img.getPixel(x + 1, y)
+            r1 = p.getRed()
+            g1 = p.getGreen()
+            b1 = p.getBlue()
+            average1 = (r1 + g1 + b1) / 3
+            r2 = p2.getRed()
+            g2 = p2.getGreen()
+            b2 = p2.getBlue()
+            average2 = (r2 + g2 + b2) / 3
+
+            # VALUES FOR THE NEW COLOR
+            if abs(average2 - average1) > 10:
+                newPixel = Pixel(0, 0, 255)
+            else:
+                newPixel = Pixel(255, 255, 255)
+
+            # CHANGE THE IMAGE
+            img.setPixel(x, y, newPixel)
+
+    # SHOW THE CHANGED IMAGE
+    win = ImageWin(img.getWidth(),img.getHeight())
+    img.draw(win)
+
+edgePicture("motorcycle.jpg")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch15ex18q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch15ex18q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch15ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch15ex18q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch15ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch15ex18q" onclick="teachercsp_ch15ex18q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch15ex18q']").attr('data-disqus-identifier', 'teachercsp_ch15ex18q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch15ex19t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a procedure to remove the red on very red pixels (pixels that have a red value greater than 200 and a green and blue value of less than 100).</p>
+
+<textarea data-component="activecode" id=ch15ex19q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the procedure and then import the library and create the image.  Pass the image to the removeVeryRed procedure.</p>
+
+<textarea data-component="activecode" id=ch15ex19a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def removeVeryRed(img):
+
+    # LOOP THROUGH ALL PIXELS
+    for x in range(img.getWidth()):
+        for y in range(img.getHeight()):
+            p = img.getPixel(x, y)
+            r = p.getRed()
+            g = p.getGreen()
+            b = p.getBlue()
+
+            # VALUES FOR THE NEW COLOR
+            if r > 200 and g < 100 and b < 100:
+
+                # CREATE THE COLOR
+                newPixel = Pixel(0, g, b)
+
+                # CHANGE THE IMAGE
+                img.setPixel(x, y, newPixel)
+
+    # SHOW THE CHANGED IMAGE
+    win = ImageWin(img.getWidth(),img.getHeight())
+    img.draw(win)
+
+from image import *
+
+# CREATE AN IMAGE FROM A FILE
+img = Image("gal2.jpg")
+removeVeryRed(img)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch15ex19q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch15ex19q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch15ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch15ex19q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch15ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch15ex19q" onclick="teachercsp_ch15ex19q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch15ex19q']").attr('data-disqus-identifier', 'teachercsp_ch15ex19q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch15ex20t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a procedure that takes a picture as a parameter and converts all the red to grayscale.</p>
+
+<textarea data-component="activecode" id=ch15ex20q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+
+<textarea data-component="activecode" id=ch15ex20a data-lang="python"    data-timelimit=25000   data-audio=''     >
+from image import *
+
+def redToGray(aPic):
+    img = Image(aPic)
+
+    # LOOP THROUGH ALL PIXELS
+    for x in range(img.getWidth()):
+        for y in range(img.getHeight()):
+            p = img.getPixel(x, y)
+            r = p.getRed()
+            g = p.getGreen()
+            b = p.getBlue()
+            avg = (r + g + b) / 3
+            # VALUES FOR THE NEW COLOR
+            if r > 200 and g < 100 and b < 100:
+
+                # CREATE THE COLOR
+                newPixel = Pixel(avg,avg,avg)
+
+                # CHANGE THE IMAGE
+                img.setPixel(x, y, newPixel)
+
+    # SHOW THE CHANGED IMAGE
+    win = ImageWin(img.getWidth(),img.getHeight())
+    img.draw(win)
+
+redToGray("gal2.jpg")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch15ex20q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch15ex20q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch15ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch15ex20q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch15ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch15ex20q" onclick="teachercsp_ch15ex20q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch15ex20q']").attr('data-disqus-identifier', 'teachercsp_ch15ex20q_' + eBookConfig.course);
 </script>
 </div>
     </div>

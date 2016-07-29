@@ -6,7 +6,7 @@
     Contributor List, no Front-Cover Texts, and no Back-Cover Texts.  A copy of
     the license is included in the section entitled "GNU Free Documentation
     License".
-    
+
 
 .. setup for automatic question numbering.
 
@@ -18,7 +18,7 @@ Chapter 18 Exercises
 ---------------------
 
 Here are just the first 9 lines of the data.
-  
+
  ::
 
      Aberdeen, SD :13 :8
@@ -35,9 +35,9 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 .. reveal:: pol_Data1
     :showtitle: Show
     :hidetitle: Hide
-    
+
     .. raw:: html
-    
+
        <pre id="uspoll.txt">
        Aberdeen, SD :13 :8
        Adrian, MI :15 :9
@@ -420,17 +420,17 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
        Yuma, AZ :14 :9
        </pre>
 
-#. 
+#.
 
     .. tabbed:: ch18ex1t
 
         .. tab:: Question
-            
-            Fix 5 errors in the code below so that the code runs correctly and prints the pollution for all cities that start with the letter A.  
+
+            Fix 5 errors in the code below so that the code runs correctly and prints the pollution for all cities that start with the letter A.
 
             .. activecode:: ch18ex1q
                 :nocodelens:
-                
+
                 inFile = open("uspoll.txt","r)
                 line = inFile.readLine()
                 while line
@@ -442,10 +442,11 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
                     line = infile.readline()
 
                 inFile.close()
+
         .. tab:: Answer
-        
-            Add a ``"`` before the ``)`` in line 1.  Change line 2 to ``readline`` instead of ``readLine``.  Add a ``:`` at the end of line 3.  Add a ``,`` before ``city`` on line 7.  Change ``infile`` to ``inFile`` on line 9. 
-                        
+
+            Add a ``"`` before the ``)`` in line 1.  Change line 2 to ``readline`` instead of ``readLine``.  Add a ``:`` at the end of line 3.  Add a ``,`` before ``city`` on line 7.  Change ``infile`` to ``inFile`` on line 9.
+
             .. activecode:: ch18ex1a
                 :nocodelens:
 
@@ -460,23 +461,43 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
                     line = inFile.readline()
 
                 inFile.close()
-      	            
-                
+
+
         .. tab:: Discussion
 
             .. disqus::
                 :shortname: cslearn4u
                 :identifier: teachercsp_ch18ex1q
 
-#. 
+#.
 
     .. tabbed:: ch18ex2t
 
         .. tab:: Question
 
+            .. activecode::  ch18ex2q
+                :nocodelens:
+
+        .. tab:: Answer
+
+            .. activecode::  ch18ex2a
+                :nocodelens:
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: teachercsp
+                :identifier: teachercsp_ch18ex2q
+
+#.
+
+    .. tabbed:: ch18ex3t
+
+        .. tab:: Question
+
            Fix the 5 errors in the code below so that it runs and prints the largest PM 2.5 value and the city that has that value.
-           
-           .. activecode::  ch18ex2q
+
+           .. activecode::  ch18ex3q
                 :nocodelens:
 
                 inFile = open("uspoll.txt","r"
@@ -492,15 +513,15 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
                         maxCity = values[0]
                         max25 = new25 # save the new maximum
                 print("Largest PM 2.5 value is ",max25," in ",maxCity)
-                
-          
+
+
         .. tab:: Answer
-        
-            Add a ``)`` at the end of line 1.  Change line 3 to ``close``.  Set ``max25`` to ``0`` in line 6.  Add ``in`` on line 7 before ``lines``.  Add ``:`` at the end of line 10. 
-            
-            .. activecode::  ch18ex2a
+
+            Add a ``)`` at the end of line 1.  Change line 3 to ``close``.  Set ``max25`` to ``0`` in line 6.  Add ``in`` on line 7 before ``lines``.  Add ``:`` at the end of line 10.
+
+            .. activecode::  ch18ex3a
                 :nocodelens:
-                
+
                 inFile = open("uspoll.txt","r")
                 lines = inFile.readlines()
                 inFile.close()
@@ -515,75 +536,186 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
                         max25 = new25 # save the new maximum
                 print("Largest PM 2.5 value is ",max25," in ",maxCity)
 
-        .. tab:: Discussion 
+        .. tab:: Discussion
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch18ex2q
-                
-#. 
+                :identifier: teachercsp_ch18ex3q
 
-    .. tabbed:: ch18ex3t
+#.
+
+    .. tabbed:: ch18ex4t
 
         .. tab:: Question
 
-           Fix the indention below for the code to correctly find and print the lowest 2.5 value and city. 
-           
-           .. activecode::  ch18ex3q
+            The code below prints all the lines that start with an "A". Change it so that it prints out all lines that start with "A" or "B".
+
+            .. activecode::  ch18ex4q
+                :nocodelens:
+
+                # read all the lines
+                inFile = open("uspoll.txt","r")
+                lines = inFile.readlines()
+                inFile.close()
+
+                # loop through the lines
+                for line in lines:
+                    if line[0] == "A":
+                        print(line)
+
+
+        .. tab:: Answer
+
+            Add  an ``or`` clause or an ``elif``.
+
+            .. activecode::  ch18ex4a
+                :nocodelens:
+
+                # read all the lines
+                inFile = open("uspoll.txt","r")
+                lines = inFile.readlines()
+                inFile.close()
+
+                # loop through the lines
+                for line in lines:
+                    if line[0] == "A" or line[0] == "B":
+                        print(line)
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: teachercsp
+                :identifier: teachercsp_ch18ex4q
+
+#.
+
+    .. tabbed:: ch18ex5t
+
+        .. tab:: Question
+
+           Fix the indention below for the code to correctly find and print the lowest 2.5 value and city.
+
+           .. activecode::  ch18ex5q
                 :nocodelens:
 
                 inFile = open("uspoll.txt","r")
                 lines = inFile.readlines()
                 inFile.close()
-     
+
                 minCity = ''
                 min25 = 500
                 for line in lines:
                 values = line.split(":")
                 new25 = float(values[2]) # set the value for new25 to be the current PM 2.5 value
                 if new25 < min25:
-                minCity = values[0] # Save the minimum city and state 
+                minCity = values[0] # Save the minimum city and state
                 min25 = new25 # save the minimum PM 2.5 value
                 print("Smallest PM 2.5 ",min25," in ",minCity)
 
         .. tab:: Answer
-        
+
             Indent lines 8 through 12 as shown below.
-            
-            .. activecode::  ch18ex5a
+
+            .. activecode::  ch18ex9a
                 :nocodelens:
 
                 inFile = open("uspoll.txt","r")
                 lines = inFile.readlines()
                 inFile.close()
-     
+
                 minCity = ''
                 min25 = 500
                 for line in lines:
                     values = line.split(":")
                     new25 = float(values[2]) # set the value for new25 to be the current PM 2.5 value
                     if new25 < min25:
-                        minCity = values[0] # Save the minimum city and state 
+                        minCity = values[0] # Save the minimum city and state
                         min25 = new25 # save the minimum PM 2.5 value
                 print("Smallest PM 2.5 ",min25," in ",minCity)
 
-        .. tab:: Discussion 
+        .. tab:: Discussion
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch18ex5q
+                :identifier: teachercsp_ch18ex9q
 
-#. 
+#.
 
-    .. tabbed:: ch18ex4t
+    .. tabbed:: ch18ex6t
 
         .. tab:: Question
 
-           Fix the indention on the lines below so that it correctly prints the average PM 2.5 value.    
-        
-           .. activecode::  ch18ex4q
+            Fix the code so that it prints out the min value and the cities only when the min value is even.
+
+            .. activecode::  ch18ex6q
                 :nocodelens:
-                
+
+                # read all the lines
+                inFile = open("uspoll.txt", r)
+                lines = inFile.readline
+                inFile.close()
+
+                # loop through the lines
+                for line in lines:
+
+                    # split at :
+                    values = line.split(" ")
+
+                    # get the min PM 2.5 pollution and the city
+                    num = str(values[2])
+                    city = values[0]
+
+                    # check if even
+                    if num % 2 == 0:
+
+                    # print the values
+                    print("Even min PM 2.5 ", num ," in ", city)
+
+        .. tab:: Answer
+
+            On line 2, put the "r" in quotations. On line 3, change ``readline`` to ``readlines()``. On line 10, split on the ":" not a space. On the last line, indent the print statement to be in the body of the if clause.
+
+            .. activecode::  ch18ex6a
+                :nocodelens:
+
+                # read all the lines
+                inFile = open("uspoll.txt","r")
+                lines = inFile.readlines()
+                inFile.close()
+
+                # loop through the lines
+                for line in lines:
+
+                    # split at :
+                    values = line.split(":")
+
+                    # get the min PM 2.5 pollution and the city
+                    num = float(values[2])
+                    city = values[0]
+
+                    # check if even
+                    if num % 2 == 0:
+
+                        # print the values
+                        print("Even min PM 2.5 ", num ," in ", city)
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: teachercsp
+                :identifier: teachercsp_ch18ex6q
+
+#.
+
+    .. tabbed:: ch18ex7t
+
+        .. tab:: Question
+
+           Fix the indention on the lines below so that it correctly prints the average PM 2.5 value.
+
+           .. activecode::  ch18ex7q
+                :nocodelens:
+
                 inFile = open("uspoll.txt","r")
                 lines = inFile.readlines()
                 inFile.close()
@@ -599,10 +731,10 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
                 print("Average PM 2.5 value is ",total25/count)
 
         .. tab:: Answer
-        
-            Fix the indention on lines 8-11 as shown below.   
-            
-            .. activecode::  ch18ex4a
+
+            Fix the indention on lines 8-11 as shown below.
+
+            .. activecode::  ch18ex7a
                 :nocodelens:
 
                 inFile = open("uspoll.txt","r")
@@ -619,21 +751,41 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
                 print("Average PM 2.5 value is ",total25/count)
 
-        .. tab:: Discussion 
+        .. tab:: Discussion
 
             .. disqus::
                 :shortname: cslearn4u
-                :identifier: teachercsp_ch18ex3q
-                
-#. 
-                
-    .. tabbed:: ch18ex5t
+                :identifier: teachercsp_ch18ex5q
+
+#.
+
+    .. tabbed:: ch18ex8t
 
         .. tab:: Question
 
-           Turn the following code into a procedure.  Pass the input file and the amount of PM 10 to the procedure. It will print the city name and the pollution values for all cities that have that much PM 10 pollution or more. 
-           
-           .. activecode::  ch18ex5q
+            .. activecode::  ch18ex8q
+                :nocodelens:
+
+        .. tab:: Answer
+
+            .. activecode::  ch18ex8a
+                :nocodelens:
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: teachercsp
+                :identifier: teachercsp_ch18ex8q
+
+#.
+
+    .. tabbed:: ch18ex9t
+
+        .. tab:: Question
+
+           Turn the following code into a procedure.  Pass the input file and the amount of PM 10 to the procedure. It will print the city name and the pollution values for all cities that have that much PM 10 pollution or more.
+
+           .. activecode::  ch18ex9q
                 :nocodelens:
 
                 inFile = open("uspoll.txt","r")
@@ -650,12 +802,12 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
 
         .. tab:: Answer
-        
-            Define the procedure as shown below.  Be sure to call the procedure to test it.   
-            
-            .. activecode::  ch18ex5a
+
+            Define the procedure as shown below.  Be sure to call the procedure to test it.
+
+            .. activecode::  ch18ex9a
                  :nocodelens:
-                
+
                  def findPM10GreaterThan(inFile, amount):
                      line = inFile.readline()
                      while line:
@@ -669,25 +821,44 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
                  inFile = open("uspoll.txt","r")
                  findPM10GreaterThan(inFile,25)
                  inFile.close()
-                
-        .. tab:: Discussion 
+
+        .. tab:: Discussion
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch18ex4q
-                
-                
-#. 
+                :identifier: teachercsp_ch18ex7q
 
-    .. tabbed:: ch18ex6t
+#.
+
+    .. tabbed:: ch18ex10t
+
+        .. tab:: Question
+
+            .. activecode::  ch18ex10q
+                :nocodelens:
+
+        .. tab:: Answer
+
+            .. activecode::  ch18ex10a
+                :nocodelens:
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: teachercsp
+                :identifier: teachercsp_ch18ex10q
+
+#.
+
+    .. tabbed:: ch18ex11t
 
         .. tab:: Question
 
            Change the following code into a procedure that prints the city name and pollution values for all cities that have a PM 2.5 of less than some passed value.  Pass in the input file and the amount of pollution.
-           
-           .. activecode::  ch18ex6q
-                :nocodelens: 
-                
+
+           .. activecode::  ch18ex11q
+                :nocodelens:
+
                 inFile = open("uspoll.txt","r")
                 line = inFile.readline()
                 while line:
@@ -702,12 +873,12 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
 
         .. tab:: Answer
-        
+
             Define a procedure that takes the input file and the amount.  Print all the cities that have lower than the passed amount for PM 2.5.
-            
-            .. activecode::  ch18ex6a
+
+            .. activecode::  ch18ex11a
                 :nocodelens:
-                
+
                 def findPM25LessThan(inFile, amount):
                     line = inFile.readline()
                     while line:
@@ -721,154 +892,270 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
                 inFile = open("uspoll.txt","r")
                 findPM25LessThan(inFile,5)
                 inFile.close()
-                
-        .. tab:: Discussion 
+
+        .. tab:: Discussion
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch18ex6q
-                
-#. 
+                :identifier: teachercsp_ch18ex11q
 
-    .. tabbed:: ch18ex7t
+#.
+
+    .. tabbed:: ch18ex12t
 
         .. tab:: Question
 
-           Write a procedure that takes the name of a city and prints the pollution values for that city if it is found.  
-           
-           .. activecode::  ch18ex7q
-                :nocodelens: 
-                
+            .. activecode::  ch18ex12q
+                :nocodelens:
+
         .. tab:: Answer
-        
-            Define the procedure and call it.  Be sure to pass the city name to the procedure.  
-            
-            .. activecode::  ch18ex7a
+
+            .. activecode::  ch18ex12a
+                :nocodelens:
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: teachercsp
+                :identifier: teachercsp_ch18ex12q
+
+#.
+
+    .. tabbed:: ch18ex13t
+
+        .. tab:: Question
+
+           Write a procedure that takes the name of a city and prints the pollution values for that city if it is found.
+
+           .. activecode::  ch18ex13q
+                :nocodelens:
+
+        .. tab:: Answer
+
+            Define the procedure and call it.  Be sure to pass the city name to the procedure.
+
+            .. activecode::  ch18ex13a
                 :nocodelens
-                
+
                 def printPollution(inFile,cityName):
-               
+
                     lines = inFile.readlines()
-   
+
                     for line in lines:
                         values = line.split(":")
                         city = values[0]
                         if (city.find(cityName) == 0):
                             print('City: ', city)
                             print("Pollution values:",values[1],values[2])
-           
+
                 inFile = open("uspoll.txt","r")
                 printPollution(inFile, "Albany, GA")
                 inFile.close()
-                
-                
-        .. tab:: Discussion 
+
+
+        .. tab:: Discussion
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch18ex7q
-                
-#. 
+                :identifier: teachercsp_ch18ex13q
 
-    .. tabbed:: ch18ex8t
+#.
+
+    .. tabbed:: ch18ex14t
 
         .. tab:: Question
 
-           Write a function that takes a list and returns the minimum value in the list.  
-           
-           .. activecode::  ch18ex8q
+            Write a procedure that takes in the file name as a parameter and prints out all the cities that start with a vowel (a,e,i,o, or u) and their associated pollution values.
+
+            .. activecode::  ch18ex14q
                 :nocodelens:
-                
-                
+
         .. tab:: Answer
-        
-           Write the function as shown below.  Be sure to set the initial value to something from the list.  Call the function and print the result.
-            
-            .. activecode::  ch18ex8a
+
+            .. activecode::  ch18ex14a
                 :nocodelens:
-                
+
+                def vowelFinder(file):
+                    inFile = open(file,"r")
+                    line = inFile.readline()
+                    while line:
+                        values = line.split(":")
+                        city = values[0]
+                        if (city.find("A") == 0 or city.find("E") == 0):
+                            print('City: ', city, "Pollution values:",values[1],values[2])
+                        if (city.find("I") == 0 or city.find("O") == 0):
+                            print('City: ', city, "Pollution values:",values[1],values[2])
+                        if (city.find("U") == 0):
+                            print('City: ', city, "Pollution values:",values[1],values[2])
+
+                        line = inFile.readline()
+
+                    inFile.close()
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: teachercsp
+                :identifier: teachercsp_ch18ex14q
+
+#.
+
+    .. tabbed:: ch18ex15t
+
+        .. tab:: Question
+
+           Write a function that takes a list and returns the minimum value in the list.
+
+           .. activecode::  ch18ex15q
+                :nocodelens:
+
+
+        .. tab:: Answer
+
+           Write the function as shown below.  Be sure to set the initial value to something from the list.  Call the function and print the result.
+
+            .. activecode::  ch18ex15a
+                :nocodelens:
+
                 def findMin(theList):
                     min = theList[0]
                     for value in theList:
                         if value < min:
                             min = value
                     return min
-                    
+
                 print(findMin([-30, 20, -50, 100, -100]))
-                
-                
-        .. tab:: Discussion 
+
+
+        .. tab:: Discussion
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch18ex8q
-                
-#. 
+                :identifier: teachercsp_ch18ex15q
 
-    .. tabbed:: ch18ex9t
+#.
+
+    .. tabbed:: ch18ex16t
 
         .. tab:: Question
 
-           Write a function that finds the maximum value in a list.  Pass in the list and return the maximum value.  Call the function and print the result. 
-            
-           .. activecode::  ch18ex9q
+            .. activecode::  ch18ex16q
                 :nocodelens:
 
         .. tab:: Answer
-        
-            Write the function as shown below.  Be sure to set the initial value to something from the list.  Call the function and print the result.
-            
-            .. activecode::  ch18ex9a
+
+            .. activecode::  ch18ex16a
                 :nocodelens:
-                
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: teachercsp
+                :identifier: teachercsp_ch18ex16q
+
+#.
+
+    .. tabbed:: ch18ex17t
+
+        .. tab:: Question
+
+           Write a function that finds the maximum value in a list.  Pass in the list and return the maximum value.  Call the function and print the result.
+
+           .. activecode::  ch18ex17q
+                :nocodelens:
+
+        .. tab:: Answer
+
+            Write the function as shown below.  Be sure to set the initial value to something from the list.  Call the function and print the result.
+
+            .. activecode::  ch18ex17a
+                :nocodelens:
+
                 def findMax(theList):
                     max = theList[0]
                     for value in theList:
                         if value > max:
                             max = value
                     return max
-                    
+
                 print(findMax([-30, 20, -50, 100, -100]))
-                            
-                                
-        .. tab:: Discussion 
+
+
+        .. tab:: Discussion
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch18ex9q
-                
-#. 
+                :identifier: teachercsp_ch18ex17q
 
-    .. tabbed:: ch18ex10t
+#.
+
+    .. tabbed:: ch18ex18t
 
         .. tab:: Question
 
-           Write a function that calculates the average of all values in the list.  Return the average.  
-           
-           .. activecode::  ch18ex10q
+            .. activecode::  ch18ex18q
+                :nocodelens:
+
+        .. tab:: Answer
+
+            .. activecode::  ch18ex18a
+                :nocodelens:
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: teachercsp
+                :identifier: teachercsp_ch18ex18q
+
+#.
+
+    .. tabbed:: ch18ex19t
+
+        .. tab:: Question
+
+           Write a function that calculates the average of all values in the list.  Return the average.
+
+           .. activecode::  ch18ex19q
                :nocodelens:
 
         .. tab:: Answer
-        
-            Create a function and pass in the list.  Accumulate the sum and calculate the average and return it.  Call the function and print the result.    
-            
-            .. activecode::  ch18ex10a
+
+            Create a function and pass in the list.  Accumulate the sum and calculate the average and return it.  Call the function and print the result.
+
+            .. activecode::  ch18ex19a
                 :nocodelens:
-                
+
                 def getAverage(theList):
                     sum = 0
                     for item in theList:
                         sum = sum + item
                     return sum / len(theList)
-                    
+
                 print(getAverage([80, 90, 70]))
 
-                                 
-        .. tab:: Discussion 
+
+        .. tab:: Discussion
 
             .. disqus::
                 :shortname: teachercsp
-                :identifier: teachercsp_ch18ex10q
+                :identifier: teachercsp_ch18ex19q
 
+#.
 
+    .. tabbed:: ch18ex20t
 
+        .. tab:: Question
+
+            .. activecode::  ch18ex20q
+                :nocodelens:
+
+        .. tab:: Answer
+
+            .. activecode::  ch18ex20a
+                :nocodelens:
+
+        .. tab:: Discussion
+
+            .. disqus::
+                :shortname: teachercsp
+                :identifier: teachercsp_ch18ex20q

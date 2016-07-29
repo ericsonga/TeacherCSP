@@ -407,24 +407,22 @@ print(name * 3)
 
 </li>
 <li><div id='ch16ex2t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix the 5 syntax errors in the code below so that it runs.  It should print the length of <code class="docutils literal"><span class="pre">myFirstList</span></code> and print the result of <code class="docutils literal"><span class="pre">myFirstList</span> <span class="pre">*</span> <span class="pre">3</span></code>.  Then it should set <code class="docutils literal"><span class="pre">mySecondList</span></code> to the concatenation of <code class="docutils literal"><span class="pre">myFirstList</span></code> and a list containing <code class="docutils literal"><span class="pre">321.4</span></code>.  Then it should print the value of <code class="docutils literal"><span class="pre">mySecondList</span></code>.</p>
+<p>Add code to line 1 so that the code below prints 14.</p>
 
 <textarea data-component="activecode" id=ch16ex2q data-lang="python"    data-timelimit=25000   data-audio=''     >
-myFirstList = [12,"ape"13]
-print(len(myFirstList)
-print(myfirstList * 3)
-mySecondList = myFirstList + [321.4
-print(mySecondList
+aString =
+bString = "bow"
+cString = (aString + bString) * 2
+print(len(cString))
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Add a comma before the <code class="docutils literal"><span class="pre">13</span></code> on line 1.  Add a <code class="docutils literal"><span class="pre">)</span></code> at the end of line 2.  Change line 3 to <code class="docutils literal"><span class="pre">myFirstList</span></code>.  Add a <code class="docutils literal"><span class="pre">]</span></code> at the end of line 4.  Add a <code class="docutils literal"><span class="pre">)</span></code> at the end of line 5.</p>
+<p><code class="docutils literal"><span class="pre">aString</span></code> can be any 4 character string</p>
 
 <textarea data-component="activecode" id=ch16ex2a data-lang="python"    data-timelimit=25000   data-audio=''     >
-myFirstList = [12,"ape",13]
-print(len(myFirstList))
-print(myFirstList * 3)
-mySecondList = myFirstList + [321.4]
-print(mySecondList)
+aString = "rain"
+bString = "bow"
+cString = (aString + bString) * 2
+print(len(cString))
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -469,86 +467,24 @@ print(mySecondList)
 
 </li>
 <li><div id='ch16ex3t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix 5 syntax errors in the code below so that it runs and prints the contents of <code class="docutils literal"><span class="pre">items</span></code>.</p>
+<p>Fix the 5 syntax errors in the code below so that it runs.  It should print the length of <code class="docutils literal"><span class="pre">myFirstList</span></code> and print the result of <code class="docutils literal"><span class="pre">myFirstList</span> <span class="pre">*</span> <span class="pre">3</span></code>.  Then it should set <code class="docutils literal"><span class="pre">mySecondList</span></code> to the concatenation of <code class="docutils literal"><span class="pre">myFirstList</span></code> and a list containing <code class="docutils literal"><span class="pre">321.4</span></code>.  Then it should print the value of <code class="docutils literal"><span class="pre">mySecondList</span></code>.</p>
 
-<textarea data-component="activecode" id=ch16ex3q data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
-items = [2,4,6 8]
-items[0] = "First item'
-items[1] = items0]
-items[2] = items[2] + 1
-print items
+<textarea data-component="activecode" id=ch16ex3q data-lang="python"    data-timelimit=25000   data-audio=''     >
+myFirstList = [12,"ape"13]
+print(len(myFirstList)
+print(myfirstList * 3)
+mySecondList = myFirstList + [321.4
+print(mySecondList
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Add a <code class="docutils literal"><span class="pre">,</span></code> between 6 and 8 on line 1.  Change the <code class="docutils literal"><span class="pre">'</span></code> to a <code class="docutils literal"><span class="pre">&quot;</span></code> on line 2.  Put a <code class="docutils literal"><span class="pre">[</span></code> before the 0 on line 3.  Add <code class="docutils literal"><span class="pre">(</span></code> before <code class="docutils literal"><span class="pre">items</span></code> and <code class="docutils literal"><span class="pre">)</span></code> after on line 5.</p>
+<p>Add a comma before the <code class="docutils literal"><span class="pre">13</span></code> on line 1.  Add a <code class="docutils literal"><span class="pre">)</span></code> at the end of line 2.  Change line 3 to <code class="docutils literal"><span class="pre">myFirstList</span></code>.  Add a <code class="docutils literal"><span class="pre">]</span></code> at the end of line 4.  Add a <code class="docutils literal"><span class="pre">)</span></code> at the end of line 5.</p>
 
-<textarea data-component="activecode" id=ch16ex5a data-lang="python"    data-timelimit=25000   data-audio=''     >
-items = [2,4,6,8]
-items[0] = "First item"
-items[1] = items[0]
-items[2] = items[2] + 1
-print(items)
-</textarea>
-</div><div data-component="tab" data-tabname="Discussion" >
-<script type="text/javascript">
-    function teachercsp_ch16ex5q_disqus(source) { 
-        if (window.DISQUS) {
-
-            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
-
-            //if Disqus exists, call it's reset method with new parameters
-            DISQUS.reset({
-                reload: true,
-                config: function () {
-                    this.page.identifier = 'teachercsp_ch16ex5q_' + eBookConfig.course;
-                    this.page.url = 'http://teachercsp_ch16ex5q_'+eBookConfig.course+'.interactivepython.com/#!';
-                }
-            });
-
-        } else {
-            //insert a wrapper in HTML after the relevant "show comments" link
-            $('<div id="disqus_thread"></div>').insertAfter(source);
-
-            // set Disqus required vars
-            disqus_shortname = 'teachercsp';    
-            disqus_identifier = 'teachercsp_ch16ex5q_' + eBookConfig.course;
-            disqus_url = 'http://teachercsp_ch16ex5q_'+eBookConfig.course+'.interactivepython.com/#!';
-
-            //append the Disqus embed script to HTML
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            $('head').append(dsq);
-
-        }
-    }
-</script>
-
-<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch16ex5q" onclick="teachercsp_ch16ex5q_disqus(this);">Show Comments</a>
-<script type='text/javascript'>
-    $("a[data-disqus-identifier='teachercsp_ch16ex5q']").attr('data-disqus-identifier', 'teachercsp_ch16ex5q_' + eBookConfig.course);
-</script>
-</div>
-    </div>
-
-</li>
-<li><div id='ch16ex4t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix the indention in the code below so that it runs correctly.  It should loop and add the current value of <code class="docutils literal"><span class="pre">source</span></code> to <code class="docutils literal"><span class="pre">soFar</span></code> each time through the loop.  It should also print the value of <code class="docutils literal"><span class="pre">soFar</span></code> each time through the loop.</p>
-
-<textarea data-component="activecode" id=ch16ex4q data-lang="python"    data-timelimit=25000   data-audio=''     >
-source = ["This","is","a","list"]
-soFar = []
-for index in range(0,len(source)):
-soFar = [source[index]] + soFar
-print(soFar)
-</textarea>
-</div><div data-component="tab" data-tabname="Answer" >
-<p>Indent lines 4 and 5 as shown below.</p>
-
-<textarea data-component="activecode" id=ch16ex4a data-lang="python"    data-timelimit=25000   data-audio=''     >
-source = ["This","is","a","list"]
-soFar = []
-for index in range(0,len(source)):
-    soFar = [source[index]] + soFar
-    print(soFar)
+<textarea data-component="activecode" id=ch16ex3a data-lang="python"    data-timelimit=25000   data-audio=''     >
+myFirstList = [12,"ape",13]
+print(len(myFirstList))
+print(myFirstList * 3)
+mySecondList = myFirstList + [321.4]
+print(mySecondList)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -571,7 +507,7 @@ for index in range(0,len(source)):
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'cslearn4u';    
+            disqus_shortname = 'teachercsp';    
             disqus_identifier = 'teachercsp_ch16ex3q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch16ex3q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -592,39 +528,25 @@ for index in range(0,len(source)):
     </div>
 
 </li>
-<li><div id='ch16ex5t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Fix 4 syntax errors in the code below.  After the code executes the list <code class="docutils literal"><span class="pre">soFar</span></code> should contain the reverse of the <code class="docutils literal"><span class="pre">source</span></code> list.</p>
+<li><div id='ch16ex4t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix the errors so that it prints &#8220;My name is JohnJohn&#8221; and &#8220;19&#8221;.</p>
 
-<textarea data-component="activecode" id=ch16ex5q data-lang="python"    data-timelimit=25000   data-audio=''     >
-# setup the source list
-source = ["This","is" "a","list"]
-
-# Set the accumulator to the empty list
-soFar = [
-
-# Loop through all the items in the source list
-for index in range(0,len(source))
-
-    # Add the current item in the source and print the current items in soFar
-    soFar = [source[index]] + sofar
-    print(soFar)
+<textarea data-component="activecode" id=ch16ex4q data-lang="python"    data-timelimit=25000   data-audio=''     >
+name = John
+start = "My name is"
+combined = start * (name * 2)
+print(combined)
+print(len(combined)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Add a comma between <code class="docutils literal"><span class="pre">is</span></code> and <code class="docutils literal"><span class="pre">a</span></code> on line 2.  Add a <code class="docutils literal"><span class="pre">]</span></code> at the end of line 5.  Add a <code class="docutils literal"><span class="pre">:</span></code> at the end of line 8.  Change line 11 to <code class="docutils literal"><span class="pre">soFar</span></code>.</p>
+<p>Add quotations around John on line 1. Add a space after &#8220;is&#8221; in line 2. In line 3, change the <code class="docutils literal"><span class="pre">*</span></code> after start to a <code class="docutils literal"><span class="pre">+</span></code>. In line 5 add a <code class="docutils literal"><span class="pre">)</span></code> after combined.</p>
 
-<textarea data-component="activecode" id=ch16ex5a data-lang="python"    data-timelimit=25000   data-audio=''     >
-# setup the source list
-source = ["This","is","a","list"]
-
-# Set the accumulator to the empty list
-soFar = []
-
-# Loop through all the items in the source list
-for index in range(0,len(source)):
-
-    # Add the current item in the source and print the current items in soFar
-    soFar = [source[index]] + soFar
-    print(soFar)
+<textarea data-component="activecode" id=ch16ex4a data-lang="python"    data-timelimit=25000   data-audio=''     >
+name = "John"
+start = "My name is "
+combined = start + (name * 2)
+print(combined)
+print(len(combined))
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -668,27 +590,87 @@ for index in range(0,len(source)):
     </div>
 
 </li>
-<li><div id='ch16ex6t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Change the following code into a function.  It should take the list and return a list of the values at the even indicies.</p>
+<li><div id='ch16ex5t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix 5 syntax errors in the code below so that it runs and prints the contents of <code class="docutils literal"><span class="pre">items</span></code>.</p>
 
-<textarea data-component="activecode" id=ch16ex6q data-lang="python"    data-timelimit=25000   data-audio=''     >
-numbers = [0,1,2,3,4,5,6,7,8,9,10]
-evenList = []
-for index in range(0,len(numbers),2):
-    evenList = evenList + [numbers[index]]
-print(evenList)
+<textarea data-component="activecode" id=ch16ex5q data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+items = [2,4,6 8]
+items[0] = "First item'
+items[1] = items0]
+items[2] = items[2] + 1
+print items
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define a function that takes a list and then call the function and pass in the list.  Print the result.</p>
+<p>Add a <code class="docutils literal"><span class="pre">,</span></code> between 6 and 8 on line 1.  Change the <code class="docutils literal"><span class="pre">'</span></code> to a <code class="docutils literal"><span class="pre">&quot;</span></code> on line 2.  Put a <code class="docutils literal"><span class="pre">[</span></code> before the 0 on line 3.  Add <code class="docutils literal"><span class="pre">(</span></code> before <code class="docutils literal"><span class="pre">items</span></code> and <code class="docutils literal"><span class="pre">)</span></code> after on line 5.</p>
+
+<textarea data-component="activecode" id=ch16ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
+items = [2,4,6,8]
+items[0] = "First item"
+items[1] = items[0]
+items[2] = items[2] + 1
+print(items)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch16ex9q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch16ex9q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch16ex9q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch16ex9q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch16ex9q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch16ex9q" onclick="teachercsp_ch16ex9q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch16ex9q']").attr('data-disqus-identifier', 'teachercsp_ch16ex9q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch16ex6t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>On line 4, add 2 of the 3 lists together so that the code prints &#8220;4&#8221;.</p>
+
+<textarea data-component="activecode" id=ch16ex6q data-lang="python"    data-timelimit=25000   data-audio=''     >
+list1 = [6, "six", "6"]
+list2 = ["apple", "banana", "orange", "grape"]
+list3 = ["hi"]
+newList =
+print(len(newList))
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Add the first and third list together.</p>
 
 <textarea data-component="activecode" id=ch16ex6a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def getEvenIndicesList(numbers):
-    evenList = []
-    for index in range(0,len(numbers),2):
-        evenList = evenList + [numbers[index]]
-    return(evenList)
-
-print(getEvenIndicesList([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+list1 = [6, "six", "6"]
+list2 = ["apple", "banana", "orange", "grape"]
+list3 = ["hi"]
+newList = list1 + list3
+print(len(newList))
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -733,25 +715,28 @@ print(getEvenIndicesList([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
 
 </li>
 <li><div id='ch16ex7t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Change the following into a procedure. It prints a countdown from 5 to 0.  Have it take the starting number for the countdown as a parameter.  Print each value till it gets to 0.</p>
+<p>Fix the indention in the code below so that it runs correctly.  It should loop and add the current value of <code class="docutils literal"><span class="pre">source</span></code> to <code class="docutils literal"><span class="pre">soFar</span></code> each time through the loop.  It should also print the value of <code class="docutils literal"><span class="pre">soFar</span></code> each time through the loop.</p>
 
 <textarea data-component="activecode" id=ch16ex7q data-lang="python"    data-timelimit=25000   data-audio=''     >
-for index in range(5, -1, -1):
-    print(index)
+source = ["This","is","a","list"]
+soFar = []
+for index in range(0,len(source)):
+soFar = [source[index]] + soFar
+print(soFar)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the procedure and call it.  Be sure to pass the number to start the countdown at.</p>
+<p>Indent lines 4 and 5 as shown below.</p>
 
-<textarea data-component="activecode" id=ch16ex7a data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
-def countdown(start):
-    for index in range(start, -1, -1):
-        print(index)
-
-countdown(10)
+<textarea data-component="activecode" id=ch16ex7a data-lang="python"    data-timelimit=25000   data-audio=''     >
+source = ["This","is","a","list"]
+soFar = []
+for index in range(0,len(source)):
+    soFar = [source[index]] + soFar
+    print(soFar)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
-    function teachercsp_ch16ex7q_disqus(source) { 
+    function teachercsp_ch16ex5q_disqus(source) { 
         if (window.DISQUS) {
 
             $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
@@ -760,8 +745,8 @@ countdown(10)
             DISQUS.reset({
                 reload: true,
                 config: function () {
-                    this.page.identifier = 'teachercsp_ch16ex7q_' + eBookConfig.course;
-                    this.page.url = 'http://teachercsp_ch16ex7q_'+eBookConfig.course+'.interactivepython.com/#!';
+                    this.page.identifier = 'teachercsp_ch16ex5q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch16ex5q_'+eBookConfig.course+'.interactivepython.com/#!';
                 }
             });
 
@@ -770,9 +755,9 @@ countdown(10)
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'teachercsp';    
-            disqus_identifier = 'teachercsp_ch16ex7q_' + eBookConfig.course;
-            disqus_url = 'http://teachercsp_ch16ex7q_'+eBookConfig.course+'.interactivepython.com/#!';
+            disqus_shortname = 'cslearn4u';    
+            disqus_identifier = 'teachercsp_ch16ex5q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch16ex5q_'+eBookConfig.course+'.interactivepython.com/#!';
 
             //append the Disqus embed script to HTML
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -783,32 +768,33 @@ countdown(10)
     }
 </script>
 
-<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch16ex7q" onclick="teachercsp_ch16ex7q_disqus(this);">Show Comments</a>
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch16ex5q" onclick="teachercsp_ch16ex5q_disqus(this);">Show Comments</a>
 <script type='text/javascript'>
-    $("a[data-disqus-identifier='teachercsp_ch16ex7q']").attr('data-disqus-identifier', 'teachercsp_ch16ex7q_' + eBookConfig.course);
+    $("a[data-disqus-identifier='teachercsp_ch16ex5q']").attr('data-disqus-identifier', 'teachercsp_ch16ex5q_' + eBookConfig.course);
 </script>
 </div>
     </div>
 
 </li>
 <li><div id='ch16ex8t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write a function that returns the values at the odd indices in a list.  The function should take the number list as a parameter.  If it is passed [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] for example, it should return [1, 3, 5, 7, 9].</p>
+<p>Fix the code so that the code prints &#8220;[&#8216;hihi&#8217;, 0, 0, 4]&#8221; .</p>
 
 <textarea data-component="activecode" id=ch16ex8q data-lang="python"    data-timelimit=25000   data-audio=''     >
-
-
+items = ["hi" 2, 3, 4]
+items[0] = items[0] * items0
+items(1) = items[2] - 3
+items[2] = items[1]
+print(items)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>See the function below.  Be sure to create the function and call it and print the result.</p>
+<p>On line 1, add a <code class="docutils literal"><span class="pre">,</span></code> before &#8220;2&#8221;. On line 2, it should be <code class="docutils literal"><span class="pre">items[0]</span></code> and a <code class="docutils literal"><span class="pre">+</span></code> instead of a <code class="docutils literal"><span class="pre">*</span></code>. On line 3, it should be <code class="docutils literal"><span class="pre">items[1]</span></code>.</p>
 
 <textarea data-component="activecode" id=ch16ex8a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def getOddIndicesList(numbers):
-    evenList = []
-    for index in range(1,len(numbers),2):
-        evenList = evenList + [numbers[index]]
-    return(evenList)
-
-print(getOddIndicesList([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+items = ["hi", 2, 3, 4]
+items[0] = items[0] * items[0]
+items[1] = items[2] - 3
+items[2] = items[1]
+print(items)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -853,28 +839,42 @@ print(getOddIndicesList([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
 
 </li>
 <li><div id='ch16ex9t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write a function that takes a list of numbers and returns the sum of the positive numbers in the list.</p>
+<p>Fix 4 syntax errors in the code below.  After the code executes the list <code class="docutils literal"><span class="pre">soFar</span></code> should contain the reverse of the <code class="docutils literal"><span class="pre">source</span></code> list.</p>
 
 <textarea data-component="activecode" id=ch16ex9q data-lang="python"    data-timelimit=25000   data-audio=''     >
+# setup the source list
+source = ["This","is" "a","list"]
 
+# Set the accumulator to the empty list
+soFar = [
 
+# Loop through all the items in the source list
+for index in range(0,len(source))
+
+    # Add the current item in the source and print the current items in soFar
+    soFar = [source[index]] + sofar
+    print(soFar)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the function as shown below.  Be sure to accumulate and return the sum.  Call the function and print the result.</p>
+<p>Add a comma between <code class="docutils literal"><span class="pre">is</span></code> and <code class="docutils literal"><span class="pre">a</span></code> on line 2.  Add a <code class="docutils literal"><span class="pre">]</span></code> at the end of line 5.  Add a <code class="docutils literal"><span class="pre">:</span></code> at the end of line 8.  Change line 11 to <code class="docutils literal"><span class="pre">soFar</span></code>.</p>
 
 <textarea data-component="activecode" id=ch16ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def sumPos(theList):
-    sum = 0
-    for item in theList:
-        if item >= 0:
-            sum = sum + item
-    return sum
+# setup the source list
+source = ["This","is","a","list"]
 
-print(sumPos([-3, 2, -8, 5, -20, -33, 15]))
+# Set the accumulator to the empty list
+soFar = []
+
+# Loop through all the items in the source list
+for index in range(0,len(source)):
+
+    # Add the current item in the source and print the current items in soFar
+    soFar = [source[index]] + soFar
+    print(soFar)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
-    function teachercsp_ch16ex9q_disqus(source) { 
+    function teachercsp_ch16ex7q_disqus(source) { 
         if (window.DISQUS) {
 
             $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
@@ -883,8 +883,8 @@ print(sumPos([-3, 2, -8, 5, -20, -33, 15]))
             DISQUS.reset({
                 reload: true,
                 config: function () {
-                    this.page.identifier = 'teachercsp_ch16ex9q_' + eBookConfig.course;
-                    this.page.url = 'http://teachercsp_ch16ex9q_'+eBookConfig.course+'.interactivepython.com/#!';
+                    this.page.identifier = 'teachercsp_ch16ex7q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch16ex7q_'+eBookConfig.course+'.interactivepython.com/#!';
                 }
             });
 
@@ -894,8 +894,8 @@ print(sumPos([-3, 2, -8, 5, -20, -33, 15]))
 
             // set Disqus required vars
             disqus_shortname = 'teachercsp';    
-            disqus_identifier = 'teachercsp_ch16ex9q_' + eBookConfig.course;
-            disqus_url = 'http://teachercsp_ch16ex9q_'+eBookConfig.course+'.interactivepython.com/#!';
+            disqus_identifier = 'teachercsp_ch16ex7q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch16ex7q_'+eBookConfig.course+'.interactivepython.com/#!';
 
             //append the Disqus embed script to HTML
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -906,33 +906,47 @@ print(sumPos([-3, 2, -8, 5, -20, -33, 15]))
     }
 </script>
 
-<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch16ex9q" onclick="teachercsp_ch16ex9q_disqus(this);">Show Comments</a>
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch16ex7q" onclick="teachercsp_ch16ex7q_disqus(this);">Show Comments</a>
 <script type='text/javascript'>
-    $("a[data-disqus-identifier='teachercsp_ch16ex9q']").attr('data-disqus-identifier', 'teachercsp_ch16ex9q_' + eBookConfig.course);
+    $("a[data-disqus-identifier='teachercsp_ch16ex7q']").attr('data-disqus-identifier', 'teachercsp_ch16ex7q_' + eBookConfig.course);
 </script>
 </div>
     </div>
 
 </li>
 <li><div id='ch16ex10t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write a function to return the reverse of a list, but with only every other item from the original list starting at the end of the list.  So, if it is passed the list [0,1,2,3,4,5] for example, it should return the list [5, 3, 1].</p>
+<p>The code below currently prints the reverse of a list. Change it so that it prints a mirrored version of the list. It should print &#8220;[&#8216;list&#8217;, &#8216;a&#8217;, &#8216;is&#8217;, &#8216;This&#8217;, &#8216;This&#8217;, &#8216;is&#8217;, &#8216;a&#8217;, &#8216;list&#8217;]&#8221;.</p>
 
 <textarea data-component="activecode" id=ch16ex10q data-lang="python"    data-timelimit=25000   data-audio=''     >
+# setup the source list
+source = ["This","is","a","list"]
 
+# Set the accumulator to the empty list
+soFar = []
 
+# Loop through all the items in the source list
+for index in range(0,len(source)):
+
+    # Add a list with the current item from source to soFar
+    soFar =  [source[index]] + soFar
+print(soFar)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Define the function as shown below.</p>
+<p>In the for loop make <code class="docutils literal"><span class="pre">soFar</span></code> equal to <code class="docutils literal"><span class="pre">[source[index]]</span> <span class="pre">+</span> <span class="pre">soFar</span> <span class="pre">+</span> <span class="pre">[source[index]]</span></code>.</p>
 
 <textarea data-component="activecode" id=ch16ex10a data-lang="python"    data-timelimit=25000   data-audio=''     >
-def reverseEveryOther(theList):
-    newList = []
-    for index in range(len(theList) - 1, -1, -2):
-        newList = newList + [theList[index]]
-    return newList
+# setup the source list
+source = ["This","is","a","list"]
 
+# Set the accumulator to the empty list
+soFar = []
 
-print(reverseEveryOther([0,1,2,3,4,5]))
+# Loop through all the items in the source list
+for index in range(0,len(source)):
+
+    # Add the lists with the current item from source to soFar
+    soFar =  [source[index]] + soFar + [source[index]]
+print(soFar)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -971,6 +985,656 @@ print(reverseEveryOther([0,1,2,3,4,5]))
 <a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch16ex10q" onclick="teachercsp_ch16ex10q_disqus(this);">Show Comments</a>
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch16ex10q']").attr('data-disqus-identifier', 'teachercsp_ch16ex10q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch16ex11t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Change the following code into a function.  It should take the list and return a list of the values at the even indicies.</p>
+
+<textarea data-component="activecode" id=ch16ex11q data-lang="python"    data-timelimit=25000   data-audio=''     >
+numbers = [0,1,2,3,4,5,6,7,8,9,10]
+evenList = []
+for index in range(0,len(numbers),2):
+    evenList = evenList + [numbers[index]]
+print(evenList)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define a function that takes a list and then call the function and pass in the list.  Print the result.</p>
+
+<textarea data-component="activecode" id=ch16ex11a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def getEvenIndicesList(numbers):
+    evenList = []
+    for index in range(0,len(numbers),2):
+        evenList = evenList + [numbers[index]]
+    return(evenList)
+
+print(getEvenIndicesList([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch16ex11q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch16ex11q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch16ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch16ex11q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch16ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch16ex11q" onclick="teachercsp_ch16ex11q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch16ex11q']").attr('data-disqus-identifier', 'teachercsp_ch16ex11q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch16ex12t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>The following code creates and prints a list of even numbers. Change it and add to it so that it creates a list of all multiples of 5 from 0 to 50, inclusive.</p>
+
+<textarea data-component="activecode" id=ch16ex12q data-lang="python"    data-timelimit=25000   data-audio=''     >
+# initialize the variables
+numbers = [0,1,2,3,4,5,6,7,8,9,10]
+evens = []
+
+# loop though every other index
+for index in range(0,len(numbers),2):
+
+    # add the lists
+    evens = evens + [numbers[index]]
+
+# print the result
+print(evens)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Change  <code class="docutils literal"><span class="pre">numbers</span></code> to equal <a href="#id2"><span class="problematic" id="id3">``</span></a>range(1,51,5) and the range in the for loop to (0,len(numbers)).</p>
+
+<textarea data-component="activecode" id=ch16ex12a data-lang="python"    data-timelimit=25000   data-audio=''     >
+# initialize the variables
+numbers = range(1,51,5)
+fives = []
+
+# loop though every index
+for index in range(0,len(numbers)):
+
+    # add the lists
+    fives = fives + [numbers[index]]
+
+# print the result
+print(fives)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch16ex12q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch16ex12q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch16ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch16ex12q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch16ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch16ex12q" onclick="teachercsp_ch16ex12q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch16ex12q']").attr('data-disqus-identifier', 'teachercsp_ch16ex12q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch16ex13t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Change the following into a procedure. It prints a countdown from 5 to 0.  Have it take the starting number for the countdown as a parameter.  Print each value till it gets to 0.</p>
+
+<textarea data-component="activecode" id=ch16ex13q data-lang="python"    data-timelimit=25000   data-audio=''     >
+for index in range(5, -1, -1):
+    print(index)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the procedure and call it.  Be sure to pass the number to start the countdown at.</p>
+
+<textarea data-component="activecode" id=ch16ex13a data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+def countdown(start):
+    for index in range(start, -1, -1):
+        print(index)
+
+countdown(10)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch16ex13q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch16ex13q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch16ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch16ex13q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch16ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch16ex13q" onclick="teachercsp_ch16ex13q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch16ex13q']").attr('data-disqus-identifier', 'teachercsp_ch16ex13q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch16ex14t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix the errors so that the list <code class="docutils literal"><span class="pre">slowly</span></code> prints the same exact list as <code class="docutils literal"><span class="pre">source</span></code></p>
+
+<textarea data-component="activecode" id=ch16ex14q data-lang="python"    data-timelimit=25000   data-audio=''     >
+# initialize the variables
+source = ["This","is","a","list"]
+slowly = []
+
+# loop from the last index to the first (0)
+for index in range(len(source), 1, -1):
+
+# append the lists
+slowly = slowly + [source[index]]
+
+# print the current value of the list
+print(slowly)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>On line 6, the range should be <code class="docutils literal"><span class="pre">(len(source)</span> <span class="pre">-</span> <span class="pre">1,</span> <span class="pre">-1,</span> <span class="pre">-1)</span></code>. Indent line 9 and switch the order the items are added.</p>
+
+<textarea data-component="activecode" id=ch16ex14a data-lang="python"    data-timelimit=25000   data-audio=''     >
+# initialize the variables
+source = ["This","is","a","list"]
+slowly = []
+
+# loop from the last index to the first (0)
+for index in range(len(source) - 1, -1, -1):
+
+    # append the lists
+    slowly = [source[index]] + slowly
+
+    # print the current value of the list
+    print(slowly)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch16ex14q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch16ex14q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch16ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch16ex14q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch16ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch16ex14q" onclick="teachercsp_ch16ex14q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch16ex14q']").attr('data-disqus-identifier', 'teachercsp_ch16ex14q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch16ex15t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a function that returns the values at the odd indices in a list.  The function should take the number list as a parameter.  If it is passed [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] for example, it should return [1, 3, 5, 7, 9].</p>
+
+<textarea data-component="activecode" id=ch16ex15q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>See the function below.  Be sure to create the function and call it and print the result.</p>
+
+<textarea data-component="activecode" id=ch16ex15a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def getOddIndicesList(numbers):
+    evenList = []
+    for index in range(1,len(numbers),2):
+        evenList = evenList + [numbers[index]]
+    return(evenList)
+
+print(getOddIndicesList([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch16ex15q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch16ex15q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch16ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch16ex15q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch16ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch16ex15q" onclick="teachercsp_ch16ex15q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch16ex15q']").attr('data-disqus-identifier', 'teachercsp_ch16ex15q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch16ex16t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a function that takes a list of numbers as a parameter and adds 5 to each number and returns the list.</p>
+
+<textarea data-component="activecode" id=ch16ex16q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>You need to know the index of each item in the list so use the range function in the for loop.</p>
+
+<textarea data-component="activecode" id=ch16ex16a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def listAdder(aList):
+    for x in range(len(aList)):
+        aList[x] = aList[x] + 5
+    return aList
+nums = [1,2,3]
+print(listAdder(nums))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch16ex16q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch16ex16q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch16ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch16ex16q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch16ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch16ex16q" onclick="teachercsp_ch16ex16q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch16ex16q']").attr('data-disqus-identifier', 'teachercsp_ch16ex16q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch16ex17t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a function that takes a list of numbers and returns the sum of the positive numbers in the list.</p>
+
+<textarea data-component="activecode" id=ch16ex17q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the function as shown below.  Be sure to accumulate and return the sum.  Call the function and print the result.</p>
+
+<textarea data-component="activecode" id=ch16ex17a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def sumPos(theList):
+    sum = 0
+    for item in theList:
+        if item >= 0:
+            sum = sum + item
+    return sum
+
+print(sumPos([-3, 2, -8, 5, -20, -33, 15]))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch16ex17q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch16ex17q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch16ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch16ex17q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch16ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch16ex17q" onclick="teachercsp_ch16ex17q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch16ex17q']").attr('data-disqus-identifier', 'teachercsp_ch16ex17q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch16ex18t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a function that takes in a list of numbers as a parameter. The function should calculate the sum of all the positive numbers in the list, the absolute value of the sum of the negative numbers, and return the average of the two sums.</p>
+
+<textarea data-component="activecode" id=ch16ex18q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the function as shown below.</p>
+
+<textarea data-component="activecode" id=ch16ex18a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def aFunction(aList):
+    posSum = 0
+    negSum = 0
+    for x in aList:
+        if x >= 0:
+            posSum = posSum + x
+        else:
+            negSum = negSum + x
+    avg = (posSum + (negSum * -1))/2
+    return avg
+
+nums = [-3,-1,2,4]
+print(aFunction(nums))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch16ex18q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch16ex18q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch16ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch16ex18q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch16ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch16ex18q" onclick="teachercsp_ch16ex18q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch16ex18q']").attr('data-disqus-identifier', 'teachercsp_ch16ex18q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch16ex19t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a function to return the reverse of a list, but with only every other item from the original list starting at the end of the list.  So, if it is passed the list [0,1,2,3,4,5] for example, it should return the list [5, 3, 1].</p>
+
+<textarea data-component="activecode" id=ch16ex19q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the function as shown below.</p>
+
+<textarea data-component="activecode" id=ch16ex19a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def reverseEveryOther(theList):
+    newList = []
+    for index in range(len(theList) - 1, -1, -2):
+        newList = newList + [theList[index]]
+    return newList
+
+
+print(reverseEveryOther([0,1,2,3,4,5]))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch16ex19q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch16ex19q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch16ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch16ex19q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch16ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch16ex19q" onclick="teachercsp_ch16ex19q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch16ex19q']").attr('data-disqus-identifier', 'teachercsp_ch16ex19q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch16ex20t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write a procedure that takes an int as a parameter. The procedure should add every other odd number from 1 to the int parameter (inclusive) into a new list. The procedure should print the new list and the sum of the new list.</p>
+
+<textarea data-component="activecode" id=ch16ex20q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Define the procedure as below.</p>
+
+<textarea data-component="activecode" id=ch16ex20a data-lang="python"    data-timelimit=25000   data-audio=''     >
+def aProcedure(num):
+    newList = []
+    sum = 0
+    for i in range(1, num + 1, 4):
+        newList = newList + [i]
+        sum = sum + i
+    print(newList)
+    print(sum)
+aProcedure(20)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch16ex20q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch16ex20q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch16ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch16ex20q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch16ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch16ex20q" onclick="teachercsp_ch16ex20q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch16ex20q']").attr('data-disqus-identifier', 'teachercsp_ch16ex20q_' + eBookConfig.course);
 </script>
 </div>
     </div>

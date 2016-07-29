@@ -403,22 +403,20 @@ print("Your name is " + name +
 
 </li>
 <li><div id='ch4ex2t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>You will get an error if you try to run the following code.  Fix the code to print correctly without errors.  It should print, &#8220;Your name is Carly and your age is 5.&#8221;</p>
+<p>Fix the syntax errors so it prints &#8220;My name is Sam and I am 12 years old.&#8221;</p>
 
 <textarea data-component="activecode" id=ch4ex2q data-lang="python"    data-timelimit=25000   data-audio=''     >
-age = 5
-name = 'Carly'
-print("Your name is" + name +
-      "and your age is" + age + ".")
+name = Sam
+age = 12
+print("My name is name and I am" + age + "years old".)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change <code class="docutils literal"><span class="pre">age</span></code> to <code class="docutils literal"><span class="pre">str(age)</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">Sam</span></code> must be a string because otherwise it&#8217;s a variable. Age must be converted to a string.</p>
 
 <textarea data-component="activecode" id=ch4ex2a data-lang="python"    data-timelimit=25000   data-audio=''     >
-age = 5
-name = 'Carly'
-print("Your name is " + name +
-      " and your age is " + str(age) + ".")
+name = "Sam"
+age = 12
+print("My name is " + name +" and I am " + str(age) + " years old.")
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -463,22 +461,22 @@ print("Your name is " + name +
 
 </li>
 <li><div id='ch4ex3t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>There are 3 syntax errors in the following code.  Fix it to print correctly without errors.  It will print your name and age.</p>
+<p>You will get an error if you try to run the following code.  Fix the code to print correctly without errors.  It should print, &#8220;Your name is Carly and your age is 5.&#8221;</p>
 
 <textarea data-component="activecode" id=ch4ex3q data-lang="python"    data-timelimit=25000   data-audio=''     >
-age = input("How old are you?")
-name = input ("What is your first name?")
-print ("Your name is " + Name
-       " and you are "  age "years old.")
+age = 5
+name = 'Carly'
+print("Your name is" + name +
+      "and your age is" + age + ".")
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change <code class="docutils literal"><span class="pre">Name</span></code> to <code class="docutils literal"><span class="pre">name</span></code>.  Add a <code class="docutils literal"><span class="pre">+</span></code> at the end of line 3.  Add a <code class="docutils literal"><span class="pre">+</span></code> before and after <code class="docutils literal"><span class="pre">age</span></code> in line 4.</p>
+<p>Change <code class="docutils literal"><span class="pre">age</span></code> to <code class="docutils literal"><span class="pre">str(age)</span></code>.</p>
 
-<textarea data-component="activecode" id=ch4ex3a data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
-age = input("How old are you?")
-name = input ("What is your first name?")
-print ("Your name is " + name +
-       " and you are "  + age + " years old.")
+<textarea data-component="activecode" id=ch4ex3a data-lang="python"    data-timelimit=25000   data-audio=''     >
+age = 5
+name = 'Carly'
+print("Your name is " + name +
+      " and your age is " + str(age) + ".")
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -501,7 +499,7 @@ print ("Your name is " + name +
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'cslearn4u';    
+            disqus_shortname = 'teachercsp';    
             disqus_identifier = 'teachercsp_ch4ex3q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch4ex3q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -523,27 +521,21 @@ print ("Your name is " + name +
 
 </li>
 <li><div id='ch4ex4t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Modify line 6 to print: &#8220;The number of miles you can drive on 25 dollars is 273.97260274.&#8221;</p>
+<p>Using the variables given, modify the print statement to print <code class="docutils literal"><span class="pre">&quot;A</span> <span class="pre">car</span> <span class="pre">travelling</span> <span class="pre">at</span> <span class="pre">70</span> <span class="pre">mph</span> <span class="pre">takes</span> <span class="pre">2</span> <span class="pre">hours</span> <span class="pre">to</span> <span class="pre">go</span> <span class="pre">140</span> <span class="pre">miles.&quot;</span></code></p>
 
 <textarea data-component="activecode" id=ch4ex4q data-lang="python"    data-timelimit=25000   data-audio=''     >
-funds = 25
-milesPerGallon = 40
-pricePerGallon = 3.65
-numGallons = funds / pricePerGallon
-numMiles = milesPerGallon * numGallons
-print(numMiles)
+milesPerHour = 70
+distanceTravelled = 140
+timeTaken = milesPerHour / distanceTravelled
+print(timeTaken)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>See line 6 below.  Be sure to use <code class="docutils literal"><span class="pre">str(num)</span></code> to convert a number to a string.</p>
 
 <textarea data-component="activecode" id=ch4ex4a data-lang="python"    data-timelimit=25000   data-audio=''     >
-funds = 25
-milesPerGallon = 40
-pricePerGallon = 3.65
-numGallons = funds / pricePerGallon
-numMiles = milesPerGallon * numGallons
-print("The number of miles you can drive on " +
-       str(funds) + " dollars is " + str(numMiles) + ".")
+milesPerHour = 70
+distanceTravelled = 140
+timeTaken = milesPerHour / distanceTravelled
+print("A car travelling at " + str(milesPerHour) + " mph takes " + str(timeTaken) + "hours to go " + str(distanceTravelled) + " miles.")
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -588,29 +580,22 @@ print("The number of miles you can drive on " +
 
 </li>
 <li><div id='ch4ex5t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Modify line 6 to print: &#8220;You can order 40.0 wings when you have 5 people who can each spend 4 dollars and wings cost 0.5 each.&#8221;</p>
+<p>There are 3 syntax errors in the following code.  Fix it to print correctly without errors.  It will print your name and age.</p>
 
 <textarea data-component="activecode" id=ch4ex5q data-lang="python"    data-timelimit=25000   data-audio=''     >
-numPeople = 5
-amountPerPerson = 4
-price = 0.5
-total = numPeople * amountPerPerson
-numWings =  total / price
-print(numWings)
+age = input("How old are you?")
+name = input ("What is your first name?")
+print ("Your name is " + Name
+       " and you are "  age "years old.")
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Change line 6 to include strings that explain the value that was calculated.  Be sure to use <code class="docutils literal"><span class="pre">str(num)</span></code> to convert a number to a string.</p>
+<p>Change <code class="docutils literal"><span class="pre">Name</span></code> to <code class="docutils literal"><span class="pre">name</span></code>.  Add a <code class="docutils literal"><span class="pre">+</span></code> at the end of line 3.  Add a <code class="docutils literal"><span class="pre">+</span></code> before and after <code class="docutils literal"><span class="pre">age</span></code> in line 4.</p>
 
-<textarea data-component="activecode" id=ch4ex5a data-lang="python"    data-timelimit=25000   data-audio=''     >
-numPeople = 5
-amountPerPerson = 4
-price = 0.5
-total = numPeople * amountPerPerson
-numWings = total / price
-print("You can order " + str(numWings) + " wings" +
-      " when you have " + str(numPeople) + " people" +
-      " who can each spend " + str(amountPerPerson) + " dollars" +
-      " and wings cost " + str(price) + " each.")
+<textarea data-component="activecode" id=ch4ex5a data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
+age = input("How old are you?")
+name = input ("What is your first name?")
+print ("Your name is " + name +
+       " and you are "  + age + " years old.")
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -633,7 +618,7 @@ print("You can order " + str(numWings) + " wings" +
             $('<div id="disqus_thread"></div>').insertAfter(source);
 
             // set Disqus required vars
-            disqus_shortname = 'teachercsp';    
+            disqus_shortname = 'cslearn4u';    
             disqus_identifier = 'teachercsp_ch4ex5q_' + eBookConfig.course;
             disqus_url = 'http://teachercsp_ch4ex5q_'+eBookConfig.course+'.interactivepython.com/#!';
 
@@ -655,28 +640,20 @@ print("You can order " + str(numWings) + " wings" +
 
 </li>
 <li><div id='ch4ex6t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Combine lines 4 and 5 in the code below to print: &#8220;270 is 4.0 hours and 30 minutes.&#8221;</p>
+<p>Fix the syntax errors so that the code prints &#8220;The apple costs $5&#8221;.</p>
 
 <textarea data-component="activecode" id=ch4ex6q data-lang="python"    data-timelimit=25000   data-audio=''     >
-totalMinutes = 270
-numMinutes = totalMinutes % 60
-numHours = (totalMinutes - numMinutes) / 60
-print(numHours)
-print(numMinutes)
+fruit = apple
+price = 5
+print("The" fruit "costs $" + "price")
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Combine lines 4 and 5 and use <code class="docutils literal"><span class="pre">+</span></code> to append strings.  Use <code class="docutils literal"><span class="pre">str(num)</span></code> to convert a number to a string so that it can be appended.</p>
-<blockquote>
-<div>
+
 <textarea data-component="activecode" id=ch4ex6a data-lang="python"    data-timelimit=25000   data-audio=''     >
-totalMinutes = 270
-numMinutes = totalMinutes % 60
-numHours = (totalMinutes - numMinutes) / 60
-print(str(totalMinutes) + " is " +
-      str(numHours) + " hours and " +
-      str(numMinutes) + " minutes.")
+fruit = apple
+price = 5
+print("The " + fruit + " costs $" + str(price))
 </textarea>
-</div></blockquote>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
     function teachercsp_ch4ex6q_disqus(source) { 
@@ -720,24 +697,27 @@ print(str(totalMinutes) + " is " +
 
 </li>
 <li><div id='ch4ex7t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Complete the calculations on lines 2 and 4 and enter the items to be printed on line 5 to print the number of miles you can drive if you have a 10 gallon gas tank and are down to a quarter of a tank of gas and your car gets 32 miles per gallon.  It should print: &#8220;You can go 80.0 miles.&#8221;</p>
+<p>Modify line 6 to print: &#8220;The number of miles you can drive on 25 dollars is 273.97260274.&#8221;</p>
 
 <textarea data-component="activecode" id=ch4ex7q data-lang="python"    data-timelimit=25000   data-audio=''     >
-tankCapacity = 10
-numGallons =
-milesPerGallon = 32
-numMiles =
-print()
+funds = 25
+milesPerGallon = 40
+pricePerGallon = 3.65
+numGallons = funds / pricePerGallon
+numMiles = milesPerGallon * numGallons
+print(numMiles)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Calculate <code class="docutils literal"><span class="pre">numGallons</span></code> as <code class="docutils literal"><span class="pre">tankCapacity</span> <span class="pre">*</span> <span class="pre">0.25</span></code>.  Calculate <code class="docutils literal"><span class="pre">numMiles</span></code> as <code class="docutils literal"><span class="pre">numGallons</span> <span class="pre">*</span> <span class="pre">milesPerGallon</span></code>.  Use concatenation to print out an explanation and the value.  Be sure to use <code class="docutils literal"><span class="pre">str(num)</span></code> to convert a number to a string before you concatenate it.</p>
+<p>See line 6 below.  Be sure to use <code class="docutils literal"><span class="pre">str(num)</span></code> to convert a number to a string.</p>
 
 <textarea data-component="activecode" id=ch4ex7a data-lang="python"    data-timelimit=25000   data-audio=''     >
-tankCapacity = 10
-numGallons = tankCapacity * 0.25
-milesPerGallon = 32
-numMiles = numGallons * milesPerGallon
-print("You can go " + str(numMiles) + " miles.")
+funds = 25
+milesPerGallon = 40
+pricePerGallon = 3.65
+numGallons = funds / pricePerGallon
+numMiles = milesPerGallon * numGallons
+print("The number of miles you can drive on " +
+       str(funds) + " dollars is " + str(numMiles) + ".")
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -782,19 +762,20 @@ print("You can go " + str(numMiles) + " miles.")
 
 </li>
 <li><div id='ch4ex8t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write code to get the name of a color from the user using the <code class="docutils literal"><span class="pre">input</span></code> function. Next convert the name of the color to all lowercase letters and print it.</p>
+<p>Complete the code so that only &#8220;giant alligator&#8221; is printed.</p>
 
 <textarea data-component="activecode" id=ch4ex8q data-lang="python"    data-timelimit=25000   data-audio=''     >
-
-
+sentence = "There is a giant alligator over there."
+s1 =
+print(s1)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Use <code class="docutils literal"><span class="pre">input(&quot;message&quot;)</span></code> to get the color.  Use the <code class="docutils literal"><span class="pre">lower()</span></code> function to get the string as all lowercase letters.</p>
+<p>You only want the substring from character 11 to character 26, but remember the stop sequence isn&#8217;t inclusive.</p>
 
 <textarea data-component="activecode" id=ch4ex8a data-lang="python"    data-timelimit=25000   data-audio=''     >
-color = input("Enter an color.")
-colorLower = color.lower()
-print("The color is " + colorLower)
+sentence = "There is a giant alligator over there."
+s1 = sentence[11:27]
+print(s1)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -839,23 +820,29 @@ print("The color is " + colorLower)
 
 </li>
 <li><div id='ch4ex9t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write the code below to calculate and print how many months it will take to save $200 if you earn $20 a week.  It should print: &#8220;It will take 2.5 months to earn 200 if you make 20 dollars a week.&#8221;</p>
+<p>Modify line 6 to print: &#8220;You can order 40.0 wings when you have 5 people who can each spend 4 dollars and wings cost 0.5 each.&#8221;</p>
 
 <textarea data-component="activecode" id=ch4ex9q data-lang="python"    data-timelimit=25000   data-audio=''     >
-
-
+numPeople = 5
+amountPerPerson = 4
+price = 0.5
+total = numPeople * amountPerPerson
+numWings =  total / price
+print(numWings)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Name each of the values.  Calculate the <code class="docutils literal"><span class="pre">totalWeeks</span></code> it will take and the <code class="docutils literal"><span class="pre">months</span></code> and print the information.</p>
+<p>Change line 6 to include strings that explain the value that was calculated.  Be sure to use <code class="docutils literal"><span class="pre">str(num)</span></code> to convert a number to a string.</p>
 
 <textarea data-component="activecode" id=ch4ex9a data-lang="python"    data-timelimit=25000   data-audio=''     >
-goal = 200
-weeklyEarning = 20
-totalWeeks = goal / weeklyEarning
-months = totalWeeks / 4
-print("It will take " + str(months) + " months to earn " +
-       str(goal) + " if you make " + str(weeklyEarning) +
-       " dollars a week.")
+numPeople = 5
+amountPerPerson = 4
+price = 0.5
+total = numPeople * amountPerPerson
+numWings = total / price
+print("You can order " + str(numWings) + " wings" +
+      " when you have " + str(numPeople) + " people" +
+      " who can each spend " + str(amountPerPerson) + " dollars" +
+      " and wings cost " + str(price) + " each.")
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -900,24 +887,20 @@ print("It will take " + str(months) + " months to earn " +
 
 </li>
 <li><div id='ch4ex10t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
-<p>Write code below to get at least 3 values from the user using the <code class="docutils literal"><span class="pre">input</span></code> function and output a mad lib (which will use the input to tell a silly story).</p>
+<p>Fix the code so that only &#8220;meow&#8221; is printed.</p>
 
 <textarea data-component="activecode" id=ch4ex10q data-lang="python"    data-timelimit=25000   data-audio=''     >
-
-
+sentence = "The cat goes meow."
+s2 = [16:13]sentence
+print(s2)
 </textarea>
 </div><div data-component="tab" data-tabname="Answer" >
-<p>Use <code class="docutils literal"><span class="pre">input(&quot;message&quot;)</span></code> to get the input.  Use string concatenation to print the mad lib.</p>
+<p>Change line 2 to the proper syntax order for getting a substring, and change the start-stop bounds to 13 to 17.</p>
 
 <textarea data-component="activecode" id=ch4ex10a data-lang="python"    data-timelimit=25000   data-audio=''     >
-place = input("Enter the name of a place.")
-verb = input("Enter a verb.")
-action = input("Enter an action.")
-color = input("Enter your favorite color.")
-animal = input("What is your favorite animal?")
-print("Once upon a time in " + place + ", I was " +
-      verb + "ing and I " + action + " because a " +
-      color + " " + animal + " was also " + verb + "ing.")
+sentence = "The cat goes meow."
+s2 = sentence[13:17]
+print(s2)
 </textarea>
 </div><div data-component="tab" data-tabname="Discussion" >
 <script type="text/javascript">
@@ -956,6 +939,609 @@ print("Once upon a time in " + place + ", I was " +
 <a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch4ex10q" onclick="teachercsp_ch4ex10q_disqus(this);">Show Comments</a>
 <script type='text/javascript'>
     $("a[data-disqus-identifier='teachercsp_ch4ex10q']").attr('data-disqus-identifier', 'teachercsp_ch4ex10q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch4ex11t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Combine lines 4 and 5 in the code below to print: &#8220;270 is 4.0 hours and 30 minutes.&#8221;</p>
+
+<textarea data-component="activecode" id=ch4ex11q data-lang="python"    data-timelimit=25000   data-audio=''     >
+totalMinutes = 270
+numMinutes = totalMinutes % 60
+numHours = (totalMinutes - numMinutes) / 60
+print(numHours)
+print(numMinutes)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Combine lines 4 and 5 and use <code class="docutils literal"><span class="pre">+</span></code> to append strings.  Use <code class="docutils literal"><span class="pre">str(num)</span></code> to convert a number to a string so that it can be appended.</p>
+<blockquote>
+<div>
+<textarea data-component="activecode" id=ch4ex11a data-lang="python"    data-timelimit=25000   data-audio=''     >
+totalMinutes = 270
+numMinutes = totalMinutes % 60
+numHours = (totalMinutes - numMinutes) / 60
+print(str(totalMinutes) + " is " +
+      str(numHours) + " hours and " +
+      str(numMinutes) + " minutes.")
+</textarea>
+</div></blockquote>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch4ex11q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch4ex11q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch4ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch4ex11q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch4ex11q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch4ex11q" onclick="teachercsp_ch4ex11q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch4ex11q']").attr('data-disqus-identifier', 'teachercsp_ch4ex11q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch4ex12t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Complete the code on lines 3 and 4 so that it prints &#8220;2&#8221; and then &#8220;22&#8221;.</p>
+
+<textarea data-component="activecode" id=ch4ex12q data-lang="python"    data-timelimit=25000   data-audio=''     >
+sentence = "This is his wish."
+sentence2 = "His only wish is this."
+pos =  .find("is")
+length = len( )
+print(length)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Line 3 should find &#8220;is&#8221; in sentence and line 4 should find the length of sentence 2</p>
+
+<textarea data-component="activecode" id=ch4ex12a data-lang="python"    data-timelimit=25000   data-audio=''     >
+sentence = "This is his wish."
+sentence2 = "His only wish is this."
+pos = sentence.find("is")
+length = len(sentence2)
+print(length)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch4ex12q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch4ex12q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch4ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch4ex12q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch4ex12q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch4ex12q" onclick="teachercsp_ch4ex12q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch4ex12q']").attr('data-disqus-identifier', 'teachercsp_ch4ex12q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch4ex13t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Complete the calculations on lines 2 and 4 and enter the items to be printed on line 5 to print the number of miles you can drive if you have a 10 gallon gas tank and are down to a quarter of a tank of gas and your car gets 32 miles per gallon.  It should print: &#8220;You can go 80.0 miles.&#8221;</p>
+
+<textarea data-component="activecode" id=ch4ex13q data-lang="python"    data-timelimit=25000   data-audio=''     >
+tankCapacity = 10
+numGallons =
+milesPerGallon = 32
+numMiles =
+print()
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Calculate <code class="docutils literal"><span class="pre">numGallons</span></code> as <code class="docutils literal"><span class="pre">tankCapacity</span> <span class="pre">*</span> <span class="pre">0.25</span></code>.  Calculate <code class="docutils literal"><span class="pre">numMiles</span></code> as <code class="docutils literal"><span class="pre">numGallons</span> <span class="pre">*</span> <span class="pre">milesPerGallon</span></code>.  Use concatenation to print out an explanation and the value.  Be sure to use <code class="docutils literal"><span class="pre">str(num)</span></code> to convert a number to a string before you concatenate it.</p>
+
+<textarea data-component="activecode" id=ch4ex13a data-lang="python"    data-timelimit=25000   data-audio=''     >
+tankCapacity = 10
+numGallons = tankCapacity * 0.25
+milesPerGallon = 32
+numMiles = numGallons * milesPerGallon
+print("You can go " + str(numMiles) + " miles.")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch4ex13q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch4ex13q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch4ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch4ex13q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch4ex13q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch4ex13q" onclick="teachercsp_ch4ex13q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch4ex13q']").attr('data-disqus-identifier', 'teachercsp_ch4ex13q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch4ex14t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Fix line 2 so that it prints &#8220;Hi&#8221; instead of &#8220;hi&#8221;.</p>
+
+<textarea data-component="activecode" id=ch4ex14q data-lang="python"    data-timelimit=25000   data-audio=''     >
+s1 = "hi"
+s1.capitalize()
+print(s1)
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>You have to assign <code class="docutils literal"><span class="pre">s1.capitalize()</span></code> to <code class="docutils literal"><span class="pre">s1</span></code> to reflect the change</p>
+
+<textarea data-component="activecode" id=ch4ex14a data-lang="python"    data-timelimit=25000   data-audio=''     >
+s1 = "hi"
+s1 = s1.capitalize()
+print(s1)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch4ex14q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch4ex14q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch4ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch4ex14q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch4ex14q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch4ex14q" onclick="teachercsp_ch4ex14q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch4ex14q']").attr('data-disqus-identifier', 'teachercsp_ch4ex14q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch4ex15t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write code to get the name of a color from the user using the <code class="docutils literal"><span class="pre">input</span></code> function. Next convert the name of the color to all lowercase letters and print it.</p>
+
+<textarea data-component="activecode" id=ch4ex15q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Use <code class="docutils literal"><span class="pre">input(&quot;message&quot;)</span></code> to get the color.  Use the <code class="docutils literal"><span class="pre">lower()</span></code> function to get the string as all lowercase letters.</p>
+
+<textarea data-component="activecode" id=ch4ex15a data-lang="python"    data-timelimit=25000   data-audio=''     >
+color = input("Enter an color.")
+colorLower = color.lower()
+print("The color is " + colorLower)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch4ex15q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch4ex15q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch4ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch4ex15q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch4ex15q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch4ex15q" onclick="teachercsp_ch4ex15q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch4ex15q']").attr('data-disqus-identifier', 'teachercsp_ch4ex15q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch4ex16t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write code to get the input of a user’s first name, then get only the first letter of their name, and print that letter lowercase.</p>
+
+<textarea data-component="activecode" id=ch4ex16q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Get the user input and get the substring of only the first character.</p>
+
+<textarea data-component="activecode" id=ch4ex16a data-lang="python"    data-timelimit=25000   data-audio=''     >
+name = input("What is your first name")
+firstInitial = name[0:1]
+print(firstInitial)
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch4ex16q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch4ex16q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch4ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch4ex16q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch4ex16q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch4ex16q" onclick="teachercsp_ch4ex16q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch4ex16q']").attr('data-disqus-identifier', 'teachercsp_ch4ex16q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch4ex17t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write the code below to calculate and print how many months it will take to save $200 if you earn $20 a week.  It should print: &#8220;It will take 2.5 months to earn 200 if you make 20 dollars a week.&#8221;</p>
+
+<textarea data-component="activecode" id=ch4ex17q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Name each of the values.  Calculate the <code class="docutils literal"><span class="pre">totalWeeks</span></code> it will take and the <code class="docutils literal"><span class="pre">months</span></code> and print the information.</p>
+
+<textarea data-component="activecode" id=ch4ex17a data-lang="python"    data-timelimit=25000   data-audio=''     >
+goal = 200
+weeklyEarning = 20
+totalWeeks = goal / weeklyEarning
+months = totalWeeks / 4
+print("It will take " + str(months) + " months to earn " +
+       str(goal) + " if you make " + str(weeklyEarning) +
+       " dollars a week.")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch4ex17q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch4ex17q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch4ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch4ex17q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch4ex17q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch4ex17q" onclick="teachercsp_ch4ex17q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch4ex17q']").attr('data-disqus-identifier', 'teachercsp_ch4ex17q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch4ex18t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write code to print out the statement &#8220;Hi my name is Bob and I am 2&#8221; using only string methods or string slicing. You must get every part of the new string from the given strings.</p>
+
+<textarea data-component="activecode" id=ch4ex18q data-lang="python"    data-timelimit=25000   data-audio=''     >
+s1 = "hi"
+s2 = "My namesake is Bob, and he and I love to eat ham."
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Use string slicing to get all the words and get the length of <code class="docutils literal"><span class="pre">s1</span></code> to get the number 2. Use methods like capitalize() and lower() to convert cases.</p>
+
+<textarea data-component="activecode" id=ch4ex18a data-lang="python"    data-timelimit=25000   data-audio=''     >
+s3 = s1.capitalize()
+s4 = s2[0:7].lower()
+s5 = s2[12:18]
+s6 = s2[31:33]
+s7 = s2[46:48]
+s8 = len(s1)
+print(s3 + " " + s4 + " " + s5 + " " + s6 + s7 + " " + str(s8))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch4ex18q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch4ex18q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch4ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch4ex18q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch4ex18q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch4ex18q" onclick="teachercsp_ch4ex18q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch4ex18q']").attr('data-disqus-identifier', 'teachercsp_ch4ex18q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch4ex19t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write code below to get at least 3 values from the user using the <code class="docutils literal"><span class="pre">input</span></code> function and output a mad lib (which will use the input to tell a silly story).</p>
+
+<textarea data-component="activecode" id=ch4ex19q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Use <code class="docutils literal"><span class="pre">input(&quot;message&quot;)</span></code> to get the input.  Use string concatenation to print the mad lib.</p>
+
+<textarea data-component="activecode" id=ch4ex19a data-lang="python"    data-timelimit=25000   data-audio=''     >
+place = input("Enter the name of a place.")
+verb = input("Enter a verb.")
+action = input("Enter an action.")
+color = input("Enter your favorite color.")
+animal = input("What is your favorite animal?")
+print("Once upon a time in " + place + ", I was " +
+      verb + "ing and I " + action + " because a " +
+      color + " " + animal + " was also " + verb + "ing.")
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch4ex19q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch4ex19q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch4ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch4ex19q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch4ex19q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch4ex19q" onclick="teachercsp_ch4ex19q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch4ex19q']").attr('data-disqus-identifier', 'teachercsp_ch4ex19q_' + eBookConfig.course);
+</script>
+</div>
+    </div>
+
+</li>
+<li><div id='ch4ex20t' data-component="tabbedStuff" ><div data-component="tab" data-tabname="Question" >
+<p>Write code that gets user input and print a string that states their input in all lowercase and gives the length of their string.</p>
+
+<textarea data-component="activecode" id=ch4ex20q data-lang="python"    data-timelimit=25000   data-audio=''     >
+
+
+</textarea>
+</div><div data-component="tab" data-tabname="Answer" >
+<p>Use the lower and length methods on the user input. Don&#8217;t forget to convert the length to a string.</p>
+
+<textarea data-component="activecode" id=ch4ex20a data-lang="python"    data-timelimit=25000   data-audio=''     >
+user = input("Type a sentence")
+user = user.lower()
+length = length(user)
+print("The length of " + user + " is" + str(length))
+</textarea>
+</div><div data-component="tab" data-tabname="Discussion" >
+<script type="text/javascript">
+    function teachercsp_ch4ex20q_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'teachercsp_ch4ex20q_' + eBookConfig.course;
+                    this.page.url = 'http://teachercsp_ch4ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'teachercsp';    
+            disqus_identifier = 'teachercsp_ch4ex20q_' + eBookConfig.course;
+            disqus_url = 'http://teachercsp_ch4ex20q_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="teachercsp_ch4ex20q" onclick="teachercsp_ch4ex20q_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='teachercsp_ch4ex20q']").attr('data-disqus-identifier', 'teachercsp_ch4ex20q_' + eBookConfig.course);
 </script>
 </div>
     </div>

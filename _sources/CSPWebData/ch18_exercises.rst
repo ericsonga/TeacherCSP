@@ -1073,27 +1073,35 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
         .. tab:: Question
 
-           Write a function that finds the maximum value in a list.  Pass in the list and return the maximum value.  Call the function and print the result.
+           Write a function that returns the average PM 2.5 of cities that start with "L".
 
            .. activecode::  ch18ex10q
                 :nocodelens:
 
         .. tab:: Answer
 
-            Write the function as shown below.  Be sure to set the initial value to something from the list.  Call the function and print the result.
+            Write the function as shown below.
 
             .. activecode::  ch18ex10a
                 :nocodelens:
 
-                def findMax(theList):
-                    max = theList[0]
-                    for value in theList:
-                        if value > max:
-                            max = value
-                    return max
+                def averagePM(file)
+                    # read all the lines
+                    inFile = open(file,"r")
+                    lines = inFile.readlines()
+                    inFile.close()
+                    sum = 0
+                    count = 0
+                    # loop through the lines
+                    for line in lines:
+                        values = line.split(",")
+                        if line[0] == "L":
+                            pm = float(values[2])
+                            sum = sum + pm
+                            count += 1
+                    return sum / count
 
-                print(findMax([-30, 20, -50, 100, -100]))
-
+                print(averagePM("uspoll.txt"))
 
         .. tab:: Discussion
 
@@ -1549,7 +1557,7 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
                             maxChange = change
 
                     print(values[0] + " had the max change of " + str(maxChange))
-                    
+
                 firstDayChange("stocks.txt")
 
         .. tab:: Discussion

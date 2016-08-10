@@ -231,7 +231,7 @@ Chapter 12 Exercises
             .. activecode::  ch12ex6q
                 :nocodelens:
 
-                number = 2
+                x = 2
                 if x < 2:
                     print("Hello")
                 if x > 2:
@@ -244,7 +244,7 @@ Chapter 12 Exercises
             .. activecode::  ch12ex6a
                 :nocodelens:
 
-                number = 2
+                x = 2
                 if x < 2:
                     print("Hello")
                 if x >= 2:
@@ -304,6 +304,8 @@ Chapter 12 Exercises
                 x = 8
                 if x < 8 or x > 8:
                     print("This is not 8")
+                else:
+                    print("This is 8")
 
         .. tab:: Answer
 
@@ -315,6 +317,8 @@ Chapter 12 Exercises
                 x = 8
                 if x != 8:
                     print("This is not 8")
+                else:
+                    print("This is 8")
 
         .. tab:: Discussion
 
@@ -364,7 +368,7 @@ Chapter 12 Exercises
 
         .. tab:: Question
 
-            Complete the conditional and fix the errors so that it prints "Good job" when the number is between 1 and 10 (inclusive) or is 15.
+            Complete the conditional and fix the errors so that it prints "Good job" when the number is between 1 and 10 (inclusive) or is 15 and "Fail" when it is not.
 
             .. activecode::  ch12ex10q
                 :nocodelens:
@@ -381,8 +385,10 @@ Chapter 12 Exercises
                 :nocodelens:
 
                 x = 8
-                if (x >= 1 and x <= 1) or x == 15:
+                if (x >= 1 and x <= 10) or x == 15:
                     print("Good job")
+                else:
+                    print("Fail")
 
         .. tab:: Discussion
 
@@ -708,7 +714,9 @@ Chapter 12 Exercises
                         print("You have enough money")
                     else:
                         print("Get more money")
-
+		
+		aProcedure(10, 20)
+		
         .. tab:: Discussion
 
             .. disqus::

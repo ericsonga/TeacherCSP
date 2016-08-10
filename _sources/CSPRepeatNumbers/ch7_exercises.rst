@@ -381,7 +381,7 @@ Chapter 7 Exercises
 
                 numbers = range(1, 11)
                 for number in numbers:
-                	numString = number
+                	numString = str(number)
                 	square = str(number * number)
                 	print(numString + " * " + numString + " = " + square)
 
@@ -461,11 +461,11 @@ Chapter 7 Exercises
                 :nocodelens:
 
                 def factorial(n):
-            	product = 1
-            	numbers = range(1, n+1)
-            	for number in numbers:
-            		product = product * number
-            	return product
+            	    product = 1
+            	    numbers = range(1, n+1)
+            	    for number in numbers:
+            	  	product = product * number
+            	    return product
                 print(factorial(5))
 
         .. tab:: Discussion
@@ -542,7 +542,7 @@ Chapter 7 Exercises
                 numbers = range(1,20,2)
                 for number in numbers:
                   	sum = sum + number
-                average = sum / len(numbers)
+                average = int(sum / len(numbers))
                 product = 1
                 numbers2 = range(1,101, average)
                 for number in numbers2:
@@ -689,7 +689,7 @@ Chapter 7 Exercises
                 	for number in numbers:
                 		sum = sum + number
                 		product = product * number
-                	average = (sum + porduct) / 2
+                	average = (sum + product) / 2
                 	return average
                 print(aFunc(1, 10))
 
@@ -757,7 +757,7 @@ Chapter 7 Exercises
                 	product = 1
                 	sum = 0
                 	for n in evens:
-                		product = produt * n
+                		product = product * n
                 	for n in odds:
                 		sum = sum + n
                 	difference = product - sum

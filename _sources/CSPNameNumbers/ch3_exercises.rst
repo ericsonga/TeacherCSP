@@ -70,7 +70,8 @@ Chapter 3 Exercises
                 print((7 # 2) # 10 == 35)
                 print(2 # 4 == 0.5)
                 print(5 # 2 # 3 == -1)
-                print(3 # 2 # 1 = 7)
+                print(3 # 2 # 1 == 7)
+                
         .. tab:: Answer
 
             .. activecode:: ch3ex2a
@@ -80,7 +81,7 @@ Chapter 3 Exercises
                 print((7 / 2) * 10 == 35)
                 print(2 / 4 == 0.5)
                 print(5 - 2 * 3 == -1)
-                print(3 * 2 + 1 = 7)
+                print(3 * 2 + 1 == 7)
 
         .. tab:: Discussion
 
@@ -617,6 +618,8 @@ Chapter 3 Exercises
                 numHours = totalDays * 24
                 numMinutes = numHours * 60
                 numSeconds = numMinutes * 60
+                print(numMinutes)
+                print(numSeconds)
 
         .. tab:: Discussion
 

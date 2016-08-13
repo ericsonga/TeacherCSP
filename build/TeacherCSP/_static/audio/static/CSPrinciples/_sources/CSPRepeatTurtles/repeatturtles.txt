@@ -1,0 +1,256 @@
+..  Copyright (C)  Mark Guzdial, Barbara Ericson, Briana Morrison
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3 or
+    any later version published by the Free Software Foundation; with
+    Invariant Sections being Forward, Prefaces, and Contributor List,
+    no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license
+    is included in the section entitled "GNU Free Documentation License".
+
+.. |bigteachernote| image:: Figures/apple.jpg
+    :width: 50px
+    :align: top
+    :alt: teacher note
+    
+.. 	qnum::
+	:start: 1
+	:prefix: csp-10-
+
+Using Repetition with Turtles
+===============================
+
+**Learning Objectives:**:
+
+- Using a ``for`` loop to repeat steps with turtles.
+- Generalizing how to draw a polygon.
+
+..	index::
+	pair: statements; for
+
+We already made turtles draw squares.  We told our turtle to go forward and turn right four times, but we don't *explicitly* say "four times."  We can tell the computer to do something explicitly for a certain number of times by using a ``for`` loop.
+
+
+.. activecode:: Turtle_For
+    :tour_1: "Lines of code"; 1: tR1-line1; 2: tR1-line2; 3: tR1-line3; 4: tR1-line4; 5: tR1-line5; 6: tR1-line6; 7: tR1-line7;
+	
+    from turtle import *	# use the turtle library
+    space = Screen()   		# create a turtle space
+    alisha = Turtle()  		# create a turtle named alisha
+    alisha.setheading(90)  	# point due north
+    for sides in [1,2,3,4]:	# repeat the indented lines 4 times
+      alisha.forward(100)        	# move forward by 100 units
+      alisha.right(90)           	# turn by 90 degrees
+
+.. mchoicemf:: 10-Turtle_For_Q1
+   :answer_a: [0,1,2,3]
+   :answer_b: [0,1,2]
+   :answer_c: [2,3,4,5]
+   :answer_d: [1,2,3,4,5]
+   :correct: b
+   :feedback_a: This still has four sides -- they are just numbered differently.
+   :feedback_b: This would only draw 3 side since there are only 3 items in the list.
+   :feedback_c: This still has four sides -- they are just numbered differently.
+   :feedback_d: This <i>will</i> draw a square. The turtle will just go on to trace the first side twice.
+
+   The numbers in the list ``[1,2,3,4]`` are not important.  It's the fact that there are *four* items in the list that is important.  Only one of these choices does *not* make a square.  Which one?  (It's not cheating to actually try each of them and run the program each time!)
+   
+.. parsonsprob:: 10_Rectangle
+
+   The following program uses a turtle to draw a rectangle as shown to the left, <img src="../_static/TurtleRect.png" width="150" align="left" hspace="10" vspace="5" /> but the lines are mixed up.  The program should do all necessary set-up and create the turtle.  After that, iterate (loop) 2 times, and each time through the loop the turtle should go forward 175 pixels, turn right 90 degrees, go forward 150 pixels, and turn right 90 degrees.  After the loop, set the window to close when the user clicks in it.<br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order with the correct indention.  Click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or are incorrectly indented.</p>  
+   -----
+   from turtle import *      
+   =====   
+   space = Screen()
+   carlos = Turtle()
+   =====
+   carlos.setheading(90)
+   =====
+   # repeat 2 times
+   for i in [1,2]:  
+   =====   
+     carlos.forward(175)
+   =====
+     carlos.right(90)
+   =====  
+     carlos.forward(150)
+     carlos.right(90)
+   
+Since it doesn't matter what's in the list, just as long as there are *four* items, there is a special way of writing that loop.  We use a ``range`` function. 
+
+.. activecode:: Turtle_For_Range
+  :tour_1: "Line-by-line tour"; 1: tR2-line1; 2: tR2-line2; 3: tR2-line3; 4: tR2-line4; 7: tR2-line7; 8: tR2-line8; 9: tR2-line9;
+ 
+  from turtle import *		# use the turtle library
+  space = Screen()   		# create a turtle space
+  marcus = Turtle()  		# create a turtle named marcus
+  marcus.setheading(90)		# point due north
+  
+  # Now make a square
+  for sides in range(4):	# repeat the indented lines 4 times
+    marcus.forward(100)      		# move forward by 100 units
+    marcus.right(90)          		# turn by 90 degrees
+
+
+The ``range`` function returns a value so that the *for* loop executes that many times.  This makes the turtle go forward and turn right 90 degrees *four* times.
+
+.. |turtlegeometry| image:: Figures/turtle-geometry.jpg
+    :width: 200px
+    :align: top
+    :alt: teachernote
+
+
+|bigteachernote| Teacher Note: Turtle Geometry
+===============================================
+The turtle is actually useful for exploring a wide variety of ideas in geometry.  The book `Turtle Geometry <http://www.amazon.com/Turtle-Geometry-Mathematics-Artificial-Intelligence/dp/0262510375>`_ does a wonderful job of showing how turtles can be used to explore a wide variety of geometric, mathematical, and scientific ideas (e.g., using turtles to model insect behavior).  The example **pattern** below is drawn from that book. 
+
+.. figure:: Figures/turtle-geometry.jpg
+    :width: 200px
+    :align: center
+    :alt: a scan of the cover of the book about turtle geometry
+    :figclass: align-center
+
+    Figure 1: A scan of Mark's copy of the book
+
+
+Total Turtle Trip Theorem
+===========================
+
+That last piece of code is actually a **pattern** for a wide variety of geometric shapes.  Here's a triangle.  It may not be obvious why we turn 120 in this program, but it will be soon.
+
+.. activecode:: Turtle_Triangle
+    :tour_1: "Lines of code"; 1: tR3-line1; 2: tR3-line2; 3: tR3-line3; 4: tR3-line4; 5: tR3-line5; 6: tR3-line6; 7: tR3-line7;
+  
+    from turtle import *   	# use the turtle library
+    space = Screen()    	# create a turtle space
+    avery = Turtle()   		# create a turtle named avery
+    avery.setheading(90)   	# point due north
+    for sides in range(3):	# repeat the indented lines 3 times
+      avery.forward(100)    	# move forward by 100 units
+      avery.right(120)         	# turn by 120 degrees
+
+And here's a pentagon.
+
+.. activecode:: Turtle_Pentagon
+    :tour_1: "Lines of code"; 1: tR3-line1; 2: tR3-line2; 3: tR4-line3; 4: tR4-line4; 5: tR4-line5; 6: tR4-line6; 7: tR4-line7;
+	
+    from turtle import *   	# use the turtle library
+    space = Screen()    	# create a turtle space
+    will = Turtle()   		# create a turtle named will
+    will.setheading(90)    	# point due north
+    for sides in range(5):	# repeat the indented lines 5 times
+      will.forward(100)      	# move forward by 100 units
+      will.right(72)          	# turn by 72 degrees
+
+The **Total Turtle Trip Theorem** states that the turtle will draw a closed figure with *n* sides when the sum of the angles turned is a multiple of 360.  In the triangle example ``3 * 120 = 360`` and in the pentagon example ``5 * 72 = 360``.
+
+Change the ``??`` in line 7 below to the amount to turn each time to draw a 12 sided polygon, which is called a dodecagon.  If you get it right the turtle will draw a 12 sided closed polygon.
+
+.. activecode:: Turtle_Dodecagon
+    :tour_1: "Lines of code"; 1: tR3-line1; 2: tR3-line2; 3: tR5-line3; 4: tR5-line4; 5: tR5-line5; 6: tR5-line6; 7: tR5-line7;
+	
+    from turtle import * 	# use the turtle library
+    space = Screen()   		# create a turtle space
+    mia = Turtle()   		# create a turtle named maria
+    mia.setheading(90)     	# point due north
+    for sides in range(12):	# repeat the indented lines 12 times
+      mia.forward(50)       	# move forward by 50 units
+      mia.right(??)          	# change ?? to the amount to turn
+
+.. mchoicemf:: 10-Turtle_Dodecagon_Q1
+   :answer_a: 15
+   :answer_b: 30
+   :answer_c: 12
+   :answer_d: 90
+   :correct: b
+   :feedback_a: This one will not close
+   :feedback_b: Exactly! 12 * 30 = 360
+   :feedback_c: No, 12 * 12 is 144, which is not a multiple of 360
+   :feedback_d: This one will generate a square, three times. 12 * 90 = 1080 = 360 * 3
+
+   How much does ``mia`` need turn in the program above to create a closed dodecagon (12-sided figure)?  Only one of these works.
+   
+.. parsonsprob:: 10_Triangle
+
+   The following program uses a turtle to draw a triangle as shown to the left, <img src="../_static/TurtleTriangle.png" width="150" align="left" hspace="10" vspace="5"/> but the lines are mixed up.  The program should do all necessary set-up and create the turtle.  After that, iterate (loop) 3 times, and each time through the loop the turtle should go forward 175 pixels, and then turn left 120 degrees.  After the loop, set the window to close when the user clicks in it.<br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order with the correct indention.  Click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or are incorrectly indented.</p> 
+   -----
+   from turtle import * 
+   =====         
+   space = Screen()
+   marie = Turtle()
+   =====
+   marie.setheading(90)
+   =====
+   # repeat 3 times
+   for i in range(3): 
+   =====   
+     marie.forward(175)
+   =====
+     marie.left(120)
+
+
+Making Patterns within Patterns
+===============================
+
+We now know the pattern for creating any polygon.  We can wrap that pattern in another loop to create `spirograph <http://en.wikipedia.org/wiki/Spirograph>`_ like patterns.  The example below uses pentagons, but you can use other polygons instead.
+
+.. activecode:: Turtle_Spirograph1
+    :tour_1: "Lines of code"; 1: tR3-line1; 2: tR3-line2; 3: tR6-line3; 4: tR6-line4; 5: tR6-line5; 6: tR6-line6; 7: tR6-line7; 10: tR6-line10; 11: tR6-line11; 12: tR6-line12;
+	
+    from turtle import *  	# use the turtle library
+    space = Screen()   		# create a turtle space
+    zoe = Turtle()        	# create a turtle named zoe
+    zoe.setheading(90)   	# point due north
+    for repeats in range(20):   # draw the pattern 20 times
+      zoe.forward(10)         	# Offset the shapes a bit
+      zoe.right(18)          	# And turn each one a bit
+      
+      # This part makes a pentagon
+      for sides in range(5):	# repeat 5 times
+        zoe.forward(50)  		# move forward by 50 units
+        zoe.right(72)     		# turn by 72 degrees
+
+By setting the pen color differently, we can distinguish the part that draws the shape, from the part that draws *between* the shapes.
+
+.. activecode:: Turtle_Spirograph2
+    :tour_1: "Lines of code"; 1: tR3-line1; 2: tR3-line2; 3: tR6-line3; 4: tR6-line4; 5: tR6-line5; 6: tR7-line6; 7: tR6-line6; 8: tR6-line7; 9: tR7-line9; 12: tR6-line10; 13: tR6-line11; 14: tR6-line12;
+	
+    from turtle import *   	# use the turtle library
+    space = Screen()    	# create a turtle space
+    zoe = Turtle()        	# create a turtle named zoe
+    zoe.setheading(90)    	# point zoe due north
+    for repeats in range(20): 	# 20 times to draw the pattern
+      zoe.pencolor("green")  	# Draw between
+      zoe.forward(10)         	# Offset the shapes a bit
+      zoe.right(18)           	# And turn each one a bit
+      zoe.pencolor("red")     	# Draw the shape
+      
+      # This part makes a pentagon
+      for sides in range(5):		# repeat 5 times
+        zoe.forward(50)   			# move forward 50 units
+        zoe.right(72)      			# turn by 72 degrees
+
+You can use the coloring to help figure out the correct order of the lines below.
+
+.. parsonsprob:: 10-Turtle_Spiro
+
+   There is a way of arranging the statements below such that this image is created. <img src="../_static/TurtleColoredImage.png" width="200" align="left" hspace="10" vspace="5" /> Move the pieces of the program from the left into the space on the right.  Indent lines as needed.
+   -----
+   from turtle import *
+   wn = Screen()
+   mateo = Turtle()
+   mateo.setheading(90)
+   =====
+   for repeats in range(20):
+   =====
+      mateo.pencolor("red")
+      mateo.forward(10)
+      mateo.left(18)
+      
+   =====
+      for sides in range(3):
+   =====
+         mateo.pencolor("blue")
+         mateo.forward(50) 
+         mateo.right(120)
+         
+
+

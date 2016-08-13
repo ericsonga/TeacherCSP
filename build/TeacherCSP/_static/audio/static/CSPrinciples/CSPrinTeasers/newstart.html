@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>This Book is for Teachers &mdash; CS Principles</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="CS Principles" href="../index.html" />
+    <link rel="next" title="What is a Computer?" href="../CSPTuring/turing.html" />
+    <link rel="prev" title="CS Principles: Big Ideas in Programming" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'CSPrinciples';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS Principles</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/CSPrinciples/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/CSPrinciples/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">This Book is for Teachers</a></li>
+<li><a class="reference internal" href="#compute-with-numbers">Compute with Numbers</a></li>
+<li><a class="reference internal" href="#compute-with-words">Compute with Words</a></li>
+<li><a class="reference internal" href="#compute-with-turtles">Compute with Turtles</a></li>
+<li><a class="reference internal" href="#compute-with-images">Compute with Images</a></li>
+<li><a class="reference internal" href="#standards-big-ideas">Standards - Big Ideas</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - CS Principles: Big Ideas in Programming" data-toggle="tooltip">
+    <a href="../index.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - What is a Computer?' data-toggle="tooltip" >
+    <a href="../CSPTuring/turing.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="this-book-is-for-teachers">
+<h1>This Book is for Teachers<a class="headerlink" href="#this-book-is-for-teachers" title="Permalink to this headline">¶</a></h1>
+<p>This chapter introduces the approach used in this book and offers some quick &#8220;teasers&#8221; of things we&#8217;ll be doing later.  <strong>Don&#8217;t worry if you don&#8217;t understand all the code (programs) that you see in this chapter</strong>.  We&#8217;ll go through things much more slowly in the next few chapters.</p>
+<p id="index-0">This electronic book is different because it uses <em>examples plus practice</em>.  Most computer science books are about becoming professional software developers.  Most computer science courses require you to write lots of code.  This book helps teachers learn how to <em>teach programming</em>.  It will use the programming language <strong>Python</strong> which is used by companies like Google and Pixar.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/HappyTeacherInComputerClass.jpg"><img alt="a teacher in a computer classroom" src="../_images/HappyTeacherInComputerClass.jpg" style="width: 400px;" /></a>
+<p class="caption">Figure 1: A teacher in a computer classroom</p>
+</div>
+<ul class="simple">
+<li>Rather than have you write lots of code, we will ask you to <em>read</em> a lot of code <em>examples</em>, because that&#8217;s what computer science teachers do most often.</li>
+<li>We ask you to <em>use</em> what you are learning from the examples in some simple <em>practice</em> exercises.  These exercises are meant to be short and easy, to fit into a teacher&#8217;s busy life.</li>
+<li>As a teacher, you need to know what students most often <em>get wrong</em>, where you can find <em>resources</em> to help you teach, and <em>how</em> to teach different ideas.  The book is sprinkled with <a class="reference internal" href="../_images/apple11.jpg"><img alt="teacher note" class="align-bottom" src="../_images/apple11.jpg" style="width: 26px;" /></a> <strong>Teacher Notes</strong> that explain how to be an effective computer science teacher.</li>
+<li><strong>You don&#8217;t have to install anything</strong>.  You will read, edit, and run programs all from within the pages of this ebook inside the browser.</li>
+</ul>
+</div>
+<div class="section" id="compute-with-numbers">
+<h1>Compute with Numbers<a class="headerlink" href="#compute-with-numbers" title="Permalink to this headline">¶</a></h1>
+<p id="index-1">The first thing that anyone says when asked what you can do with a computer is typically, &#8220;Calculate something with numbers.&#8221;  Yes, you can do that, but with a programming language on a computer, you can <em>name</em> the numbers you are working with which makes it easier to understand what you&#8217;re doing.  When you name a number, or the result of a calculation, you are creating a <strong>variable</strong>.  A <strong>variable</strong> is named space that you can use to hold a value and that value can change or vary.  One example of a <strong>variable</strong> is the score in a game.  The score starts off at 0 and increases as you play the game.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/pongScore1.png"><img alt="A game in Scratch with a score" src="../_images/pongScore1.png" style="width: 400px;" /></a>
+<p class="caption">Figure 2: A pong game in <a class="reference external" href="http://scratch.mit.edu">Scratch</a> with a score shown in the upper left.</p>
+</div>
+<p>One thing that you might want to calculate is a <strong>Body Mass Index</strong>.    <a class="reference external" href="http://www.nhlbi.nih.gov/guidelines/obesity/BMI/bmicalc.htm">Body Mass Index (BMI)</a> is a measure of body fat that is useful in screening for health issues.  Generally speaking:</p>
+<ul class="simple">
+<li>A BMI of 18.5 or less is considered <em>underweight</em>.</li>
+<li>A BMI between 18.5 to 24.9 is considered <em>healthy</em>.</li>
+<li>A BMI between 25-29.9 is considered <em>overweight</em>.</li>
+<li>A BMI of 30 or over is considered <em>obese</em>.</li>
+</ul>
+<p>To calculate a BMI, you need the height in inches and the weight in pounds.  You square the height (multiply the height in inches by itself), then divide the weight in pounds by the squared-height.  BMI is defined in terms of meters and kilograms, so to convert from pounds and inches multiply by 703.</p>
+<p>In the box below is a computer program that calculates the BMI for someone 60 inches tall (5 feet) and 110 pounds.</p>
+<p>Press the <a class="reference internal" href="../_images/run-button2.png"><img alt="run button" class="align-top" src="../_images/run-button2.png" style="height: 20px;" /></a> button below to make the computer execute these steps.</p>
+<p>Pres the <a class="reference internal" href="../_images/start-audio-tour4.png"><img alt="audio tour button" class="align-top" src="../_images/start-audio-tour4.png" style="height: 20px;" /></a> button below to bring up an &#8220;Audio Tour&#8221; that explains this program, line-by-line.</p>
+<p>You can only use the <em>Save</em> and <em>Load</em> buttons if you are logged in. The <em>Save</em> button will save the current program and the <em>Load</em> button will load a saved program.</p>
+
+<div id="cont"></div>
+<div id="BMI" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="BMI_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="BMI_saveb" onclick="saveEditor('BMI');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="BMI_loadb" onclick="requestCode('BMI');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('BMI','height = 60    # in inches*nline*weight = 110   # in pounds*nline*heightSquared = height * height*nline*BMI = weight / heightSquared*nline*BMImetric = BMI * 703*nline*print*open**doubleq*BMI:*doubleq**close**nline*print*open*BMImetric*close*','1','*doubleq*Line-by-line Tour*doubleq*; 1: BMI-line1; 2: BMI-line2; 3: BMI-line3; 4: BMI-line4; 5: BMI-line5; 6: BMI-line6; 7: BMI-line7;*atype*')"/>
+
+</div>
+<br/>
+<div id="BMI_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="BMI_code" class="active_code" prefixcode="undefined" lang="python">
+height = 60    # in inches
+weight = 110   # in pounds
+heightSquared = height * height
+BMI = weight / heightSquared
+BMImetric = BMI * 703
+print("BMI:")
+print(BMImetric)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="BMI_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="BMI_suffix" style="display:none">
+</pre><pre id="BMI_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (BMI)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#BMI_saveb').toggle();
+    $('#BMI_loadb').toggle();
+}
+if ($("#BMI").attr("lang") !== "html" && $("#BMI_code_div").parents(".admonition").length == 0 && $("#BMI_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#BMI_code_div").offset({
+			left: $("#BMI .clearfix").offset().left
+		});
+	}
+	$("#BMI_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#BMI_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#BMI_runb").parent().siblings(".ac_output").show();
+			runit('BMI',this, undefined);
+			$("#BMI_runb").on("click", function(){
+				runit('BMI',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#BMI_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#BMI_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#BMI_runb").on("click", function(){
+		runit('BMI',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Change the weight (in inches) and height (in pounds) in the program above, and press the <em>Run</em> button to calculate a new BMI.  Notice how naming the values for height and weight makes it easier to figure out what values need to be changed.</p>
+
+            <div id="1-BMI_Q1" class="alert alert-warning">
+            csp-1-1: Imagine that you are 5 foot 7 inches and weighed 140 pounds.  What is your BMI?<form name="1-BMI_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="1-BMI_Q1_opt_a" />
+            <label for= "1-BMI_Q1_opt_a">  a) 21.9</label><br />
+            
+            <input type="radio" name="group1" value="b" id="1-BMI_Q1_opt_b" />
+            <label for= "1-BMI_Q1_opt_b">  b) 21.924704834</label><br />
+            
+            <input type="radio" name="group1" value="c" id="1-BMI_Q1_opt_c" />
+            <label for= "1-BMI_Q1_opt_c">  c) 21</label><br />
+            
+            <input type="radio" name="group1" value="d" id="1-BMI_Q1_opt_d" />
+            <label for= "1-BMI_Q1_opt_d">  d) 22</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('1-BMI_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('1-BMI_Q1','b',['Close, but the computer will give you more digits than that.', 'Yes!', 'No, the result will be a number with a decimal point and numbers after the decimal point.', 'No, the computer does not round the result.'])">Check Me</button>
+            <button class='btn btn-default' id="1-BMI_Q1_bcomp" disabled name="compare" onclick="compareAnswers('1-BMI_Q1');">Compare Me</button>
+            </form><br />
+            <div id="1-BMI_Q1_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="compute-with-words">
+<h1>Compute with Words<a class="headerlink" href="#compute-with-words" title="Permalink to this headline">¶</a></h1>
+<p id="index-2">The computer can also compute with words, or more accurately, with <strong>strings</strong> which are sequences of characters.  A <strong>string</strong> is anything we can type between a pair of double quotes (<tt class="docutils literal"><span class="pre">&quot;Hi&quot;</span></tt>).  We can &#8220;compute&#8221; with words using some of the same basic arithmetic operators &#8211; they just mean something different here.  Here we generate silly song lyrics by using <tt class="docutils literal"><span class="pre">+</span></tt> to combine (append) two strings and <tt class="docutils literal"><span class="pre">*</span></tt> to repeat strings.</p>
+<p>Underneath the program below, to the right of the <em>Run</em> button <a class="reference internal" href="../_images/run-button2.png"><img alt="run button" class="align-top" src="../_images/run-button2.png" style="height: 20px;" /></a>, you&#8217;ll see the button to open the audio tour for this program: <a class="reference internal" href="../_images/start-audio-tour4.png"><img alt="audio tour button" class="align-top" src="../_images/start-audio-tour4.png" style="height: 20px;" /></a>.  Try it, and listen to the &#8220;Line-by-Line Tour.&#8221;  You can use the provided buttons to pause, play, jump ahead, or go back.</p>
+
+<div id="cont"></div>
+<div id="String_Operators" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="String_Operators_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Operators_saveb" onclick="saveEditor('String_Operators');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Operators_loadb" onclick="requestCode('String_Operators');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('String_Operators','basic = *doubleq*Ma*doubleq**nline*print*open*basic*close**nline*basic3 = basic + basic + basic*nline*print*open*basic3*close**nline*next = *doubleq*Mow*doubleq**nline*next3 = next * 3*nline*print*open*next3*close**nline*together = *open*basic * 3*close* + *open*next * 2*close**nline*print*open*together*close**nline*print*open*together + *doubleq*Mmm*doubleq* + together*close*','1','*doubleq*Line-by-line Tour*doubleq*; 1: str1-line1; 2: str1-line2; 3: str1-line3; 4: str1-line4; 5: str1-line5; 6: str1-line6; 7: str1-line7; 8: str1-line8; 9: str1-line9; 10: str1-line10;*atype*')"/>
+
+</div>
+<br/>
+<div id="String_Operators_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="String_Operators_code" class="active_code" prefixcode="undefined" lang="python">
+basic = "Ma"
+print(basic)
+basic3 = basic + basic + basic
+print(basic3)
+next = "Mow"
+next3 = next * 3
+print(next3)
+together = (basic * 3) + (next * 2)
+print(together)
+print(together + "Mmm" + together)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="String_Operators_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="String_Operators_suffix" style="display:none">
+</pre><pre id="String_Operators_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (String_Operators)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#String_Operators_saveb').toggle();
+    $('#String_Operators_loadb').toggle();
+}
+if ($("#String_Operators").attr("lang") !== "html" && $("#String_Operators_code_div").parents(".admonition").length == 0 && $("#String_Operators_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#String_Operators_code_div").offset({
+			left: $("#String_Operators .clearfix").offset().left
+		});
+	}
+	$("#String_Operators_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#String_Operators_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#String_Operators_runb").parent().siblings(".ac_output").show();
+			runit('String_Operators',this, undefined);
+			$("#String_Operators_runb").on("click", function(){
+				runit('String_Operators',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#String_Operators_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#String_Operators_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#String_Operators_runb").on("click", function(){
+		runit('String_Operators',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p id="index-3">A string can also be asked to return a new string that is changed in some way from the original string.  In the example below, we&#8217;ll take a string in all-caps and turn it into a nicely capitalized sentence.  This example uses <strong>dot-notation</strong> (<tt class="docutils literal"><span class="pre">sentence.lower()</span></tt>) which is how we tell a string how we want it to change.</p>
+
+<div id="cont"></div>
+<div id="String_Methods" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="String_Methods_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Methods_saveb" onclick="saveEditor('String_Methods');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="String_Methods_loadb" onclick="requestCode('String_Methods');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('String_Methods','sentence = *doubleq*THIS IS A TEST*doubleq**nline*better = sentence.lower*open**close**nline*print*open*better*close**nline*betterStill = better.capitalize*open**close* + *doubleq*.*doubleq**nline*print*open*betterStill*close*','1','*doubleq*Line-by-line Tour*doubleq*; 1: str2-line1; 2: str2-line2; 3: str2-line3; 4: str2-line4; 5: str2-line5;*atype*')"/>
+
+</div>
+<br/>
+<div id="String_Methods_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="String_Methods_code" class="active_code" prefixcode="undefined" lang="python">
+sentence = "THIS IS A TEST"
+better = sentence.lower()
+print(better)
+betterStill = better.capitalize() + "."
+print(betterStill)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="String_Methods_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="String_Methods_suffix" style="display:none">
+</pre><pre id="String_Methods_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (String_Methods)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#String_Methods_saveb').toggle();
+    $('#String_Methods_loadb').toggle();
+}
+if ($("#String_Methods").attr("lang") !== "html" && $("#String_Methods_code_div").parents(".admonition").length == 0 && $("#String_Methods_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#String_Methods_code_div").offset({
+			left: $("#String_Methods .clearfix").offset().left
+		});
+	}
+	$("#String_Methods_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#String_Methods_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#String_Methods_runb").parent().siblings(".ac_output").show();
+			runit('String_Methods',this, undefined);
+			$("#String_Methods_runb").on("click", function(){
+				runit('String_Methods',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#String_Methods_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#String_Methods_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#String_Methods_runb").on("click", function(){
+		runit('String_Methods',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="1-String_Methods_Q1" class="alert alert-warning">
+            <p>csp-1-2: What would the following code print?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">first</span> <span class="o">=</span> <span class="s">&quot;Hi&quot;</span>
+<span class="nb">next</span> <span class="o">=</span> <span class="s">&quot;There&quot;</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">first</span> <span class="o">+</span> <span class="nb">next</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<form name="1-String_Methods_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="1-String_Methods_Q1_opt_a" />
+            <label for= "1-String_Methods_Q1_opt_a">  a) Hi There</label><br />
+            
+            <input type="radio" name="group1" value="b" id="1-String_Methods_Q1_opt_b" />
+            <label for= "1-String_Methods_Q1_opt_b">  b) HiThere</label><br />
+            
+            <input type="radio" name="group1" value="c" id="1-String_Methods_Q1_opt_c" />
+            <label for= "1-String_Methods_Q1_opt_c">  c) Hi There Hi There</label><br />
+            
+            <input type="radio" name="group1" value="d" id="1-String_Methods_Q1_opt_d" />
+            <label for= "1-String_Methods_Q1_opt_d">  d) HiThereHiThere</label><br />
+            
+            <input type="radio" name="group1" value="e" id="1-String_Methods_Q1_opt_e" />
+            <label for= "1-String_Methods_Q1_opt_e">  e) HiThere2</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('1-String_Methods_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('1-String_Methods_Q1','d',['When you add strings together you copy the second string right after the first, without any added space', 'Remember that * 2 repeats two copies of the same string', 'Adding strings together and repeating them doesn\u0027t add spaces between the strings', 'Strings are added together without adding any space and they are repeated without adding a space', 'The * 2 repeats the string two times'])">Check Me</button>
+            <button class='btn btn-default' id="1-String_Methods_Q1_bcomp" disabled name="compare" onclick="compareAnswers('1-String_Methods_Q1');">Compare Me</button>
+            </form><br />
+            <div id="1-String_Methods_Q1_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="compute-with-turtles">
+<h1>Compute with Turtles<a class="headerlink" href="#compute-with-turtles" title="Permalink to this headline">¶</a></h1>
+<p>A turtle here is not an animal.
+We are working with a robot turtle, an idea that dates back to the 1960&#8217;s.  The original robot turtle had a physical pen in it.  The student-programmers would steer the robot around using programs, and create drawings with the pen.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/mindstorms_turtle.jpg"><img alt="Children playing with a Logo turtle robot that can draw with a pen" src="../_images/mindstorms_turtle.jpg" style="width: 200px;" /></a>
+<p class="caption">Figure 3: Children playing with a Logo turtle robot that could draw with a pen</p>
+</div>
+<p id="index-4">Today, we can play with turtles in a fully-graphical and non-robotic way. Below is a Python program that creates a <strong>Screen</strong> (a space on the page for the turtle to move in and draw on) and a turtle named <tt class="docutils literal"><span class="pre">alex</span></tt>, then has <tt class="docutils literal"><span class="pre">alex</span></tt> move around on the screen and when it moves it will draw. A part of a line that starts with a  <tt class="docutils literal"><span class="pre">#</span></tt> character is called a <strong>comment</strong>.  Python ignores everything from the <tt class="docutils literal"><span class="pre">#</span></tt> character to the end of the line.   <strong>Comments</strong> explain what we&#8217;re doing in the programs.</p>
+<p>Try clicking the <a class="reference internal" href="../_images/run-button2.png"><img alt="run button" class="align-top" src="../_images/run-button2.png" style="height: 20px;" /></a> button below to see what the following program does.</p>
+
+<div id="cont"></div>
+<div id="Turtle_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Turtle_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_1_saveb" onclick="saveEditor('Turtle_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_1_loadb" onclick="requestCode('Turtle_1');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Turtle_1','from turtle import *        # use the turtle library*nline*space = Screen*open**close*            # create a turtle space*nline*alex = Turtle*open**close*             # create a turtle named alex*nline*alex.forward*open*150*close*           # move forward by 150 units*nline*alex.left*open*90*close*               # turn by 90 degrees*nline*alex.forward*open*75*close*            # move forward by 75 units','1','*doubleq*Line-by-line Tour*doubleq*; 1: first-turtle-line-1; 2: first-turtle-line-2; 3: first-turtle-line-3; 4: first-turtle-line-4; 5: first-turtle-line-5; 6: first-turtle-line-6;*atype*')"/>
+
+</div>
+<br/>
+<div id="Turtle_1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Turtle_1_code" class="active_code" prefixcode="undefined" lang="python">
+from turtle import *        # use the turtle library
+space = Screen()            # create a turtle space
+alex = Turtle()             # create a turtle named alex
+alex.forward(150)           # move forward by 150 units
+alex.left(90)               # turn by 90 degrees
+alex.forward(75)            # move forward by 75 units
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Turtle_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Turtle_1_suffix" style="display:none">
+</pre><pre id="Turtle_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Turtle_1)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Turtle_1_saveb').toggle();
+    $('#Turtle_1_loadb').toggle();
+}
+if ($("#Turtle_1").attr("lang") !== "html" && $("#Turtle_1_code_div").parents(".admonition").length == 0 && $("#Turtle_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Turtle_1_code_div").offset({
+			left: $("#Turtle_1 .clearfix").offset().left
+		});
+	}
+	$("#Turtle_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Turtle_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Turtle_1_runb").parent().siblings(".ac_output").show();
+			runit('Turtle_1',this, undefined);
+			$("#Turtle_1_runb").on("click", function(){
+				runit('Turtle_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Turtle_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Turtle_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Turtle_1_runb").on("click", function(){
+		runit('Turtle_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="1-Turtle_Q1" class="alert alert-warning">
+            <p>csp-1-3: Which direction will alex move when the code below executes?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">space</span> <span class="o">=</span> <span class="n">Screen</span><span class="p">()</span>
+<span class="n">alex</span> <span class="o">=</span> <span class="n">Turtle</span><span class="p">()</span>
+<span class="n">alex</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="1-Turtle_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="1-Turtle_Q1_opt_a" />
+            <label for= "1-Turtle_Q1_opt_a">  a) North</label><br />
+            
+            <input type="radio" name="group1" value="b" id="1-Turtle_Q1_opt_b" />
+            <label for= "1-Turtle_Q1_opt_b">  b) West</label><br />
+            
+            <input type="radio" name="group1" value="c" id="1-Turtle_Q1_opt_c" />
+            <label for= "1-Turtle_Q1_opt_c">  c) South</label><br />
+            
+            <input type="radio" name="group1" value="d" id="1-Turtle_Q1_opt_d" />
+            <label for= "1-Turtle_Q1_opt_d">  d) East</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('1-Turtle_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('1-Turtle_Q1','d',['Check which way alex moved first', 'Check which way alex moved first', 'Check which way alex moved first', 'Turtles start off facing east by default'])">Check Me</button>
+            <button class='btn btn-default' id="1-Turtle_Q1_bcomp" disabled name="compare" onclick="compareAnswers('1-Turtle_Q1');">Compare Me</button>
+            </form><br />
+            <div id="1-Turtle_Q1_feedback">
+            </div>
+            </div>
+            <p>Just by going forward, backward, left, and right, we can have a turtle draw a shape.</p>
+
+            <div id="1-Shape" class="alert alert-warning">
+            csp-1-4: What shape will the program below draw when you click on the <em>Run</em> button? <input type='text' id='shapeBlank' class="form-control" style="display:inline; width: 150px;" value=""></input>
+            <script>
+            $(document).ready(function(){checkPreviousFIB('1-Shape');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkFIBStorage('1-Shape', 'shapeBlank', '^square$|^Square$|^SQUARE$',[['.*', 'Did you actually run the program?']], false)">Check Me</button>
+            <button class='btn btn-default' id="1-Shape_bcomp" disabled name="compare" onclick="compareFITBAnswers('1-Shape');">Compare Me</button>
+            <br />
+            <br />
+            <div id="1-Shape_feedback">
+            </div>
+            </div>
+            
+<div id="cont"></div>
+<div id="Turtle_2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Turtle_2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_2_saveb" onclick="saveEditor('Turtle_2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Turtle_2_loadb" onclick="requestCode('Turtle_2');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Turtle_2','from turtle import *        # use the turtle library*nline*space = Screen*open**close*            # create a turtle screen *open*space*close**nline*zari = Turtle*open**close*             # create a turtle named zari*nline*zari.setheading*open*90*close*         # Point due north*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*90*close*              # turn by 90 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*90*close*              # turn by 90 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*90*close*              # turn by 90 degrees*nline*zari.forward*open*100*close*           # tell zari to move forward by 100 units*nline*zari.right*open*90*close*              # turn by 90 degrees','1','*doubleq*Line-by-line Tour*doubleq*; 1: t1-line1; 2: t1-line2; 3: t1-line3; 4: t1-line4; 5: t1-line5; 6: t1-line6; 7: t1-for100-1; 8: t1-right90-1; 9: t1-for100-2; 10: t1-right90-2; 11: t1-for100-3; 12: t1-right90-3;*atype*')"/>
+
+</div>
+<br/>
+<div id="Turtle_2_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Turtle_2_code" class="active_code" prefixcode="undefined" lang="python">
+from turtle import *        # use the turtle library
+space = Screen()            # create a turtle screen (space)
+zari = Turtle()             # create a turtle named zari
+zari.setheading(90)         # Point due north
+zari.forward(100)           # tell zari to move forward by 100 units
+zari.right(90)              # turn by 90 degrees
+zari.forward(100)           # tell zari to move forward by 100 units
+zari.right(90)              # turn by 90 degrees
+zari.forward(100)           # tell zari to move forward by 100 units
+zari.right(90)              # turn by 90 degrees
+zari.forward(100)           # tell zari to move forward by 100 units
+zari.right(90)              # turn by 90 degrees
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Turtle_2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Turtle_2_suffix" style="display:none">
+</pre><pre id="Turtle_2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Turtle_2)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Turtle_2_saveb').toggle();
+    $('#Turtle_2_loadb').toggle();
+}
+if ($("#Turtle_2").attr("lang") !== "html" && $("#Turtle_2_code_div").parents(".admonition").length == 0 && $("#Turtle_2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Turtle_2_code_div").offset({
+			left: $("#Turtle_2 .clearfix").offset().left
+		});
+	}
+	$("#Turtle_2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Turtle_2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Turtle_2_runb").parent().siblings(".ac_output").show();
+			runit('Turtle_2',this, undefined);
+			$("#Turtle_2_runb").on("click", function(){
+				runit('Turtle_2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Turtle_2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Turtle_2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Turtle_2_runb").on("click", function(){
+		runit('Turtle_2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+<div class="section" id="compute-with-images">
+<h1>Compute with Images<a class="headerlink" href="#compute-with-images" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="index-5"></span><span class="target" id="index-6"></span><p id="index-7">Pictures on a computer are broken up into little bits called <strong>pixels</strong>, for <em>picture</em> (pix) <em>elements</em> (els).  These are laid out on a grid, from left to right (the horizontal or <strong>x</strong> dimension) and top to bottom (the vertical or <strong>y</strong> dimension).</p>
+<div class="align-center figure">
+<img alt="A grid with horizontal (x) and vertical (y) dimensions" src="../_images/grid.png" />
+<p class="caption">Figure 4: A grid with horizontal (x) and vertical (y) dimensions</p>
+</div>
+<p>Pixels are quite small.  Even this small picture below has 180 columns and 240 rows of pixels:</p>
+<div class="align-center figure">
+<img alt="picture of an arch from Oxford, England" src="../_images/arch.jpg" />
+<p class="caption">Figure 5: Picture of an arch from Oxford, England</p>
+</div>
+
+            <div id="1-Image_Q1" class="alert alert-warning">
+            csp-1-5: Which way does y increase on an image?<form name="1-Image_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="1-Image_Q1_opt_a" />
+            <label for= "1-Image_Q1_opt_a">  a) From left to right</label><br />
+            
+            <input type="radio" name="group1" value="b" id="1-Image_Q1_opt_b" />
+            <label for= "1-Image_Q1_opt_b">  b) From right to left</label><br />
+            
+            <input type="radio" name="group1" value="c" id="1-Image_Q1_opt_c" />
+            <label for= "1-Image_Q1_opt_c">  c) From top to bottom</label><br />
+            
+            <input type="radio" name="group1" value="d" id="1-Image_Q1_opt_d" />
+            <label for= "1-Image_Q1_opt_d">  d) From bottom to top</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('1-Image_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('1-Image_Q1','c',['The x value increases from left to right', 'The horizontal direction is the x direction', 'The y value increases from top to bottom', 'This is common on a Cartesian coordinate system, but it is not true here'])">Check Me</button>
+            <button class='btn btn-default' id="1-Image_Q1_bcomp" disabled name="compare" onclick="compareAnswers('1-Image_Q1');">Compare Me</button>
+            </form><br />
+            <div id="1-Image_Q1_feedback">
+            </div>
+            </div>
+            <p>Each pixel has a color associated with it: An amount of redness, an amount of greenness, and an amount of blueness.  All image manipulations in Photoshop and all filters in Instagram or Hipstamatic are created through manipulating those red, green, and blue color components in each pixel.</p>
+<p>Let&#8217;s remove the red from this picture.  The program below does that.</p>
+<p><strong>There are lot of lines in the program below. Don&#8217;t worry if they don&#8217;t all make sense to you right now.</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Especially when we write programs to manipulate images, you can ignore many of the lines.  Some allow us to work with images, like <tt class="docutils literal"><span class="pre">import</span> <span class="pre">image</span></tt>.  Others like <tt class="docutils literal"><span class="pre">win</span> <span class="pre">=</span> <span class="pre">image.ImageWin()</span></tt> and <tt class="docutils literal"><span class="pre">img.draw(win)</span></tt> let us see the result.</li>
+<li>Words after the <tt class="docutils literal"><span class="pre">#</span></tt> are ignored by the computer.  They are <strong>comments</strong> to human readers to help them understand a program.</li>
+</ul>
+</div></blockquote>
+<p>The lines that are important are under the comments (lines that start with a <tt class="docutils literal"><span class="pre">#</span></tt>). Press the <a class="reference internal" href="../_images/start-audio-tour4.png"><img alt="audio tour button" class="align-top" src="../_images/start-audio-tour4.png" style="height: 20px;" /></a> button to hear an audio explanation of the important lines.  Press the <a class="reference internal" href="../_images/run-button2.png"><img alt="run button" class="align-top" src="../_images/run-button2.png" style="height: 20px;" /></a> button to run the program and show the changed image.  Please note that processing all those pixels can take a few minutes.</p>
+<img src="../_static/arch.jpg" id="arch.jpg" >
+<div id="cont"></div>
+<div id="Images_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Images_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Images_1_saveb" onclick="saveEditor('Images_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Images_1_loadb" onclick="requestCode('Images_1');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Images_1','import image*nline**nline*# CREATE AN IMAGE FROM A FILE*nline*img = image.Image*open**doubleq*arch.jpg*doubleq**close**nline**nline*# CLEAR THE RED FROM ALL PIXELS*nline*for x in range*open*img.getWidth*open**close**close*:*nline*    for y in range*open*img.getHeight*open**close**close*:*nline*            p = img.getPixel*open*x, y*close**nline*            p.setRed*open*0*close**nline*            img.setPixel*open*x, y, p*close**nline**nline*win = image.ImageWin*open**close**nline*img.draw*open*win*close*','1','*doubleq*Important Lines Tour*doubleq*; 4: img1-line4; 7-9: img1-line7-9; 10: img1-line10; 11: img1-line11;*atype*')"/>
+
+</div>
+<br/>
+<div id="Images_1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Images_1_code" class="active_code" prefixcode="undefined" lang="python">
+import image
+
+# CREATE AN IMAGE FROM A FILE
+img = image.Image("arch.jpg")
+
+# CLEAR THE RED FROM ALL PIXELS
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+            p = img.getPixel(x, y)
+            p.setRed(0)
+            img.setPixel(x, y, p)
+
+win = image.ImageWin()
+img.draw(win)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Images_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Images_1_suffix" style="display:none">
+</pre><pre id="Images_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Images_1)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Images_1_saveb').toggle();
+    $('#Images_1_loadb').toggle();
+}
+if ($("#Images_1").attr("lang") !== "html" && $("#Images_1_code_div").parents(".admonition").length == 0 && $("#Images_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Images_1_code_div").offset({
+			left: $("#Images_1 .clearfix").offset().left
+		});
+	}
+	$("#Images_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Images_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Images_1_runb").parent().siblings(".ac_output").show();
+			runit('Images_1',this, undefined);
+			$("#Images_1_runb").on("click", function(){
+				runit('Images_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Images_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Images_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Images_1_runb").on("click", function(){
+		runit('Images_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="1-Image_Black" class="alert alert-warning">
+            csp-1-6: What do you think happens when you set all the colors to 0?  Try adding <tt class="docutils literal"><span class="pre">p.setBlue(0)</span></tt> and <tt class="docutils literal"><span class="pre">p.setGreen(0)</span></tt> to the program above and run it to check.<form name="1-Image_Black_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="1-Image_Black_opt_a" />
+            <label for= "1-Image_Black_opt_a">  a) You still see the picture, but it is all in shades of gray.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="1-Image_Black_opt_b" />
+            <label for= "1-Image_Black_opt_b">  b) The picture is all white.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="1-Image_Black_opt_c" />
+            <label for= "1-Image_Black_opt_c">  c) The picture is all black.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('1-Image_Black');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('1-Image_Black','c',['Not if you set all colors to 0.', 'Did you try it?  This would be true if you set all the values to 255 instead of 0.', 'Black is the absence of light so setting all colors to 0 results in an all black image.'])">Check Me</button>
+            <button class='btn btn-default' id="1-Image_Black_bcomp" disabled name="compare" onclick="compareAnswers('1-Image_Black');">Compare Me</button>
+            </form><br />
+            <div id="1-Image_Black_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="standards-big-ideas">
+<h1>Standards - Big Ideas<a class="headerlink" href="#standards-big-ideas" title="Permalink to this headline">¶</a></h1>
+<p>This book will address the following Big Ideas from the Computer Science Principles Course:</p>
+<blockquote>
+<div><ul class="simple">
+<li>In <em>Big Idea I: Creativity</em>:</li>
+<li>LO 1.1.1: ... use computing tools and techniques to create artifacts.</li>
+<li>LO 1.2.1: ... use computing tools and techniques for creative expression.</li>
+<li>LO 1.3.1: ... use programming as a creative tool.</li>
+<li>In <em>Big Idea II: Abstraction</em>:</li>
+<li>LO 2.2.2: ... use multiple levels of abstraction in computation.</li>
+<li>In <em>Big Idea IV: Algorithms</em>:</li>
+<li>LO 4.1.1: ... develop an algorithm designed to be implemented to run on a computer.</li>
+<li>LO 4.2.1: ... express an algorithm in a language.</li>
+<li>In <em>Big Idea V: Programming</em>:</li>
+<li>LO 5.1.1: ... explain how programs implement algorithms.</li>
+<li>LO 5.4.1: ... employ appropriate mathematical and logical concepts in programming.</li>
+</ul>
+</div></blockquote>
+<p>This chapter should have given you a sense for what we are going to be doing with a computer in this book.  Let&#8217;s get started in the next chapter by talking about what the computer can do and how you can control it.</p>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014, Mark Guzdial, Barbara Ericson, and Briana Morrison.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

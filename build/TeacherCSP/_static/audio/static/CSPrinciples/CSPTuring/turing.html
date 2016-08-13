@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>What is a Computer? &mdash; CS Principles</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="CS Principles" href="../index.html" />
+    <link rel="next" title="Assigning a Name" href="../CSPNameNumbers/names2.html" />
+    <link rel="prev" title="This Book is for Teachers" href="../CSPrinTeasers/newstart.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'CSPrinciples';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS Principles</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/CSPrinciples/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/CSPrinciples/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">What is a Computer?</a></li>
+<li><a class="reference internal" href="#turing-machines">Turing Machines</a></li>
+<li><a class="reference internal" href="#computer-abilities">Computer Abilities</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - This Book is for Teachers" data-toggle="tooltip">
+    <a href="../CSPrinTeasers/newstart.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Assigning a Name' data-toggle="tooltip" >
+    <a href="../CSPNameNumbers/names2.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="what-is-a-computer">
+<h1>What is a Computer?<a class="headerlink" href="#what-is-a-computer" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="index-0"></span><p id="index-1">A <strong>computer</strong> is a device that can perform actions on data.  The actions are specified by a <strong>program</strong>, which is a sequence of instructions.  A computer doesn&#8217;t really even have to be electronic.  Did you know that there were female computers?  <a class="reference external" href="http://en.wikipedia.org/wiki/Harvard_Computers">The Harvard computers</a> were hired to do astronomical calculations.  Computer was a job title, like waiter or doctor.</p>
+<div class="align-center figure" id="index-2">
+<a class="reference internal image-reference" href="../_images/Edward_Charles_Pickering's_Harem_13_May_1913.jpg"><img alt="The Harvard Computers from 1913" src="../_images/Edward_Charles_Pickering's_Harem_13_May_1913.jpg" style="width: 300px;" /></a>
+<p class="caption">Figure 1: The Harvard Computers of 1913</p>
+</div>
+<p>Computers today are electronic, but it&#8217;s possible to build a computer with light, or DNA, or even <a class="reference external" href="http://www.retrothing.com/2006/12/the_tinkertoy_c.html">TinkerToys</a>.  All computers manipulate data based on instructions.</p>
+</div>
+<div class="section" id="turing-machines">
+<h1>Turing Machines<a class="headerlink" href="#turing-machines" title="Permalink to this headline">¶</a></h1>
+<p id="index-3">The idea for a computer was first described in 1936, over a dozen years before the first electronic computer was ever built.  <a class="reference external" href="http://en.wikipedia.org/wiki/Alan_Turing">Alan Turing</a>, a brilliant mathematician, was trying to answer a question that mathematicians were struggling with at the beginning of the 20th century, &#8220;What are the limits of mathematics?  What can be computed using mathematics, and what truths can&#8217;t be computed?&#8221;  Turing defined a device (a <a class="reference external" href="http://en.wikipedia.org/wiki/Turing_machine">Turing Machine</a>) that answered that question: <em>Anything that is possible to mathematically compute could be programmed on a Turing Machine.</em></p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/Alan_Turing_photo.jpg"><img alt="A Photo of Alan Turing" src="../_images/Alan_Turing_photo.jpg" style="width: 200px;" /></a>
+<p class="caption">Figure 2: Photo of Alan Turing</p>
+</div>
+
+            <div id="2-Turing_Q1" class="alert alert-warning">
+            csp-2-1: Use the following link to learn more about <a class="reference external" href="http://en.wikipedia.org/wiki/Alan_Turing">Alan Turing</a>.  Which of the following is <strong>false</strong> about him?<form name="2-Turing_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="2-Turing_Q1_opt_a" />
+            <label for= "2-Turing_Q1_opt_a">  a) He occasionally ran 40 miles to London for meetings.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="2-Turing_Q1_opt_b" />
+            <label for= "2-Turing_Q1_opt_b">  b) He proposed the Turing Test to decide if a computer was intelligent.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="2-Turing_Q1_opt_c" />
+            <label for= "2-Turing_Q1_opt_c">  c) He worked on breaking Enigma ciphers in World War II.</label><br />
+            
+            <input type="radio" name="group1" value="d" id="2-Turing_Q1_opt_d" />
+            <label for= "2-Turing_Q1_opt_d">  d) He went to school in Oxford, England.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('2-Turing_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('2-Turing_Q1','d',['This is true.  He was a talented runner and even tried out for the olympics.', 'This is true.  He said that if a computer could fool a person into thinking it was a person, that that computer was intelligent.', 'This is true.  Winston Churchill said that Alan Turing made the single biggest contribution to winning World War II.', 'This is false.  He attended King\u0027s College at Cambridge and Princeton University.'])">Check Me</button>
+            <button class='btn btn-default' id="2-Turing_Q1_bcomp" disabled name="compare" onclick="compareAnswers('2-Turing_Q1');">Compare Me</button>
+            </form><br />
+            <div id="2-Turing_Q1_feedback">
+            </div>
+            </div>
+            <p>Today&#8217;s computers work differently than Turing&#8217;s machine, but are mathematically equivalent.  <em>Anything that is possible to compute can be programmed on any modern electronic computer.</em>  <strong>ALL</strong> computers, from the ones in your microwave to the super-duper computers that predict the weather all have the same basic abilities.  Click on the following link to learn more about <a class="reference external" href="http://www.storyofmathematics.com/20th_turing.html">how Turing Machines work.</a></p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/turing_machine.gif"><img alt="A Turing Machine" src="../_images/turing_machine.gif" style="width: 300px;" /></a>
+<p class="caption">Figure 3: Figure of a Turing Machine</p>
+</div>
+<p>The meaning of that statement is huge.  For example, it means that it&#8217;s <em>possible</em> to run any program on any computer, but it might mean that you have to do a lot of programming to make it work.  But it doesn&#8217;t mean that we can solve <em>all</em> problems on any computer.  One of the important things that Turing proved is that <strong>some problems can&#8217;t be solved by computers at all, ever</strong>.</p>
+<p>Turing&#8217;s machine didn&#8217;t actually know anything about numbers, which might be surprising for a device that could do any mathematical computation.  Instead, it could simply make marks on a piece of paper tape, and then <em>count</em> those marks to be able to do mathematics.  In reality, electronic computers are just as dumb.  They <em>count</em> using patterns of voltages on wires (e.g., &#8220;off,on,off,off&#8221; is a representation of the number <em>4</em> in binary).  But we don&#8217;t really want to deal with patterns like this, so people have already programmed basic mathematical operations into the computer.</p>
+<p id="index-4">When you work with a computer, you have all kinds of abilities already built-in by others.  Your computer already knows how to deal with numbers and mathematical operations, and lots of other things as well.  At the basic level, though, even the biggest, most powerful, most expensive supercomputer cannot solve problems better than a Turing Machine. <strong>All computers are exactly the same in terms of what they can do.</strong></p>
+
+            <div id="2-Computers_Q1" class="alert alert-warning">
+            csp-2-2: Which of the following is <strong>false</strong> about computers?<form name="2-Computers_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="2-Computers_Q1_opt_a" />
+            <label for= "2-Computers_Q1_opt_a">  a) There were female computers.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="2-Computers_Q1_opt_b" />
+            <label for= "2-Computers_Q1_opt_b">  b) You can make a computer with Tinkertoys.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="2-Computers_Q1_opt_c" />
+            <label for= "2-Computers_Q1_opt_c">  c) Computers can solve any problem.</label><br />
+            
+            <input type="radio" name="group1" value="d" id="2-Computers_Q1_opt_d" />
+            <label for= "2-Computers_Q1_opt_d">  d) Computers use sequences of voltages on wires to represent numbers.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('2-Computers_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('2-Computers_Q1','c',['This is true.  Look for information on the Harvard Computers and Secret Rosies.', 'This is true.  Some students at MIT did this in the 1980s.', 'This is false.  Turing provide that there are problems computers cannot solve.', 'This is true.  Computers use patterns of on and off voltages to represent numbers.'])">Check Me</button>
+            <button class='btn btn-default' id="2-Computers_Q1_bcomp" disabled name="compare" onclick="compareAnswers('2-Computers_Q1');">Compare Me</button>
+            </form><br />
+            <div id="2-Computers_Q1_feedback">
+            </div>
+            </div>
+            <p id="index-5">A <strong>programming language</strong> (like <em>Java</em> or <em>Python</em>) which is a language that allows you to tell a computer what to do, can do anything that a Turing Machine can do (no more or less).  A programming tool like <a class="reference external" href="http://www.alice.org">Alice</a> or <a class="reference external" href="http://scratch.mit.edu">Scratch</a> can do <em>most</em> of what a Turing Machine can do, but typically, not everything.  <strong>You can program anything that a Turing Machine can do in Python .</strong></p>
+</div>
+<div class="section" id="computer-abilities">
+<h1>Computer Abilities<a class="headerlink" href="#computer-abilities" title="Permalink to this headline">¶</a></h1>
+<p>In this book, we are going to talk about what a computer can do in terms of the programming language Python.  We are not going to cover <em>all</em> of Python.  We are going to describe the five abilities of a computer, the five abilities that cover <em>everything</em> that a computer can do.</p>
+<ul class="simple">
+<li>Computers can remember names for values.  Computers can name <em>anything</em>.</li>
+<li>Computers can repeat steps.</li>
+<li>Computers can make decisions.</li>
+<li>Computers can take data apart.</li>
+</ul>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014, Mark Guzdial, Barbara Ericson, and Briana Morrison.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

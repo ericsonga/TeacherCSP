@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AVL Tree Implementation &mdash; Problem Solving with Algorithms and Data Structures</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
+    <link rel="next" title="Summary of Map ADT Implementations" href="SummaryofMapADTImplementations.html" />
+    <link rel="prev" title="AVL Tree Performance" href="AVLTreePerformance.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pythonds';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">Problem Solving with Algorithms and Data Structures</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pythonds/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/initiateGroup' id="joinGroupLink">Join a Study Group</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/schedule' id="groupScheduleLink">Group Schedule</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/newschedule' id="newChapterLink">Schedule New Chapter</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/manageGroup' id="manageGroupLink">Manage Group</a></li>
+			<li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/assignments/index'>Progress Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pythonds/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">AVL Tree Implementation</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - AVL Tree Performance" data-toggle="tooltip">
+    <a href="AVLTreePerformance.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Summary of Map ADT Implementations' data-toggle="tooltip" >
+    <a href="SummaryofMapADTImplementations.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="avl-tree-implementation">
+<h1>AVL Tree Implementation<a class="headerlink" href="#avl-tree-implementation" title="Permalink to this headline">¶</a></h1>
+<p>Now that we have demonstrated that keeping an AVL tree in balance is
+going to be a big performance improvement, let us look at how we will
+augment the procedure to insert a new key into the tree. Since all new
+keys are inserted into the tree as leaf nodes and we know that the
+balance factor for a new leaf is zero, there are no new requirements for
+the node that was just inserted. But once the new leaf is added we must
+update the balance factor of its parent. How this new leaf affects the
+parent’s balance factor depends on whether the leaf node is a left child
+or a right child. If the new node is a right child the balance factor of
+the parent will be reduced by one. If the new node is a left child then
+the balance factor of the parent will be increased by one. This relation
+can be applied recursively to the grandparent of the new node, and
+possibly to every ancestor all the way up to the root of the tree. Since
+this is a recursive procedure let us examine the two base cases for
+updating balance factors:</p>
+<ul class="simple">
+<li>The recursive call has reached the root of the tree.</li>
+<li>The balance factor of the parent has been adjusted to zero. You
+should convince yourself that once a subtree has a balance factor of
+zero, then the balance of its ancestor nodes does not change.</li>
+</ul>
+<p>We will implement the AVL tree as a subclass of <tt class="docutils literal"><span class="pre">BinarySearchTree</span></tt>. To
+begin, we will override the <tt class="docutils literal"><span class="pre">_put</span></tt> method and write a new
+<tt class="docutils literal"><span class="pre">updateBalance</span></tt> helper method. These methods are shown in
+<a class="reference internal" href="#lst-updbal"><em>Listing 1</em></a>. You will notice that the definition for <tt class="docutils literal"><span class="pre">_put</span></tt> is
+exactly the same as in simple binary search trees except for the additions of
+the calls to <tt class="docutils literal"><span class="pre">updateBalance</span></tt> on lines&nbsp;7 and&nbsp;13.</p>
+<p><strong>Listing 1</strong></p>
+<div class="highlight-python" id="lst-updbal"><div class="highlight"><pre><span class="k">def</span> <span class="nf">_put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">,</span><span class="n">val</span><span class="p">,</span><span class="n">currentNode</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="n">currentNode</span><span class="o">.</span><span class="n">key</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">currentNode</span><span class="o">.</span><span class="n">hasLeftChild</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">val</span><span class="p">,</span><span class="n">currentNode</span><span class="o">.</span><span class="n">leftChild</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+                <span class="n">currentNode</span><span class="o">.</span><span class="n">leftChild</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">val</span><span class="p">,</span><span class="n">parent</span><span class="o">=</span><span class="n">currentNode</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">updateBalance</span><span class="p">(</span><span class="n">currentNode</span><span class="o">.</span><span class="n">leftChild</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">currentNode</span><span class="o">.</span><span class="n">hasRightChild</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_put</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">val</span><span class="p">,</span><span class="n">currentNode</span><span class="o">.</span><span class="n">rightChild</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+                <span class="n">currentNode</span><span class="o">.</span><span class="n">rightChild</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">val</span><span class="p">,</span><span class="n">parent</span><span class="o">=</span><span class="n">currentNode</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">updateBalance</span><span class="p">(</span><span class="n">currentNode</span><span class="o">.</span><span class="n">rightChild</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">updateBalance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">node</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">balanceFactor</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">node</span><span class="o">.</span><span class="n">balanceFactor</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rebalance</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">parent</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">isLeftChild</span><span class="p">():</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">balanceFactor</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">node</span><span class="o">.</span><span class="n">isRightChild</span><span class="p">():</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">balanceFactor</span> <span class="o">-=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">balanceFactor</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">updateBalance</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The new <tt class="docutils literal"><span class="pre">updateBalance</span></tt> method is where most of the work is done. This
+implements the recursive procedure we just described. The
+<tt class="docutils literal"><span class="pre">updateBalance</span></tt> method first checks to see if the current node is out
+of balance enough to require rebalancing (line&nbsp;16). If that
+is the case then the rebalancing is done and no further updating to
+parents is required. If the current node does not require rebalancing
+then the balance factor of the parent is adjusted. If the balance factor
+of the parent is non-zero then the algorithm continues to work its way
+up the tree toward the root by recursively calling <tt class="docutils literal"><span class="pre">updateBalance</span></tt> on
+the parent.</p>
+<p>When a rebalancing of the tree is necessary, how do we do it? Efficient
+rebalancing is the key to making the AVL Tree work well without
+sacrificing performance. In order to bring an AVL Tree back into balance
+we will perform one or more <strong>rotations</strong> on the tree.</p>
+<p>To understand what a rotation is let us look at a very simple example.
+Consider the tree in the left half of <a class="reference internal" href="#fig-unbalsimple"><em>Figure 3</em></a>. This tree
+is out of balance with a balance factor of -2. To bring this tree into
+balance we will use a left rotation around the subtree rooted at node A.</p>
+<div class="figure align-center" id="fig-unbalsimple">
+<img alt="../_images/simpleunbalanced.png" src="../_images/simpleunbalanced.png" />
+<p class="caption">Figure 3: Transforming an Unbalanced Tree Using a Left Rotation</p>
+</div>
+<p>To perform a left rotation we essentially do the following:</p>
+<ul class="simple">
+<li>Promote the right child (B) to be the root of the subtree.</li>
+<li>Move the old root (A) to be the left child of the new root.</li>
+<li>If new root (B) already had a left child then make it the right child
+of the new left child (A). Note: Since the new root (B) was the right
+child of A the right child of A is guaranteed to be empty at this
+point. This allows us to add a new node as the right child without
+any further consideration.</li>
+</ul>
+<p>While this procedure is fairly easy in concept, the details of the code
+are a bit tricky since we need to move things around in just the right
+order so that all properties of a Binary Search Tree are preserved.
+Furthermore we need to make sure to update all of the parent pointers
+appropriately.</p>
+<p>Let&#8217;s look at a slightly more complicated tree to illustrate the right
+rotation. The left side of <a class="reference internal" href="#fig-rightrot1"><em>Figure 4</em></a> shows a tree that is
+left-heavy and with a balance factor of 2 at the root. To perform a
+right rotation we essentially do the following:</p>
+<ul class="simple">
+<li>Promote the left child (C) to be the root of the subtree.</li>
+<li>Move the old root (E) to be the right child of the new root.</li>
+<li>If the new root(C) already had a right child (D) then make it the
+left child of the new right child (E). Note: Since the new root (C)
+was the left child of E, the left child of E is guaranteed to be
+empty at this point. This allows us to add a new node as the left
+child without any further consideration.</li>
+</ul>
+<div class="figure align-center" id="fig-rightrot1">
+<img alt="../_images/rightrotate1.png" src="../_images/rightrotate1.png" />
+<p class="caption">Figure 4: Transforming an Unbalanced Tree Using a Right Rotation</p>
+</div>
+<p>Now that you have seen the rotations and have the basic idea of how a
+rotation works let us look at the code. <a class="reference internal" href="#lst-bothrotations"><em>Listing 2</em></a> shows the
+code for both the right and the left rotations. In line&nbsp;2
+we create a temporary variable to keep track of the new root of the
+subtree. As we said before the new root is the right child of the
+previous root. Now that a reference to the right child has been stored
+in this temporary variable we replace the right child of the old root
+with the left child of the new.</p>
+<p>The next step is to adjust the parent pointers of the two nodes. If
+<tt class="docutils literal"><span class="pre">newRoot</span></tt> has a left child then the new parent of the left child
+becomes the old root. The parent of the new root is set to the parent of
+the old root. If the old root was the root of the entire tree then we
+must set the root of the tree to point to this new root. Otherwise, if
+the old root is a left child then we change the parent of the left child
+to point to the new root; otherwise we change the parent of the right
+child to point to the new root. (lines&nbsp;10-13).
+Finally we set the parent of the old root to be the new root. This is a
+lot of complicated bookkeeping, so we encourage you to trace through
+this function while looking at <a class="reference internal" href="#fig-unbalsimple"><em>Figure 3</em></a>. The
+<tt class="docutils literal"><span class="pre">rotateRight</span></tt> method is symmetrical to <tt class="docutils literal"><span class="pre">rotateLeft</span></tt> so we will leave
+it to you to study the code for <tt class="docutils literal"><span class="pre">rotateRight</span></tt>.</p>
+<p id="lst-bothrotations"><strong>Listing 2</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">rotateLeft</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">rotRoot</span><span class="p">):</span>
+    <span class="n">newRoot</span> <span class="o">=</span> <span class="n">rotRoot</span><span class="o">.</span><span class="n">rightChild</span>
+    <span class="n">rotRoot</span><span class="o">.</span><span class="n">rightChild</span> <span class="o">=</span> <span class="n">newRoot</span><span class="o">.</span><span class="n">leftChild</span>
+    <span class="k">if</span> <span class="n">newRoot</span><span class="o">.</span><span class="n">leftChild</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">newRoot</span><span class="o">.</span><span class="n">leftChild</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">rotRoot</span>
+    <span class="n">newRoot</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">rotRoot</span><span class="o">.</span><span class="n">parent</span>
+    <span class="k">if</span> <span class="n">rotRoot</span><span class="o">.</span><span class="n">isRoot</span><span class="p">():</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">newRoot</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">rotRoot</span><span class="o">.</span><span class="n">isLeftChild</span><span class="p">():</span>
+                <span class="n">rotRoot</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">leftChild</span> <span class="o">=</span> <span class="n">newRoot</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rotRoot</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">rightChild</span> <span class="o">=</span> <span class="n">newRoot</span>
+    <span class="n">newRoot</span><span class="o">.</span><span class="n">leftChild</span> <span class="o">=</span> <span class="n">rotRoot</span>
+    <span class="n">rotRoot</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">newRoot</span>
+    <span class="n">rotRoot</span><span class="o">.</span><span class="n">balanceFactor</span> <span class="o">=</span> <span class="n">rotRoot</span><span class="o">.</span><span class="n">balanceFactor</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">newRoot</span><span class="o">.</span><span class="n">balanceFactor</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">newRoot</span><span class="o">.</span><span class="n">balanceFactor</span> <span class="o">=</span> <span class="n">newRoot</span><span class="o">.</span><span class="n">balanceFactor</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">rotRoot</span><span class="o">.</span><span class="n">balanceFactor</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, lines&nbsp;16-17 require some explanation. In
+these two lines we update the balance factors of the old and the new
+root. Since all the other moves are moving entire subtrees around the
+balance factors of all other nodes are unaffected by the rotation. But
+how can we update the balance factors without completely recalculating
+the heights of the new subtrees? The following derivation should
+convince you that these lines are correct.</p>
+<div class="figure align-center" id="fig-bfderive">
+<img alt="../_images/bfderive.png" src="../_images/bfderive.png" />
+<p class="caption">Figure 5: A Left Rotation</p>
+</div>
+<p><a class="reference internal" href="#fig-bfderive"><em>Figure 5</em></a> shows a left rotation. B and D are the pivotal
+nodes and A, C, E are their subtrees. Let <span class="math">\(h_x\)</span> denote the
+height of a particular subtree rooted at node <span class="math">\(x\)</span>. By definition
+we know the following:</p>
+<div class="math">
+\[\begin{split}newBal(B) = h_A - h_C \\
+oldBal(B) = h_A - h_D\end{split}\]</div>
+<p>But we know that the old height of D can also be given by <span class="math">\(1 +
+max(h_C,h_E)\)</span>, that is, the height of D is one more than the maximum
+height of its two children. Remember that <span class="math">\(h_c\)</span> and
+<span class="math">\(h_E\)</span> hav not changed. So, let us substitute that in to the
+second equation, which gives us</p>
+<p><span class="math">\(oldBal(B) = h_A - (1 + max(h_C,h_E))\)</span></p>
+<p>and then subtract the two equations. The following steps
+do the subtraction and use some algebra to simplify the equation for
+<span class="math">\(newBal(B)\)</span>.</p>
+<div class="math">
+\[\begin{split}newBal(B) - oldBal(B) = h_A - h_C - (h_A - (1 + max(h_C,h_E))) \\
+newBal(B) - oldBal(B) = h_A - h_C - h_A + (1 + max(h_C,h_E)) \\
+newBal(B) - oldBal(B) = h_A  - h_A + 1 + max(h_C,h_E) - h_C  \\
+newBal(B) - oldBal(B) =  1 + max(h_C,h_E) - h_C\end{split}\]</div>
+<p>Next we will move <span class="math">\(oldBal(B)\)</span> to the right hand side of the
+equation and make use of the fact that
+<span class="math">\(max(a,b)-c = max(a-c, b-c)\)</span>.</p>
+<div class="math">
+\[\begin{split}newBal(B) = oldBal(B) + 1 + max(h_C - h_C ,h_E - h_C) \\\end{split}\]</div>
+<p>But, <span class="math">\(h_E - h_C\)</span> is the same as <span class="math">\(-oldBal(D)\)</span>. So we can
+use another identity that says <span class="math">\(max(-a,-b) = -min(a,b)\)</span>. So we
+can finish our derivation of <span class="math">\(newBal(B)\)</span> with the following
+steps:</p>
+<div class="math">
+\[\begin{split}newBal(B) = oldBal(B) + 1 + max(0 , -oldBal(D)) \\
+newBal(B) = oldBal(B) + 1 - min(0 , oldBal(D)) \\\end{split}\]</div>
+<p>Now we have all of the parts in terms that we readily know. If we
+remember that B is <tt class="docutils literal"><span class="pre">rotRoot</span></tt> and D is <tt class="docutils literal"><span class="pre">newRoot</span></tt> then we can see this
+corresponds exactly to the statement on line&nbsp;16, or:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rotRoot</span><span class="o">.</span><span class="n">balanceFactor</span> <span class="o">=</span> <span class="n">rotRoot</span><span class="o">.</span><span class="n">balanceFactor</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">newRoot</span><span class="o">.</span><span class="n">balanceFactor</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A similar derivation gives us the equation for the updated node D, as
+well as the balance factors after a right rotation. We leave these as
+exercises for you.</p>
+<p>Now you might think that we are done. We know how to do our left and
+right rotations, and we know when we should do a left or right rotation,
+but take a look at <a class="reference internal" href="#fig-hardrotate"><em>Figure 6</em></a>. Since node A has a balance
+factor of -2 we should do a left rotation. But, what happens when we do
+the left rotation around A?</p>
+<div class="figure align-center" id="fig-hardrotate">
+<img alt="../_images/hardunbalanced.png" src="../_images/hardunbalanced.png" />
+<p class="caption">Figure 6: An Unbalanced Tree that is More Difficult to Balance</p>
+</div>
+<p><a class="reference internal" href="#fig-badrotate"><em>Figure 7</em></a> shows us that after the left rotation we are now
+out of balance the other way. If we do a right rotation to correct the
+situation we are right back where we started.</p>
+<div class="figure align-center" id="fig-badrotate">
+<img alt="../_images/badrotate.png" src="../_images/badrotate.png" />
+<p class="caption">Figure 7: After a Left Rotation the Tree is Out of Balance in the Other Direction</p>
+</div>
+<p>To correct this problem we must use the following set of rules:</p>
+<ul class="simple">
+<li>If a subtree needs a left rotation to bring it into balance, first
+check the balance factor of the right child. If the right child is
+left heavy then do a right rotation on right child, followed by the
+original left rotation.</li>
+<li>If a subtree needs a right rotation to bring it into balance, first
+check the balance factor of the left child. If the left child is
+right heavy then do a left rotation on the left child, followed by
+the original right rotation.</li>
+</ul>
+<p><a class="reference internal" href="#fig-rotatelr"><em>Figure 8</em></a> shows how these rules solve the dilemma we
+encountered in <a class="reference internal" href="#fig-hardrotate"><em>Figure 6</em></a> and <a class="reference internal" href="#fig-badrotate"><em>Figure 7</em></a>. Starting
+with a right rotation around node C puts the tree in a position where
+the left rotation around A brings the entire subtree back into balance.</p>
+<div class="figure align-center" id="fig-rotatelr">
+<img alt="../_images/rotatelr.png" src="../_images/rotatelr.png" />
+<p class="caption">Figure 8: A Right Rotation Followed by a Left Rotation</p>
+</div>
+<p>The code that implements these rules can be found in our <tt class="docutils literal"><span class="pre">rebalance</span></tt>
+method, which is shown in <a class="reference internal" href="#lst-rebalance"><em>Listing 3</em></a>. Rule number 1 from
+above is implemented by the <tt class="docutils literal"><span class="pre">if</span></tt> statement starting on line&nbsp;2.
+Rule number 2 is implemented by the <tt class="docutils literal"><span class="pre">elif</span></tt> statement starting on
+line 8.</p>
+<p id="lst-rebalance"><strong>Listing 3</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">rebalance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">node</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">balanceFactor</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+         <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">rightChild</span><span class="o">.</span><span class="n">balanceFactor</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rotateRight</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">rightChild</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rotateLeft</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+         <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rotateLeft</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">node</span><span class="o">.</span><span class="n">balanceFactor</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+         <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">leftChild</span><span class="o">.</span><span class="n">balanceFactor</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rotateLeft</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">leftChild</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rotateRight</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+         <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rotateRight</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>The <a class="reference internal" href="KeyTerms.html#tree-discuss"><em>discussion questions</em></a> provide you the opportunity to rebalance a tree
+that requires a left rotation followed by a right. In addition the
+discussion questions provide you with the opportunity to rebalance some
+trees that are a little more complex than the tree in
+<a class="reference internal" href="#fig-rotatelr"><em>Figure 8</em></a>.</p>
+<p>By keeping the tree in balance at all times, we can ensure that the
+<tt class="docutils literal"><span class="pre">get</span></tt> method will run in order <span class="math">\(O(log_2(n))\)</span> time. But the
+question is at what cost to our <tt class="docutils literal"><span class="pre">put</span></tt> method? Let us break this down
+into the operations performed by <tt class="docutils literal"><span class="pre">put</span></tt>. Since a new node is inserted
+as a leaf, updating the balance factors of all the parents will require
+a maximum of <span class="math">\(log_2(n)\)</span> operations, one for each level of the
+tree. If a subtree is found to be out of balance a maximum of two
+rotations are required to bring the tree back into balance. But, each of
+the rotations works in <span class="math">\(O(1)\)</span> time, so even our <tt class="docutils literal"><span class="pre">put</span></tt>
+operation remains <span class="math">\(O(log_2(n))\)</span>.</p>
+<p>At this point we have implemented a functional AVL-Tree, unless you need
+the ability to delete a node. We leave the deletion of the node and
+subsequent updating and rebalancing as an exercise for you.</p>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - AVL Tree Performance' data-toggle="tooltip">
+    <a href="AVLTreePerformance.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="AVLTreePerformance.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Summary of Map ADT Implementations' data-toggle="tooltip" >
+    <a href="SummaryofMapADTImplementations.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="SummaryofMapADTImplementations.html" >Next Section - Summary of Map ADT Implementations</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014 Brad Miller, David Ranum.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

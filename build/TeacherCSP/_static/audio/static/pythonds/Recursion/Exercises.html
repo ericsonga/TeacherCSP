@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Exercises &mdash; Problem Solving with Algorithms and Data Structures</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pythonds';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">Problem Solving with Algorithms and Data Structures</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pythonds/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/initiateGroup' id="joinGroupLink">Join a Study Group</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/schedule' id="groupScheduleLink">Group Schedule</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/newschedule' id="newChapterLink">Schedule New Chapter</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/manageGroup' id="manageGroupLink">Manage Group</a></li>
+			<li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/assignments/index'>Progress Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pythonds/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Exercises</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><p class="first">Study the following source code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">swap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>      <span class="c"># incorrect version</span>
+     <span class="k">print</span><span class="p">(</span><span class="s">&quot;before swap statement: id(x):&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s">&quot;id(y):&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+     <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span>
+     <span class="k">print</span> <span class="s">&quot;after swap statement: id(x):&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s">&quot;id(y):&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+
+<span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span> <span class="s">&quot;before swap function call: id(a):&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="s">&quot;id(b):&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;after swap function call: id(a):&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="s">&quot;id(b):&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Run this program and describe the results. Use the results to explain
+why this version of <tt class="docutils literal"><span class="pre">swap</span></tt> does not work as intended. What will be the
+values of <tt class="docutils literal"><span class="pre">a</span></tt> and <tt class="docutils literal"><span class="pre">b</span></tt> after the call to <tt class="docutils literal"><span class="pre">swap</span></tt>?</p>
+</li>
+<li><p class="first">Modify the Koch fractal program so that it draws a Koch snowflake, like this:</p>
+<img alt="../_images/koch_snowflake.png" src="../_images/koch_snowflake.png" />
+</li>
+<li id="index-0"><p class="first">Draw a Cesaro torn square fractal, of the order given by the user.  A torn square
+consists of four torn lines.   We show four different squares of orders 0,1,2,3.
+In this example, the angle of the tear is 10 degrees.
+Varying the angle gives interesting effects &#8212; experiment a bit,
+or perhaps let the user input the angle of the tear.</p>
+<img alt="../_images/cesaro_torn_square.png" src="../_images/cesaro_torn_square.png" />
+</li>
+<li id="index-1"><p class="first">A Sierpinski triangle of order 0 is an equilateral triangle.
+An order 1 triangle can be drawn by drawing 3 smaller triangles
+(shown slightly disconnected here, just to help our understanding).
+Higher order 2 and 3 triangles are also shown.
+Adapt the Koch snowflake program to draw Sierpinski triangles of any order
+input by the user.</p>
+<img alt="../_images/sierpinski_original.png" src="../_images/sierpinski_original.png" />
+</li>
+<li><p class="first">Adapt the above program to draw its three major sub-triangles in different colours,
+as shown here in this order 4 case:</p>
+<img alt="../_images/sierpinski_colour.png" src="../_images/sierpinski_colour.png" />
+</li>
+<li><p class="first">Create a module named <tt class="docutils literal"><span class="pre">seqtools.py</span></tt>. Add the functions <tt class="docutils literal"><span class="pre">encapsulate</span></tt> and
+<tt class="docutils literal"><span class="pre">insert_in_middle</span></tt> from the chapter. Add tests which test that these
+two functions work as intended with all three sequence types.</p>
+</li>
+<li><p class="first">Add each of the following functions to <tt class="docutils literal"><span class="pre">seqtools.py</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">make_empty</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">insert_at_end</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">seq</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">insert_in_front</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">seq</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">index_of</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">remove_at</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">seq</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">remove_val</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">seq</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">remove_all</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">seq</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">seq</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span> <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">sort_sequence</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span> <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">testsuite</span><span class="p">():</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">make_empty</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]),</span> <span class="p">[])</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">make_empty</span><span class="p">((</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">)),</span> <span class="p">())</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">make_empty</span><span class="p">(</span><span class="s">&quot;No, not me!&quot;</span><span class="p">),</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="n">test</span><span class="p">(</span><span class="n">insert_at_end</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">insert_at_end</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="s">&#39;abc&#39;</span><span class="p">),</span>  <span class="s">&#39;abcx&#39;</span><span class="p">)</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">insert_at_end</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+    <span class="n">test</span><span class="p">(</span><span class="n">insert_in_front</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]),</span>   <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">insert_in_front</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)),</span>   <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">insert_in_front</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="s">&#39;abc&#39;</span><span class="p">),</span>        <span class="s">&#39;xabc&#39;</span><span class="p">)</span>
+
+    <span class="n">test</span><span class="p">(</span><span class="n">index_of</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]),</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">index_of</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)),</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">index_of</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">index_of</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="s">&#39;happy birthday&#39;</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">ndex_of</span><span class="p">(</span><span class="s">&#39;banana&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;apple&#39;</span><span class="p">,</span> <span class="s">&#39;banana&#39;</span><span class="p">,</span> <span class="s">&#39;cherry&#39;</span><span class="p">,</span> <span class="s">&#39;date&#39;</span><span class="p">]),</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">index_of</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">index_of</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;apple&#39;</span><span class="p">,</span> <span class="s">&#39;banana&#39;</span><span class="p">,</span> <span class="s">&#39;cherry&#39;</span><span class="p">,</span> <span class="s">&#39;date&#39;</span><span class="p">]),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">test</span><span class="p">(</span><span class="n">remove_at</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">remove_at</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">remove_at</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&quot;Yomrktown&quot;</span><span class="p">),</span> <span class="s">&#39;Yorktown&#39;</span><span class="p">)</span>
+
+    <span class="n">test</span><span class="p">(</span><span class="n">remove_val</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">remove_val</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">)),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">remove_val</span><span class="p">(</span><span class="s">&#39;what&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;who&#39;</span><span class="p">,</span> <span class="s">&#39;what&#39;</span><span class="p">,</span> <span class="s">&#39;when&#39;</span><span class="p">,</span> <span class="s">&#39;where&#39;</span><span class="p">,</span> <span class="s">&#39;why&#39;</span><span class="p">,</span> <span class="s">&#39;how&#39;</span><span class="p">)),</span>
+          <span class="p">(</span><span class="s">&#39;who&#39;</span><span class="p">,</span> <span class="s">&#39;when&#39;</span><span class="p">,</span> <span class="s">&#39;where&#39;</span><span class="p">,</span> <span class="s">&#39;why&#39;</span><span class="p">,</span> <span class="s">&#39;how&#39;</span><span class="p">))</span>
+
+    <span class="n">test</span><span class="p">(</span><span class="n">remove_all</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">]),</span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">remove_all</span><span class="p">(</span><span class="s">&#39;i&#39;</span><span class="p">,</span> <span class="s">&#39;Mississippi&#39;</span><span class="p">),</span> <span class="s">&#39;Msssspp&#39;</span><span class="p">)</span>
+
+    <span class="n">test</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">)),</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="s">&#39;s&#39;</span><span class="p">,</span> <span class="s">&#39;Mississippi&#39;</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">count</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">7</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">]),</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">test</span><span class="p">(</span><span class="n">reverse</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]),</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">reverse</span><span class="p">((</span><span class="s">&#39;shoe&#39;</span><span class="p">,</span> <span class="s">&#39;my&#39;</span><span class="p">,</span> <span class="s">&#39;buckle&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;buckle&#39;</span><span class="p">,</span> <span class="s">&#39;my&#39;</span><span class="p">,</span> <span class="s">&#39;shoe&#39;</span><span class="p">))</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s">&#39;Python&#39;</span><span class="p">),</span> <span class="s">&#39;nohtyP&#39;</span><span class="p">)</span>
+
+    <span class="n">test</span><span class="p">(</span><span class="n">sort_sequence</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">]),</span>  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">sort_sequence</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>  <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+    <span class="n">test</span><span class="p">(</span><span class="n">sort_sequence</span><span class="p">(</span><span class="s">&quot;nothappy&quot;</span><span class="p">),</span> <span class="s">&#39;ahnoppty&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As usual, work on each of these one at a time until they pass all the tests.</p>
+<div class="admonition-but-do-you-really-want-to-do-this admonition">
+<p class="first admonition-title">But do you really want to do this?</p>
+<p>Disclaimer.  These exercises illustrate nicely that the sequence abstraction is
+general, (because slicing, indexing, and concatenation is so general), so it is possible to
+write general functions that work over all sequence types.  Nice lesson about generalization!</p>
+<p>Another view is that tuples are different from lists and strings precisely
+because you want to think about them very differently.
+It usually doesn&#8217;t make sense to sort the fields of the <cite>julia</cite>
+tuple we saw earlier, or to cut bits out or insert bits into the middle,
+<em>even if Python lets you do so!</em>
+Tuple fields get their meaning from their position in the tuple.
+Don&#8217;t mess with that.</p>
+<p>Use lists for &#8220;many things of the same type&#8221;, like an
+enrollment of many students for a course.</p>
+<p class="last">Use tuples for &#8220;fields of different types that make up a compound record&#8221;.</p>
+</div>
+</li>
+<li><p class="first">Write a function, <tt class="docutils literal"><span class="pre">recursive_min</span></tt>, that returns the smallest value in a
+nested number list.  Assume there are no empty lists or sublists:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">test</span><span class="p">(</span><span class="n">recursive_min</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">]),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">recursive_min</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="p">[[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">]),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">recursive_min</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="p">[[</span><span class="mi">13</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">],</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">]),</span> <span class="o">-</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">recursive_min</span><span class="p">([[[</span><span class="o">-</span><span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">90</span><span class="p">],</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">]),</span> <span class="mi">13</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Write a function <tt class="docutils literal"><span class="pre">count</span></tt> that returns the number of occurences
+of <tt class="docutils literal"><span class="pre">target</span></tt> in  a nested list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">test</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[]),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">8</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]),</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="p">[[</span><span class="mi">9</span><span class="p">,</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="p">[[</span><span class="mi">9</span><span class="p">,</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]),</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">count</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="p">[[</span><span class="s">&#39;this&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;thing&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">],</span> <span class="s">&#39;a&#39;</span><span class="p">],</span> <span class="s">&#39;is&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;easy&#39;</span><span class="p">]]),</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Write a function <tt class="docutils literal"><span class="pre">flatten</span></tt> that returns a simple list
+containing all the values in a nested list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">test</span><span class="p">(</span><span class="n">flatten</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">8</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]),</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="n">test</span><span class="p">(</span><span class="n">flatten</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]),</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="n">test</span><span class="p">(</span><span class="n">flatten</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]),</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="n">test</span><span class="p">(</span><span class="n">flatten</span><span class="p">([[</span><span class="s">&#39;this&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;thing&#39;</span><span class="p">],</span> <span class="s">&#39;a&#39;</span><span class="p">],</span> <span class="s">&#39;is&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;easy&#39;</span><span class="p">]]),</span>
+              <span class="p">[</span><span class="s">&#39;this&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;thing&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;is&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;easy&#39;</span><span class="p">])</span>
+<span class="n">test</span><span class="p">(</span><span class="n">flatten</span><span class="p">([]),</span> <span class="p">[])</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Rewrite the fibonacci algorithm without using recursion. Can you find bigger
+terms of the sequence?  Can you find <tt class="docutils literal"><span class="pre">fib(200)</span></tt>?</p>
+</li>
+<li><p class="first">Write a function named <tt class="docutils literal"><span class="pre">readposint</span></tt> that uses the <tt class="docutils literal"><span class="pre">input</span></tt> dialog to
+prompt the user for a positive
+integer and then checks the input to confirm that it meets the requirements.
+It should be able to handle inputs that cannot be converted to int, as well
+as negative ints, and edge cases (e.g. when the user closes the dialog, or
+does not enter anything at all.)</p>
+</li>
+<li><p class="first">Use help to find out what <tt class="docutils literal"><span class="pre">sys.getrecursionlimit()</span></tt> and
+<tt class="docutils literal"><span class="pre">sys.setrecursionlimit(n)</span></tt> do. Create several <em>experiments</em> similar to what
+was done in <tt class="docutils literal"><span class="pre">infinite_recursion.py</span></tt> to test your understanding of how
+these module functions work.</p>
+</li>
+<li><p class="first">Write a program that walks a directory structure (as in the last section of
+this chapter), but instead of printing filenames, it returns a list of all
+the full paths of files in the directory or the subdirectories.  (Don&#8217;t include
+directories in this list &#8212; just files.)  For example, the output list might
+have elements like this:</p>
+<div class="highlight-python"><div class="highlight"><pre>[&#39;C:\Python31\Lib\site-packages\pygame\docs\ref\mask.html&#39;,
+ &#39;C:\Python31\Lib\site-packages\pygame\docs\ref\midi.html&#39;,
+ ...
+ &#39;C:\Python31\Lib\site-packages\pygame\examples\aliens.py&#39;,
+ ...
+ &#39;C:\Python31\Lib\site-packages\pygame\examples\data\boom.wav&#39;,
+ ... ]
+</pre></div>
+</div>
+</li>
+<li><p class="first">Write a program named <tt class="docutils literal"><span class="pre">litter.py</span></tt> that creates an empty file named
+<tt class="docutils literal"><span class="pre">trash.txt</span></tt> in each subdirectory of a directory tree given the root of the
+tree as an argument (or the current directory as a default). Now write a
+program named <tt class="docutils literal"><span class="pre">cleanup.py</span></tt> that removes all these files.  <em>Hint:</em> Use the
+program from the example in the last section of this chapter as a basis for
+these two recursive programs.  Because you&#8217;re going to destroy files on your disks, you better
+get this right, or you risk losing files you care about.  So excellent
+advice is that initially you should fake the deletion of the files &#8212; just print
+the full path names of each file that you intent to delete.  Once you&#8217;re happy
+that your logic is correct, and you can see that you&#8217;re not deleting the wrong</p>
+</li>
+</ol>
+</div>
+
+
+  
+      
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014 Brad Miller, David Ranum.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

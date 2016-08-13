@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>CS Principles: Big Ideas in Programming &mdash; Runestone Interactive Overview</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fitb.css" type="text/css" />
+    <link rel="stylesheet" href="_static/clickable.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/datafile.css" type="text/css" />
+    <link rel="stylesheet" href="_static/dragndrop.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/livecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/livecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="_static/lib/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="_static/lib/lis.js"></script>
+    <script type="text/javascript" src="_static/parsons_setup.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Runestone Interactive Overview" href="#" />
+    <link rel="next" title="This Book is for Teachers" href="CSPrinTeasers/teacherBook.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'TeacherCSP';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = true;
+  eBookConfig.build_info = "unknown";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = true;
+  eBookConfig.python3 = true;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="#">Teacher-CSP</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='#'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/TeacherCSP/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:ACFactory.toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/initiateGroup' id="joinGroupLink">Join a Study Group</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/schedule' id="groupScheduleLink">Group Schedule</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/newschedule' id="newChapterLink">Schedule New Chapter</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/manageGroup' id="manageGroupLink">Manage Group</a></li>
+			<li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/assignments/index'>Progress Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+        
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/TeacherCSP/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">CS Principles: Big Ideas in Programming</a><ul>
+<li><a class="reference internal" href="#section-1-computer-abilities">SECTION 1: COMPUTER ABILITIES</a></li>
+<li><a class="reference internal" href="#chapter-1-what-is-this-book-about">Chapter 1: What is this Book About?</a></li>
+<li><a class="reference internal" href="#chapter-2-what-can-computers-do">Chapter 2: What can Computers Do?</a></li>
+<li><a class="reference internal" href="#section-2-naming">SECTION 2: NAMING</a></li>
+<li><a class="reference internal" href="#chapter-3-names-for-numbers">Chapter 3: Names for Numbers</a></li>
+<li><a class="reference internal" href="#chapter-4-names-for-strings">Chapter 4: Names for Strings</a></li>
+<li><a class="reference internal" href="#chapter-5-names-for-turtles">Chapter 5: Names for Turtles</a></li>
+<li><a class="reference internal" href="#chapter-6-computers-can-name-anything">Chapter 6: Computers can Name Anything</a></li>
+<li><a class="reference internal" href="#section-3-repeating">SECTION 3: REPEATING</a></li>
+<li><a class="reference internal" href="#chapter-7-computers-can-repeat-steps">Chapter 7: Computers can Repeat Steps</a></li>
+<li><a class="reference internal" href="#chapter-8-while-and-for-loops">Chapter 8: While and For Loops</a></li>
+<li><a class="reference internal" href="#chapter-9-repeating-steps-with-strings">Chapter 9: Repeating Steps with Strings</a></li>
+<li><a class="reference internal" href="#chapter-10-repeating-steps-with-turtles">Chapter 10: Repeating Steps with Turtles</a></li>
+<li><a class="reference internal" href="#chapter-11-repeating-steps-with-images">Chapter 11: Repeating Steps with Images</a></li>
+<li><a class="reference internal" href="#section-4-decisions">SECTION 4: DECISIONS</a></li>
+<li><a class="reference internal" href="#chapter-12-a-computer-can-make-decisions">Chapter 12: A Computer can Make Decisions</a></li>
+<li><a class="reference internal" href="#chapter-13-using-decisions-with-strings">Chapter 13: Using Decisions with Strings</a></li>
+<li><a class="reference internal" href="#chapter-14-using-decisions-with-turtles">Chapter 14: Using Decisions with Turtles</a></li>
+<li><a class="reference internal" href="#chapter-15-using-decisions-with-images">Chapter 15: Using Decisions with Images</a></li>
+<li><a class="reference internal" href="#section-5-data">SECTION 5: DATA</a></li>
+<li><a class="reference internal" href="#chapter-16-working-with-collections">Chapter 16:  Working with Collections</a></li>
+<li><a class="reference internal" href="#chapter-17-getting-pieces-out-of-strings-and-lists">Chapter 17: Getting pieces out of strings and lists</a></li>
+<li><a class="reference internal" href="#chapter-18-working-with-data-on-the-web">Chapter 18: Working with Data on the Web</a></li>
+<li><a class="reference internal" href="#chapter-19-internet">Chapter 19: Internet</a></li>
+<li><a class="reference internal" href="#chapter-20-creativity">Chapter 20: Creativity</a></li>
+<li><a class="reference internal" href="#chapter-21-global-impact">Chapter 21: Global Impact</a></li>
+<li><a class="reference internal" href="#chapter-22-computer-abilities-summary">Chapter 22: Computer Abilities Summary</a></li>
+<li><a class="reference internal" href="#indices">Indices</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-next" title='Next Chapter - This Book is for Teachers' data-toggle="tooltip" >
+    <a href="CSPrinTeasers/teacherBook.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="cs-principles-big-ideas-in-programming">
+<h1>CS Principles: Big Ideas in Programming<a class="headerlink" href="#cs-principles-big-ideas-in-programming" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="section-1-computer-abilities">
+<h2>SECTION 1: COMPUTER ABILITIES<a class="headerlink" href="#section-1-computer-abilities" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-1-what-is-this-book-about">
+<h2>Chapter 1: What is this Book About?<a class="headerlink" href="#chapter-1-what-is-this-book-about" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPrinTeasers/teacherBook.html">This Book is for Teachers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPrinTeasers/pretest.html">Pretest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPrinTeasers/computeNumbers.html">Compute with Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPrinTeasers/computeWords.html">Compute with Words</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPrinTeasers/computeTurtles.html">Compute with Turtles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPrinTeasers/computeImages.html">Compute with Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPrinTeasers/standards.html">Standards - Big Ideas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPrinTeasers/ch1_summary.html">Chapter 1 - Concept Summary</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-2-what-can-computers-do">
+<h2>Chapter 2: What can Computers Do?<a class="headerlink" href="#chapter-2-what-can-computers-do" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPTuring/whatIsComputer.html">What is a Computer?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPTuring/turingMachines.html">Turing Machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPTuring/abilities.html">Computer Abilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPTuring/ch2_summary.html">Chapter 2 - Concept Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPTuring/exam1a2.html">Exam Questions for Chapters 1 and 2</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="section-2-naming">
+<h2>SECTION 2: NAMING<a class="headerlink" href="#section-2-naming" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-3-names-for-numbers">
+<h2>Chapter 3: Names for Numbers<a class="headerlink" href="#chapter-3-names-for-numbers" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNumbers/assignName.html">Assigning a Name</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPNameNumbers/assignName.html#legal-variable-names">Legal Variable Names</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNumbers/expression.html">Expressions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPNameNumbers/expression.html#bigteachernote-teacher-note-assignment-dyslexia"> Teacher Note: Assignment Dyslexia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CSPNameNumbers/expression.html#integer-division">Integer Division</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CSPNameNumbers/expression.html#modulo">Modulo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNumbers/expressionTable.html">Summary of Expression Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNumbers/orderOfOperations.html">How Expressions are Evaluated</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNumbers/driving.html">Driving from Chicago to Dallas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNumbers/ketchup.html">Following the Ketchup Ooze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNumbers/walkAssign.html">Walking through Assignment more Generally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNumbers/misconceptions.html"> Teacher Note: Misconceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNumbers/invoice.html">Figuring out an Invoice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNumbers/whyVideo.html"> Teacher Note: Why Videos?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNumbers/ch3_summary.html">Chapter 3 - Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNumbers/ch3_exercises.html">Chapter 3 Exercises</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-4-names-for-strings">
+<h2>Chapter 4: Names for Strings<a class="headerlink" href="#chapter-4-names-for-strings" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameStrings/assignNameStr.html">Assign a Name to a String</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPNameStrings/assignNameStr.html#concatenating-appending-strings">Concatenating (Appending) Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CSPNameStrings/assignNameStr.html#concatenating-strings-and-numbers">Concatenating Strings and Numbers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameStrings/strObjects.html">Strings are Objects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPNameStrings/strObjects.html#getting-part-of-a-string">Getting Part of a String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CSPNameStrings/strObjects.html#some-other-string-functions">Some Other String Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameStrings/immutable.html">Strings are Immutable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameStrings/madlib.html">Making a MadLib story</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameStrings/whyAudio.html"> Teacher Note: Why Audio Tours?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameStrings/ch4_summary.html">Chapter 4 - Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPNameStrings/ch4_summary.html#summary-of-string-functions">Summary of String Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameStrings/ch4_exercises.html">Chapter 4 Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameStrings/exam3a4.html">Exam Questions for Chapters 3 and 4</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-5-names-for-turtles">
+<h2>Chapter 5: Names for Turtles<a class="headerlink" href="#chapter-5-names-for-turtles" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameTurtles/names4turtles.html">Assign a Name to a Turtle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPNameTurtles/names4turtles.html#what-does-a-left-turn-of-90-mean">What does a left turn of 90 mean?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameTurtles/FuncAndProc.html">Procedures and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameTurtles/turtleFAP.html">More Turtle Procedures and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameTurtles/multTurtles.html">Single and Multiple Turtles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameTurtles/house.html">Bob Builds a House</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameTurtles/changeProg.html">Changing Turtle Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameTurtles/bodySyntonic.html"> Teacher Note: Body Syntonic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameTurtles/ch5_summary.html">Chapter 5 - Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPNameTurtles/ch5_summary.html#summary-of-turtle-functions-and-procedures">Summary of Turtle Functions and Procedures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameTurtles/ch5_exercises.html">Chapter 5 Exercises</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-6-computers-can-name-anything">
+<h2>Chapter 6: Computers can Name Anything<a class="headerlink" href="#chapter-6-computers-can-name-anything" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNames/names4names2.html">Naming Everything</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNames/nameFandP.html">Naming Procedures and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNames/nameSteps.html">Naming Sets of Steps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPNameNames/nameSteps.html#defining-a-function">Defining a Function</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNames/namesInput.html">Naming Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNames/params.html"> Teachers Note: Creating Procedures with Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNames/nameSets.html">Naming Sets of Procedures and Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNames/imageLib.html">Using an Image Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNames/renameFunctions.html">Renaming Python&#8217;s Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNames/ch6_summary.html">Chapter 6 - Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNames/ch6_exercises.html">Chapter 6 Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPNameNames/exam5a6.html">Exam Questions for Chapters 5 and 6</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="section-3-repeating">
+<h2>SECTION 3: REPEATING<a class="headerlink" href="#section-3-repeating" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-7-computers-can-repeat-steps">
+<h2>Chapter 7: Computers can Repeat Steps<a class="headerlink" href="#chapter-7-computers-can-repeat-steps" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatNumbers/repeatSteps.html">Repeating Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatNumbers/repeatNums.html">Repeating with Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatNumbers/list.html">What is a List?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatNumbers/list.html#bigteachernote-teacher-note-names-are-just-words"> Teacher Note: Names are Just Words</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPRepeatNumbers/list.html#using-better-variable-names">Using Better Variable Names</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatNumbers/range.html">The Range Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatNumbers/accumPattern.html">There&#8217;s a Pattern Here!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatNumbers/accumPattern.html#using-the-accumulator-pattern">Using the Accumulator Pattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatNumbers/print.html"> Teacher Note: Print() is Your Friend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatNumbers/ch7_summary.html">Chapter 7 - Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPRepeatNumbers/ch7_summary.html#summary-of-python-keywords-and-functions">Summary of Python Keywords and Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatNumbers/ch7_exercises.html">Chapter 7 Exercises</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-8-while-and-for-loops">
+<h2>Chapter 8: While and For Loops<a class="headerlink" href="#chapter-8-while-and-for-loops" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPWhileAndForLoops/forAndWhile.html">Loops - For and While</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPWhileAndForLoops/forAndWhile.html#example-for-loop">Example For Loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CSPWhileAndForLoops/forAndWhile.html#introducing-the-while-loop">Introducing the While Loop</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWhileAndForLoops/infinite.html">Infinite Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWhileAndForLoops/whileCount.html">Counting with a While Loop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPWhileAndForLoops/whileCount.html#side-by-side-comparison-of-a-for-loop-and-a-while-loop">Side by Side Comparison of a For Loop and a While Loop</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWhileAndForLoops/while.html">Looping When We Don&#8217;t Know When We&#8217;ll Stop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWhileAndForLoops/nestedLoops.html">Nested For Loops</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPWhileAndForLoops/nestedLoops.html#how-many-times-does-the-inner-loop-execute">How Many Times Does the Inner Loop Execute?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWhileAndForLoops/teacherWhileVSFor.html"> Teacher Note: for loops are more natural</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWhileAndForLoops/ch8_summary.html">Chapter 8 - Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPWhileAndForLoops/ch8_summary.html#summary-of-python-keywords-and-functions">Summary of Python Keywords and Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWhileAndForLoops/ch8_exercises.html">Chapter 8 Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWhileAndForLoops/exam7a8.html">Exam Questions for Chapters 7 and 8</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-9-repeating-steps-with-strings">
+<h2>Chapter 9: Repeating Steps with Strings<a class="headerlink" href="#chapter-9-repeating-steps-with-strings" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatStrings/repeatstrings.html">Using Repetition with Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatStrings/reverse.html">Reversing Text</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatStrings/mirror.html">Mirroring Text</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatStrings/modify.html">Modifying Text</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatStrings/ch9_summary.html">Chapter 9 - Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPRepeatStrings/ch9_summary.html#summary-of-python-keywords-and-functions">Summary of Python Keywords and Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatStrings/ch9_exercises.html">Chapter 9 Exercises</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-10-repeating-steps-with-turtles">
+<h2>Chapter 10: Repeating Steps with Turtles<a class="headerlink" href="#chapter-10-repeating-steps-with-turtles" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatTurtles/repeatturtles.html">Using Repetition with Turtles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatTurtles/turtleGeom.html"> Teacher Note: Turtle Geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatTurtles/turtleGeom.html#total-turtle-trip-theorem">Total Turtle Trip Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatTurtles/patterns.html">Making Patterns within Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatTurtles/stamp.html">The Turtle Stamp Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatTurtles/ch10_summary.html">Chapter 10 - Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPRepeatTurtles/ch10_summary.html#summary-of-python-keywords-and-functions">Summary of Python Keywords and Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CSPRepeatTurtles/ch10_summary.html#summary-of-turtle-functions-and-procedures">Summary of Turtle Functions and Procedures</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatTurtles/ch10_exercises.html">Chapter 10 Exercises</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-11-repeating-steps-with-images">
+<h2>Chapter 11: Repeating Steps with Images<a class="headerlink" href="#chapter-11-repeating-steps-with-images" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatImages/repeatimages.html">Using Repetition with Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatImages/repeatimages.html#a-library-of-images">A Library of Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatImages/imageAbstractions.html"> Teachers Notes: Understanding Image Representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatImages/pattern.html">A Pattern for Image Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatImages/changeColor.html">Changing Step 5: Increasing and decreasing color values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatImages/changeColorLoc.html">Changing Step 6: Changing where we put the colors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatImages/changeData.html">Changing Step 3: Changing which data we use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatImages/ch11_summary.html">Chapter 11 - Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatImages/ch11_exercises.html">Chapter 11 Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPRepeatImages/exam9t11.html">Exam Questions for Chapters 9 to 11</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="section-4-decisions">
+<h2>SECTION 4: DECISIONS<a class="headerlink" href="#section-4-decisions" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-12-a-computer-can-make-decisions">
+<h2>Chapter 12: A Computer can Make Decisions<a class="headerlink" href="#chapter-12-a-computer-can-make-decisions" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroDecisions/decisions.html">Making Decisions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroDecisions/if.html">The if Statement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroDecisions/multiple.html">Using Multiple if statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroDecisions/logicalEx.html">Logical Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroDecisions/complex.html">Complex Conditionals (and, or, and not)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroDecisions/practice.html">Practice with if</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroDecisions/ifAndElse.html">Using if and else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroDecisions/decTeacherNotes.html"> Delaying the else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroDecisions/decTeacherNotes.html#bigteachernote-sneak-up-on-and-and-or"> Sneak up on and and or</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroDecisions/decTeacherNotes.html#bigteachernote-teacher-note-confusing-while-and-if"> Teacher Note: Confusing while and if</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroDecisions/ch12_summary.html">Chapter 12 - Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPIntroDecisions/ch12_summary.html#summary-of-python-keywords-and-functions">Summary of Python Keywords and Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroDecisions/ch12_exercises.html">Chapter 12 Exercises</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-13-using-decisions-with-strings">
+<h2>Chapter 13: Using Decisions with Strings<a class="headerlink" href="#chapter-13-using-decisions-with-strings" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPStringDecisions/decisionStrings.html">Using Decisions with Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPStringDecisions/input.html">Interactive Stories with Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPStringDecisions/fortuneTeller.html">Fortune Teller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPStringDecisions/elif.html">Using elif for more options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPStringDecisions/ch13_summary.html">Chapter 13 - Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPStringDecisions/ch13_summary.html#summary-of-python-keywords-and-functions">Summary of Python Keywords and Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPStringDecisions/ch13_exercises.html">Chapter 13 Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPStringDecisions/exam12a13.html">Exam Questions for Chapters 12 and 13</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-14-using-decisions-with-turtles">
+<h2>Chapter 14: Using Decisions with Turtles<a class="headerlink" href="#chapter-14-using-decisions-with-turtles" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPTurtleDecisions/turtleFP.html">Turtle Functions and Procedures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPTurtleDecisions/decTurtle.html">Using Decisions with Turtles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPTurtleDecisions/oddEven.html">Detecting Odd and Even</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPTurtleDecisions/random.html">Using Random Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPTurtleDecisions/collisions.html">Avoiding Collisions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPTurtleDecisions/ch14_summary.html">Chapter 14 - Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPTurtleDecisions/ch14_summary.html#summary-of-python-keywords-and-functions">Summary of Python Keywords and Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPTurtleDecisions/ch14_exercises.html">Chapter 14 Exercises</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-15-using-decisions-with-images">
+<h2>Chapter 15: Using Decisions with Images<a class="headerlink" href="#chapter-15-using-decisions-with-images" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPImageDecisions/decImages.html">Using Decisions with Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPImageDecisions/combineImages.html">Combining Pictures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPImageDecisions/imageIfElse.html">If and Else with Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPImageDecisions/imageMultIf.html">Multiple If&#8217;s with Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPImageDecisions/ch15_summary.html">Chapter 15 - Concept Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPImageDecisions/ch15_summary.html#summary-of-python-keywords-and-functions">Summary of Python Keywords and Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPImageDecisions/ch15_exercises.html">Chapter 15 Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPImageDecisions/exam14a15.html">Exam Questions for Chapters 14 and 15</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="section-5-data">
+<h2>SECTION 5: DATA<a class="headerlink" href="#section-5-data" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-16-working-with-collections">
+<h2>Chapter 16:  Working with Collections<a class="headerlink" href="#chapter-16-working-with-collections" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroData/workColls.html">Working with Collections of Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroData/workStrings.html">Working with Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroData/workLists.html">Working with Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroData/listIndexes.html">Working with Indexes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroData/revList.html">Reversing a List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroData/rangeChange.html">Vary the Change Amount in Range</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroData/decRange.html">Using a Negative Change Value with Range</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroData/forEach.html">For Each Item Loop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroData/rainfall.html">Rainfall Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroData/teacherRainfall.html"> Teacher Note: The Rainfall Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroData/ch16_summary.html">Chapter 16 - Concept Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPIntroData/ch16_summary.html#summary-of-python-keywords-and-functions">Summary of Python Keywords and Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPIntroData/ch16_exercises.html">Chapter 16 Exercises</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-17-getting-pieces-out-of-strings-and-lists">
+<h2>Chapter 17: Getting pieces out of strings and lists<a class="headerlink" href="#chapter-17-getting-pieces-out-of-strings-and-lists" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPStringPieces/piecesstrings.html">Breaking Strings into Pieces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPStringPieces/madLibPieces.html">Making MadLib Stories, Easier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPStringPieces/split.html">Using the Split Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPStringPieces/outOfRange.html">Out of Range Error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPStringPieces/strProcParam.html">Creating a Procedure with Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPStringPieces/createPartsOfStrings.html">Creating parts of strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPStringPieces/ch17_summary.html">Chapter 17 - Concept Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPStringPieces/ch17_summary.html#summary-of-python-keywords-and-functions">Summary of Python Keywords and Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPStringPieces/ch17_exercises.html">Chapter 17 Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPStringPieces/exam16a17.html">Exam Questions for Chapters 16 and 17</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-18-working-with-data-on-the-web">
+<h2>Chapter 18: Working with Data on the Web<a class="headerlink" href="#chapter-18-working-with-data-on-the-web" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPWebData/webData.html">Web Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWebData/pollData.html">Our first data set: Air pollution in the United States</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWebData/readData.html">Reading the data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWebData/largestPoll.html">What&#8217;s the largest pollution values?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWebData/lowestPoll.html">What&#8217;s the lowest PM 2.5 pollution?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWebData/avgPoll.html">What&#8217;s the average PM 2.5 pollution?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWebData/datastates.html">Most Populated and Least Populated States</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPWebData/datastates.html#do-bigger-or-richer-states-have-more-pollution">Do bigger or richer states have more pollution?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWebData/findPollState.html">Finding the Pollution for a State</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWebData/ch18_summary.html">Chapter 18 - Concept Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPWebData/ch18_summary.html#summary-of-python-keywords-and-functions">Summary of Python Keywords and Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPWebData/ch18_exercises.html">Chapter 18 Exercises</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-19-internet">
+<h2>Chapter 19: Internet<a class="headerlink" href="#chapter-19-internet" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="chapter-20-creativity">
+<h2>Chapter 20: Creativity<a class="headerlink" href="#chapter-20-creativity" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="chapter-21-global-impact">
+<h2>Chapter 21: Global Impact<a class="headerlink" href="#chapter-21-global-impact" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPGlobalImpact/intro.html">Global Impact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPGlobalImpact/exploring.html">Exploring Impact Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPGlobalImpact/task.html">Preparing for the AP CS Principles Exam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPGlobalImpact/task.html#the-explore-task">The Explore Task</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CSPGlobalImpact/deciding.html">Deciding on an Innovation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPGlobalImpact/choosing.html">Choosing a Topic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPGlobalImpact/outline.html">Writing an Outline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPGlobalImpact/completing.html">Presenting your Innovation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CSPGlobalImpact/completing.html#writing-about-your-innovation">Writing about your Innovation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CSPGlobalImpact/completing.html#creating-a-visual-artifact">Creating a Visual Artifact</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="chapter-22-computer-abilities-summary">
+<h2>Chapter 22: Computer Abilities Summary<a class="headerlink" href="#chapter-22-computer-abilities-summary" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CSPAbilitySummary/thatsall.html">Computer Abilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPAbilitySummary/ch19_summary.html">Chapter 19 - Concept Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CSPAbilitySummary/examPost.html">Post Exam</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices">
+<h2>Indices<a class="headerlink" href="#indices" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+</div>
+
+
+  
+      
+  <li id="relations-next" class="navLink" title='Next Section - This Book is for Teachers' data-toggle="tooltip" >
+    <a href="CSPrinTeasers/teacherBook.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="CSPrinTeasers/teacherBook.html" >Next Section - This Book is for Teachers</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span>
+      
+      | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015 barb.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.1.
+    </p>
+  </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,270 @@
+..  Copyright (C)  Mark Guzdial, Barbara Ericson, Briana Morrison
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3 or
+    any later version published by the Free Software Foundation; with
+    Invariant Sections being Forward, Prefaces, and Contributor List,
+    no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license
+    is included in the section entitled "GNU Free Documentation License".
+
+.. 	qnum::
+	:start: 1
+	:prefix: csp-13-
+
+Using Decisions with Strings
+==============================
+
+	
+Here's an example of conditional execution using ``if`` statements with strings.  We can print different strings based on the value of a number. For example, if the user only orders 1 item we can print that out differently than if the user orders more than one item. Notice the use of ``str(numItems)`` in the code below.  The function ``str`` turns a number into a string so that it can be appended to a string.
+       
+.. activecode:: csp_sd_invoice
+    :tour_1: "Structural Tour"; 1: sd1line1; 2-3: sd1line2-3; 4-5: sd1line4-5; 6: sd1line6;
+
+    numItems = 1
+    if numItems == 1:
+       message = "You ordered 1 item"
+    if numItems > 1:
+       message = "You ordered " + str(numItems) + " items"
+    print(message)
+       
+.. mchoicemf:: 13-invoice_neg
+   :answer_a: You ordered 1 item
+   :answer_b: Your ordered -1 items
+   :answer_c: Nothing will be printed.
+   :answer_d: You will get an error message that message is not defined.
+   :correct: d
+   :feedback_a: This line will only print when the numer of items is 1.
+   :feedback_b: This line will print whenever the number of items is greater than 1.
+   :feedback_c: If numItems is negative neither of the if's will be true so the variable message will not be created.
+   :feedback_d: The variable message won't be created if the number of items is less than 1, so trying to print the value of message will cause an error.
+
+   What will be printed if numItems = -1? 
+
+.. mchoicemf:: 13-invoice_else
+   :answer_a: You ordered 1 item
+   :answer_b: Your ordered -1 items
+   :answer_c: Nothing will be printed.
+   :answer_d: You will get an error message that message is not defined.
+   :correct: b
+   :feedback_a: This line will still only print when the numer of items is 1.
+   :feedback_b: This line will print whenever the number of items was not equal to 1 when you change the second if to an else. 
+   :feedback_c: If numItems is negative neither of the if's will be true so the variable message will not be created.
+   :feedback_d: The variable message won't be created if the number of items is less than 1, so trying to print the value of message will cause an error.
+
+   What will be printed if you change the second if to an else and set numItems = -1?
+   
+What if you want different messages to be printed based on the user's score in a game?  The code below should print 
+"You can do better!" if the score is less than 10, "Good job" if the score is between 10 and 19 inclusive, and "Amazing" if the score is 20 or more, but it needs to be fixed.  First run it with different values to see what happens and 
+then answer the multiple choice questions below.  
+
+.. activecode:: csp_sd_score
+    :tour_1: "Structural Tour"; 1: sd2line1; 2-3: sd2line2-3; 4-5: sd2line4-5; 6-7: sd2line6-7;
+
+    score = 8
+    if score < 10:
+       print("You can do better.")
+    if score > 10:
+       print("Good job!")
+    if score > 20:
+       print("Amazing")
+         
+.. mchoicemf:: 13-score1
+   :answer_a: You can do better.
+   :answer_b: Good job!
+   :answer_c: Amazing!
+   :answer_d: Nothing is printed
+   :correct: d
+   :feedback_a: This line will only print when score is less than 10.
+   :feedback_b: This line will only print whenever the score is more than 10.
+   :feedback_c: This line will only print whenever the score is more then 20.
+   :feedback_d: When score equals 10 none of the current if statements will be true, so nothing is printed.
+
+   What is printed when the score is 10?
+   
+.. mchoicemf:: 13-score2
+   :answer_a: You can do better.
+   :answer_b: Good job!
+   :answer_c: Amazing!
+   :answer_d: Nothing is printed
+   :correct: b
+   :feedback_a: This line will only print when score is less than 10.
+   :feedback_b: This line will print whenever the score is more than 10, so if the value is 25 it will print first.  And then it will also print "Amazing!".
+   :feedback_c: This line will print whenever the score is more than 20, but another line will print first.
+   :feedback_d: The value 25 is more than 10.
+
+   What is the first thing printed when the score is 25?
+   
+Now go back and fix the last code to work correctly.  Remember that you can use ``and`` to join two logical expressions.  This is especially useful if you want to test if a number is in a range of numbers like 10 to 19 inclusive.
+
+Interactive Stories with Input
+===============================
+..	index::
+   	single: input
+   	
+You can use ``if`` statements to make a story interactive where the reader picks from several possible next actions.  The ``input`` method will display the string and return what the user types.  You can check if two strings have the same characters using ``==`` in Python.
+
+.. activecode:: csp_sd_story
+    :tour_1: "Structural Tour"; 1: sd3-line1; 2: sd3line2; 3: sd3line3; 4: sd3line4; 5-6: sd3line5-6; 7: sd3line7; 8-9: sd3line8-9; 10: sd3line10; 11-12: sd3line11-12; 
+    :nocodelens:
+    
+    print("You are in front of a creepy door in a hallway.")
+    print("What do you want to do?")
+    action = input ("Type: in, left, or right. Then click OK or press enter")
+    if action == "in":
+       print("You choose to go in.")
+       print("The room is pitch black.")
+    if action == "left":
+       print("You choose to turn left.")
+       print("A ghost appears at the end of the hall.")
+    if action == "right":
+       print("You choose to turn right.")
+       print("A greenish light is visible in the distance.")
+       
+.. mchoicemf:: 13-story1
+   :answer_a: The room is pitch black.
+   :answer_b: A ghost appears at the end of the hall.
+   :answer_c: A greenish light is visible in the distance.  
+   :answer_d: None of the above is printed.
+   :correct: b
+   :feedback_a: This line will be printed when the user enters in.
+   :feedback_b: This line will printed when the user enters left.
+   :feedback_c: This line will printed when the user enters right.
+   :feedback_d: If the user enters something besides in, left, or right none of the logical expressions will be true and none of these will be printed.  
+
+   What is the second thing printed if the user answers left?
+   
+.. mchoicemf:: 13-story2
+   :answer_a: The room is pitch black.
+   :answer_b: A ghost appears at the end of the hall.
+   :answer_c: A greenish light is visible in the distance.  
+   :answer_d: None of the above is printed.
+   :correct: d
+   :feedback_a: This line will be printed when the user enters in.
+   :feedback_b: This line will printed when the user enters left.
+   :feedback_c: This line will printed when the user enters right.
+   :feedback_d: None of the conditions will be true if the user enters something other than in, left, or right so none of these will be printed.
+
+   What is the printed if the user answer something other than in, left, or right?
+   
+What should the program do if the user enters something besides in, left, or right?  Fix the code above to let the user know what went wrong.
+
+Fortune Teller
+===============
+
+You can tell someone's fortune by having them pick a number and then using ``if`` statements to print the fortune for the number.   
+
+.. activecode:: csp_sd_fortune
+    :tour_1: "Structural Tour"; 1: sd4-line1; 2-3: sd4-line2-3; 4-5: sd4-line4-5; 6-7: sd4-line6-7; 8-9: sd4-line8-9; 10-11: sd4-line10-11;
+    :nocodelens:
+    
+    num = input ("Type a number from 1 to 5. Then click OK or press enter")
+    if num == "1": 
+       print("You will get a treat.")
+    if num == "2":
+       print("You will lose something.")
+    if num == "3":
+       print("You will meet a new friend.")
+    if num == "4":
+       print("You will catch a cold.")
+    if num == "5":
+       print("You will ace a test.")
+       
+.. mchoicemf:: 13-fortune1
+   :answer_a: 1
+   :answer_b: 2
+   :answer_c: 5
+   :answer_d: 6
+   :correct: d
+   :feedback_a: It would have to at least check if it was 1 or 2.  
+   :feedback_b: It executes every if, even if it already found the answer.  
+   :feedback_c: It executes every if.  
+   :feedback_d: There are only 5 logical expression here so it can't be more than 5.  
+
+   How many conditions (logical expressions) are checked if the user answered 2?
+
+
+Using ``elif`` for more options
+================================
+We have used ``if`` and ``else`` to handle two possible options, but what could you do for if you want more than two options?  What if you want to test if a value is negative, 0, or positive?  One way to do this using multiple ``if`` statements is shown below.  
+
+.. activecode:: csp_sd_three_options
+    :tour_1: "Structural Tour"; 1: sd5-line1; 2-3: sd5-line2-3; 4-5: sd5-line4-5; 6-7: sd5-line6-7;
+
+    x = 8
+    if x < 0:
+       print("x is negative")
+    if x == 0: 
+       print("x is 0")
+    if x > 0: 
+       print("x is positive") 
+       
+Run this several times and change the value of x each time.  Try it with a positive number, a negative number, and 0 to check that it works correctly.  Modify the code to 
+take a number as input from the user instead.  
+
+..	index::
+   	single: elif
+
+Another way to choose between three options is to use ``if`` followed by ``elif`` and finally ``else`` as shown below.  
+
+.. activecode:: csp_sd_three_options_elif
+    :tour_1: "Structural Tour"; 1: sd6-line1; 2-3: sd6-line2-3; 4-5: sd6-line4-5; 6-7: sd6-line6-7;
+
+    x = 8
+    if x < 0:
+       print("x is negative")
+    elif x == 0: 
+       print("x is 0")
+    else:
+       print("x is positive")
+       
+**Mixed up programs**
+
+.. parsonsprob:: 13-string_elif
+
+   The following program should report which team won or if there was a tie.  But the code has been mixed up.  Drag it into the right order with the right indention.   
+   -----
+   team1 = 20
+   team2 = 20
+   =====
+   if (team1 < team2):
+      print("team1 won")
+   =====
+   elif (team2 > team1)
+   =====
+      print("team2 won")
+   =====
+   else
+   =====
+      print("team1 and team2 tied")
+      
+You can use as many ``elif`` statements as you need.  You can only have one ``else`` statement.  What if you have scaled some data from 0 to 1 and want to know what quartile a value is in?  
+
+.. activecode:: csp_sd_four_options
+    :tour_1: "Structural Tour"; 1: sd7-line1; 2-3: sd7-line2-3; 4-5: sd7-line4-5; 6-7: sd7-line6-7; 8-9: sd7-line8-9;
+
+    x = .25
+    if x <= .25:
+       print("x is in the first quartile - x <= .25")
+    elif x <= .5: 
+       print("x is in the second quartile - .25 < x <= .5")
+    elif x <= .75:
+       print("x is in the third quartile - .5 < x <= .75")
+    else:
+       print("x is in the fourth quartile - .75 < x <= 1")
+       
+.. mchoicemf:: 13-elif1
+   :answer_a: x is in the first quartile - x <= .25
+   :answer_b: x is in the second quartile - .25 < x <= .5
+   :answer_c: x is in the third quartile - .5 < x <= .75
+   :answer_d: x is in the fourth quartile - .75 < x <= 1
+   :correct: c
+   :feedback_a: This will only print if x is less then or equal to .25.  
+   :feedback_b: This will print if the other if's were not true, and if x is less than or equal to .5.  By moving lines 6-7 before lines 4-5 this will never print.
+   :feedback_c: This will print if the other if's are not true and if x is less than or equal to .75.  So, moving lines 6-7 before lines 4-5 messes up what this code is intended to do and incorrectly prints that .5 is in the third quartile.  
+   :feedback_d: This will only print if all of the other if's were false.  
+
+   What would be printed if you moved lines 6-7 before lines 4-5 and set x equal to .5?
+       
+
+
+
+

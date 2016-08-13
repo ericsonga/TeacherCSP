@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Classes and Objects - the Basics &mdash; Programs, Information, and People: Interactive Edition</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Programs, Information, and People: Interactive Edition" href="../index.html" />
+    <link rel="next" title="Classes and Objects - Digging a little deeper" href="fractions.html" />
+    <link rel="prev" title="Printing in Python 2.7" href="../StringFormatting/interpolation.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pip';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+var _prum = [['id', '521dfcc4abe53d0749000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../toc.html">Programs, Information, and People</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../toc.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pip/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/assignments" id="registerlink">Project Page</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pip/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Classes and Objects - the Basics</a><ul>
+<li><a class="reference internal" href="#object-oriented-programming">Object-oriented programming</a></li>
+<li><a class="reference internal" href="#objects-revisited">Objects Revisited</a></li>
+<li><a class="reference internal" href="#user-defined-classes">User Defined Classes</a></li>
+<li><a class="reference internal" href="#improving-our-constructor">Improving our Constructor</a></li>
+<li><a class="reference internal" href="#adding-other-methods-to-our-class">Adding Other Methods to our Class</a></li>
+<li><a class="reference internal" href="#objects-as-arguments-and-parameters">Objects as Arguments and Parameters</a></li>
+<li><a class="reference internal" href="#converting-an-object-to-a-string">Converting an Object to a String</a></li>
+<li><a class="reference internal" href="#instances-as-return-values">Instances as Return Values</a></li>
+<li><a class="reference internal" href="#glossary">Glossary</a></li>
+<li><a class="reference internal" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Printing in Python 2.7" data-toggle="tooltip">
+    <a href="../StringFormatting/interpolation.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Classes and Objects - Digging a little deeper' data-toggle="tooltip" >
+    <a href="fractions.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="classes-and-objects-the-basics">
+<span id="classes-chap"></span><h1>Classes and Objects - the Basics<a class="headerlink" href="#classes-and-objects-the-basics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="object-oriented-programming">
+<span id="index-0"></span><h2>Object-oriented programming<a class="headerlink" href="#object-oriented-programming" title="Permalink to this headline">¶</a></h2>
+<p>Python is an <strong>object-oriented programming language</strong>.  That means it
+provides features that support <a class="reference external" href="http://en.wikipedia.org/wiki/Object-oriented_programming">object-oriented programming</a> (<strong>OOP</strong>).</p>
+<p>Object-oriented programming has its roots in the 1960s, but it wasn&#8217;t until the
+mid 1980s that it became the main <a class="reference external" href="http://en.wikipedia.org/wiki/Programming_paradigm">programming paradigm</a> used in the creation
+of new software. It was developed as a way to handle the rapidly increasing
+size and complexity of software systems and to make it easier to modify these
+large and complex systems over time.</p>
+<p>Up to now, some of the programs we have been writing use a <a class="reference external" href="http://en.wikipedia.org/wiki/Procedural_programming">procedural programming</a> paradigm. In
+procedural programming the focus is on writing functions or <em>procedures</em> which
+operate on data. In object-oriented programming the focus is on the creation of
+<strong>objects</strong> which contain both data and functionality together.
+Usually, each object definition corresponds to some object or concept in the real
+world and the functions that operate on that object correspond to the ways
+real-world objects interact.</p>
+</div>
+<div class="section" id="objects-revisited">
+<h2>Objects Revisited<a class="headerlink" href="#objects-revisited" title="Permalink to this headline">¶</a></h2>
+<p>In Python, every value is actually an object. Whether it be a dictionary, a list, or even an integer, they are all objects.  Programs manipulate those objects either by performing
+computation with them or by asking them to perform methods.  To be more specific, we say that an object has
+a <strong>state</strong> and a collection of <strong>methods</strong> that it can perform. (More about <strong>methods</strong> below.) The state of an object represents those things
+that the object knows about itself.  For example, each list has state, the items in the list. And it has methods, such as append and pop, which can operate on the list to change its state or do something else useful.</p>
+</div>
+<div class="section" id="user-defined-classes">
+<span id="index-1"></span><h2>User Defined Classes<a class="headerlink" href="#user-defined-classes" title="Permalink to this headline">¶</a></h2>
+<p>We&#8217;ve already seen classes like <tt class="docutils literal"><span class="pre">str</span></tt>, <tt class="docutils literal"><span class="pre">int</span></tt>,  <tt class="docutils literal"><span class="pre">float</span></tt> and <tt class="docutils literal"><span class="pre">list</span></tt>.  These were defined by Python and
+made available for us to use.  However, in many cases when we are solving problems we need to create data objects
+that are related to the problem we are trying to solve.  We need to create our own classes.</p>
+<p>As an example, consider the concept of a mathematical point. In two dimensions, a point is two
+numbers (coordinates) that are treated collectively as a single object.
+Points are often written in parentheses with a comma
+separating the coordinates. For example, <tt class="docutils literal"><span class="pre">(0,</span> <span class="pre">0)</span></tt> represents the origin, and
+<tt class="docutils literal"><span class="pre">(x,</span> <span class="pre">y)</span></tt> represents the point <tt class="docutils literal"><span class="pre">x</span></tt> units to the right and <tt class="docutils literal"><span class="pre">y</span></tt> units up
+from the origin.  This <tt class="docutils literal"><span class="pre">(x,y)</span></tt> is the state of the point.</p>
+<p>Thinking about our diagram above, we could draw a <tt class="docutils literal"><span class="pre">point</span></tt> object as shown here.</p>
+<img alt="A point has an x and a y" src="../_images/objectpic2.png" />
+<p>Some of the typical operations that one associates with points might be to ask
+the point for its x coordinate, <tt class="docutils literal"><span class="pre">getX</span></tt>, or to ask for its y coordinate, <tt class="docutils literal"><span class="pre">getY</span></tt>.  You may also
+wish to calculate the distance of a point from the origin, or the distance of a point from another point,
+or find the midpoint between two points, or answer the question as to whether a point falls within a
+given rectangle or circle.  We&#8217;ll shortly see how we can organize these
+together with the data.</p>
+<img alt="A point also has methods" src="../_images/objectpic3.png" />
+<p>Now that we understand what a <tt class="docutils literal"><span class="pre">point</span></tt> object might look like, we can define a new <strong>class</strong>.
+We&#8217;ll want our points to each have an <tt class="docutils literal"><span class="pre">x</span></tt> and a <tt class="docutils literal"><span class="pre">y</span></tt> attribute,
+so our first class definition looks like this.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot; Point class for representing and manipulating x,y coordinates. &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Create a new point at the origin &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</td></tr></table></div>
+<p>Class definitions can appear anywhere in a program, but they are usually near
+the beginning (after the <tt class="docutils literal"><span class="pre">import</span></tt> statements). The syntax rules for a class
+definition are the same as for other compound statements. There is a header
+which begins with the keyword, <tt class="docutils literal"><span class="pre">class</span></tt>, followed by the name of the class,
+and ending with a colon.</p>
+<p>If the first line after the class header is a string, it becomes
+the docstring of the class, and will be recognized by various tools.  (This
+is also the way docstrings work in functions.)</p>
+<p>Every class should have a method with the special name <tt class="docutils literal"><span class="pre">__init__</span></tt>.
+This <strong>initializer method</strong>, often referred to as the <strong>constructor</strong>, is automatically called whenever a new
+instance of <tt class="docutils literal"><span class="pre">Point</span></tt> is created.  It gives the programmer the opportunity
+to set up the attributes required within the new instance by giving them
+their initial state values.  The <tt class="docutils literal"><span class="pre">self</span></tt> parameter (you could choose any
+other name, but nobody ever does!) is automatically set to reference
+the newly created object that needs to be initialized.</p>
+<p>So let&#8217;s use our new Point class now.</p>
+
+<div id="cont"></div>
+<div id="chp13_classes1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp13_classes1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classes1_saveb" onclick="saveEditor('chp13_classes1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classes1_loadb" onclick="requestCode('chp13_classes1');">Load</button>
+<button class='btn btn-default' id="chp13_classes1_vizb" onclick="injectCodelens(this,'chp13_classes1');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp13_classes1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp13_classes1_code" class="active_code" prefixcode="undefined" lang="python">
+class Point:
+    """ Point class for representing and manipulating x,y coordinates. """
+
+    def __init__(self):
+
+        self.x = 0
+        self.y = 0
+
+p = Point()         # Instantiate an object of type Point
+q = Point()         # and make a second point
+
+print("Nothing seems to have happened with the points")
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp13_classes1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp13_classes1_suffix" style="display:none">
+</pre><pre id="chp13_classes1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp13_classes1)</span> </p>
+<div id="chp13_classes1_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp13_classes1_saveb').toggle();
+    $('#chp13_classes1_loadb').toggle();
+}
+if ($("#chp13_classes1").attr("lang") !== "html" && $("#chp13_classes1_code_div").parents(".admonition").length == 0 && $("#chp13_classes1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp13_classes1_code_div").offset({
+			left: $("#chp13_classes1 .clearfix").offset().left
+		});
+	}
+	$("#chp13_classes1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp13_classes1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp13_classes1_runb").parent().siblings(".ac_output").show();
+			runit('chp13_classes1',this, undefined);
+			$("#chp13_classes1_runb").on("click", function(){
+				runit('chp13_classes1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp13_classes1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp13_classes1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp13_classes1_runb").on("click", function(){
+		runit('chp13_classes1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>During the initialization of the objects, we created two
+attributes called <cite>x</cite> and <cite>y</cite> for each, and gave them both the value 0.  You will note that when you run the
+program, nothing happens.  It turns out that this is not quite the case.  In fact, two <tt class="docutils literal"><span class="pre">Points</span></tt> have been created, each
+having an x and y coordinate with value 0.  However, because we have not asked the point to do anything, we don&#8217;t see any other result.</p>
+<img alt="Simple object has state and methods" src="../_images/objectpic4.png" />
+<p>The following program adds a few print statements. You can see that the output suggests that each one is a <tt class="docutils literal"><span class="pre">Point</span> <span class="pre">object</span></tt>.
+However, notice that the <tt class="docutils literal"><span class="pre">is</span></tt> operator returns <tt class="docutils literal"><span class="pre">False</span></tt> meaning that they are different objects (we will have more to say about this in a later chapter).</p>
+
+<div id="cont"></div>
+<div id="chp13_classes2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp13_classes2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classes2_saveb" onclick="saveEditor('chp13_classes2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classes2_loadb" onclick="requestCode('chp13_classes2');">Load</button>
+<button class='btn btn-default' id="chp13_classes2_vizb" onclick="injectCodelens(this,'chp13_classes2');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp13_classes2_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp13_classes2_code" class="active_code" prefixcode="undefined" lang="python">
+class Point:
+    """ Point class for representing and manipulating x,y coordinates. """
+
+    def __init__(self):
+
+        self.x = 0
+        self.y = 0
+
+p = Point()         # Instantiate an object of type Point
+q = Point()         # and make a second point
+
+print(p)
+print(q)
+
+print(p is q)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp13_classes2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp13_classes2_suffix" style="display:none">
+</pre><pre id="chp13_classes2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp13_classes2)</span> </p>
+<div id="chp13_classes2_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp13_classes2_saveb').toggle();
+    $('#chp13_classes2_loadb').toggle();
+}
+if ($("#chp13_classes2").attr("lang") !== "html" && $("#chp13_classes2_code_div").parents(".admonition").length == 0 && $("#chp13_classes2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp13_classes2_code_div").offset({
+			left: $("#chp13_classes2 .clearfix").offset().left
+		});
+	}
+	$("#chp13_classes2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp13_classes2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp13_classes2_runb").parent().siblings(".ac_output").show();
+			runit('chp13_classes2',this, undefined);
+			$("#chp13_classes2_runb").on("click", function(){
+				runit('chp13_classes2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp13_classes2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp13_classes2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp13_classes2_runb").on("click", function(){
+		runit('chp13_classes2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>A function like <tt class="docutils literal"><span class="pre">Point</span></tt> that creates a new object instance
+is called a <strong>constructor</strong>.  Every class automatically uses the name of the class as the name of the constructor function.
+The definition of the constructor function is done
+when you write the <tt class="docutils literal"><span class="pre">__init__</span></tt> function (method) inside the class definition.</p>
+<p>It may be helpful to think of a class as a factory for making objects.
+The class itself isn&#8217;t an instance of a point, but it contains the machinery
+to make point instances.   Every time you call the constructor, you&#8217;re asking
+the factory to make you a new object.  As the object comes off the
+production line, its initialization method is executed to
+get the object properly set up with it&#8217;s factory default settings.</p>
+<p>The combined process of &#8220;make me a new object&#8221; and &#8220;get its settings initialized
+to the factory default settings&#8221; is called <strong>instantiation</strong>.</p>
+<p>To get a clearer understanding of what happens when instantiating a new instance, examine the previous code using CodeLens.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="chp13_classes2a"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (chp13_classes2a)</span> </p>
+</div>
+<script type="text/javascript">
+var chp13_classes2a_trace = {"code": "class Point:\n    \"\"\" Point class for representing and manipulating x,y coordinates. \"\"\"\n\n    def __init__(self):\n\n        self.x = 0\n        self.y = 0\n\np = Point()         # Instantiate an object of type Point\nq = Point()         # and make a second point\n\nprint(p)\nprint(q)\n\nprint(p is q)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["Point"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"Point": ["REF", 1]}, "heap": {"1": ["CLASS", "Point", [], ["__init__", ["REF", 2]]], "2": ["FUNCTION", "__init__(self)", null]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["Point"], "stdout": "", "func_name": "__init__", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"self": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "__init__", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "__init___f1", "ordered_varnames": ["self"]}], "globals": {"Point": ["REF", 1]}, "heap": {"1": ["CLASS", "Point", [], ["__init__", ["REF", 2]]], "2": ["FUNCTION", "__init__(self)", null], "3": ["INSTANCE", "Point"]}, "line": 4, "event": "call"}, {"ordered_globals": ["Point"], "stdout": "", "func_name": "__init__", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"self": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "__init__", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "__init___f1", "ordered_varnames": ["self"]}], "globals": {"Point": ["REF", 1]}, "heap": {"1": ["CLASS", "Point", [], ["__init__", ["REF", 2]]], "2": ["FUNCTION", "__init__(self)", null], "3": ["INSTANCE", "Point"]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["Point"], "stdout": "", "func_name": "__init__", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"self": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "__init__", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "__init___f1", "ordered_varnames": ["self"]}], "globals": {"Point": ["REF", 1]}, "heap": {"1": ["CLASS", "Point", [], ["__init__", ["REF", 2]]], "2": ["FUNCTION", "__init__(self)", null], "3": ["INSTANCE", "Point", ["x", 0]]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["Point"], "stdout": "", "func_name": "__init__", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"__return__": null, "self": ["REF", 3]}, "is_highlighted": true, "is_parent": false, "func_name": "__init__", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "__init___f1", "ordered_varnames": ["self", "__return__"]}], "globals": {"Point": ["REF", 1]}, "heap": {"1": ["CLASS", "Point", [], ["__init__", ["REF", 2]]], "2": ["FUNCTION", "__init__(self)", null], "3": ["INSTANCE", "Point", ["x", 0], ["y", 0]]}, "line": 7, "event": "return"}, {"ordered_globals": ["Point", "p"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"p": ["REF", 3], "Point": ["REF", 1]}, "heap": {"1": ["CLASS", "Point", [], ["__init__", ["REF", 2]]], "2": ["FUNCTION", "__init__(self)", null], "3": ["INSTANCE", "Point", ["x", 0], ["y", 0]]}, "line": 10, "event": "step_line"}, {"ordered_globals": ["Point", "p"], "stdout": "", "func_name": "__init__", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"self": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "__init__", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "__init___f2", "ordered_varnames": ["self"]}], "globals": {"p": ["REF", 3], "Point": ["REF", 1]}, "heap": {"1": ["CLASS", "Point", [], ["__init__", ["REF", 2]]], "2": ["FUNCTION", "__init__(self)", null], "3": ["INSTANCE", "Point", ["x", 0], ["y", 0]], "4": ["INSTANCE", "Point"]}, "line": 4, "event": "call"}, {"ordered_globals": ["Point", "p"], "stdout": "", "func_name": "__init__", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"self": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "__init__", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "__init___f2", "ordered_varnames": ["self"]}], "globals": {"p": ["REF", 3], "Point": ["REF", 1]}, "heap": {"1": ["CLASS", "Point", [], ["__init__", ["REF", 2]]], "2": ["FUNCTION", "__init__(self)", null], "3": ["INSTANCE", "Point", ["x", 0], ["y", 0]], "4": ["INSTANCE", "Point"]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["Point", "p"], "stdout": "", "func_name": "__init__", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"self": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "__init__", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "__init___f2", "ordered_varnames": ["self"]}], "globals": {"p": ["REF", 3], "Point": ["REF", 1]}, "heap": {"1": ["CLASS", "Point", [], ["__init__", ["REF", 2]]], "2": ["FUNCTION", "__init__(self)", null], "3": ["INSTANCE", "Point", ["x", 0], ["y", 0]], "4": ["INSTANCE", "Point", ["x", 0]]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["Point", "p"], "stdout": "", "func_name": "__init__", "stack_to_render": [{"frame_id": 2, "encoded_locals": {"__return__": null, "self": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "__init__", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "__init___f2", "ordered_varnames": ["self", "__return__"]}], "globals": {"p": ["REF", 3], "Point": ["REF", 1]}, "heap": {"1": ["CLASS", "Point", [], ["__init__", ["REF", 2]]], "2": ["FUNCTION", "__init__(self)", null], "3": ["INSTANCE", "Point", ["x", 0], ["y", 0]], "4": ["INSTANCE", "Point", ["x", 0], ["y", 0]]}, "line": 7, "event": "return"}, {"ordered_globals": ["Point", "p", "q"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"q": ["REF", 4], "p": ["REF", 3], "Point": ["REF", 1]}, "heap": {"1": ["CLASS", "Point", [], ["__init__", ["REF", 2]]], "2": ["FUNCTION", "__init__(self)", null], "3": ["INSTANCE", "Point", ["x", 0], ["y", 0]], "4": ["INSTANCE", "Point", ["x", 0], ["y", 0]]}, "line": 12, "event": "step_line"}, {"ordered_globals": ["Point", "p", "q"], "stdout": "<__main__.Point instance at 0x102a29830>\n", "func_name": "<module>", "stack_to_render": [], "globals": {"q": ["REF", 4], "p": ["REF", 3], "Point": ["REF", 1]}, "heap": {"1": ["CLASS", "Point", [], ["__init__", ["REF", 2]]], "2": ["FUNCTION", "__init__(self)", null], "3": ["INSTANCE", "Point", ["x", 0], ["y", 0]], "4": ["INSTANCE", "Point", ["x", 0], ["y", 0]]}, "line": 13, "event": "step_line"}, {"ordered_globals": ["Point", "p", "q"], "stdout": "<__main__.Point instance at 0x102a29830>\n<__main__.Point instance at 0x102b25368>\n", "func_name": "<module>", "stack_to_render": [], "globals": {"q": ["REF", 4], "p": ["REF", 3], "Point": ["REF", 1]}, "heap": {"1": ["CLASS", "Point", [], ["__init__", ["REF", 2]]], "2": ["FUNCTION", "__init__(self)", null], "3": ["INSTANCE", "Point", ["x", 0], ["y", 0]], "4": ["INSTANCE", "Point", ["x", 0], ["y", 0]]}, "line": 15, "event": "step_line"}, {"ordered_globals": ["Point", "p", "q"], "stdout": "<__main__.Point instance at 0x102a29830>\n<__main__.Point instance at 0x102b25368>\nFalse\n", "func_name": "<module>", "stack_to_render": [], "globals": {"q": ["REF", 4], "p": ["REF", 3], "Point": ["REF", 1]}, "heap": {"1": ["CLASS", "Point", [], ["__init__", ["REF", 2]]], "2": ["FUNCTION", "__init__(self)", null], "3": ["INSTANCE", "Point", ["x", 0], ["y", 0]], "4": ["INSTANCE", "Point", ["x", 0], ["y", 0]]}, "line": 15, "event": "return"}]};
+var chp13_classes2a_vis;
+
+$(document).ready(function() {
+    chp13_classes2a_vis = new ExecutionVisualizer('chp13_classes2a',chp13_classes2a_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(chp13_classes2a_vis,'chp13_classes2a');
+    allVisualizers.push(chp13_classes2a_vis);
+
+});
+
+$(document).ready(function() {
+    $("#chp13_classes2a_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'chp13_classes2a'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    chp13_classes2a_vis.redrawConnectors();
+});
+</script>
+<p>At Step 6 in the codelens, you can see that Point has been bound to an object representing the point class, but there are not yet any instances. The execution of line 9, <tt class="docutils literal"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">Point()</span></tt>, occurs at steps 7-9. First, at step 7, you can see that a blank instance of the class has been created, and is passed as the first (and only parameter) to the <tt class="docutils literal"><span class="pre">__init__</span></tt> method. That method&#8217;s code is executed, with the variable self bound to that instance. At steps 8 and 9, two instance variables are filled in: x and y are both set to 0. Nothing is returned from the __init__ method, but the point object itself is returned from the call to <tt class="docutils literal"><span class="pre">Point()</span></tt>. Thus, at step 10,  p is bound to the new point that was created and initialized.</p>
+<p>Skipping ahead, by the time we get to Step 16, p and q are each bound to different points. Even though both have x and y instance variables set to 0, they are <em>different objects</em>. Thus <tt class="docutils literal"><span class="pre">p</span> <span class="pre">is</span> <span class="pre">q</span></tt> evaluates to False.</p>
+</div>
+<div class="section" id="improving-our-constructor">
+<h2>Improving our Constructor<a class="headerlink" href="#improving-our-constructor" title="Permalink to this headline">¶</a></h2>
+<p>Our constructor so far can only create points at location <tt class="docutils literal"><span class="pre">(0,0)</span></tt>.  To create a point at position (7, 6) requires that we
+provide some additional capability for the user to pass information to the constructor.  Since constructors are simply specially named functions, we can use parameters (as we&#8217;ve seen before) to provide the specific information.</p>
+<p>We can make our class constructor more generally usable by putting extra parameters into
+the <tt class="docutils literal"><span class="pre">__init__</span></tt> method, as shown in this example.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot; Point class for representing and manipulating x,y coordinates. &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initX</span><span class="p">,</span> <span class="n">initY</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">initX</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">initY</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now when we create new points, we supply the x and y coordinates as parameters.  When the point is created, the values of <tt class="docutils literal"><span class="pre">initX</span></tt> and <tt class="docutils literal"><span class="pre">initY</span></tt> are assigned to the state of the object.</p>
+<img alt="Simple object has state and methods" src="../_images/objectpic5.png" />
+</div>
+<div class="section" id="adding-other-methods-to-our-class">
+<h2>Adding Other Methods to our Class<a class="headerlink" href="#adding-other-methods-to-our-class" title="Permalink to this headline">¶</a></h2>
+<p>The key advantage of using a class like <tt class="docutils literal"><span class="pre">Point</span></tt> rather than something like a simple
+tuple <tt class="docutils literal"><span class="pre">(7,</span> <span class="pre">6)</span></tt> now becomes apparent.  We can add methods to
+the <tt class="docutils literal"><span class="pre">Point</span></tt> class that are sensible operations for points.  Had we chosen to use a simple
+tuple to represent the point, we would not have this capability.
+Creating a class like <tt class="docutils literal"><span class="pre">Point</span></tt> brings an exceptional
+amount of &#8220;organizational power&#8221; to our programs, and to our thinking.
+We can group together the sensible operations, and the kinds of data
+they apply to, and each instance of the class can have its own state.</p>
+<p>A <strong>method</strong> behaves like a function but it is invoked on a specific
+instance.  For example, with a list bound to variable L, <tt class="docutils literal"><span class="pre">L.append(7)</span></tt> calls the function append, with the list itself as the first parameter and 7 as the second parameter.   Methods are accessed using dot notation. This is why <tt class="docutils literal"><span class="pre">L.append(7)</span></tt> has 2 parameters even though you may think it only has one: the list stored in the variable <tt class="docutils literal"><span class="pre">L</span></tt> is the first.</p>
+<p>Let&#8217;s add two simple methods to allow a point to give us information about its state.  The <tt class="docutils literal"><span class="pre">getX</span></tt> method, when invoked, will return the value of the x coordinate.</p>
+<p>The implementation of this method is straight forward since we already know how
+to write functions that return values.  One thing to notice is that even though the <tt class="docutils literal"><span class="pre">getX</span></tt> method does not need any other parameter information to do its work, there is still one formal parameter, <tt class="docutils literal"><span class="pre">self</span></tt>.  As we stated earlier, all methods defined in a class that operate on objects of that class will have <tt class="docutils literal"><span class="pre">self</span></tt> as their first parameter.  Again, this serves as reference to the object itself which in turn gives access to the state data inside the object.</p>
+
+<div id="cont"></div>
+<div id="chp13_classes4" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp13_classes4_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classes4_saveb" onclick="saveEditor('chp13_classes4');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classes4_loadb" onclick="requestCode('chp13_classes4');">Load</button>
+<button class='btn btn-default' id="chp13_classes4_vizb" onclick="injectCodelens(this,'chp13_classes4');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp13_classes4_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp13_classes4_code" class="active_code" prefixcode="undefined" lang="python">
+class Point:
+    """ Point class for representing and manipulating x,y coordinates. """
+
+    def __init__(self, initX, initY):
+
+        self.x = initX
+        self.y = initY
+
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+
+p = Point(7,6)
+print(p.getX())
+print(p.getY())
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp13_classes4_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp13_classes4_suffix" style="display:none">
+</pre><pre id="chp13_classes4_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp13_classes4)</span> </p>
+<div id="chp13_classes4_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp13_classes4_saveb').toggle();
+    $('#chp13_classes4_loadb').toggle();
+}
+if ($("#chp13_classes4").attr("lang") !== "html" && $("#chp13_classes4_code_div").parents(".admonition").length == 0 && $("#chp13_classes4_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp13_classes4_code_div").offset({
+			left: $("#chp13_classes4 .clearfix").offset().left
+		});
+	}
+	$("#chp13_classes4_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp13_classes4_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp13_classes4_runb").parent().siblings(".ac_output").show();
+			runit('chp13_classes4',this, undefined);
+			$("#chp13_classes4_runb").on("click", function(){
+				runit('chp13_classes4',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp13_classes4_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp13_classes4_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp13_classes4_runb").on("click", function(){
+		runit('chp13_classes4',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Note that the <tt class="docutils literal"><span class="pre">getX</span></tt> method simply returns the value of <tt class="docutils literal"><span class="pre">self.x</span></tt> from the object itself.  In other words, the implementation of the method is to go to the state of the object itself and get the value of <tt class="docutils literal"><span class="pre">x</span></tt>.  Likewise, the <tt class="docutils literal"><span class="pre">getY</span></tt> method looks almost the same.</p>
+<p>Let&#8217;s add another method, <tt class="docutils literal"><span class="pre">distanceFromOrigin</span></tt>, to see better how methods
+work.  This method will again not need any additional information to do its work.
+It will perform a more complex task.</p>
+
+<div id="cont"></div>
+<div id="chp13_classes5" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp13_classes5_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classes5_saveb" onclick="saveEditor('chp13_classes5');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classes5_loadb" onclick="requestCode('chp13_classes5');">Load</button>
+<button class='btn btn-default' id="chp13_classes5_vizb" onclick="injectCodelens(this,'chp13_classes5');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp13_classes5_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp13_classes5_code" class="active_code" prefixcode="undefined" lang="python">
+class Point:
+    """ Point class for representing and manipulating x,y coordinates. """
+
+    def __init__(self, initX, initY):
+
+        self.x = initX
+        self.y = initY
+
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+    def distanceFromOrigin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+
+p = Point(7,6)
+print(p.distanceFromOrigin())
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp13_classes5_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp13_classes5_suffix" style="display:none">
+</pre><pre id="chp13_classes5_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp13_classes5)</span> </p>
+<div id="chp13_classes5_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp13_classes5_saveb').toggle();
+    $('#chp13_classes5_loadb').toggle();
+}
+if ($("#chp13_classes5").attr("lang") !== "html" && $("#chp13_classes5_code_div").parents(".admonition").length == 0 && $("#chp13_classes5_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp13_classes5_code_div").offset({
+			left: $("#chp13_classes5 .clearfix").offset().left
+		});
+	}
+	$("#chp13_classes5_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp13_classes5_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp13_classes5_runb").parent().siblings(".ac_output").show();
+			runit('chp13_classes5',this, undefined);
+			$("#chp13_classes5_runb").on("click", function(){
+				runit('chp13_classes5',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp13_classes5_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp13_classes5_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp13_classes5_runb").on("click", function(){
+		runit('chp13_classes5',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Notice that the call of <tt class="docutils literal"><span class="pre">distanceFromOrigin</span></tt> does not <em>explicitly</em>
+supply an argument to match the <tt class="docutils literal"><span class="pre">self</span></tt> parameter.  This is true of all method calls. The definition will always seem to
+have one additional parameter as compared to the invocation.</p>
+</div>
+<div class="section" id="objects-as-arguments-and-parameters">
+<h2>Objects as Arguments and Parameters<a class="headerlink" href="#objects-as-arguments-and-parameters" title="Permalink to this headline">¶</a></h2>
+<p>You can pass an object as a argument, in the usual way.</p>
+<p>Here is a simple function called <tt class="docutils literal"><span class="pre">distance</span></tt> involving our new <tt class="docutils literal"><span class="pre">Point</span></tt> objects.  The job of this function is to figure out the
+distance between two points.</p>
+
+<div id="cont"></div>
+<div id="chp13_classes6" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp13_classes6_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classes6_saveb" onclick="saveEditor('chp13_classes6');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classes6_loadb" onclick="requestCode('chp13_classes6');">Load</button>
+<button class='btn btn-default' id="chp13_classes6_vizb" onclick="injectCodelens(this,'chp13_classes6');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp13_classes6_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp13_classes6_code" class="active_code" prefixcode="undefined" lang="python">
+import math
+
+class Point:
+    """ Point class for representing and manipulating x,y coordinates. """
+
+    def __init__(self, initX, initY):
+
+        self.x = initX
+        self.y = initY
+
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+    def distanceFromOrigin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+def distance(point1, point2):
+    xdiff = point2.getX()-point1.getX()
+    ydiff = point2.getY()-point1.getY()
+
+    dist = math.sqrt(xdiff**2 + ydiff**2)
+    return dist
+
+p = Point(4,3)
+q = Point(0,0)
+print(distance(p,q))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp13_classes6_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp13_classes6_suffix" style="display:none">
+</pre><pre id="chp13_classes6_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp13_classes6)</span> </p>
+<div id="chp13_classes6_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp13_classes6_saveb').toggle();
+    $('#chp13_classes6_loadb').toggle();
+}
+if ($("#chp13_classes6").attr("lang") !== "html" && $("#chp13_classes6_code_div").parents(".admonition").length == 0 && $("#chp13_classes6_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp13_classes6_code_div").offset({
+			left: $("#chp13_classes6 .clearfix").offset().left
+		});
+	}
+	$("#chp13_classes6_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp13_classes6_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp13_classes6_runb").parent().siblings(".ac_output").show();
+			runit('chp13_classes6',this, undefined);
+			$("#chp13_classes6_runb").on("click", function(){
+				runit('chp13_classes6',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp13_classes6_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp13_classes6_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp13_classes6_runb").on("click", function(){
+		runit('chp13_classes6',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p><tt class="docutils literal"><span class="pre">distance</span></tt> takes two points and returns the distance between them.  Note that <tt class="docutils literal"><span class="pre">distance</span></tt> is <strong>not</strong> a method of the Point class.  You can see this by looking at the indentation pattern.  It is not inside the class definition.  The other way we
+can know that <tt class="docutils literal"><span class="pre">distance</span></tt> is not a method of Point is that <tt class="docutils literal"><span class="pre">self</span></tt> is not included as a formal parameter.  In addition, we do not invoke <tt class="docutils literal"><span class="pre">distance</span></tt> using the dot notation.</p>
+<p>We <em>could have</em> made distance be a method of the Point class. Then, we would have called the first parameter self, and would have invoked it using the dot notation, as in the following code. Which way to implement it is a matter of coding style. Both work correctly. Most programmers choose whether to make functions be stand-alone or methods of a class based on whether the function semantically seems to be an operation that is performed on instances of the class. In this case, because distance is really a property of a pair of points and is symmetric (the distance from a to b is the same as that from b to a) it makes more sense to have it be a standalone function and not a method. Many heated discussions have occurred between programmers about such style decisions.</p>
+
+<div id="cont"></div>
+<div id="chp13_classes6a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp13_classes6a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classes6a_saveb" onclick="saveEditor('chp13_classes6a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classes6a_loadb" onclick="requestCode('chp13_classes6a');">Load</button>
+<button class='btn btn-default' id="chp13_classes6a_vizb" onclick="injectCodelens(this,'chp13_classes6a');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp13_classes6a_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp13_classes6a_code" class="active_code" prefixcode="undefined" lang="python">
+import math
+
+class Point:
+    """ Point class for representing and manipulating x,y coordinates. """
+
+    def __init__(self, initX, initY):
+
+        self.x = initX
+        self.y = initY
+
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+    def distanceFromOrigin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def distance(self, point2):
+        xdiff = point2.getX()-self.getX()
+        ydiff = point2.getY()-self.getY()
+
+        dist = math.sqrt(xdiff**2 + ydiff**2)
+        return dist
+
+p = Point(4,3)
+q = Point(0,0)
+print(p.distance(q))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp13_classes6a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp13_classes6a_suffix" style="display:none">
+</pre><pre id="chp13_classes6a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp13_classes6a)</span> </p>
+<div id="chp13_classes6a_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp13_classes6a_saveb').toggle();
+    $('#chp13_classes6a_loadb').toggle();
+}
+if ($("#chp13_classes6a").attr("lang") !== "html" && $("#chp13_classes6a_code_div").parents(".admonition").length == 0 && $("#chp13_classes6a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp13_classes6a_code_div").offset({
+			left: $("#chp13_classes6a .clearfix").offset().left
+		});
+	}
+	$("#chp13_classes6a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp13_classes6a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp13_classes6a_runb").parent().siblings(".ac_output").show();
+			runit('chp13_classes6a',this, undefined);
+			$("#chp13_classes6a_runb").on("click", function(){
+				runit('chp13_classes6a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp13_classes6a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp13_classes6a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp13_classes6a_runb").on("click", function(){
+		runit('chp13_classes6a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+<div class="section" id="converting-an-object-to-a-string">
+<h2>Converting an Object to a String<a class="headerlink" href="#converting-an-object-to-a-string" title="Permalink to this headline">¶</a></h2>
+<p>When we&#8217;re working with classes and objects, it is often necessary to print an object (that is to print the state of an object).
+Consider the example below.</p>
+
+<div id="cont"></div>
+<div id="chp13_classesstr1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp13_classesstr1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classesstr1_saveb" onclick="saveEditor('chp13_classesstr1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classesstr1_loadb" onclick="requestCode('chp13_classesstr1');">Load</button>
+<button class='btn btn-default' id="chp13_classesstr1_vizb" onclick="injectCodelens(this,'chp13_classesstr1');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp13_classesstr1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp13_classesstr1_code" class="active_code" prefixcode="undefined" lang="python">
+class Point:
+    """ Point class for representing and manipulating x,y coordinates. """
+
+    def __init__(self, initX, initY):
+
+        self.x = initX
+        self.y = initY
+
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+    def distanceFromOrigin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+
+p = Point(7,6)
+print(p)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp13_classesstr1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp13_classesstr1_suffix" style="display:none">
+</pre><pre id="chp13_classesstr1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp13_classesstr1)</span> </p>
+<div id="chp13_classesstr1_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp13_classesstr1_saveb').toggle();
+    $('#chp13_classesstr1_loadb').toggle();
+}
+if ($("#chp13_classesstr1").attr("lang") !== "html" && $("#chp13_classesstr1_code_div").parents(".admonition").length == 0 && $("#chp13_classesstr1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp13_classesstr1_code_div").offset({
+			left: $("#chp13_classesstr1 .clearfix").offset().left
+		});
+	}
+	$("#chp13_classesstr1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp13_classesstr1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp13_classesstr1_runb").parent().siblings(".ac_output").show();
+			runit('chp13_classesstr1',this, undefined);
+			$("#chp13_classesstr1_runb").on("click", function(){
+				runit('chp13_classesstr1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp13_classesstr1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp13_classesstr1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp13_classesstr1_runb").on("click", function(){
+		runit('chp13_classesstr1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>The <tt class="docutils literal"><span class="pre">print</span></tt> function shown above produces a string representation of the Point <tt class="docutils literal"><span class="pre">p</span></tt>.  The default functionality provided by
+Python tells you that <tt class="docutils literal"><span class="pre">p</span></tt> is an object of type <tt class="docutils literal"><span class="pre">Point</span></tt>.  However, it does not tell you anything about the specific
+state of the point.</p>
+<p>We can improve on this representation if we include a special method call <tt class="docutils literal"><span class="pre">__str__</span></tt>.  Notice that this method uses the same naming convention as the constructor, that is two underscores before and after the name.  It is common that Python
+uses this naming technique for special methods.</p>
+<p>The <tt class="docutils literal"><span class="pre">__str__</span></tt> method is responsible for returning a string representation as defined by the class creator.  In other words, you as the programmer, get to choose what a <tt class="docutils literal"><span class="pre">Point</span></tt> should look like when it gets printed.  In this case, we
+have decided that the string representation will include the values of x and y as well as some identifying text.  It
+is required that the <tt class="docutils literal"><span class="pre">__str__</span></tt> method create and <em>return</em> a string.</p>
+
+<div id="cont"></div>
+<div id="chp13_classesstr2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp13_classesstr2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classesstr2_saveb" onclick="saveEditor('chp13_classesstr2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classesstr2_loadb" onclick="requestCode('chp13_classesstr2');">Load</button>
+<button class='btn btn-default' id="chp13_classesstr2_vizb" onclick="injectCodelens(this,'chp13_classesstr2');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp13_classesstr2_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp13_classesstr2_code" class="active_code" prefixcode="undefined" lang="python">
+class Point:
+    """ Point class for representing and manipulating x,y coordinates. """
+
+    def __init__(self, initX, initY):
+
+        self.x = initX
+        self.y = initY
+
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+    def distanceFromOrigin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __str__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+p = Point(7,6)
+print(p)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp13_classesstr2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp13_classesstr2_suffix" style="display:none">
+</pre><pre id="chp13_classesstr2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp13_classesstr2)</span> </p>
+<div id="chp13_classesstr2_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp13_classesstr2_saveb').toggle();
+    $('#chp13_classesstr2_loadb').toggle();
+}
+if ($("#chp13_classesstr2").attr("lang") !== "html" && $("#chp13_classesstr2_code_div").parents(".admonition").length == 0 && $("#chp13_classesstr2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp13_classesstr2_code_div").offset({
+			left: $("#chp13_classesstr2 .clearfix").offset().left
+		});
+	}
+	$("#chp13_classesstr2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp13_classesstr2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp13_classesstr2_runb").parent().siblings(".ac_output").show();
+			runit('chp13_classesstr2',this, undefined);
+			$("#chp13_classesstr2_runb").on("click", function(){
+				runit('chp13_classesstr2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp13_classesstr2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp13_classesstr2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp13_classesstr2_runb").on("click", function(){
+		runit('chp13_classesstr2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>When we run the program above you can see that the <tt class="docutils literal"><span class="pre">print</span></tt> function now shows the string that we chose.</p>
+<p>Now, you ask, don&#8217;t we already have an <tt class="docutils literal"><span class="pre">str</span></tt> type converter that can
+turn our object into a string?  Yes we do!</p>
+<p>And doesn&#8217;t <tt class="docutils literal"><span class="pre">print</span></tt>
+automatically use this when printing things?  Yes again!</p>
+<p>But, as we saw earlier, these automatic mechanisms do not do exactly what we want.  Python provides many default implementations for
+methods that we as programmers will probably want to change.  When a programmer changes the meaning of a special method we
+say that we <strong>override</strong> the method.  Note also that the <tt class="docutils literal"><span class="pre">str</span></tt> type converter function uses whatever <tt class="docutils literal"><span class="pre">__str__</span></tt> method we
+provide.</p>
+</div>
+<div class="section" id="instances-as-return-values">
+<h2>Instances as Return Values<a class="headerlink" href="#instances-as-return-values" title="Permalink to this headline">¶</a></h2>
+<p>Functions and methods can return objects.  This is actually nothing new since everything in Python is an object and we have
+been returning values for quite some time. (You can also have lists or tuples of object instances, etc.)  The difference here is that we want to have the method create an object using
+the constructor and then return it as the value of the method.</p>
+<p>Suppose you have a point object
+and wish to find the midpoint halfway between it and some other target point.  We would like to write a method, call
+it <tt class="docutils literal"><span class="pre">halfway</span></tt> that takes another <tt class="docutils literal"><span class="pre">Point</span></tt> as a parameter and returns the <tt class="docutils literal"><span class="pre">Point</span></tt> that is halfway between the point and
+the target.</p>
+
+<div id="cont"></div>
+<div id="chp13_classesmid1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp13_classesmid1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classesmid1_saveb" onclick="saveEditor('chp13_classesmid1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp13_classesmid1_loadb" onclick="requestCode('chp13_classesmid1');">Load</button>
+<button class='btn btn-default' id="chp13_classesmid1_vizb" onclick="injectCodelens(this,'chp13_classesmid1');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp13_classesmid1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp13_classesmid1_code" class="active_code" prefixcode="undefined" lang="python">
+class Point:
+
+    def __init__(self, initX, initY):
+
+        self.x = initX
+        self.y = initY
+
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+    def distanceFromOrigin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def __str__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+    def halfway(self, target):
+         mx = (self.x + target.x)/2
+         my = (self.y + target.y)/2
+         return Point(mx, my)
+
+p = Point(3,4)
+q = Point(5,12)
+mid = p.halfway(q)
+
+print(mid)
+print(mid.getX())
+print(mid.getY())
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp13_classesmid1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp13_classesmid1_suffix" style="display:none">
+</pre><pre id="chp13_classesmid1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp13_classesmid1)</span> </p>
+<div id="chp13_classesmid1_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp13_classesmid1_saveb').toggle();
+    $('#chp13_classesmid1_loadb').toggle();
+}
+if ($("#chp13_classesmid1").attr("lang") !== "html" && $("#chp13_classesmid1_code_div").parents(".admonition").length == 0 && $("#chp13_classesmid1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp13_classesmid1_code_div").offset({
+			left: $("#chp13_classesmid1 .clearfix").offset().left
+		});
+	}
+	$("#chp13_classesmid1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp13_classesmid1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp13_classesmid1_runb").parent().siblings(".ac_output").show();
+			runit('chp13_classesmid1',this, undefined);
+			$("#chp13_classesmid1_runb").on("click", function(){
+				runit('chp13_classesmid1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp13_classesmid1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp13_classesmid1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp13_classesmid1_runb").on("click", function(){
+		runit('chp13_classesmid1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>The resulting Point, <tt class="docutils literal"><span class="pre">mid</span></tt>, has an x value of 4 and a y value of 8.  We can also use any other methods on <tt class="docutils literal"><span class="pre">mid</span></tt> since it is a
+<tt class="docutils literal"><span class="pre">Point</span></tt> object.</p>
+</div>
+<div class="section" id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-attribute">attribute</dt>
+<dd>One of the named data items that makes up an instance.</dd>
+<dt id="term-class">class</dt>
+<dd>A user-defined compound type. A class can also be thought of as a
+template for the objects that are instances of it.</dd>
+<dt id="term-constructor">constructor</dt>
+<dd>Every class has a &#8220;factory&#8221;, called by the same name as the class, for
+making new instances.  If the class has an <em>initializer method</em>, this method
+is used to get the attributes (i.e. the state) of the new object properly set up.</dd>
+<dt id="term-initializer-method">initializer method</dt>
+<dd>A special method in Python (called <tt class="docutils literal"><span class="pre">__init__</span></tt>)
+that is invoked automatically to set a newly created object&#8217;s
+attributes to their initial (factory-default) state.</dd>
+<dt id="term-instance">instance</dt>
+<dd>An object whose type is of some class.  Instance and object are used
+interchangeably.</dd>
+<dt id="term-instantiate">instantiate</dt>
+<dd>To create an instance of a class, and to run its initializer.</dd>
+<dt id="term-method">method</dt>
+<dd>A function that is defined inside a class definition and is invoked on
+instances of that class.</dd>
+<dt id="term-object">object</dt>
+<dd>A compound data type that is often used to model a thing or concept in
+the real world.  It bundles together the data and the operations that
+are relevant for that kind of data.  Instance and object are used
+interchangeably.</dd>
+<dt id="term-object-oriented-programming">object-oriented programming</dt>
+<dd>A powerful style of programming in which data and the operations
+that manipulate it are organized into classes and methods.</dd>
+<dt id="term-object-oriented-language">object-oriented language</dt>
+<dd>A language that provides features, such as user-defined classes and
+inheritance, that facilitate object-oriented programming.</dd>
+</dl>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Add a method <tt class="docutils literal"><span class="pre">reflect_x</span></tt> to Point which returns a new Point, one which is the
+reflection of the point about the x-axis.  For example,
+<tt class="docutils literal"><span class="pre">Point(3,</span> <span class="pre">5).reflect_x()</span></tt> is (3, -5)</p>
+
+<div id="cont"></div>
+<div id="ch_cl_02" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ch_cl_02_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl_02_saveb" onclick="saveEditor('ch_cl_02');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl_02_loadb" onclick="requestCode('ch_cl_02');">Load</button>
+<button class='btn btn-default' id="ch_cl_02_vizb" onclick="injectCodelens(this,'ch_cl_02');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ch_cl_02_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ch_cl_02_code" class="active_code" prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ch_cl_02_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ch_cl_02_suffix" style="display:none">
+</pre><pre id="ch_cl_02_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch_cl_02)</span> </p>
+<div id="ch_cl_02_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch_cl_02_saveb').toggle();
+    $('#ch_cl_02_loadb').toggle();
+}
+if ($("#ch_cl_02").attr("lang") !== "html" && $("#ch_cl_02_code_div").parents(".admonition").length == 0 && $("#ch_cl_02_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ch_cl_02_code_div").offset({
+			left: $("#ch_cl_02 .clearfix").offset().left
+		});
+	}
+	$("#ch_cl_02_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ch_cl_02_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ch_cl_02_runb").parent().siblings(".ac_output").show();
+			runit('ch_cl_02',this, undefined);
+			$("#ch_cl_02_runb").on("click", function(){
+				runit('ch_cl_02',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ch_cl_02_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ch_cl_02_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ch_cl_02_runb").on("click", function(){
+		runit('ch_cl_02',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</li>
+<li><div id='q2' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#q2-Question'><span>Question</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#q2-Answer'><span>Answer</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='q2-Question'><p>Add a method called <tt class="docutils literal"><span class="pre">move</span></tt> that will take two parameters, call them <tt class="docutils literal"><span class="pre">dx</span></tt> and <tt class="docutils literal"><span class="pre">dy</span></tt>.  The method will
+cause the point to move in the x and y direction the number of units given. (Hint: you will change the values of the
+state of the point)</p>
+</div><div class='tab-pane' id='q2-Answer'>
+<div id="cont"></div>
+<div id="ch_cl_05_answer" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ch_cl_05_answer_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl_05_answer_saveb" onclick="saveEditor('ch_cl_05_answer');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl_05_answer_loadb" onclick="requestCode('ch_cl_05_answer');">Load</button>
+<button class='btn btn-default' id="ch_cl_05_answer_vizb" onclick="injectCodelens(this,'ch_cl_05_answer');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ch_cl_05_answer_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ch_cl_05_answer_code" class="active_code" prefixcode="undefined" lang="python">
+class Point:
+    """ Point class for representing and manipulating x,y coordinates. """
+
+    def __init__(self, initX, initY):
+
+        self.x = initX
+        self.y = initY
+
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+    def distanceFromOrigin(self):
+        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
+
+    def move(self, dx, dy):
+        self.x = self.x + dx
+        self.y = self.y + dy
+
+    def __str__(self):
+        return str(self.x)+","+str(self.y)
+
+
+p = Point(7,6)
+print(p)
+p.move(5,10)
+print(p)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ch_cl_05_answer_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ch_cl_05_answer_suffix" style="display:none">
+</pre><pre id="ch_cl_05_answer_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch_cl_05_answer)</span> </p>
+<div id="ch_cl_05_answer_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch_cl_05_answer_saveb').toggle();
+    $('#ch_cl_05_answer_loadb').toggle();
+}
+if ($("#ch_cl_05_answer").attr("lang") !== "html" && $("#ch_cl_05_answer_code_div").parents(".admonition").length == 0 && $("#ch_cl_05_answer_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ch_cl_05_answer_code_div").offset({
+			left: $("#ch_cl_05_answer .clearfix").offset().left
+		});
+	}
+	$("#ch_cl_05_answer_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ch_cl_05_answer_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ch_cl_05_answer_runb").parent().siblings(".ac_output").show();
+			runit('ch_cl_05_answer',this, undefined);
+			$("#ch_cl_05_answer_runb").on("click", function(){
+				runit('ch_cl_05_answer',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ch_cl_05_answer_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ch_cl_05_answer_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ch_cl_05_answer_runb").on("click", function(){
+		runit('ch_cl_05_answer',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#q2 .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#q2 .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#q2 .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+</li>
+</ol>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 Paul Resnick, Brad Miller, David Ranum, Created using Runestone Interactive.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

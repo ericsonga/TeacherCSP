@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Dynamic Programming &mdash; Problem Solving with Algorithms and Data Structures</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
+    <link rel="next" title="Summary" href="Summary.html" />
+    <link rel="prev" title="Exploring a Maze" href="ExploringaMaze.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pythonds';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">Problem Solving with Algorithms and Data Structures</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pythonds/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/initiateGroup' id="joinGroupLink">Join a Study Group</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/schedule' id="groupScheduleLink">Group Schedule</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/newschedule' id="newChapterLink">Schedule New Chapter</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/manageGroup' id="manageGroupLink">Manage Group</a></li>
+			<li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/assignments/index'>Progress Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pythonds/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Dynamic Programming</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Exploring a Maze" data-toggle="tooltip">
+    <a href="ExploringaMaze.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Summary' data-toggle="tooltip" >
+    <a href="Summary.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="dynamic-programming">
+<h1>Dynamic Programming<a class="headerlink" href="#dynamic-programming" title="Permalink to this headline">¶</a></h1>
+<p>Many programs in computer science are written to optimize some value;
+for example, find the shortest path between two points, find the line
+that best fits a set of points, or find the smallest set of objects that
+satisfies some criteria. There are many strategies that computer
+scientists use to solve these problems. One of the goals of this book is
+to expose you to several different problem solving strategies. <strong>Dynamic
+programming</strong> is one strategy for these types of optimization problems.</p>
+<p>A classic example of an optimization problem involves making change
+using the fewest coins. Suppose you are a programmer for a vending
+machine manufacturer. Your company wants to streamline effort by giving
+out the fewest possible coins in change for each transaction. Suppose a
+customer puts in a dollar bill and purchases an item for 37 cents. What
+is the smallest number of coins you can use to make change? The answer
+is six coins: two quarters, one dime, and three pennies. How did we
+arrive at the answer of six coins? We start with the largest coin in our
+arsenal (a quarter) and use as many of those as possible, then we go to
+the next lowest coin value and use as many of those as possible. This
+first approach is called a <strong>greedy method</strong> because we try to solve as
+big a piece of the problem as possible right away.</p>
+<p>The greedy method works fine when we are using U.S. coins, but suppose
+that your company decides to deploy its vending machines in Lower
+Elbonia where, in addition to the usual 1, 5, 10, and 25 cent coins they
+also have a 21 cent coin. In this instance our greedy method fails to
+find the optimal solution for 63 cents in change. With the addition of
+the 21 cent coin the greedy method would still find the solution to be
+six coins. However, the optimal answer is three 21 cent pieces.</p>
+<p>Let’s look at a method where we could be sure that we would find the
+optimal answer to the problem. Since this section is about recursion,
+you may have guessed that we will use a recursive solution. Let’s start
+with identifying the base case. If we are trying to make change for the
+same amount as the value of one of our coins, the answer is easy, one
+coin.</p>
+<p>If the amount does not match we have several options. What we want is
+the minimum of a penny plus the number of coins needed to make change
+for the original amount minus a penny, or a nickel plus the number of
+coins needed to make change for the original amount minus five cents, or
+a dime plus the number of coins needed to make change for the original
+amount minus ten cents, and so on. So the number of coins needed to make
+change for the original amount can be computed according to the
+following:</p>
+<div class="math">
+\[\begin{split}   numCoins =
+min
+\begin{cases}
+1 + numCoins(original amount - 1) \\
+1 + numCoins(original amount - 5) \\
+1 + numCoins(original amount - 10) \\
+1 + numCoins(original amount - 25)
+\end{cases}
+\label{eqn_change}\end{split}\]</div>
+<p>The algorithm for doing what we have just described is shown in
+<a class="reference internal" href="#lst-change1"><em>Listing 7</em></a>. In line&nbsp;3 we are checking our base case;
+that is, we are trying to make change in the exact amount of one of our
+coins. If we do not have a coin equal to the amount of change, we make
+recursive calls for each different coin value less than the amount of
+change we are trying to make. Line&nbsp;6 shows how we filter the
+list of coins to those less than the current value of change using a
+list comprehension. The recursive call also reduces the total amount of
+change we need to make by the value of the coin selected. The recursive
+call is made in line&nbsp;7. Notice that on that same line we add 1
+to our number of coins to account for the fact that we are using a coin.
+Just adding 1 is the same as if we had made a recursive call asking
+where we satisfy the base case condition immediately.</p>
+<p><strong>Listing 7</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">recMC</span><span class="p">(</span><span class="n">coinValueList</span><span class="p">,</span><span class="n">change</span><span class="p">):</span>
+   <span class="n">minCoins</span> <span class="o">=</span> <span class="n">change</span>
+   <span class="k">if</span> <span class="n">change</span> <span class="ow">in</span> <span class="n">coinValueList</span><span class="p">:</span>
+     <span class="k">return</span> <span class="mi">1</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">coinValueList</span> <span class="k">if</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="n">change</span><span class="p">]:</span>
+         <span class="n">numCoins</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">recMC</span><span class="p">(</span><span class="n">coinValueList</span><span class="p">,</span><span class="n">change</span><span class="o">-</span><span class="n">i</span><span class="p">)</span>
+         <span class="k">if</span> <span class="n">numCoins</span> <span class="o">&lt;</span> <span class="n">minCoins</span><span class="p">:</span>
+            <span class="n">minCoins</span> <span class="o">=</span> <span class="n">numCoins</span>
+   <span class="k">return</span> <span class="n">minCoins</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">recMC</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">25</span><span class="p">],</span><span class="mi">63</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<p>The trouble with the algorithm in <a class="reference internal" href="#lst-change1"><em>Listing 7</em></a> is that it is
+extremely inefficient. In fact, it takes 67,716,925 recursive calls to
+find the optimal solution to the 4 coins, 63 cents problem! To
+understand the fatal flaw in our approach look at <a class="reference internal" href="#fig-c1ct"><em>Figure 5</em></a>,
+which illustrates a small fraction of the 377 function calls needed to
+find the optimal set of coins to make change for 26 cents.</p>
+<p>Each node in the graph corresponds to a call to <tt class="docutils literal"><span class="pre">recMC</span></tt>. The label on
+the node indicates the amount of change for which we are computing the
+number of coins. The label on the arrow indicates the coin that we just
+used. By following the graph we can see the combination of coins that
+got us to any point in the graph. The main problem is that we are
+re-doing too many calculations. For example, the graph shows that the
+algorithm would recalculate the optimal number of coins to make change
+for 15 cents at least three times. Each of these computations to find
+the optimal number of coins for 15 cents itself takes 52 function calls.
+Clearly we are wasting a lot of time and effort recalculating old
+results.</p>
+<div class="figure align-center" id="fig-c1ct">
+<a class="reference internal image-reference" href="../_images/callTree.png"><img alt="image" src="../_images/callTree.png" style="width: 100%;" /></a>
+<p class="caption">Figure 3: Call Tree for Listing 7</p>
+</div>
+<p>The key to cutting down on the amount of work we do is to remember some
+of the past results so we can avoid recomputing results we already know.
+A simple solution is to store the results for the minimum number of
+coins in a table when we find them. Then before we compute a new
+minimum, we first check the table to see if a result is already known.
+If there is already a result in the table, we use the value from the
+table rather than recomputing. <a class="reference internal" href="#lst-change2"><em>ActiveCode 1</em></a> shows a modified
+algorithm to incorporate our table lookup scheme.</p>
+
+<div id="cont"></div>
+<div id="lst_change2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="lst_change2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="lst_change2_saveb" onclick="saveEditor('lst_change2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="lst_change2_loadb" onclick="requestCode('lst_change2');">Load</button>
+
+</div>
+<br/>
+<div id="lst_change2_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="lst_change2_code" class="active_code" prefixcode="undefined" lang="python">
+def recDC(coinValueList,change,knownResults):
+   minCoins = change
+   if change in coinValueList:
+      knownResults[change] = 1
+      return 1
+   elif knownResults[change] > 0:
+      return knownResults[change]
+   else:
+       for i in [c for c in coinValueList if c <= change]:
+         numCoins = 1 + recDC(coinValueList, change-i,
+                              knownResults)
+         if numCoins < minCoins:
+            minCoins = numCoins
+            knownResults[change] = minCoins
+   return minCoins
+
+print(recDC([1,5,10,25],63,[0]*64))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="lst_change2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="lst_change2_suffix" style="display:none">
+</pre><pre id="lst_change2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text">Recursively Counting Coins with Table Lookup (lst_change2)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#lst_change2_saveb').toggle();
+    $('#lst_change2_loadb').toggle();
+}
+if ($("#lst_change2").attr("lang") !== "html" && $("#lst_change2_code_div").parents(".admonition").length == 0 && $("#lst_change2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#lst_change2_code_div").offset({
+			left: $("#lst_change2 .clearfix").offset().left
+		});
+	}
+	$("#lst_change2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#lst_change2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#lst_change2_runb").parent().siblings(".ac_output").show();
+			runit('lst_change2',this, undefined);
+			$("#lst_change2_runb").on("click", function(){
+				runit('lst_change2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#lst_change2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#lst_change2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#lst_change2_runb").on("click", function(){
+		runit('lst_change2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Notice that in line&nbsp;6 we have added a test to see if our table
+contains the minimum number of coins for a certain amount of change. If
+it does not, we compute the minimum recursively and store the computed
+minimum in the table. Using this modified algorithm reduces the number
+of recursive calls we need to make for the four coin, 63 cent problem to
+221 calls!</p>
+<p>Although the algorithm in <a class="reference internal" href="#lst-change2"><em>AcitveCode 3</em></a> is correct, it looks and
+feels like a bit of a hack.  Also, if we look at the <tt class="docutils literal"><span class="pre">knownResults</span></tt> lists
+we can see that there are some holes in the table. In fact the term for
+what we have done is not dynamic programming but rather we have improved
+the performance of our program by using a technique known as
+“memoization,” or more commonly called “caching.”</p>
+<p>A truly dynamic programming algorithm will take a more systematic
+approach to the problem. Our dynamic programming solution is going to
+start with making change for one cent and systematically work its way up
+to the amount of change we require. This guarantees us that at each step
+of the algorithm we already know the minimum number of coins needed to
+make change for any smaller amount.</p>
+<p>Let’s look at how we would fill in a table of minimum coins to use in
+making change for 11 cents. <a class="reference internal" href="#fig-dpcoins"><em>Figure 4</em></a> illustrates the
+process. We start with one cent. The only solution possible is one coin
+(a penny). The next row shows the minimum for one cent and two cents.
+Again, the only solution is two pennies. The fifth row is where things
+get interesting. Now we have two options to consider, five pennies or
+one nickel. How do we decide which is best? We consult the table and see
+that the number of coins needed to make change for four cents is four,
+plus one more penny to make five, equals five coins. Or we can look at
+zero cents plus one more nickel to make five cents equals 1 coin. Since
+the minimum of one and five is one we store 1 in the table. Fast forward
+again to the end of the table and consider 11 cents. <a class="reference internal" href="#fig-eleven"><em>Figure 5</em></a>
+shows the three options that we have to consider:</p>
+<ol class="arabic simple">
+<li>A penny plus the minimum number of coins to make change for
+<span class="math">\(11-1 = 10\)</span> cents (1)</li>
+<li>A nickel plus the minimum number of coins to make change for
+<span class="math">\(11 - 5 = 6\)</span> cents (2)</li>
+<li>A dime plus the minimum number of coins to make change for
+<span class="math">\(11 - 10 = 1\)</span> cent (1)</li>
+</ol>
+<p>Either option 1 or 3 will give us a total of two coins which is the
+minimum number of coins for 11 cents.</p>
+<div class="figure align-center" id="fig-dpcoins">
+<img alt="image" src="../_images/changeTable.png" />
+<p class="caption">Figure 4: Minimum Number of Coins Needed to Make Change</p>
+</div>
+<div class="figure align-center" id="fig-eleven">
+<img alt="image" src="../_images/elevenCents.png" />
+<p class="caption">Figure 5: Three Options to Consider for the Minimum Number of Coins for Eleven Cents</p>
+</div>
+<p><a class="reference internal" href="#lst-dpchange"><em>Listing 8</em></a> is a dynamic programming algorithm to solve our
+change-making problem. <tt class="docutils literal"><span class="pre">dpMakeChange</span></tt> takes three parameters: a list
+of valid coin values, the amount of change we want to make, and a list
+of the minimum number of coins needed to make each value. When the
+function is done <tt class="docutils literal"><span class="pre">minCoins</span></tt> will contain the solution for all values
+from 0 to the value of <tt class="docutils literal"><span class="pre">change</span></tt>.</p>
+<p id="lst-dpchange"><strong>Listing 8</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">dpMakeChange</span><span class="p">(</span><span class="n">coinValueList</span><span class="p">,</span><span class="n">change</span><span class="p">,</span><span class="n">minCoins</span><span class="p">):</span>
+   <span class="k">for</span> <span class="n">cents</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">change</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">coinCount</span> <span class="o">=</span> <span class="n">cents</span>
+      <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">coinValueList</span> <span class="k">if</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="n">cents</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">minCoins</span><span class="p">[</span><span class="n">cents</span><span class="o">-</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">coinCount</span><span class="p">:</span>
+               <span class="n">coinCount</span> <span class="o">=</span> <span class="n">minCoins</span><span class="p">[</span><span class="n">cents</span><span class="o">-</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span>
+      <span class="n">minCoins</span><span class="p">[</span><span class="n">cents</span><span class="p">]</span> <span class="o">=</span> <span class="n">coinCount</span>
+   <span class="k">return</span> <span class="n">minCoins</span><span class="p">[</span><span class="n">change</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Note that <tt class="docutils literal"><span class="pre">dpMakeChange</span></tt> is not a recursive function, even though we
+started with a recursive solution to this problem. It is important to
+realize that just because you can write a recursive solution to a
+problem does not mean it is the best or most efficient solution. The
+bulk of the work in this function is done by the loop that starts on
+line&nbsp;4. In this loop we consider using all possible coins to
+make change for the amount specified by <tt class="docutils literal"><span class="pre">cents</span></tt>. Like we did for the
+11 cent example above, we remember the minimum value and store it in our
+<tt class="docutils literal"><span class="pre">minCoins</span></tt> list.</p>
+<p>Although our making change algorithm does a good job of figuring out the
+minimum number of coins, it does not help us make change since we do not
+keep track of the coins we use. We can easily extend <tt class="docutils literal"><span class="pre">dpMakeChange</span></tt> to
+keep track of the coins used by simply remembering the last coin we add
+for each entry in the <tt class="docutils literal"><span class="pre">minCoins</span></tt> table. If we know the last coin
+added, we can simply subtract the value of the coin to find a previous
+entry in the table that tells us the last coin we added to make that
+amount. We can keep tracing back through the table until we get to the
+beginning.</p>
+<p><a class="reference internal" href="#lst-dpremember"><em>ActiveCode 2</em></a> shows the <tt class="docutils literal"><span class="pre">dpMakeChange</span></tt> algorithm
+modified to keep track of the coins used, along with a function
+<tt class="docutils literal"><span class="pre">printCoins</span></tt> that walks backward through the table to print out the
+value of each coin used.
+This shows the algorithm in
+action solving the problem for our friends in Lower Elbonia. The first
+two lines of <tt class="docutils literal"><span class="pre">main</span></tt> set the amount to be converted and create the list of coins used. The next two
+lines create the lists we need to store the results. <tt class="docutils literal"><span class="pre">coinsUsed</span></tt> is a
+list of the coins used to make change, and <tt class="docutils literal"><span class="pre">coinCount</span></tt> is the minimum
+number of coins used to make change for the amount corresponding to the
+position in the list.</p>
+<p>Notice that the coins we print out come directly from the <tt class="docutils literal"><span class="pre">coinsUsed</span></tt>
+array. For the first call we start at array position 63 and print 21.
+Then we take <span class="math">\(63 - 21 = 42\)</span> and look at the 42nd element of the
+list. Once again we find a 21 stored there. Finally, element 21 of the
+array also contains 21, giving us the three 21 cent pieces.</p>
+
+<div id="cont"></div>
+<div id="lst_dpremember" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="lst_dpremember_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="lst_dpremember_saveb" onclick="saveEditor('lst_dpremember');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="lst_dpremember_loadb" onclick="requestCode('lst_dpremember');">Load</button>
+
+</div>
+<br/>
+<div id="lst_dpremember_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="lst_dpremember_code" class="active_code" prefixcode="undefined" lang="python">
+def dpMakeChange(coinValueList,change,minCoins,coinsUsed):
+   for cents in range(change+1):
+      coinCount = cents
+      newCoin = 1
+      for j in [c for c in coinValueList if c <= cents]:
+            if minCoins[cents-j] + 1 < coinCount:
+               coinCount = minCoins[cents-j]+1
+               newCoin = j
+      minCoins[cents] = coinCount
+      coinsUsed[cents] = newCoin
+   return minCoins[change]
+
+def printCoins(coinsUsed,change):
+   coin = change
+   while coin > 0:
+      thisCoin = coinsUsed[coin]
+      print(thisCoin)
+      coin = coin - thisCoin
+
+def main():
+    amnt = 63
+    clist = [1,5,10,21,25]
+    coinsUsed = [0]*(amnt+1)
+    coinCount = [0]*(amnt+1)
+
+    print("Making change for",amnt,"requires")
+    print(dpMakeChange(clist,amnt,coinCount,coinsUsed),"coins")
+    print("They are:")
+    printCoins(coinsUsed,amnt)
+    print("The used list is as follows:")
+    print(coinsUsed)
+
+main()
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="lst_dpremember_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="lst_dpremember_suffix" style="display:none">
+</pre><pre id="lst_dpremember_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text">Complete Solution to the Change Problem (lst_dpremember)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#lst_dpremember_saveb').toggle();
+    $('#lst_dpremember_loadb').toggle();
+}
+if ($("#lst_dpremember").attr("lang") !== "html" && $("#lst_dpremember_code_div").parents(".admonition").length == 0 && $("#lst_dpremember_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#lst_dpremember_code_div").offset({
+			left: $("#lst_dpremember .clearfix").offset().left
+		});
+	}
+	$("#lst_dpremember_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#lst_dpremember_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#lst_dpremember_runb").parent().siblings(".ac_output").show();
+			runit('lst_dpremember',this, undefined);
+			$("#lst_dpremember_runb").on("click", function(){
+				runit('lst_dpremember',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#lst_dpremember_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#lst_dpremember_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#lst_dpremember_runb").on("click", function(){
+		runit('lst_dpremember',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - Exploring a Maze' data-toggle="tooltip">
+    <a href="ExploringaMaze.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="ExploringaMaze.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - Summary' data-toggle="tooltip" >
+    <a href="Summary.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="Summary.html" >Next Section - Summary</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014 Brad Miller, David Ranum.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

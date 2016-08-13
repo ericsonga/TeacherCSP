@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Big-O Notation &mdash; Problem Solving with Algorithms and Data Structures</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
+    <link rel="next" title="An Anagram Detection Example" href="AnAnagramDetectionExample.html" />
+    <link rel="prev" title="What Is Algorithm Analysis?" href="WhatIsAlgorithmAnalysis.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pythonds';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">Problem Solving with Algorithms and Data Structures</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+                <div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
+
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pythonds/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/initiateGroup' id="joinGroupLink">Join a Study Group</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/schedule' id="groupScheduleLink">Group Schedule</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/newschedule' id="newChapterLink">Schedule New Chapter</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/mygroup/manageGroup' id="manageGroupLink">Manage Group</a></li>
+			<li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li><a href='http://127.0.0.1:8000/runestone/assignments/index'>Progress Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pythonds/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <!--
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Big-O Notation</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - What Is Algorithm Analysis?" data-toggle="tooltip">
+    <a href="WhatIsAlgorithmAnalysis.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - An Anagram Detection Example' data-toggle="tooltip" >
+    <a href="AnAnagramDetectionExample.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        -->
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="continue-reading"></div>
+
+<div class="container" id="main-content">
+  
+  <div class="section" id="big-o-notation">
+<h1>Big-O Notation<a class="headerlink" href="#big-o-notation" title="Permalink to this headline">¶</a></h1>
+<p>When trying to characterize an algorithm’s efficiency in terms of
+execution time, independent of any particular program or computer, it is
+important to quantify the number of operations or steps that the
+algorithm will require. If each of these steps is considered to be a
+basic unit of computation, then the execution time for an algorithm can
+be expressed as the number of steps required to solve the problem.
+Deciding on an appropriate basic unit of computation can be a
+complicated problem and will depend on how the algorithm is implemented.</p>
+<p>A good basic unit of computation for comparing the summation algorithms
+shown earlier might be to count the number of assignment statements
+performed to compute the sum. In the function <tt class="docutils literal"><span class="pre">sumOfN</span></tt>, the number of
+assignment statements is 1 (<span class="math">\(theSum = 0\)</span>)
+plus the value of <em>n</em> (the number of times we perform
+<span class="math">\(theSum=theSum+i\)</span>). We can denote this by a function, call it T,
+where <span class="math">\(T(n)=1 + n\)</span>. The parameter <em>n</em> is often referred to as
+the “size of the problem,” and we can read this as “T(n) is the time
+it takes to solve a problem of size n, namely 1+n steps.”</p>
+<p>In the summation functions given above, it makes sense to use the number
+of terms in the summation to denote the size of the problem. We can then
+say that the sum of the first 100,000 integers is a bigger instance of
+the summation problem than the sum of the first 1,000. Because of this,
+it might seem reasonable that the time required to solve the larger case
+would be greater than for the smaller case. Our goal then is to show how
+the algorithm’s execution time changes with respect to the size of the
+problem.</p>
+<p>Computer scientists prefer to take this analysis technique one step
+further. It turns out that the exact number of operations is not as
+important as determining the most dominant part of the <span class="math">\(T(n)\)</span>
+function. In other words, as the problem gets larger, some portion of
+the <span class="math">\(T(n)\)</span> function tends to overpower the rest. This dominant
+term is what, in the end, is used for comparison. The <strong>order of
+magnitude</strong> function describes the part of <span class="math">\(T(n)\)</span> that increases
+the fastest as the value of <em>n</em> increases. Order of magnitude is often
+called <strong>Big-O</strong> notation (for “order”) and written as
+<span class="math">\(O(f(n))\)</span>. It provides a useful approximation to the actual
+number of steps in the computation. The function <span class="math">\(f(n)\)</span> provides
+a simple representation of the dominant part of the original
+<span class="math">\(T(n)\)</span>.</p>
+<p>In the above example, <span class="math">\(T(n)=1+n\)</span>. As <em>n</em> gets large, the
+constant 1 will become less and less significant to the final result. If
+we are looking for an approximation for <span class="math">\(T(n)\)</span>, then we can drop
+the 1 and simply say that the running time is <span class="math">\(O(n)\)</span>. It is
+important to note that the 1 is certainly significant for
+<span class="math">\(T(n)\)</span>. However, as <em>n</em> gets large, our approximation will be
+just as accurate without it.</p>
+<p>As another example, suppose that for some algorithm, the exact number of
+steps is <span class="math">\(T(n)=5n^{2}+27n+1005\)</span>. When <em>n</em> is small, say 1 or 2,
+the constant 1005 seems to be the dominant part of the function.
+However, as <em>n</em> gets larger, the <span class="math">\(n^{2}\)</span> term becomes the most
+important. In fact, when <em>n</em> is really large, the other two terms become
+insignificant in the role that they play in determining the final
+result. Again, to approximate <span class="math">\(T(n)\)</span> as <em>n</em> gets large, we can
+ignore the other terms and focus on <span class="math">\(5n^{2}\)</span>. In addition, the
+coefficient <span class="math">\(5\)</span> becomes insignificant as <em>n</em> gets large. We
+would say then that the function <span class="math">\(T(n)\)</span> has an order of
+magnitude <span class="math">\(f(n)=n^{2}\)</span>, or simply that it is <span class="math">\(O(n^{2})\)</span>.</p>
+<p>Although we do not see this in the summation example, sometimes the
+performance of an algorithm depends on the exact values of the data
+rather than simply the size of the problem. For these kinds of
+algorithms we need to characterize their performance in terms of best
+case, <strong>worst case</strong>, or <strong>average case</strong> performance. The worst case
+performance refers to a particular data set where the algorithm performs
+especially poorly. Whereas a different data set for the exact same
+algorithm might have extraordinarily good performance. However, in most
+cases the algorithm performs somewhere in between these two extremes
+(average case). It is important for a computer scientist to understand
+these distinctions so they are not misled by one particular case.</p>
+<p>A number of very common order of magnitude functions will come up over
+and over as you study algorithms. These are shown in <a class="reference internal" href="#tbl-fntable"><em>Table 1</em></a>. In
+order to decide which of these functions is the dominant part of any
+<span class="math">\(T(n)\)</span> function, we must see how they compare with one another
+as <em>n</em> gets large.</p>
+<table border="1" class="docutils" id="tbl-fntable">
+<caption><strong>Table 1: Common Functions for Big-O</strong></caption>
+<colgroup>
+<col width="57%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>f(n)</strong></th>
+<th class="head"><strong>Name</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="math">\(1\)</span></td>
+<td>Constant</td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(\log n\)</span></td>
+<td>Logarithmic</td>
+</tr>
+<tr class="row-even"><td><span class="math">\(n\)</span></td>
+<td>Linear</td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(n\log n\)</span></td>
+<td>Log Linear</td>
+</tr>
+<tr class="row-even"><td><span class="math">\(n^{2}\)</span></td>
+<td>Quadratic</td>
+</tr>
+<tr class="row-odd"><td><span class="math">\(n^{3}\)</span></td>
+<td>Cubic</td>
+</tr>
+<tr class="row-even"><td><span class="math">\(2^{n}\)</span></td>
+<td>Exponential</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="#fig-graphfigure"><em>Figure 1</em></a> shows graphs of the common
+functions from <a class="reference internal" href="#tbl-fntable"><em>Table 1</em></a>. Notice that when <em>n</em> is small, the
+functions are not very well defined with respect to one another. It is
+hard to tell which is dominant. However, as <em>n</em> grows, there is a
+definite relationship and it is easy to see how they compare with one
+another.</p>
+<div class="figure" id="fig-graphfigure">
+<img alt="../_images/newplot.png" src="../_images/newplot.png" />
+<p class="caption">Figure 1: Plot of Common Big-O Functions</p>
+</div>
+<p>As a final example, suppose that we have the fragment of Python code
+shown in <a class="reference internal" href="#lst-dummycode"><em>Listing 2</em></a>. Although this program does not really do
+anything, it is instructive to see how we can take actual code and
+analyze performance.</p>
+<p id="lst-dummycode"><strong>Listing 2</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span><span class="o">=</span><span class="mi">5</span>
+<span class="n">b</span><span class="o">=</span><span class="mi">6</span>
+<span class="n">c</span><span class="o">=</span><span class="mi">10</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+   <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+      <span class="n">x</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span>
+      <span class="n">y</span> <span class="o">=</span> <span class="n">j</span> <span class="o">*</span> <span class="n">j</span>
+      <span class="n">z</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+   <span class="n">w</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">k</span> <span class="o">+</span> <span class="mi">45</span>
+   <span class="n">v</span> <span class="o">=</span> <span class="n">b</span><span class="o">*</span><span class="n">b</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">33</span>
+</pre></div>
+</div>
+<p>The number of assignment operations is the sum of four terms. The first
+term is the constant 3, representing the three assignment statements at
+the start of the fragment. The second term is <span class="math">\(3n^{2}\)</span>, since
+there are three statements that are performed <span class="math">\(n^{2}\)</span> times due
+to the nested iteration. The third term is <span class="math">\(2n\)</span>, two statements
+iterated <em>n</em> times. Finally, the fourth term is the constant 1,
+representing the final assignment statement. This gives us
+<span class="math">\(T(n)=3+3n^{2}+2n+1=3n^{2}+2n+4\)</span>. By looking at the exponents,
+we can easily see that the <span class="math">\(n^{2}\)</span> term will be dominant and
+therefore this fragment of code is <span class="math">\(O(n^{2})\)</span>. Note that all of
+the other terms as well as the coefficient on the dominant term can be
+ignored as <em>n</em> grows larger.</p>
+<div class="figure" id="fig-graphfigure2">
+<img alt="../_images/newplot2.png" src="../_images/newplot2.png" />
+<p class="caption">Figure 2: Comparing <span class="math">\(T(n)\)</span> with Common Big-O Functions</p>
+</div>
+<p><a class="reference internal" href="#fig-graphfigure2"><em>Figure 2</em></a> shows a few of the common Big-O functions as they
+compare with the <span class="math">\(T(n)\)</span> function discussed above. Note that
+<span class="math">\(T(n)\)</span> is initially larger than the cubic function. However, as
+n grows, the cubic function quickly overtakes <span class="math">\(T(n)\)</span>. It is easy
+to see that <span class="math">\(T(n)\)</span> then follows the quadratic function as
+<span class="math">\(n\)</span> continues to grow.</p>
+<div class="admonition-self-check admonition">
+<p class="first admonition-title">Self Check</p>
+<p class="last">Write two Python functions to find the minimum number in a list.  The first function should compare each number to every other number on the list. <span class="math">\(O(n^2)\)</span>.  The second function should be linear <span class="math">\(O(n)\)</span>.</p>
+</div>
+<div id="findMinVid" class="video_popup" >
+<video controls preload="none"  poster="../_static/function_intro.png">
+    <source src="http://media.interactivepython.org/pythondsVideos/findmin.mov" type="video/mp4"></source>
+    <source src="http://media.interactivepython.org/pythondsVideos/findmin.webm" type="video/webm"></source>
+    No supported video types
+</video>
+</div>
+<script>
+   jQuery(function($) {
+      $('#findMinVid_thumb').click(function(e) {
+         $('#findMinVid').show();
+         $('#findMinVid_thumb').hide();
+         logBookEvent({'event':'video','act':'play','div_id': 'findMinVid'});
+         // Log the run event
+      });
+	  $('#findMinVid video').one("click", function(){
+		this.play();
+	  });
+	  $('#findMinVid video').one("play", function(){
+		logBookEvent({'event':'video','act':'play','div_id': 'findMinVid'});
+	  });
+   });
+</script>
+</div>
+
+
+  
+      
+  <li id="relations-prev" class="navLink" title='Previous Section - What Is Algorithm Analysis?' data-toggle="tooltip">
+    <a href="WhatIsAlgorithmAnalysis.html" >
+      <i class='prevNav glyphicon glyphicon-chevron-left'></i>
+    </a>
+  </li>
+  <a class="navLinkBg" id="navLinkBgLeft"  href="WhatIsAlgorithmAnalysis.html" ></a>
+  
+  <li id="relations-next" class="navLink" title='Next Section - An Anagram Detection Example' data-toggle="tooltip" >
+    <a href="AnAnagramDetectionExample.html" >
+      <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
+    </a>
+  </li>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="AnAnagramDetectionExample.html" >Next Section - An Anagram Detection Example</a>
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+  
+</script>
+  
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014 Brad Miller, David Ranum.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

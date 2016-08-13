@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Naming Everything &mdash; CS Principles</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="CS Principles" href="../index.html" />
+    <link rel="next" title="Repeating Steps" href="../CSPRepeatNumbers/repeat2.html" />
+    <link rel="prev" title="Assign a Name to a Turtle" href="../CSPNameTurtles/names4turtles.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'CSPrinciples';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS Principles</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/CSPrinciples/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/CSPrinciples/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Naming Everything</a></li>
+<li><a class="reference internal" href="#naming-procedures-and-functions">Naming Procedures and Functions</a></li>
+<li><a class="reference internal" href="#naming-sets-of-steps">Naming Sets of Steps</a></li>
+<li><a class="reference internal" href="#naming-input">Naming Input</a></li>
+<li><a class="reference internal" href="#bigteachernote-teachers-note-creating-procedures-with-parameters"> Teachers Note: Creating Procedures with Parameters</a></li>
+<li><a class="reference internal" href="#naming-sets-of-procedures">Naming Sets of Procedures</a></li>
+<li><a class="reference internal" href="#using-an-image-library">Using an Image Library</a></li>
+<li><a class="reference internal" href="#renaming-python-s-functions">Renaming Python&#8217;s Functions</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Assign a Name to a Turtle" data-toggle="tooltip">
+    <a href="../CSPNameTurtles/names4turtles.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Repeating Steps' data-toggle="tooltip" >
+    <a href="../CSPRepeatNumbers/repeat2.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="naming-everything">
+<h1>Naming Everything<a class="headerlink" href="#naming-everything" title="Permalink to this headline">¶</a></h1>
+<p><strong>Learning Objectives:</strong>:</p>
+<ul class="simple">
+<li>Learn how to define new functions and procedures.</li>
+<li>Learn that we can use libraries containing functions and procedures written by others.</li>
+<li>Learn that <em>any</em> name can be renamed, even Python&#8217;s internal names.</li>
+</ul>
+<p>Earlier we learned about how a variable can store a value in a memory location (box).  The &#8220;value&#8221; can be anything.  It doesn&#8217;t have to just be a number
+or a string.  It can be steps, instructions, and even other names.  This ability to
+name other things is key to <a class="reference external" href="http://en.wikipedia.org/wiki/Alan_Turing">Alan Turing&#8217;s</a> vision of a computer.</p>
+</div>
+<div class="section" id="naming-procedures-and-functions">
+<h1>Naming Procedures and Functions<a class="headerlink" href="#naming-procedures-and-functions" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="index-0"></span><p id="index-1">We&#8217;ve already seen how we can use names to represent numbers (both integers like <tt class="docutils literal"><span class="pre">3</span></tt> and <tt class="docutils literal"><span class="pre">-325</span></tt> and decimal numbers like <tt class="docutils literal"><span class="pre">2.4</span></tt> and <tt class="docutils literal"><span class="pre">-322.9392</span></tt>), strings (like <tt class="docutils literal"><span class="pre">&quot;Hi</span> <span class="pre">There&quot;</span></tt>), turtles, and images.  When we do calculations using the names, the computer will look up the value for each name, and then use the value in the calculation.  We can also name a sequence of statements and then ask the computer to run that sequence whenever we use that name.  This is similar to asking someone to do a dance that they know, like the <a class="reference external" href="http://en.wikipedia.org/wiki/Macarena_(song)">Macarena</a> or <a class="reference external" href="http://en.wikipedia.org/wiki/Salsa_(dance)">Salsa</a>. Once you know the dance you can do the steps.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/salsaDancer.jpg"><img alt="a women dancing Salsa" src="../_images/salsaDancer.jpg" style="height: 100px;" /></a>
+<p class="caption">Figure 1: A Salsa dancer</p>
+</div>
+<p>In programming there are two different terms used for a named sequence of statements: <strong>procedure</strong> and <strong>function</strong>.  A <strong>procedure</strong> accomplishes some task or makes something happen, but doesn&#8217;t return anything. A <strong>function</strong> returns a result. Many procedures and functions are built into Python.  The function <tt class="docutils literal"><span class="pre">abs</span></tt> returns the absolute value of its input.  The function <tt class="docutils literal"><span class="pre">int</span></tt> takes a decimal number as input and returns just the integer part.</p>
+
+<div id="cont"></div>
+<div id="Functions" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Functions_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Functions_saveb" onclick="saveEditor('Functions');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Functions_loadb" onclick="requestCode('Functions');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Functions','print*open**doubleq*Absolute value of -5:*doubleq**close**nline*print*open*abs*open*-5*close**close**nline*print*open**doubleq*Integer part of 34.2*doubleq**close**nline*print*open*int*open*34.2*close**close*','1','*doubleq*Line by line tour*doubleq*; 1: fun-line1; 2: fun-line2; 3: fun-line3; 4: fun-line4;*atype*')"/>
+<button class='btn btn-default' id="Functions_vizb" onclick="injectCodelens(this,'Functions');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Functions_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Functions_code" class="active_code" prefixcode="undefined" lang="python">
+print("Absolute value of -5:")
+print(abs(-5))
+print("Integer part of 34.2")
+print(int(34.2))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Functions_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Functions_suffix" style="display:none">
+</pre><pre id="Functions_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Functions)</span> </p>
+<div id="Functions_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Functions_saveb').toggle();
+    $('#Functions_loadb').toggle();
+}
+if ($("#Functions").attr("lang") !== "html" && $("#Functions_code_div").parents(".admonition").length == 0 && $("#Functions_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Functions_code_div").offset({
+			left: $("#Functions .clearfix").offset().left
+		});
+	}
+	$("#Functions_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Functions_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Functions_runb").parent().siblings(".ac_output").show();
+			runit('Functions',this, undefined);
+			$("#Functions_runb").on("click", function(){
+				runit('Functions',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Functions_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Functions_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Functions_runb").on("click", function(){
+		runit('Functions',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="6-Functions_Q1" class="alert alert-warning">
+            csp-6-1: What do you think <cite>print(int(abs(-16.789)))</cite>, prints?<form name="6-Functions_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="6-Functions_Q1_opt_a" />
+            <label for= "6-Functions_Q1_opt_a">  a) -16</label><br />
+            
+            <input type="radio" name="group1" value="b" id="6-Functions_Q1_opt_b" />
+            <label for= "6-Functions_Q1_opt_b">  b) -16.789</label><br />
+            
+            <input type="radio" name="group1" value="c" id="6-Functions_Q1_opt_c" />
+            <label for= "6-Functions_Q1_opt_c">  c) 16.789</label><br />
+            
+            <input type="radio" name="group1" value="d" id="6-Functions_Q1_opt_d" />
+            <label for= "6-Functions_Q1_opt_d">  d) 16</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('6-Functions_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('6-Functions_Q1','d',['The function abs will change the negative.', 'The original number will change.', 'The function int will remove the decimal part.', 'The function abs will make it positive, and the function int will cut it down to 16.'])">Check Me</button>
+            <button class='btn btn-default' id="6-Functions_Q1_bcomp" disabled name="compare" onclick="compareAnswers('6-Functions_Q1');">Compare Me</button>
+            </form><br />
+            <div id="6-Functions_Q1_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="naming-sets-of-steps">
+<h1>Naming Sets of Steps<a class="headerlink" href="#naming-sets-of-steps" title="Permalink to this headline">¶</a></h1>
+<p>How did <cite>abs</cite> and <cite>int</cite> get defined?  By <em>defining</em> new procedures and functions, we can associate a name with a sequence of steps.  Look at the program below.  What do you think it will do when you press the <em>Run</em> button?  Click <em>Run</em> and see what happens.</p>
+
+<div id="cont"></div>
+<div id="First_Function" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="First_Function_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="First_Function_saveb" onclick="saveEditor('First_Function');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="First_Function_loadb" onclick="requestCode('First_Function');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('First_Function','def square*open*turtle*close*:*nline*     turtle.forward*open*100*close**nline*     turtle.right*open*90*close**nline*     turtle.forward*open*100*close**nline*     turtle.right*open*90*close**nline*     turtle.forward*open*100*close**nline*     turtle.right*open*90*close**nline*     turtle.forward*open*100*close**nline*     turtle.right*open*90*close*','1','*doubleq*Line by line tour*doubleq*; 1: dsq-line1; 2: dsq-line2; 3: dsq-line3; 4: dsq-line4; 5: dsq-line5; 6: dsq-line6; 7: dsq-line7; 8: dsq-line8; 9: dsq-line9;*atype*')"/>
+
+</div>
+<br/>
+<div id="First_Function_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="First_Function_code" class="active_code" prefixcode="undefined" lang="python">
+def square(turtle):
+     turtle.forward(100)
+     turtle.right(90)
+     turtle.forward(100)
+     turtle.right(90)
+     turtle.forward(100)
+     turtle.right(90)
+     turtle.forward(100)
+     turtle.right(90)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="First_Function_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="First_Function_suffix" style="display:none">
+</pre><pre id="First_Function_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (First_Function)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#First_Function_saveb').toggle();
+    $('#First_Function_loadb').toggle();
+}
+if ($("#First_Function").attr("lang") !== "html" && $("#First_Function_code_div").parents(".admonition").length == 0 && $("#First_Function_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#First_Function_code_div").offset({
+			left: $("#First_Function .clearfix").offset().left
+		});
+	}
+	$("#First_Function_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#First_Function_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#First_Function_runb").parent().siblings(".ac_output").show();
+			runit('First_Function',this, undefined);
+			$("#First_Function_runb").on("click", function(){
+				runit('First_Function',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#First_Function_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#First_Function_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#First_Function_runb").on("click", function(){
+		runit('First_Function',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>If you are wondering why the <em>Run</em> button didn&#8217;t seem to do anything, all that the program did was define the procedure <tt class="docutils literal"><span class="pre">square</span></tt> which takes a <tt class="docutils literal"><span class="pre">turtle</span></tt> as input.  If we want to actually execute the program we need to create a turtle and <em>call</em> the procedure as shown in the next example.</p>
+
+<div id="cont"></div>
+<div id="First_Function_Call" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="First_Function_Call_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="First_Function_Call_saveb" onclick="saveEditor('First_Function_Call');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="First_Function_Call_loadb" onclick="requestCode('First_Function_Call');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('First_Function_Call','def square*open*turtle*close*:*nline*     turtle.forward*open*100*close**nline*     turtle.right*open*90*close**nline*     turtle.forward*open*100*close**nline*     turtle.right*open*90*close**nline*     turtle.forward*open*100*close**nline*     turtle.right*open*90*close**nline*     turtle.forward*open*100*close**nline*     turtle.right*open*90*close**nline**nline*from turtle import *  # use the turtle library*nline*space = Screen*open**close*      # create a turtle screen*nline*malik = Turtle*open**close*      # create a turtle named malik*nline*square*open*malik*close*         # draw a square with malik','1','*doubleq*Important lines tour*doubleq*; 1-9: dsq2-line1-9; 11-13: dsq2-line11-13; 14: dsq2-line14;*atype*')"/>
+
+</div>
+<br/>
+<div id="First_Function_Call_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="First_Function_Call_code" class="active_code" prefixcode="undefined" lang="python">
+def square(turtle):
+     turtle.forward(100)
+     turtle.right(90)
+     turtle.forward(100)
+     turtle.right(90)
+     turtle.forward(100)
+     turtle.right(90)
+     turtle.forward(100)
+     turtle.right(90)
+
+from turtle import *  # use the turtle library
+space = Screen()      # create a turtle screen
+malik = Turtle()      # create a turtle named malik
+square(malik)         # draw a square with malik
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="First_Function_Call_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="First_Function_Call_suffix" style="display:none">
+</pre><pre id="First_Function_Call_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (First_Function_Call)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#First_Function_Call_saveb').toggle();
+    $('#First_Function_Call_loadb').toggle();
+}
+if ($("#First_Function_Call").attr("lang") !== "html" && $("#First_Function_Call_code_div").parents(".admonition").length == 0 && $("#First_Function_Call_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#First_Function_Call_code_div").offset({
+			left: $("#First_Function_Call .clearfix").offset().left
+		});
+	}
+	$("#First_Function_Call_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#First_Function_Call_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#First_Function_Call_runb").parent().siblings(".ac_output").show();
+			runit('First_Function_Call',this, undefined);
+			$("#First_Function_Call_runb").on("click", function(){
+				runit('First_Function_Call',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#First_Function_Call_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#First_Function_Call_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#First_Function_Call_runb").on("click", function(){
+		runit('First_Function_Call',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p id="index-3">In the above program, we <em>DEFine</em> the word <tt class="docutils literal"><span class="pre">square</span></tt> to represent the Python statements that draw a square with a turtle.  The <tt class="docutils literal"><span class="pre">square</span></tt> procedure takes as input a <tt class="docutils literal"><span class="pre">turtle</span></tt> that will be used to draw the square. Notice that the sequence of statements that are part of the <tt class="docutils literal"><span class="pre">square</span></tt> procedure are indented.  Python uses indention to show what statements belong to the procedure.  When the indention stops with <tt class="docutils literal"><span class="pre">from</span> <span class="pre">turtle</span> <span class="pre">import</span> <span class="pre">*</span></tt> it means that the new statements are not part of the procedure.</p>
+
+            <div id="6-Functions_Q2" class="alert alert-warning">
+            csp-6-2: Is <tt class="docutils literal"><span class="pre">abs</span></tt> a procedure or a function?<form name="6-Functions_Q2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="6-Functions_Q2_opt_a" />
+            <label for= "6-Functions_Q2_opt_a">  a) Procedure</label><br />
+            
+            <input type="radio" name="group1" value="b" id="6-Functions_Q2_opt_b" />
+            <label for= "6-Functions_Q2_opt_b">  b) Function</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('6-Functions_Q2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('6-Functions_Q2','b',['It returns a value so it is a function', 'It returns a value so it can\u0027t be a procedure'])">Check Me</button>
+            <button class='btn btn-default' id="6-Functions_Q2_bcomp" disabled name="compare" onclick="compareAnswers('6-Functions_Q2');">Compare Me</button>
+            </form><br />
+            <div id="6-Functions_Q2_feedback">
+            </div>
+            </div>
+            
+            <div id="6-Functions_Q3" class="alert alert-warning">
+            csp-6-3: Is <tt class="docutils literal"><span class="pre">square</span></tt> a procedure or a function?<form name="6-Functions_Q3_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="6-Functions_Q3_opt_a" />
+            <label for= "6-Functions_Q3_opt_a">  a) Procedure</label><br />
+            
+            <input type="radio" name="group1" value="b" id="6-Functions_Q3_opt_b" />
+            <label for= "6-Functions_Q3_opt_b">  b) Function</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('6-Functions_Q3');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('6-Functions_Q3','a',['It doesn\u0027t return a value so it is a procedure', 'It doesn\u0027t return a value so it can\u0027t be a function'])">Check Me</button>
+            <button class='btn btn-default' id="6-Functions_Q3_bcomp" disabled name="compare" onclick="compareAnswers('6-Functions_Q3');">Compare Me</button>
+            </form><br />
+            <div id="6-Functions_Q3_feedback">
+            </div>
+            </div>
+            <p>See the video below for a hint on how to solve the next mixed up code problem.</p>
+<div id="indentVideo" class="video_popup" >
+<video controls preload="none"  poster="../_static/video-mixedUpCodeIndent.png">
+    <source src="http://ice-web.cc.gatech.edu/ce21/1/static/video/IndentVideo.mov" type="video/mp4"></source>
+    <source src="http://ice-web.cc.gatech.edu/ce21/1/static/video/IndentVideo.webm" type="video/webm"></source>
+    No supported video types
+</video>
+</div>
+<script>
+   jQuery(function($) {
+      $('#indentVideo_thumb').click(function(e) {
+         $('#indentVideo').show();
+         $('#indentVideo_thumb').hide();
+         logBookEvent({'event':'video','act':'play','div_id': 'indentVideo'});
+         // Log the run event
+      });
+	  $('#indentVideo video').one("click", function(){
+		this.play();
+	  });
+	  $('#indentVideo video').one("play", function(){
+		logBookEvent({'event':'video','act':'play','div_id': 'indentVideo'});
+	  });
+   });
+</script>
+
+        <div class='parsons alert alert-warning' id="parsons-157">
+        <div class="parsons-text">csp-6-4: The following code should define a procedure that draws a triangle, but it may be mixed up and contains extra code.  Drag the needed code to the right side in the correct order.  <b>Remember that the statements in the procedure must be indented!</b>  To indent a block drag it further right.<br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-157" style="display:none;">def triangle(turtle):
+    turtle.left(60)\nturtle.forward(100)\nturtle.right(120)\nturtle.forward(100)\nturtle.right(120)\nturtle.forward(100)\nturtle.right(120)
+    endDef #distractor</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-157" class="sortable-code"></div>
+        <div id="parsons-sortableCode-157" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe157" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset157" value="Reset"/>
+        <div id="parsons-message-157"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-157").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-157").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-157");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_157.getHash("#ul-parsons-sortableCode-157");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'6-Triangle-Procedure'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'6-Triangle-Procedure'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-157");
+            var trashul = $("#ul-parsons-sortableTrash-157");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_157 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-157',
+		'trashId': 'parsons-sortableTrash-157',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_157.init($pjQ("#parsons-orig-157").text());
+	pp_157.shuffleLines();
+            
+        if(localStorage.getItem('6-Triangle-Procedure') && localStorage.getItem('6-Triangle-Procedure-trash')) {
+            try {
+                var solution = localStorage.getItem('6-Triangle-Procedure');
+                var trash = localStorage.getItem('6-Triangle-Procedure-trash');
+                pp_157.createHTMLFromHashes(solution,trash);
+                pp_157.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old 6-Triangle-Procedure state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset157").click(function(event){
+              event.preventDefault();
+              pp_157.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-157");
+            var trashul = $("#ul-parsons-sortableTrash-157");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe157").click(function(event){
+              event.preventDefault();
+              var hash = pp_157.getHash("#ul-parsons-sortableCode-157");
+              localStorage.setItem('6-Triangle-Procedure',hash);
+              hash = pp_157.getHash("#ul-parsons-sortableTrash-157");
+              localStorage.setItem('6-Triangle-Procedure-trash',hash);
+            
+            pp_157.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+</div>
+<div class="section" id="naming-input">
+<h1>Naming Input<a class="headerlink" href="#naming-input" title="Permalink to this headline">¶</a></h1>
+<p>What if we want to draw a different size square, like one with a side length of 50?  We could change each of the calls to the <tt class="docutils literal"><span class="pre">forward</span></tt> procedure as shown below.</p>
+
+<div id="cont"></div>
+<div id="Function_Change_Size" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Function_Change_Size_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Function_Change_Size_saveb" onclick="saveEditor('Function_Change_Size');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Function_Change_Size_loadb" onclick="requestCode('Function_Change_Size');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Function_Change_Size','def square*open*turtle*close*:*nline*     turtle.forward*open*50*close**nline*     turtle.right*open*90*close**nline*     turtle.forward*open*50*close**nline*     turtle.right*open*90*close**nline*     turtle.forward*open*50*close**nline*     turtle.right*open*90*close**nline*     turtle.forward*open*50*close**nline*     turtle.right*open*90*close**nline**nline*from turtle import *  # use the turtle library*nline*space = Screen*open**close*      # create a turtle screen*nline*malik = Turtle*open**close*      # create a turtle named malik*nline*square*open*malik*close*         # draw a square with malik','1','*doubleq*Important lines tour*doubleq*; 1-9: sq50-line1-9; 2,4,6,8: sq50-line2468; 11-13: sq50-line11-13; 14: sq50-line14;*atype*')"/>
+
+</div>
+<br/>
+<div id="Function_Change_Size_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Function_Change_Size_code" class="active_code" prefixcode="undefined" lang="python">
+def square(turtle):
+     turtle.forward(50)
+     turtle.right(90)
+     turtle.forward(50)
+     turtle.right(90)
+     turtle.forward(50)
+     turtle.right(90)
+     turtle.forward(50)
+     turtle.right(90)
+
+from turtle import *  # use the turtle library
+space = Screen()      # create a turtle screen
+malik = Turtle()      # create a turtle named malik
+square(malik)         # draw a square with malik
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Function_Change_Size_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Function_Change_Size_suffix" style="display:none">
+</pre><pre id="Function_Change_Size_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Function_Change_Size)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Function_Change_Size_saveb').toggle();
+    $('#Function_Change_Size_loadb').toggle();
+}
+if ($("#Function_Change_Size").attr("lang") !== "html" && $("#Function_Change_Size_code_div").parents(".admonition").length == 0 && $("#Function_Change_Size_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Function_Change_Size_code_div").offset({
+			left: $("#Function_Change_Size .clearfix").offset().left
+		});
+	}
+	$("#Function_Change_Size_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Function_Change_Size_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Function_Change_Size_runb").parent().siblings(".ac_output").show();
+			runit('Function_Change_Size',this, undefined);
+			$("#Function_Change_Size_runb").on("click", function(){
+				runit('Function_Change_Size',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Function_Change_Size_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Function_Change_Size_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Function_Change_Size_runb").on("click", function(){
+		runit('Function_Change_Size',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>But, it is somewhat slow to change each of the four <tt class="docutils literal"><span class="pre">forward</span></tt> statements and we could make a mistake and not set all of them to the same number.  Is there a better way?  What if we create a variable <tt class="docutils literal"><span class="pre">size</span></tt> and set its value to the amount to move forward?</p>
+
+<div id="cont"></div>
+<div id="Function_Add_Var" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Function_Add_Var_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Function_Add_Var_saveb" onclick="saveEditor('Function_Add_Var');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Function_Add_Var_loadb" onclick="requestCode('Function_Add_Var');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Function_Add_Var','def square*open*turtle*close*:*nline*     size = 50*nline*     turtle.forward*open*size*close**nline*     turtle.right*open*90*close**nline*     turtle.forward*open*size*close**nline*     turtle.right*open*90*close**nline*     turtle.forward*open*size*close**nline*     turtle.right*open*90*close**nline*     turtle.forward*open*size*close**nline*     turtle.right*open*90*close**nline**nline*from turtle import *  # use the turtle library*nline*space = Screen*open**close*      # create a turtle screen*nline*malik = Turtle*open**close*      # create a turtle named malik*nline*square*open*malik*close*         # draw a square with malik','1','*doubleq*Important lines tour*doubleq*; 1-10: sqvar-line1-10; 2: sqvar-line2; 3: sqvar-line3; 4: sqvar-line4; 5-10: sqvar-line5-10; 12-14: sqvar-line12-14; 15: sqvar-line15;*atype*')"/>
+
+</div>
+<br/>
+<div id="Function_Add_Var_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Function_Add_Var_code" class="active_code" prefixcode="undefined" lang="python">
+def square(turtle):
+     size = 50
+     turtle.forward(size)
+     turtle.right(90)
+     turtle.forward(size)
+     turtle.right(90)
+     turtle.forward(size)
+     turtle.right(90)
+     turtle.forward(size)
+     turtle.right(90)
+
+from turtle import *  # use the turtle library
+space = Screen()      # create a turtle screen
+malik = Turtle()      # create a turtle named malik
+square(malik)         # draw a square with malik
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Function_Add_Var_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Function_Add_Var_suffix" style="display:none">
+</pre><pre id="Function_Add_Var_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Function_Add_Var)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Function_Add_Var_saveb').toggle();
+    $('#Function_Add_Var_loadb').toggle();
+}
+if ($("#Function_Add_Var").attr("lang") !== "html" && $("#Function_Add_Var_code_div").parents(".admonition").length == 0 && $("#Function_Add_Var_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Function_Add_Var_code_div").offset({
+			left: $("#Function_Add_Var .clearfix").offset().left
+		});
+	}
+	$("#Function_Add_Var_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Function_Add_Var_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Function_Add_Var_runb").parent().siblings(".ac_output").show();
+			runit('Function_Add_Var',this, undefined);
+			$("#Function_Add_Var_runb").on("click", function(){
+				runit('Function_Add_Var',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Function_Add_Var_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Function_Add_Var_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Function_Add_Var_runb").on("click", function(){
+		runit('Function_Add_Var',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="6-Function_Var_Q1" class="alert alert-warning">
+            <p>csp-6-5: What is the side length for a square drawn by the following procedure?</p>
+<blockquote>
+<div><div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">def</span> <span class="nf">square</span><span class="o">(</span><span class="n">turtle</span><span class="o">):</span>
+   <span class="n">size</span> <span class="o">=</span> <span class="mi">200</span>
+   <span class="n">turtle</span><span class="o">.</span><span class="na">forward</span><span class="o">(</span><span class="n">size</span><span class="o">)</span>
+   <span class="n">turtle</span><span class="o">.</span><span class="na">right</span><span class="o">(</span><span class="mi">90</span><span class="o">)</span>
+   <span class="n">turtle</span><span class="o">.</span><span class="na">forward</span><span class="o">(</span><span class="n">size</span><span class="o">)</span>
+   <span class="n">turtle</span><span class="o">.</span><span class="na">right</span><span class="o">(</span><span class="mi">90</span><span class="o">)</span>
+   <span class="n">turtle</span><span class="o">.</span><span class="na">forward</span><span class="o">(</span><span class="n">size</span><span class="o">)</span>
+   <span class="n">turtle</span><span class="o">.</span><span class="na">right</span><span class="o">(</span><span class="mi">90</span><span class="o">)</span>
+   <span class="n">turtle</span><span class="o">.</span><span class="na">forward</span><span class="o">(</span><span class="n">size</span><span class="o">)</span>
+   <span class="n">turtle</span><span class="o">.</span><span class="na">right</span><span class="o">(</span><span class="mi">90</span><span class="o">)</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<form name="6-Function_Var_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="6-Function_Var_Q1_opt_a" />
+            <label for= "6-Function_Var_Q1_opt_a">  a) 100</label><br />
+            
+            <input type="radio" name="group1" value="b" id="6-Function_Var_Q1_opt_b" />
+            <label for= "6-Function_Var_Q1_opt_b">  b) 50</label><br />
+            
+            <input type="radio" name="group1" value="c" id="6-Function_Var_Q1_opt_c" />
+            <label for= "6-Function_Var_Q1_opt_c">  c) 200</label><br />
+            
+            <input type="radio" name="group1" value="d" id="6-Function_Var_Q1_opt_d" />
+            <label for= "6-Function_Var_Q1_opt_d">  d) 90</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('6-Function_Var_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('6-Function_Var_Q1','c',['How much will it go forward?', 'What value is size set to?', 'Size is set to 200 in line 2 so this will draw a square that has a side length of 200.', 'It turns 90 degrees.  It doesn\u0027t go forward 90.'])">Check Me</button>
+            <button class='btn btn-default' id="6-Function_Var_Q1_bcomp" disabled name="compare" onclick="compareAnswers('6-Function_Var_Q1');">Compare Me</button>
+            </form><br />
+            <div id="6-Function_Var_Q1_feedback">
+            </div>
+            </div>
+            <p>Now the program is easier to change since we only have one line to change <tt class="docutils literal"><span class="pre">size</span> <span class="pre">=</span> <span class="pre">50</span></tt> to draw another size square.  But, we still have to change the program in order to draw a different size square.  Is there a better way?</p>
+<p>We can add an additional input to the function that specifies the size of the square.  Just separate the names for the inputs with a comma: <tt class="docutils literal"><span class="pre">(turtle,size)</span></tt> as shown below and be sure to specify the actual size when you call the procedure <tt class="docutils literal"><span class="pre">square(malik,</span> <span class="pre">100)</span></tt> or <tt class="docutils literal"><span class="pre">square(malik,</span> <span class="pre">50)</span></tt>.</p>
+
+<div id="cont"></div>
+<div id="Function_Call2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Function_Call2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Function_Call2_saveb" onclick="saveEditor('Function_Call2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Function_Call2_loadb" onclick="requestCode('Function_Call2');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Function_Call2','def square*open*turtle,size*close*:*nline*      turtle.forward*open*size*close**nline*      turtle.right*open*90*close**nline*      turtle.forward*open*size*close**nline*      turtle.right*open*90*close**nline*      turtle.forward*open*size*close**nline*      turtle.right*open*90*close**nline*      turtle.forward*open*size*close**nline*      turtle.right*open*90*close**nline**nline*from turtle import *  # use the turtle library*nline*space = Screen*open**close*      # create a turtle screen *open*space*close**nline*malik = Turtle*open**close*      # create a turtle named malik*nline*square*open*malik, 100*close*    # draw a square of size 100*nline*square*open*malik, 75*close*     # draw a square of size 75*nline*square*open*malik, 50*close*     # draw a square of size 50*nline*square*open*malik, 25*close*     # draw a square of size 25','1','*doubleq*Important lines tour*doubleq*; 1-9: dsq3-line1-9; 2: dsq3-line2; 11-13: dsq3-line11-13; 14: dsq3-line14; 15: dsq3-line15; 16: dsq3-line16; 17: dsq3-line17;*atype*')"/>
+
+</div>
+<br/>
+<div id="Function_Call2_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Function_Call2_code" class="active_code" prefixcode="undefined" lang="python">
+def square(turtle,size):
+      turtle.forward(size)
+      turtle.right(90)
+      turtle.forward(size)
+      turtle.right(90)
+      turtle.forward(size)
+      turtle.right(90)
+      turtle.forward(size)
+      turtle.right(90)
+
+from turtle import *  # use the turtle library
+space = Screen()      # create a turtle screen (space)
+malik = Turtle()      # create a turtle named malik
+square(malik, 100)    # draw a square of size 100
+square(malik, 75)     # draw a square of size 75
+square(malik, 50)     # draw a square of size 50
+square(malik, 25)     # draw a square of size 25
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Function_Call2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Function_Call2_suffix" style="display:none">
+</pre><pre id="Function_Call2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Function_Call2)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Function_Call2_saveb').toggle();
+    $('#Function_Call2_loadb').toggle();
+}
+if ($("#Function_Call2").attr("lang") !== "html" && $("#Function_Call2_code_div").parents(".admonition").length == 0 && $("#Function_Call2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Function_Call2_code_div").offset({
+			left: $("#Function_Call2 .clearfix").offset().left
+		});
+	}
+	$("#Function_Call2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Function_Call2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Function_Call2_runb").parent().siblings(".ac_output").show();
+			runit('Function_Call2',this, undefined);
+			$("#Function_Call2_runb").on("click", function(){
+				runit('Function_Call2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Function_Call2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Function_Call2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Function_Call2_runb").on("click", function(){
+		runit('Function_Call2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="6-Name_The_Shape_Q1" class="alert alert-warning">
+            <p>csp-6-6: What shape would the following code draw?</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre>def mystery(turtle,size):
+   turtle.forward(size)
+   turtle.right(90)
+   turtle.forward(size / 2)
+   turtle.right(90)
+   turtle.forward(size)
+   turtle.right(90)
+   turtle.forward(size / 2)
+   turtle.right(90)
+
+from turtle import *       # use the turtle library
+space = Screen()           # create a turtle screen (space)
+malik = Turtle()           # create a turtle named malik
+mystery(malik, 100)        # draw something with size = 100
+</pre></div>
+</td></tr></table></div>
+<form name="6-Name_The_Shape_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="6-Name_The_Shape_Q1_opt_a" />
+            <label for= "6-Name_The_Shape_Q1_opt_a">  a) square</label><br />
+            
+            <input type="radio" name="group1" value="b" id="6-Name_The_Shape_Q1_opt_b" />
+            <label for= "6-Name_The_Shape_Q1_opt_b">  b) rectangle</label><br />
+            
+            <input type="radio" name="group1" value="c" id="6-Name_The_Shape_Q1_opt_c" />
+            <label for= "6-Name_The_Shape_Q1_opt_c">  c) triangle</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('6-Name_The_Shape_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('6-Name_The_Shape_Q1','b',['Check the 2nd and 4th forwards.  How much do they move forward by?', 'This will draw a rectangle with two sides with the specified size and two sides half that size.  Copy this code into the area above and run it.', 'A triangle has 3 sides.'])">Check Me</button>
+            <button class='btn btn-default' id="6-Name_The_Shape_Q1_bcomp" disabled name="compare" onclick="compareAnswers('6-Name_The_Shape_Q1');">Compare Me</button>
+            </form><br />
+            <div id="6-Name_The_Shape_Q1_feedback">
+            </div>
+            </div>
+            <p id="index-4">The inputs that are specified in a function or procedure definition are also called <strong>parameters</strong> or <strong>formal parameters</strong>.  So <tt class="docutils literal"><span class="pre">turtle</span></tt> and <tt class="docutils literal"><span class="pre">size</span></tt> are both parameters (formal parameters) in the <tt class="docutils literal"><span class="pre">square</span></tt> procedure.  Notice that when we call <tt class="docutils literal"><span class="pre">square</span></tt> we have to specify the actual values for the inputs.  The actual values passed into the function as inputs are called <strong>arguments</strong> or <strong>actual parameters</strong>. In the call <tt class="docutils literal"><span class="pre">square(malik,</span> <span class="pre">50)</span></tt> both <tt class="docutils literal"><span class="pre">malik</span></tt> and <tt class="docutils literal"><span class="pre">50</span></tt> are arguments (actual parameters) to the <tt class="docutils literal"><span class="pre">square</span></tt> procedure.</p>
+
+            <div id="6-Name_Args_Q1" class="alert alert-warning">
+            <p>csp-6-7: In the following code what are the arguments (actual parameters)?</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre>def square(turtle,size):
+   turtle.forward(size)
+   turtle.right(90)
+   turtle.forward(size)
+   turtle.right(90)
+   turtle.forward(size)
+   turtle.right(90)
+   turtle.forward(size)
+   turtle.right(90)
+
+from turtle import *       # use the turtle library
+space = Screen()           # create a turtle screen (space)
+imani = Turtle()           # create a turtle named imani
+square(imani, 25)      # draw a square with size 25
+</pre></div>
+</td></tr></table></div>
+<form name="6-Name_Args_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="6-Name_Args_Q1_opt_a" />
+            <label for= "6-Name_Args_Q1_opt_a">  a) turtle and size</label><br />
+            
+            <input type="radio" name="group1" value="b" id="6-Name_Args_Q1_opt_b" />
+            <label for= "6-Name_Args_Q1_opt_b">  b) malik and 25</label><br />
+            
+            <input type="radio" name="group1" value="c" id="6-Name_Args_Q1_opt_c" />
+            <label for= "6-Name_Args_Q1_opt_c">  c) imani and 25</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('6-Name_Args_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('6-Name_Args_Q1','c',['These are the names of the parameters (formal parameters).', 'Look again at the code above.  Is that the name of this turtle?', 'The turtle is named imani and the size is 25 in the code: square(imani, 25).'])">Check Me</button>
+            <button class='btn btn-default' id="6-Name_Args_Q1_bcomp" disabled name="compare" onclick="compareAnswers('6-Name_Args_Q1');">Compare Me</button>
+            </form><br />
+            <div id="6-Name_Args_Q1_feedback">
+            </div>
+            </div>
+            
+        <div class='parsons alert alert-warning' id="parsons-337">
+        <div class="parsons-text">csp-6-8: The following code assumes that a procedure square has been defined that takes a size.  The code should create a turtle and then use it to draw a square, move forward, and draw a second square as shown at left, <img src="../_static/SquareForwardSquare.png" width="150" align="left" hspace="10" vspace="5"/> but the lines are mixed up.  Drag the lines into the correct order on the right.<br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-337" style="display:none;">from turtle import *
+space = Screen()\nimani = Turtle()
+square(imani, 75)
+imani.forward(100)
+square(imani, 50)</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-337" class="sortable-code"></div>
+        <div id="parsons-sortableCode-337" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe337" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset337" value="Reset"/>
+        <div id="parsons-message-337"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-337").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-337").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-337");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_337.getHash("#ul-parsons-sortableCode-337");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'6-Draw_Squares'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'6-Draw_Squares'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-337");
+            var trashul = $("#ul-parsons-sortableTrash-337");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_337 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-337',
+		'trashId': 'parsons-sortableTrash-337',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_337.init($pjQ("#parsons-orig-337").text());
+	pp_337.shuffleLines();
+            
+        if(localStorage.getItem('6-Draw_Squares') && localStorage.getItem('6-Draw_Squares-trash')) {
+            try {
+                var solution = localStorage.getItem('6-Draw_Squares');
+                var trash = localStorage.getItem('6-Draw_Squares-trash');
+                pp_337.createHTMLFromHashes(solution,trash);
+                pp_337.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old 6-Draw_Squares state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset337").click(function(event){
+              event.preventDefault();
+              pp_337.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-337");
+            var trashul = $("#ul-parsons-sortableTrash-337");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe337").click(function(event){
+              event.preventDefault();
+              var hash = pp_337.getHash("#ul-parsons-sortableCode-337");
+              localStorage.setItem('6-Draw_Squares',hash);
+              hash = pp_337.getHash("#ul-parsons-sortableTrash-337");
+              localStorage.setItem('6-Draw_Squares-trash',hash);
+            
+            pp_337.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+</div>
+<div class="section" id="bigteachernote-teachers-note-creating-procedures-with-parameters">
+<h1><a class="reference internal" href="../_images/apple2.jpg"><img alt="teacher note" class="align-top" src="../_images/apple2.jpg" style="width: 50px;" /></a> Teachers Note: Creating Procedures with Parameters<a class="headerlink" href="#bigteachernote-teachers-note-creating-procedures-with-parameters" title="Permalink to this headline">¶</a></h1>
+<p>You probably don&#8217;t quite feel comfortable with creating procedures with parameters right now.  That&#8217;s okay.  Our research on how people learn programming says that understanding how <em>names</em> can represent <em>something else</em> takes alot of practice.  People new to programming will probably prefer:</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre>from turtle import *     # use the turtle library
+space = Screen()             # create a turtle screen (space)
+malik = Turtle()             # create a turtle named malik
+malik.forward(100)
+malik.right(90)
+malik.forward(100)
+malik.right(90)
+malik.forward(100)
+malik.right(90)
+malik.forward(100)
+malik.right(90)
+</pre></div>
+</td></tr></table></div>
+<p>To creating a <tt class="docutils literal"><span class="pre">square</span></tt> procedure as shown below</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">def</span> <span class="nf">square</span><span class="o">(</span><span class="n">turtle</span><span class="o">,</span><span class="n">size</span><span class="o">):</span>
+     <span class="n">turtle</span><span class="o">.</span><span class="na">forward</span><span class="o">(</span><span class="n">size</span><span class="o">)</span>
+     <span class="n">turtle</span><span class="o">.</span><span class="na">right</span><span class="o">(</span><span class="mi">90</span><span class="o">)</span>
+     <span class="n">turtle</span><span class="o">.</span><span class="na">forward</span><span class="o">(</span><span class="n">size</span><span class="o">)</span>
+     <span class="n">turtle</span><span class="o">.</span><span class="na">right</span><span class="o">(</span><span class="mi">90</span><span class="o">)</span>
+     <span class="n">turtle</span><span class="o">.</span><span class="na">forward</span><span class="o">(</span><span class="n">size</span><span class="o">)</span>
+     <span class="n">turtle</span><span class="o">.</span><span class="na">right</span><span class="o">(</span><span class="mi">90</span><span class="o">)</span>
+     <span class="n">turtle</span><span class="o">.</span><span class="na">forward</span><span class="o">(</span><span class="n">size</span><span class="o">)</span>
+     <span class="n">turtle</span><span class="o">.</span><span class="na">right</span><span class="o">(</span><span class="mi">90</span><span class="o">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>and then calling the <tt class="docutils literal"><span class="pre">square</span></tt> procedure as shown below</p>
+<div class="highlight-java"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre>from turtle import *     # use the turtle library
+space = Screen()             # create a turtle screen (space)
+malik = Turtle()             # create a turtle named malik
+square(malik, 100)           # draw a square with side length 100
+</pre></div>
+</td></tr></table></div>
+<p>When people are first learning programming, they prefer seeing actual values like <tt class="docutils literal"><span class="pre">forward(100)</span></tt> over <tt class="docutils literal"><span class="pre">forward(size)</span></tt>.  They can probably recognize that having one <tt class="docutils literal"><span class="pre">square</span></tt> function that can make squares of all kinds of sizes is flexible and thus powerful.  But, they are still trying to understand the baisc turtle commands yet.</p>
+<p id="index-5">Don&#8217;t worry about creating procedures with parameters yet.  That will come later in the chapter on <strong>abstraction</strong>.  <strong>Abstraction</strong> means focusing on just the important details in a context, just like using an abstract figure to identify female restrooms as shown below.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="../_images/femaleIcon.jpg"><img alt="abstract representation of a female" src="../_images/femaleIcon.jpg" style="height: 100px;" /></a>
+<p class="caption">Figure 2: Abstract representation of a female</p>
+</div>
+<p>Right now, it&#8217;s okay to just be able to read procedures and understand what happens when they are called.  As beginners become more comfortable with basic programming, they will be ready to use the abstraction of using names to represent things like new procedures and functions.</p>
+</div>
+<div class="section" id="naming-sets-of-procedures">
+<h1>Naming Sets of Procedures<a class="headerlink" href="#naming-sets-of-procedures" title="Permalink to this headline">¶</a></h1>
+<p>So far we&#8217;ve seen names for values, like strings and numbers.  We&#8217;ve seen names for functions.  We&#8217;ve now seen how to name (<em>define</em>) functions and use additional names to store the inputs to those functions.</p>
+<p>Sometimes, you will want to have have a whole group of functions, and you will want to store them somewhere and <em>name</em> that <em>whole set of functions</em>.  In fact, you can.  And in fact, you have already used those.</p>
+<p id="index-6">That is what you are doing when you execute a statement like <tt class="docutils literal"><span class="pre">from</span> <span class="pre">turtle</span> <span class="pre">import</span> <span class="pre">*</span></tt>.  That is where the procedures like <tt class="docutils literal"><span class="pre">forward</span></tt> and <tt class="docutils literal"><span class="pre">right</span></tt> and functions like <tt class="docutils literal"><span class="pre">Screen</span></tt> are defined.  We can mix procedures and functions that <em>we</em> define with procedures and functions that we <em>import</em>.</p>
+
+<div id="cont"></div>
+<div id="Squares_Pattern" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Squares_Pattern_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Squares_Pattern_saveb" onclick="saveEditor('Squares_Pattern');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Squares_Pattern_loadb" onclick="requestCode('Squares_Pattern');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Squares_Pattern','def square*open*turtle,size*close*:*nline*   turtle.forward*open*size*close**nline*   turtle.right*open*90*close**nline*   turtle.forward*open*size*close**nline*   turtle.right*open*90*close**nline*   turtle.forward*open*size*close**nline*   turtle.right*open*90*close**nline*   turtle.forward*open*size*close**nline*   turtle.right*open*90*close**nline**nline*from turtle import *      # use the turtle library*nline*space = Screen*open**close*          # create a turtle screen *open*space*close**nline*emily = Turtle*open**close*          # create a turtle named emily*nline*emily.setheading*open*90*close*      # Point due north*nline*emily.forward*open*10*close*         # Offset the shapes a bit*nline*emily.right*open*18*close*           # And turn each one a bit*nline*square*open*emily,100*close*             # draw a square with size 100*nline*emily.forward*open*10*close*         # Offset the shapes a bit*nline*emily.right*open*18*close*           # And turn each one a bit*nline*square*open*emily,100*close*             # draw a square with size 100*nline*emily.forward*open*10*close*         # Offset the shapes a bit*nline*emily.right*open*18*close*           # And turn each one a bit*nline*square*open*emily,100*close*             # draw a square with size 100','1','*doubleq*Important lines tour*doubleq*; 1-9: sqM-line1-9; 11-13: sqM-line11-13; 14: sqM-line14; 15: sqM-line15; 16: sqM-line16; 17: sqM-line17; 18: sqM-line18; 19: sqM-line19; 20: sqM-line20; 21: sqM-line21; 22: sqM-line22; 23: sqM-line23;*atype*')"/>
+
+</div>
+<br/>
+<div id="Squares_Pattern_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Squares_Pattern_code" class="active_code" prefixcode="undefined" lang="python">
+def square(turtle,size):
+   turtle.forward(size)
+   turtle.right(90)
+   turtle.forward(size)
+   turtle.right(90)
+   turtle.forward(size)
+   turtle.right(90)
+   turtle.forward(size)
+   turtle.right(90)
+
+from turtle import *      # use the turtle library
+space = Screen()          # create a turtle screen (space)
+emily = Turtle()          # create a turtle named emily
+emily.setheading(90)      # Point due north
+emily.forward(10)         # Offset the shapes a bit
+emily.right(18)           # And turn each one a bit
+square(emily,100)             # draw a square with size 100
+emily.forward(10)         # Offset the shapes a bit
+emily.right(18)           # And turn each one a bit
+square(emily,100)             # draw a square with size 100
+emily.forward(10)         # Offset the shapes a bit
+emily.right(18)           # And turn each one a bit
+square(emily,100)             # draw a square with size 100
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Squares_Pattern_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Squares_Pattern_suffix" style="display:none">
+</pre><pre id="Squares_Pattern_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Squares_Pattern)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Squares_Pattern_saveb').toggle();
+    $('#Squares_Pattern_loadb').toggle();
+}
+if ($("#Squares_Pattern").attr("lang") !== "html" && $("#Squares_Pattern_code_div").parents(".admonition").length == 0 && $("#Squares_Pattern_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Squares_Pattern_code_div").offset({
+			left: $("#Squares_Pattern .clearfix").offset().left
+		});
+	}
+	$("#Squares_Pattern_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Squares_Pattern_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Squares_Pattern_runb").parent().siblings(".ac_output").show();
+			runit('Squares_Pattern',this, undefined);
+			$("#Squares_Pattern_runb").on("click", function(){
+				runit('Squares_Pattern',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Squares_Pattern_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Squares_Pattern_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Squares_Pattern_runb").on("click", function(){
+		runit('Squares_Pattern',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="6-Function_Use_Q1" class="alert alert-warning">
+            csp-6-9: Imagine that you add one more line to the above program.  Which function can you use safely, because it will have been defined?<form name="6-Function_Use_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="6-Function_Use_Q1_opt_a" />
+            <label for= "6-Function_Use_Q1_opt_a">  a) square</label><br />
+            
+            <input type="radio" name="group1" value="b" id="6-Function_Use_Q1_opt_b" />
+            <label for= "6-Function_Use_Q1_opt_b">  b) forward</label><br />
+            
+            <input type="radio" name="group1" value="c" id="6-Function_Use_Q1_opt_c" />
+            <label for= "6-Function_Use_Q1_opt_c">  c) right</label><br />
+            
+            <input type="radio" name="group1" value="d" id="6-Function_Use_Q1_opt_d" />
+            <label for= "6-Function_Use_Q1_opt_d">  d) All of the above</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('6-Function_Use_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('6-Function_Use_Q1','d',['You can use square since you just defined it, but you can also use the others.', 'You can use forward because of the import, but you can also use others.', 'You can use right because of the import, but you can also use others.', 'Yes, you can use all of the turtle stuff from the import, plus the procedure square that was defined.'])">Check Me</button>
+            <button class='btn btn-default' id="6-Function_Use_Q1_bcomp" disabled name="compare" onclick="compareAnswers('6-Function_Use_Q1');">Compare Me</button>
+            </form><br />
+            <div id="6-Function_Use_Q1_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="using-an-image-library">
+<h1>Using an Image Library<a class="headerlink" href="#using-an-image-library" title="Permalink to this headline">¶</a></h1>
+<p>Similarly, in the image processing examples, we used <tt class="docutils literal"><span class="pre">import</span> <span class="pre">image</span></tt>.  That made the functions <tt class="docutils literal"><span class="pre">getPixel()</span></tt> and <tt class="docutils literal"><span class="pre">getRed()</span></tt> accessible.  We could also define a new function that returns a new color, or a new procedure that changes the image.  Don&#8217;t worry about what <tt class="docutils literal"><span class="pre">for</span></tt> means right now, we&#8217;ll talk more about that in the next chapter.</p>
+<img src="../_static/arch.jpg" id="arch.jpg" >
+<div id="cont"></div>
+<div id="Image_Functions" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Image_Functions_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Functions_saveb" onclick="saveEditor('Image_Functions');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Image_Functions_loadb" onclick="requestCode('Image_Functions');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Image_Functions','# STEP 1: USE THE IMAGE LIBRARY*nline*import image*nline**nline*# STEP 2: PICK THE IMAGE*nline*img = image.Image*open**doubleq*arch.jpg*doubleq**close**nline**nline*# STEP 3: SELECT THE DATA*nline*for x in range*open*img.getWidth*open**close**close*:*nline*    for y in range*open*img.getHeight*open**close**close*:*nline**nline*        # STEP 4: GET THE DATA*nline*        p = img.getPixel*open*x, y*close**nline*        r = p.getRed*open**close**nline*        g = p.getGreen*open**close**nline*        b = p.getBlue*open**close**nline**nline*        # STEP 5: CREATE THE COLOR*nline*        newPixel = image.Pixel*open*r * 0.5, g, b*close**nline**nline*        # STEP 6: CHANGE THE PIXEL*nline*        img.setPixel*open*x, y, newPixel*close**nline**nline*# STEP 7: SHOW THE RESULT*nline*win = image.ImageWin*open**close**nline*img.draw*open*win*close*','1','*doubleq*Important Lines Tour*doubleq*; 1-2: imgR2-line1-2; 4-5: imgR2-line4-5; 7-9: imgR2-line7-9; 11-15: imgR2-line11-15; 17-18: imgR2-line17-18; 20-21: imgR2-line20-21; 23-25: imgR2-line23-25;*atype*')"/>
+
+</div>
+<br/>
+<div id="Image_Functions_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Image_Functions_code" class="active_code" prefixcode="undefined" lang="python">
+# STEP 1: USE THE IMAGE LIBRARY
+import image
+
+# STEP 2: PICK THE IMAGE
+img = image.Image("arch.jpg")
+
+# STEP 3: SELECT THE DATA
+for x in range(img.getWidth()):
+    for y in range(img.getHeight()):
+
+        # STEP 4: GET THE DATA
+        p = img.getPixel(x, y)
+        r = p.getRed()
+        g = p.getGreen()
+        b = p.getBlue()
+
+        # STEP 5: CREATE THE COLOR
+        newPixel = image.Pixel(r * 0.5, g, b)
+
+        # STEP 6: CHANGE THE PIXEL
+        img.setPixel(x, y, newPixel)
+
+# STEP 7: SHOW THE RESULT
+win = image.ImageWin()
+img.draw(win)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Image_Functions_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Image_Functions_suffix" style="display:none">
+</pre><pre id="Image_Functions_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Image_Functions)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Image_Functions_saveb').toggle();
+    $('#Image_Functions_loadb').toggle();
+}
+if ($("#Image_Functions").attr("lang") !== "html" && $("#Image_Functions_code_div").parents(".admonition").length == 0 && $("#Image_Functions_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Image_Functions_code_div").offset({
+			left: $("#Image_Functions .clearfix").offset().left
+		});
+	}
+	$("#Image_Functions_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Image_Functions_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Image_Functions_runb").parent().siblings(".ac_output").show();
+			runit('Image_Functions',this, undefined);
+			$("#Image_Functions_runb").on("click", function(){
+				runit('Image_Functions',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Image_Functions_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Image_Functions_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Image_Functions_runb").on("click", function(){
+		runit('Image_Functions',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="6-Image_Functions_Q1" class="alert alert-warning">
+            csp-6-10: What does the line <tt class="docutils literal"><span class="pre">newPixel</span> <span class="pre">=</span> <span class="pre">image.Pixel(r</span> <span class="pre">*</span> <span class="pre">0.5,</span> <span class="pre">g,</span> <span class="pre">b)</span></tt> do?<form name="6-Image_Functions_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="6-Image_Functions_Q1_opt_a" />
+            <label for= "6-Image_Functions_Q1_opt_a">  a) It creates a new pixel with a color like the current color, but with half the red of the original.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="6-Image_Functions_Q1_opt_b" />
+            <label for= "6-Image_Functions_Q1_opt_b">  b) It creates a new pixel with a color like the current color, but with twice the red of the original.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="6-Image_Functions_Q1_opt_c" />
+            <label for= "6-Image_Functions_Q1_opt_c">  c) It creates a new pixel with a color like the current color, but with 5 times the red of the original.</label><br />
+            
+            <input type="radio" name="group1" value="d" id="6-Image_Functions_Q1_opt_d" />
+            <label for= "6-Image_Functions_Q1_opt_d">  d) It creates a new pixel with a color like the current color, but with the red set to 0.5.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('6-Image_Functions_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('6-Image_Functions_Q1','a',['Multiplying by 0.5 is the same as dividing by 2.', 'This would be true if it was r * 2, instead of r * 0.5', 'This would be true if it was r * 5, instead of r * 0.5', 'This would be true if it was 0.5 instead of r * 0.5'])">Check Me</button>
+            <button class='btn btn-default' id="6-Image_Functions_Q1_bcomp" disabled name="compare" onclick="compareAnswers('6-Image_Functions_Q1');">Compare Me</button>
+            </form><br />
+            <div id="6-Image_Functions_Q1_feedback">
+            </div>
+            </div>
+            <p>This ability to name functions, and sets of functions, and absolutely anything and any set of things in a computer is very powerful.  It allows us to create <strong>abstractions</strong> that make the computer easier to program and use.  More on that in a future chapter.</p>
+</div>
+<div class="section" id="renaming-python-s-functions">
+<h1>Renaming Python&#8217;s Functions<a class="headerlink" href="#renaming-python-s-functions" title="Permalink to this headline">¶</a></h1>
+<p>The functions <tt class="docutils literal"><span class="pre">abs</span></tt> and <tt class="docutils literal"><span class="pre">int</span></tt> are <em>names</em>.  They are <em>variables</em> whose values are a set of statements that achieve a goal.  Later on, we&#8217;ll know enough code to write <tt class="docutils literal"><span class="pre">abs</span></tt> and <tt class="docutils literal"><span class="pre">int</span></tt> ourselves.  The important point right now is that <tt class="docutils literal"><span class="pre">abs</span></tt> and <tt class="docutils literal"><span class="pre">int</span></tt> are <em>names</em> for functions.  You can create several names that have the same value.  You can think of this like how a person can have both a name and a nickname.  In the program below we demonstrate that you can even create new names for Python functions.</p>
+
+<div id="cont"></div>
+<div id="Rename_Internal" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Rename_Internal_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Rename_Internal_saveb" onclick="saveEditor('Rename_Internal');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Rename_Internal_loadb" onclick="requestCode('Rename_Internal');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Rename_Internal','absolute = abs*nline*print*open**doubleq*Absolute value of -5:*doubleq**close**nline*print*open*absolute*open*-5*close**close**nline*noDecimal = int*nline*print*open**doubleq*Integer part of of 34.2*doubleq**close**nline*print*open*noDecimal*open*34.2*close**close*','1','*doubleq*Line-by-line tour*doubleq*; 1: funName-line1; 2: funName-line2; 3: funName-line3; 4: funName-line4; 5: funName-line5; 6: funName-line6;*atype*')"/>
+<button class='btn btn-default' id="Rename_Internal_vizb" onclick="injectCodelens(this,'Rename_Internal');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Rename_Internal_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Rename_Internal_code" class="active_code" prefixcode="undefined" lang="python">
+absolute = abs
+print("Absolute value of -5:")
+print(absolute(-5))
+noDecimal = int
+print("Integer part of of 34.2")
+print(noDecimal(34.2))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Rename_Internal_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Rename_Internal_suffix" style="display:none">
+</pre><pre id="Rename_Internal_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Rename_Internal)</span> </p>
+<div id="Rename_Internal_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Rename_Internal_saveb').toggle();
+    $('#Rename_Internal_loadb').toggle();
+}
+if ($("#Rename_Internal").attr("lang") !== "html" && $("#Rename_Internal_code_div").parents(".admonition").length == 0 && $("#Rename_Internal_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Rename_Internal_code_div").offset({
+			left: $("#Rename_Internal .clearfix").offset().left
+		});
+	}
+	$("#Rename_Internal_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Rename_Internal_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Rename_Internal_runb").parent().siblings(".ac_output").show();
+			runit('Rename_Internal',this, undefined);
+			$("#Rename_Internal_runb").on("click", function(){
+				runit('Rename_Internal',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Rename_Internal_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Rename_Internal_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Rename_Internal_runb").on("click", function(){
+		runit('Rename_Internal',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="6-Rename_Internal_Q1" class="alert alert-warning">
+            csp-6-11: If you add one more line to the above program, <cite>print(noDecimal(absolute(-16.789)))</cite>, what prints?<form name="6-Rename_Internal_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="6-Rename_Internal_Q1_opt_a" />
+            <label for= "6-Rename_Internal_Q1_opt_a">  a) -16</label><br />
+            
+            <input type="radio" name="group1" value="b" id="6-Rename_Internal_Q1_opt_b" />
+            <label for= "6-Rename_Internal_Q1_opt_b">  b) -16.789</label><br />
+            
+            <input type="radio" name="group1" value="c" id="6-Rename_Internal_Q1_opt_c" />
+            <label for= "6-Rename_Internal_Q1_opt_c">  c) 16.789</label><br />
+            
+            <input type="radio" name="group1" value="d" id="6-Rename_Internal_Q1_opt_d" />
+            <label for= "6-Rename_Internal_Q1_opt_d">  d) 16</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('6-Rename_Internal_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('6-Rename_Internal_Q1','d',['No, absolute will change the negative', 'No, the original number will change', 'No, noDecimal will remove the decimal part', 'Yes! Absolute will make it positive, and noDecimal will throw away the values after the decimal point leaving just the 16.'])">Check Me</button>
+            <button class='btn btn-default' id="6-Rename_Internal_Q1_bcomp" disabled name="compare" onclick="compareAnswers('6-Rename_Internal_Q1');">Compare Me</button>
+            </form><br />
+            <div id="6-Rename_Internal_Q1_feedback">
+            </div>
+            </div>
+            </div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014, Mark Guzdial, Barbara Ericson, and Briana Morrison.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,2384 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Week 4: ends January 31 &mdash; Programs, Information, and People: Interactive Edition</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Programs, Information, and People: Interactive Edition" href="../index.html" />
+    <link rel="next" title="Week 3: ends January 24" href="week3.html" />
+    <link rel="prev" title="Week 5: ends February 7" href="week5.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pip';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+var _prum = [['id', '521dfcc4abe53d0749000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../toc.html">Programs, Information, and People</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../toc.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pip/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/assignments" id="registerlink">Project Page</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pip/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Week 4: ends January 31</a><ul>
+<li><a class="reference internal" href="#review-problems-ungraded">Review Problems (Ungraded)</a></li>
+<li><a class="reference internal" href="#reading-response">Reading Response</a></li>
+<li><a class="reference internal" href="#problem-set">Problem Set</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Week 5: ends February 7" data-toggle="tooltip">
+    <a href="week5.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Week 3: ends January 24' data-toggle="tooltip" >
+    <a href="week3.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="week-4-ends-january-31">
+<h1>Week 4: ends January 31<a class="headerlink" href="#week-4-ends-january-31" title="Permalink to this headline">¶</a></h1>
+<p>For this week you have the following graded activities:</p>
+<ol class="arabic">
+<li><p class="first">Do the multiple choice questions and exercises in the textbook chapters, including the ones at the bottom of the chapters, below the glossary. Don&#8217;t forget to click <strong>Save</strong> for each of the exercises.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Before Tuesday&#8217;s class:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="../Dictionaries/dictionaries.html#dictionaries-chap"><em>Dictionaries</em></a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Before Thursday&#8217;s class:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="../Debugging/debugTracers.html#debugging-2"><em>More tips on programming and debugging</em></a></li>
+<li><a class="reference internal" href="../Dictionaries/dictionary_accum.html#dictionary-accum-chap"><em>Accumulating results in and from dictionaries</em></a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+<li><p class="first">Turn in the reading response, by 8 PM the night before your registered section meets.</p>
+<ul class="simple">
+<li>Read <em>The Most Human Human</em>, Chapter 5, &#8220;Getting out of Book&#8221;</li>
+<li><a class="reference internal" href="#response-3"><em>Reading response 3</em></a></li>
+</ul>
+</li>
+<li><p class="first">Save answers to the exercises in Problem Set 2:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#problem-set-3"><em>Problem Set 3</em></a></li>
+</ul>
+</li>
+</ol>
+<p>You also have one optional, ungraded activity, some <a class="reference internal" href="#review-problems-1"><em>Review Problems</em></a></p>
+<div class="section" id="review-problems-ungraded">
+<span id="review-problems-1"></span><h2>Review Problems (Ungraded)<a class="headerlink" href="#review-problems-ungraded" title="Permalink to this headline">¶</a></h2>
+<p>Below are some problems that will help you review the first several concepts we&#8217;ve gone over this semester.
+These probems are <em>OPTIONAL</em>, but if you struggled with PS2, we strongly recommend that you
+work on these before you attempt PS3. If you are struggling with them, please come to office hours and discuss!
+By the time you&#8217;ve done a few of these, the last few should start to come pretty easily.
+(We will release solutions on Thursday night.)</p>
+<ol class="arabic">
+<li><p class="first">See comments in code for instructions.</p>
+
+<div id="cont"></div>
+<div id="rv_1_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rv_1_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rv_1_1_saveb" onclick="saveEditor('rv_1_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rv_1_1_loadb" onclick="requestCode('rv_1_1');">Load</button>
+<button class='btn btn-default' id="rv_1_1_vizb" onclick="injectCodelens(this,'rv_1_1');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rv_1_1_coach_b" onclick="injectCodeCoach('rv_1_1');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rv_1_1_showb" onclick="$('#rv_1_1_code_div').toggle();cm_editors['rv_1_1_code'].refresh();$('#rv_1_1_saveb').toggle();$('#rv_1_1_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rv_1_1')"/>
+
+</div>
+<br/>
+<div id="rv_1_1_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rv_1_1_code" class="active_code" prefixcode="undefined" lang="python">
+s = "supercalifragilisticexpialidocious"
+# How many characters are in string s? Write code to print the answer.
+
+lp = ["hello","arachnophobia","lamplighter","inspirations","ice","amalgamation","programming","Python"]
+# How many characters are in each element of list lp?
+# Write code to print the length (number of characters) of each element of the list on a separate line.
+## Do NOT write 8+ lines of code to do this.
+
+# The output you get should be:
+# 5
+# 13
+# 11
+# 12
+# 3
+# 12
+# 11
+# 6
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rv_1_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rv_1_1_suffix" style="display:none">
+</pre><pre id="rv_1_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rv_1_1)</span> </p>
+<div id="rv_1_1_codelens_div" style="display:none"></div><div id="rv_1_1_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rv_1_1_saveb').toggle();
+    $('#rv_1_1_loadb').toggle();
+}
+if ($("#rv_1_1").attr("lang") !== "html" && $("#rv_1_1_code_div").parents(".admonition").length == 0 && $("#rv_1_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rv_1_1_code_div").offset({
+			left: $("#rv_1_1 .clearfix").offset().left
+		});
+	}
+	$("#rv_1_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rv_1_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rv_1_1_runb").parent().siblings(".ac_output").show();
+			runit('rv_1_1',this, undefined);
+			$("#rv_1_1_runb").on("click", function(){
+				runit('rv_1_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rv_1_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rv_1_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rv_1_1_runb").on("click", function(){
+		runit('rv_1_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</li>
+<li><p class="first">See comments in code for instructions.</p>
+
+<div id="cont"></div>
+<div id="rv_1_2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rv_1_2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rv_1_2_saveb" onclick="saveEditor('rv_1_2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rv_1_2_loadb" onclick="requestCode('rv_1_2');">Load</button>
+<button class='btn btn-default' id="rv_1_2_vizb" onclick="injectCodelens(this,'rv_1_2');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rv_1_2_coach_b" onclick="injectCodeCoach('rv_1_2');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rv_1_2_showb" onclick="$('#rv_1_2_code_div').toggle();cm_editors['rv_1_2_code'].refresh();$('#rv_1_2_saveb').toggle();$('#rv_1_2_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rv_1_2')"/>
+
+</div>
+<br/>
+<div id="rv_1_2_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rv_1_2_code" class="active_code" prefixcode="undefined" lang="python">
+ic = 93252759253293024
+# What is the value if you add 5 to the integer in ic?
+
+dcm = [9, 4, 67, 89, 98324, 23, 34, 67, 89, 34, 56, 67, 90, 3242, 9893, 5]
+# add 14 to each element of the list dcm and print the result
+
+# The output you get should be:
+# 23
+# 18
+# 81
+# 103
+# 98338
+# 37
+# 48
+# 81
+# 103
+# 48
+# 70
+# 81
+# 104
+# 3256
+# 9907
+# 19
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rv_1_2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rv_1_2_suffix" style="display:none">
+</pre><pre id="rv_1_2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rv_1_2)</span> </p>
+<div id="rv_1_2_codelens_div" style="display:none"></div><div id="rv_1_2_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rv_1_2_saveb').toggle();
+    $('#rv_1_2_loadb').toggle();
+}
+if ($("#rv_1_2").attr("lang") !== "html" && $("#rv_1_2_code_div").parents(".admonition").length == 0 && $("#rv_1_2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rv_1_2_code_div").offset({
+			left: $("#rv_1_2 .clearfix").offset().left
+		});
+	}
+	$("#rv_1_2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rv_1_2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rv_1_2_runb").parent().siblings(".ac_output").show();
+			runit('rv_1_2',this, undefined);
+			$("#rv_1_2_runb").on("click", function(){
+				runit('rv_1_2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rv_1_2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rv_1_2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rv_1_2_runb").on("click", function(){
+		runit('rv_1_2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</li>
+<li><p class="first">See comments in code for instructions.</p>
+
+<div id="cont"></div>
+<div id="rv_1_3" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rv_1_3_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rv_1_3_saveb" onclick="saveEditor('rv_1_3');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rv_1_3_loadb" onclick="requestCode('rv_1_3');">Load</button>
+<button class='btn btn-default' id="rv_1_3_vizb" onclick="injectCodelens(this,'rv_1_3');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rv_1_3_coach_b" onclick="injectCodeCoach('rv_1_3');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rv_1_3_showb" onclick="$('#rv_1_3_code_div').toggle();cm_editors['rv_1_3_code'].refresh();$('#rv_1_3_saveb').toggle();$('#rv_1_3_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rv_1_3')"/>
+
+</div>
+<br/>
+<div id="rv_1_3_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rv_1_3_code" class="active_code" prefixcode="undefined" lang="python">
+pl = "keyboard smashing: sdgahgkslghgisaoghdwkltewighigohdjdslkfjisdoghkshdlfkdjgdshglsdkfdsgkldhfkdlsfhdsklghdskgdlhgsdklghdsgkdslghdskglsdgkhdskfls"
+# What is the last character of the string value in the variable pl? Find it and print it.
+
+plts = ["sdsagdsal","sdadfsfsk","dsgsafsal","tomorrow","cooperative","sdgadtx","289,670,452","!)?+)_="]
+# What is the last character of each element in the list plts?
+# Print the last character of each element in the list on a separate line.
+# HINT: You should NOT have to count the length of any of these strings manually/by yourself.
+
+# Your output should be:
+# l
+# k
+# l
+# w
+# e
+# x
+# 2
+# =
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rv_1_3_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rv_1_3_suffix" style="display:none">
+</pre><pre id="rv_1_3_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rv_1_3)</span> </p>
+<div id="rv_1_3_codelens_div" style="display:none"></div><div id="rv_1_3_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rv_1_3_saveb').toggle();
+    $('#rv_1_3_loadb').toggle();
+}
+if ($("#rv_1_3").attr("lang") !== "html" && $("#rv_1_3_code_div").parents(".admonition").length == 0 && $("#rv_1_3_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rv_1_3_code_div").offset({
+			left: $("#rv_1_3 .clearfix").offset().left
+		});
+	}
+	$("#rv_1_3_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rv_1_3_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rv_1_3_runb").parent().siblings(".ac_output").show();
+			runit('rv_1_3',this, undefined);
+			$("#rv_1_3_runb").on("click", function(){
+				runit('rv_1_3',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rv_1_3_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rv_1_3_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rv_1_3_runb").on("click", function(){
+		runit('rv_1_3',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</li>
+<li><p class="first">See comments in code for instructions.</p>
+
+<div id="cont"></div>
+<div id="rv_1_4" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rv_1_4_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rv_1_4_saveb" onclick="saveEditor('rv_1_4');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rv_1_4_loadb" onclick="requestCode('rv_1_4');">Load</button>
+<button class='btn btn-default' id="rv_1_4_vizb" onclick="injectCodelens(this,'rv_1_4');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rv_1_4_coach_b" onclick="injectCodeCoach('rv_1_4');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rv_1_4_showb" onclick="$('#rv_1_4_code_div').toggle();cm_editors['rv_1_4_code'].refresh();$('#rv_1_4_saveb').toggle();$('#rv_1_4_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rv_1_4')"/>
+
+</div>
+<br/>
+<div id="rv_1_4_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rv_1_4_code" class="active_code" prefixcode="undefined" lang="python">
+bz = "elementary, my dear watson"
+# Write code to print the fifth character of string bz.
+# Your output should be:
+# e
+
+# Write code to print the seventh character of string bz.
+# Your output should be:
+# t
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rv_1_4_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rv_1_4_suffix" style="display:none">
+</pre><pre id="rv_1_4_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rv_1_4)</span> </p>
+<div id="rv_1_4_codelens_div" style="display:none"></div><div id="rv_1_4_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rv_1_4_saveb').toggle();
+    $('#rv_1_4_loadb').toggle();
+}
+if ($("#rv_1_4").attr("lang") !== "html" && $("#rv_1_4_code_div").parents(".admonition").length == 0 && $("#rv_1_4_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rv_1_4_code_div").offset({
+			left: $("#rv_1_4 .clearfix").offset().left
+		});
+	}
+	$("#rv_1_4_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rv_1_4_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rv_1_4_runb").parent().siblings(".ac_output").show();
+			runit('rv_1_4',this, undefined);
+			$("#rv_1_4_runb").on("click", function(){
+				runit('rv_1_4',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rv_1_4_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rv_1_4_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rv_1_4_runb").on("click", function(){
+		runit('rv_1_4',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</li>
+<li><p class="first">See comments in code for instructions.</p>
+
+<div id="cont"></div>
+<div id="rv_1_5" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rv_1_5_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rv_1_5_saveb" onclick="saveEditor('rv_1_5');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rv_1_5_loadb" onclick="requestCode('rv_1_5');">Load</button>
+<button class='btn btn-default' id="rv_1_5_vizb" onclick="injectCodelens(this,'rv_1_5');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rv_1_5_coach_b" onclick="injectCodeCoach('rv_1_5');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rv_1_5_showb" onclick="$('#rv_1_5_code_div').toggle();cm_editors['rv_1_5_code'].refresh();$('#rv_1_5_saveb').toggle();$('#rv_1_5_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rv_1_5')"/>
+
+</div>
+<br/>
+<div id="rv_1_5_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rv_1_5_code" class="active_code" prefixcode="undefined" lang="python">
+nm = "Irene"
+# write code to print out the string "Why hello, Irene" using the variable nm.
+
+
+hlt = ['mycroft','Lestrade','gregson','sherlock','Joan','john','holmes','mrs hudson']
+# Write code to print "Nice to meet you," in front of each element in list hlt on a separate line.
+
+# Your output should look like:
+# Nice to meet you, mycroft
+# Nice to meet you, Lestrade
+# Nice to meet you, gregson
+# Nice to meet you, sherlock
+# Nice to meet you, Joan
+# Nice to meet you, john
+# Nice to meet you, holmes
+# Nice to meet you, mrs hudson
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rv_1_5_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rv_1_5_suffix" style="display:none">
+</pre><pre id="rv_1_5_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rv_1_5)</span> </p>
+<div id="rv_1_5_codelens_div" style="display:none"></div><div id="rv_1_5_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rv_1_5_saveb').toggle();
+    $('#rv_1_5_loadb').toggle();
+}
+if ($("#rv_1_5").attr("lang") !== "html" && $("#rv_1_5_code_div").parents(".admonition").length == 0 && $("#rv_1_5_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rv_1_5_code_div").offset({
+			left: $("#rv_1_5 .clearfix").offset().left
+		});
+	}
+	$("#rv_1_5_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rv_1_5_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rv_1_5_runb").parent().siblings(".ac_output").show();
+			runit('rv_1_5',this, undefined);
+			$("#rv_1_5_runb").on("click", function(){
+				runit('rv_1_5',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rv_1_5_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rv_1_5_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rv_1_5_runb").on("click", function(){
+		runit('rv_1_5',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</li>
+<li><p class="first">See comments in code for instructions.</p>
+
+<div id="cont"></div>
+<div id="rv_1_6" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rv_1_6_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rv_1_6_saveb" onclick="saveEditor('rv_1_6');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rv_1_6_loadb" onclick="requestCode('rv_1_6');">Load</button>
+<button class='btn btn-default' id="rv_1_6_vizb" onclick="injectCodelens(this,'rv_1_6');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rv_1_6_coach_b" onclick="injectCodeCoach('rv_1_6');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rv_1_6_showb" onclick="$('#rv_1_6_code_div').toggle();cm_editors['rv_1_6_code'].refresh();$('#rv_1_6_saveb').toggle();$('#rv_1_6_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rv_1_6')"/>
+
+</div>
+<br/>
+<div id="rv_1_6_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rv_1_6_code" class="active_code" prefixcode="undefined" lang="python">
+z = True
+# Write code to print the type of the value in the variable z.
+
+ab = 45.6
+# Write code to print the type of the value in the variable ab.
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rv_1_6_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rv_1_6_suffix" style="display:none">
+</pre><pre id="rv_1_6_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rv_1_6)</span> </p>
+<div id="rv_1_6_codelens_div" style="display:none"></div><div id="rv_1_6_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rv_1_6_saveb').toggle();
+    $('#rv_1_6_loadb').toggle();
+}
+if ($("#rv_1_6").attr("lang") !== "html" && $("#rv_1_6_code_div").parents(".admonition").length == 0 && $("#rv_1_6_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rv_1_6_code_div").offset({
+			left: $("#rv_1_6 .clearfix").offset().left
+		});
+	}
+	$("#rv_1_6_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rv_1_6_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rv_1_6_runb").parent().siblings(".ac_output").show();
+			runit('rv_1_6',this, undefined);
+			$("#rv_1_6_runb").on("click", function(){
+				runit('rv_1_6',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rv_1_6_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rv_1_6_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rv_1_6_runb").on("click", function(){
+		runit('rv_1_6',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</li>
+<li><p class="first">See comments in code for instructions.</p>
+
+<div id="cont"></div>
+<div id="rv_1_7" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rv_1_7_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rv_1_7_saveb" onclick="saveEditor('rv_1_7');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rv_1_7_loadb" onclick="requestCode('rv_1_7');">Load</button>
+<button class='btn btn-default' id="rv_1_7_vizb" onclick="injectCodelens(this,'rv_1_7');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rv_1_7_coach_b" onclick="injectCodeCoach('rv_1_7');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rv_1_7_showb" onclick="$('#rv_1_7_code_div').toggle();cm_editors['rv_1_7_code'].refresh();$('#rv_1_7_saveb').toggle();$('#rv_1_7_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rv_1_7')"/>
+
+</div>
+<br/>
+<div id="rv_1_7_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rv_1_7_code" class="active_code" prefixcode="undefined" lang="python">
+fancy_tomatoes = ["hello", 6, 4.24, 8, 20, "newspaper", True, "goodbye", "False", False, 5967834, "6578.31"]
+
+# Write code to print the length of the list fancy_tomatoes.
+
+
+# Write code to print out each element of the list fancy_tomatoes on a separate line.
+# (You can do this in just 2 lines of code!)
+
+# Your output should look like:
+# hello
+# 6
+# 4.24
+# 8
+# 20
+# newspaper
+# True
+# goodbye
+# False
+# False
+# 5967834
+# 6578.31
+
+
+# Now write code to print out the type of each element of the list fancy_tomatoes on a separate line.
+
+# Your output should look like:
+# <type 'str'>
+# <type 'int'>
+# <type 'float'>
+# <type 'int'>
+# <type 'int'>
+# <type 'str'>
+# <type 'bool'>
+# <type 'str'>
+# <type 'str'>
+# <type 'bool'>
+# <type 'int'>
+# <type 'str'>
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rv_1_7_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rv_1_7_suffix" style="display:none">
+</pre><pre id="rv_1_7_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rv_1_7)</span> </p>
+<div id="rv_1_7_codelens_div" style="display:none"></div><div id="rv_1_7_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rv_1_7_saveb').toggle();
+    $('#rv_1_7_loadb').toggle();
+}
+if ($("#rv_1_7").attr("lang") !== "html" && $("#rv_1_7_code_div").parents(".admonition").length == 0 && $("#rv_1_7_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rv_1_7_code_div").offset({
+			left: $("#rv_1_7 .clearfix").offset().left
+		});
+	}
+	$("#rv_1_7_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rv_1_7_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rv_1_7_runb").parent().siblings(".ac_output").show();
+			runit('rv_1_7',this, undefined);
+			$("#rv_1_7_runb").on("click", function(){
+				runit('rv_1_7',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rv_1_7_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rv_1_7_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rv_1_7_runb").on("click", function(){
+		runit('rv_1_7',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</li>
+</ol>
+<p>Congratulations, now hit the &#8220;That Was Easy&#8221; button and go on. You&#8217;re ready for the rest of this week&#8217;s reading and the problem set!</p>
+</div>
+<div class="section" id="reading-response">
+<span id="response-3"></span><h2>Reading Response<a class="headerlink" href="#reading-response" title="Permalink to this headline">¶</a></h2>
+<p><strong>Due 8PM the night before your section meets</strong></p>
+<p>Don&#8217;t forget to click <strong>save</strong>.</p>
+<blockquote>
+<div><p>Give an example of when you were interacting with someone where you used &#8220;Book&#8221; responses.</p>
+
+<div id="cont"></div>
+<div id="rr_3_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rr_3_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_3_1_saveb" onclick="saveEditor('rr_3_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_3_1_loadb" onclick="requestCode('rr_3_1');">Load</button>
+<button class='btn btn-default' id="rr_3_1_vizb" onclick="injectCodelens(this,'rr_3_1');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rr_3_1_coach_b" onclick="injectCodeCoach('rr_3_1');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rr_3_1_showb" onclick="$('#rr_3_1_code_div').toggle();cm_editors['rr_3_1_code'].refresh();$('#rr_3_1_saveb').toggle();$('#rr_3_1_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rr_3_1')"/>
+
+</div>
+<br/>
+<div id="rr_3_1_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rr_3_1_code" class="active_code" prefixcode="undefined" lang="python">
+# Fill in your response in between the triple quotes
+"""
+
+"""
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rr_3_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rr_3_1_suffix" style="display:none">
+</pre><pre id="rr_3_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rr_3_1)</span> </p>
+<div id="rr_3_1_codelens_div" style="display:none"></div><div id="rr_3_1_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rr_3_1_saveb').toggle();
+    $('#rr_3_1_loadb').toggle();
+}
+if ($("#rr_3_1").attr("lang") !== "html" && $("#rr_3_1_code_div").parents(".admonition").length == 0 && $("#rr_3_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rr_3_1_code_div").offset({
+			left: $("#rr_3_1 .clearfix").offset().left
+		});
+	}
+	$("#rr_3_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rr_3_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rr_3_1_runb").parent().siblings(".ac_output").show();
+			runit('rr_3_1',this, undefined);
+			$("#rr_3_1_runb").on("click", function(){
+				runit('rr_3_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rr_3_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rr_3_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rr_3_1_runb").on("click", function(){
+		runit('rr_3_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Give an example of when you gave someone an &#8220;out of book&#8221; response.</p>
+
+<div id="cont"></div>
+<div id="rr_3_2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rr_3_2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_3_2_saveb" onclick="saveEditor('rr_3_2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_3_2_loadb" onclick="requestCode('rr_3_2');">Load</button>
+<button class='btn btn-default' id="rr_3_2_vizb" onclick="injectCodelens(this,'rr_3_2');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rr_3_2_coach_b" onclick="injectCodeCoach('rr_3_2');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rr_3_2_showb" onclick="$('#rr_3_2_code_div').toggle();cm_editors['rr_3_2_code'].refresh();$('#rr_3_2_saveb').toggle();$('#rr_3_2_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rr_3_2')"/>
+
+</div>
+<br/>
+<div id="rr_3_2_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rr_3_2_code" class="active_code" prefixcode="undefined" lang="python">
+# Fill in your response in between the triple quotes
+"""
+
+"""
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rr_3_2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rr_3_2_suffix" style="display:none">
+</pre><pre id="rr_3_2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rr_3_2)</span> </p>
+<div id="rr_3_2_codelens_div" style="display:none"></div><div id="rr_3_2_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rr_3_2_saveb').toggle();
+    $('#rr_3_2_loadb').toggle();
+}
+if ($("#rr_3_2").attr("lang") !== "html" && $("#rr_3_2_code_div").parents(".admonition").length == 0 && $("#rr_3_2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rr_3_2_code_div").offset({
+			left: $("#rr_3_2 .clearfix").offset().left
+		});
+	}
+	$("#rr_3_2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rr_3_2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rr_3_2_runb").parent().siblings(".ac_output").show();
+			runit('rr_3_2',this, undefined);
+			$("#rr_3_2_runb").on("click", function(){
+				runit('rr_3_2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rr_3_2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rr_3_2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rr_3_2_runb").on("click", function(){
+		runit('rr_3_2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>What would you like to talk about in section this week?</p>
+
+<div id="cont"></div>
+<div id="rr_3_3" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rr_3_3_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_3_3_saveb" onclick="saveEditor('rr_3_3');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_3_3_loadb" onclick="requestCode('rr_3_3');">Load</button>
+<button class='btn btn-default' id="rr_3_3_vizb" onclick="injectCodelens(this,'rr_3_3');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rr_3_3_coach_b" onclick="injectCodeCoach('rr_3_3');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rr_3_3_showb" onclick="$('#rr_3_3_code_div').toggle();cm_editors['rr_3_3_code'].refresh();$('#rr_3_3_saveb').toggle();$('#rr_3_3_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rr_3_3')"/>
+
+</div>
+<br/>
+<div id="rr_3_3_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rr_3_3_code" class="active_code" prefixcode="undefined" lang="python">
+# Fill in your response in between the triple quotes
+"""
+
+"""
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rr_3_3_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rr_3_3_suffix" style="display:none">
+</pre><pre id="rr_3_3_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rr_3_3)</span> </p>
+<div id="rr_3_3_codelens_div" style="display:none"></div><div id="rr_3_3_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rr_3_3_saveb').toggle();
+    $('#rr_3_3_loadb').toggle();
+}
+if ($("#rr_3_3").attr("lang") !== "html" && $("#rr_3_3_code_div").parents(".admonition").length == 0 && $("#rr_3_3_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rr_3_3_code_div").offset({
+			left: $("#rr_3_3 .clearfix").offset().left
+		});
+	}
+	$("#rr_3_3_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rr_3_3_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rr_3_3_runb").parent().siblings(".ac_output").show();
+			runit('rr_3_3',this, undefined);
+			$("#rr_3_3_runb").on("click", function(){
+				runit('rr_3_3',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rr_3_3_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rr_3_3_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rr_3_3_runb").on("click", function(){
+		runit('rr_3_3',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></blockquote>
+</div>
+<div class="section" id="problem-set">
+<span id="problem-set-3"></span><h2>Problem Set<a class="headerlink" href="#problem-set" title="Permalink to this headline">¶</a></h2>
+<p><strong>Due:</strong> <strong>Friday, January 31, 5 pm</strong></p>
+<p><strong>Instructions:</strong> Write the code you want to save in the provided boxes, and click <strong>save</strong> for each one.
+The last code you have saved for each one by the deadline is what will be graded.</p>
+<p>1. (6 points) Old McDonald had a farm. He records the animals on his farm in a dictionary called &#8216;animals&#8217;.
+In this problem help Old McDonald manage his farm animals. Be sure to answer all six parts, a-f.</p>
+<blockquote>
+<div><div id='ps_3_1_tabs' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_3_1_tabs-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_3_1_tabs-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_3_1_tabs-Problem'>
+<div id="cont"></div>
+<div id="ps_3_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_3_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_3_1_saveb" onclick="saveEditor('ps_3_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_3_1_loadb" onclick="requestCode('ps_3_1');">Load</button>
+<button class='btn btn-default' id="ps_3_1_vizb" onclick="injectCodelens(this,'ps_3_1');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_3_1_coach_b" onclick="injectCodeCoach('ps_3_1');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_3_1_showb" onclick="$('#ps_3_1_code_div').toggle();cm_editors['ps_3_1_code'].refresh();$('#ps_3_1_saveb').toggle();$('#ps_3_1_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_3_1')"/>
+
+</div>
+<br/>
+<div id="ps_3_1_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_3_1_code" class="active_code" prefixcode="undefined" lang="python">
+animals = {
+   'cows': 2,
+   'chickens': 8,
+   'pigs': 4,
+   'mice': 72,
+   'cats': 9,
+   'dogs': 1,
+}
+
+# a. Print the number of chickens in the farm (by having your code look it up
+# in the animals dictionary. "Print(8)" is cheating...)
+
+# b. Old McDonald was given a yak. Add a yak to to the animals dictionary.
+
+# c. Old McDonald foud a stray dog. Increase the number of dogs on the farm by 1.
+
+# d. print out the names and quantities of all animals on his farm, one per line, in any order.
+# For example:
+# 2 cows
+# 9 cats
+# ...
+
+# e. While giving tours of his farm to children, they often inquire about particular
+# animals. Write code that asks the user to input an animal name, and then
+# prints out how many of that animal he has; or 0 if he has none.
+# For example, output "8 chickens" or "0 elephants"
+
+# f. Write a statement that tells Old McDonald which animal he has the most of.
+# This statement should print "72 mice", given the current state of the
+# dictionary, but your code should work correctly even if mice aren't the
+# most numerous animal on his farm.
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_3_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_3_1_suffix" style="display:none">
+</pre><pre id="ps_3_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_3_1)</span> </p>
+<div id="ps_3_1_codelens_div" style="display:none"></div><div id="ps_3_1_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_3_1_saveb').toggle();
+    $('#ps_3_1_loadb').toggle();
+}
+if ($("#ps_3_1").attr("lang") !== "html" && $("#ps_3_1_code_div").parents(".admonition").length == 0 && $("#ps_3_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_3_1_code_div").offset({
+			left: $("#ps_3_1 .clearfix").offset().left
+		});
+	}
+	$("#ps_3_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_3_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_3_1_runb").parent().siblings(".ac_output").show();
+			runit('ps_3_1',this, undefined);
+			$("#ps_3_1_runb").on("click", function(){
+				runit('ps_3_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_3_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_3_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_3_1_runb").on("click", function(){
+		runit('ps_3_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_3_1_tabs-Solution'>
+<div id="cont"></div>
+<div id="ps_3_1a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_3_1a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_3_1a_saveb" onclick="saveEditor('ps_3_1a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_3_1a_loadb" onclick="requestCode('ps_3_1a');">Load</button>
+<button class='btn btn-default' id="ps_3_1a_vizb" onclick="injectCodelens(this,'ps_3_1a');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_3_1a_coach_b" onclick="injectCodeCoach('ps_3_1a');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_3_1a_showb" onclick="$('#ps_3_1a_code_div').toggle();cm_editors['ps_3_1a_code'].refresh();$('#ps_3_1a_saveb').toggle();$('#ps_3_1a_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_3_1a')"/>
+
+</div>
+<br/>
+<div id="ps_3_1a_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_3_1a_code" class="active_code" prefixcode="undefined" lang="python">
+animals = {
+   'cows': 2,
+   'chickens': 8,
+   'pigs': 4,
+   'mice': 72,
+   'cats': 9,
+   'dogs': 1,
+}
+
+# a. Print the number of chickens in the farm (by having your code look it up
+# in the animals dictionary. "Print(8)" is cheating...)
+
+print(animals['chickens'])
+
+# b. Old McDonald was given a yak. Add a yak to to the animals dictionary.
+
+animals['yak'] = 1
+
+# c. Old McDonald foud a stray dog. Increase the number of dogs on the farm by 1.
+
+animals['dogs'] = animals['dogs'] + 1
+
+# d. print out the names and quantities of all animals on his farm, one per line, in any order.
+# For example:
+# 2 cows
+# 9 cats
+# ...
+
+for k in animals:
+   print(animals[k],k)
+
+# e. While giving tours of his farm to children, they often inquire about particular
+# animals. Write code that asks the user to input an animal name, and then
+# prints out how many of that animal he has; or 0 if he has none.
+# For example, output "8 chickens" or "0 elephants"
+
+q = input("How many _____ do you have?")
+if q in animals:
+   print(animals[q],q)
+else:
+   print(0,q)
+
+# f. Write a statement that tells Old McDonald which animal he has the most of.
+# This statement should print "72 mice", given the current state of the
+# dictionary, but your code should work correctly even if mice aren't the
+# most numerous animal on his farm.
+
+keys = animals.keys()
+best_key = keys[0]
+for k in keys:
+   if animals[k] > animals[best_key]:
+      best_key = k
+print(animals[best_key], best_key)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_3_1a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_3_1a_suffix" style="display:none">
+</pre><pre id="ps_3_1a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_3_1a)</span> </p>
+<div id="ps_3_1a_codelens_div" style="display:none"></div><div id="ps_3_1a_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_3_1a_saveb').toggle();
+    $('#ps_3_1a_loadb').toggle();
+}
+if ($("#ps_3_1a").attr("lang") !== "html" && $("#ps_3_1a_code_div").parents(".admonition").length == 0 && $("#ps_3_1a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_3_1a_code_div").offset({
+			left: $("#ps_3_1a .clearfix").offset().left
+		});
+	}
+	$("#ps_3_1a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_3_1a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_3_1a_runb").parent().siblings(".ac_output").show();
+			runit('ps_3_1a',this, undefined);
+			$("#ps_3_1a_runb").on("click", function(){
+				runit('ps_3_1a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_3_1a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_3_1a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_3_1a_runb").on("click", function(){
+		runit('ps_3_1a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_3_1_tabs .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_3_1_tabs .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_3_1_tabs .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+</div></blockquote>
+<p>For the next three exercises, you will analyze data from our group on Facebook. To &#8216;load&#8217; the data you will need to copy and paste it into the python prompt, in between the quotation marks. To maintain confidentiality (i.e., only students in 106 can see it), the data lives in a <a class="reference external" href="https://ctools.umich.edu/access/content/group/80ba0083-6409-4149-8222-f210f9dc6dd1/Problem%20Sets/PS3/simplefbdata.txt">file on cTools.</a></p>
+<ol class="arabic">
+<li><p class="first">(2 points) For each post or comment in the facebook group, print out the name of the poster.</p>
+<div id='ps_3_2_tabs' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_3_2_tabs-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_3_2_tabs-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_3_2_tabs-Problem'>
+<div id="cont"></div>
+<div id="ps_3_2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_3_2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_3_2_saveb" onclick="saveEditor('ps_3_2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_3_2_loadb" onclick="requestCode('ps_3_2');">Load</button>
+<button class='btn btn-default' id="ps_3_2_vizb" onclick="injectCodelens(this,'ps_3_2');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_3_2_coach_b" onclick="injectCodeCoach('ps_3_2');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_3_2_showb" onclick="$('#ps_3_2_code_div').toggle();cm_editors['ps_3_2_code'].refresh();$('#ps_3_2_saveb').toggle();$('#ps_3_2_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_3_2')"/>
+
+</div>
+<br/>
+<div id="ps_3_2_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_3_2_code" class="active_code" prefixcode="undefined" lang="python">
+fb = """
+# Delete this line and paste file contents here
+"""
+
+x = fb.split("\n")
+# x now refers to a list, with each line of text as one element in the list.
+# If yo're not sure, trying printing x, len(x), x[1], and x[1][0] and make sure you understand
+# why you get the output you do
+
+# Your output should look something like:
+# Paul R.
+# Jackie C.
+# Jackie C.
+# Nick R.
+# Jackie C.
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_3_2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_3_2_suffix" style="display:none">
+</pre><pre id="ps_3_2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_3_2)</span> </p>
+<div id="ps_3_2_codelens_div" style="display:none"></div><div id="ps_3_2_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_3_2_saveb').toggle();
+    $('#ps_3_2_loadb').toggle();
+}
+if ($("#ps_3_2").attr("lang") !== "html" && $("#ps_3_2_code_div").parents(".admonition").length == 0 && $("#ps_3_2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_3_2_code_div").offset({
+			left: $("#ps_3_2 .clearfix").offset().left
+		});
+	}
+	$("#ps_3_2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_3_2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_3_2_runb").parent().siblings(".ac_output").show();
+			runit('ps_3_2',this, undefined);
+			$("#ps_3_2_runb").on("click", function(){
+				runit('ps_3_2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_3_2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_3_2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_3_2_runb").on("click", function(){
+		runit('ps_3_2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_3_2_tabs-Solution'>
+<div id="cont"></div>
+<div id="ps_3_2a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_3_2a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_3_2a_saveb" onclick="saveEditor('ps_3_2a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_3_2a_loadb" onclick="requestCode('ps_3_2a');">Load</button>
+<button class='btn btn-default' id="ps_3_2a_vizb" onclick="injectCodelens(this,'ps_3_2a');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_3_2a_coach_b" onclick="injectCodeCoach('ps_3_2a');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_3_2a_showb" onclick="$('#ps_3_2a_code_div').toggle();cm_editors['ps_3_2a_code'].refresh();$('#ps_3_2a_saveb').toggle();$('#ps_3_2a_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_3_2a')"/>
+
+</div>
+<br/>
+<div id="ps_3_2a_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_3_2a_code" class="active_code" prefixcode="undefined" lang="python">
+fb = """
+# Delete this line and paste file contents here
+"""
+
+x = fb.split("\n")
+# x now refers to a list, with each line of text as one element in the list.
+# If yo're not sure, trying printing x, len(x), x[1], and x[1][0] and make sure you understand
+# why you get the output you do
+
+for ln in x:
+    if ln[:5] == 'from:':
+        print ln[6:].lstrip()
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_3_2a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_3_2a_suffix" style="display:none">
+</pre><pre id="ps_3_2a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_3_2a)</span> </p>
+<div id="ps_3_2a_codelens_div" style="display:none"></div><div id="ps_3_2a_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_3_2a_saveb').toggle();
+    $('#ps_3_2a_loadb').toggle();
+}
+if ($("#ps_3_2a").attr("lang") !== "html" && $("#ps_3_2a_code_div").parents(".admonition").length == 0 && $("#ps_3_2a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_3_2a_code_div").offset({
+			left: $("#ps_3_2a .clearfix").offset().left
+		});
+	}
+	$("#ps_3_2a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_3_2a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_3_2a_runb").parent().siblings(".ac_output").show();
+			runit('ps_3_2a',this, undefined);
+			$("#ps_3_2a_runb").on("click", function(){
+				runit('ps_3_2a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_3_2a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_3_2a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_3_2a_runb").on("click", function(){
+		runit('ps_3_2a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_3_2_tabs .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_3_2_tabs .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_3_2_tabs .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+</li>
+<li><p class="first">(2 points) Use the Facebook data to count the number of posts (or reply comments) each person made in the Facebook group.</p>
+<div id='ps_3_3_tabs' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_3_3_tabs-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_3_3_tabs-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_3_3_tabs-Problem'>
+<div id="cont"></div>
+<div id="ps_3_3" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_3_3_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_3_3_saveb" onclick="saveEditor('ps_3_3');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_3_3_loadb" onclick="requestCode('ps_3_3');">Load</button>
+<button class='btn btn-default' id="ps_3_3_vizb" onclick="injectCodelens(this,'ps_3_3');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_3_3_coach_b" onclick="injectCodeCoach('ps_3_3');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_3_3_showb" onclick="$('#ps_3_3_code_div').toggle();cm_editors['ps_3_3_code'].refresh();$('#ps_3_3_saveb').toggle();$('#ps_3_3_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_3_3')"/>
+
+</div>
+<br/>
+<div id="ps_3_3_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_3_3_code" class="active_code" prefixcode="undefined" lang="python">
+fb = """
+# Delete this line and paste file contents here
+"""
+
+x = fb.split("\n")
+
+# Your output should look something like this, but with different numbers:
+# Paul R. posted 1 times  (# or, if yo're ambitious, make it say 1 time instead of 1 times)
+# Jackie C. posted 3 times
+# Nick R. posted 2 times
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_3_3_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_3_3_suffix" style="display:none">
+</pre><pre id="ps_3_3_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_3_3)</span> </p>
+<div id="ps_3_3_codelens_div" style="display:none"></div><div id="ps_3_3_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_3_3_saveb').toggle();
+    $('#ps_3_3_loadb').toggle();
+}
+if ($("#ps_3_3").attr("lang") !== "html" && $("#ps_3_3_code_div").parents(".admonition").length == 0 && $("#ps_3_3_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_3_3_code_div").offset({
+			left: $("#ps_3_3 .clearfix").offset().left
+		});
+	}
+	$("#ps_3_3_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_3_3_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_3_3_runb").parent().siblings(".ac_output").show();
+			runit('ps_3_3',this, undefined);
+			$("#ps_3_3_runb").on("click", function(){
+				runit('ps_3_3',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_3_3_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_3_3_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_3_3_runb").on("click", function(){
+		runit('ps_3_3',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_3_3_tabs-Solution'>
+<div id="cont"></div>
+<div id="ps_3_3a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_3_3a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_3_3a_saveb" onclick="saveEditor('ps_3_3a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_3_3a_loadb" onclick="requestCode('ps_3_3a');">Load</button>
+<button class='btn btn-default' id="ps_3_3a_vizb" onclick="injectCodelens(this,'ps_3_3a');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_3_3a_coach_b" onclick="injectCodeCoach('ps_3_3a');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_3_3a_showb" onclick="$('#ps_3_3a_code_div').toggle();cm_editors['ps_3_3a_code'].refresh();$('#ps_3_3a_saveb').toggle();$('#ps_3_3a_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_3_3a')"/>
+
+</div>
+<br/>
+<div id="ps_3_3a_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_3_3a_code" class="active_code" prefixcode="undefined" lang="python">
+fb = """
+# Delete this line and paste file contents here
+"""
+
+x = fb.split("\n")
+
+posters = {}
+for ln in x:
+    if ln[:5] == 'from:':
+        name = ln[6:].lstrip()
+        if name not in posters:
+            posters[name] = 1
+        else:
+            posters[name] = posters[name] + 1
+for p in posters:
+    print "%s posted %d times" % (p,posters[p])
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_3_3a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_3_3a_suffix" style="display:none">
+</pre><pre id="ps_3_3a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_3_3a)</span> </p>
+<div id="ps_3_3a_codelens_div" style="display:none"></div><div id="ps_3_3a_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_3_3a_saveb').toggle();
+    $('#ps_3_3a_loadb').toggle();
+}
+if ($("#ps_3_3a").attr("lang") !== "html" && $("#ps_3_3a_code_div").parents(".admonition").length == 0 && $("#ps_3_3a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_3_3a_code_div").offset({
+			left: $("#ps_3_3a .clearfix").offset().left
+		});
+	}
+	$("#ps_3_3a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_3_3a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_3_3a_runb").parent().siblings(".ac_output").show();
+			runit('ps_3_3a',this, undefined);
+			$("#ps_3_3a_runb").on("click", function(){
+				runit('ps_3_3a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_3_3a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_3_3a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_3_3a_runb").on("click", function(){
+		runit('ps_3_3a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_3_3_tabs .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_3_3_tabs .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_3_3_tabs .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+</li>
+<li><p class="first">(optional: 1 bonus point; this one is much harder)  Use the Facebook data to determine who made the longest post or comment (most characters); print out the poster&#8217;s name and the contents.</p>
+<div id='ps_3_4_tabs' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_3_4_tabs-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_3_4_tabs-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_3_4_tabs-Problem'>
+<div id="cont"></div>
+<div id="ps_3_4" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_3_4_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_3_4_saveb" onclick="saveEditor('ps_3_4');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_3_4_loadb" onclick="requestCode('ps_3_4');">Load</button>
+<button class='btn btn-default' id="ps_3_4_vizb" onclick="injectCodelens(this,'ps_3_4');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_3_4_coach_b" onclick="injectCodeCoach('ps_3_4');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_3_4_showb" onclick="$('#ps_3_4_code_div').toggle();cm_editors['ps_3_4_code'].refresh();$('#ps_3_4_saveb').toggle();$('#ps_3_4_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_3_4')"/>
+
+</div>
+<br/>
+<div id="ps_3_4_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_3_4_code" class="active_code" prefixcode="undefined" lang="python">
+fb = """
+# Delete this line and paste file contents here
+"""
+
+x = fb.split("\n")
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_3_4_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_3_4_suffix" style="display:none">
+</pre><pre id="ps_3_4_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_3_4)</span> </p>
+<div id="ps_3_4_codelens_div" style="display:none"></div><div id="ps_3_4_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_3_4_saveb').toggle();
+    $('#ps_3_4_loadb').toggle();
+}
+if ($("#ps_3_4").attr("lang") !== "html" && $("#ps_3_4_code_div").parents(".admonition").length == 0 && $("#ps_3_4_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_3_4_code_div").offset({
+			left: $("#ps_3_4 .clearfix").offset().left
+		});
+	}
+	$("#ps_3_4_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_3_4_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_3_4_runb").parent().siblings(".ac_output").show();
+			runit('ps_3_4',this, undefined);
+			$("#ps_3_4_runb").on("click", function(){
+				runit('ps_3_4',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_3_4_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_3_4_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_3_4_runb").on("click", function(){
+		runit('ps_3_4',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_3_4_tabs-Solution'>
+<div id="cont"></div>
+<div id="ps_3_4s" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_3_4s_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_3_4s_saveb" onclick="saveEditor('ps_3_4s');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_3_4s_loadb" onclick="requestCode('ps_3_4s');">Load</button>
+<button class='btn btn-default' id="ps_3_4s_vizb" onclick="injectCodelens(this,'ps_3_4s');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_3_4s_coach_b" onclick="injectCodeCoach('ps_3_4s');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_3_4s_showb" onclick="$('#ps_3_4s_code_div').toggle();cm_editors['ps_3_4s_code'].refresh();$('#ps_3_4s_saveb').toggle();$('#ps_3_4s_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_3_4s')"/>
+
+</div>
+<br/>
+<div id="ps_3_4s_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_3_4s_code" class="active_code" prefixcode="undefined" lang="python">
+fb = """
+# Delete this line and paste file contents here
+"""
+
+x = fb.split("\n")
+
+# use an accumulator pattern, but with two accumulator
+# variables, one for the longest post, and another
+# for the person who made it.
+longest_post = ""   # initialize to empty
+poster = "" #initialize to empty
+
+contents = "" #initialize accumulator for contents of current post
+name = "" # the person who posted the current/prev post
+
+for ln in x:
+    # Check if previous post's contents are the longest so far
+    if ln[:5] == 'from:':
+        # if a line starting with from
+
+        # check if previous post should replace longest
+        if len(contents) > len(longest_post):
+            longest_post = contents
+            poster = name
+
+        # keep track of the name to
+        # use on the next iteration
+        name = ln[6:].lstrip()
+        contents = "" #initialize an accumulator to get the full string for this comment
+    else:
+        #it's a content line, but may need to strip off "comment:" or "post:" from beginning
+        if ln[:8] == 'comment:':
+            contents = contents + ln[9:]
+        elif ln[:5] == 'post:':
+            contents = contents = ln[6:]
+        else:
+            # it's a continuation of the comment from previous line
+            contents = contents + '\n' + ln
+
+# check if last post should replace longest
+if len(contents) > len(longest_post):
+    longest_post = contents
+    poster = name
+
+print(poster)
+print(longest_post)
+
+#Note: Nick has a more elegant solution for this one, that's
+#a little easier to follow, with fewer special cases, but
+#it uses "nested" data structures, which we won't be
+#covering for a couple more weeks.
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_3_4s_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_3_4s_suffix" style="display:none">
+</pre><pre id="ps_3_4s_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_3_4s)</span> </p>
+<div id="ps_3_4s_codelens_div" style="display:none"></div><div id="ps_3_4s_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_3_4s_saveb').toggle();
+    $('#ps_3_4s_loadb').toggle();
+}
+if ($("#ps_3_4s").attr("lang") !== "html" && $("#ps_3_4s_code_div").parents(".admonition").length == 0 && $("#ps_3_4s_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_3_4s_code_div").offset({
+			left: $("#ps_3_4s .clearfix").offset().left
+		});
+	}
+	$("#ps_3_4s_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_3_4s_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_3_4s_runb").parent().siblings(".ac_output").show();
+			runit('ps_3_4s',this, undefined);
+			$("#ps_3_4s_runb").on("click", function(){
+				runit('ps_3_4s',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_3_4s_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_3_4s_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_3_4s_runb").on("click", function(){
+		runit('ps_3_4s',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_3_4_tabs .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_3_4_tabs .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_3_4_tabs .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+</li>
+</ol>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 Paul Resnick, Brad Miller, David Ranum, Created using Runestone Interactive.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

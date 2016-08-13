@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sorting with Sort and Sorted &mdash; Programs, Information, and People: Interactive Edition</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Programs, Information, and People: Interactive Edition" href="../index.html" />
+    <link rel="next" title="Modules and Getting Help" href="../PythonModules/modules.html" />
+    <link rel="prev" title="Tuples" href="../Sequences/tuples.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pip';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+var _prum = [['id', '521dfcc4abe53d0749000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../toc.html">Programs, Information, and People</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../toc.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pip/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/assignments" id="registerlink">Project Page</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pip/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Sorting with Sort and Sorted</a><ul>
+<li><a class="reference internal" href="#optional-reverse-parameter">Optional reverse parameter</a></li>
+<li><a class="reference internal" href="#optional-key-parameter">Optional key parameter</a></li>
+<li><a class="reference internal" href="#anonymous-functions-with-lambda-expressions">Anonymous functions with lambda expressions</a></li>
+<li><a class="reference internal" href="#sorting-a-dictionary">Sorting a Dictionary</a></li>
+<li><a class="reference internal" href="#glossary">Glossary</a></li>
+<li><a class="reference internal" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Tuples" data-toggle="tooltip">
+    <a href="../Sequences/tuples.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Modules and Getting Help' data-toggle="tooltip" >
+    <a href="../PythonModules/modules.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="sorting-with-sort-and-sorted">
+<span id="invoking-sort-chap"></span><h1>Sorting with Sort and Sorted<a class="headerlink" href="#sorting-with-sort-and-sorted" title="Permalink to this headline">¶</a></h1>
+<p>When we first introduced lists, we noted the existence of a method sort. When
+invoked on a list, the order of items in the list is changed. If no optional
+parameters are specified, the items are arranged in whatever
+the natural ordering is for the item type. For example, if the items are
+all integers, then smaller numbers go earlier in the list. If the items are all
+strings, they are arranged in alphabetic order.</p>
+
+<div id="cont"></div>
+<div id="sort_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="sort_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_1_saveb" onclick="saveEditor('sort_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_1_loadb" onclick="requestCode('sort_1');">Load</button>
+<button class='btn btn-default' id="sort_1_vizb" onclick="injectCodelens(this,'sort_1');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="sort_1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="sort_1_code" class="active_code" prefixcode="undefined" lang="python">
+L1 = [1, 7, 4, -2, 3]
+L2 = ["Cherry", "Apple", "Blueberry"]
+
+L1.sort()
+print(L1)
+L2.sort()
+print(L2)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="sort_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="sort_1_suffix" style="display:none">
+</pre><pre id="sort_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (sort_1)</span> </p>
+<div id="sort_1_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#sort_1_saveb').toggle();
+    $('#sort_1_loadb').toggle();
+}
+if ($("#sort_1").attr("lang") !== "html" && $("#sort_1_code_div").parents(".admonition").length == 0 && $("#sort_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#sort_1_code_div").offset({
+			left: $("#sort_1 .clearfix").offset().left
+		});
+	}
+	$("#sort_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#sort_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#sort_1_runb").parent().siblings(".ac_output").show();
+			runit('sort_1',this, undefined);
+			$("#sort_1_runb").on("click", function(){
+				runit('sort_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#sort_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#sort_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#sort_1_runb").on("click", function(){
+		runit('sort_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Note that the sort method does <strong>not</strong> return a sorted version of the list. In
+fact, it returns the value None. But the list itself has been modified. This
+kind of operation that works by having a <em>side effect</em> on the list can be quite
+confusing.</p>
+<p>In this course, we will generally use an alternative way of sorting, the function <tt class="docutils literal"><span class="pre">sorted</span></tt> rather
+than the method <tt class="docutils literal"><span class="pre">sort</span></tt>. Because it is a function rather than a method, it
+is invoked on a list by passing the last as a parameter inside the parentheses,
+rather than putting the list before the period. More importantly, <tt class="docutils literal"><span class="pre">sorted</span></tt>
+does not change the original list. Instead, it returns a new list.</p>
+
+<div id="cont"></div>
+<div id="sort_2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="sort_2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_2_saveb" onclick="saveEditor('sort_2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_2_loadb" onclick="requestCode('sort_2');">Load</button>
+<button class='btn btn-default' id="sort_2_vizb" onclick="injectCodelens(this,'sort_2');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="sort_2_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="sort_2_code" class="active_code" prefixcode="undefined" lang="python">
+L2 = ["Cherry", "Apple", "Blueberry"]
+
+L3 = sorted(L2)
+print(L3)
+print(sorted(L2))
+print(L2) # unchanged
+
+L2.sort()
+print(L2)
+print(L2.sort()) #return value is None
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="sort_2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="sort_2_suffix" style="display:none">
+</pre><pre id="sort_2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (sort_2)</span> </p>
+<div id="sort_2_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#sort_2_saveb').toggle();
+    $('#sort_2_loadb').toggle();
+}
+if ($("#sort_2").attr("lang") !== "html" && $("#sort_2_code_div").parents(".admonition").length == 0 && $("#sort_2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#sort_2_code_div").offset({
+			left: $("#sort_2 .clearfix").offset().left
+		});
+	}
+	$("#sort_2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#sort_2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#sort_2_runb").parent().siblings(".ac_output").show();
+			runit('sort_2',this, undefined);
+			$("#sort_2_runb").on("click", function(){
+				runit('sort_2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#sort_2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#sort_2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#sort_2_runb").on("click", function(){
+		runit('sort_2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<div class="section" id="optional-reverse-parameter">
+<h2>Optional reverse parameter<a class="headerlink" href="#optional-reverse-parameter" title="Permalink to this headline">¶</a></h2>
+<p>The sorted function takes some optional parameters (see <a class="reference internal" href="../Functions/optionalParams.html#optional-pararams-chap"><em>Optional parameters</em></a>).
+The first one is a comparison function. We will not be using it in this course (indeed, in python 3,
+this parameter is not even available any longer). The second optional parameter is a key function, which
+will be described in the next section. The third optional parameter is a Boolean value which
+determines whether to sort the items in reverse order. By default, it is False,
+but if you set it to True, the list will be sorted in reverse order.</p>
+
+<div id="cont"></div>
+<div id="sort_3" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="sort_3_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_3_saveb" onclick="saveEditor('sort_3');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_3_loadb" onclick="requestCode('sort_3');">Load</button>
+<button class='btn btn-default' id="sort_3_vizb" onclick="injectCodelens(this,'sort_3');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="sort_3_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="sort_3_code" class="active_code" prefixcode="undefined" lang="python">
+L2 = ["Cherry", "Apple", "Blueberry"]
+print(sorted(L2, None, None, True))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="sort_3_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="sort_3_suffix" style="display:none">
+</pre><pre id="sort_3_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (sort_3)</span> </p>
+<div id="sort_3_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#sort_3_saveb').toggle();
+    $('#sort_3_loadb').toggle();
+}
+if ($("#sort_3").attr("lang") !== "html" && $("#sort_3_code_div").parents(".admonition").length == 0 && $("#sort_3_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#sort_3_code_div").offset({
+			left: $("#sort_3 .clearfix").offset().left
+		});
+	}
+	$("#sort_3_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#sort_3_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#sort_3_runb").parent().siblings(".ac_output").show();
+			runit('sort_3',this, undefined);
+			$("#sort_3_runb").on("click", function(){
+				runit('sort_3',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#sort_3_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#sort_3_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#sort_3_runb").on("click", function(){
+		runit('sort_3',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order to specify the third optional parameter, we had to provide values for the
+other two optional parameters as well. In this case, we provided the value None
+for both of them. This code would be easier to read if we used the keyword
+technique, like this: <tt class="docutils literal"><span class="pre">sorted(L2,</span> <span class="pre">reverse=True)</span></tt>. Unforutnately, specifying
+keyword parameters is not yet supported for the sorted function in this
+online environment. To discourage you from trying to specify a parameter with a keyword and then getting confused
+about why it doesn&#8217;t work with sorted, I have delayed introduction of
+keyword parameters entirely. We will learn about them after you start running
+python natively on your computer, when you will have a full implementation of
+python.</p>
+</div>
+</div>
+<div class="section" id="optional-key-parameter">
+<h2>Optional key parameter<a class="headerlink" href="#optional-key-parameter" title="Permalink to this headline">¶</a></h2>
+<p>If you want to sort things in some order other than the &#8220;natural&#8221; or or its reverse,
+you can provide an additional parameter, the key parameter. For example, suppose
+you want to sort a list of numbers based on their absolute value, so that -4 comes after 3?
+Or suppose you have a dictionary with strings as the keys and numbers as the values. Instead
+of sorting them in alphabetic order based on the keys, you might like to sort them in
+order based on their values.</p>
+<p>First, let&#8217;s see an example, and then we&#8217;ll dive into how it works.</p>
+<p>First, let&#8217;s define a function absolute that takes a number and returns its
+absolute value. (Actually, python provides a built-in function <tt class="docutils literal"><span class="pre">abs</span></tt> that does
+this, but we are going to define our own, for reasons that will be explained
+in a minute.)</p>
+
+<div id="cont"></div>
+<div id="sort_4" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="sort_4_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_4_saveb" onclick="saveEditor('sort_4');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_4_loadb" onclick="requestCode('sort_4');">Load</button>
+<button class='btn btn-default' id="sort_4_vizb" onclick="injectCodelens(this,'sort_4');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="sort_4_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="sort_4_code" class="active_code" prefixcode="undefined" lang="python">
+L1 = [1, 7, 4, -2, 3]
+
+def absolute(x):
+    if x >= 0:
+        return x
+    else:
+        return -x
+
+print(absolute(3))
+print(absolute(-119))
+
+for y in L1:
+    print(absolute(y))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="sort_4_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="sort_4_suffix" style="display:none">
+</pre><pre id="sort_4_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (sort_4)</span> </p>
+<div id="sort_4_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#sort_4_saveb').toggle();
+    $('#sort_4_loadb').toggle();
+}
+if ($("#sort_4").attr("lang") !== "html" && $("#sort_4_code_div").parents(".admonition").length == 0 && $("#sort_4_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#sort_4_code_div").offset({
+			left: $("#sort_4 .clearfix").offset().left
+		});
+	}
+	$("#sort_4_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#sort_4_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#sort_4_runb").parent().siblings(".ac_output").show();
+			runit('sort_4',this, undefined);
+			$("#sort_4_runb").on("click", function(){
+				runit('sort_4',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#sort_4_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#sort_4_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#sort_4_runb").on("click", function(){
+		runit('sort_4',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Now, we can pass the absolute function to L1 in order to specify that we want
+the items sorted in order of their absolute value, rather than in order of
+their actual value.</p>
+
+<div id="cont"></div>
+<div id="sort_5" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="sort_5_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_5_saveb" onclick="saveEditor('sort_5');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_5_loadb" onclick="requestCode('sort_5');">Load</button>
+<button class='btn btn-default' id="sort_5_vizb" onclick="injectCodelens(this,'sort_5');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="sort_5_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="sort_5_code" class="active_code" prefixcode="undefined" lang="python">
+L1 = [1, 7, 4, -2, 3]
+
+def absolute(x):
+    if x >= 0:
+        return x
+    else:
+        return -x
+
+L2 = sorted(L1, None, absolute)
+print(L2)
+
+#or in reverse order
+print(sorted(L1, None, absolute, True))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="sort_5_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="sort_5_suffix" style="display:none">
+</pre><pre id="sort_5_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (sort_5)</span> </p>
+<div id="sort_5_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#sort_5_saveb').toggle();
+    $('#sort_5_loadb').toggle();
+}
+if ($("#sort_5").attr("lang") !== "html" && $("#sort_5_code_div").parents(".admonition").length == 0 && $("#sort_5_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#sort_5_code_div").offset({
+			left: $("#sort_5 .clearfix").offset().left
+		});
+	}
+	$("#sort_5_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#sort_5_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#sort_5_runb").parent().siblings(".ac_output").show();
+			runit('sort_5',this, undefined);
+			$("#sort_5_runb").on("click", function(){
+				runit('sort_5',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#sort_5_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#sort_5_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#sort_5_runb").on("click", function(){
+		runit('sort_5',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>What&#8217;s really going on there? We&#8217;ve done something pretty strange. Before, all the
+values we have passed as parameters have been pretty easy to understand: numbers, strings,
+lists, Booleans, dictionaries. Here we have passed a function object: absolute
+is a variable name whose value is the function. When we pass that function object,
+it is <em>not</em> automatically invoked. Instead, it is just bound the formal parameter
+key of the function sorted.</p>
+<p>We are not going to look at the source code for the built-in function sorted. But if
+we did, we would find somewhere in its code a reference to the variable key, whose
+value would be bound to the function we passed in. In fact, what the sorted function
+does is call that key function once for each item in the list that&#8217;s getting sorted.
+It associates the result returned by that function (the absolute function in our case)
+with the original value. Think of those associated values as being little post-it notes
+that decorate the original values. The value 4 has a post-it note that says 4 on it,
+but the value -2 has a post-it note that says 2 on it. Then the sorted function
+rearranges the original items in order of the values written on their associated post-it notes.</p>
+<p>To illustrate that the absolute function is invoked once on each item, during the execution
+of sorted, I have added some print statements into the code.</p>
+
+<div id="cont"></div>
+<div id="sort_6" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="sort_6_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_6_saveb" onclick="saveEditor('sort_6');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_6_loadb" onclick="requestCode('sort_6');">Load</button>
+<button class='btn btn-default' id="sort_6_vizb" onclick="injectCodelens(this,'sort_6');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="sort_6_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="sort_6_code" class="active_code" prefixcode="undefined" lang="python">
+L1 = [1, 7, 4, -2, 3]
+
+def absolute(x):
+    print("--- figuring out what to write on the post-it note for " + str(x))
+    if x >= 0:
+        return x
+    else:
+        return -x
+
+print("About to call sorted")
+L2 = sorted(L1, None, absolute)
+print("Finished execution of sorted")
+print(L2)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="sort_6_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="sort_6_suffix" style="display:none">
+</pre><pre id="sort_6_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (sort_6)</span> </p>
+<div id="sort_6_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#sort_6_saveb').toggle();
+    $('#sort_6_loadb').toggle();
+}
+if ($("#sort_6").attr("lang") !== "html" && $("#sort_6_code_div").parents(".admonition").length == 0 && $("#sort_6_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#sort_6_code_div").offset({
+			left: $("#sort_6 .clearfix").offset().left
+		});
+	}
+	$("#sort_6_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#sort_6_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#sort_6_runb").parent().siblings(".ac_output").show();
+			runit('sort_6',this, undefined);
+			$("#sort_6_runb").on("click", function(){
+				runit('sort_6',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#sort_6_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#sort_6_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#sort_6_runb").on("click", function(){
+		runit('sort_6',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Note that this code never explicitly calls the absolute function at all. It passes
+the absolute function as a parameter value to the sorted function. Inside the
+sorted function, whose code we haven&#8217;t seen, that function gets invoked.</p>
+</div>
+<div class="section" id="anonymous-functions-with-lambda-expressions">
+<h2>Anonymous functions with lambda expressions<a class="headerlink" href="#anonymous-functions-with-lambda-expressions" title="Permalink to this headline">¶</a></h2>
+<p>To further drive home the idea that we are passing a function object as a parameter
+to the sorted object, let&#8217;s see an alternative notation for creating a function,
+a <strong>lambda expression</strong>. The syntax of a lambda expression is the word &#8220;lambda&#8221; followed
+by parameter names, separated by commas but not inside (parentheses), followed
+by a colon and then an expression. <tt class="docutils literal"><span class="pre">lambda</span> <span class="pre">arguments:</span> <span class="pre">expression</span></tt> yields a function object.
+This unnamed object behaves like a function object defined with</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">fname</span><span class="p">(</span><span class="n">arguments</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">expression</span>
+</pre></div>
+</div>
+<p>Consider the following code</p>
+
+<div id="cont"></div>
+<div id="sort_7" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="sort_7_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_7_saveb" onclick="saveEditor('sort_7');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_7_loadb" onclick="requestCode('sort_7');">Load</button>
+<button class='btn btn-default' id="sort_7_vizb" onclick="injectCodelens(this,'sort_7');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="sort_7_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="sort_7_code" class="active_code" prefixcode="undefined" lang="python">
+def f(x):
+    return x - 1
+
+print(f)
+print(type(f))
+print(f(3))
+
+print(lambda x: x-2)
+print(type(lambda x: x-2))
+print((lambda x: x-2)(6))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="sort_7_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="sort_7_suffix" style="display:none">
+</pre><pre id="sort_7_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (sort_7)</span> </p>
+<div id="sort_7_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#sort_7_saveb').toggle();
+    $('#sort_7_loadb').toggle();
+}
+if ($("#sort_7").attr("lang") !== "html" && $("#sort_7_code_div").parents(".admonition").length == 0 && $("#sort_7_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#sort_7_code_div").offset({
+			left: $("#sort_7 .clearfix").offset().left
+		});
+	}
+	$("#sort_7_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#sort_7_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#sort_7_runb").parent().siblings(".ac_output").show();
+			runit('sort_7',this, undefined);
+			$("#sort_7_runb").on("click", function(){
+				runit('sort_7',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#sort_7_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#sort_7_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#sort_7_runb").on("click", function(){
+		runit('sort_7',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Note the paralells between the two. At line 4, f is bound to a function object. Its printed representation
+is &#8220;&lt;function f&gt;&#8221;. At line 8, the lambda expression produces a function object. Because it is
+unnamed (anonymous), its printed representation doesn&#8217;t include a name for it, &#8220;&lt;function &lt;lambda&gt;&gt;&#8221;. Both are of type
+&#8216;function&#8217;.</p>
+<p>A function, whether named or anonymous, can be called by placing parentheses () after it.
+In this case, because there is one parameter, there is one value in parentheses. This
+works the same way for the named function and the anonymous function produced by the lambda
+expression. The lambda expression had to go in parentheses just for the purposes
+of grouping all its contents together. Without the extra parentheses around it on line 10,
+the interpreter would group things differently and make a function of x that returns x - 2(6).</p>
+<p>Some students find it more natural to work with lambda expressions than to refer to a function
+by name. Others find the syntax of lambda expressions confusing. It&#8217;s up to you
+which version you want to use. In all the examples below, both ways of doing it will
+be illustrated.</p>
+<p>Below, sorting on absolute value has been rewritten using lambda notation.</p>
+
+<div id="cont"></div>
+<div id="sort_8" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="sort_8_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_8_saveb" onclick="saveEditor('sort_8');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_8_loadb" onclick="requestCode('sort_8');">Load</button>
+<button class='btn btn-default' id="sort_8_vizb" onclick="injectCodelens(this,'sort_8');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="sort_8_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="sort_8_code" class="active_code" prefixcode="undefined" lang="python">
+L1 = [1, 7, 4, -2, 3]
+
+print("About to call sorted")
+L2 = sorted(L1, None, lambda x: abs(x))
+print("Finished execution of sorted")
+print(L2)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="sort_8_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="sort_8_suffix" style="display:none">
+</pre><pre id="sort_8_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (sort_8)</span> </p>
+<div id="sort_8_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#sort_8_saveb').toggle();
+    $('#sort_8_loadb').toggle();
+}
+if ($("#sort_8").attr("lang") !== "html" && $("#sort_8_code_div").parents(".admonition").length == 0 && $("#sort_8_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#sort_8_code_div").offset({
+			left: $("#sort_8 .clearfix").offset().left
+		});
+	}
+	$("#sort_8_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#sort_8_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#sort_8_runb").parent().siblings(".ac_output").show();
+			runit('sort_8',this, undefined);
+			$("#sort_8_runb").on("click", function(){
+				runit('sort_8',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#sort_8_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#sort_8_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#sort_8_runb").on("click", function(){
+		runit('sort_8',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Unfortunately, there is a bug in the online
+environment so that is not working currently. You can write <tt class="docutils literal"><span class="pre">sorted(L1,</span> <span class="pre">None,</span> <span class="pre">absolute)</span></tt> or <tt class="docutils literal"><span class="pre">sorted(L1,</span> <span class="pre">None,</span> <span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">abs(x)</span></tt>.
+But you can&#8217;t write <tt class="docutils literal"><span class="pre">sorted(L1,</span> <span class="pre">None,</span> <span class="pre">abs)</span></tt> or <tt class="docutils literal"><span class="pre">sorted(L1,</span> <span class="pre">None,</span> <span class="pre">lambda</span> <span class="pre">x:</span> <span class="pre">absolute(x))</span></tt>. In a full python
+implementation, any of those four would work.</p>
+</div>
+
+            <div id="test_questionsort_1" class="alert alert-warning">
+            <p>invoking-sort-1: Describe what the sort order will be for this.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">L1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+<form name="test_questionsort_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionsort_1_opt_a" />
+            <label for= "test_questionsort_1_opt_a">  a) descending order, from 7 down to -2</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionsort_1_opt_b" />
+            <label for= "test_questionsort_1_opt_b">  b) ascending order, from -2 up to 7</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionsort_1_opt_c" />
+            <label for= "test_questionsort_1_opt_c">  c) the original order of L1</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionsort_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionsort_1','a',['7 is decorated with \u002D7, so it is first\u003B \u002D2 is decorated with 2, so it is last', '\u002Dx produces the negative of x', 'sorted changes the order'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionsort_1_bcomp" disabled name="compare" onclick="compareAnswers('test_questionsort_1');">Compare Me</button>
+            </form><br />
+            <div id="test_questionsort_1_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionsort_2" class="alert alert-warning">
+            <p>invoking-sort-2: Describe what the sort order will be for this.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">L1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="n">x</span><span class="p">),</span> <span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_questionsort_2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionsort_2_opt_a" />
+            <label for= "test_questionsort_2_opt_a">  a) descending order, from 7 down to -2</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionsort_2_opt_b" />
+            <label for= "test_questionsort_2_opt_b">  b) ascending order, from -2 up to 7</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionsort_2_opt_c" />
+            <label for= "test_questionsort_2_opt_c">  c) the original order of L1</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionsort_2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionsort_2','b',['The True value for the reverse parameter says to reverse the order', 'The True value for the reverse parameter says to reverse the order', 'sorted changes the order'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionsort_2_bcomp" disabled name="compare" onclick="compareAnswers('test_questionsort_2');">Compare Me</button>
+            </form><br />
+            <div id="test_questionsort_2_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="sorting-a-dictionary">
+<span id="sort-dictionaries"></span><h2>Sorting a Dictionary<a class="headerlink" href="#sorting-a-dictionary" title="Permalink to this headline">¶</a></h2>
+<p>Previously, you have used a dictionary to accumulate counts, such as the frequencies of letters or words in a text.
+For example, the following code counts the frequencies of different numbers in the list.</p>
+
+<div id="cont"></div>
+<div id="sort_9" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="sort_9_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_9_saveb" onclick="saveEditor('sort_9');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_9_loadb" onclick="requestCode('sort_9');">Load</button>
+<button class='btn btn-default' id="sort_9_vizb" onclick="injectCodelens(this,'sort_9');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="sort_9_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="sort_9_code" class="active_code" prefixcode="undefined" lang="python">
+L = [4, 5, 1, 0, 3, 8, 8, 2, 1, 0, 3, 3, 4, 3]
+
+d = {}
+for x in L:
+    if x in d:
+        d[x] = d[x] + 1
+    else:
+        d[x] = 1
+for x in d.keys():
+    print(str(x) + " appears " + str(d[x]) + " times")
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="sort_9_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="sort_9_suffix" style="display:none">
+</pre><pre id="sort_9_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (sort_9)</span> </p>
+<div id="sort_9_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#sort_9_saveb').toggle();
+    $('#sort_9_loadb').toggle();
+}
+if ($("#sort_9").attr("lang") !== "html" && $("#sort_9_code_div").parents(".admonition").length == 0 && $("#sort_9_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#sort_9_code_div").offset({
+			left: $("#sort_9 .clearfix").offset().left
+		});
+	}
+	$("#sort_9_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#sort_9_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#sort_9_runb").parent().siblings(".ac_output").show();
+			runit('sort_9',this, undefined);
+			$("#sort_9_runb").on("click", function(){
+				runit('sort_9',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#sort_9_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#sort_9_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#sort_9_runb").on("click", function(){
+		runit('sort_9',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>The dictionary&#8217;s keys are not sorted in any particular order. In fact, you
+may get a different order of output than someone else running the same
+code. We can force the results to be displayed in some fixed ordering, by
+sorting the keys.</p>
+
+<div id="cont"></div>
+<div id="sort_10" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="sort_10_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_10_saveb" onclick="saveEditor('sort_10');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_10_loadb" onclick="requestCode('sort_10');">Load</button>
+<button class='btn btn-default' id="sort_10_vizb" onclick="injectCodelens(this,'sort_10');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="sort_10_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="sort_10_code" class="active_code" prefixcode="undefined" lang="python">
+L = [4, 5, 1, 0, 3, 8, 8, 2, 1, 0, 3, 3, 4, 3]
+
+d = {}
+for x in L:
+    if x in d:
+        d[x] = d[x] + 1
+    else:
+        d[x] = 1
+y = sorted(d.keys())
+for x in y:
+    print(str(x) + " appears " + str(d[x]) + " times")
+
+# or in reverse order
+print("---------")
+for x in sorted(d.keys(), None, None, True):
+     print(str(x) + " appears " + str(d[x]) + " times")
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="sort_10_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="sort_10_suffix" style="display:none">
+</pre><pre id="sort_10_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (sort_10)</span> </p>
+<div id="sort_10_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#sort_10_saveb').toggle();
+    $('#sort_10_loadb').toggle();
+}
+if ($("#sort_10").attr("lang") !== "html" && $("#sort_10_code_div").parents(".admonition").length == 0 && $("#sort_10_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#sort_10_code_div").offset({
+			left: $("#sort_10 .clearfix").offset().left
+		});
+	}
+	$("#sort_10_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#sort_10_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#sort_10_runb").parent().siblings(".ac_output").show();
+			runit('sort_10',this, undefined);
+			$("#sort_10_runb").on("click", function(){
+				runit('sort_10',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#sort_10_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#sort_10_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#sort_10_runb").on("click", function(){
+		runit('sort_10',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>With a dictionary that&#8217;s maintaining counts or some other kind of score,
+we might prefer to get the outputs sorted based on the count rather than
+based on the items. There are a couple ways to do that. The first is, I think,
+a little easier to understand. The second is the more standard idiom for
+python programmers; once you get used to it, it&#8217;s a lot easier to read.</p>
+<p>Here&#8217;s the first way, using a lambda expression.</p>
+
+<div id="cont"></div>
+<div id="sort_11" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="sort_11_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_11_saveb" onclick="saveEditor('sort_11');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_11_loadb" onclick="requestCode('sort_11');">Load</button>
+<button class='btn btn-default' id="sort_11_vizb" onclick="injectCodelens(this,'sort_11');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="sort_11_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="sort_11_code" class="active_code" prefixcode="undefined" lang="python">
+L = [4, 5, 1, 0, 3, 8, 8, 2, 1, 0, 3, 3, 4, 3]
+
+d = {}
+for x in L:
+    if x in d:
+        d[x] = d[x] + 1
+    else:
+        d[x] = 1
+
+items = d.items();
+sorted_items = sorted(items, None, lambda x: x[1], True)
+for x in sorted_items:
+    print(str(x[0]) + " appears " + str(x[1]) + " times")
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="sort_11_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="sort_11_suffix" style="display:none">
+</pre><pre id="sort_11_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (sort_11)</span> </p>
+<div id="sort_11_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#sort_11_saveb').toggle();
+    $('#sort_11_loadb').toggle();
+}
+if ($("#sort_11").attr("lang") !== "html" && $("#sort_11_code_div").parents(".admonition").length == 0 && $("#sort_11_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#sort_11_code_div").offset({
+			left: $("#sort_11 .clearfix").offset().left
+		});
+	}
+	$("#sort_11_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#sort_11_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#sort_11_runb").parent().siblings(".ac_output").show();
+			runit('sort_11',this, undefined);
+			$("#sort_11_runb").on("click", function(){
+				runit('sort_11',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#sort_11_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#sort_11_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#sort_11_runb").on("click", function(){
+		runit('sort_11',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Here&#8217;s the first way, using a named function.</p>
+
+<div id="cont"></div>
+<div id="sort_12" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="sort_12_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_12_saveb" onclick="saveEditor('sort_12');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sort_12_loadb" onclick="requestCode('sort_12');">Load</button>
+<button class='btn btn-default' id="sort_12_vizb" onclick="injectCodelens(this,'sort_12');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="sort_12_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="sort_12_code" class="active_code" prefixcode="undefined" lang="python">
+L = [4, 5, 1, 0, 3, 8, 8, 2, 1, 0, 3, 3, 4, 3]
+
+d = {}
+for x in L:
+    if x in d:
+        d[x] = d[x] + 1
+    else:
+        d[x] = 1
+
+def g(pair):
+    return pair[1]
+
+items = d.items();
+sorted_items = sorted(items, None, g, True)
+for x in sorted_items:
+    print(str(x[0]) + " appears " + str(x[1]) + " times")
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="sort_12_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="sort_12_suffix" style="display:none">
+</pre><pre id="sort_12_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (sort_12)</span> </p>
+<div id="sort_12_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#sort_12_saveb').toggle();
+    $('#sort_12_loadb').toggle();
+}
+if ($("#sort_12").attr("lang") !== "html" && $("#sort_12_code_div").parents(".admonition").length == 0 && $("#sort_12_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#sort_12_code_div").offset({
+			left: $("#sort_12 .clearfix").offset().left
+		});
+	}
+	$("#sort_12_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#sort_12_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#sort_12_runb").parent().siblings(".ac_output").show();
+			runit('sort_12',this, undefined);
+			$("#sort_12_runb").on("click", function(){
+				runit('sort_12',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#sort_12_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#sort_12_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#sort_12_runb").on("click", function(){
+		runit('sort_12',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Most python programmers would never sort the items (the key, value pairs) from
+a dictionary. Instead, the standard idiom is to sort just the keys, based on their
+associated values. Because python
+lets you pass a function to the sorted parameter, you can pass a function that
+looks up the value associated with a key and causes that value to be written on
+the post-it notes that determine the sort order.
+Here&#8217;s a version using a lambda expression.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c"># just sort the keys, not the key-value pairs</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="bp">None</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="c"># now loop through the keys</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">y</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; appears &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; times&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And here&#8217;s a version of that using a named function.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+
+<span class="c"># just sort the keys, not the key-value pairs</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="bp">None</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="c"># now loop through the keys</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">y</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; appears &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; times&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Unfortunately, due to a bug in
+the activecode implementation, neither of these will run in the browser. For
+now, you will have to sort the (key, value) pairs rather than just sorting
+the keys, even though that&#8217;s not the preferred way to do things among python programmers.</p>
+</div>
+
+            <div id="test_questionsort_3" class="alert alert-warning">
+            <p>invoking-sort-3: Which of the following will sort the keys of d in ascending order of their values (i.e., from lowest to highest)?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+
+<span class="n">ks</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+<form name="test_questionsort_3_form" method="get" action="" onsubmit="return false;">
+            <input type="checkbox" name="group1" value="a" id="test_questionsort_3_opt_a" />
+            <label for= "test_questionsort_3_opt_a">  a) sorted(ks, None, g)</label><br />
+            
+            <input type="checkbox" name="group1" value="b" id="test_questionsort_3_opt_b" />
+            <label for= "test_questionsort_3_opt_b">  b) sorted(ks, None, lambda x: g(x, d))</label><br />
+            
+            <input type="checkbox" name="group1" value="c" id="test_questionsort_3_opt_c" />
+            <label for= "test_questionsort_3_opt_c">  c) sorted(ks, None, lambda x: d[x])</label><br />
+            
+            <script>
+            $(document).ready(function(){checkMultipleSelect('test_questionsort_3');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMAStorage('test_questionsort_3','b,c',['g is a function that takes two parameters. The key function passed to sorted must always take just one parameter', 'The lambda function takes just one parameter, and calls g with two parameters. (Unfortunately, this won\u0027t run correctly in the browser due to a bug.)', 'The lambda function looks up the value of x in d. (Unfortunately, this won\u0027t run correctly in the browser due to a bug.)'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionsort_3_bcomp" disabled name="compare" onclick="compareAnswers('test_questionsort_3');">Compare Me</button>
+            </form><br />
+            <div id="test_questionsort_3_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-sort">sort</dt>
+<dd>A method that sorts a list in place, changing the contents of the list. It
+return None, not a new list.</dd>
+<dt id="term-sorted">sorted</dt>
+<dd>A function that returns a sorted list, without changing the original.</dd>
+<dt id="term-reverse-parameter">reverse parameter</dt>
+<dd>If True, the sorting is done in reverse order.</dd>
+<dt id="term-key-parameter">key parameter</dt>
+<dd>If a value is specified, it must be a function object that takes one parameter.
+The function will be called once for each item in the list that&#8217;s getting
+sorted. The return value will be used to decorate the item with a post-it
+note. Values on the post-it notes are used to determine the sort order of
+the items.</dd>
+</dl>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<p>1. Write a function that takes a string as a parameter and returns a list of the five
+most frequent characters in the string. [Hint: count the frequencies of all the characters,
+as we&#8217;ve done before, using a dictionary and the accumulator pattern. Then sort the (key, value) pairs.
+Finally, take a slice of the sorted list to get just the top five.]</p>
+
+<div id="cont"></div>
+<div id="sorted_ex_01" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="sorted_ex_01_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sorted_ex_01_saveb" onclick="saveEditor('sorted_ex_01');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sorted_ex_01_loadb" onclick="requestCode('sorted_ex_01');">Load</button>
+<button class='btn btn-default' id="sorted_ex_01_vizb" onclick="injectCodelens(this,'sorted_ex_01');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="sorted_ex_01_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="sorted_ex_01_code" class="active_code" prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="sorted_ex_01_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="sorted_ex_01_suffix" style="display:none">
+</pre><pre id="sorted_ex_01_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (sorted_ex_01)</span> </p>
+<div id="sorted_ex_01_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#sorted_ex_01_saveb').toggle();
+    $('#sorted_ex_01_loadb').toggle();
+}
+if ($("#sorted_ex_01").attr("lang") !== "html" && $("#sorted_ex_01_code_div").parents(".admonition").length == 0 && $("#sorted_ex_01_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#sorted_ex_01_code_div").offset({
+			left: $("#sorted_ex_01 .clearfix").offset().left
+		});
+	}
+	$("#sorted_ex_01_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#sorted_ex_01_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#sorted_ex_01_runb").parent().siblings(".ac_output").show();
+			runit('sorted_ex_01',this, undefined);
+			$("#sorted_ex_01_runb").on("click", function(){
+				runit('sorted_ex_01',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#sorted_ex_01_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#sorted_ex_01_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#sorted_ex_01_runb").on("click", function(){
+		runit('sorted_ex_01',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 Paul Resnick, Brad Miller, David Ranum, Created using Runestone Interactive.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

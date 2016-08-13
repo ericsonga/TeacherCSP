@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Using Repetition with Strings &mdash; CS Principles</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="CS Principles" href="../index.html" />
+    <link rel="next" title="Using Repetition with Turtles" href="../CSPRepeatTurtles/repeatturtles.html" />
+    <link rel="prev" title="More Types of Loops" href="../CSPWhileAndForLoops/repeat3.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'CSPrinciples';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS Principles</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/CSPrinciples/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/CSPrinciples/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Using Repetition with Strings</a></li>
+<li><a class="reference internal" href="#reversing-text">Reversing Text</a></li>
+<li><a class="reference internal" href="#mirroring-text">Mirroring Text</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - More Types of Loops" data-toggle="tooltip">
+    <a href="../CSPWhileAndForLoops/repeat3.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Using Repetition with Turtles' data-toggle="tooltip" >
+    <a href="../CSPRepeatTurtles/repeatturtles.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="using-repetition-with-strings">
+<h1>Using Repetition with Strings<a class="headerlink" href="#using-repetition-with-strings" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="index-0"></span><p id="index-1">Python already has built in the ability to play with words, just like how we played with numbers in the last chapter.  A collection of letters, numbers, and other characters like spaces inside of quotes is called a <strong>string</strong>. A Python <tt class="docutils literal"><span class="pre">for</span></tt> loop knows how to step through letters, and addition (<tt class="docutils literal"><span class="pre">+</span></tt>) appends strings together. What&#8217;s cool is that the same accumulator pattern works.</p>
+<p>Be sure to press the <a class="reference internal" href="../_images/start-audio-tour3.png"><img alt="audio tour button" class="align-top" src="../_images/start-audio-tour3.png" style="height: 20px;" /></a> to get an explanation for how this program works.</p>
+
+<div id="cont"></div>
+<div id="Copy_Words" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Copy_Words_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Copy_Words_saveb" onclick="saveEditor('Copy_Words');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Copy_Words_loadb" onclick="requestCode('Copy_Words');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Copy_Words','# STEP 1: INITIALIZE ACCUMULATOR*nline*newString = *doubleq**doubleq**nline*# STEP 2: GET DATA*nline*phrase = *doubleq*Rubber baby buggy bumpers.*doubleq**nline*# STEP 3: LOOP THROUGH THE DATA*nline*for letter in phrase:*nline*  # STEP 4: ACCUMULATE*nline*  newString = newString + letter*nline*# STEP 5: PROCESS RESULT*nline*print*open*newString*close*','1','*doubleq*Lines of code*doubleq*; 2: strR1-line2; 4: strR1-line4; 6: strR1-line6; 8: strR1-line8; 10: strR1-line10;*atype*')"/>
+<button class='btn btn-default' id="Copy_Words_vizb" onclick="injectCodelens(this,'Copy_Words');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Copy_Words_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Copy_Words_code" class="active_code" prefixcode="undefined" lang="python">
+# STEP 1: INITIALIZE ACCUMULATOR
+newString = ""
+# STEP 2: GET DATA
+phrase = "Rubber baby buggy bumpers."
+# STEP 3: LOOP THROUGH THE DATA
+for letter in phrase:
+  # STEP 4: ACCUMULATE
+  newString = newString + letter
+# STEP 5: PROCESS RESULT
+print(newString)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Copy_Words_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Copy_Words_suffix" style="display:none">
+</pre><pre id="Copy_Words_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Copy_Words)</span> </p>
+<div id="Copy_Words_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Copy_Words_saveb').toggle();
+    $('#Copy_Words_loadb').toggle();
+}
+if ($("#Copy_Words").attr("lang") !== "html" && $("#Copy_Words_code_div").parents(".admonition").length == 0 && $("#Copy_Words_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Copy_Words_code_div").offset({
+			left: $("#Copy_Words .clearfix").offset().left
+		});
+	}
+	$("#Copy_Words_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Copy_Words_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Copy_Words_runb").parent().siblings(".ac_output").show();
+			runit('Copy_Words',this, undefined);
+			$("#Copy_Words_runb").on("click", function(){
+				runit('Copy_Words',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Copy_Words_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Copy_Words_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Copy_Words_runb").on("click", function(){
+		runit('Copy_Words',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Run this program.  Enh, not that interesting, eh?  It just copies all the letters from <tt class="docutils literal"><span class="pre">phrase</span></tt> to <tt class="docutils literal"><span class="pre">newString</span></tt>.</p>
+</div>
+<div class="section" id="reversing-text">
+<h1>Reversing Text<a class="headerlink" href="#reversing-text" title="Permalink to this headline">¶</a></h1>
+<p>Run this next one, and look at how a simple change to the pattern gives a very different result.    Here we&#8217;ll combine <em>before</em> rather than <em>afterward</em>, changing only Step 4 (how values are accumulated).</p>
+
+<div id="cont"></div>
+<div id="Copy_Reverse" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Copy_Reverse_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Copy_Reverse_saveb" onclick="saveEditor('Copy_Reverse');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Copy_Reverse_loadb" onclick="requestCode('Copy_Reverse');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Copy_Reverse','# STEP 1: INITIALIZE ACCUMULATORS*nline*newStringA = *doubleq**doubleq**nline*newStringB = *doubleq**doubleq**nline*# STEP 2: GET DATA*nline*phrase = *doubleq*Happy Birthday!*doubleq**nline*# STEP 3: LOOP THROUGH THE DATA*nline*for letter in phrase:*nline*  # STEP 4: ACCUMULATE*nline*  newStringA = letter + newStringA*nline*  newStringB = newStringB + letter*nline*# STEP 5: PROCESS RESULT*nline*print*open**doubleq*Here*singleq*s the result of using letter + newStringA:*doubleq**close**nline*print*open*newStringA*close**nline*print*open**doubleq*Here*singleq*s the result of using newStringB + letter:*doubleq**close**nline*print*open*newStringB*close*','1','*doubleq*Lines of code*doubleq*; 2-3: strR2-line2-3; 5: strR2-line5; 7: strR2-line7; 9: strR2-line9; 10: strR2-line10; 12: strR2-line12; 13: strR2-line13; 14: strR2-line14; 15: strR2-line15;*atype*')"/>
+<button class='btn btn-default' id="Copy_Reverse_vizb" onclick="injectCodelens(this,'Copy_Reverse');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Copy_Reverse_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Copy_Reverse_code" class="active_code" prefixcode="undefined" lang="python">
+# STEP 1: INITIALIZE ACCUMULATORS
+newStringA = ""
+newStringB = ""
+# STEP 2: GET DATA
+phrase = "Happy Birthday!"
+# STEP 3: LOOP THROUGH THE DATA
+for letter in phrase:
+  # STEP 4: ACCUMULATE
+  newStringA = letter + newStringA
+  newStringB = newStringB + letter
+# STEP 5: PROCESS RESULT
+print("Here's the result of using letter + newStringA:")
+print(newStringA)
+print("Here's the result of using newStringB + letter:")
+print(newStringB)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Copy_Reverse_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Copy_Reverse_suffix" style="display:none">
+</pre><pre id="Copy_Reverse_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Copy_Reverse)</span> </p>
+<div id="Copy_Reverse_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Copy_Reverse_saveb').toggle();
+    $('#Copy_Reverse_loadb').toggle();
+}
+if ($("#Copy_Reverse").attr("lang") !== "html" && $("#Copy_Reverse_code_div").parents(".admonition").length == 0 && $("#Copy_Reverse_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Copy_Reverse_code_div").offset({
+			left: $("#Copy_Reverse .clearfix").offset().left
+		});
+	}
+	$("#Copy_Reverse_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Copy_Reverse_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Copy_Reverse_runb").parent().siblings(".ac_output").show();
+			runit('Copy_Reverse',this, undefined);
+			$("#Copy_Reverse_runb").on("click", function(){
+				runit('Copy_Reverse',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Copy_Reverse_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Copy_Reverse_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Copy_Reverse_runb").on("click", function(){
+		runit('Copy_Reverse',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="9-Copy_Reverse_Q1" class="alert alert-warning">
+            csp-9-1: Why do you think <tt class="docutils literal"><span class="pre">newStringB</span></tt> has all the letters, but in the reverse order?<form name="9-Copy_Reverse_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="9-Copy_Reverse_Q1_opt_a" />
+            <label for= "9-Copy_Reverse_Q1_opt_a">  a) Because we add each new letter at the <i>end</i> of <code>newStringB</code>.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="9-Copy_Reverse_Q1_opt_b" />
+            <label for= "9-Copy_Reverse_Q1_opt_b">  b) Because <code>newStringA</code> is adding the characters from left to right.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="9-Copy_Reverse_Q1_opt_c" />
+            <label for= "9-Copy_Reverse_Q1_opt_c">  c) Because we called a reverse function.</label><br />
+            
+            <input type="radio" name="group1" value="d" id="9-Copy_Reverse_Q1_opt_d" />
+            <label for= "9-Copy_Reverse_Q1_opt_d">  d) Because the <code>for</code> loop is doing a reversal</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('9-Copy_Reverse_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('9-Copy_Reverse_Q1','a',['Each new letter gets added at the end, which creates a reversal.', 'How would that reverse the other string?', 'There is no reverse function in this program.', 'The same \u003Ccode\u003Efor\u003C/code\u003E loop is creating both an in\u002Dorder copy of the string and a reversed order of the string.  The \u003Ccode\u003Efor\u003C/code\u003E loop is the same in both cases.'])">Check Me</button>
+            <button class='btn btn-default' id="9-Copy_Reverse_Q1_bcomp" disabled name="compare" onclick="compareAnswers('9-Copy_Reverse_Q1');">Compare Me</button>
+            </form><br />
+            <div id="9-Copy_Reverse_Q1_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="mirroring-text">
+<h1>Mirroring Text<a class="headerlink" href="#mirroring-text" title="Permalink to this headline">¶</a></h1>
+<p>What happens if we add the letter to <em>both</em> sides of the new string that we&#8217;re making?</p>
+
+<div id="cont"></div>
+<div id="Copy_Mirror" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="Copy_Mirror_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Copy_Mirror_saveb" onclick="saveEditor('Copy_Mirror');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Copy_Mirror_loadb" onclick="requestCode('Copy_Mirror');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('Copy_Mirror','newString = *doubleq**doubleq**nline*phrase = *doubleq*This is a test*doubleq**nline*for letter in phrase:*nline*  newString = letter + newString + letter*nline*print*open*newString*close*','1','*doubleq*Lines of code*doubleq*; 1: strR3-line1; 2: strR3-line2; 3: strR3-line3; 4: strR3-line4; 5: strR3-line5;*atype*')"/>
+<button class='btn btn-default' id="Copy_Mirror_vizb" onclick="injectCodelens(this,'Copy_Mirror');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="Copy_Mirror_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="Copy_Mirror_code" class="active_code" prefixcode="undefined" lang="python">
+newString = ""
+phrase = "This is a test"
+for letter in phrase:
+  newString = letter + newString + letter
+print(newString)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="Copy_Mirror_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Copy_Mirror_suffix" style="display:none">
+</pre><pre id="Copy_Mirror_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (Copy_Mirror)</span> </p>
+<div id="Copy_Mirror_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Copy_Mirror_saveb').toggle();
+    $('#Copy_Mirror_loadb').toggle();
+}
+if ($("#Copy_Mirror").attr("lang") !== "html" && $("#Copy_Mirror_code_div").parents(".admonition").length == 0 && $("#Copy_Mirror_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#Copy_Mirror_code_div").offset({
+			left: $("#Copy_Mirror .clearfix").offset().left
+		});
+	}
+	$("#Copy_Mirror_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#Copy_Mirror_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#Copy_Mirror_runb").parent().siblings(".ac_output").show();
+			runit('Copy_Mirror',this, undefined);
+			$("#Copy_Mirror_runb").on("click", function(){
+				runit('Copy_Mirror',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#Copy_Mirror_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#Copy_Mirror_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#Copy_Mirror_runb").on("click", function(){
+		runit('Copy_Mirror',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Try changing the phrase and see what effects you can generate.</p>
+
+            <div id="9-Copy_Mirror_Q1" class="alert alert-warning">
+            csp-9-2: Change the mirroring program to mirror the phrase <tt class="docutils literal"><span class="pre">&quot;Time</span> <span class="pre">to</span> <span class="pre">Panic&quot;</span></tt> with a single exclamation point in the middle, to make the printed words look like this: <tt class="docutils literal"><span class="pre">cinaP</span> <span class="pre">ot</span> <span class="pre">emiT!Time</span> <span class="pre">to</span> <span class="pre">Panic</span></tt>.  How do you do it?<form name="9-Copy_Mirror_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="9-Copy_Mirror_Q1_opt_a" />
+            <label for= "9-Copy_Mirror_Q1_opt_a">  a) Make the phrase <code>"Time to panic!"</code></label><br />
+            
+            <input type="radio" name="group1" value="b" id="9-Copy_Mirror_Q1_opt_b" />
+            <label for= "9-Copy_Mirror_Q1_opt_b">  b) Change the <code>newString</code> in line 1 to <code>"!"</code> instead of <cod>""</code></label><br />
+            
+            <input type="radio" name="group1" value="c" id="9-Copy_Mirror_Q1_opt_c" />
+            <label for= "9-Copy_Mirror_Q1_opt_c">  c) Change the right hand side of line 4 to <code>letter + "!" + newstring + letter</code></label><br />
+            
+            <input type="radio" name="group1" value="d" id="9-Copy_Mirror_Q1_opt_d" />
+            <label for= "9-Copy_Mirror_Q1_opt_d">  d) Change the right hand side of line 4 to <code>letter + newstring + "!" + letter</code></label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('9-Copy_Mirror_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('9-Copy_Mirror_Q1','b',['That would give us \u003Ccode\u003E!cinaP ot emiTTime to Panic!\u003C/code\u003E.', 'We can start our accumulator with something in it.', 'That would give us \u003Ccode\u003E!!c!i!n!a!P! !o!t! !e!m!i!T!Time to Panic!\u003C/code\u003E \u002D\u002D exclamation points between the letters in the first half of the mirror.', 'That would give us \u003Ccode\u003E!cinaP ot emiT!T!i!m!e! !t!o! !P!a!n!i!c!!\u003C/code\u003E \u002D\u002D exclamation points between the letters in the second half of the mirror.'])">Check Me</button>
+            <button class='btn btn-default' id="9-Copy_Mirror_Q1_bcomp" disabled name="compare" onclick="compareAnswers('9-Copy_Mirror_Q1');">Compare Me</button>
+            </form><br />
+            <div id="9-Copy_Mirror_Q1_feedback">
+            </div>
+            </div>
+            <p>The accumulator doesn&#8217;t have to be set to be an empty string.  You can put something in the accumulator, and then it will show up in the middle of the mirrored phrase.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="Char_In_Middle"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (Char_In_Middle)</span> </p>
+</div>
+<script type="text/javascript">
+var Char_In_Middle_trace = {"code": "newString = \"!\"\nphrase = \"We're off to see the Wizard!\"\nfor letter in phrase:\n  newString = letter + newString + letter\nprint(newString)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["newString"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"newString": "!"}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["newString", "phrase"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "!"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "!", "letter": "W"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "W!W", "letter": "W"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "W!W", "letter": "e"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "eW!We", "letter": "e"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "eW!We", "letter": "'"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "'eW!We'", "letter": "'"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "'eW!We'", "letter": "r"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "r'eW!We'r", "letter": "r"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "r'eW!We'r", "letter": "e"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "er'eW!We're", "letter": "e"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "er'eW!We're", "letter": " "}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": " er'eW!We're ", "letter": " "}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": " er'eW!We're ", "letter": "o"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "o er'eW!We're o", "letter": "o"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "o er'eW!We're o", "letter": "f"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "fo er'eW!We're of", "letter": "f"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "fo er'eW!We're of", "letter": "f"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "ffo er'eW!We're off", "letter": "f"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "ffo er'eW!We're off", "letter": " "}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": " ffo er'eW!We're off ", "letter": " "}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": " ffo er'eW!We're off ", "letter": "t"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "t ffo er'eW!We're off t", "letter": "t"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "t ffo er'eW!We're off t", "letter": "o"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "ot ffo er'eW!We're off to", "letter": "o"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "ot ffo er'eW!We're off to", "letter": " "}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": " ot ffo er'eW!We're off to ", "letter": " "}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": " ot ffo er'eW!We're off to ", "letter": "s"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "s ot ffo er'eW!We're off to s", "letter": "s"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "s ot ffo er'eW!We're off to s", "letter": "e"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "es ot ffo er'eW!We're off to se", "letter": "e"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "es ot ffo er'eW!We're off to se", "letter": "e"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "ees ot ffo er'eW!We're off to see", "letter": "e"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "ees ot ffo er'eW!We're off to see", "letter": " "}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": " ees ot ffo er'eW!We're off to see ", "letter": " "}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": " ees ot ffo er'eW!We're off to see ", "letter": "t"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "t ees ot ffo er'eW!We're off to see t", "letter": "t"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "t ees ot ffo er'eW!We're off to see t", "letter": "h"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "ht ees ot ffo er'eW!We're off to see th", "letter": "h"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "ht ees ot ffo er'eW!We're off to see th", "letter": "e"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "eht ees ot ffo er'eW!We're off to see the", "letter": "e"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "eht ees ot ffo er'eW!We're off to see the", "letter": " "}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": " eht ees ot ffo er'eW!We're off to see the ", "letter": " "}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": " eht ees ot ffo er'eW!We're off to see the ", "letter": "W"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "W eht ees ot ffo er'eW!We're off to see the W", "letter": "W"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "W eht ees ot ffo er'eW!We're off to see the W", "letter": "i"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "iW eht ees ot ffo er'eW!We're off to see the Wi", "letter": "i"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "iW eht ees ot ffo er'eW!We're off to see the Wi", "letter": "z"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "ziW eht ees ot ffo er'eW!We're off to see the Wiz", "letter": "z"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "ziW eht ees ot ffo er'eW!We're off to see the Wiz", "letter": "a"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "aziW eht ees ot ffo er'eW!We're off to see the Wiza", "letter": "a"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "aziW eht ees ot ffo er'eW!We're off to see the Wiza", "letter": "r"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "raziW eht ees ot ffo er'eW!We're off to see the Wizar", "letter": "r"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "raziW eht ees ot ffo er'eW!We're off to see the Wizar", "letter": "d"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "draziW eht ees ot ffo er'eW!We're off to see the Wizard", "letter": "d"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "draziW eht ees ot ffo er'eW!We're off to see the Wizard", "letter": "!"}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "!draziW eht ees ot ffo er'eW!We're off to see the Wizard!", "letter": "!"}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "!draziW eht ees ot ffo er'eW!We're off to see the Wizard!", "letter": "!"}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["newString", "phrase", "letter"], "stdout": "!draziW eht ees ot ffo er'eW!We're off to see the Wizard!\n", "func_name": "<module>", "stack_to_render": [], "globals": {"phrase": "We're off to see the Wizard!", "newString": "!draziW eht ees ot ffo er'eW!We're off to see the Wizard!", "letter": "!"}, "heap": {}, "line": 5, "event": "return"}]};
+var Char_In_Middle_vis;
+
+$(document).ready(function() {
+    Char_In_Middle_vis = new ExecutionVisualizer('Char_In_Middle',Char_In_Middle_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(Char_In_Middle_vis,'Char_In_Middle');
+    allVisualizers.push(Char_In_Middle_vis);
+
+});
+
+$(document).ready(function() {
+    $("#Char_In_Middle_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'Char_In_Middle'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    Char_In_Middle_vis.redrawConnectors();
+});
+</script>
+
+            <div id="9-Count_Exclamations_Q1" class="alert alert-warning">
+            csp-9-3: When the variable <tt class="docutils literal"><span class="pre">letter</span></tt> contains the <tt class="docutils literal"><span class="pre">&quot;W&quot;</span></tt> from <tt class="docutils literal"><span class="pre">Wizard</span></tt>, how many exclamation points are in <tt class="docutils literal"><span class="pre">newString</span></tt>?<form name="9-Count_Exclamations_Q1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="9-Count_Exclamations_Q1_opt_a" />
+            <label for= "9-Count_Exclamations_Q1_opt_a">  a) One</label><br />
+            
+            <input type="radio" name="group1" value="b" id="9-Count_Exclamations_Q1_opt_b" />
+            <label for= "9-Count_Exclamations_Q1_opt_b">  b) Two</label><br />
+            
+            <input type="radio" name="group1" value="c" id="9-Count_Exclamations_Q1_opt_c" />
+            <label for= "9-Count_Exclamations_Q1_opt_c">  c) Three</label><br />
+            
+            <input type="radio" name="group1" value="d" id="9-Count_Exclamations_Q1_opt_d" />
+            <label for= "9-Count_Exclamations_Q1_opt_d">  d) Four</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('9-Count_Exclamations_Q1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('9-Count_Exclamations_Q1','a',['There is just the one in the accumulator to start.', 'If we just mirrored the string, there would be only two.  But we are mirroring with something in the accumulator.', 'That is true at the end, but not when letter contains the first letter of \u003Ccode\u003E\u0022Wizard\u0022\u003C/code\u003E', 'At most, there will be three in \u003Ccode\u003EnewString\u003C/code\u003E.'])">Check Me</button>
+            <button class='btn btn-default' id="9-Count_Exclamations_Q1_bcomp" disabled name="compare" onclick="compareAnswers('9-Count_Exclamations_Q1');">Compare Me</button>
+            </form><br />
+            <div id="9-Count_Exclamations_Q1_feedback">
+            </div>
+            </div>
+            
+        <div class='parsons alert alert-warning' id="parsons-147">
+        <div class="parsons-text">csp-9-4: <p>The phrase <code>"A but tuba"</code> is a <b>palindrome</b>.  The letters are the same forward and backward.  The below program generates the output: <code>"abut tub a<=>a but tuba"</code>  Put the lines in the right order with the right indentation.</p><br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-147" style="display:none;">newStr = "<=>"\nphrase = "a but tuba"
+for char in phrase:
+  newStr = char + newStr + char
+print(newStr)</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-147" class="sortable-code"></div>
+        <div id="parsons-sortableCode-147" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe147" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset147" value="Reset"/>
+        <div id="parsons-message-147"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-147").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-147").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-147");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_147.getHash("#ul-parsons-sortableCode-147");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'9-Palindrome'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'9-Palindrome'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-147");
+            var trashul = $("#ul-parsons-sortableTrash-147");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_147 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-147',
+		'trashId': 'parsons-sortableTrash-147',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_147.init($pjQ("#parsons-orig-147").text());
+	pp_147.shuffleLines();
+            
+        if(localStorage.getItem('9-Palindrome') && localStorage.getItem('9-Palindrome-trash')) {
+            try {
+                var solution = localStorage.getItem('9-Palindrome');
+                var trash = localStorage.getItem('9-Palindrome-trash');
+                pp_147.createHTMLFromHashes(solution,trash);
+                pp_147.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old 9-Palindrome state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset147").click(function(event){
+              event.preventDefault();
+              pp_147.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-147");
+            var trashul = $("#ul-parsons-sortableTrash-147");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe147").click(function(event){
+              event.preventDefault();
+              var hash = pp_147.getHash("#ul-parsons-sortableCode-147");
+              localStorage.setItem('9-Palindrome',hash);
+              hash = pp_147.getHash("#ul-parsons-sortableTrash-147");
+              localStorage.setItem('9-Palindrome-trash',hash);
+            
+            pp_147.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014, Mark Guzdial, Barbara Ericson, and Briana Morrison.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

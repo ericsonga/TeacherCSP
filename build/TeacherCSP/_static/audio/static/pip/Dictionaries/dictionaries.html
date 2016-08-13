@@ -1,0 +1,1999 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Dictionaries &mdash; Programs, Information, and People: Interactive Edition</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Programs, Information, and People: Interactive Edition" href="../index.html" />
+    <link rel="next" title="Accumulating Multiple Results In a Dictionary" href="dictionary_accum.html" />
+    <link rel="prev" title="Working with Data Files" href="../Files/files.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pip';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+var _prum = [['id', '521dfcc4abe53d0749000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../toc.html">Programs, Information, and People</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../toc.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pip/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/assignments" id="registerlink">Project Page</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pip/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Dictionaries</a><ul>
+<li><a class="reference internal" href="#dictionary-operations">Dictionary operations</a></li>
+<li><a class="reference internal" href="#dictionary-methods">Dictionary methods</a></li>
+<li><a class="reference internal" href="#aliasing-and-copying">Aliasing and copying</a></li>
+<li><a class="reference internal" href="#glossary">Glossary</a></li>
+<li><a class="reference internal" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Working with Data Files" data-toggle="tooltip">
+    <a href="../Files/files.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Accumulating Multiple Results In a Dictionary' data-toggle="tooltip" >
+    <a href="dictionary_accum.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="dictionaries">
+<span id="dictionaries-chap"></span><h1>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">The compound data types we have studied in detail so far &#8212; strings and
+lists &#8212; are sequential collections.  This means that the items in the collection are
+ordered from left to right and they use integers as indices to access
+the values they contain.</p>
+<p><strong>Dictionaries</strong> are a different kind of collection. They are Python&#8217;s
+built-in <strong>mapping type</strong>. A map is an unordered, associative collection.  The association, or mapping,
+is from a <strong>key</strong>, which can be of any immutable type (e.g., a number of string),
+to a <strong>value</strong>, which can be any Python data object.</p>
+<p>As an example, we will create a dictionary to translate English words into
+Spanish. For this dictionary, the keys are strings and the values will also be strings.</p>
+<p>One way to create a dictionary is to start with the empty dictionary and add
+<strong>key-value pairs</strong>. The empty dictionary is denoted <tt class="docutils literal"><span class="pre">{}</span></tt></p>
+
+<div class="alert alert-warning cd_section">
+<div id="chp12_dict1"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (chp12_dict1)</span> </p>
+</div>
+<script type="text/javascript">
+var chp12_dict1_trace = {"code": "eng2sp = {}\neng2sp['one'] = 'uno'\neng2sp['two'] = 'dos'\neng2sp['three'] = 'tres'\nprint(eng2sp)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["eng2sp"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"eng2sp": ["REF", 1]}, "heap": {"1": ["DICT"]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["eng2sp"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"eng2sp": ["REF", 1]}, "heap": {"1": ["DICT", ["one", "uno"]]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["eng2sp"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"eng2sp": ["REF", 1]}, "heap": {"1": ["DICT", ["two", "dos"], ["one", "uno"]]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["eng2sp"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"eng2sp": ["REF", 1]}, "heap": {"1": ["DICT", ["three", "tres"], ["two", "dos"], ["one", "uno"]]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["eng2sp"], "stdout": "{'three': 'tres', 'two': 'dos', 'one': 'uno'}\n", "func_name": "<module>", "stack_to_render": [], "globals": {"eng2sp": ["REF", 1]}, "heap": {"1": ["DICT", ["three", "tres"], ["two", "dos"], ["one", "uno"]]}, "line": 5, "event": "return"}]};
+var chp12_dict1_vis;
+
+$(document).ready(function() {
+    chp12_dict1_vis = new ExecutionVisualizer('chp12_dict1',chp12_dict1_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(chp12_dict1_vis,'chp12_dict1');
+    allVisualizers.push(chp12_dict1_vis);
+
+});
+
+$(document).ready(function() {
+    $("#chp12_dict1_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'chp12_dict1'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    chp12_dict1_vis.redrawConnectors();
+});
+</script>
+<p>The first assignment creates an empty dictionary named <tt class="docutils literal"><span class="pre">eng2sp</span></tt>.  The other
+assignments add new key-value pairs to the dictionary.  The left hand side gives the dictionary and the key being associated.  The right hand side gives the value being associated with that key.
+We can print the current
+value of the dictionary in the usual way.
+The key-value pairs of the dictionary are separated by commas. Each pair
+contains a key and a value separated by a colon.</p>
+<p>The order of the pairs may not be what you expected. Python uses complex
+algorithms, designed for very fast access, to determine where the
+key-value pairs are stored in a dictionary.
+For our purposes we can think of this ordering as unpredictable.</p>
+<p>Another way to create a dictionary is to provide a bunch of key-value pairs
+using the same syntax as the previous output.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="chp12_dict2"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (chp12_dict2)</span> </p>
+</div>
+<script type="text/javascript">
+var chp12_dict2_trace = {"code": "eng2sp = {'three': 'tres', 'one': 'uno', 'two': 'dos'}\nprint(eng2sp)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["eng2sp"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"eng2sp": ["REF", 1]}, "heap": {"1": ["DICT", ["three", "tres"], ["two", "dos"], ["one", "uno"]]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["eng2sp"], "stdout": "{'three': 'tres', 'two': 'dos', 'one': 'uno'}\n", "func_name": "<module>", "stack_to_render": [], "globals": {"eng2sp": ["REF", 1]}, "heap": {"1": ["DICT", ["three", "tres"], ["two", "dos"], ["one", "uno"]]}, "line": 2, "event": "return"}]};
+var chp12_dict2_vis;
+
+$(document).ready(function() {
+    chp12_dict2_vis = new ExecutionVisualizer('chp12_dict2',chp12_dict2_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(chp12_dict2_vis,'chp12_dict2');
+    allVisualizers.push(chp12_dict2_vis);
+
+});
+
+$(document).ready(function() {
+    $("#chp12_dict2_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'chp12_dict2'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    chp12_dict2_vis.redrawConnectors();
+});
+</script>
+<p>It doesn&#8217;t matter what order we write the pairs. The values in a dictionary are
+accessed with keys, not with indices, so there is no need to care about
+ordering.</p>
+<p>Here is how we use a key to look up the corresponding value.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="chp12_dict3"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (chp12_dict3)</span> </p>
+</div>
+<script type="text/javascript">
+var chp12_dict3_trace = {"code": "eng2sp = {'three': 'tres', 'one': 'uno', 'two': 'dos'}\n\nvalue = eng2sp['two']\nprint(value)\nprint eng2sp['one']", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["eng2sp"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"eng2sp": ["REF", 1]}, "heap": {"1": ["DICT", ["three", "tres"], ["two", "dos"], ["one", "uno"]]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["eng2sp", "value"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"eng2sp": ["REF", 1], "value": "dos"}, "heap": {"1": ["DICT", ["three", "tres"], ["two", "dos"], ["one", "uno"]]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["eng2sp", "value"], "stdout": "dos\n", "func_name": "<module>", "stack_to_render": [], "globals": {"eng2sp": ["REF", 1], "value": "dos"}, "heap": {"1": ["DICT", ["three", "tres"], ["two", "dos"], ["one", "uno"]]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["eng2sp", "value"], "stdout": "dos\nuno\n", "func_name": "<module>", "stack_to_render": [], "globals": {"eng2sp": ["REF", 1], "value": "dos"}, "heap": {"1": ["DICT", ["three", "tres"], ["two", "dos"], ["one", "uno"]]}, "line": 5, "event": "return"}]};
+var chp12_dict3_vis;
+
+$(document).ready(function() {
+    chp12_dict3_vis = new ExecutionVisualizer('chp12_dict3',chp12_dict3_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(chp12_dict3_vis,'chp12_dict3');
+    allVisualizers.push(chp12_dict3_vis);
+
+});
+
+$(document).ready(function() {
+    $("#chp12_dict3_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'chp12_dict3'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    chp12_dict3_vis.redrawConnectors();
+});
+</script>
+<p>The key <tt class="docutils literal"><span class="pre">'two'</span></tt> yields the value <tt class="docutils literal"><span class="pre">'dos'</span></tt>. The key <tt class="docutils literal"><span class="pre">one</span></tt> yields the value <tt class="docutils literal"><span class="pre">uno</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.</p>
+
+<div id="cont"></div>
+<div id="scratch_11_01" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="scratch_11_01_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="scratch_11_01_saveb" onclick="saveEditor('scratch_11_01');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="scratch_11_01_loadb" onclick="requestCode('scratch_11_01');">Load</button>
+<button class='btn btn-default' id="scratch_11_01_vizb" onclick="injectCodelens(this,'scratch_11_01');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="scratch_11_01_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="scratch_11_01_code" class="active_code" prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="scratch_11_01_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="scratch_11_01_suffix" style="display:none">
+</pre><pre id="scratch_11_01_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (scratch_11_01)</span> </p>
+<div id="scratch_11_01_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#scratch_11_01_saveb').toggle();
+    $('#scratch_11_01_loadb').toggle();
+}
+if ($("#scratch_11_01").attr("lang") !== "html" && $("#scratch_11_01_code_div").parents(".admonition").length == 0 && $("#scratch_11_01_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#scratch_11_01_code_div").offset({
+			left: $("#scratch_11_01 .clearfix").offset().left
+		});
+	}
+	$("#scratch_11_01_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#scratch_11_01_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#scratch_11_01_runb").parent().siblings(".ac_output").show();
+			runit('scratch_11_01',this, undefined);
+			$("#scratch_11_01_runb").on("click", function(){
+				runit('scratch_11_01',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#scratch_11_01_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#scratch_11_01_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#scratch_11_01_runb").on("click", function(){
+		runit('scratch_11_01',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+<p><strong>Check your understanding</strong></p>
+
+            <div id="test_question11_1_1" class="alert alert-warning">
+            dict-1: A dictionary is an unordered collection of key-value pairs.<form name="test_question11_1_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_question11_1_1_opt_a" />
+            <label for= "test_question11_1_1_opt_a">  a) False</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_question11_1_1_opt_b" />
+            <label for= "test_question11_1_1_opt_b">  b) True</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_question11_1_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_question11_1_1','b',['Dictionaries associate keys with values but there is no assumed order for the entries.', 'Yes, dictionaries are associative collections meaning that they store key\u002Dvalue pairs.'])">Check Me</button>
+            <button class='btn btn-default' id="test_question11_1_1_bcomp" disabled name="compare" onclick="compareAnswers('test_question11_1_1');">Compare Me</button>
+            </form><br />
+            <div id="test_question11_1_1_feedback">
+            </div>
+            </div>
+            
+            <div id="test_question11_1_2" class="alert alert-warning">
+            <p>dict-2: What is printed by the following statements?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s">&quot;dog&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s">&quot;elephant&quot;</span><span class="p">:</span><span class="mi">23</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">mydict</span><span class="p">[</span><span class="s">&quot;dog&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<form name="test_question11_1_2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_question11_1_2_opt_a" />
+            <label for= "test_question11_1_2_opt_a">  a) 12</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_question11_1_2_opt_b" />
+            <label for= "test_question11_1_2_opt_b">  b) 6</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_question11_1_2_opt_c" />
+            <label for= "test_question11_1_2_opt_c">  c) 23</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_question11_1_2_opt_d" />
+            <label for= "test_question11_1_2_opt_d">  d) Error, you cannot use the index operator with a dictionary.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_question11_1_2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_question11_1_2','b',['12 is associated with the key cat.', 'Yes, 6 is associated with the key dog.', '23 is associated with the key elephant.', 'The [ ] operator, when used with a dictionary, will look up a value based on its key.'])">Check Me</button>
+            <button class='btn btn-default' id="test_question11_1_2_bcomp" disabled name="compare" onclick="compareAnswers('test_question11_1_2');">Compare Me</button>
+            </form><br />
+            <div id="test_question11_1_2_feedback">
+            </div>
+            </div>
+            <div class="section" id="dictionary-operations">
+<span id="index-1"></span><h2>Dictionary operations<a class="headerlink" href="#dictionary-operations" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">del</span></tt> statement removes a key-value pair from a dictionary. For example,
+the following dictionary contains the names of various fruits and the number of
+each fruit in stock.  If someone buys all of the pears, we can remove the entry from the dictionary.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="ch12_dict4"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (ch12_dict4)</span> </p>
+</div>
+<script type="text/javascript">
+var ch12_dict4_trace = {"code": "inventory = {'apples': 430, 'bananas': 312, 'oranges': 525, 'pears': 217}\n\ndel inventory['pears']", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["inventory"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"inventory": ["REF", 1]}, "heap": {"1": ["DICT", ["pears", 217], ["apples", 430], ["oranges", 525], ["bananas", 312]]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["inventory"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"inventory": ["REF", 1]}, "heap": {"1": ["DICT", ["apples", 430], ["oranges", 525], ["bananas", 312]]}, "line": 3, "event": "return"}]};
+var ch12_dict4_vis;
+
+$(document).ready(function() {
+    ch12_dict4_vis = new ExecutionVisualizer('ch12_dict4',ch12_dict4_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(ch12_dict4_vis,'ch12_dict4');
+    allVisualizers.push(ch12_dict4_vis);
+
+});
+
+$(document).ready(function() {
+    $("#ch12_dict4_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'ch12_dict4'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    ch12_dict4_vis.redrawConnectors();
+});
+</script>
+<p>Dictionaries are mutable, as the delete operation above indicates.  As we&#8217;ve seen before with lists, this means that the dictionary can
+be modified by referencing an association on the left hand side of the assignment statement.  In the previous
+example, instead of deleting the entry for <tt class="docutils literal"><span class="pre">pears</span></tt>, we could have set the inventory to <tt class="docutils literal"><span class="pre">0</span></tt>.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="ch12_dict4a"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (ch12_dict4a)</span> </p>
+</div>
+<script type="text/javascript">
+var ch12_dict4a_trace = {"code": "inventory = {'apples': 430, 'bananas': 312, 'oranges': 525, 'pears': 217}\n\ninventory['pears'] = 0", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["inventory"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"inventory": ["REF", 1]}, "heap": {"1": ["DICT", ["pears", 217], ["apples", 430], ["oranges", 525], ["bananas", 312]]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["inventory"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"inventory": ["REF", 1]}, "heap": {"1": ["DICT", ["pears", 0], ["apples", 430], ["oranges", 525], ["bananas", 312]]}, "line": 3, "event": "return"}]};
+var ch12_dict4a_vis;
+
+$(document).ready(function() {
+    ch12_dict4a_vis = new ExecutionVisualizer('ch12_dict4a',ch12_dict4a_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(ch12_dict4a_vis,'ch12_dict4a');
+    allVisualizers.push(ch12_dict4a_vis);
+
+});
+
+$(document).ready(function() {
+    $("#ch12_dict4a_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'ch12_dict4a'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    ch12_dict4a_vis.redrawConnectors();
+});
+</script>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Setting the value associated with <tt class="docutils literal"><span class="pre">pears</span></tt> to 0 has a different effect than removing the key-value pair entirely with <tt class="docutils literal"><span class="pre">del</span></tt>. Try printout out the two dictionaries in the examples above.</p>
+</div>
+<p>Similarily,
+a new shipment of 200 bananas arriving could be handled like this.</p>
+
+<div class="alert alert-warning cd_section">
+<div id="ch12_dict5"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (ch12_dict5)</span> </p>
+</div>
+<script type="text/javascript">
+var ch12_dict5_trace = {"code": "inventory = {'apples': 430, 'bananas': 312, 'oranges': 525, 'pears': 217}\ninventory['bananas'] = inventory['bananas'] + 200\n\n\nnumItems = len(inventory)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["inventory"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"inventory": ["REF", 1]}, "heap": {"1": ["DICT", ["pears", 217], ["apples", 430], ["oranges", 525], ["bananas", 312]]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["inventory"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"inventory": ["REF", 1]}, "heap": {"1": ["DICT", ["pears", 217], ["apples", 430], ["oranges", 525], ["bananas", 512]]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["inventory", "numItems"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"numItems": 4, "inventory": ["REF", 1]}, "heap": {"1": ["DICT", ["pears", 217], ["apples", 430], ["oranges", 525], ["bananas", 512]]}, "line": 5, "event": "return"}]};
+var ch12_dict5_vis;
+
+$(document).ready(function() {
+    ch12_dict5_vis = new ExecutionVisualizer('ch12_dict5',ch12_dict5_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(ch12_dict5_vis,'ch12_dict5');
+    allVisualizers.push(ch12_dict5_vis);
+
+});
+
+$(document).ready(function() {
+    $("#ch12_dict5_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'ch12_dict5'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    ch12_dict5_vis.redrawConnectors();
+});
+</script>
+<p>Notice that there are now 512 bananas&#8212;the dictionary has been modified.  Note also that the <tt class="docutils literal"><span class="pre">len</span></tt> function also works on dictionaries.  It returns the number
+of key-value pairs.</p>
+<p><strong>Check your understanding</strong></p>
+
+            <div id="test_question11_2_1" class="alert alert-warning">
+            <p>dict-3: What is printed by the following statements?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s">&quot;dog&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s">&quot;elephant&quot;</span><span class="p">:</span><span class="mi">23</span><span class="p">}</span>
+<span class="n">mydict</span><span class="p">[</span><span class="s">&quot;mouse&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mydict</span><span class="p">[</span><span class="s">&quot;cat&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">mydict</span><span class="p">[</span><span class="s">&quot;dog&quot;</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">mydict</span><span class="p">[</span><span class="s">&quot;mouse&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<form name="test_question11_2_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_question11_2_1_opt_a" />
+            <label for= "test_question11_2_1_opt_a">  a) 12</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_question11_2_1_opt_b" />
+            <label for= "test_question11_2_1_opt_b">  b) 0</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_question11_2_1_opt_c" />
+            <label for= "test_question11_2_1_opt_c">  c) 18</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_question11_2_1_opt_d" />
+            <label for= "test_question11_2_1_opt_d">  d) Error, there is no entry with mouse as the key.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_question11_2_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_question11_2_1','c',['12 is associated with the key cat.', 'The key mouse will be associated with the sum of the two values.', 'Yes, add the value for cat and the value for dog (12 + 6) and create a new entry for mouse.', 'Since the new key is introduced on the left hand side of the assignment statement, a new key\u002Dvalue pair is added to the dictionary.'])">Check Me</button>
+            <button class='btn btn-default' id="test_question11_2_1_bcomp" disabled name="compare" onclick="compareAnswers('test_question11_2_1');">Compare Me</button>
+            </form><br />
+            <div id="test_question11_2_1_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="dictionary-methods">
+<h2>Dictionary methods<a class="headerlink" href="#dictionary-methods" title="Permalink to this headline">¶</a></h2>
+<p>Dictionaries have a number of useful built-in methods.
+The following table provides a summary and more details can be found in the
+<a class="reference external" href="http://docs.python.org/py3k/library/stdtypes.html#mapping-types-dict">Python Documentation</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="18%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Method</th>
+<th class="head">Parameters</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>keys</td>
+<td>none</td>
+<td>Returns a view of the keys in the dictionary</td>
+</tr>
+<tr class="row-odd"><td>values</td>
+<td>none</td>
+<td>Returns a view of the values in the dictionary</td>
+</tr>
+<tr class="row-even"><td>items</td>
+<td>none</td>
+<td>Returns a view of the key-value pairs in the dictionary</td>
+</tr>
+<tr class="row-odd"><td>get</td>
+<td>key</td>
+<td>Returns the value associated with key; None otherwise</td>
+</tr>
+<tr class="row-even"><td>get</td>
+<td>key,alt</td>
+<td>Returns the value associated with key; alt otherwise</td>
+</tr>
+</tbody>
+</table>
+<p>The <tt class="docutils literal"><span class="pre">keys</span></tt> method returns what Python 3 calls a <strong>view</strong> of its underlying keys.
+We can iterate over the view or turn the view into a
+list by using the <tt class="docutils literal"><span class="pre">list</span></tt> conversion function.</p>
+
+<div id="cont"></div>
+<div id="chp12_dict6" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp12_dict6_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp12_dict6_saveb" onclick="saveEditor('chp12_dict6');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp12_dict6_loadb" onclick="requestCode('chp12_dict6');">Load</button>
+<button class='btn btn-default' id="chp12_dict6_vizb" onclick="injectCodelens(this,'chp12_dict6');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp12_dict6_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp12_dict6_code" class="active_code" prefixcode="undefined" lang="python">
+inventory = {'apples': 430, 'bananas': 312, 'oranges': 525, 'pears': 217}
+
+for akey in inventory.keys():     # the order in which we get the keys is not defined
+   print("Got key", akey, "which maps to value", inventory[akey])
+
+ks = list(inventory.keys())
+print(ks)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp12_dict6_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp12_dict6_suffix" style="display:none">
+</pre><pre id="chp12_dict6_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp12_dict6)</span> </p>
+<div id="chp12_dict6_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp12_dict6_saveb').toggle();
+    $('#chp12_dict6_loadb').toggle();
+}
+if ($("#chp12_dict6").attr("lang") !== "html" && $("#chp12_dict6_code_div").parents(".admonition").length == 0 && $("#chp12_dict6_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp12_dict6_code_div").offset({
+			left: $("#chp12_dict6 .clearfix").offset().left
+		});
+	}
+	$("#chp12_dict6_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp12_dict6_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp12_dict6_runb").parent().siblings(".ac_output").show();
+			runit('chp12_dict6',this, undefined);
+			$("#chp12_dict6_runb").on("click", function(){
+				runit('chp12_dict6',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp12_dict6_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp12_dict6_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp12_dict6_runb").on("click", function(){
+		runit('chp12_dict6',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>It is so common to iterate over the keys in a dictionary that you can
+omit the <tt class="docutils literal"><span class="pre">keys</span></tt> method call in the <tt class="docutils literal"><span class="pre">for</span></tt> loop &#8212; iterating over
+a dictionary implicitly iterates over its keys.</p>
+
+<div id="cont"></div>
+<div id="chp12_dict7" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp12_dict7_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp12_dict7_saveb" onclick="saveEditor('chp12_dict7');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp12_dict7_loadb" onclick="requestCode('chp12_dict7');">Load</button>
+<button class='btn btn-default' id="chp12_dict7_vizb" onclick="injectCodelens(this,'chp12_dict7');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp12_dict7_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp12_dict7_code" class="active_code" prefixcode="undefined" lang="python">
+inventory = {'apples': 430, 'bananas': 312, 'oranges': 525, 'pears': 217}
+
+for k in inventory:
+   print("Got key", k)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp12_dict7_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp12_dict7_suffix" style="display:none">
+</pre><pre id="chp12_dict7_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp12_dict7)</span> </p>
+<div id="chp12_dict7_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp12_dict7_saveb').toggle();
+    $('#chp12_dict7_loadb').toggle();
+}
+if ($("#chp12_dict7").attr("lang") !== "html" && $("#chp12_dict7_code_div").parents(".admonition").length == 0 && $("#chp12_dict7_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp12_dict7_code_div").offset({
+			left: $("#chp12_dict7 .clearfix").offset().left
+		});
+	}
+	$("#chp12_dict7_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp12_dict7_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp12_dict7_runb").parent().siblings(".ac_output").show();
+			runit('chp12_dict7',this, undefined);
+			$("#chp12_dict7_runb").on("click", function(){
+				runit('chp12_dict7',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp12_dict7_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp12_dict7_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp12_dict7_runb").on("click", function(){
+		runit('chp12_dict7',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>As we saw earlier with strings and lists, dictionary methods use dot notation,
+which specifies the name of the method to the right of the dot and the name of
+the object on which to apply the method immediately to the left of the dot. The empty
+parentheses in the case of <tt class="docutils literal"><span class="pre">keys</span></tt> indicate that this method takes no parameters.</p>
+<p>The <tt class="docutils literal"><span class="pre">values</span></tt> and <tt class="docutils literal"><span class="pre">items</span></tt> methods are similar to <tt class="docutils literal"><span class="pre">keys</span></tt>. They return  view objects which can be turned
+into lists or iterated over directly.  Note that the items are shown as tuples containing the key and the associated value.</p>
+
+<div id="cont"></div>
+<div id="chp12_dict8" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp12_dict8_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp12_dict8_saveb" onclick="saveEditor('chp12_dict8');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp12_dict8_loadb" onclick="requestCode('chp12_dict8');">Load</button>
+<button class='btn btn-default' id="chp12_dict8_vizb" onclick="injectCodelens(this,'chp12_dict8');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp12_dict8_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp12_dict8_code" class="active_code" prefixcode="undefined" lang="python">
+inventory = {'apples': 430, 'bananas': 312, 'oranges': 525, 'pears': 217}
+
+print(list(inventory.values()))
+print(list(inventory.items()))
+
+for k in inventory:
+    print("Got",k,"that maps to",inventory[k])
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp12_dict8_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp12_dict8_suffix" style="display:none">
+</pre><pre id="chp12_dict8_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp12_dict8)</span> </p>
+<div id="chp12_dict8_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp12_dict8_saveb').toggle();
+    $('#chp12_dict8_loadb').toggle();
+}
+if ($("#chp12_dict8").attr("lang") !== "html" && $("#chp12_dict8_code_div").parents(".admonition").length == 0 && $("#chp12_dict8_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp12_dict8_code_div").offset({
+			left: $("#chp12_dict8 .clearfix").offset().left
+		});
+	}
+	$("#chp12_dict8_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp12_dict8_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp12_dict8_runb").parent().siblings(".ac_output").show();
+			runit('chp12_dict8',this, undefined);
+			$("#chp12_dict8_runb").on("click", function(){
+				runit('chp12_dict8',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp12_dict8_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp12_dict8_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp12_dict8_runb").on("click", function(){
+		runit('chp12_dict8',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>The <tt class="docutils literal"><span class="pre">in</span></tt> and <tt class="docutils literal"><span class="pre">not</span> <span class="pre">in</span></tt> operators can test if a key is in the dictionary:</p>
+
+<div id="cont"></div>
+<div id="chp12_dict9" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp12_dict9_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp12_dict9_saveb" onclick="saveEditor('chp12_dict9');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp12_dict9_loadb" onclick="requestCode('chp12_dict9');">Load</button>
+<button class='btn btn-default' id="chp12_dict9_vizb" onclick="injectCodelens(this,'chp12_dict9');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp12_dict9_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp12_dict9_code" class="active_code" prefixcode="undefined" lang="python">
+inventory = {'apples': 430, 'bananas': 312, 'oranges': 525, 'pears': 217}
+print('apples' in inventory)
+print('cherries' in inventory)
+
+if 'bananas' in inventory:
+    print(inventory['bananas'])
+else:
+    print("We have no bananas")
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp12_dict9_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp12_dict9_suffix" style="display:none">
+</pre><pre id="chp12_dict9_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp12_dict9)</span> </p>
+<div id="chp12_dict9_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp12_dict9_saveb').toggle();
+    $('#chp12_dict9_loadb').toggle();
+}
+if ($("#chp12_dict9").attr("lang") !== "html" && $("#chp12_dict9_code_div").parents(".admonition").length == 0 && $("#chp12_dict9_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp12_dict9_code_div").offset({
+			left: $("#chp12_dict9 .clearfix").offset().left
+		});
+	}
+	$("#chp12_dict9_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp12_dict9_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp12_dict9_runb").parent().siblings(".ac_output").show();
+			runit('chp12_dict9',this, undefined);
+			$("#chp12_dict9_runb").on("click", function(){
+				runit('chp12_dict9',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp12_dict9_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp12_dict9_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp12_dict9_runb").on("click", function(){
+		runit('chp12_dict9',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>This operator can be very useful since looking up a non-existent key in a
+dictionary causes a runtime error.</p>
+<p>The <tt class="docutils literal"><span class="pre">get</span></tt> method allows us to access the value associated with a key, similar to the <tt class="docutils literal"><span class="pre">[</span> <span class="pre">]</span></tt> operator.
+The important difference is that <tt class="docutils literal"><span class="pre">get</span></tt> will not cause a runtime error if the key is not present.  It
+will instead return None.  There exists a variation of <tt class="docutils literal"><span class="pre">get</span></tt> that allows a second parameter that serves as an alternative return value
+in the case where the key is not present.  This can be seen in the final example below.  In this case, since &#8220;cherries&#8221; is not a key, return 0 (instead of None).</p>
+
+<div id="cont"></div>
+<div id="chp12_dict10" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="chp12_dict10_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp12_dict10_saveb" onclick="saveEditor('chp12_dict10');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="chp12_dict10_loadb" onclick="requestCode('chp12_dict10');">Load</button>
+<button class='btn btn-default' id="chp12_dict10_vizb" onclick="injectCodelens(this,'chp12_dict10');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="chp12_dict10_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="chp12_dict10_code" class="active_code" prefixcode="undefined" lang="python">
+inventory = {'apples': 430, 'bananas': 312, 'oranges': 525, 'pears': 217}
+
+print(inventory.get("apples"))
+print(inventory.get("cherries"))
+
+print(inventory.get("cherries",0))
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="chp12_dict10_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="chp12_dict10_suffix" style="display:none">
+</pre><pre id="chp12_dict10_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (chp12_dict10)</span> </p>
+<div id="chp12_dict10_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#chp12_dict10_saveb').toggle();
+    $('#chp12_dict10_loadb').toggle();
+}
+if ($("#chp12_dict10").attr("lang") !== "html" && $("#chp12_dict10_code_div").parents(".admonition").length == 0 && $("#chp12_dict10_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#chp12_dict10_code_div").offset({
+			left: $("#chp12_dict10 .clearfix").offset().left
+		});
+	}
+	$("#chp12_dict10_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#chp12_dict10_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#chp12_dict10_runb").parent().siblings(".ac_output").show();
+			runit('chp12_dict10',this, undefined);
+			$("#chp12_dict10_runb").on("click", function(){
+				runit('chp12_dict10',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#chp12_dict10_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#chp12_dict10_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#chp12_dict10_runb").on("click", function(){
+		runit('chp12_dict10',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.</p>
+
+<div id="cont"></div>
+<div id="scratch_11_02" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="scratch_11_02_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="scratch_11_02_saveb" onclick="saveEditor('scratch_11_02');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="scratch_11_02_loadb" onclick="requestCode('scratch_11_02');">Load</button>
+<button class='btn btn-default' id="scratch_11_02_vizb" onclick="injectCodelens(this,'scratch_11_02');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="scratch_11_02_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="scratch_11_02_code" class="active_code" prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="scratch_11_02_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="scratch_11_02_suffix" style="display:none">
+</pre><pre id="scratch_11_02_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (scratch_11_02)</span> </p>
+<div id="scratch_11_02_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#scratch_11_02_saveb').toggle();
+    $('#scratch_11_02_loadb').toggle();
+}
+if ($("#scratch_11_02").attr("lang") !== "html" && $("#scratch_11_02_code_div").parents(".admonition").length == 0 && $("#scratch_11_02_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#scratch_11_02_code_div").offset({
+			left: $("#scratch_11_02 .clearfix").offset().left
+		});
+	}
+	$("#scratch_11_02_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#scratch_11_02_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#scratch_11_02_runb").parent().siblings(".ac_output").show();
+			runit('scratch_11_02',this, undefined);
+			$("#scratch_11_02_runb").on("click", function(){
+				runit('scratch_11_02',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#scratch_11_02_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#scratch_11_02_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#scratch_11_02_runb").on("click", function(){
+		runit('scratch_11_02',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div>
+<p><strong>Check your understanding</strong></p>
+
+            <div id="test_question11_3_2" class="alert alert-warning">
+            <p>dict-4: What is printed by the following statements?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s">&quot;dog&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s">&quot;elephant&quot;</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span> <span class="s">&quot;bear&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="n">mydict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;cat&quot;</span><span class="p">)</span><span class="o">//</span><span class="n">mydict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;dog&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_question11_3_2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_question11_3_2_opt_a" />
+            <label for= "test_question11_3_2_opt_a">  a) 2</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_question11_3_2_opt_b" />
+            <label for= "test_question11_3_2_opt_b">  b) 0.5</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_question11_3_2_opt_c" />
+            <label for= "test_question11_3_2_opt_c">  c) bear</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_question11_3_2_opt_d" />
+            <label for= "test_question11_3_2_opt_d">  d) Error, divide is not a valid operation on dictionaries.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_question11_3_2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_question11_3_2','a',['get returns the value associated with a given key so this divides 12 by 6.', '12 is divided by 6, not the other way around.', 'Take another look at the example for get above.  get returns the value associated with a given key.', 'The integer division operator is being used on the values returned from the get method, not on the dictionary.'])">Check Me</button>
+            <button class='btn btn-default' id="test_question11_3_2_bcomp" disabled name="compare" onclick="compareAnswers('test_question11_3_2');">Compare Me</button>
+            </form><br />
+            <div id="test_question11_3_2_feedback">
+            </div>
+            </div>
+            
+            <div id="test_question11_3_3" class="alert alert-warning">
+            <p>dict-5: What is printed by the following statements?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s">&quot;dog&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s">&quot;elephant&quot;</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span> <span class="s">&quot;bear&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;dog&quot;</span> <span class="ow">in</span> <span class="n">mydict</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_question11_3_3_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_question11_3_3_opt_a" />
+            <label for= "test_question11_3_3_opt_a">  a) True</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_question11_3_3_opt_b" />
+            <label for= "test_question11_3_3_opt_b">  b) False</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_question11_3_3');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_question11_3_3','a',['Yes, dog is a key in the dictionary.', 'The in operator returns True if a key is in the dictionary, False otherwise.'])">Check Me</button>
+            <button class='btn btn-default' id="test_question11_3_3_bcomp" disabled name="compare" onclick="compareAnswers('test_question11_3_3');">Compare Me</button>
+            </form><br />
+            <div id="test_question11_3_3_feedback">
+            </div>
+            </div>
+            
+            <div id="test_question11_3_4" class="alert alert-warning">
+            <p>dict-6: What is printed by the following statements?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s">&quot;dog&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s">&quot;elephant&quot;</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span> <span class="s">&quot;bear&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="mi">23</span> <span class="ow">in</span> <span class="n">mydict</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_question11_3_4_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_question11_3_4_opt_a" />
+            <label for= "test_question11_3_4_opt_a">  a) True</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_question11_3_4_opt_b" />
+            <label for= "test_question11_3_4_opt_b">  b) False</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_question11_3_4');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_question11_3_4','b',['23 is a value in the dictionary, not a key.', 'Yes, the in operator returns True if a key is in the dictionary, False otherwise.'])">Check Me</button>
+            <button class='btn btn-default' id="test_question11_3_4_bcomp" disabled name="compare" onclick="compareAnswers('test_question11_3_4');">Compare Me</button>
+            </form><br />
+            <div id="test_question11_3_4_feedback">
+            </div>
+            </div>
+            
+            <div id="test_question11_3_5" class="alert alert-warning">
+            <p>dict-7: What is printed by the following statements?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s">&quot;dog&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s">&quot;elephant&quot;</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span> <span class="s">&quot;bear&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">akey</span> <span class="ow">in</span> <span class="n">mydict</span><span class="p">:</span>
+   <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">akey</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+      <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">mydict</span><span class="p">[</span><span class="n">akey</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+<form name="test_question11_3_5_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_question11_3_5_opt_a" />
+            <label for= "test_question11_3_5_opt_a">  a) 18</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_question11_3_5_opt_b" />
+            <label for= "test_question11_3_5_opt_b">  b) 43</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_question11_3_5_opt_c" />
+            <label for= "test_question11_3_5_opt_c">  c) 0</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_question11_3_5_opt_d" />
+            <label for= "test_question11_3_5_opt_d">  d) 61</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_question11_3_5');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_question11_3_5','b',['Add the values that have keys longer than 3 characters, not those with exactly 3 characters.', 'Yes, the for statement iterates over the keys.  It adds the values of the keys that have length greater than 3.', 'This is the accumulator pattern.  Total starts at 0 but then changes as the iteration proceeds.', 'Not all the values are added together.  The if statement only chooses some of them.'])">Check Me</button>
+            <button class='btn btn-default' id="test_question11_3_5_bcomp" disabled name="compare" onclick="compareAnswers('test_question11_3_5');">Compare Me</button>
+            </form><br />
+            <div id="test_question11_3_5_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="aliasing-and-copying">
+<span id="index-2"></span><h2>Aliasing and copying<a class="headerlink" href="#aliasing-and-copying" title="Permalink to this headline">¶</a></h2>
+<p>Because dictionaries are mutable, you need to be aware of aliasing (as we saw with lists).  Whenever
+two variables refer to the same dictionary object, changes to one affect the other.
+For example, <tt class="docutils literal"><span class="pre">opposites</span></tt> is a dictionary that contains pairs
+of opposites.</p>
+
+<div id="cont"></div>
+<div id="ch12_dict11" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ch12_dict11_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch12_dict11_saveb" onclick="saveEditor('ch12_dict11');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch12_dict11_loadb" onclick="requestCode('ch12_dict11');">Load</button>
+<button class='btn btn-default' id="ch12_dict11_vizb" onclick="injectCodelens(this,'ch12_dict11');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="ch12_dict11_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="ch12_dict11_code" class="active_code" prefixcode="undefined" lang="python">
+opposites = {'up': 'down', 'right': 'wrong', 'true': 'false'}
+alias = opposites
+
+print(alias is opposites)
+
+alias['right'] = 'left'
+print(opposites['right'])
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ch12_dict11_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ch12_dict11_suffix" style="display:none">
+</pre><pre id="ch12_dict11_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch12_dict11)</span> </p>
+<div id="ch12_dict11_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch12_dict11_saveb').toggle();
+    $('#ch12_dict11_loadb').toggle();
+}
+if ($("#ch12_dict11").attr("lang") !== "html" && $("#ch12_dict11_code_div").parents(".admonition").length == 0 && $("#ch12_dict11_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ch12_dict11_code_div").offset({
+			left: $("#ch12_dict11 .clearfix").offset().left
+		});
+	}
+	$("#ch12_dict11_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ch12_dict11_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ch12_dict11_runb").parent().siblings(".ac_output").show();
+			runit('ch12_dict11',this, undefined);
+			$("#ch12_dict11_runb").on("click", function(){
+				runit('ch12_dict11',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ch12_dict11_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ch12_dict11_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ch12_dict11_runb").on("click", function(){
+		runit('ch12_dict11',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>As you can see from the <tt class="docutils literal"><span class="pre">is</span></tt> operator, <tt class="docutils literal"><span class="pre">alias</span></tt> and <tt class="docutils literal"><span class="pre">opposites</span></tt> refer to the same object.</p>
+<p>If you want to modify a dictionary and keep a copy of the original, use the dictionary
+<tt class="docutils literal"><span class="pre">copy</span></tt> method.  Since <em>acopy</em> is a copy of the dictionary, changes to it will not effect the original.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">acopy</span> <span class="o">=</span> <span class="n">opposites</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">acopy</span><span class="p">[</span><span class="s">&#39;right&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;left&#39;</span>    <span class="c"># does not change opposites</span>
+</pre></div>
+</div>
+<p><strong>Check your understanding</strong></p>
+
+            <div id="test_question11_4_1" class="alert alert-warning">
+            <p>dict-8: What is printed by the following statements?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;cat&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s">&quot;dog&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s">&quot;elephant&quot;</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span> <span class="s">&quot;bear&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span>
+<span class="n">yourdict</span> <span class="o">=</span> <span class="n">mydict</span>
+<span class="n">yourdict</span><span class="p">[</span><span class="s">&quot;elephant&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">999</span>
+<span class="k">print</span><span class="p">(</span><span class="n">mydict</span><span class="p">[</span><span class="s">&quot;elephant&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<form name="test_question11_4_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_question11_4_1_opt_a" />
+            <label for= "test_question11_4_1_opt_a">  a) 23</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_question11_4_1_opt_b" />
+            <label for= "test_question11_4_1_opt_b">  b) None</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_question11_4_1_opt_c" />
+            <label for= "test_question11_4_1_opt_c">  c) 999</label><br />
+            
+            <input type="radio" name="group1" value="d" id="test_question11_4_1_opt_d" />
+            <label for= "test_question11_4_1_opt_d">  d) Error, there are two different keys named elephant.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_question11_4_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_question11_4_1','c',['mydict and yourdict are both names for the same dictionary.', 'The dictionary is mutable so changes can be made to the keys and values.', 'Yes, since yourdict is an alias for mydict, the value for the key elephant has been changed.', 'There is only one dictionary with only one key named elephant.  The dictionary has two different names, mydict and yourdict.'])">Check Me</button>
+            <button class='btn btn-default' id="test_question11_4_1_bcomp" disabled name="compare" onclick="compareAnswers('test_question11_4_1');">Compare Me</button>
+            </form><br />
+            <div id="test_question11_4_1_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="glossary">
+<span id="index-3"></span><h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-dictionary">dictionary</dt>
+<dd>A collection of key-value pairs that maps from keys to values. The keys
+can be any immutable type, and the values can be any type.</dd>
+<dt id="term-key">key</dt>
+<dd>A data item that is <em>mapped to</em> a value in a dictionary. Keys are used
+to look up values in a dictionary.</dd>
+<dt id="term-key-value-pair">key-value pair</dt>
+<dd>One of the pairs of items in a dictionary. Values are looked up in a
+dictionary by key.</dd>
+<dt id="term-mapping-type">mapping type</dt>
+<dd>A mapping type is a data type comprised of a collection of keys and
+associated values. Python&#8217;s only built-in mapping type is the
+dictionary.  Dictionaries implement the
+<a class="reference external" href="http://en.wikipedia.org/wiki/Associative_array">associative array</a>
+abstract data type.</dd>
+</dl>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Predict what will print out from the following code.</li>
+</ol>
+<p>If a line causes a run-time error, comment it out and see whether the rest of your predictionsi were correct.</p>
+<blockquote>
+<div>
+<div id="cont"></div>
+<div id="dict_q1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="dict_q1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="dict_q1_saveb" onclick="saveEditor('dict_q1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="dict_q1_loadb" onclick="requestCode('dict_q1');">Load</button>
+<button class='btn btn-default' id="dict_q1_vizb" onclick="injectCodelens(this,'dict_q1');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="dict_q1_coach_b" onclick="injectCodeCoach('dict_q1');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="dict_q1_showb" onclick="$('#dict_q1_code_div').toggle();cm_editors['dict_q1_code'].refresh();$('#dict_q1_saveb').toggle();$('#dict_q1_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('dict_q1')"/>
+
+</div>
+<br/>
+<div id="dict_q1_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="dict_q1_code" class="active_code" prefixcode="undefined" lang="python">
+d = {'apples': 15, 'grapes': 12, 'bananas': 35}
+print(d['banana'])
+d['oranges'] = 20
+print(len(d))
+print('grapes' in d)
+print(d['pears'])
+print(d.get('pears', 0))
+fruits = d.keys()
+print(fruits)
+fruits.sort()
+print(fruits)
+del d['apples']
+print('apples' in d)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="dict_q1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="dict_q1_suffix" style="display:none">
+</pre><pre id="dict_q1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (dict_q1)</span> </p>
+<div id="dict_q1_codelens_div" style="display:none"></div><div id="dict_q1_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#dict_q1_saveb').toggle();
+    $('#dict_q1_loadb').toggle();
+}
+if ($("#dict_q1").attr("lang") !== "html" && $("#dict_q1_code_div").parents(".admonition").length == 0 && $("#dict_q1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#dict_q1_code_div").offset({
+			left: $("#dict_q1 .clearfix").offset().left
+		});
+	}
+	$("#dict_q1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#dict_q1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#dict_q1_runb").parent().siblings(".ac_output").show();
+			runit('dict_q1',this, undefined);
+			$("#dict_q1_runb").on("click", function(){
+				runit('dict_q1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#dict_q1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#dict_q1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#dict_q1_runb").on("click", function(){
+		runit('dict_q1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></blockquote>
+<ol class="arabic">
+<li><p class="first">Avast, ye&#8217;ll work on this &#8216;un in class, swabbies!</p>
+<blockquote>
+<div><div id='q5' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#q5-Question'><span>Question</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#q5-Answer'><span>Answer</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='q5-Question'><p>Here&#8217;s a table of English to Pirate translations</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">English</th>
+<th class="head">Pirate</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>sir</td>
+<td>matey</td>
+</tr>
+<tr class="row-odd"><td>hotel</td>
+<td>fleabag inn</td>
+</tr>
+<tr class="row-even"><td>student</td>
+<td>swabbie</td>
+</tr>
+<tr class="row-odd"><td>boy</td>
+<td>matey</td>
+</tr>
+<tr class="row-even"><td>madam</td>
+<td>proud beauty</td>
+</tr>
+<tr class="row-odd"><td>professor</td>
+<td>foul blaggart</td>
+</tr>
+<tr class="row-even"><td>restaurant</td>
+<td>galley</td>
+</tr>
+<tr class="row-odd"><td>your</td>
+<td>yer</td>
+</tr>
+<tr class="row-even"><td>excuse</td>
+<td>arr</td>
+</tr>
+<tr class="row-odd"><td>students</td>
+<td>swabbies</td>
+</tr>
+<tr class="row-even"><td>are</td>
+<td>be</td>
+</tr>
+<tr class="row-odd"><td>lawyer</td>
+<td>foul blaggart</td>
+</tr>
+<tr class="row-even"><td>the</td>
+<td>th&#8217;</td>
+</tr>
+<tr class="row-odd"><td>restroom</td>
+<td>head</td>
+</tr>
+<tr class="row-even"><td>my</td>
+<td>me</td>
+</tr>
+<tr class="row-odd"><td>hello</td>
+<td>avast</td>
+</tr>
+<tr class="row-even"><td>is</td>
+<td>be</td>
+</tr>
+<tr class="row-odd"><td>man</td>
+<td>matey</td>
+</tr>
+</tbody>
+</table>
+<p>Write a program that asks the user for a sentence in English and then translates that
+sentence to Pirate.</p>
+
+<div id="cont"></div>
+<div id="dict_q2_question" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="dict_q2_question_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="dict_q2_question_saveb" onclick="saveEditor('dict_q2_question');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="dict_q2_question_loadb" onclick="requestCode('dict_q2_question');">Load</button>
+<button class='btn btn-default' id="dict_q2_question_vizb" onclick="injectCodelens(this,'dict_q2_question');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="dict_q2_question_coach_b" onclick="injectCodeCoach('dict_q2_question');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="dict_q2_question_showb" onclick="$('#dict_q2_question_code_div').toggle();cm_editors['dict_q2_question_code'].refresh();$('#dict_q2_question_saveb').toggle();$('#dict_q2_question_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('dict_q2_question')"/>
+
+</div>
+<br/>
+<div id="dict_q2_question_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="dict_q2_question_code" class="active_code" prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="dict_q2_question_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="dict_q2_question_suffix" style="display:none">
+</pre><pre id="dict_q2_question_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (dict_q2_question)</span> </p>
+<div id="dict_q2_question_codelens_div" style="display:none"></div><div id="dict_q2_question_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#dict_q2_question_saveb').toggle();
+    $('#dict_q2_question_loadb').toggle();
+}
+if ($("#dict_q2_question").attr("lang") !== "html" && $("#dict_q2_question_code_div").parents(".admonition").length == 0 && $("#dict_q2_question_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#dict_q2_question_code_div").offset({
+			left: $("#dict_q2_question .clearfix").offset().left
+		});
+	}
+	$("#dict_q2_question_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#dict_q2_question_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#dict_q2_question_runb").parent().siblings(".ac_output").show();
+			runit('dict_q2_question',this, undefined);
+			$("#dict_q2_question_runb").on("click", function(){
+				runit('dict_q2_question',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#dict_q2_question_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#dict_q2_question_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#dict_q2_question_runb").on("click", function(){
+		runit('dict_q2_question',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='q5-Answer'>
+<div id="cont"></div>
+<div id="dict_q2_answer" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="dict_q2_answer_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="dict_q2_answer_saveb" onclick="saveEditor('dict_q2_answer');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="dict_q2_answer_loadb" onclick="requestCode('dict_q2_answer');">Load</button>
+<button class='btn btn-default' id="dict_q2_answer_vizb" onclick="injectCodelens(this,'dict_q2_answer');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="dict_q2_answer_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="dict_q2_answer_code" class="active_code" prefixcode="undefined" lang="python">
+pirate = {}
+pirate['sir'] = 'matey'
+pirate['hotel'] = 'fleabag inn'
+pirate['student'] = 'swabbie'
+pirate['boy'] = 'matey'
+pirate['restaurant'] = 'galley'
+#and so on
+
+sentence = input("Please enter a sentence in English")
+
+psentence = []
+words = sentence.split()
+for aword in words:
+    if aword in pirate:
+        psentence.append(pirate[aword])
+    else:
+        psentence.append(aword)
+
+print(" ").join(psentence)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="dict_q2_answer_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="dict_q2_answer_suffix" style="display:none">
+</pre><pre id="dict_q2_answer_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (dict_q2_answer)</span> </p>
+<div id="dict_q2_answer_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#dict_q2_answer_saveb').toggle();
+    $('#dict_q2_answer_loadb').toggle();
+}
+if ($("#dict_q2_answer").attr("lang") !== "html" && $("#dict_q2_answer_code_div").parents(".admonition").length == 0 && $("#dict_q2_answer_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#dict_q2_answer_code_div").offset({
+			left: $("#dict_q2_answer .clearfix").offset().left
+		});
+	}
+	$("#dict_q2_answer_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#dict_q2_answer_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#dict_q2_answer_runb").parent().siblings(".ac_output").show();
+			runit('dict_q2_answer',this, undefined);
+			$("#dict_q2_answer_runb").on("click", function(){
+				runit('dict_q2_answer',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#dict_q2_answer_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#dict_q2_answer_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#dict_q2_answer_runb").on("click", function(){
+		runit('dict_q2_answer',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#q5 .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#q5 .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#q5 .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 Paul Resnick, Brad Miller, David Ranum, Created using Runestone Interactive.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

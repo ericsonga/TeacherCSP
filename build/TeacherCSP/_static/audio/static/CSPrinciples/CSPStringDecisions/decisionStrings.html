@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Using Decisions with Strings &mdash; CS Principles</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="CS Principles" href="../index.html" />
+    <link rel="next" title="Turtle Functions and Procedures" href="../CSPTurtleDecisions/decisionTurtle.html" />
+    <link rel="prev" title="Making Decisions" href="../CSPIntroDecisions/decisions2.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'CSPrinciples';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = true
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS Principles</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/CSPrinciples/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/CSPrinciples/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Using Decisions with Strings</a></li>
+<li><a class="reference internal" href="#interactive-stories-with-input">Interactive Stories with Input</a></li>
+<li><a class="reference internal" href="#fortune-teller">Fortune Teller</a></li>
+<li><a class="reference internal" href="#using-elif-for-more-options">Using <tt class="docutils literal"><span class="pre">elif</span></tt> for more options</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Making Decisions" data-toggle="tooltip">
+    <a href="../CSPIntroDecisions/decisions2.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Turtle Functions and Procedures' data-toggle="tooltip" >
+    <a href="../CSPTurtleDecisions/decisionTurtle.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="using-decisions-with-strings">
+<h1>Using Decisions with Strings<a class="headerlink" href="#using-decisions-with-strings" title="Permalink to this headline">¶</a></h1>
+<p>Here&#8217;s an example of conditional execution using <tt class="docutils literal"><span class="pre">if</span></tt> statements with strings.  We can print different strings based on the value of a number. For example, if the user only orders 1 item we can print that out differently than if the user orders more than one item. Notice the use of <tt class="docutils literal"><span class="pre">str(numItems)</span></tt> in the code below.  The function <tt class="docutils literal"><span class="pre">str</span></tt> turns a number into a string so that it can be appended to a string.</p>
+
+<div id="cont"></div>
+<div id="csp_sd_invoice" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="csp_sd_invoice_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="csp_sd_invoice_saveb" onclick="saveEditor('csp_sd_invoice');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="csp_sd_invoice_loadb" onclick="requestCode('csp_sd_invoice');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('csp_sd_invoice','numItems = 1*nline*if numItems == 1:*nline*   message = *doubleq*You ordered 1 item*doubleq**nline*if numItems > 1:*nline*   message = *doubleq*You ordered *doubleq* + str*open*numItems*close* + *doubleq* items*doubleq**nline*print*open*message*close*','1','*doubleq*Structural Tour*doubleq*; 1: sd1line1; 2-3: sd1line2-3; 4-5: sd1line4-5; 6: sd1line6;*atype*')"/>
+<button class='btn btn-default' id="csp_sd_invoice_vizb" onclick="injectCodelens(this,'csp_sd_invoice');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="csp_sd_invoice_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="csp_sd_invoice_code" class="active_code" prefixcode="undefined" lang="python">
+numItems = 1
+if numItems == 1:
+   message = "You ordered 1 item"
+if numItems > 1:
+   message = "You ordered " + str(numItems) + " items"
+print(message)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="csp_sd_invoice_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="csp_sd_invoice_suffix" style="display:none">
+</pre><pre id="csp_sd_invoice_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (csp_sd_invoice)</span> </p>
+<div id="csp_sd_invoice_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#csp_sd_invoice_saveb').toggle();
+    $('#csp_sd_invoice_loadb').toggle();
+}
+if ($("#csp_sd_invoice").attr("lang") !== "html" && $("#csp_sd_invoice_code_div").parents(".admonition").length == 0 && $("#csp_sd_invoice_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#csp_sd_invoice_code_div").offset({
+			left: $("#csp_sd_invoice .clearfix").offset().left
+		});
+	}
+	$("#csp_sd_invoice_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#csp_sd_invoice_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#csp_sd_invoice_runb").parent().siblings(".ac_output").show();
+			runit('csp_sd_invoice',this, undefined);
+			$("#csp_sd_invoice_runb").on("click", function(){
+				runit('csp_sd_invoice',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#csp_sd_invoice_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#csp_sd_invoice_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#csp_sd_invoice_runb").on("click", function(){
+		runit('csp_sd_invoice',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="13-invoice_neg" class="alert alert-warning">
+            csp-13-1: What will be printed if numItems = -1?<form name="13-invoice_neg_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="13-invoice_neg_opt_a" />
+            <label for= "13-invoice_neg_opt_a">  a) You ordered 1 item</label><br />
+            
+            <input type="radio" name="group1" value="b" id="13-invoice_neg_opt_b" />
+            <label for= "13-invoice_neg_opt_b">  b) Your ordered -1 items</label><br />
+            
+            <input type="radio" name="group1" value="c" id="13-invoice_neg_opt_c" />
+            <label for= "13-invoice_neg_opt_c">  c) Nothing will be printed.</label><br />
+            
+            <input type="radio" name="group1" value="d" id="13-invoice_neg_opt_d" />
+            <label for= "13-invoice_neg_opt_d">  d) You will get an error message that message is not defined.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('13-invoice_neg');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('13-invoice_neg','d',['This line will only print when the numer of items is 1.', 'This line will print whenever the number of items is greater than 1.', 'If numItems is negative neither of the if\u0027s will be true so the variable message will not be created.', 'The variable message won\u0027t be created if the number of items is less than 1, so trying to print the value of message will cause an error.'])">Check Me</button>
+            <button class='btn btn-default' id="13-invoice_neg_bcomp" disabled name="compare" onclick="compareAnswers('13-invoice_neg');">Compare Me</button>
+            </form><br />
+            <div id="13-invoice_neg_feedback">
+            </div>
+            </div>
+            
+            <div id="13-invoice_else" class="alert alert-warning">
+            csp-13-2: What will be printed if you change the second if to an else and set numItems = -1?<form name="13-invoice_else_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="13-invoice_else_opt_a" />
+            <label for= "13-invoice_else_opt_a">  a) You ordered 1 item</label><br />
+            
+            <input type="radio" name="group1" value="b" id="13-invoice_else_opt_b" />
+            <label for= "13-invoice_else_opt_b">  b) Your ordered -1 items</label><br />
+            
+            <input type="radio" name="group1" value="c" id="13-invoice_else_opt_c" />
+            <label for= "13-invoice_else_opt_c">  c) Nothing will be printed.</label><br />
+            
+            <input type="radio" name="group1" value="d" id="13-invoice_else_opt_d" />
+            <label for= "13-invoice_else_opt_d">  d) You will get an error message that message is not defined.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('13-invoice_else');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('13-invoice_else','b',['This line will still only print when the numer of items is 1.', 'This line will print whenever the number of items was not equal to 1 when you change the second if to an else.', 'If numItems is negative neither of the if\u0027s will be true so the variable message will not be created.', 'The variable message won\u0027t be created if the number of items is less than 1, so trying to print the value of message will cause an error.'])">Check Me</button>
+            <button class='btn btn-default' id="13-invoice_else_bcomp" disabled name="compare" onclick="compareAnswers('13-invoice_else');">Compare Me</button>
+            </form><br />
+            <div id="13-invoice_else_feedback">
+            </div>
+            </div>
+            <p>What if you want different messages to be printed based on the user&#8217;s score in a game?  The code below should print
+&#8220;You can do better!&#8221; if the score is less than 10, &#8220;Good job&#8221; if the score is between 10 and 19 inclusive, and &#8220;Amazing&#8221; if the score is 20 or more, but it needs to be fixed.  First run it with different values to see what happens and
+then answer the multiple choice questions below.</p>
+
+<div id="cont"></div>
+<div id="csp_sd_score" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="csp_sd_score_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="csp_sd_score_saveb" onclick="saveEditor('csp_sd_score');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="csp_sd_score_loadb" onclick="requestCode('csp_sd_score');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('csp_sd_score','score = 8*nline*if score < 10:*nline*   print*open**doubleq*You can do better.*doubleq**close**nline*if score > 10:*nline*   print*open**doubleq*Good job!*doubleq**close**nline*if score > 20:*nline*   print*open**doubleq*Amazing*doubleq**close*','1','*doubleq*Structural Tour*doubleq*; 1: sd2line1; 2-3: sd2line2-3; 4-5: sd2line4-5; 6-7: sd2line6-7;*atype*')"/>
+<button class='btn btn-default' id="csp_sd_score_vizb" onclick="injectCodelens(this,'csp_sd_score');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="csp_sd_score_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="csp_sd_score_code" class="active_code" prefixcode="undefined" lang="python">
+score = 8
+if score < 10:
+   print("You can do better.")
+if score > 10:
+   print("Good job!")
+if score > 20:
+   print("Amazing")
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="csp_sd_score_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="csp_sd_score_suffix" style="display:none">
+</pre><pre id="csp_sd_score_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (csp_sd_score)</span> </p>
+<div id="csp_sd_score_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#csp_sd_score_saveb').toggle();
+    $('#csp_sd_score_loadb').toggle();
+}
+if ($("#csp_sd_score").attr("lang") !== "html" && $("#csp_sd_score_code_div").parents(".admonition").length == 0 && $("#csp_sd_score_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#csp_sd_score_code_div").offset({
+			left: $("#csp_sd_score .clearfix").offset().left
+		});
+	}
+	$("#csp_sd_score_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#csp_sd_score_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#csp_sd_score_runb").parent().siblings(".ac_output").show();
+			runit('csp_sd_score',this, undefined);
+			$("#csp_sd_score_runb").on("click", function(){
+				runit('csp_sd_score',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#csp_sd_score_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#csp_sd_score_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#csp_sd_score_runb").on("click", function(){
+		runit('csp_sd_score',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="13-score1" class="alert alert-warning">
+            csp-13-3: What is printed when the score is 10?<form name="13-score1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="13-score1_opt_a" />
+            <label for= "13-score1_opt_a">  a) You can do better.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="13-score1_opt_b" />
+            <label for= "13-score1_opt_b">  b) Good job!</label><br />
+            
+            <input type="radio" name="group1" value="c" id="13-score1_opt_c" />
+            <label for= "13-score1_opt_c">  c) Amazing!</label><br />
+            
+            <input type="radio" name="group1" value="d" id="13-score1_opt_d" />
+            <label for= "13-score1_opt_d">  d) Nothing is printed</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('13-score1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('13-score1','d',['This line will only print when score is less than 10.', 'This line will only print whenever the score is more than 10.', 'This line will only print whenever the score is more then 20.', 'When score equals 10 none of the current if statements will be true, so nothing is printed.'])">Check Me</button>
+            <button class='btn btn-default' id="13-score1_bcomp" disabled name="compare" onclick="compareAnswers('13-score1');">Compare Me</button>
+            </form><br />
+            <div id="13-score1_feedback">
+            </div>
+            </div>
+            
+            <div id="13-score2" class="alert alert-warning">
+            csp-13-4: What is the first thing printed when the score is 25?<form name="13-score2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="13-score2_opt_a" />
+            <label for= "13-score2_opt_a">  a) You can do better.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="13-score2_opt_b" />
+            <label for= "13-score2_opt_b">  b) Good job!</label><br />
+            
+            <input type="radio" name="group1" value="c" id="13-score2_opt_c" />
+            <label for= "13-score2_opt_c">  c) Amazing!</label><br />
+            
+            <input type="radio" name="group1" value="d" id="13-score2_opt_d" />
+            <label for= "13-score2_opt_d">  d) Nothing is printed</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('13-score2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('13-score2','b',['This line will only print when score is less than 10.', 'This line will print whenever the score is more than 10, so if the value is 25 it will print first.  And then it will also print \u0022Amazing!\u0022.', 'This line will print whenever the score is more than 20, but another line will print first.', 'The value 25 is more than 10.'])">Check Me</button>
+            <button class='btn btn-default' id="13-score2_bcomp" disabled name="compare" onclick="compareAnswers('13-score2');">Compare Me</button>
+            </form><br />
+            <div id="13-score2_feedback">
+            </div>
+            </div>
+            <p>Now go back and fix the last code to work correctly.  Remember that you can use <tt class="docutils literal"><span class="pre">and</span></tt> to join two logical expressions.  This is especially useful if you want to test if a number is in a range of numbers like 10 to 19 inclusive.</p>
+</div>
+<div class="section" id="interactive-stories-with-input">
+<h1>Interactive Stories with Input<a class="headerlink" href="#interactive-stories-with-input" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">You can use <tt class="docutils literal"><span class="pre">if</span></tt> statements to make a story interactive where the reader picks from several possible next actions.  The <tt class="docutils literal"><span class="pre">input</span></tt> method will display the string and return what the user types.  You can check if two strings have the same characters using <tt class="docutils literal"><span class="pre">==</span></tt> in Python.</p>
+
+<div id="cont"></div>
+<div id="csp_sd_story" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="csp_sd_story_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="csp_sd_story_saveb" onclick="saveEditor('csp_sd_story');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="csp_sd_story_loadb" onclick="requestCode('csp_sd_story');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('csp_sd_story','print*open**doubleq*You are in front of a creepy door in a hallway.*doubleq**close**nline*print*open**doubleq*What do you want to do?*doubleq**close**nline*action = input *open**doubleq*Type: in, left, or right. Then click OK or press enter*doubleq**close**nline*if action == *doubleq*in*doubleq*:*nline*   print*open**doubleq*You choose to go in.*doubleq**close**nline*   print*open**doubleq*The room is pitch black.*doubleq**close**nline*if action == *doubleq*left*doubleq*:*nline*   print*open**doubleq*You choose to turn left.*doubleq**close**nline*   print*open**doubleq*A ghost appears at the end of the hall.*doubleq**close**nline*if action == *doubleq*right*doubleq*:*nline*   print*open**doubleq*You choose to turn right.*doubleq**close**nline*   print*open**doubleq*A greenish light is visible in the distance.*doubleq**close*','1','*doubleq*Structural Tour*doubleq*; 1: sd3-line1; 2: sd3line2; 3: sd3line3; 4: sd3line4; 5-6: sd3line5-6; 7: sd3line7; 8-9: sd3line8-9; 10: sd3line10; 11-12: sd3line11-12;*atype*')"/>
+
+</div>
+<br/>
+<div id="csp_sd_story_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="csp_sd_story_code" class="active_code" prefixcode="undefined" lang="python">
+print("You are in front of a creepy door in a hallway.")
+print("What do you want to do?")
+action = input ("Type: in, left, or right. Then click OK or press enter")
+if action == "in":
+   print("You choose to go in.")
+   print("The room is pitch black.")
+if action == "left":
+   print("You choose to turn left.")
+   print("A ghost appears at the end of the hall.")
+if action == "right":
+   print("You choose to turn right.")
+   print("A greenish light is visible in the distance.")
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="csp_sd_story_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="csp_sd_story_suffix" style="display:none">
+</pre><pre id="csp_sd_story_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (csp_sd_story)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#csp_sd_story_saveb').toggle();
+    $('#csp_sd_story_loadb').toggle();
+}
+if ($("#csp_sd_story").attr("lang") !== "html" && $("#csp_sd_story_code_div").parents(".admonition").length == 0 && $("#csp_sd_story_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#csp_sd_story_code_div").offset({
+			left: $("#csp_sd_story .clearfix").offset().left
+		});
+	}
+	$("#csp_sd_story_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#csp_sd_story_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#csp_sd_story_runb").parent().siblings(".ac_output").show();
+			runit('csp_sd_story',this, undefined);
+			$("#csp_sd_story_runb").on("click", function(){
+				runit('csp_sd_story',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#csp_sd_story_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#csp_sd_story_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#csp_sd_story_runb").on("click", function(){
+		runit('csp_sd_story',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="13-story1" class="alert alert-warning">
+            csp-13-5: What is the second thing printed if the user answers left?<form name="13-story1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="13-story1_opt_a" />
+            <label for= "13-story1_opt_a">  a) The room is pitch black.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="13-story1_opt_b" />
+            <label for= "13-story1_opt_b">  b) A ghost appears at the end of the hall.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="13-story1_opt_c" />
+            <label for= "13-story1_opt_c">  c) A greenish light is visible in the distance.</label><br />
+            
+            <input type="radio" name="group1" value="d" id="13-story1_opt_d" />
+            <label for= "13-story1_opt_d">  d) None of the above is printed.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('13-story1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('13-story1','b',['This line will be printed when the user enters in.', 'This line will printed when the user enters left.', 'This line will printed when the user enters right.', 'If the user enters something besides in, left, or right none of the logical expressions will be true and none of these will be printed.'])">Check Me</button>
+            <button class='btn btn-default' id="13-story1_bcomp" disabled name="compare" onclick="compareAnswers('13-story1');">Compare Me</button>
+            </form><br />
+            <div id="13-story1_feedback">
+            </div>
+            </div>
+            
+            <div id="13-story2" class="alert alert-warning">
+            csp-13-6: What is the printed if the user answer something other than in, left, or right?<form name="13-story2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="13-story2_opt_a" />
+            <label for= "13-story2_opt_a">  a) The room is pitch black.</label><br />
+            
+            <input type="radio" name="group1" value="b" id="13-story2_opt_b" />
+            <label for= "13-story2_opt_b">  b) A ghost appears at the end of the hall.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="13-story2_opt_c" />
+            <label for= "13-story2_opt_c">  c) A greenish light is visible in the distance.</label><br />
+            
+            <input type="radio" name="group1" value="d" id="13-story2_opt_d" />
+            <label for= "13-story2_opt_d">  d) None of the above is printed.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('13-story2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('13-story2','d',['This line will be printed when the user enters in.', 'This line will printed when the user enters left.', 'This line will printed when the user enters right.', 'None of the conditions will be true if the user enters something other than in, left, or right so none of these will be printed.'])">Check Me</button>
+            <button class='btn btn-default' id="13-story2_bcomp" disabled name="compare" onclick="compareAnswers('13-story2');">Compare Me</button>
+            </form><br />
+            <div id="13-story2_feedback">
+            </div>
+            </div>
+            <p>What should the program do if the user enters something besides in, left, or right?  Fix the code above to let the user know what went wrong.</p>
+</div>
+<div class="section" id="fortune-teller">
+<h1>Fortune Teller<a class="headerlink" href="#fortune-teller" title="Permalink to this headline">¶</a></h1>
+<p>You can tell someone&#8217;s fortune by having them pick a number and then using <tt class="docutils literal"><span class="pre">if</span></tt> statements to print the fortune for the number.</p>
+
+<div id="cont"></div>
+<div id="csp_sd_fortune" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="csp_sd_fortune_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="csp_sd_fortune_saveb" onclick="saveEditor('csp_sd_fortune');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="csp_sd_fortune_loadb" onclick="requestCode('csp_sd_fortune');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('csp_sd_fortune','num = input *open**doubleq*Type a number from 1 to 5. Then click OK or press enter*doubleq**close**nline*if num == *doubleq*1*doubleq*:*nline*   print*open**doubleq*You will get a treat.*doubleq**close**nline*if num == *doubleq*2*doubleq*:*nline*   print*open**doubleq*You will lose something.*doubleq**close**nline*if num == *doubleq*3*doubleq*:*nline*   print*open**doubleq*You will meet a new friend.*doubleq**close**nline*if num == *doubleq*4*doubleq*:*nline*   print*open**doubleq*You will catch a cold.*doubleq**close**nline*if num == *doubleq*5*doubleq*:*nline*   print*open**doubleq*You will ace a test.*doubleq**close*','1','*doubleq*Structural Tour*doubleq*; 1: sd4-line1; 2-3: sd4-line2-3; 4-5: sd4-line4-5; 6-7: sd4-line6-7; 8-9: sd4-line8-9; 10-11: sd4-line10-11;*atype*')"/>
+
+</div>
+<br/>
+<div id="csp_sd_fortune_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="csp_sd_fortune_code" class="active_code" prefixcode="undefined" lang="python">
+num = input ("Type a number from 1 to 5. Then click OK or press enter")
+if num == "1":
+   print("You will get a treat.")
+if num == "2":
+   print("You will lose something.")
+if num == "3":
+   print("You will meet a new friend.")
+if num == "4":
+   print("You will catch a cold.")
+if num == "5":
+   print("You will ace a test.")
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="csp_sd_fortune_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="csp_sd_fortune_suffix" style="display:none">
+</pre><pre id="csp_sd_fortune_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (csp_sd_fortune)</span> </p>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#csp_sd_fortune_saveb').toggle();
+    $('#csp_sd_fortune_loadb').toggle();
+}
+if ($("#csp_sd_fortune").attr("lang") !== "html" && $("#csp_sd_fortune_code_div").parents(".admonition").length == 0 && $("#csp_sd_fortune_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#csp_sd_fortune_code_div").offset({
+			left: $("#csp_sd_fortune .clearfix").offset().left
+		});
+	}
+	$("#csp_sd_fortune_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#csp_sd_fortune_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#csp_sd_fortune_runb").parent().siblings(".ac_output").show();
+			runit('csp_sd_fortune',this, undefined);
+			$("#csp_sd_fortune_runb").on("click", function(){
+				runit('csp_sd_fortune',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#csp_sd_fortune_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#csp_sd_fortune_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#csp_sd_fortune_runb").on("click", function(){
+		runit('csp_sd_fortune',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="13-fortune1" class="alert alert-warning">
+            csp-13-7: How many conditions (logical expressions) are checked if the user answered 2?<form name="13-fortune1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="13-fortune1_opt_a" />
+            <label for= "13-fortune1_opt_a">  a) 1</label><br />
+            
+            <input type="radio" name="group1" value="b" id="13-fortune1_opt_b" />
+            <label for= "13-fortune1_opt_b">  b) 2</label><br />
+            
+            <input type="radio" name="group1" value="c" id="13-fortune1_opt_c" />
+            <label for= "13-fortune1_opt_c">  c) 5</label><br />
+            
+            <input type="radio" name="group1" value="d" id="13-fortune1_opt_d" />
+            <label for= "13-fortune1_opt_d">  d) 6</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('13-fortune1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('13-fortune1','d',['It would have to at least check if it was 1 or 2.', 'It executes every if, even if it already found the answer.', 'It executes every if.', 'There are only 5 logical expression here so it can\u0027t be more than 5.'])">Check Me</button>
+            <button class='btn btn-default' id="13-fortune1_bcomp" disabled name="compare" onclick="compareAnswers('13-fortune1');">Compare Me</button>
+            </form><br />
+            <div id="13-fortune1_feedback">
+            </div>
+            </div>
+            </div>
+<div class="section" id="using-elif-for-more-options">
+<h1>Using <tt class="docutils literal"><span class="pre">elif</span></tt> for more options<a class="headerlink" href="#using-elif-for-more-options" title="Permalink to this headline">¶</a></h1>
+<p>We have used <tt class="docutils literal"><span class="pre">if</span></tt> and <tt class="docutils literal"><span class="pre">else</span></tt> to handle two possible options, but what could you do for if you want more than two options?  What if you want to test if a value is negative, 0, or positive?  One way to do this using multiple <tt class="docutils literal"><span class="pre">if</span></tt> statements is shown below.</p>
+
+<div id="cont"></div>
+<div id="csp_sd_three_options" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="csp_sd_three_options_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="csp_sd_three_options_saveb" onclick="saveEditor('csp_sd_three_options');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="csp_sd_three_options_loadb" onclick="requestCode('csp_sd_three_options');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('csp_sd_three_options','x = 8*nline*if x < 0:*nline*   print*open**doubleq*x is negative*doubleq**close**nline*if x == 0:*nline*   print*open**doubleq*x is 0*doubleq**close**nline*if x > 0:*nline*   print*open**doubleq*x is positive*doubleq**close*','1','*doubleq*Structural Tour*doubleq*; 1: sd5-line1; 2-3: sd5-line2-3; 4-5: sd5-line4-5; 6-7: sd5-line6-7;*atype*')"/>
+<button class='btn btn-default' id="csp_sd_three_options_vizb" onclick="injectCodelens(this,'csp_sd_three_options');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="csp_sd_three_options_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="csp_sd_three_options_code" class="active_code" prefixcode="undefined" lang="python">
+x = 8
+if x < 0:
+   print("x is negative")
+if x == 0:
+   print("x is 0")
+if x > 0:
+   print("x is positive")
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="csp_sd_three_options_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="csp_sd_three_options_suffix" style="display:none">
+</pre><pre id="csp_sd_three_options_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (csp_sd_three_options)</span> </p>
+<div id="csp_sd_three_options_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#csp_sd_three_options_saveb').toggle();
+    $('#csp_sd_three_options_loadb').toggle();
+}
+if ($("#csp_sd_three_options").attr("lang") !== "html" && $("#csp_sd_three_options_code_div").parents(".admonition").length == 0 && $("#csp_sd_three_options_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#csp_sd_three_options_code_div").offset({
+			left: $("#csp_sd_three_options .clearfix").offset().left
+		});
+	}
+	$("#csp_sd_three_options_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#csp_sd_three_options_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#csp_sd_three_options_runb").parent().siblings(".ac_output").show();
+			runit('csp_sd_three_options',this, undefined);
+			$("#csp_sd_three_options_runb").on("click", function(){
+				runit('csp_sd_three_options',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#csp_sd_three_options_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#csp_sd_three_options_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#csp_sd_three_options_runb").on("click", function(){
+		runit('csp_sd_three_options',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>Run this several times and change the value of x each time.  Try it with a positive number, a negative number, and 0 to check that it works correctly.  Modify the code to
+take a number as input from the user instead.</p>
+<p id="index-1">Another way to choose between three options is to use <tt class="docutils literal"><span class="pre">if</span></tt> followed by <tt class="docutils literal"><span class="pre">elif</span></tt> and finally <tt class="docutils literal"><span class="pre">else</span></tt> as shown below.</p>
+
+<div id="cont"></div>
+<div id="csp_sd_three_options_elif" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="csp_sd_three_options_elif_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="csp_sd_three_options_elif_saveb" onclick="saveEditor('csp_sd_three_options_elif');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="csp_sd_three_options_elif_loadb" onclick="requestCode('csp_sd_three_options_elif');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('csp_sd_three_options_elif','x = 8*nline*if x < 0:*nline*   print*open**doubleq*x is negative*doubleq**close**nline*elif x == 0:*nline*   print*open**doubleq*x is 0*doubleq**close**nline*else:*nline*   print*open**doubleq*x is positive*doubleq**close*','1','*doubleq*Structural Tour*doubleq*; 1: sd6-line1; 2-3: sd6-line2-3; 4-5: sd6-line4-5; 6-7: sd6-line6-7;*atype*')"/>
+<button class='btn btn-default' id="csp_sd_three_options_elif_vizb" onclick="injectCodelens(this,'csp_sd_three_options_elif');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="csp_sd_three_options_elif_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="csp_sd_three_options_elif_code" class="active_code" prefixcode="undefined" lang="python">
+x = 8
+if x < 0:
+   print("x is negative")
+elif x == 0:
+   print("x is 0")
+else:
+   print("x is positive")
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="csp_sd_three_options_elif_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="csp_sd_three_options_elif_suffix" style="display:none">
+</pre><pre id="csp_sd_three_options_elif_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (csp_sd_three_options_elif)</span> </p>
+<div id="csp_sd_three_options_elif_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#csp_sd_three_options_elif_saveb').toggle();
+    $('#csp_sd_three_options_elif_loadb').toggle();
+}
+if ($("#csp_sd_three_options_elif").attr("lang") !== "html" && $("#csp_sd_three_options_elif_code_div").parents(".admonition").length == 0 && $("#csp_sd_three_options_elif_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#csp_sd_three_options_elif_code_div").offset({
+			left: $("#csp_sd_three_options_elif .clearfix").offset().left
+		});
+	}
+	$("#csp_sd_three_options_elif_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#csp_sd_three_options_elif_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#csp_sd_three_options_elif_runb").parent().siblings(".ac_output").show();
+			runit('csp_sd_three_options_elif',this, undefined);
+			$("#csp_sd_three_options_elif_runb").on("click", function(){
+				runit('csp_sd_three_options_elif',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#csp_sd_three_options_elif_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#csp_sd_three_options_elif_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#csp_sd_three_options_elif_runb").on("click", function(){
+		runit('csp_sd_three_options_elif',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p><strong>Mixed up programs</strong></p>
+
+        <div class='parsons alert alert-warning' id="parsons-221">
+        <div class="parsons-text">csp-13-8: The following program should report which team won or if there was a tie.  But the code has been mixed up.  Drag it into the right order with the right indention.<br /><br /></div>
+        <div style="clear:left;"></div>
+        <div id="parsons-orig-221" style="display:none;">team1 = 20\nteam2 = 20
+if (team1 < team2):\n   print("team1 won")
+elif (team2 > team1)
+   print("team2 won")
+else
+   print("team1 and team2 tied")</div>
+        <div class="sortable-code-container">
+        <div id="parsons-sortableTrash-221" class="sortable-code"></div>
+        <div id="parsons-sortableCode-221" class="sortable-code"></div>
+    	<div style="clear:left;"></div>
+        </div>
+        <div class="parsons-controls">
+        <input type="button" class='btn btn-success' id="checkMe221" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset221" value="Reset"/>
+        <div id="parsons-message-221"></div>
+        </div>
+        </div>
+
+    <script>
+        $pjQ(document).ready(function(){
+		
+			$("#parsons-221").not(".sortable-code").not(".parsons-controls").on("click", function(){
+				 $('html, body').animate({
+					scrollTop: ($("#parsons-221").offset().top - 50)
+				}, 700);
+			}).find(".sortable-code, .parsons-controls").click(function(e) {
+				return false;
+				});	
+            var msgBox = $("#parsons-message-221");
+            msgBox.hide();
+	    var displayErrors = function (fb) {
+	        if(fb.errors.length > 0) {
+                    var hash = pp_221.getHash("#ul-parsons-sortableCode-221");
+                    msgBox.fadeIn(500);
+                    msgBox.attr('class','alert alert-danger');
+                    msgBox.html(fb.errors[0]);
+                    logBookEvent({'event':'parsons', 'act':hash, 'div_id':'13-string_elif'});
+
+	        } else {
+                    logBookEvent({'event':'parsons', 'act':'yes', 'div_id':'13-string_elif'});
+                    msgBox.fadeIn(100);
+                    msgBox.attr('class','alert alert-success');
+                    msgBox.html("Perfect!")
+                }
+
+        }
+
+        $(window).load(function() {
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-221");
+            var trashul = $("#ul-parsons-sortableTrash-221");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            sortableul.height(minHeight);
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+        });
+ 
+
+        var pp_221 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-221',
+		'trashId': 'parsons-sortableTrash-221',
+                'max_wrong_lines': 1,
+                'solution_label': 'Drop blocks here',
+                'feedback_cb' : displayErrors
+        });
+        pp_221.init($pjQ("#parsons-orig-221").text());
+	pp_221.shuffleLines();
+            
+        if(localStorage.getItem('13-string_elif') && localStorage.getItem('13-string_elif-trash')) {
+            try {
+                var solution = localStorage.getItem('13-string_elif');
+                var trash = localStorage.getItem('13-string_elif-trash');
+                pp_221.createHTMLFromHashes(solution,trash);
+                pp_221.getFeedback();
+            } catch(err) {
+                var text = "An error occured restoring old 13-string_elif state.  Error: ";
+                console.log(text + err.message);
+            }
+
+        }
+            $pjQ("#reset221").click(function(event){
+              event.preventDefault();
+              pp_221.shuffleLines();
+            
+            // set min width and height
+            var sortableul = $("#ul-parsons-sortableCode-221");
+            var trashul = $("#ul-parsons-sortableTrash-221");
+            var sortableHeight = sortableul.height();
+            var sortableWidth = sortableul.width();
+            var trashWidth = trashul.width();
+            var trashHeight = trashul.height();
+            var minHeight = Math.max(trashHeight,sortableHeight);
+            var minWidth = Math.max(trashWidth, sortableWidth);
+            trashul.css("min-height",minHeight + "px");
+            sortableul.css("min-height",minHeight + "px");
+            trashul.css("min-width",minWidth + "px");
+            sortableul.css("min-width",minWidth + "px");
+              msgBox.hide();
+            });
+            
+            $pjQ("#checkMe221").click(function(event){
+              event.preventDefault();
+              var hash = pp_221.getHash("#ul-parsons-sortableCode-221");
+              localStorage.setItem('13-string_elif',hash);
+              hash = pp_221.getHash("#ul-parsons-sortableTrash-221");
+              localStorage.setItem('13-string_elif-trash',hash);
+            
+            pp_221.getFeedback();
+            msgBox.fadeIn(100);
+            
+            });
+            
+        });
+            
+
+    </script>
+
+<p>You can use as many <tt class="docutils literal"><span class="pre">elif</span></tt> statements as you need.  You can only have one <tt class="docutils literal"><span class="pre">else</span></tt> statement.  What if you have scaled some data from 0 to 1 and want to know what quartile a value is in?</p>
+
+<div id="cont"></div>
+<div id="csp_sd_four_options" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="csp_sd_four_options_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="csp_sd_four_options_saveb" onclick="saveEditor('csp_sd_four_options');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="csp_sd_four_options_loadb" onclick="requestCode('csp_sd_four_options');">Load</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="audiob" name="Play Audio" value="Start Audio Tour" onclick="createAudioTourHTML('csp_sd_four_options','x = .25*nline*if x <= .25:*nline*   print*open**doubleq*x is in the first quartile - x <= .25*doubleq**close**nline*elif x <= .5:*nline*   print*open**doubleq*x is in the second quartile - .25 < x <= .5*doubleq**close**nline*elif x <= .75:*nline*   print*open**doubleq*x is in the third quartile - .5 < x <= .75*doubleq**close**nline*else:*nline*   print*open**doubleq*x is in the fourth quartile - .75 < x <= 1*doubleq**close*','1','*doubleq*Structural Tour*doubleq*; 1: sd7-line1; 2-3: sd7-line2-3; 4-5: sd7-line4-5; 6-7: sd7-line6-7; 8-9: sd7-line8-9;*atype*')"/>
+<button class='btn btn-default' id="csp_sd_four_options_vizb" onclick="injectCodelens(this,'csp_sd_four_options');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="csp_sd_four_options_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="csp_sd_four_options_code" class="active_code" prefixcode="undefined" lang="python">
+x = .25
+if x <= .25:
+   print("x is in the first quartile - x <= .25")
+elif x <= .5:
+   print("x is in the second quartile - .25 < x <= .5")
+elif x <= .75:
+   print("x is in the third quartile - .5 < x <= .75")
+else:
+   print("x is in the fourth quartile - .75 < x <= 1")
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="csp_sd_four_options_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="csp_sd_four_options_suffix" style="display:none">
+</pre><pre id="csp_sd_four_options_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (csp_sd_four_options)</span> </p>
+<div id="csp_sd_four_options_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#csp_sd_four_options_saveb').toggle();
+    $('#csp_sd_four_options_loadb').toggle();
+}
+if ($("#csp_sd_four_options").attr("lang") !== "html" && $("#csp_sd_four_options_code_div").parents(".admonition").length == 0 && $("#csp_sd_four_options_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#csp_sd_four_options_code_div").offset({
+			left: $("#csp_sd_four_options .clearfix").offset().left
+		});
+	}
+	$("#csp_sd_four_options_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#csp_sd_four_options_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#csp_sd_four_options_runb").parent().siblings(".ac_output").show();
+			runit('csp_sd_four_options',this, undefined);
+			$("#csp_sd_four_options_runb").on("click", function(){
+				runit('csp_sd_four_options',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#csp_sd_four_options_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#csp_sd_four_options_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#csp_sd_four_options_runb").on("click", function(){
+		runit('csp_sd_four_options',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+
+            <div id="13-elif1" class="alert alert-warning">
+            csp-13-9: What would be printed if you moved lines 6-7 before lines 4-5 and set x equal to .5?<form name="13-elif1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="13-elif1_opt_a" />
+            <label for= "13-elif1_opt_a">  a) x is in the first quartile - x <= .25</label><br />
+            
+            <input type="radio" name="group1" value="b" id="13-elif1_opt_b" />
+            <label for= "13-elif1_opt_b">  b) x is in the second quartile - .25 < x <= .5</label><br />
+            
+            <input type="radio" name="group1" value="c" id="13-elif1_opt_c" />
+            <label for= "13-elif1_opt_c">  c) x is in the third quartile - .5 < x <= .75</label><br />
+            
+            <input type="radio" name="group1" value="d" id="13-elif1_opt_d" />
+            <label for= "13-elif1_opt_d">  d) x is in the fourth quartile - .75 < x <= 1</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('13-elif1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('13-elif1','c',['This will only print if x is less then or equal to .25.', 'This will print if the other if\u0027s were not true, and if x is less than or equal to .5.  By moving lines 6\u002D7 before lines 4\u002D5 this will never print.', 'This will print if the other if\u0027s are not true and if x is less than or equal to .75.  So, moving lines 6\u002D7 before lines 4\u002D5 messes up what this code is intended to do and incorrectly prints that .5 is in the third quartile.', 'This will only print if all of the other if\u0027s were false.'])">Check Me</button>
+            <button class='btn btn-default' id="13-elif1_bcomp" disabled name="compare" onclick="compareAnswers('13-elif1');">Compare Me</button>
+            </form><br />
+            <div id="13-elif1_feedback">
+            </div>
+            </div>
+            </div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2014, Mark Guzdial, Barbara Ericson, and Briana Morrison.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3a0.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Week 3: ends January 24 &mdash; Programs, Information, and People: Interactive Edition</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Programs, Information, and People: Interactive Edition" href="../index.html" />
+    <link rel="next" title="Week 2: ends January 17" href="week2.html" />
+    <link rel="prev" title="Week 4: ends January 31" href="week4.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pip';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+var _prum = [['id', '521dfcc4abe53d0749000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../toc.html">Programs, Information, and People</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../toc.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pip/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/assignments" id="registerlink">Project Page</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pip/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Week 3: ends January 24</a><ul>
+<li><a class="reference internal" href="#reading-response">Reading Response</a></li>
+<li><a class="reference internal" href="#problem-set">Problem Set</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Week 4: ends January 31" data-toggle="tooltip">
+    <a href="week4.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Week 2: ends January 17' data-toggle="tooltip" >
+    <a href="week2.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="week-3-ends-january-24">
+<h1>Week 3: ends January 24<a class="headerlink" href="#week-3-ends-january-24" title="Permalink to this headline">¶</a></h1>
+<p>For this week, you have the following graded activities:</p>
+<ol class="arabic">
+<li><p class="first">Do the multiple choice questions and exercises in the textbook chapters, including the ones at the bottom of the chapters, below the glossary. Don&#8217;t forget to click <strong>Save</strong> for each of the exercises.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Before Tuesday&#8217;s class:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="../Iteration/iteration.html#iteration-chap"><em>Iteration</em></a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Before Thursday&#8217;s class:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="../Selection/selection.html#decisions-chap"><em>Conditionals</em></a></li>
+<li><a class="reference internal" href="../Files/files.html#files-chap"><em>File Input/Output</em></a> (read the Selection/Conditionals chapter first, or you won&#8217;t be able to do the last exercise...)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+<li><p class="first">Turn in the reading response, by 8 PM the night before your registered section meets.</p>
+<ul class="simple">
+<li>Read <em>The Most Human Human</em>, Chapter 4, &#8220;Site-Specificity vs. Pure Technique&#8221;</li>
+<li><a class="reference internal" href="#response-2"><em>Reading response 2</em></a></li>
+</ul>
+</li>
+<li><p class="first">Save answers to the exercises in Problem Set 2:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#problem-set-2"><em>Problem Set 2</em></a></li>
+</ul>
+</li>
+</ol>
+<div class="section" id="reading-response">
+<span id="response-2"></span><h2>Reading Response<a class="headerlink" href="#reading-response" title="Permalink to this headline">¶</a></h2>
+<p><strong>Due 8PM the night before your section meets</strong></p>
+<p>Don&#8217;t forget to click <strong>save</strong>.</p>
+<ol class="arabic simple">
+<li>What did you find particularly interesting in this chapter?  How do you define <em>site-specificity</em> based on this reading? When is site-specificity important, and when is it not? What would you like to address in discussion?</li>
+</ol>
+<p>Please write a short paragraph addressing these questions, below.</p>
+<blockquote>
+<div>
+<div id="cont"></div>
+<div id="rr_2_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="rr_2_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_2_1_saveb" onclick="saveEditor('rr_2_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="rr_2_1_loadb" onclick="requestCode('rr_2_1');">Load</button>
+<button class='btn btn-default' id="rr_2_1_vizb" onclick="injectCodelens(this,'rr_2_1');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="rr_2_1_coach_b" onclick="injectCodeCoach('rr_2_1');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="rr_2_1_showb" onclick="$('#rr_2_1_code_div').toggle();cm_editors['rr_2_1_code'].refresh();$('#rr_2_1_saveb').toggle();$('#rr_2_1_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('rr_2_1')"/>
+
+</div>
+<br/>
+<div id="rr_2_1_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="rr_2_1_code" class="active_code" prefixcode="undefined" lang="python">
+# Fill in your short paragraph answer (about 100-250 words) on the lines between the triple quotes.
+s = """
+
+
+"""
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="rr_2_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="rr_2_1_suffix" style="display:none">
+</pre><pre id="rr_2_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (rr_2_1)</span> </p>
+<div id="rr_2_1_codelens_div" style="display:none"></div><div id="rr_2_1_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#rr_2_1_saveb').toggle();
+    $('#rr_2_1_loadb').toggle();
+}
+if ($("#rr_2_1").attr("lang") !== "html" && $("#rr_2_1_code_div").parents(".admonition").length == 0 && $("#rr_2_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#rr_2_1_code_div").offset({
+			left: $("#rr_2_1 .clearfix").offset().left
+		});
+	}
+	$("#rr_2_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#rr_2_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#rr_2_1_runb").parent().siblings(".ac_output").show();
+			runit('rr_2_1',this, undefined);
+			$("#rr_2_1_runb").on("click", function(){
+				runit('rr_2_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#rr_2_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#rr_2_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#rr_2_1_runb").on("click", function(){
+		runit('rr_2_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></blockquote>
+</div>
+<div class="section" id="problem-set">
+<span id="problem-set-2"></span><h2>Problem Set<a class="headerlink" href="#problem-set" title="Permalink to this headline">¶</a></h2>
+
+<pre id="about_programming.txt" style="display: none;">
+Computer programming (often shortened to programming) is a process that leads from an
+original formulation of a computing problem to executable programs. It involves
+activities such as analysis, understanding, and generically solving such problems
+resulting in an algorithm, verification of requirements of the algorithm including its
+correctness and its resource consumption, implementation (or coding) of the algorithm in
+a target programming language, testing, debugging, and maintaining the source code,
+implementation of the build system and management of derived artefacts such as machine
+code of computer programs. The algorithm is often only represented in human-parseable
+form and reasoned about using logic. Source code is written in one or more programming
+languages (such as C++, C#, Java, Python, Smalltalk, JavaScript, etc.). The purpose of
+programming is to find a sequence of instructions that will automate performing a
+specific task or solve a given problem. The process of programming thus often requires
+expertise in many different subjects, including knowledge of the application domain,
+specialized algorithms and formal logic.
+Within software engineering, programming (the implementation) is regarded as one phase in a software development process. There is an on-going debate on the extent to which
+the writing of programs is an art form, a craft, or an engineering discipline. In
+general, good programming is considered to be the measured application of all three,
+with the goal of producing an efficient and evolvable software solution (the criteria
+for "efficient" and "evolvable" vary considerably). The discipline differs from many
+other technical professions in that programmers, in general, do not need to be licensed
+or pass any standardized (or governmentally regulated) certification tests in order to
+call themselves "programmers" or even "software engineers." Because the discipline
+covers many areas, which may or may not include critical applications, it is debatable
+whether licensing is required for the profession as a whole. In most cases, the
+discipline is self-governed by the entities which require the programming, and sometimes
+very strict environments are defined (e.g. United States Air Force use of AdaCore and
+security clearance). However, representing oneself as a "professional software engineer"
+without a license from an accredited institution is illegal in many parts of the world.
+</pre>
+<p><strong>Due:</strong> <strong>Friday, January 24, 5 pm</strong></p>
+<p><strong>Instructions:</strong> Write the code you want to save in the provided boxes, and click <strong>save</strong> for each one. The last code you have saved for each one by the deadline is what will be graded.</p>
+<ol class="arabic">
+<li><p class="first">(2 points) Print out each element of list <tt class="docutils literal"><span class="pre">lbc</span></tt> on a separate line. Then print the first character of each element on a separate line.</p>
+<div id='ps_2_1s' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_2_1s-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_2_1s-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_2_1s-Problem'>
+<div id="cont"></div>
+<div id="ps_2_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_2_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_1_saveb" onclick="saveEditor('ps_2_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_1_loadb" onclick="requestCode('ps_2_1');">Load</button>
+<button class='btn btn-default' id="ps_2_1_vizb" onclick="injectCodelens(this,'ps_2_1');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_2_1_coach_b" onclick="injectCodeCoach('ps_2_1');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_2_1_showb" onclick="$('#ps_2_1_code_div').toggle();cm_editors['ps_2_1_code'].refresh();$('#ps_2_1_saveb').toggle();$('#ps_2_1_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_2_1')"/>
+
+</div>
+<br/>
+<div id="ps_2_1_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_2_1_code" class="active_code" prefixcode="undefined" lang="python">
+lbc = ["one","four","two","six","nine","eleven"]
+
+# write code to print each element of list lbc on a separate line
+
+# write code to print the first character of each element of list lbc on a separate line
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_2_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_2_1_suffix" style="display:none">
+</pre><pre id="ps_2_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_2_1)</span> </p>
+<div id="ps_2_1_codelens_div" style="display:none"></div><div id="ps_2_1_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_2_1_saveb').toggle();
+    $('#ps_2_1_loadb').toggle();
+}
+if ($("#ps_2_1").attr("lang") !== "html" && $("#ps_2_1_code_div").parents(".admonition").length == 0 && $("#ps_2_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_2_1_code_div").offset({
+			left: $("#ps_2_1 .clearfix").offset().left
+		});
+	}
+	$("#ps_2_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_2_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_2_1_runb").parent().siblings(".ac_output").show();
+			runit('ps_2_1',this, undefined);
+			$("#ps_2_1_runb").on("click", function(){
+				runit('ps_2_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_2_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_2_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_2_1_runb").on("click", function(){
+		runit('ps_2_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_2_1s-Solution'>
+<div id="cont"></div>
+<div id="ps_2_1a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_2_1a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_1a_saveb" onclick="saveEditor('ps_2_1a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_1a_loadb" onclick="requestCode('ps_2_1a');">Load</button>
+<button class='btn btn-default' id="ps_2_1a_vizb" onclick="injectCodelens(this,'ps_2_1a');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_2_1a_coach_b" onclick="injectCodeCoach('ps_2_1a');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_2_1a_showb" onclick="$('#ps_2_1a_code_div').toggle();cm_editors['ps_2_1a_code'].refresh();$('#ps_2_1a_saveb').toggle();$('#ps_2_1a_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_2_1a')"/>
+
+</div>
+<br/>
+<div id="ps_2_1a_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_2_1a_code" class="active_code" prefixcode="undefined" lang="python">
+lbc = ["one","four","two","six","nine","eleven"]
+
+# write code to print each element of list lbc on a separate line
+for elem in lbc:
+   print elem
+
+# write code to print the first character of each element of list lbc on a separate line
+for elem in lbc:
+   print elem[0]
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_2_1a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_2_1a_suffix" style="display:none">
+</pre><pre id="ps_2_1a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_2_1a)</span> </p>
+<div id="ps_2_1a_codelens_div" style="display:none"></div><div id="ps_2_1a_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_2_1a_saveb').toggle();
+    $('#ps_2_1a_loadb').toggle();
+}
+if ($("#ps_2_1a").attr("lang") !== "html" && $("#ps_2_1a_code_div").parents(".admonition").length == 0 && $("#ps_2_1a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_2_1a_code_div").offset({
+			left: $("#ps_2_1a .clearfix").offset().left
+		});
+	}
+	$("#ps_2_1a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_2_1a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_2_1a_runb").parent().siblings(".ac_output").show();
+			runit('ps_2_1a',this, undefined);
+			$("#ps_2_1a_runb").on("click", function(){
+				runit('ps_2_1a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_2_1a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_2_1a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_2_1a_runb").on("click", function(){
+		runit('ps_2_1a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_2_1s .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_2_1s .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_2_1s .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+</li>
+<li><p class="first">(2 points) See comments for instructions, below. This and the next question deal with the string <tt class="docutils literal"><span class="pre">rv</span></tt>.</p>
+<div id='ps_2_2s' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_2_2s-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_2_2s-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_2_2s-Problem'>
+<div id="cont"></div>
+<div id="ps_2_2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_2_2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_2_saveb" onclick="saveEditor('ps_2_2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_2_loadb" onclick="requestCode('ps_2_2');">Load</button>
+<button class='btn btn-default' id="ps_2_2_vizb" onclick="injectCodelens(this,'ps_2_2');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_2_2_coach_b" onclick="injectCodeCoach('ps_2_2');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_2_2_showb" onclick="$('#ps_2_2_code_div').toggle();cm_editors['ps_2_2_code'].refresh();$('#ps_2_2_saveb').toggle();$('#ps_2_2_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_2_2')"/>
+
+</div>
+<br/>
+<div id="ps_2_2_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_2_2_code" class="active_code" prefixcode="undefined" lang="python">
+rv = """Once upon a midnight dreary, while I pondered, weak and weary,
+   Over many a quaint and curious volume of forgotten lore,
+   While I nodded, nearly napping, suddenly there came a tapping,
+   As of some one gently rapping, rapping at my chamber door.
+   T is some visitor, I muttered, tapping at my chamber door;           5
+   Only this and nothing more."""
+
+# Write code to print the number of characters in the string rv.
+
+# Write code to print the number of words in the string rv.
+## Hint: use the split method
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_2_2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_2_2_suffix" style="display:none">
+</pre><pre id="ps_2_2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_2_2)</span> </p>
+<div id="ps_2_2_codelens_div" style="display:none"></div><div id="ps_2_2_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_2_2_saveb').toggle();
+    $('#ps_2_2_loadb').toggle();
+}
+if ($("#ps_2_2").attr("lang") !== "html" && $("#ps_2_2_code_div").parents(".admonition").length == 0 && $("#ps_2_2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_2_2_code_div").offset({
+			left: $("#ps_2_2 .clearfix").offset().left
+		});
+	}
+	$("#ps_2_2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_2_2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_2_2_runb").parent().siblings(".ac_output").show();
+			runit('ps_2_2',this, undefined);
+			$("#ps_2_2_runb").on("click", function(){
+				runit('ps_2_2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_2_2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_2_2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_2_2_runb").on("click", function(){
+		runit('ps_2_2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_2_2s-Solution'>
+<div id="cont"></div>
+<div id="ps_2_a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_2_a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_a_saveb" onclick="saveEditor('ps_2_a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_a_loadb" onclick="requestCode('ps_2_a');">Load</button>
+<button class='btn btn-default' id="ps_2_a_vizb" onclick="injectCodelens(this,'ps_2_a');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_2_a_coach_b" onclick="injectCodeCoach('ps_2_a');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_2_a_showb" onclick="$('#ps_2_a_code_div').toggle();cm_editors['ps_2_a_code'].refresh();$('#ps_2_a_saveb').toggle();$('#ps_2_a_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_2_a')"/>
+
+</div>
+<br/>
+<div id="ps_2_a_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_2_a_code" class="active_code" prefixcode="undefined" lang="python">
+rv = """Once upon a midnight dreary, while I pondered, weak and weary,
+   Over many a quaint and curious volume of forgotten lore,
+   While I nodded, nearly napping, suddenly there came a tapping,
+   As of some one gently rapping, rapping at my chamber door.
+   T is some visitor, I muttered, tapping at my chamber door;           5
+   Only this and nothing more."""
+
+# Write code to print the number of characters in the string rv.
+print len(rv)
+
+# Write code to print the number of words in the string rv.
+## Hint: use the split method
+print len(rv.split())
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_2_a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_2_a_suffix" style="display:none">
+</pre><pre id="ps_2_a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_2_a)</span> </p>
+<div id="ps_2_a_codelens_div" style="display:none"></div><div id="ps_2_a_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_2_a_saveb').toggle();
+    $('#ps_2_a_loadb').toggle();
+}
+if ($("#ps_2_a").attr("lang") !== "html" && $("#ps_2_a_code_div").parents(".admonition").length == 0 && $("#ps_2_a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_2_a_code_div").offset({
+			left: $("#ps_2_a .clearfix").offset().left
+		});
+	}
+	$("#ps_2_a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_2_a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_2_a_runb").parent().siblings(".ac_output").show();
+			runit('ps_2_a',this, undefined);
+			$("#ps_2_a_runb").on("click", function(){
+				runit('ps_2_a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_2_a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_2_a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_2_a_runb").on("click", function(){
+		runit('ps_2_a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_2_2s .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_2_2s .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_2_2s .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+</li>
+<li><p class="first">(1 point) See comments for instructions, below.</p>
+<div id='ps_2_3s' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_2_3s-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_2_3s-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_2_3s-Problem'>
+<div id="cont"></div>
+<div id="ps_2_3" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_2_3_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_3_saveb" onclick="saveEditor('ps_2_3');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_3_loadb" onclick="requestCode('ps_2_3');">Load</button>
+<button class='btn btn-default' id="ps_2_3_vizb" onclick="injectCodelens(this,'ps_2_3');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_2_3_coach_b" onclick="injectCodeCoach('ps_2_3');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_2_3_showb" onclick="$('#ps_2_3_code_div').toggle();cm_editors['ps_2_3_code'].refresh();$('#ps_2_3_saveb').toggle();$('#ps_2_3_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_2_3')"/>
+
+</div>
+<br/>
+<div id="ps_2_3_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_2_3_code" class="active_code" prefixcode="undefined" lang="python">
+rv = """Once upon a midnight dreary, while I pondered, weak and weary,
+   Over many a quaint and curious volume of forgotten lore,
+   While I nodded, nearly napping, suddenly there came a tapping,
+   As of some one gently rapping, rapping at my chamber door.
+   T is some visitor, I muttered, tapping at my chamber door;           5
+   Only this and nothing more."""
+
+# (For these questions, imagine that you couldn't see the whole string value,
+# but you still needed to answer them.)
+
+# Write code to find out whether the word "raven" is in the string rv.
+# Print "Yes" if it is, and "No" if it isn't.
+
+# Write code to find out whether the word "rapping" is in the string rv.
+# Print "Yes" if it is, and "No" if it isn't.
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_2_3_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_2_3_suffix" style="display:none">
+</pre><pre id="ps_2_3_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_2_3)</span> </p>
+<div id="ps_2_3_codelens_div" style="display:none"></div><div id="ps_2_3_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_2_3_saveb').toggle();
+    $('#ps_2_3_loadb').toggle();
+}
+if ($("#ps_2_3").attr("lang") !== "html" && $("#ps_2_3_code_div").parents(".admonition").length == 0 && $("#ps_2_3_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_2_3_code_div").offset({
+			left: $("#ps_2_3 .clearfix").offset().left
+		});
+	}
+	$("#ps_2_3_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_2_3_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_2_3_runb").parent().siblings(".ac_output").show();
+			runit('ps_2_3',this, undefined);
+			$("#ps_2_3_runb").on("click", function(){
+				runit('ps_2_3',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_2_3_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_2_3_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_2_3_runb").on("click", function(){
+		runit('ps_2_3',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_2_3s-Solution'>
+<div id="cont"></div>
+<div id="ps_2_3a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_2_3a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_3a_saveb" onclick="saveEditor('ps_2_3a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_3a_loadb" onclick="requestCode('ps_2_3a');">Load</button>
+<button class='btn btn-default' id="ps_2_3a_vizb" onclick="injectCodelens(this,'ps_2_3a');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_2_3a_coach_b" onclick="injectCodeCoach('ps_2_3a');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_2_3a_showb" onclick="$('#ps_2_3a_code_div').toggle();cm_editors['ps_2_3a_code'].refresh();$('#ps_2_3a_saveb').toggle();$('#ps_2_3a_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_2_3a')"/>
+
+</div>
+<br/>
+<div id="ps_2_3a_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_2_3a_code" class="active_code" prefixcode="undefined" lang="python">
+rv = """Once upon a midnight dreary, while I pondered, weak and weary,
+   Over many a quaint and curious volume of forgotten lore,
+   While I nodded, nearly napping, suddenly there came a tapping,
+   As of some one gently rapping, rapping at my chamber door.
+   T is some visitor, I muttered, tapping at my chamber door;           5
+   Only this and nothing more."""
+
+# (For these questions, imagine that you couldn't see the whole string value,
+# but you still needed to answer them.)
+
+# Write code to find out whether the word "raven" is in the string rv.
+# Print "Yes" if it is, and "No" if it isn't.
+if "raven" in rv:
+   print "Yes"
+else:
+   print "No"
+
+# also reasonable:
+if "raven" in rv.split():
+   print "Yes"
+else:
+   print "No"
+
+# Write code to find out whether the word "rapping" is in the string rv.
+# Print "Yes" if it is, and "No" if it isn't.
+if "rapping" in rv:
+   print "Yes"
+else:
+   print "No"
+
+# also reasonable:
+if "rapping" in rv.split():
+   print "Yes"
+else:
+   print "No"
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_2_3a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_2_3a_suffix" style="display:none">
+</pre><pre id="ps_2_3a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_2_3a)</span> </p>
+<div id="ps_2_3a_codelens_div" style="display:none"></div><div id="ps_2_3a_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_2_3a_saveb').toggle();
+    $('#ps_2_3a_loadb').toggle();
+}
+if ($("#ps_2_3a").attr("lang") !== "html" && $("#ps_2_3a_code_div").parents(".admonition").length == 0 && $("#ps_2_3a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_2_3a_code_div").offset({
+			left: $("#ps_2_3a .clearfix").offset().left
+		});
+	}
+	$("#ps_2_3a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_2_3a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_2_3a_runb").parent().siblings(".ac_output").show();
+			runit('ps_2_3a',this, undefined);
+			$("#ps_2_3a_runb").on("click", function(){
+				runit('ps_2_3a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_2_3a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_2_3a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_2_3a_runb").on("click", function(){
+		runit('ps_2_3a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_2_3s .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_2_3s .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_2_3s .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+<p>The remaining questions in the problem set deal with a file called <tt class="docutils literal"><span class="pre">about_programming.txt</span></tt>
+that you can access in an ActiveCode window using the open() function.
+It is made up of text from the <em>Computer Programming</em> article on Wikipedia; <tt class="docutils literal"><span class="pre">http://en.wikipedia.org/wiki/Computer_programming</span></tt>.</p>
+</li>
+<li><p class="first">(1 point) Write code to open the file, about_programming.txt, and print it out, line by line.</p>
+<div id='ps_2_4s' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_2_4s-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_2_4s-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_2_4s-Problem'>
+<div id="cont"></div>
+<div id="ps_2_4" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_2_4_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_4_saveb" onclick="saveEditor('ps_2_4');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_4_loadb" onclick="requestCode('ps_2_4');">Load</button>
+<button class='btn btn-default' id="ps_2_4_vizb" onclick="injectCodelens(this,'ps_2_4');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_2_4_coach_b" onclick="injectCodeCoach('ps_2_4');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_2_4_showb" onclick="$('#ps_2_4_code_div').toggle();cm_editors['ps_2_4_code'].refresh();$('#ps_2_4_saveb').toggle();$('#ps_2_4_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_2_4')"/>
+
+</div>
+<br/>
+<div id="ps_2_4_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_2_4_code" class="active_code" prefixcode="undefined" lang="python">
+# Don't worry about extra blank lines between each of the lines
+# (but if you want to get rid of them, try the .strip() method)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_2_4_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_2_4_suffix" style="display:none">
+</pre><pre id="ps_2_4_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_2_4)</span> </p>
+<div id="ps_2_4_codelens_div" style="display:none"></div><div id="ps_2_4_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_2_4_saveb').toggle();
+    $('#ps_2_4_loadb').toggle();
+}
+if ($("#ps_2_4").attr("lang") !== "html" && $("#ps_2_4_code_div").parents(".admonition").length == 0 && $("#ps_2_4_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_2_4_code_div").offset({
+			left: $("#ps_2_4 .clearfix").offset().left
+		});
+	}
+	$("#ps_2_4_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_2_4_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_2_4_runb").parent().siblings(".ac_output").show();
+			runit('ps_2_4',this, undefined);
+			$("#ps_2_4_runb").on("click", function(){
+				runit('ps_2_4',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_2_4_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_2_4_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_2_4_runb").on("click", function(){
+		runit('ps_2_4',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_2_4s-Solution'>
+<div id="cont"></div>
+<div id="ps_2_4a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_2_4a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_4a_saveb" onclick="saveEditor('ps_2_4a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_4a_loadb" onclick="requestCode('ps_2_4a');">Load</button>
+<button class='btn btn-default' id="ps_2_4a_vizb" onclick="injectCodelens(this,'ps_2_4a');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_2_4a_coach_b" onclick="injectCodeCoach('ps_2_4a');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_2_4a_showb" onclick="$('#ps_2_4a_code_div').toggle();cm_editors['ps_2_4a_code'].refresh();$('#ps_2_4a_saveb').toggle();$('#ps_2_4a_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_2_4a')"/>
+
+</div>
+<br/>
+<div id="ps_2_4a_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_2_4a_code" class="active_code" prefixcode="undefined" lang="python">
+# Don't worry about extra blank lines between each of the lines
+# (but if you want to get rid of them, try the .strip() method)
+f = open("about_programming.txt", 'r')
+# here's the code without the .strip() method
+for orange in f:
+   print orange
+# here's the code that'll print without all that extra blank space
+for orange in f:
+   print orange.strip()
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_2_4a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_2_4a_suffix" style="display:none">
+</pre><pre id="ps_2_4a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_2_4a)</span> </p>
+<div id="ps_2_4a_codelens_div" style="display:none"></div><div id="ps_2_4a_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_2_4a_saveb').toggle();
+    $('#ps_2_4a_loadb').toggle();
+}
+if ($("#ps_2_4a").attr("lang") !== "html" && $("#ps_2_4a_code_div").parents(".admonition").length == 0 && $("#ps_2_4a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_2_4a_code_div").offset({
+			left: $("#ps_2_4a .clearfix").offset().left
+		});
+	}
+	$("#ps_2_4a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_2_4a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_2_4a_runb").parent().siblings(".ac_output").show();
+			runit('ps_2_4a',this, undefined);
+			$("#ps_2_4a_runb").on("click", function(){
+				runit('ps_2_4a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_2_4a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_2_4a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_2_4a_runb").on("click", function(){
+		runit('ps_2_4a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_2_4s .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_2_4s .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_2_4s .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+</li>
+<li><p class="first">(2 points) Print the number of lines in the file</p>
+<div id='ps_2_5s' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_2_5s-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_2_5s-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_2_5s-Problem'>
+<div id="cont"></div>
+<div id="ps_2_5" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_2_5_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_5_saveb" onclick="saveEditor('ps_2_5');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_5_loadb" onclick="requestCode('ps_2_5');">Load</button>
+<button class='btn btn-default' id="ps_2_5_vizb" onclick="injectCodelens(this,'ps_2_5');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_2_5_coach_b" onclick="injectCodeCoach('ps_2_5');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_2_5_showb" onclick="$('#ps_2_5_code_div').toggle();cm_editors['ps_2_5_code'].refresh();$('#ps_2_5_saveb').toggle();$('#ps_2_5_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_2_5')"/>
+
+</div>
+<br/>
+<div id="ps_2_5_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_2_5_code" class="active_code" prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_2_5_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_2_5_suffix" style="display:none">
+</pre><pre id="ps_2_5_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_2_5)</span> </p>
+<div id="ps_2_5_codelens_div" style="display:none"></div><div id="ps_2_5_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_2_5_saveb').toggle();
+    $('#ps_2_5_loadb').toggle();
+}
+if ($("#ps_2_5").attr("lang") !== "html" && $("#ps_2_5_code_div").parents(".admonition").length == 0 && $("#ps_2_5_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_2_5_code_div").offset({
+			left: $("#ps_2_5 .clearfix").offset().left
+		});
+	}
+	$("#ps_2_5_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_2_5_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_2_5_runb").parent().siblings(".ac_output").show();
+			runit('ps_2_5',this, undefined);
+			$("#ps_2_5_runb").on("click", function(){
+				runit('ps_2_5',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_2_5_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_2_5_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_2_5_runb").on("click", function(){
+		runit('ps_2_5',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_2_5s-Solution'>
+<div id="cont"></div>
+<div id="ps_2_5a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_2_5a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_5a_saveb" onclick="saveEditor('ps_2_5a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_5a_loadb" onclick="requestCode('ps_2_5a');">Load</button>
+<button class='btn btn-default' id="ps_2_5a_vizb" onclick="injectCodelens(this,'ps_2_5a');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_2_5a_coach_b" onclick="injectCodeCoach('ps_2_5a');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_2_5a_showb" onclick="$('#ps_2_5a_code_div').toggle();cm_editors['ps_2_5a_code'].refresh();$('#ps_2_5a_saveb').toggle();$('#ps_2_5a_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_2_5a')"/>
+
+</div>
+<br/>
+<div id="ps_2_5a_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_2_5a_code" class="active_code" prefixcode="undefined" lang="python">
+hmf = open("about_programming.txt", 'r')
+total = 0
+for ln in hmf:    # loops the lines in the file, one at a time
+   total = total + 1    # ln is bound to the current line of text, but we don't need to refer to it since we only care that it's another line, not what it is
+
+print total
+
+# alternative solution
+hmf = open("about_programming.txt", 'r')
+ls = hmf.readlines()  # get the text as a list of strings, one for each line
+print len(ls)
+
+# another alternative
+hmf = open("about_programming.txt", 'r')
+t = hmf.read()    # save the whole text in string t
+ls = t.split('\n') # make it into a list of strings, one for each line
+print len(ls)
+# you get a slightly different answer here; try to figure out why
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_2_5a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_2_5a_suffix" style="display:none">
+</pre><pre id="ps_2_5a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_2_5a)</span> </p>
+<div id="ps_2_5a_codelens_div" style="display:none"></div><div id="ps_2_5a_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_2_5a_saveb').toggle();
+    $('#ps_2_5a_loadb').toggle();
+}
+if ($("#ps_2_5a").attr("lang") !== "html" && $("#ps_2_5a_code_div").parents(".admonition").length == 0 && $("#ps_2_5a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_2_5a_code_div").offset({
+			left: $("#ps_2_5a .clearfix").offset().left
+		});
+	}
+	$("#ps_2_5a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_2_5a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_2_5a_runb").parent().siblings(".ac_output").show();
+			runit('ps_2_5a',this, undefined);
+			$("#ps_2_5a_runb").on("click", function(){
+				runit('ps_2_5a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_2_5a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_2_5a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_2_5a_runb").on("click", function(){
+		runit('ps_2_5a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_2_5s .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_2_5s .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_2_5s .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+</li>
+<li><p class="first">(2 points) Print the number of lines in the file that include the word &#8220;program&#8221; or any extension of it (program, programs, programming, programmer).</p>
+<div id='ps_2_6s' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_2_6s-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_2_6s-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_2_6s-Problem'>
+<div id="cont"></div>
+<div id="ps_2_6" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_2_6_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_6_saveb" onclick="saveEditor('ps_2_6');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_6_loadb" onclick="requestCode('ps_2_6');">Load</button>
+<button class='btn btn-default' id="ps_2_6_vizb" onclick="injectCodelens(this,'ps_2_6');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_2_6_coach_b" onclick="injectCodeCoach('ps_2_6');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_2_6_showb" onclick="$('#ps_2_6_code_div').toggle();cm_editors['ps_2_6_code'].refresh();$('#ps_2_6_saveb').toggle();$('#ps_2_6_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_2_6')"/>
+
+</div>
+<br/>
+<div id="ps_2_6_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_2_6_code" class="active_code" prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_2_6_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_2_6_suffix" style="display:none">
+</pre><pre id="ps_2_6_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_2_6)</span> </p>
+<div id="ps_2_6_codelens_div" style="display:none"></div><div id="ps_2_6_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_2_6_saveb').toggle();
+    $('#ps_2_6_loadb').toggle();
+}
+if ($("#ps_2_6").attr("lang") !== "html" && $("#ps_2_6_code_div").parents(".admonition").length == 0 && $("#ps_2_6_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_2_6_code_div").offset({
+			left: $("#ps_2_6 .clearfix").offset().left
+		});
+	}
+	$("#ps_2_6_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_2_6_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_2_6_runb").parent().siblings(".ac_output").show();
+			runit('ps_2_6',this, undefined);
+			$("#ps_2_6_runb").on("click", function(){
+				runit('ps_2_6',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_2_6_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_2_6_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_2_6_runb").on("click", function(){
+		runit('ps_2_6',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_2_6s-Solution'>
+<div id="cont"></div>
+<div id="ps_2_6a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_2_6a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_6a_saveb" onclick="saveEditor('ps_2_6a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_6a_loadb" onclick="requestCode('ps_2_6a');">Load</button>
+<button class='btn btn-default' id="ps_2_6a_vizb" onclick="injectCodelens(this,'ps_2_6a');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_2_6a_coach_b" onclick="injectCodeCoach('ps_2_6a');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_2_6a_showb" onclick="$('#ps_2_6a_code_div').toggle();cm_editors['ps_2_6a_code'].refresh();$('#ps_2_6a_saveb').toggle();$('#ps_2_6a_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_2_6a')"/>
+
+</div>
+<br/>
+<div id="ps_2_6a_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_2_6a_code" class="active_code" prefixcode="undefined" lang="python">
+tot = 0
+ft = open("about_programming.txt", "r")
+for mtfq in ft:
+   if "program" in mtfq:       # mtfq is bound to the current line of text, and here we do care what that text is
+      tot = tot + 1
+print tot
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_2_6a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_2_6a_suffix" style="display:none">
+</pre><pre id="ps_2_6a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_2_6a)</span> </p>
+<div id="ps_2_6a_codelens_div" style="display:none"></div><div id="ps_2_6a_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_2_6a_saveb').toggle();
+    $('#ps_2_6a_loadb').toggle();
+}
+if ($("#ps_2_6a").attr("lang") !== "html" && $("#ps_2_6a_code_div").parents(".admonition").length == 0 && $("#ps_2_6a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_2_6a_code_div").offset({
+			left: $("#ps_2_6a .clearfix").offset().left
+		});
+	}
+	$("#ps_2_6a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_2_6a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_2_6a_runb").parent().siblings(".ac_output").show();
+			runit('ps_2_6a',this, undefined);
+			$("#ps_2_6a_runb").on("click", function(){
+				runit('ps_2_6a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_2_6a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_2_6a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_2_6a_runb").on("click", function(){
+		runit('ps_2_6a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_2_6s .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_2_6s .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_2_6s .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+</li>
+<li><p class="first"><em>1 BONUS POINT</em> (not required): Write code to find, and print, the number of vowels in the file.</p>
+<div id='ps_2_7a' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#ps_2_7a-Problem'><span>Problem</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#ps_2_7a-Solution'><span>Solution</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='ps_2_7a-Problem'>
+<div id="cont"></div>
+<div id="ps_2_7" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_2_7_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_7_saveb" onclick="saveEditor('ps_2_7');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_7_loadb" onclick="requestCode('ps_2_7');">Load</button>
+<button class='btn btn-default' id="ps_2_7_vizb" onclick="injectCodelens(this,'ps_2_7');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_2_7_coach_b" onclick="injectCodeCoach('ps_2_7');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_2_7_showb" onclick="$('#ps_2_7_code_div').toggle();cm_editors['ps_2_7_code'].refresh();$('#ps_2_7_saveb').toggle();$('#ps_2_7_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_2_7')"/>
+
+</div>
+<br/>
+<div id="ps_2_7_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_2_7_code" class="active_code" prefixcode="undefined" lang="python">
+# Write your code here, if you choose to try this problem!
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_2_7_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_2_7_suffix" style="display:none">
+</pre><pre id="ps_2_7_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_2_7)</span> </p>
+<div id="ps_2_7_codelens_div" style="display:none"></div><div id="ps_2_7_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_2_7_saveb').toggle();
+    $('#ps_2_7_loadb').toggle();
+}
+if ($("#ps_2_7").attr("lang") !== "html" && $("#ps_2_7_code_div").parents(".admonition").length == 0 && $("#ps_2_7_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_2_7_code_div").offset({
+			left: $("#ps_2_7 .clearfix").offset().left
+		});
+	}
+	$("#ps_2_7_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_2_7_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_2_7_runb").parent().siblings(".ac_output").show();
+			runit('ps_2_7',this, undefined);
+			$("#ps_2_7_runb").on("click", function(){
+				runit('ps_2_7',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_2_7_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_2_7_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_2_7_runb").on("click", function(){
+		runit('ps_2_7',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div><div class='tab-pane' id='ps_2_7a-Solution'>
+<div id="cont"></div>
+<div id="ps_2_7a" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="ps_2_7a_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_7a_saveb" onclick="saveEditor('ps_2_7a');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ps_2_7a_loadb" onclick="requestCode('ps_2_7a');">Load</button>
+<button class='btn btn-default' id="ps_2_7a_vizb" onclick="injectCodelens(this,'ps_2_7a');">Show in Codelens</button>
+<button class='ac_opt btn btn-default' id="ps_2_7a_coach_b" onclick="injectCodeCoach('ps_2_7a');">Code Coach</button>
+
+<span class="ac_sep"></span>
+<button class='btn btn-default' id="ps_2_7a_showb" onclick="$('#ps_2_7a_code_div').toggle();cm_editors['ps_2_7a_code'].refresh();$('#ps_2_7a_saveb').toggle();$('#ps_2_7a_loadb').toggle()">Show/Hide Code</button>
+
+<span class="ac_sep"></span>
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('ps_2_7a')"/>
+
+</div>
+<br/>
+<div id="ps_2_7a_code_div" style="display: none" class="ac_code_div">
+<textarea cols="50" rows="12" id="ps_2_7a_code" class="active_code" prefixcode="undefined" lang="python">
+# Write your code here, if you choose to try this problem!
+
+# here is one solution
+f = open("about_programming.txt", 'r')
+whole_file = f.read()
+vowels = ["a","e","i","o","u"]
+amt = 0
+for v in vowels:
+   amt = amt + whole_file.count(v)
+print amt
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="ps_2_7a_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ps_2_7a_suffix" style="display:none">
+</pre><pre id="ps_2_7a_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (ps_2_7a)</span> </p>
+<div id="ps_2_7a_codelens_div" style="display:none"></div><div id="ps_2_7a_coach_div" style="display:none;"></div>
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ps_2_7a_saveb').toggle();
+    $('#ps_2_7a_loadb').toggle();
+}
+if ($("#ps_2_7a").attr("lang") !== "html" && $("#ps_2_7a_code_div").parents(".admonition").length == 0 && $("#ps_2_7a_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#ps_2_7a_code_div").offset({
+			left: $("#ps_2_7a .clearfix").offset().left
+		});
+	}
+	$("#ps_2_7a_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#ps_2_7a_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#ps_2_7a_runb").parent().siblings(".ac_output").show();
+			runit('ps_2_7a',this, undefined);
+			$("#ps_2_7a_runb").on("click", function(){
+				runit('ps_2_7a',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#ps_2_7a_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#ps_2_7a_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#ps_2_7a_runb").on("click", function(){
+		runit('ps_2_7a',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#ps_2_7a .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#ps_2_7a .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#ps_2_7a .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+</li>
+</ol>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 Paul Resnick, Brad Miller, David Ranum, Created using Runestone Interactive.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

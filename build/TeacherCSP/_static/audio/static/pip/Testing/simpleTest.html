@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Test Cases &mdash; Programs, Information, and People: Interactive Edition</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modal-basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../../runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="top" title="Programs, Information, and People: Interactive Edition" href="../index.html" />
+    <link rel="next" title="Nested Data and Nested Iteration" href="../NestedData/nested.html" />
+    <link rel="prev" title="Modules and Getting Help" href="../PythonModules/modules.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'pip';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "3.1.1";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+var _prum = [['id', '521dfcc4abe53d0749000000'],
+             ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+
+
+  </head>
+  <body role="document">
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/runestone/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../toc.html">Programs, Information, and People</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li class="divider-vertical"></li>
+
+        <!-- social media dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-share-alt" style="opacity: 0.9"></i>
+          </a>
+          <ul class="dropdown-menu social-menu">
+              <li>
+                <div>
+                  <b>Runestone in social media:</b>
+                </div>
+                <a href="https://twitter.com/iRunestone" class="twitter-follow-button" data-show-count="true">Follow @iRunestone</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <div class="fb-like" data-href="https://www.facebook.com/RunestoneInteractive" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false" data-font="arial"></div>
+              </li>
+
+              <li class="divider"></li>
+              <li>
+                <div>
+                  <b>Help support us:</b>
+                </div>
+                <div class="gittip">
+                  <iframe style="border:0;"
+                    src="https://www.gittip.com/bnmnetp/widget.html"
+                    width="48pt" height="22pt" class="gittip-button">
+                  </iframe>
+                </div>
+              </li>
+          </ul>
+        </li>
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../toc.html'>Table of Contents</a></li>
+            
+            <li><a href='/runestone/static/pip/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://127.0.0.1:8000/runestone/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://127.0.0.1:8000/runestone/assignments" id="registerlink">Project Page</a></li>
+            <li><a href="http://127.0.0.1:8000/runestone/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/runestone/static/pip/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/runestone/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Test Cases</a><ul>
+<li><a class="reference internal" href="#glossary">Glossary</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Modules and Getting Help" data-toggle="tooltip">
+    <a href="../PythonModules/modules.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Nested Data and Nested Iteration' data-toggle="tooltip" >
+    <a href="../NestedData/nested.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+          <li></li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="test-cases">
+<span id="simple-tests-chap"></span><h1>Test Cases<a class="headerlink" href="#test-cases" title="Permalink to this headline">¶</a></h1>
+<p>In some of the problem sets, you have seen comments that tell you what a program
+should output, or what value a function should return when invoked on particular
+inputs. A <strong>test case</strong> expresses requirements for a program more formally, in a way
+that can be checked automatically. Specifically, a test asserts something about
+the state of the program at a particular point in its execution.</p>
+<p>We have previously suggested that it&#8217;s a good idea to first write down comments
+about your code is supposed to do, before actually writing the code. It is an
+even better idea to write down some test cases before writing a program. For example,
+before writing a function, write a few test cases that check that it returns an
+object of the right type and that it returns the correct values when invoked on particular
+inputs.</p>
+<p>We will return to the idea of test cases towards the end of the course, and make
+use of the standard python unit testing module. For now, we introduce a much simpler
+unit testing module that consists of just one function.</p>
+<p>The module <tt class="docutils literal"><span class="pre">test</span></tt> can be imported in activecode windows. It consists of just
+a single function, <tt class="docutils literal"><span class="pre">testEqual</span></tt>. Below is the code for it.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testEqual</span><span class="p">(</span><span class="n">actual</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">expected</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+        <span class="c"># they&#39;re integers, so check if exactly the same</span>
+        <span class="k">if</span> <span class="n">actual</span> <span class="o">==</span> <span class="n">expected</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&#39;Pass&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">expected</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="mf">1.11</span><span class="p">):</span>
+        <span class="c"># a float is expected, so just check if it&#39;s very close, to allow for</span>
+        <span class="c"># rounding errors</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">actual</span><span class="o">-</span><span class="n">expected</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.00001</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&#39;Pass&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c"># check if they are equal</span>
+        <span class="k">if</span> <span class="n">actual</span> <span class="o">==</span> <span class="n">expected</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&#39;Pass&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Test Failed: expected &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">expected</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39; but got &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">actual</span><span class="p">))</span>
+    <span class="k">return</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<p>Given what you learned in the <a class="reference internal" href="../PythonModules/modules.html#modules-chap"><em>Modules Chapter</em></a>, the way to
+put tests in your code is:</p>
+
+<div id="cont"></div>
+<div id="simple_test_1" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="simple_test_1_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="simple_test_1_saveb" onclick="saveEditor('simple_test_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="simple_test_1_loadb" onclick="requestCode('simple_test_1');">Load</button>
+<button class='btn btn-default' id="simple_test_1_vizb" onclick="injectCodelens(this,'simple_test_1');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="simple_test_1_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="simple_test_1_code" class="active_code" prefixcode="undefined" lang="python">
+import test
+test.testEqual(2, 1+1)
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="simple_test_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="simple_test_1_suffix" style="display:none">
+</pre><pre id="simple_test_1_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (simple_test_1)</span> </p>
+<div id="simple_test_1_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#simple_test_1_saveb').toggle();
+    $('#simple_test_1_loadb').toggle();
+}
+if ($("#simple_test_1").attr("lang") !== "html" && $("#simple_test_1_code_div").parents(".admonition").length == 0 && $("#simple_test_1_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#simple_test_1_code_div").offset({
+			left: $("#simple_test_1 .clearfix").offset().left
+		});
+	}
+	$("#simple_test_1_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#simple_test_1_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#simple_test_1_runb").parent().siblings(".ac_output").show();
+			runit('simple_test_1',this, undefined);
+			$("#simple_test_1_runb").on("click", function(){
+				runit('simple_test_1',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#simple_test_1_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#simple_test_1_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#simple_test_1_runb").on("click", function(){
+		runit('simple_test_1',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p>The import statement loads the module. test.testEqual looks up the testEqual
+within the test module and tries to call it (that&#8217;s what the parentheses after
+testEqual do). The values 2 and 2 are passed and bound to the formal parameters actual and expected.
+The word pass is printed out. The value True is returned, but in this case that value is ignored.</p>
+<p>Here&#8217;s an example with test cases for the <cite>blanked</cite> function that you created
+in Problem Set 4.</p>
+
+<div id="cont"></div>
+<div id="simple_test_2" lang="python" class="ac_section alert alert-warning" >
+
+<div class="ac_actions">
+<button class='btn btn-success' id="simple_test_2_runb">Run</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="simple_test_2_saveb" onclick="saveEditor('simple_test_2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="simple_test_2_loadb" onclick="requestCode('simple_test_2');">Load</button>
+<button class='btn btn-default' id="simple_test_2_vizb" onclick="injectCodelens(this,'simple_test_2');">Show in Codelens</button>
+
+</div>
+<br/>
+<div id="simple_test_2_code_div" style="display: block" class="ac_code_div">
+<textarea cols="50" rows="12" id="simple_test_2_code" class="active_code" prefixcode="undefined" lang="python">
+# define the function blanked().
+# It takes a word and a string of letters that have been revealed.
+# It should return a string with the same number of characters as
+# the original word, but with the unrevealed characters replaced by _
+
+def blanked(word, revealed_letters):
+    return word
+
+import test
+test.testEqual(type(blanked("Hello", "el")), type(""))    # make sure it returns a string
+test.testEqual(blanked("Hello", "el"), '_ell_')           # check output particular input
+test.testEqual(blanked("Hellos", "celxb"), '_ell__')      # check output particular input
+test.testEqual(blanked("Goodbye", 'Gwioby'), 'Goo_by_')   # check output particular input
+</textarea>
+</div>
+
+<div class="ac_output">
+<div style="text-align: center">
+<canvas id="simple_test_2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="simple_test_2_suffix" style="display:none">
+</pre><pre id="simple_test_2_pre" class="active_out"></pre>
+
+</div> <!-- end output --> 
+<div class="clearfix"></div>
+<p class="ac_caption"><span class="ac_caption_text"> (simple_test_2)</span> </p>
+<div id="simple_test_2_codelens_div" style="display:none"></div>
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#simple_test_2_saveb').toggle();
+    $('#simple_test_2_loadb').toggle();
+}
+if ($("#simple_test_2").attr("lang") !== "html" && $("#simple_test_2_code_div").parents(".admonition").length == 0 && $("#simple_test_2_code_div").parents("#exercises").length == 0){
+	if ($(window).width() > 975){
+		$("#simple_test_2_code_div").offset({
+			left: $("#simple_test_2 .clearfix").offset().left
+		});
+	}
+	$("#simple_test_2_runb").one("click", function(){
+		$({})
+		.queue(function (next) {
+			if ($(window).width() > 975){
+				$("#simple_test_2_code_div").animate({
+					left: 40
+				}, 500, next);
+			}
+			else{
+				next();
+			}
+		})
+		.queue(function (next) {
+			$("#simple_test_2_runb").parent().siblings(".ac_output").show();
+			runit('simple_test_2',this, undefined);
+			$("#simple_test_2_runb").on("click", function(){
+				runit('simple_test_2',this, undefined);
+			});
+		})
+		
+	});
+}
+else{
+	$("#simple_test_2_code_div").css({float : "none", marginLeft : "auto", marginRight : "auto"});
+	$("#simple_test_2_runb").parent().siblings(".ac_output").show().css({float : "none", right : "0px"});
+	$("#simple_test_2_runb").on("click", function(){
+		runit('simple_test_2',this, undefined);
+	});
+}
+</script>
+
+</div>
+
+<p><strong>Check your understanding</strong></p>
+
+            <div id="test_questionsimple_test_1" class="alert alert-warning">
+            simple_test-1: When test.testEqual is given two values that are not the same, it generates an error and
+stops execution of the program.<form name="test_questionsimple_test_1_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionsimple_test_1_opt_a" />
+            <label for= "test_questionsimple_test_1_opt_a">  a) True</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionsimple_test_1_opt_b" />
+            <label for= "test_questionsimple_test_1_opt_b">  b) False</label><br />
+            
+            <input type="radio" name="group1" value="c" id="test_questionsimple_test_1_opt_c" />
+            <label for= "test_questionsimple_test_1_opt_c">  c) It depends</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionsimple_test_1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionsimple_test_1','b',['Check the code that defines testEqual', 'A message is printed out, but the program does not stop executing', 'Check the code the defines testEqual'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionsimple_test_1_bcomp" disabled name="compare" onclick="compareAnswers('test_questionsimple_test_1');">Compare Me</button>
+            </form><br />
+            <div id="test_questionsimple_test_1_feedback">
+            </div>
+            </div>
+            
+            <div id="test_questionsimple_test_2" class="alert alert-warning">
+            simple_test-2: Test cases are a waste of time, because python interpreter will give an error
+message when the program runs incorrectly.<form name="test_questionsimple_test_2_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="test_questionsimple_test_2_opt_a" />
+            <label for= "test_questionsimple_test_2_opt_a">  a) True</label><br />
+            
+            <input type="radio" name="group1" value="b" id="test_questionsimple_test_2_opt_b" />
+            <label for= "test_questionsimple_test_2_opt_b">  b) False</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('test_questionsimple_test_2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('test_questionsimple_test_2','b',['You might not notice the error, if the code just produces a wrong output rather generating an error. And it may be difficult to figure out the original cause of an error when you do get one.', 'Test cases let you test some pieces of code as you write them, rather than waiting for problems to show themselves later.'])">Check Me</button>
+            <button class='btn btn-default' id="test_questionsimple_test_2_bcomp" disabled name="compare" onclick="compareAnswers('test_questionsimple_test_2');">Compare Me</button>
+            </form><br />
+            <div id="test_questionsimple_test_2_feedback">
+            </div>
+            </div>
+            <div class="section" id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-test-case">test case</dt>
+<dd>An assertion about the state of the program at particular point in its
+execution, such as the type of a variable or of a value returned by a
+function.</dd>
+</dl>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013 Paul Resnick, Brad Miller, David Ranum, Created using Runestone Interactive.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

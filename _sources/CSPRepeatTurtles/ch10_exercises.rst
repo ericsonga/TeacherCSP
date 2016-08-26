@@ -152,7 +152,7 @@ Chapter 10 Exercises
 
         .. tab:: Question
 
-            Fix the errors in the code so that it draws a square.
+            Fix the errors in the code so that it draws an octagon.
 
             .. activecode::  ch10ex4q
                 :nocodelens:
@@ -161,13 +161,13 @@ Chapter 10 Exercises
                 space = Screen()
                 liz = Turtle()
                 liz.setheading(90)
-                for sides in range(5)
-                    liz.forward(90)
-                liz.right(100)
+                for sides in range(9)
+                    liz.forward(45)
+                liz.right(50)
 
         .. tab:: Answer
 
-            It should be range(4) and add a colon afterwards. Fix the indentation on the last line to be in the for loop, and switch the two numbers in the ``forward`` and ``right`` methods.
+            It should be range(8) and add a colon afterwards. Fix the indentation on the last line to be in the for loop, and switch the two numbers in the ``forward`` and ``right`` methods.
 
             .. activecode::  ch10ex4a
                 :nocodelens:
@@ -176,9 +176,9 @@ Chapter 10 Exercises
                 space = Screen()
                 liz = Turtle()
                 liz.setheading(90)
-                for sides in range(4):
-                    liz.forward(100)
-                    liz.right(90)
+                for sides in range(8):
+                    liz.forward(50)
+                    liz.right(45)
 
         .. tab:: Discussion
 
@@ -409,7 +409,7 @@ Chapter 10 Exercises
 
         .. tab:: Question
 
-            The procedure below draws a square. Write code that uses the procedure to draw two squares connected by a line 10 units in length.
+            The procedure below draws a square. Write code that uses the procedure to draw two squares connected by a line 50 units in length.
 
             .. activecode::  ch10ex10q
                 :nocodelens:
@@ -421,24 +421,24 @@ Chapter 10 Exercises
 
         .. tab:: Answer
 
-            Call the statements needed to create a turtle. Then use a for loop with a range of 2 and call the function inside the for loop with a turtle right and forward method in there too.
+            Call the statements needed to create a turtle. Then call the function, turn it left, move it forward, and call the function again
 
             .. activecode::  ch10ex10a
                 :nocodelens:
-
-                from turtle import *
-                space = Screen()
-                t = Turtle()
 
                 def square(aTurtle):
                     for sides in range(4):
                         aTurtle.forward(100)
                         aTurtle.right(90)
 
-                for i in range(2):
-                    square(t)
-                    t.right(90)
-                    t.forward(100)
+		from turtle import *
+                space = Screen()
+                t = Turtle()
+                
+                square(t)
+                t.left(90)
+		t.forward(50)
+		square(t)
 
         .. tab:: Discussion
 
@@ -498,17 +498,17 @@ Chapter 10 Exercises
 
         .. tab:: Question
 
-                Complete the code where the ``x's`` are in order to draw 20 triangles.
+                Complete the code where the ``x's`` are so that the code draws 20 triangles.
 
             .. activecode::  ch10ex12q
                 :nocodelens:
 
                 from turtle import *
-                for sys import *              # use the system library
+                from sys import *              # use the system library
                 setExecutionLimit(50000)      # let this take up to 50 seconds
                 space = Screen()
                 t = x
-                t.setHeading(90)
+                t.setheading(90)
                 for repeats in range(x):
                     t.color("blue")
                     t.forward(10)
@@ -526,11 +526,11 @@ Chapter 10 Exercises
                 :nocodelens:
 
                 from turtle import *
-                for sys import *              # use the system library
+                from sys import *              # use the system library
                 setExecutionLimit(50000)      # let this take up to 50 seconds
                 space = Screen()
                 t = Turtle()
-                t.setHeading(90)
+                t.setheading(90)
                 for repeats in range(20):
                     t.color("blue")
                     t.forward(10)
@@ -785,7 +785,7 @@ Chapter 10 Exercises
             .. activecode::  ch10ex18a
                 :nocodelens:
 
-                def circle(turt, num):
+                def circleDraw(turt, num):
                     turt.shape("turtle")
                     turt.penup()
                     for size in range(20):
@@ -795,9 +795,9 @@ Chapter 10 Exercises
 
                 from turtle import *
                 space = Screen()
-                tess = Turtle()
+                turt = Turtle()
 
-                circle(turt, 20)
+                circleDraw(turt, 20)
 
         .. tab:: Discussion
 

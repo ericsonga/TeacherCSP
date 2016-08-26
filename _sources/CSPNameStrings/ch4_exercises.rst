@@ -200,12 +200,13 @@ Chapter 4 Exercises
                 print("The" fruit "costs $" + "price")
 
         .. tab:: Answer
-
+		
+	    Fix as shown below.	
 
             .. activecode::  ch4ex6a
                 :nocodelens:
 
-                fruit = apple
+                fruit = "apple"
                 price = 5
                 print("The " + fruit + " costs $" + str(price))
 
@@ -613,6 +614,8 @@ Chapter 4 Exercises
             .. activecode::  ch4ex18a
                 :nocodelens:
 
+		s1 = "hi"
+                s2 = "My namesake is Bob, and he and I love to eat ham."
                 s3 = s1.capitalize()
                 s4 = s2[0:7].lower()
                 s5 = s2[12:18]
@@ -680,7 +683,7 @@ Chapter 4 Exercises
 
                 user = input("Type a sentence")
                 user = user.lower()
-                length = length(user)
+                length = len(user)
                 print("The length of " + user + " is" + str(length))
 
         .. tab:: Discussion

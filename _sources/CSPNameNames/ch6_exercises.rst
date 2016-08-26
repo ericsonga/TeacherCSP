@@ -871,7 +871,7 @@ Chapter 6 Exercises
                 	remainingMinutes = minutes % 60
                 	hoursFromMinutes = minutes - remainingMinutes
                 	newHour = (currentHour + intHour + hoursFromMinutes) % 12
-                	return (str(newHour) + " hour(s) and " + str(remainingMinutes) + " minute(s)"
+                	return (str(newHour) + " hour(s) and " + str(remainingMinutes) + " minute(s)")
 
                 print(newTime(1, 30, 5, 50))
 

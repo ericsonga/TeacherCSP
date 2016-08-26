@@ -260,7 +260,7 @@ Chapter 13 Exercises
 
                 age = 4
                 if age < 6:
-                 print("You're in kindergarten")
+                    print("You're in kindergarten")
                 if age < 11:
                     print("You're in elementary school")
 
@@ -274,7 +274,7 @@ Chapter 13 Exercises
 
                 age = 4
                 if age < 6:
-                 print("You're in kindergarten")
+                    print("You're in kindergarten")
                 elif age < 11:
                     print("You're in elementary school")
 
@@ -446,7 +446,7 @@ Chapter 13 Exercises
 
                 highScore = 10
                 userInput = input("What's your score? (Give me a number 1 -20)")
-                userInput = int(UserInput)
+                userInput = int(userInput)
                 if userInput > 10:
                     print("Good job!")
                 elif userInput < 10:
@@ -518,12 +518,12 @@ Chapter 13 Exercises
                 if number < 5:
                     user2 =
                     number2 = int(user2)
-                        if
-                            print("I love CS")
-                        elif
-                            print("CS is the best")
-                        else:
-                            print("I like CS better than food")
+                    if
+                        print("I love CS")
+                    elif
+                        print("CS is the best")
+                    else:
+                        print("I like CS better than food")
                 else:
                     print("Who else loves CS?")
 
@@ -539,12 +539,12 @@ Chapter 13 Exercises
                 if number < 5:
                     user2 = input("Give me a number")
                     number2 = int(user2)
-                        if number2 > 3:
-                            print("I love CS")
-                        elif number2 < 3:
-                            print("CS is the best")
-                        else:
-                            print("I like CS better than food")
+	            if number2 > 3:
+	                print("I love CS")
+	            elif number2 < 3:
+	                print("CS is the best")
+	            else:
+	                print("I like CS better than food")
                 else:
                     print("Who else loves CS?")
 
@@ -584,7 +584,7 @@ Chapter 13 Exercises
                 :nocodelens
 
                 state = "Georgia"
-                if state = "Georgia" or state = "Florida":
+                if state == "Georgia" or state == "Florida":
                     print("It's hot")
                 elif state == "Alaska":
                     print("It's cold")
@@ -844,7 +844,7 @@ Chapter 13 Exercises
                        grade = "F"
                     return grade
 
-                print(gradeAverage([80,90,90,80,100])
+                print(gradeAverage([80,90,90,80,100]))
 
         .. tab:: Discussion
 

@@ -676,7 +676,7 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
                         total25 = total25 + new25
                     count = count + 1
 
-                print("Average PM 2.5 value for cities that start with "A" is ", total25/count)
+                print("Average PM 2.5 value for cities that start with 'A' is ", total25/count)
 
         .. tab:: Answer
 
@@ -699,7 +699,7 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
                         total25 = total25 + new25
                         count = count + 1
 
-                print("Average PM 2.5 value for cities that start with "A" is ", total25/count)
+                print("Average PM 2.5 value for cities that start with 'A' is ", total25/count)
 
         .. tab:: Discussion
 
@@ -1009,6 +1009,8 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
                         line = inFile.readline()
 
                     inFile.close()
+                    
+                vowelFinder("uspoll.txt")
 
         .. tab:: Discussion
 
@@ -1085,7 +1087,7 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
             .. activecode::  ch18ex10a
                 :nocodelens:
 
-                def averagePM(file)
+                def averagePM(file):
                     # read all the lines
                     inFile = open(file,"r")
                     lines = inFile.readlines()
@@ -1094,7 +1096,7 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
                     count = 0
                     # loop through the lines
                     for line in lines:
-                        values = line.split(",")
+                        values = line.split(":")
                         if line[0] == "L":
                             pm = float(values[2])
                             sum = sum + pm
@@ -1543,20 +1545,23 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
                 :nocodelens:
 
                 def firstDayChange(file):
-                    file = open(file, "r")
-                    lines = file.readlines()
-                    maxChange = 0
-                    for line in lines:
-                        values = line.split(",")
-                        dateParts = values[0].split("-")
-                        if dateParts[0] == "1":
-                            high = float(values[2])
-                            low = float(values[3])
-                            change = high - low
-                        if change > maxChange:
-                            maxChange = change
-
-                    print(values[0] + " had the max change of " + str(maxChange))
+		    file = open(file, "r")
+		    lines = file.readlines()
+		    maxChange = 0
+		    for line in lines:
+		        values = line.split(",")
+		        dateParts = values[0].split("-")
+		        day = int(dateParts[0])
+		        
+		        if day == 1:
+		            high = float(values[2])
+		            low = float(values[3])
+		            change = high - low
+		            
+		            if change > maxChange:
+		                maxChange = change
+		                date = values[0]
+    		    print(date + " had the max change of " + str(maxChange))
 
                 firstDayChange("stocks.txt")
 

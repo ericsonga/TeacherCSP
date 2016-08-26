@@ -323,7 +323,7 @@ Chapter 14 Exercises
            .. activecode::  ch14ex5q
                 :nocodelens:
 
-                def turtleLoop(jaz, maxX)
+                def turtleLoop(jaz, maxX):
                     for x in range(10):       # repeat the body 10 times
                         jaz.forward100)           # go forward 100
                         jaz.right(120)             # turn right 120 degrees
@@ -334,7 +334,7 @@ Chapter 14 Exercises
                             jaz.goto(-1 * maxX,jaz.ycor() - 100)  # move left & down
                             jaz.pendown()              # put the pen down
 
-                def turtleProcedure(width, jaz)
+                def turtleProcedure(width, jaz):
                     space.setup(width,width)  # set the space width and height
                     maxX = width / 2          # set the max x value to half the width
                     jaz.shape('turtle')       # set the shape for jaz to turtle
@@ -361,7 +361,7 @@ Chapter 14 Exercises
             .. activecode::  ch14ex5a
                 :nocodelens:
 
-                def turtleLoop(jaz, maxX)
+                def turtleLoop(jaz, maxX):
                     for x in range(10):       # repeat the body 10 times
                         jaz.forward(100)           # go forward 100
                         jaz.right(120)             # turn right 120 degrees
@@ -372,7 +372,7 @@ Chapter 14 Exercises
                             jaz.goto(-1 * maxX,jaz.ycor() - 100)  # move left & down
                             jaz.pendown()              # put the pen down
 
-                def turtleProcedure(width, jaz)
+                def turtleProcedure(width, jaz):
                     space.setup(width,width)  # set the space width and height
                     maxX = width / 2          # set the max x value to half the width
                     jaz.shape('turtle')       # set the shape for jaz to turtle

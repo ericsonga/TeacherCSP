@@ -980,9 +980,9 @@ Chapter 17 Exercises
 
                 def aSentence(name, age, verb1, verb2):
                     if age < 10:
-                        print(name + " who is " + age + " " + verb1)
+                        print(name + " who is " + str(age) + " " + verb1)
                     else:
-                        print(name + " who is " + age + " " + verb1)
+                        print(name + " who is " + str(age) + " " + verb1)
                 aSentence("John", 10, "runs", "sleeps")
 
         .. tab:: Discussion
@@ -1050,30 +1050,33 @@ Chapter 17 Exercises
                 :nocodelens:
 
                 def aProcedure(aString):
-                    aList = aString.split(",")
-                    agePart = aList[1]
-                    namePart = aList[0]
-                    verbPart = aList[2]
+		    aList = aString.split(",")
+		    agePart = aList[1]
+		    namePart = aList[0]
+		    verbPart = aList[2]
+		
+		    posName = namePart.find("name:")
+		    posAge = agePart.find("age:")
+		    posVerb = verbPart.find("verb:")
+		    
+		    if (posName > -1):
+		        name = namePart[posName+6:len(namePart)]
+		    else:
+		        name = "Unknown"
+		    
+		    if (posAge > -1):
+		        age = agePart[posAge+5:len(agePart)]
+		    else:
+		        age = "Unknown"
+		    
+		    if (posVerb > -1):
+		        verb = verbPart[posVerb+6:len(verbPart)]
+		    else:
+		        verb = "Unknown"
+		
+		    print(name + " who is " + age + " likes to " + verb)
 
-                    posName = namePart.find("name:")
-                    if (posName > -1):
-                    n   ame = namePart[posName+6:len(namePart)]
-                    else:
-                        name = "Unknown"
-                    posAge = agePart.find("age:")
-                    if (posAge > -1):
-                        age = agePart[posAge+5:len(agePart)]
-                    else:
-                        age = "Unknown"
-                    posVerb = verbPart.find("verb:")
-                    if (posVerb > -1):
-                        verb = agePart[posVerb+6:len(agePart)]
-                    else:
-                        verb = "Unknown"
-
-                    print(name + " who is " + age + " likes to " + verb)
-
-                aProcedure("name: Bob,age: 10,verb: dance")
+		aProcedure("name: Bob,age: 10,verb: dance")
                 
         .. tab:: Discussion
 

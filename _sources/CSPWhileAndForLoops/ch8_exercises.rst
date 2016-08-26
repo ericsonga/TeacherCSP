@@ -137,19 +137,23 @@ Chapter 8 Exercises
                 :nocodelens:
 
                 for x in range(1,2)
-                while x in range(0,4):
+                y = 0
+                while y < 4:
                 print("*")
+                y += 1
 
         .. tab:: Answer
 
-            The first loop should be from range 0 to 2 (or any two numbers that are 2 numbers apart). Line 1 should also have a colon at the end and line 2 should be indented and a for loop instead of a while. Line 3 should be indented 8 spaces.
+            The first loop should be from range 0 to 2 (or any two numbers that are 2 numbers apart). Line 1 should also have a colon at the end and line 2 and 3 should be indented. Line 4 and 5 should be indented 8 spaces.
 
             .. activecode::  ch8ex4a
                 :nocodelens:
 
                 for x in range(0,2):
-                    while x in range(0,4):
+                    y = 0
+                    while y < 4:
                         print("*")
+                        y += 1
 
         .. tab:: Discussion
 
@@ -614,7 +618,7 @@ Chapter 8 Exercises
                 :nocodelens:
 
                 for x in range(0,11)
-                for y in range(0,11):
+                for y in range(1,11):
                 print(str(x) + " * " + str(y) + " = " + str(x*y))
 
         .. tab:: Answer
@@ -625,7 +629,7 @@ Chapter 8 Exercises
                 :nocodelens:
 
                 for x in range(-10, 0):
-                    for y in range(0,11):
+                    for y in range(1,11):
                         print(str(x) + " / " + str(y) + " = " + str(x/y))
 
         .. tab:: Discussion
@@ -674,7 +678,7 @@ Chapter 8 Exercises
 
         .. tab:: Question
         
-            Write a procedure that takes a user input and keeps asking for a user input until the input is "Hello". If the input is not hello, it should print "This is you n wrong try." where n is the number of times they have put an input in. If they type "Hello", the procedure should print "Success!". Hint: ``!=`` means does not equal
+            Write a procedure that takes a user input and keeps asking for a user input until the input is "Hello". If the input is not "Hello", it should print "This is your n wrong try." where n is the number of times they have put an input in. If they type "Hello", the procedure should print "Success!". Hint: ``!=`` means does not equal
 
             .. activecode::  ch8ex18q
                 :nocodelens:
@@ -692,7 +696,7 @@ Chapter 8 Exercises
                     count = 0
                     while userInput != "Hello":
                         count += 1
-                        print("This is your " + count + " wrong try.")
+                        print("This is your " + str(count) + " wrong try.")
                         userInput = input("Give me a string")
                     print("Success!")
 

@@ -71,7 +71,6 @@ Chapter 3: Names for Numbers
    CSPNameNumbers/expressionTable.rst
    CSPNameNumbers/orderOfOperations.rst
    CSPNameNumbers/driving.rst
-   CSPNameNumbers/noteEitherSideOfEquals.rst
    CSPNameNumbers/ketchup.rst
    CSPNameNumbers/walkAssign.rst
    CSPNameNumbers/misconceptions.rst
@@ -120,10 +119,8 @@ Chapter 6: Computers can Name Anything
    CSPNameNames/names4names2.rst
    CSPNameNames/nameFandP.rst
    CSPNameNames/nameSteps.rst
-   CSPNameNames/noteFunDefVsCall.rst
    CSPNameNames/namesInput.rst
    CSPNameNames/params.rst
-   CSPNameNames/noteActualVsFormalParams.rst
    CSPNameNames/nameSets.rst
    CSPNameNames/imageLib.rst
    CSPNameNames/renameFunctions.rst
@@ -224,13 +221,11 @@ Chapter 12: A Computer can Make Decisions
 
    CSPIntroDecisions/decisions.rst
    CSPIntroDecisions/if.rst
-   CSPIntroDecisions/noteWaitingIf.rst
    CSPIntroDecisions/multiple.rst
    CSPIntroDecisions/logicalEx.rst
    CSPIntroDecisions/complex.rst
    CSPIntroDecisions/practice.rst
    CSPIntroDecisions/ifAndElse.rst
-   CSPIntroDecisions/noteConditionalsCards.rst
    CSPIntroDecisions/decTeacherNotes.rst
    CSPIntroDecisions/ch12_summary.rst
    CSPIntroDecisions/ch12_exercises.rst
@@ -245,7 +240,6 @@ Chapter 13: Using Decisions with Strings
    CSPStringDecisions/input.rst
    CSPStringDecisions/fortuneTeller.rst
    CSPStringDecisions/elif.rst
-   CSPStringDecisions/noteZodiac.rst
    CSPStringDecisions/ch13_summary.rst
    CSPStringDecisions/ch13_exercises.rst
    CSPStringDecisions/exam12a13.rst
@@ -337,9 +331,31 @@ Chapter 18: Working with Data on the Web
    CSPWebData/findPollState.rst
    CSPWebData/ch18_summary.rst
    CSPWebData/ch18_exercises.rst
+
+Chapter 19: Internet
+::::::::::::::::::::::::::::::::::::::::::::
+
+Chapter 20: Creativity
+::::::::::::::::::::::::::::::::::::::::::::
+
+.. toctree::
+    :maxdepth: 2
+
+    CSPCreativity/intro.rst
+    CSPCreativity/task.rst
+    CSPCreativity/deciding.rst
+    CSPCreativity/examples.rst
+    CSPCreativity/processQ.rst
+    CSPCreativity/programming.rst
+    CSPCreativity/referencing.rst
+
+
+
+Chapter 21: Global Impact
+::::::::::::::::::::::::::::::::::::::::::::
    
    
-Chapter 19: Computer Abilities Summary
+Chapter 22: Computer Abilities Summary
 ::::::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::

@@ -1287,7 +1287,7 @@ If you want to see **all** of the data click on the *Show* button below.  Once i
 
                 def pointGain(file):
                     lines = file.readlines()
-                    for lines in lines:
+                    for line in lines:
                         values = line.split(",")
                         open = float(values[1])
                         close = float(values[4])

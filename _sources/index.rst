@@ -5,7 +5,7 @@
     Invariant Sections being Forward, Prefaces, and Contributor List,
     no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license
     is included in the section entitled "GNU Free Documentation License".
-	
+
 =======================================
 CS Principles: Big Ideas in Programming
 =======================================
@@ -26,7 +26,7 @@ SECTION 1: COMPUTER ABILITIES
 
 .. toctree::
    :maxdepth: 3
-   
+
 Chapter 1: What is this Book About?
 ::::::::::::::::::::::::::::::::::::::::
 
@@ -41,13 +41,13 @@ Chapter 1: What is this Book About?
    CSPrinTeasers/computeImages.rst
    CSPrinTeasers/standards.rst
    CSPrinTeasers/ch1_summary.rst
-   
+
 Chapter 2: What can Computers Do?
 ::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :maxdepth: 2
-   
+
    CSPTuring/whatIsComputer.rst
    CSPTuring/turingMachines.rst
    CSPTuring/abilities.rst
@@ -59,7 +59,7 @@ SECTION 2: NAMING
 
 .. toctree::
    :maxdepth: 2
-   
+
 Chapter 3: Names for Numbers
 ::::::::::::::::::::::::::::::::::
 
@@ -78,13 +78,13 @@ Chapter 3: Names for Numbers
    CSPNameNumbers/whyVideo.rst
    CSPNameNumbers/ch3_summary.rst
    CSPNameNumbers/ch3_exercises.rst
-   
+
 Chapter 4: Names for Strings
 ::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :maxdepth: 2
-   
+
    CSPNameStrings/assignNameStr.rst
    CSPNameStrings/strObjects.rst
    CSPNameStrings/immutable.rst
@@ -93,13 +93,13 @@ Chapter 4: Names for Strings
    CSPNameStrings/ch4_summary.rst
    CSPNameStrings/ch4_exercises.rst
    CSPNameStrings/exam3a4.rst
-   
+
 Chapter 5: Names for Turtles
 ::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :maxdepth: 2
-   
+
    CSPNameTurtles/names4turtles.rst
    CSPNameTurtles/FuncAndProc.rst
    CSPNameTurtles/turtleFAP.rst
@@ -115,7 +115,7 @@ Chapter 6: Computers can Name Anything
 
 .. toctree::
    :maxdepth: 2
-   
+
    CSPNameNames/names4names2.rst
    CSPNameNames/nameFandP.rst
    CSPNameNames/nameSteps.rst
@@ -127,13 +127,13 @@ Chapter 6: Computers can Name Anything
    CSPNameNames/ch6_summary.rst
    CSPNameNames/ch6_exercises.rst
    CSPNameNames/exam5a6.rst
-   
+
 SECTION 3: REPEATING
 :::::::::::::::::::::::::
 
 .. toctree::
    :maxdepth: 2
-   
+
 Chapter 7: Computers can Repeat Steps
 :::::::::::::::::::::::::::::::::::::::::
 
@@ -148,13 +148,13 @@ Chapter 7: Computers can Repeat Steps
    CSPRepeatNumbers/print.rst
    CSPRepeatNumbers/ch7_summary.rst
    CSPRepeatNumbers/ch7_exercises.rst
-   
+
 Chapter 8: While and For Loops
 :::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :maxdepth: 2
-   
+
    CSPWhileAndForLoops/forAndWhile.rst
    CSPWhileAndForLoops/infinite.rst
    CSPWhileAndForLoops/whileCount.rst
@@ -164,39 +164,39 @@ Chapter 8: While and For Loops
    CSPWhileAndForLoops/ch8_summary.rst
    CSPWhileAndForLoops/ch8_exercises.rst
    CSPWhileAndForLoops/exam7a8.rst
-   
+
 Chapter 9: Repeating Steps with Strings
 :::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :maxdepth: 2
-   
+
    CSPRepeatStrings/repeatstrings.rst
    CSPRepeatStrings/reverse.rst
    CSPRepeatStrings/mirror.rst
    CSPRepeatStrings/modify.rst
    CSPRepeatStrings/ch9_summary.rst
    CSPRepeatStrings/ch9_exercises.rst
-   
+
 Chapter 10: Repeating Steps with Turtles
 :::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :maxdepth: 2
-   
+
    CSPRepeatTurtles/repeatturtles.rst
    CSPRepeatTurtles/turtleGeom.rst
    CSPRepeatTurtles/patterns.rst
    CSPRepeatTurtles/stamp.rst
    CSPRepeatTurtles/ch10_summary.rst
    CSPRepeatTurtles/ch10_exercises.rst
-   
+
 Chapter 11: Repeating Steps with Images
 :::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :maxdepth: 2
-   
+
    CSPRepeatImages/repeatimages.rst
    CSPRepeatImages/imageAbstractions.rst
    CSPRepeatImages/pattern.rst
@@ -206,13 +206,13 @@ Chapter 11: Repeating Steps with Images
    CSPRepeatImages/ch11_summary.rst
    CSPRepeatImages/ch11_exercises.rst
    CSPRepeatImages/exam9t11.rst
-   
+
 SECTION 4: DECISIONS
 ::::::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :maxdepth: 3
-   
+
 Chapter 12: A Computer can Make Decisions
 ::::::::::::::::::::::::::::::::::::::::::::
 
@@ -229,7 +229,7 @@ Chapter 12: A Computer can Make Decisions
    CSPIntroDecisions/decTeacherNotes.rst
    CSPIntroDecisions/ch12_summary.rst
    CSPIntroDecisions/ch12_exercises.rst
-   
+
 Chapter 13: Using Decisions with Strings
 ::::::::::::::::::::::::::::::::::::::::::::
 
@@ -243,7 +243,7 @@ Chapter 13: Using Decisions with Strings
    CSPStringDecisions/ch13_summary.rst
    CSPStringDecisions/ch13_exercises.rst
    CSPStringDecisions/exam12a13.rst
-   
+
 Chapter 14: Using Decisions with Turtles
 ::::::::::::::::::::::::::::::::::::::::::::
 
@@ -257,14 +257,14 @@ Chapter 14: Using Decisions with Turtles
    CSPTurtleDecisions/collisions.rst
    CSPTurtleDecisions/ch14_summary.rst
    CSPTurtleDecisions/ch14_exercises.rst
-   
-   
+
+
 Chapter 15: Using Decisions with Images
 ::::::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :maxdepth: 2
-   
+
    CSPImageDecisions/decImages.rst
    CSPImageDecisions/combineImages.rst
    CSPImageDecisions/imageIfElse.rst
@@ -272,19 +272,19 @@ Chapter 15: Using Decisions with Images
    CSPImageDecisions/ch15_summary.rst
    CSPImageDecisions/ch15_exercises.rst
    CSPImageDecisions/exam14a15.rst
-   
+
 SECTION 5: DATA
 :::::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :maxdepth: 3
-   
+
 Chapter 16:  Working with Collections
 ::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :maxdepth: 2
-   
+
    CSPIntroData/workColls.rst
    CSPIntroData/workStrings.rst
    CSPIntroData/workLists.rst
@@ -297,14 +297,14 @@ Chapter 16:  Working with Collections
    CSPIntroData/teacherRainfall.rst
    CSPIntroData/ch16_summary.rst
    CSPIntroData/ch16_exercises.rst
-  
-   
+
+
 Chapter 17: Getting pieces out of strings and lists
 ::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :maxdepth: 2
-   
+
    CSPStringPieces/piecesstrings.rst
    CSPStringPieces/madLibPieces.rst
    CSPStringPieces/split.rst
@@ -314,13 +314,13 @@ Chapter 17: Getting pieces out of strings and lists
    CSPStringPieces/ch17_summary.rst
    CSPStringPieces/ch17_exercises.rst
    CSPStringPieces/exam16a17.rst
-   
+
 Chapter 18: Working with Data on the Web
 ::::::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :maxdepth: 2
-   
+
    CSPWebData/webData.rst
    CSPWebData/pollData.rst
    CSPWebData/readData.rst
@@ -349,25 +349,32 @@ Chapter 20: Creativity
     CSPCreativity/programming.rst
     CSPCreativity/referencing.rst
 
-
-
 Chapter 21: Global Impact
 ::::::::::::::::::::::::::::::::::::::::::::
-   
-   
+
+.. toctree::
+   :maxdepth: 2
+
+   CSPGlobalImpact/intro.rst
+   CSPGlobalImpact/exploring.rst
+   CSPGlobalImpact/task.rst
+   CSPGlobalImpact/deciding.rst
+   CSPGlobalImpact/choosing.rst
+   CSPGlobalImpact/outline.rst
+   CSPGlobalImpact/completing.rst
+
 Chapter 22: Computer Abilities Summary
 ::::::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
    :maxdepth: 2
-   
+
    CSPAbilitySummary/thatsall.rst
    CSPAbilitySummary/ch19_summary.rst
    CSPAbilitySummary/examPost.rst
-   
+
 Indices
 ::::::::::::::::::
 
 * :ref:`genindex`
 * :ref:`search`
-

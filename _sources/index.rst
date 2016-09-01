@@ -67,6 +67,7 @@ Chapter 3: Names for Numbers
    :maxdepth: 2
 
    CSPNameNumbers/assignName.rst
+   CSPNameNumbers/noteLimitsBoxAnalogy.rst
    CSPNameNumbers/expression.rst
    CSPNameNumbers/expressionTable.rst
    CSPNameNumbers/orderOfOperations.rst

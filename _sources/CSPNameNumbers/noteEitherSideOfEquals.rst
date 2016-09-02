@@ -73,11 +73,12 @@ For instance, consider this series of assignment statements:
 
 If we think of a variable as a **box** that holds a *value*, the meaning of line 1 is fairly obvious: place the *value* 5 in the **box** labelled ``a``. In line 1, ``a`` stands for the **box** associated with the name ``a``.
 
-In line 2, however, ``a`` is found on the right side of ``=`` . In this case, ``a`` no longer stands for the **box** labelled ``a`` , but rather, the *value* stored in the box labelled ``a`` . Therefore, ``a + 1`` in this case actually means ``5 + 1`` . In fact, line 2 is executed in 3 steps:
+In line 2, however, ``a`` is found on the right side of ``=`` . In this case, ``a`` no longer stands for the **box** labelled ``a`` , but rather, the *value* stored in the box labelled ``a`` . Therefore, ``a + 1`` in this case actually means ``5 + 1`` . In fact, line 2 is executed in these steps:
 
-1. Replace ``a`` on the right of the ``=`` with the value stored in the    box labelled ``a`` (5, in this case)
-2. Add 1 to that value (5 + 1)
-3. Store the result (6) in the box labelled ``b``
+1. Evaluate the expression ``a + 1`` to produce a value
+2. Replace ``a`` in the expression with the *value* stored in ``a``, to produce the expression ``5 + 1``
+3. Evaluate the expression ``5 + 1`` to produce the value 6
+4. Store the value produced (6) in the variable ``b``
 
 Of course, the computer performs all these steps for you!
 
@@ -96,9 +97,10 @@ It’s important to understand the above steps to make sense of the following ex
 
 Line 1 may be straightforward to interpret (assign 5 to the box labelled ``a`` ), but in line 2, ``a`` appears twice! This may prove to be confusing to some students. But armed with the above understanding, we can interpret line 2 as follows:
 
-1. Replace ``a`` on the right of the ``=`` with the value stored in the    box labelled ``a`` (5, in this case)
-2. Add 1 to that value (5 + 1)
-3. Store the result (6) in the box labelled a
+1. Evaluate the expression ``a + 1`` to produce a value
+2. Replace ``a`` in the expression with the *value* stored in ``a``, to    produce the expression ``5 + 1``
+3. Evaluate the expression ``5 + 1`` to produce the value 6
+4. Store the value produced (6) in the variable ``a``
 
 Run the above code to see what the value of the box labelled ``a`` is when it is printed.
 
@@ -122,10 +124,10 @@ Consider this example:
     =====
     Assign 35.5 to the variable mpg
     =====
-    Replace distance on the right of 
-    the '=' with the value 924.7, and 
-    replace mpg on the right of 
-    the '=' with 35.5
+    In the expression distance / mpg, 
+    replace distance with the value 924.7, 
+    and replace mpg with the value 35.5,
+    to produce the expression 924.7 / 35.5
     =====
     Perform this division: 924.7 / 35.5
     =====

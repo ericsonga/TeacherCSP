@@ -72,6 +72,7 @@ Chapter 3: Names for Numbers
    CSPNameNumbers/expressionTable.rst
    CSPNameNumbers/orderOfOperations.rst
    CSPNameNumbers/driving.rst
+   CSPNameNumbers/noteEitherSideOfEquals.rst
    CSPNameNumbers/ketchup.rst
    CSPNameNumbers/walkAssign.rst
    CSPNameNumbers/misconceptions.rst
@@ -120,8 +121,10 @@ Chapter 6: Computers can Name Anything
    CSPNameNames/names4names2.rst
    CSPNameNames/nameFandP.rst
    CSPNameNames/nameSteps.rst
+   CSPNameNames/noteFunDefVsCall.rst
    CSPNameNames/namesInput.rst
    CSPNameNames/params.rst
+   CSPNameNames/noteActualVsFormalParams.rst
    CSPNameNames/nameSets.rst
    CSPNameNames/imageLib.rst
    CSPNameNames/renameFunctions.rst
@@ -223,11 +226,13 @@ Chapter 12: A Computer can Make Decisions
 
    CSPIntroDecisions/decisions.rst
    CSPIntroDecisions/if.rst
+   CSPIntroDecisions/noteWaitingIf.rst
    CSPIntroDecisions/multiple.rst
    CSPIntroDecisions/logicalEx.rst
    CSPIntroDecisions/complex.rst
    CSPIntroDecisions/practice.rst
    CSPIntroDecisions/ifAndElse.rst
+   CSPIntroDecisions/noteConditionalsCards.rst
    CSPIntroDecisions/decTeacherNotes.rst
    CSPIntroDecisions/noteWhileExits.rst
    CSPIntroDecisions/ch12_summary.rst
@@ -243,6 +248,7 @@ Chapter 13: Using Decisions with Strings
    CSPStringDecisions/input.rst
    CSPStringDecisions/fortuneTeller.rst
    CSPStringDecisions/elif.rst
+   CSPStringDecisions/noteZodiac.rst
    CSPStringDecisions/ch13_summary.rst
    CSPStringDecisions/ch13_exercises.rst
    CSPStringDecisions/exam12a13.rst

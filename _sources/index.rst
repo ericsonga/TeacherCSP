@@ -160,6 +160,7 @@ Chapter 8: While and For Loops
    CSPWhileAndForLoops/infinite.rst
    CSPWhileAndForLoops/whileCount.rst
    CSPWhileAndForLoops/while.rst
+   CSPWhileAndForLoops/noteWaitingWhile.rst
    CSPWhileAndForLoops/nestedLoops.rst
    CSPWhileAndForLoops/teacherWhileVSFor.rst
    CSPWhileAndForLoops/ch8_summary.rst

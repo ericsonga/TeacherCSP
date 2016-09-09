@@ -13,7 +13,7 @@ Exploring Impact Data
 
 .. parsonsprob:: 21_1_1_impact
 
-   Sort the following technological innovations by the number of **human interactions** they have each second:
+   Sort the following technological innovations by the number of **human interactions** they have each second. (Sort from most to least.)
    -----
    Emails sent
    =====
@@ -45,7 +45,7 @@ https://www.google.com/trends/explore?date=all&q=3d%20printing
 
 __________________
 
-Another fascinating Google product are their **public data sets**.
+Another fascinating Google product is their **public data sets**.
 You can explore where the energy is produced in the US:
 https://www.google.com/publicdata/explore?ds=djha77o4u941j_
 

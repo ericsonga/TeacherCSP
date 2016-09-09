@@ -16,7 +16,8 @@ Creativity
 
 *Learning Objectives:*
 
-- Apply a creative development process when creating computational artifacts.  - Create a computational artifact for creative expression.
+- Apply a creative development process when creating computational artifacts.  
+- Create a computational artifact for creative expression.
 - Create a computational artifact using computing tools and techniques to solve a problem.
 - Create a new computational artifact by combining or modifying existing artifacts.
 - Collaborate in the creation of computational artifacts.

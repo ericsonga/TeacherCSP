@@ -14,6 +14,7 @@ Project Examples
 
 
 Here are some resources to jumpstart your own programming ideas:
-	| - “Homework” section on the ‘University of Pennsylvania <https://sites.google.com/site/penncis101/2012-spring/homework>’_ CS101 website 
-	| - “Assignments” page on the ‘University of Alabama <http://cs104.cs.ua.edu/index_files/Assignments.htm'_ CS104 website
-	| - “BJC Related Projects” on the ‘University of California, Berkeley <http://bjc.berkeley.edu/website/curriculum.html>’_ Beauty and Joy of Computing website 
+	| - “Homework” section on the `University of Pennsylvania CS101 website <https://sites.google.com/site/penncis101/2012-spring/homework>`_ 
+	| - “Assignments” page on the `University of Alabama CS104 website <http://cs104.cs.ua.edu/index_files/Assignments.htm>`_ 
+	| - “BJC Related Projects” on the `University of California, Berkeley Beauty and Joy of Computing website <http://bjc.berkeley.edu/website/curriculum.html>`_  
+

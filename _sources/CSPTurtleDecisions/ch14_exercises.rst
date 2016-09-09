@@ -404,7 +404,7 @@ Chapter 14 Exercises
 
         .. tab:: Question
 
-            The code currently draws 4 horizontal lines of alternating colors. Change it so that it draws 4 vertical lines of alternating colors.
+            The code currently draws 5 horizontal lines of alternating colors. Change it so that it draws 5 vertical lines of alternating colors.
 
             .. activecode::  ch14ex6q
                 :nocodelens:
@@ -908,7 +908,7 @@ Chapter 14 Exercises
 
         .. tab:: Question
 
-            The code currently makes the two turtles just draw a circle. Fix the errors on line 13 so that the turtles move towards each other and spin away when they get close and then move.
+            The code currently makes the two turtles just draw a circle. Fix the errors on line 13 so that the turtles move towards each other and then turn around and move away from each other.
 
             .. activecode::  ch14ex14q
                 :nocodelens:
@@ -931,7 +931,7 @@ Chapter 14 Exercises
 
         .. tab:: Answer
 
-            The if staement should be ``mia.xcor() - jaz.xcor() < 40``.
+            The if statement should be ``mia.xcor() - jaz.xcor() < 40``.
 
             .. activecode::  ch14ex14a
                 :nocodelens:

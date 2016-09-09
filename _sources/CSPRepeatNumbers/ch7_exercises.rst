@@ -135,7 +135,7 @@ Chapter 7 Exercises
 
         .. tab:: Question
 
-            Fix the errors in the code so that it prints the product of every 5 numbers between 5 and 25.
+            Fix the errors in the code so that it prints the product of every 5th number between 5 and 25, inclusive. So, the product of 5, 10, 15, ..., 25.
 
             .. activecode::  ch7ex4q
                 :nocodelens:

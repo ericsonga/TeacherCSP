@@ -61,7 +61,7 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-            Insert the correct operator in place of the # that would make the statment true (remember ``==`` checks for equality)
+            Insert the correct operators in place of the ``#`` s so each line prints ``True``. Remember ``==`` checks for equality.
 
             .. activecode:: ch3ex2q
                 :nocodelens:
@@ -205,7 +205,7 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-            If Sunday is represented by 1, Monday by 2, Tuesday by 3, etc., and today is Sunday, complete the code on line 4 (with a math expression) to show what day it will be 82 days from today (it should print 5 which represents Thursday)
+            If Sunday is represented by 1, Monday by 2, Tuesday by 3, etc., and today is Sunday, complete the code on line 4 (with a math expression) to show what day it will be 82 days from today (it should print 6 which represents Friday)
 
 
             .. activecode:: ch3ex6q
@@ -444,7 +444,7 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-             It is currently 10:00, complete the code to tell what time it is going to be in 123 hours (12-hour time, not 24) (Answer should be 1)
+             It is currently 10:00, complete the code to tell what time it is going to be in 123 hours (12-hour time, not 24-hour time) (Answer should be 1)
 
             .. activecode:: ch3ex12q
                 :nocodelens:
@@ -594,7 +594,7 @@ Chapter 3 Exercises
 
         .. tab:: Question
 
-            Complete the code to show how many minutes are in 1.3 days and how many seconds are in 1.3 days. It should print 1872.0 and 112320.00
+            Complete the code to show how many minutes are in 1.3 days and how many seconds are in 1.3 days. It should print 1872.0 and 112320.0
 
             .. activecode:: ch3ex16q
                 :nocodelens:

@@ -360,14 +360,14 @@ Chapter 8 Exercises
 
         .. tab:: Question
 
-            Rewrite the code for the multiplication table from 1 to 2 using a while loop and a for loop instead.
+            Rewrite the code that prints the times tables for 1 to 3 using a while loop and a for loop instead of two for loops.
 
             .. activecode::  ch8ex10q
                 :nocodelens:
 
                 for x in range(1,4):
-                     for y in range(1,11):
-                         print(str(x) + " * " + str(y) + " = " + str(x*y))
+                    for y in range(1,11):
+                        print(str(x) + " * " + str(y) + " = " + str(x*y))
 
         .. tab:: Answer
 
@@ -378,7 +378,7 @@ Chapter 8 Exercises
 
                 x = 1
 
-                while x < 3:
+                while x < 4:
                     for y in range(1,11):
                         print(str(x) + " * " + str(y) + " = " + str(x*y))
                     x += 1
@@ -521,7 +521,7 @@ Chapter 8 Exercises
 
         .. tab:: Question
 
- 	    The code below currently enters a loop where it keeps printing even. Fix the code so that it prints Even and Odd for numbers 0 to 9.
+ 	    The code below currently enters a loop where it keeps printing "Even". Fix the code so that it prints "Even" and "Odd" for numbers 0 to 9.
  	    
             .. activecode::  ch8ex14q
                 :nocodelens:

@@ -114,5 +114,5 @@ However, a student may interpret line 2 to mean “take the value in the box ``n
     
     Figure 4: Incorrect model for assigning a value from one variable to another.
 
-Boxes may be a useful analogy to understand variables, but it’s important to highlight that not everything about boxes apply.
+Boxes may be a useful analogy to understand variables, but it’s important to highlight that not everything about boxes applies.
 

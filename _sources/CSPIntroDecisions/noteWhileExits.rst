@@ -32,7 +32,7 @@ Some students hold the misconception that the while loop *exits immediately* aft
         size = size + 1
         print(size)
         
-    print("Final value of size: " + size)
+    print("Final value of size: " + str(size))
 
 In this example, ``size`` becomes 5 at the last iteration of the loop, but before its value is printed. A student who held this misconception would predict that the output of this program would be as follows, leaving out the 5:
 
@@ -68,9 +68,9 @@ If your students are having difficulty understanding the execution flow of the `
 .. sourcecode:: python
 
     while 1 == 1:
-        if <condition>:     # replace <condition> with the condition for exiting the loop
+        if <condition>:  # replace <condition> with the condition for exiting the loop
             break
-        <loop body>         # replace <loop body> with the loop body
+        <loop body>      # replace <loop body> with the loop body
 
 It’s an infinite loop with an explicit ``break`` statement ``if`` a certain condition is true. Let’s break that statement down:
 
@@ -97,9 +97,9 @@ Now that we’ve considered these individual pieces on their own, let’s put th
 .. sourcecode:: python
 
     while 1 == 1:
-        if <condition>:     # replace <condition> with the condition for exiting the loop
+        if <condition>:  # replace <condition> with the condition for exiting the loop
             break
-        <loop body>         # replace <loop body> with the loop body
+        <loop body>      # replace <loop body> with the loop body
 
 This is an infinite loop with an explicit ``break`` statement ``if`` a certain condition is true.
 
@@ -108,13 +108,13 @@ This is an infinite loop with an explicit ``break`` statement ``if`` a certain c
 .. activecode:: While3
    :tour_1: "Structural tour"; 1: InfiniteWhile-line1; 2: InfiniteWhile-line2; 3: InfiniteWhile-line3; 4: InfiniteWhile-line4; 5-6: InfiniteWhile-line5-6; 7: InfiniteWhile-line7;
 
-    size = 0
-    while 1 == 1:              # infinite loop
-        if size >= 5:          # exit condition
-            break              # explicit break
-        size = size + 1        # loop body
-        print(size)            # loop body
-    print("Final value of size: " + size)
+   size = 0
+   while 1 == 1:              # infinite loop
+       if size >= 5:          # exit condition
+           break              # explicit break
+       size = size + 1        # loop body
+       print(size)            # loop body
+   print("Final value of size: " + str(size))
 
 
 

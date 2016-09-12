@@ -342,10 +342,26 @@ Chapter 18: Working with Data on the Web
    CSPWebData/ch18_summary.rst
    CSPWebData/ch18_exercises.rst
 
-Chapter 19: Internet
+SECTION 6: WHAT'S POSSIBLE
+:::::::::::::::::::::::::::::::::::::::::::
+
+.. toctree::
+   :maxdepth: 3
+
+Chapter 19: Computer Abilities Summary
 ::::::::::::::::::::::::::::::::::::::::::::
 
-Chapter 20: Creativity
+.. toctree::
+   :maxdepth: 2
+   
+   CSPAbilitySummary/thatsall.rst
+   CSPAbilitySummary/ch19_summary.rst
+
+Chapter 20: The Internet
+::::::::::::::::::::::::::::::::::::::::::::
+
+ 
+Chapter 21: Creativity
 ::::::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
@@ -359,7 +375,7 @@ Chapter 20: Creativity
     CSPCreativity/programming.rst
     CSPCreativity/referencing.rst
 
-Chapter 21: Global Impact
+Chapter 22: Global Impact
 ::::::::::::::::::::::::::::::::::::::::::::
 
 .. toctree::
@@ -381,7 +397,6 @@ Chapter 22: Computer Abilities Summary
 
    CSPAbilitySummary/thatsall.rst
    CSPAbilitySummary/ch19_summary.rst
-   CSPAbilitySummary/examPost.rst
 
 Chapter 23: What's Next?
 ::::::::::::::::::::::::::::::::::::::::::::
@@ -390,6 +405,17 @@ Chapter 23: What's Next?
    :maxdepth: 2
    
    CSPWhatsNext/whatsNext.rst
+
+SECTION 7: WRAP-UP
+:::::::::::::::::::::::::::::::::::::::::::
+
+Chapter 24: Post Exam
+::::::::::::::::::::::::::::::::::::::::::::
+
+.. toctree::
+   :maxdepth: 2
+   
+   CSPExamPost/examPost.rst
 
 Indices
 ::::::::::::::::::

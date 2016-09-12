@@ -29,11 +29,11 @@ Python Shell Instructions:
 
    *Way #1*: You can use the Python shell where you can directly run commands one at a time. Below is an example of what the IDLE shell looks like.
 	
-	.. image:: needsanimage.png
+	.. image:: IDLE_shell.png
 
    *Way #2*: You can also write multiple lines of Python in a file and then run all those lines at once. This is similar to what you've seen in this book. Use File > New File to start a new Python file from scratch, or use File > Open to open an existing file. Run the file with Run > Run Module or F5.
 
-        .. image:: needsanimage.png
+        .. image:: IDLE_file.png
 
 
 
@@ -47,7 +47,7 @@ JES is an IDE that makes it easy to get started with Python and allows you to wr
 
 2. After downloading, click on the JES icon to start the application. Below is a sample function and its output.
         
-        .. image:: needsanimage.png
+        .. image:: JES.png
 
 3. Make sure that you save the code that you write into a Python file on your computer. Before running a function make sure you load the program and then call the function in the output box (bottom black part).
 
@@ -115,4 +115,3 @@ Another important application of computing is in the supply chain. The supply ch
 Algorithms are processes or sets of rules to be followed in calculations or other problem-solving operations, and are the fundamental ways computers function and perform tasks. There are now algorithms that predict growth and sales for a company, algorithms that are able to determine cell growth, and much, much more. How do you apply an algorithm to something as random as cell growth you ask? Well the algorithms developed thus far are based on stochastic simulation, or random models that have a probability distribution or pattern. You might try to say, simulate the chemical reactions associated with cell growth and measure the time-dependent reaction rates, as well as the growth and division of the cells over time. 
 
 Even today, the use of algorithms in sports analytics is exploding. For example, the use of John Hollinger’s formula to determine an NBA player’s efficiency on the court incorporates many different types of stats and player performance has inspired teams around the league to start investing in their analytics department. Who are these “analysts” you ask? They are no other than your coders, developers, and computer scientists who look at different variables in the basketball landscape and determine what the relationships between these variables are. 
-

@@ -360,6 +360,7 @@ SECTION 6: WHAT'S POSSIBLE
 Chapter 20: The Internet
 ::::::::::::::::::::::::::::::::::::::::::::
 
+    *This chapter is coming soon!*
  
 Chapter 21: Creativity
 ::::::::::::::::::::::::::::::::::::::::::::

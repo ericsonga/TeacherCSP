@@ -347,7 +347,7 @@ Chapter 19: Computer Abilities Summary
 
 .. toctree::
    :maxdepth: 2
-   
+
    CSPAbilitySummary/thatsall.rst
    CSPAbilitySummary/ch19_summary.rst
    CSPExamPost/examPost.rst
@@ -363,7 +363,7 @@ Chapter 20: The Internet
 ::::::::::::::::::::::::::::::::::::::::::::
 
     *This chapter is coming soon!*
- 
+
 Chapter 21: Creativity
 ::::::::::::::::::::::::::::::::::::::::::::
 
@@ -406,9 +406,25 @@ Chapter 23: What's Next?
 
 .. toctree::
    :maxdepth: 2
-   
+
    CSPWhatsNext/whatsNext.rst
-   
+
+SECTION 7: PRACTICE EXAM QUESTIONS
+:::::::::::::::::::::::::::::::::::::::::::
+
+.. toctree::
+  :maxdepth: 3
+
+Chapter 24:  Question Sets
+::::::::::::::::::::::::::::::::::::::
+
+.. toctree::
+  :maxdepth: 2
+
+  CSPPracticeQuestions/APCSP_ExamInfo.rst
+  CSPPracticeQuestions/exam24_1.rst
+  CSPPracticeQuestions/exam24_2.rst
+  CSPPracticeQuestions/exam24_3.rst
    
 Indices
 ::::::::::::::::::

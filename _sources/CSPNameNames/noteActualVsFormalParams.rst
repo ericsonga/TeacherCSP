@@ -19,7 +19,7 @@
    :linenothreshold: 4
 
 
-|bigteachernote| Teacher Note: When calling a procedure or function, the names of formal and actual parameters don't have to match
+|bigteachernote| Teacher Note: Names for Formal and Actual Parameters
 =============================================================================
 
 A formal parameter is the name of the input value to a procedure, while

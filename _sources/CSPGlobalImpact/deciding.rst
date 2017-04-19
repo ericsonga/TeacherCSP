@@ -8,7 +8,7 @@
 
 
 Deciding on an Innovation
-====================
+=============================
 
 .. index:: Global Impact
 

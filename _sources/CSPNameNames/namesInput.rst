@@ -127,22 +127,22 @@ We can add an additional input to the function that specifies the size of the sq
 
    What shape would the following code draw? 
    
-   :: 
+   .. code-block:: python 
  
-     def mystery(turtle,size):
-         turtle.forward(size)
-         turtle.right(90)
-         turtle.forward(size / 2)
-         turtle.right(90)
-         turtle.forward(size)
-         turtle.right(90)
-         turtle.forward(size / 2)
-         turtle.right(90)
+      def mystery(turtle,size):
+          turtle.forward(size)
+          turtle.right(90)
+          turtle.forward(size / 2)
+          turtle.right(90)
+          turtle.forward(size)
+          turtle.right(90)
+          turtle.forward(size / 2)
+          turtle.right(90)
       
-     from turtle import *	# use the turtle library
-     space = Screen()     	# create a turtle screen (space)
-     malik = Turtle()     	# create a turtle named malik
-     mystery(malik, 100)   	# draw something with size = 100
+      from turtle import *	# use the turtle library
+      space = Screen()     	# create a turtle screen (space)
+      malik = Turtle()     	# create a turtle named malik
+      mystery(malik, 100)   	# draw something with size = 100
 
 
 .. index:: 
@@ -169,22 +169,22 @@ The inputs that are specified in a function or procedure definition are also cal
 
    In the following code what are the arguments (actual parameters)?  
    
-   :: 
+   .. code-block:: python 
  
-     def square(turtle,size):
-         turtle.forward(size)
-         turtle.right(90)
-         turtle.forward(size)
-         turtle.right(90)
-         turtle.forward(size)
-         turtle.right(90)
-         turtle.forward(size)
-         turtle.right(90)
+      def square(turtle,size):
+          turtle.forward(size)
+          turtle.right(90)
+          turtle.forward(size)
+          turtle.right(90)
+          turtle.forward(size)
+          turtle.right(90)
+          turtle.forward(size)
+          turtle.right(90)
      
-     from turtle import * 	# use the turtle library
-     space = Screen()      	# create a turtle screen (space)
-     imani = Turtle()    	# create a turtle named imani
-     square(imani, 25)      # draw a square with size 25
+      from turtle import * 	# use the turtle library
+      space = Screen()      	# create a turtle screen (space)
+      imani = Turtle()    	# create a turtle named imani
+      square(imani, 25)      # draw a square with size 25
      
 .. parsonsprob:: 6_4_4_Draw_Squares
 

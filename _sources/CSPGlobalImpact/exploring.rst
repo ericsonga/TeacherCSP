@@ -7,7 +7,7 @@
     is included in the section entitled "GNU Free Documentation License".
 
 Exploring Impact Data
-====================
+========================
 
 .. index:: Global Impact
 

@@ -8,14 +8,14 @@
 
 
 Preparing for the AP CS Principles Exam
-====================
+=============================================
 
 .. index:: Creativity
 
 The AP CS Principles Exam offers students an exposure to how computing and innovations impact the world in addition to foundational programming skills. In the following sections, we will guide you through the process of developing a project on innovation for the **AP CS Performance Tasks: Create section** of the AP CS Principles exam. This section encourages you to creatively apply your knowledge of computing. 
 
 The Create Task
---------
+-----------------
 *“For this task, you and your partner will individually and collaboratively develop programs of your choosing. You will be asked to answer questions about your programs, and you will be asked to provide details about how you and your partner collaborated. 
 You will be provided 12 hours of class time to complete this Performance Task”*
 

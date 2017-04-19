@@ -42,11 +42,12 @@ You will not be able to change your answers after you hit the "Finish Exam" butt
    
        Which of the following statements is true regarding the benefits of using the internet?
        ::
-          I.   The Internet allows information to be spread quickly from person to 
-          person.
-          II.  Internet users’ private information is protected regardless of 
-          what they do on the Internet.
-          III. The Internet can be used from a variety of devices.
+       
+        I.   The Internet allows information to be spread quickly from person to 
+        person.
+        II.  Internet users’ private information is protected regardless of 
+        what they do on the Internet.
+        III. The Internet can be used from a variety of devices.
  
 
     .. mchoice:: e24_2_3
@@ -146,19 +147,21 @@ You will not be able to change your answers after you hit the "Finish Exam" butt
 
        Consider the following code snippet that takes a positive integer ‘n’ as input and answer the question that follows
        ::
-          i <- 1
-          REPEAT UNTIL i ≤ n
-            IF i MOD 2 = 1
-                DISPLAY(“ODD”)
-            ELSE
-                DISPLAY(“EVEN”)
-            i <- i + 1
+       
+        i <- 1
+        REPEAT UNTIL i ≤ n
+           IF i MOD 2 = 1
+               DISPLAY(“ODD”)
+           ELSE
+               DISPLAY(“EVEN”)
+           i <- i + 1
 
        Which of the following statements are true?
        ::
-          I.   “ODD” is printed n/2 times if n is even
-          II.  “ODD” is printed (n + 1)/2 times if n is odd
-          III. “EVEN” is printed (n - 1)/2 times if n is odd
+       
+        I.   “ODD” is printed n/2 times if n is even
+        II.  “ODD” is printed (n + 1)/2 times if n is odd
+        III. “EVEN” is printed (n - 1)/2 times if n is odd
 
     .. mchoice:: e24_2_8
        :answer_a: Heuristic algorithm
@@ -186,21 +189,23 @@ You will not be able to change your answers after you hit the "Finish Exam" butt
 
        In a freezer, the temperature can be increased, but should not go above 0° C.  It can, however, be exactly equal to 0° C. The unfinished code for increasing the temperature in a freezer is shown below.  The variable temp represents the current temperature in degrees Celsius.
        ::
-         PROCEDURE incrementTemperature(temp)
-         {       
+       
+        PROCEDURE incrementTemperature(temp)
+        {       
            IF (<MISSING CODE>)
-             {
-               temp ← temp + 1
-             }
-             RETURN temp
-         }
+           {
+              temp ← temp + 1
+           }
+           RETURN temp
+        }
 
        Which of the following conditional statements will allow the code to function as expected?
        ::
-          I.     temp == 0 
-          II.    temp > 0 
-          III.   temp < 0
-          IV.    NOT (temp >= 0)
+       
+        I.     temp == 0 
+        II.    temp > 0 
+        III.   temp < 0
+        IV.    NOT (temp >= 0)
 
     .. mchoice:: e24_2_10
        :answer_a: A new electronic device that requires knowledge of the internal details, because it is important to know all the details of the device before using it. 

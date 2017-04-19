@@ -25,7 +25,7 @@
 You probably don't quite feel comfortable with creating procedures with parameters right now.  That's okay.  Our research on how people learn programming says that understanding how *names* can represent *something else* takes alot of practice.  People new to programming will probably prefer:
 
 
-:: 
+.. code-block:: python  
 
    from turtle import *    
    space = Screen()    		
@@ -41,7 +41,7 @@ You probably don't quite feel comfortable with creating procedures with paramete
 
 To creating a ``square`` procedure as shown below
 
-:: 
+.. code-block:: python  
 
    def square(turtle,size):
        turtle.forward(size)
@@ -55,7 +55,7 @@ To creating a ``square`` procedure as shown below
 
 and then calling the ``square`` procedure as shown below
 
-:: 
+.. code-block:: python 
 
    from turtle import *     # use the turtle library
    space = Screen()    		# create a turtle screen (space)

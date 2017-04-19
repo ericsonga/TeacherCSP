@@ -8,7 +8,7 @@
 
 
 Deciding What to Program 
-====================
+============================
 
 .. index:: Creativity
 

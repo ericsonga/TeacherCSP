@@ -19,7 +19,7 @@
    :linenothreshold: 3
 
 |bigteachernote| Teacher note: Conditionals with cards 
-==================================
+==========================================================
 
 A misconception that students have about conditionals is that both the statements or blocks under the if
 and ``else`` are executed each time. For instance:

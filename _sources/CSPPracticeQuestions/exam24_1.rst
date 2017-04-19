@@ -29,10 +29,11 @@ You will not be able to change your answers after you hit the "Finish Exam" butt
        :feedback_d: Incorrect
 
        Which of the following statements are true regarding compressing files?
+       ::
 
-          | I. If lossless compression is applied, every single bit of data that was originally in the file remains after the file is uncompressed.
-          | II. No matter what compression technique is used, once a data file is compressed, it cannot be restored to its original state.
-          | III. The amount of data reduction possible using lossy compression is often much higher than through lossless techniques.
+        I. If lossless compression is applied, every single bit of data that was originally in the file remains after the file is uncompressed.
+        II. No matter what compression technique is used, once a data file is compressed, it cannot be restored to its original state.
+        III. The amount of data reduction possible using lossy compression is often much higher than through lossless techniques.
            
     .. mchoice:: e24_1_2
        :answer_a: Abstraction requires users to understand the low-level details of a system.

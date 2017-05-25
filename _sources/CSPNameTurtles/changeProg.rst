@@ -93,6 +93,7 @@ Run the following program.
    jamal.forward(100)
    
 .. parsonsprob:: 5_6_4_Turtle-A
+   :adaptive:
 
    The following program uses a turtle to draw a capital A as shown to the left, <img src="../_static/letterA.png" width="150" align="left" hspace="10" vspace="5"/> but the lines are mixed up.  The program should do all necessary set-up, create the turtle.  After that the turtle should turn left, draw a line that is 100 pixels long, turn right 135 degrees and draw another line that is 100 pixels long.  Then the turtle should reverse direction and draw a line 50 pixels long and then turn left to draw the line between the other two lines.  
    -----

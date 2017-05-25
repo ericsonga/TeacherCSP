@@ -63,6 +63,55 @@ You can draw a block style C with a turtle.  Can you draw more than one letter? 
     ji.left(90)           # turn left 90 degrees
     ji.forward(75)        # go forward 75 units
     
+**Mixed up programs**
+
+.. parsonsprob:: 5_3_1_DrawA
+
+   The following program uses a turtle to draw a capital A as shown in the picture to the left of this text, <img src="../_static/DrawA.png" width="150" align="left" hspace="10" vspace="5" /> but the lines are mixed up.  The program should do all necessary set-up: import the turtle module, get the space to draw on, and create the turtle.  Remember that the turtle starts off facing east when it is created.  The turtle should turn to face south and draw a line that is 150 pixels long and then turn to face east and draw a line that is 75 pixels long.  We have added a compass to the picture to indicate the directions north, south, west, and east.  <br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.</p>
+   -----
+   from turtle import *
+   =====
+   space = Screen()
+   ella = Turtle()
+   =====
+   ella.left(45)
+   ella.forward(100)
+   =====
+   ella.right(135)
+   ella.forward(100)
+   =====
+   ella.penup()
+   ella.goto(100,100)
+   =====
+   ella.left(45)
+   ella.forward(75)
+   
+.. parsonsprob:: 5_3_2_DrawH
+   :adaptive:
+
+   The following program uses a turtle to draw a capital H as shown in the picture to the left of this text, <img src="../_static/DrawH.png" width="150" align="left" hspace="10" vspace="5" /> but the lines are mixed up.  The program should do all necessary set-up: import the turtle module, get the space to draw on, and create the turtle.  Remember that the turtle starts off facing east when it is created.  The turtle should turn to face south and draw a line that is 150 pixels long and then turn to face east and draw a line that is 75 pixels long.  We have added a compass to the picture to indicate the directions north, south, west, and east.  <br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.</p>
+   -----
+   from turtle import *
+   space = Screen()  
+   =====    
+   anu = Turtle()        
+   anu.left(90)
+   anu.forward(100)
+   =====
+   anu.penup()
+   anu.goto(0,50)
+   anu.pendown()
+   =====
+   anu.right(90)
+   anu.forward(50)
+   =====
+   anu.penup()
+   anu.goto(50,0)
+   anu.pendown()
+   =====
+   anu.left(90)
+   anu.forward(100)
+    
 You can change the color and pensize that you draw with as well.
 
 .. activecode:: Turtle_Color
@@ -108,4 +157,7 @@ The program below uses the ``goto(x,y)`` to move to the top left corner before d
     anu.forward(300)      # move forward by 300 pixels
     anu.right(90)         # turn right 90 degrees
     anu.forward(300)      # move forward by 300 pixels
+    
+
+
 

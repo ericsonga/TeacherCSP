@@ -107,7 +107,7 @@ Run the above code to see what the value of the box labelled ``a`` is when it is
 Self check
 ~~~~~~~~~~
 
-Consider this example:
+Consider the following code when trying to solve the problem below:
 
 .. sourcecode:: python
 
@@ -117,20 +117,20 @@ Consider this example:
 
 .. parsonsprob:: Either_Side
 
-    The following mixed-up boxes represent the steps that the computer performs to execute these lines. Drag the blocks from the left and put them in the correct order on the right.
+    The following mixed-up blocks represent the steps that the computer performs to execute these lines. Drag the blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p>
 
     -----
-    Assign 924.7 to the variable distance
+    Store 924.7 in the variable distance
     =====
-    Assign 35.5 to the variable mpg
+    Store 35.5 in the variable mpg
     =====
     In the expression distance / mpg, 
     replace distance with the value 924.7, 
     and replace mpg with the value 35.5,
     to produce the expression 924.7 / 35.5
     =====
-    Perform this division: 924.7 / 35.5
+    Perform the division: 924.7 / 35.5
     =====
-    Assign the result of the division 
-    (26.047887324) to the variable gallons
+    Store the result of the division 
+    (26.047887324) in the variable gallons
 

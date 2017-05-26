@@ -144,6 +144,7 @@ How do we know what's really going on in this program?  How do we know that *num
    Change the program above (in ActiveCode 3: Numbers_Sum_Even) to add up all the ODD numbers including up to 99.  You should run it to get 2500. What change did you make to the program?
    
 .. parsonsprob:: 7_5_5_Sum_From_50
+   :adaptive:
 
    The following is the correct code for printing the sum of all the even numbers from 50 to 100 using the accumulator pattern, but it is mixed up and <b>contains one extra block</b>. Drag the required blocks from the left and put them in the correct order on the right.  Don't forget to indent blocks in the body of the loop.  Just drag the block further right to indent.  Click the <i>Check Me</i> button to check your solution.</p>
    -----

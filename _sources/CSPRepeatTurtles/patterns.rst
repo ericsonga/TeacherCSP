@@ -71,12 +71,11 @@ By setting the pen color differently, we can distinguish the part that draws the
             zoe.forward(50)         # move forward 50 units
             zoe.right(72)           # turn by 72 degrees
 
-You can use the coloring to help figure out the correct order of the lines below.
+You can use the coloring in the picture below to help you figure out the correct order of the lines below.
 
 .. parsonsprob:: 10_3_1_Turtle_Spiro
-   :adaptive:
 
-   There is a way of arranging the statements below such that this image is created. <img src="../_static/TurtleColoredImage.png" width="200" align="left" hspace="10" vspace="5" /> Move the pieces of the program from the left into the space on the right.  Indent lines as needed.
+   There is a way of arranging the statements below such that this image is created. <img src="../_static/BlueTrianglesRedCircle.png" width="200" align="left" hspace="10" vspace="5" /> Move the pieces of the program from the left into the space on the right.  Indent lines as needed.
    -----
    from turtle import *
    from sys import *    
@@ -84,14 +83,12 @@ You can use the coloring to help figure out the correct order of the lines below
    wn = Screen()
    mateo = Turtle()
    mateo.setheading(90)
-   
    =====
    for repeats in range(20):
    =====
        mateo.color("red")
        mateo.forward(10)
-       mateo.left(18)
-      
+       mateo.left(18)    
    =====
        for sides in range(3):
    =====
@@ -99,5 +96,32 @@ You can use the coloring to help figure out the correct order of the lines below
            mateo.forward(50) 
            mateo.right(120)
          
+         
+You can use the coloring in the picture below to help you figure out the correct order of the lines below.
+
+.. parsonsprob:: 10_3_2_Turtle_Spiro_Blue_Red
+
+   There is a way of arranging the statements below such that this image is created. <img src="../_static/RedTrianglesBlueCircle.png" width="200" align="left" hspace="10" vspace="5" /> Move the pieces of the program from the left into the space on the right.  Indent lines as needed.
+   -----
+   from turtle import *
+   from sys import *    
+   setExecutionLimit(50000) 
+   ===== 
+   wn = Screen()
+   mateo = Turtle()
+   mateo.setheading(90)
+   =====
+   for repeats in range(20):
+   =====
+       mateo.color("blue")
+       mateo.forward(10)
+       mateo.left(18)
+      
+   =====
+       for sides in range(3):
+   =====
+           mateo.color("red")
+           mateo.forward(50) 
+           mateo.right(120)
 
 

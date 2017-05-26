@@ -53,6 +53,7 @@ pendown     None          Puts down the turtles tail so that it draws when it mo
 penup       None          Picks up the turtles tail so that it doesn't draw when it moves
 pensize     width         Sets the width of the pen for drawing
 right       angle         Turns the turtle clockwise by the specified angle
+setheading  angle         Turns the turtle to face the given heading.  East is 0, north is 90, west is 180, and south is 270. 
 shape       shapename     Should be 'arrow', 'classic', 'turtle', or 'circle'
 stamp       None          Leaves an impression of a turtle shape at the current location
 Turtle      None          Creates and returns a new turtle object
@@ -60,7 +61,7 @@ xcor        None          Returns the x value of the turtle's position
 ycor        None          Returns the y values of the turtle's position
 ==========  ==========  =========================
 
-.. mchoicemf:: 14_1_1_change_size
+.. mchoice:: 14_1_1_change_size
    :answer_a: shape
    :answer_b: xcor
    :answer_c: pensize
@@ -73,7 +74,7 @@ ycor        None          Returns the y values of the turtle's position
 
    What procedure would you use to change the size of the line the turtle leaves when it moves?
    
-.. mchoicemf:: 14_1_2_goto
+.. mchoice:: 14_1_2_goto
    :answer_a: stamp
    :answer_b: xcor
    :answer_c: penup

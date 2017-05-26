@@ -13,7 +13,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-12-4-
+	:prefix: csp-12-5-
 	
 .. highlight:: python
    :linenothreshold: 3
@@ -23,7 +23,7 @@ Logical Expressions
 
 The basic form of an ``if`` statement is the word **if** followed by a logical expression, and then a colon.  All the statements that are indented beneath the ``if`` (called the body of condition) are executed *IF AND ONLY IF* the logical expression is ``true``.
 
-Some logical expressions include:
+The following are examples of logical expressions:
 
 +------------+---------------------------------------------------------+
 | Expression | Logical meaning                                         |

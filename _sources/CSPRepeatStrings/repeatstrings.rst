@@ -29,8 +29,9 @@ Using Repetition with Strings
 *Learning Objectives:*
 
 - Show how the accumulator pattern works for strings.
-- Show how to reverse a string
-- Show how to mirror a string
+- Show how to reverse a string.
+- Show how to mirror a string.
+- Show how to use a while loop to modify a string.
 
 ..	index::
 	single: assignment
@@ -41,7 +42,7 @@ Using Repetition with Strings
     single: strings
 	single: for loop
 
-Python already has built in the ability to play with words, just like how we played with numbers in the last chapter.  A collection of letters, numbers, and other characters like spaces inside of a pair of single or double quotes is called a **string**. A Python ``for`` loop knows how to step through letters, and addition (``+``) appends strings together. What's cool is that the same accumulator pattern works.
+Python already has built in the ability to play with words or **strings**, just like how we played with numbers in the last chapter.  A **string** is a collection of letters, numbers, and other characters. A Python ``for`` loop knows how to step through letters, and addition (``+``) appends strings together. What's cool is that the same accumulator pattern works.
 
 As a reminder, here are the five steps in the accumulator pattern.
 

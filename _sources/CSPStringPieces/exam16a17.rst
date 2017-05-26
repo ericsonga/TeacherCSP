@@ -1,19 +1,17 @@
 .. qnum::
-   :prefix: 17-6-
+   :prefix: 17-9-
    :start: 1
    
 Exam Questions for Chapters 16 and 17
 -------------------------------------
 
-The following questions test what you have learned in chapters 16 and 17. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  Hover over the clock icon to see how much time you have spent on the exam, but you have unlimited time.  Click on the "Submit Answers" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
+The following questions test what you have learned in chapters 16 and 17. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  It will show how much time you have used, but you have unlimited time.  Click on the "Finish Exam" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
 
-You will not be able to change your answers after you hit the "Submit Answers" button.
+You will not be able to change your answers after you hit the "Finish Exam" button.
 
-.. startexam:: timed_Test
-    :showtitle: Exam Not Started
-    :hidetitle: Currently Taking Exam
+.. timed:: ch16a17ex
     
-    .. exammchoicemf:: e16a17_1
+    .. mchoice:: e16a17_1
        :answer_a: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1204, 2048]
        :answer_b: [1, 4, 16, 64, 256, 1024]
        :answer_c: [2, 8, 32, 128, 512, 2048]
@@ -36,7 +34,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
               answer = answer + [numbers[index]]
           print (answer)
            
-    .. exammchoicemf:: e16a17_2
+    .. mchoice:: e16a17_2
        :answer_a: Crfyro
        :answer_b: SC rof yarooH
        :answer_c: S o ao
@@ -59,7 +57,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
               answer = answer + source[index]
           print (answer)
        
-    .. exammchoicemf:: e16a17_3
+    .. mchoice:: e16a17_3
        :answer_a: Charlie
        :answer_b: Brown
        :answer_c: football
@@ -84,7 +82,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
 
            example("Charlie Brown,boy,football", 8)
            
-    .. exammchoicemf:: e16a17_4
+    .. mchoice:: e16a17_4
        :answer_a: yad ecin a si tI
        :answer_b: It is a nice day
        :answer_c: The empty string
@@ -105,7 +103,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
              resString = char + resString
           print resString
           
-    .. exammchoicemf:: e16a17_5
+    .. mchoice:: e16a17_5
        :answer_a: 10 and -1
        :answer_b: 5 and 2
        :answer_c: 10 and 4 
@@ -126,7 +124,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           b[1] = b[1] + 1
           print (b[1])
           
-    .. exammchoicemf:: e16a17_6
+    .. mchoice:: e16a17_6
        :answer_a: The printed result will be even and will be printed with a decimal point
        :answer_b: The printed result will be odd and will be printed with a decimal point
        :answer_c: The printed result will be even and will be printed without a decimal point
@@ -147,7 +145,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
               t = t + number
           print (t)
           
-    .. exammchoicemf:: e16a17_7
+    .. mchoice:: e16a17_7
        :answer_a: ueauue
        :answer_b: ueayuyue
        :answer_c: bbrbbybggybmprs
@@ -169,6 +167,5 @@ You will not be able to change your answers after you hit the "Submit Answers" b
                   newString = newString + letter
           print (newString)
              
-    .. finishexam:: timed_Test
 
    

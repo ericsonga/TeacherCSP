@@ -5,15 +5,13 @@
 Exam Questions for Chapters 1 and 2
 -------------------------------------
 
-The following questions test what you have learned in chapters 1 and 2. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  Hover over the clock icon to see how much time you have spent on the exam, but you have unlimited time.  Click on the "Submit Answers" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
+The following questions test what you have learned in chapters 1 and 2. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  It will show how much time you have used, but you have unlimited time.  Click on the "Finish Exam" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
 
-You will not be able to change your answers after you hit the "Submit Answers" button.
+You will not be able to change your answers after you hit the "Finish Exam" button.
 
-.. startexam:: timed_Test
-    :showtitle: Exam Not Started
-    :hidetitle: Currently Taking Exam
+.. timed:: ch1a2ex
     
-    .. exammchoicemf:: e1a2_1
+    .. mchoice:: e1a2_1
        :answer_a: dog
        :answer_b: fish
        :answer_c: cat
@@ -35,7 +33,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           var3 = var1
           var2 = "fish"
            
-    .. exammchoicemf:: e1a2_2
+    .. mchoice:: e1a2_2
        :answer_a: variable
        :answer_b: turtle
        :answer_c: string 
@@ -48,7 +46,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
 
        A named space that can hold a value is which of the following?
            
-    .. exammchoicemf:: e1a2_3
+    .. mchoice:: e1a2_3
        :answer_a: integer
        :answer_b: turtle
        :answer_c: string
@@ -61,7 +59,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
 
        The kind of data that can be letters, digits, and other characters inside a pair of single or double quotes is which of the following?
            
-    .. exammchoicemf:: e1a2_4
+    .. mchoice:: e1a2_4
        :answer_a: 3
        :answer_b: 2
        :answer_c: 5
@@ -81,7 +79,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           var3 = 5
           var1 = var2
            
-    .. exammchoicemf:: e1a2_5
+    .. mchoice:: e1a2_5
        :answer_a: A square
        :answer_b: A rectangle that is taller than it is wide
        :answer_c: A diamond
@@ -109,6 +107,5 @@ You will not be able to change your answers after you hit the "Submit Answers" b
          zari.forward(50)           # tell zari to move forward by 100 units
          zari.right(90)              # turn by 90 degrees
     
-    .. finishexam:: timed_Test
 
    

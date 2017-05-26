@@ -34,7 +34,7 @@ You can use ``if`` statements to make a story interactive where the reader picks
         print("You choose to turn right.")
         print("A greenish light is visible in the distance.")
        
-.. mchoicemf:: 13_2_1_story1
+.. mchoice:: 13_2_1_story1
    :answer_a: The room is pitch black.
    :answer_b: A ghost appears at the end of the hall.
    :answer_c: A greenish light is visible in the distance.  
@@ -47,7 +47,7 @@ You can use ``if`` statements to make a story interactive where the reader picks
 
    What is the second thing printed if the user answers left?
    
-.. mchoicemf:: 13_2_2_story2
+.. mchoice:: 13_2_2_story2
    :answer_a: The room is pitch black.
    :answer_b: A ghost appears at the end of the hall.
    :answer_c: A greenish light is visible in the distance.  
@@ -60,7 +60,7 @@ You can use ``if`` statements to make a story interactive where the reader picks
 
    What is the printed if the user answer something other than in, left, or right?
    
-What should the program do if the user enters something besides in, left, or right?  Fix the code above to let the user know what went wrong.
+What should the program do if the user enters something besides in, left, or right?  Fix the code above to let the user know what went wrong.  Also add another possibility like "out".
 
 
 

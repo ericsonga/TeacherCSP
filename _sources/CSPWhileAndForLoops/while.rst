@@ -13,7 +13,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-8-3-
+	:prefix: csp-8-4-
 	
 .. highlight:: java
    :linenothreshold: 4
@@ -22,7 +22,7 @@
 Looping When We Don't Know When We'll Stop
 ============================================
 
-Now, how do we get the computer to do something only so many times, or until something happens that we want to happen?  We have to construct programs so that all the parts together make the logical expression true *until* we want it to be false.
+While loops are typically used when you don't know how many times the loop needs to repeat.  The body of the loop will repeat while the condition is true.  The logical expression will be evaluated just before the body of the loop is repeated.  
 
 Let's say that we want to find the square root of a number.  For some square roots, you're never going to be exact.  Let's say that we want to find a square root that, when multiplied by itself, is within `0.01` of the square we want.  How do we do it?  There's a really old process that we can apply here.
 
@@ -46,7 +46,7 @@ Here's a program that does exactly that.  Try different `target` values, and see
       guessSquared = guess * guess
   print("Square root of", target,"is", guess)
 
-.. mchoicemf:: 8_3_1_Square_Root_Q1
+.. mchoice:: 8_4_1_Square_Root_Q1
   :answer_a: No error, since we compute it inside the loop.
   :answer_b: We would get an error.
   :answer_c: We need the one before the while loop, but not the one afterward.
@@ -66,17 +66,39 @@ Let's say that you wanted to figure out the square root of 6.  How many times wo
    http://ice-web.cc.gatech.edu/ce21/1/static/video/square-root-trace.mov
    http://ice-web.cc.gatech.edu/ce21/1/static/video/square-root-trace.webm
 
-.. mchoicemf:: 8_3_2_Count_Loops_Q1
+.. mchoice:: 8_4_2_Count_Loops_Q1
   :answer_a: Just once.
   :answer_b: Twice.
   :answer_c: Three times.
   :answer_d: Four times
   :correct: c
-  :feedback_a: The first time through the loop, guess is 2, and 2 * 2 is 4, which isn't 6.
-  :feedback_b: The second time through the loop, guess is 2.5 (average of 3 and 2). But, 2.5 * 2.5 is still more than 0.01 away from 6.
-  :feedback_c: The third time through the loop, guess is 2.45 which is a pretty good square root value for 6.
-  :feedback_d: We don't get to a fourth time.  Guess is 2, then 2.5, then 2.45, and then we stop.
+  :feedback_a: The first time we do the test, guess is 2, and 2 * 2 is 4, and 6 - 4 is 2 which is greater than 0.01.  
+  :feedback_b: The second time we do the test, guess is 2.5 (average of 3 and 2). But, 2.5 * 2.5 = 6.25 which is still more than 0.01 away from 6.
+  :feedback_c: The third time we do the test, guess is 2.45 which is 6.0025 when squared.  This is less than 0.01 away from 6.  So test executes 3 times.
+  :feedback_d: We don't get to a fourth time.  Guess is 2, then 2.5, then 2.45 at which point the test fails and and the loop stops.
 
-   How many times do we execute the body of the loop when ``target = 6`` (in the video)?
+   How many times do we execute the test ``abs(target-guessSquared) > 0.01`` when ``target = 6`` (in the video)?
 
 How about the square root of 25?  How about 2,356?  It's difficult to know ahead of time how many times the loop will execute.  That's where the ``while`` loop really shines, when you can specify an end condition (or rather, a *continue* condition).
+
+.. mchoice:: 8_4_3_Var1Var2
+   :answer_a: var1 = -2, var2 = 0
+   :answer_b: var1 = 0, var2 = -2
+   :answer_c: var1 = 0, var2 = -1
+   :answer_d: This is an infinite loop so it will never print anything.
+   :correct: b
+   :feedback_a: These are the initial value, but they change during the loop
+   :feedback_b: This loop will execute two times so var1 will be 0 and var2 will be -2 after the loop finishes.
+   :feedback_c: This would be true if the loop stopped executing as soon as var1 was equal to 0, but that isn't what happens.  The body of the loop will finish executing before the value of var1 is tested again.
+   :feedback_d: This would be true if it was <code>var1 = var1 - 1</code>
+
+   What are the values of var1 and var2 that are printed when the following code executes?
+   
+   :: 
+      
+      var1 = -2
+      var2 = 0
+      while var1 != 0:
+          var1 = var1 + 1
+          var2 = var2 - 1
+      print("var1: " + str(var1) + " var2 " + str(var2))

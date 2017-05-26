@@ -1,19 +1,17 @@
 .. qnum::
-   :prefix: 11-8-
+   :prefix: 11-9-
    :start: 1
    
 Exam Questions for Chapters 9 to 11
 -------------------------------------
 
-The following questions test what you have learned in chapters 9 to 11. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  Hover over the clock icon to see how much time you have spent on the exam, but you have unlimited time.  Click on the "Submit Answers" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
+The following questions test what you have learned in chapters 9 to 11. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  It will show how much time you have used, but you have unlimited time.  Click on the "Finish Exam" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
 
-You will not be able to change your answers after you hit the "Submit Answers" button.
+You will not be able to change your answers after you hit the "Finish Exam" button.
 
-.. startexam:: timed_Test
-    :showtitle: Exam Not Started
-    :hidetitle: Currently Taking Exam
+.. timed:: ch9t10ex
     
-    .. exammchoicemf:: e9t11_1
+    .. mchoice:: e9t11_1
        :answer_a: !We're off to see the Wizard!
        :answer_b: !draziW eht ees ot ffo er'eW!
        :answer_c: We're off to see the Wizard!!draziW eht ees ot ffo er'eW
@@ -34,7 +32,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
               newString = letter + newString + letter
           print (newString)
            
-    .. exammchoicemf:: e9t11_2
+    .. mchoice:: e9t11_2
        :answer_a: X = 5 and Y = 72
        :answer_b: X = 36 and Y = 10
        :answer_c: X = 10 and Y = 36
@@ -57,7 +55,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
               zoe.forward(50)        # move forward by 50 units
               zoe.right(Y)           # And turn each one by Y
           
-    .. exammchoicemf:: e9t11_3
+    .. mchoice:: e9t11_3
        :answer_a: Pictures are made up of little pixels, laid out on an (x,y) grid.
        :answer_b: Each pixel is stored as a number between 0 and 255.
        :answer_c: Each color has a red part, a green part, and a blue part.
@@ -70,7 +68,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
 
        Which of the following statements is false?
        
-    .. exammchoicemf:: e9t11_4
+    .. mchoice:: e9t11_4
        :answer_a: Double the blue and green values in the picture
        :answer_b: Halve the blue and green values in the picture
        :answer_c: Set the green values to half the original blue and the blue to half the original green
@@ -97,7 +95,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           win = ImageWin(img.getWidth(), img.getHeight())
           img.draw(win)
           
-    .. exammchoicemf:: e9t11_5
+    .. mchoice:: e9t11_5
        :answer_a: <img src="../_static/turtleStamp5.png" alt="5 turtles facing out in a circle with one in the center facing east" width="300">
        :answer_b: <img src="../_static/turtleStamp5WithLines.png" alt="5 turtles facing out in a circle with one in the center facing east with lines from the center to each turtle on the circle" width="300">
        :answer_c: <img src="../_static/turtleStamp10.png" alt="10 turtles facing out in a circle with one in the center facing east" width="300">
@@ -123,6 +121,5 @@ You will not be able to change your answers after you hit the "Submit Answers" b
               zoe.forward(-50)
               zoe.right(72)         
              
-    .. finishexam:: timed_Test
 
    

@@ -31,21 +31,30 @@
 	:prefix: csp-4-1-
 
 Assign a Name to a String
-===================================
+===========================
 
 ..	index::
 	single: assignment
+	single: string
 	pair: strings; assignment
+	single: function
+	single: concatenate
+	single: append
 
 *Learning Objectives:*
 
-- Create a variable that can store text (a string)
+- Create a variable that can store text (a string) 
 - Add (append or concatenate) strings together to create new strings
+- Introduce the ``input`` function and the concept of a function. 
 - Convert a number into a string to concatenate it to another string
-- Use dot-notation to invoke functions on objects
+- Use dot-notation to invoke functions on string objects
+- Introduce some string functions like ``lower``, ``capitalize``, ``len``, and ``find``.
 - Show that strings are immutable (don't change)
 
-Computers can use names to represent *anything*.  In the last chapter we saw that we can name numbers (declare a variable and set its value to a number) and then do calculations using the names for the numbers.  We can also name strings and do calculations with their names, too.  What does it mean to do a calculation on a string?  Well, Python uses the ``+`` symbol to concatenate strings as shown below.
+Concatenating (Appending) Strings 
+-----------------------------------
+
+Computers can use names to represent *anything*.  In the last chapter we saw that we can name numbers (declare a variable and set its value to a number) and then do calculations using the names for the numbers.  We can also name **strings** and do calculations with their names, too.  A **string** is a sequence of characters enclosed in a pair of single, double, or triple quotes like ``'Hi'``, ``"How are you?"``, or ``'''Why can't you do that?'''``.  What does it mean to do a calculation on a string?  Well, Python uses the ``+`` symbol to **concatenate** strings as shown below.  **Concatenate** means to create a new string with all the characters in the first string followed by all of the characters in the second string.  This is also called **appending** strings together.  
 
 .. activecode:: String_Assign
    :tour_1: "Line-by-line Tour"; 1: sa1-line1; 2: sa1-line2; 3: sa1-line3; 4: sa1-line4; 
@@ -55,8 +64,38 @@ Computers can use names to represent *anything*.  In the last chapter we saw tha
    fullName = first + " " + last
    print(fullName)
    
+Now try running this slightly different example.  
+   
+.. activecode:: String_Assign2
+   
+   first = 'Jorge'
+   last = "Garcia"
+   fullName = first + last
+   print(fullName)
+   
 .. note::
-   Blank spaces are not automatically added when you append two strings.  If you want a blank space in between two strings then put it there explicitly using a string with just a space in it ``" "`` as shown above.
+   Blank spaces are not automatically added when you append two strings.  If you want a blank space in between two strings then put it there explicitly using a string with just a space in it ``" "`` as shown in ActiveCode1.
+   
+Try to run the example below.  It should give you errors.  Can you fix the errors?  
+   
+.. activecode:: String_Assign3
+   
+   first = 'Jorge"
+   last = 'Garcia"
+   fullName = first " " last
+   print(fullName)
+   
+.. note::
+   A string is a sequence of characters enclosed in a pair of single, double, or triple quotes.  If you start a string with a single quote you must end it with a single quote.  If you start a string with a double quote you must end it with a double quote.  You must use the ``+`` operator to append strings together.
+   
+We can use the ``input`` **function** in Python to get your first and last name and then print your full name.  A **function** can take input and returns some value.  
+   
+.. activecode:: String_Input
+   
+   first = input("What is your first name?")
+   last = input("What is your last name?")
+   fullName = first + " " + last
+   print("Your full name is " + fullName)
    
 Concatenating Strings and Numbers
 -----------------------------------
@@ -86,90 +125,41 @@ We can update our driving example to print out the cost of the trip with just on
    costTrip = gallons * costPerGallon
    print("Cost to get from Chicago to Dallas: $" + str(costTrip))
    
-Strings are Objects
-------------------------------------
+**Check your understanding**
    
-..	index::
-	single: dot-notation
-	pair: programming; dot-notation
+.. mchoice:: 4_1_1_stringVsValue
+   :answer_a: The address is street
+   :answer_b: The address is 125 Main Street
+   :answer_c: It won't execute
+   :correct: a
+   :feedback_a: Since street is in double quotes it will print the string street rather than the value of the variable street.
+   :feedback_b: This would be true if it was print("The address is " + street)
+   :feedback_c: While this isn't printing what we probably want it to, it will print something.
 
-Strings are objects in Python which means that there is a set of built-in functions that you can use to manipulate strings.  You use **dot-notation** to invoke the functions on a string object such as ``sentence.lower()``.  The function ``lower()`` returns a new string with all of the characters in the original string set to lowercase.  The function ``capitalize()`` will capitalize the first letter of the string.  
 
-.. activecode:: String_Methods2
-   :tour_1: "Line-by-line Tour"; 1: str2-line1; 2: str2-line2; 3: str2-line3; 4: str2-line4; 5: str2-line5;
-   :nocodelens:
-   
-   sentence = "THIS IS A TEST"
-   better = sentence.lower()
-   print(better)
-   betterStill = better.capitalize() + "."
-   print(betterStill)
-   
-
-Strings are Immutable
------------------------
-
-..	index::
-	pair: string; immutable
-
-Even though you can manipulate a string to create a new string the original string is **immutable** which means that it doesn't change.  Notice that after you execute the code below the string stored in the variable ``sentence`` hasn't changed.  
-  
-.. activecode:: String_Immutable
-   :tour_1: "Line-by-line Tour"; 1: str2-line1; 2: str2-line2; 3: str2-line3; 4: str2-line4; 5: str2-line5; 6: str2-line6;
-   
-   sentence = "THIS IS A TEST"
-   better = sentence.lower()
-   print(better)
-   betterStill = better.capitalize() + "."
-   print(betterStill)
-   print(sentence)
-   
-While the strings themselves can't be changed you can change the value of a variable. This throws away the original string and sets the variable's value to the new string.   
-
-.. activecode:: String_Reassign
-   :tour_1: "Line-by-line Tour"; 1: sa2-line1; 2: sa2-line3; 3: sa2-line2; 4: sa2-line3;
-   
-   sentence = "THIS IS A TEST"
-   print(sentence)
-   sentence = "Hi there"
-   print(sentence)
-   
-.. mchoicemf:: 4_1_1_s1
-   :answer_a: xyz
-   :answer_b: xyxyz
-   :answer_c: xy xy z
-   :answer_d: xy z
-   :answer_e: z
-   :correct: b
-   :feedback_a: s1 will equal "xy" plus another "xy" then z at the end.
-   :feedback_b: s1 contains the original value, plus itself, plus "z"  
-   :feedback_c: No spaces are added during concatenation.
-   :feedback_d: No spaces are added during concatenation, and an additional "xy" should be included at the beginning.
-   :feedback_e: s1 was set to "xy" initially, so the final answer will be "xyxyz"
-
-   Given the following code segment, what is the value of the string s1 after these are executed?
+   Given the following code segment, what will be printed?
    
    ::
 
-     s1 = "xy"
-     s2 = s1
-     s1 = s1 + s2 + "z"
+     street = "125 Main Street"
+     print("The address is " + "street")
      
-.. mchoicemf:: 4_1_2_s2
-   :answer_a: Hey
-   :answer_b: hey
-   :answer_c: HEY
-   :correct: c
-   :feedback_a: This would be correct if we had asked what the value of s3 was. What is the value of s1?
-   :feedback_b: This would be true if we asked what the value of s2 was after the code executes.  What is the value of s1?
-   :feedback_c: Strings are immutable, meaning they don't change.  Any function that changes a string returns a new string.  So s1 never changes unless you set it to a different string. 
+.. mchoice:: 4_1_2_noSpace
+   :answer_a: 125 Main Street, Atlanta, GA
+   :answer_b: 125 Main Street,Atlanta, GA
+   :answer_c: 125 Main Street Atlanta, GA
+   :correct: b
+   :feedback_a: This would be true if it was street + ", ".
+   :feedback_b: There isn't a space after the comma and one isn't added automatically.
+   :feedback_c: What about the comma?
 
-   What is the value of s1 after the following code executes?
+   What will be printed when the following executes?
    
    :: 
 
-     s1 = "HEY"
-     s2 = s1.lower()
-     s3 = s2.capitalize()
+     street = "125 Main Street"
+     cityState = "Atlanta, GA"
+     print(street + "," + cityState)
 
+   
 

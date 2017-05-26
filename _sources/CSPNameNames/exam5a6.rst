@@ -1,19 +1,17 @@
 .. qnum::
-   :prefix: 6-10-
+   :prefix: 6-14-
    :start: 1
    
 Exam Questions for Chapters 5 and 6
 -------------------------------------
 
-The following questions test what you have learned in chapters 5 and 6. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  Hover over the clock icon to see how much time you have spent on the exam, but you have unlimited time.  Click on the "Submit Answers" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
+The following questions test what you have learned in chapters 5 and 6. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  It will show how much time you have used, but you have unlimited time.  Click on the "Finish Exam" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
 
-You will not be able to change your answers after you hit the "Submit Answers" button.
+You will not be able to change your answers after you hit the "Finish Exam" button.
 
-.. startexam:: timed_Test
-    :showtitle: Exam Not Started
-    :hidetitle: Currently Taking Exam
+.. timed:: ch5a6ex
     
-    .. exammchoicemf:: e5a6_1
+    .. mchoice:: e5a6_1
        :answer_a: value
        :answer_b: Second
        :answer_c: parameter
@@ -36,7 +34,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
 
           myFunction("Second")
            
-    .. exammchoicemf:: e5a6_2
+    .. mchoice:: e5a6_2
        :answer_a: <img src="../_static/squarea.png" alt="A square with the first line in black and the next 3 in red" width="300">
        :answer_b: <img src="../_static/squareb.png" alt="A square with all lines in red" width="300">
        :answer_c: <img src="../_static/squarec.png" alt="A square with the first two lines in black and the last two in red" width="300">
@@ -63,7 +61,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           alice.left(90)
           alice.forward(50)
           
-    .. exammchoicemf:: e5a6_3
+    .. mchoice:: e5a6_3
        :answer_a: bob.move(50)
        :answer_b: bob.left(50)
        :answer_c: bob.forward(50)
@@ -82,7 +80,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           space = Screen() 
           bob = Turtle()
           
-    .. exammchoicemf:: e5a6_4
+    .. mchoice:: e5a6_4
        :answer_a: definition
        :answer_b: procedure
        :answer_c: turtle
@@ -95,7 +93,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
 
        A named sequence of statements that returns a result is known as which of the following?
            
-    .. exammchoicemf:: e5a6_5
+    .. mchoice:: e5a6_5
        :answer_a: <img src="../_static/checka.png" alt="Shorter line to south and then longer line to east" width="300">
        :answer_b: <img src="../_static/checkb.png" alt="Longer line to south and then shorter line to east" width="300">
        :answer_c: <img src="../_static/checkc.png" alt="Longer line to north and then shorter line to east" width="300">
@@ -119,7 +117,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           sue.forward(150)
           
            
-    .. exammchoicemf:: e5a6_6
+    .. mchoice:: e5a6_6
        :answer_a: Two squares connected with a straight line
        :answer_b: Two triangles connected with a straight line
        :answer_c: Two rectangles connected with a straight line
@@ -150,8 +148,6 @@ You will not be able to change your answers after you hit the "Submit Answers" b
           luis.forward(200)
           shape(luis)
           
-    
-    
-    .. finishexam:: timed_Test
+
 
    

@@ -62,7 +62,11 @@ To look for substantial color changes calculate the average color for the curren
     win = ImageWin(img.getWidth(),img.getHeight())
     img.draw(win)
     
-.. mchoicemf:: 15_3_1_Edge
+Notice that the code above loops from 0 to the width - 1 as the last value through the loop (remember that range doesn't include the last value).  This is necessary since we are comparing the current pixel's average color with the average color in the pixel to the right.  There is no pixel to the right of the last pixel in a row so we have to stop after processing the one before the last one.
+    
+Try other ways to detect big changes in color from one pixel to another.  
+    
+.. mchoice:: 15_3_1_Edge
    :answer_a: 0
    :answer_b: 2
    :answer_c: 256

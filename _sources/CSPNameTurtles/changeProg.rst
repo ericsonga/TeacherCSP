@@ -13,7 +13,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-5-3-
+	:prefix: csp-5-6-
 	
 .. highlight:: java
    :linenothreshold: 4
@@ -34,7 +34,7 @@ Run the following program.
     alex.left(90)       	# turn by 90 degrees
     alex.forward(75)      	# tell alex to move forward by 75 units
 
-.. mchoicemf:: 5_3_1_Turtle_Names4_Q1
+.. mchoice:: 5_6_1_Turtle_Names4_Q1
    :answer_a: Change the 150 to 90
    :answer_b: Change the 75 to 90
    :answer_c: Change the 75 to 150
@@ -61,7 +61,7 @@ Run the following program.
     alex.forward(57)      	# Close the triangle
 
 
-.. mchoicemf:: 5_3_2_Turtle_Names5_Q1
+.. mchoice:: 5_6_2_Turtle_Names5_Q1
    :answer_a: alex.left(45)
    :answer_b: alex.left(90)
    :answer_c: alex.left(135)
@@ -72,7 +72,7 @@ Run the following program.
 
    The code ``alex.left(0)`` will not turn the turtle toward the starting point.  Which of these will?
    
-.. parsonsprob:: 5_3_3_Turtle-T
+.. parsonsprob:: 5_6_3_Turtle-T
 
    The following program uses a turtle to draw a capital T as shown to the left, <img src="../_static/TurtleT.png" width="150" align="left" hspace="10" vspace="5"/> but the lines are mixed up.  The program should do all necessary set-up, create the turtle.  After that the turtle should turn to face north, draw a line that is 150 pixels long, turn to face west, and draw a line that is 50 pixels long.  Next, the turtle should turn 180 degrees and draw a line that is 100 pixels long.  Finally, set the window to close when the user clicks in it.<br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.</p>  
    -----
@@ -81,7 +81,7 @@ Run the following program.
    space = Screen()    	
    jamal = Turtle()
    ===== 
-   jamal.setheading(90) 
+   jamal.left(90)
    =====                
    jamal.forward(150)
    =====
@@ -89,7 +89,32 @@ Run the following program.
    jamal.forward(50)
    =====
    jamal.right(180)
+   =====
    jamal.forward(100)
+   
+.. parsonsprob:: 5_6_4_Turtle-A
+   :adaptive:
+
+   The following program uses a turtle to draw a capital A as shown to the left, <img src="../_static/letterA.png" width="150" align="left" hspace="10" vspace="5"/> but the lines are mixed up.  The program should do all necessary set-up, create the turtle.  After that the turtle should turn left, draw a line that is 100 pixels long, turn right 135 degrees and draw another line that is 100 pixels long.  Then the turtle should reverse direction and draw a line 50 pixels long and then turn left to draw the line between the other two lines.  
+   -----
+   from turtle import *
+   space = Screen()  
+   =====  	
+   jamal = Turtle()
+   ===== 
+   jamal.left(70)
+   =====                
+   jamal.forward(100)
+   jamal.right(135)
+   =====
+   jamal.forward(100)
+   =====
+   jamal.right(180)
+   =====
+   jamal.forward(50)
+   =====
+   jamal.left(65)
+   jamal.forward(45)
    
 
 

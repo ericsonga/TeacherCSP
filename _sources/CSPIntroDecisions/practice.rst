@@ -13,7 +13,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-12-6-
+	:prefix: csp-12-7-
 	
 .. highlight:: python
    :linenothreshold: 3
@@ -37,12 +37,14 @@ The program below is broken in a subtle way.  For one value of ``weight``, the `
   print(total)
 
 Try different values for ``weight`` in the above code and then answer the question below:
+        
+.. fillintheblank:: 12_6_1_brokenrange_fill
 
-.. fillintheblank:: 12_6_1_brokenrange
-  :correct: ^1$|1\.[0]*$
-  :blankid: brokenrange1
- 
-  What value for ``weight`` will result in an error complaining that ``price`` is not defined?  :textfield:`brokenrange1::mini`
+    .. blank:: 12_6_1_brokenrange
+        :correct: ^1$|1\.[0]*$
+        :feedback1: (".*", "Which value is not tested currently?")
+
+        What value for weight will result in an error complaining that price is not defined?
 
 It is certainly possible to have multiple ``if`` statements, and each one can match (or not match) the data.  Imagine a more complicated price scheme, where the price is based on the weight, but there is also a 10% discount for buying more then 10 items.
 
@@ -62,7 +64,7 @@ It is certainly possible to have multiple ``if`` statements, and each one can ma
   print(price)
   print(total)
 
-.. mchoicemf:: 12_6_2_Multiple_Ifs
+.. mchoice:: 12_6_2_Multiple_Ifs
   :answer_a: $3.45
   :answer_b: $3.11
   :answer_c: $3.105
@@ -75,7 +77,7 @@ It is certainly possible to have multiple ``if`` statements, and each one can ma
 
    What is the total for 12 items that weigh 3 pounds?
    
-.. mchoicemf:: 12_6_3_Grade_Ifs
+.. mchoice:: 12_6_3_Grade_Ifs
    :answer_a: A
    :answer_b: B
    :answer_c: C
@@ -105,7 +107,7 @@ It is certainly possible to have multiple ``if`` statements, and each one can ma
          grade = "E"
      print(grade)
      
-.. mchoicemf:: 12_6_4_Logic_Ifs
+.. mchoice:: 12_6_4_Logic_Ifs
    :answer_a: x will always equal 0 after this code executes for any value of x
    :answer_b: if x is greater than 2, the value in x will be doubled after this code executes
    :answer_c: if x is greater than 2, x will equal 0 after this code executes

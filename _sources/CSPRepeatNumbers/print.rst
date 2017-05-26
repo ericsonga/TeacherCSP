@@ -40,6 +40,7 @@ The goal of this stage of learning about programming is to develop a mental mode
     print(sum)
     
 .. parsonsprob:: 7_6_1_Print-Sum-Evens
+   :adaptive:
 
    The following is the correct code for printing the value of number and the sum each time through the loop, but it is mixed up. The code should initialize the accumulator, create the list of numbers, and then loop through the list of numbers.  Each time through the loop it should print the value of number, add the value of number to the accumulator, and then print the current sum.  Drag the blocks from the left and put them in the correct order on the right.  Don't forget to indent blocks in the body of the loop.  Just drag the block further right to indent.  Click the <i>Check Me</i> button to check your solution.</p>
    -----

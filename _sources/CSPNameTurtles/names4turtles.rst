@@ -23,82 +23,32 @@ Assign a Name to a Turtle
 
 *Learning Objectives:*
 
-- Use assignment to name objects like turtles.
+- Use assignment to name objects like turtles and screens.
 - Ask turtle objects to perform actions.
-- Understand that using the right object at the right time, in order, is critical to success.
+- Introduce the concept of a procedure, which does some action, but doesn't return a value.
+- Introduce some turtle procedures like ``color``, ``penup``, ``pendown``, and ``pensize``.
+- Demonstrate that you can create more than one object of a type.
+- Demonstrate that using the right object at the right time, in order, is critical to success.
 
 ..	index::
 	single: objects
 	
-Names can be more than numbers and strings.  They can also be turtles or "screens" (a space on the page where a turtle can draw).  You can also call things like turtles and screens **objects**.  **Objects** in programming are things that do the action in a program.  
+Names can be more than numbers and strings.  They can also be turtles or "screens" (a space on the page where a turtle can draw).  You can also call things like turtles and screens **objects**.  **Objects** in programming are the things that do the action in a program.  Objects can have attributes and behavior.  An example of an attribute is a position and an example of a behavior is the ability to go forward.  
 
-We have seen this example once before.
+We have seen the example below once before.  It allows us to use the ``turtle`` library, creates a ``space`` for a turtle object to draw on, creates a ``turtle`` object and names it ``alex``, asks ``alex`` to go forward by 150 pixels, asks ``alex`` to turn left 90 degrees, and asks ``alex`` to go forward 75 pixels. 
 
-.. activecode:: Turtle_Names1
-    :tour_1: "Line-by-line Tour"; 1: t1-line1; 2: t1-line2; 3: t1-line3; 4: t1-line4; 5: t1-line5; 6: t1-line6; 7: t1-for100-1; 8: t1-right90-1; 9: t1-for100-2; 10: t1-right90-2; 11: t1-for100-3; 12: t1-right90-3;
+.. activecode:: Turtle_1_Again
+    :tour_1: "Line-by-line Tour"; 1: first-turtle-line-1; 2: first-turtle-line-2; 3: first-turtle-line-3; 4: first-turtle-line-4; 5: first-turtle-line-5; 6: first-turtle-line-6;
     :nocodelens:
 	
     from turtle import *	# use the turtle library
-    space = Screen()		# create a turtle screen (space)
-    zari = Turtle() 		# create a turtle named zari
-    zari.setheading(90)		# Point due north
-    zari.forward(100)		# tell zari to move forward by 100 units
-    zari.right(90)   		# turn by 90 degrees
-    zari.forward(100)		# tell zari to move forward by 100 units
-    zari.right(90)   		# turn by 90 degrees
-    zari.forward(100)		# tell zari to move forward by 100 units
-    zari.right(90)   		# turn by 90 degrees
-    zari.forward(100)		# tell zari to move forward by 100 units
-    zari.right(90)    		# turn by 90 degrees
-
-Now try this one.  
-
-.. activecode:: Turtle_Names2
-    :tour_1: "Line-by-line Tour"; 1: tri-line1; 2: tri-line2; 3: tri-line3; 4: tri-line4; 5: tri-line5; 6: tri-line6; 7: tri-line7; 8: tri-line8; 9: tri-line9; 10: tri-line10;
-    :nocodelens:
-	
-    from turtle import *   	# use the turtle library
-    space = Screen()     	# create a turtle screen (space)
-    zari = Turtle()      	# create a turtle named zari
-    zari.setheading(90) 	# Point due north
-    zari.forward(100)  		# tell zari to move forward by 100 units
-    zari.right(120) 		# turn right by 120 degrees
-    zari.forward(100)		# tell zari to move forward by 100 units
-    zari.right(120)   		# turn right by 120 degrees
-    zari.forward(100) 		# tell zari to move forward by 100 units
-    zari.right(120)   		# turn right by 120 degrees
-
-.. mchoicemf:: 5_1_1_Turtle_Names2_Q1
-   :answer_a: A square
-   :answer_b: A triangle
-   :answer_c: A rectangle
-   :correct: b
-   :feedback_a: That was the first program, but not the second program.
-   :feedback_b: Now, what if you did one more forward and right.  Would it still be a triangle? Try it!
-   :feedback_c: But, we could change the first program to make a rectangle.  Can you change two lines in the first program to draw a rectangle?
-
-   What shape did that draw?
-
-This works because ``zari`` is a turtle, and each statement gets executed, one right after the other.  If we introduce another turtle and another name, it doesn't work the same
-
-.. activecode:: Two_Turtles
-    :tour_1: "Line-by-line Tour"; 1: tt-line1; 2: tt-line2; 3: tt-line3; 4: tt-line4; 5: tt-line5; 6: tt-line6; 7: tt-line7; 8: tt-line8; 9: tt-line9; 10: tt-line10; 11: tt-line11; 12: tt-line12;
-    :nocodelens:
-	
-    from turtle import * 	# use the turtle library
-    space = Screen()     	# create a turtle screen (space)
-    zari = Turtle()     	# create a turtle named zari
-    zari.setheading(90) 	# Point due north
-    zari.forward(100)   	# tell zari to move forward by 100 units
-    zari.right(120)     	# turn right by 120 degrees
-    zari.forward(100)     	# tell zari to move forward by 100 units
-    zari.right(120)      	# turn right by 120 degrees
-    chad = Turtle()     	# create a new turtle named chad
-    chad.color("orange")  	# change the color chad's draws with
-    chad.forward(100)     	# tell chad to move forward by 100 units
-    chad.right(120)     	# turn chad by 120 degrees
+    space = Screen()		# create a turtle space
+    alex = Turtle()   		# create a turtle named alex
+    alex.forward(150)		# move forward by 150 units
+    alex.left(90)   		# turn by 90 degrees
+    alex.forward(75)		# move forward by 75 units 
     
-.. mchoicemf:: 5_1_2_Turtle_Dir_Q1
+.. mchoice:: 5_1_1_Turtle_Dir_Q1
    :answer_a: North
    :answer_b: South
    :answer_c: East
@@ -109,11 +59,24 @@ This works because ``zari`` is a turtle, and each statement gets executed, one r
    :feedback_c: Turtles start off facing east which is toward the right side of the page.
    :feedback_d: Which way does chad first move in the example above?   North is at the top of the page.
 
-   Which way does a turtle face when first created?
+   Which way does a turtle face when it is first created?
+    
+What does a left turn of 90 mean? 
+----------------------------------
+    
+When we ask a turtle to turn left, it will turn left based on the direction it is currently heading. A turtle object keeps track of its heading (direction it is facing). Use the figure below to help you understand how much the turtle will turn if asked to turn left 90 degrees and it is currently heading east (0 degrees).
+
+.. figure:: Figures/turnDegrees.png
+    :width: 400px
+    :align: center
+    :alt: shows what a turn of each degrees means for left and right turns
+    :figclass: align-center
+
+    Figure 1: The amount of turn for specified degrees for left and right turns
     
 **Mixed up programs**
 
-.. parsonsprob:: 5_1_3_Turtle_L
+.. parsonsprob:: 5_1_1_Turtle_L
 
    The following program uses a turtle to draw a capital L as shown in the picture to the left of this text, <img src="../_static/TurtleL4.png" width="150" align="left" hspace="10" vspace="5" /> but the lines are mixed up.  The program should do all necessary set-up: import the turtle module, get the space to draw on, and create the turtle.  Remember that the turtle starts off facing east when it is created.  The turtle should turn to face south and draw a line that is 150 pixels long and then turn to face east and draw a line that is 75 pixels long.  We have added a compass to the picture to indicate the directions north, south, west, and east.  <br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.</p>
    -----
@@ -123,19 +86,26 @@ This works because ``zari`` is a turtle, and each statement gets executed, one r
    ella = Turtle()
    =====
    ella.right(90)
+   =====
    ella.forward(150)
    =====
    ella.left(90)
    =====
    ella.forward(75)
    
-.. parsonsprob:: 5_1_4_Turtle_Check
+.. note ::
 
-   The following program uses a turtle to draw a checkmark as shown to the left, <img src="../_static/TurtleCheckmark4.png" width="150" align="left" hspace="10" vspace="5" /> but the lines are mixed up.  The program should do all necessary set-up: import the turtle module, get the window to draw on, and create the turtle.  The turtle should turn to face southeast, draw a line that is 75 pixels long, then turn to face northeast, and draw a line that is 150 pixels long.  We have added a compass to the picture to indicate the directions north, south, west, and east.  Northeast is between north and east. Southeast is between south and east. <br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.</p>
+   The problem below has a *Help Me* button, but it starts out disabled.  You must make at least 3 attempts to solve this problem before the button becomes enabled.  You can click on the *Help Me* button when it is enabled to make the problem easier.  
+   
+.. parsonsprob:: 5_1_2_Turtle_Check
+   :adaptive:
+
+   The following program uses a turtle to draw a checkmark as shown to the left, <img src="../_static/TurtleCheckmark4.png" width="150" align="left" hspace="10" vspace="5" /> but the lines are mixed up.  The program should do all necessary set-up: import the turtle module, get the window to draw on, and create the turtle.  The turtle should turn to face southeast, draw a line that is 75 pixels long, then turn to face northeast, and draw a line that is 150 pixels long.  We have added a compass to the picture to indicate the directions north, south, west, and east.  Northeast is between north and east. Southeast is between south and east. <br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order.  </p>
    -----
    from turtle import *
    =====
    space = turtle.Screen()
+   =====
    maria = turtle.Turtle()
    =====
    maria.right(45)
@@ -145,7 +115,5 @@ This works because ``zari`` is a turtle, and each statement gets executed, one r
    maria.left(90)
    =====
    maria.forward(150)
-   
-
 
 

@@ -72,7 +72,7 @@ Since the outer loop changes the  x (the column) and the inner loop changes the 
     for x in range(img.getWidth()):
     	for y in range(img.getHeight()):
         
-			# STEP 4: GET THE DATA
+            # STEP 4: GET THE DATA
             p = img.getPixel(x, y)
             
             # STEP 5: MODIFY THE COLOR
@@ -114,7 +114,7 @@ We don't always have to modify the pixel color.  Sometimes we can just change th
     
 Try the program above on some of the other images as well by changing the file name on line 5. Does it always have the same effect?
 
-.. mchoicemf:: 11_5_1_Image_YX_Q1
+.. mchoice:: 11_5_1_Image_YX_Q1
    :answer_a: We rotated the image 90 degrees to the left and flipped it over.
    :answer_b: We mirrored the image around a diagonal line from the top left to the bottom right.
    :answer_c: We flipped the image horizontally.

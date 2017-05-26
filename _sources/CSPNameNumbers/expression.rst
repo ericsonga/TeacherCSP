@@ -48,7 +48,7 @@
     
 .. 	qnum::
 	:start: 1
-	:prefix: csp-3-2-
+	:prefix: csp-3-3-
 
 .. highlight:: java
    :linenothreshold: 4
@@ -64,12 +64,13 @@ Expressions
 
 The *right hand* side of the assignment statement doesn't have to be a value.  It can be *an arithmetic expression*, like ``2*2``.  The expression will be evaluated and the result from the expression will be stored in the variable.  
 
-.. fillintheblank:: 3_2_1_Mult
-   :correct: ^4$
-   :feedback1: ('.*','Did you actually run the program?')
-   :blankid: multBlank
+.. fillintheblank:: 3_2_1_Mult_fill
 
-   What will be printed when you click on the *Run* button in the code below? :textfield:`multBlank::small`
+    .. blank:: 3_2_1_Mult
+        :correct: ^4$
+        :feedback1: ('.*','Did you actually run the program?')
+ 
+        What will be printed when you click on the Run button in the code below? 
 
 .. activecode:: Expression_Mult
     :tour_1: "Line-by-line Tour"; 1: ex1-line1; 2: ex1-line2; 
@@ -94,12 +95,13 @@ Integer Division
    
 You can use all the standard mathematical symbols.
 
-.. fillintheblank:: 3_2_2_Div
-   :correct: ^0.333333333333$
-   :feedback1: ('.*','Did you actually run the program?')
-   :blankid: divBlank
+.. fillintheblank:: 3_2_2_Div_fill
 
-   What will be printed when you click on the *Run* button in the code below? :textfield:`divBlank::medium`
+    .. blank:: 3_2_2_Div
+        :correct: ^0.333333333333$
+        :feedback1: ('.*','Did you actually run the program?')
+
+        What will be printed when you click on the Run button in the code below? 
    
 .. activecode:: Expression_Div
     :tour_1: "Line-by-line Tour"; 1: ex2-line1; 2: ex1-line2; 
@@ -120,12 +122,13 @@ Modulo
    
 There are also some symbols that may be used in ways that you don't expect.  
 
-.. fillintheblank:: 3_2_3_Mod
-   :correct: ^0$
-   :feedback1: ('.*','Did you actually run the program?')
-   :blankid: modBlank
+.. fillintheblank:: 3_2_3_Mod_fill
 
-   What will be printed when you click on the *Run* button in the code below? :textfield:`modBlank::small`
+    .. blank:: 3_2_3_Mod
+        :correct: ^0$
+        :feedback1: ('.*','Did you actually run the program?')
+
+        What will be printed when you click on the Run button in the code below? 
    
 .. activecode:: Expression_Mod
     :tour_1: "Line-by-line Tour"; 1: ex3-line1; 2: ex1-line2; 
@@ -144,5 +147,5 @@ You may not be familiar with the **modulo** (remainder) operator ``%``.  It retu
     Figure 3: Long division showing the whole number result and the remainder
     
 .. note::
-   The result of ``x % y`` when ``x`` is smaller than ``y`` is always ``x``.  The value ``y`` can't go into ``x`` at all, since ``x`` is smaller than ``y``, so the result is just ``x``.  So if you see ``2 % 3`` the result is ``2``.  You can edit the code above to try this for yourself.
+   The result of ``x % y`` when ``x`` is smaller than ``y`` is always ``x``.  The value ``y`` can't go into ``x`` at all, since ``x`` is smaller than ``y``, so the result is just ``x``.  So if you see ``2 % 3`` the result is ``2``.  Edit the code above to try this for yourself.  Change the code to ``result = 2 % 3`` and see what that prints when it is run.
 

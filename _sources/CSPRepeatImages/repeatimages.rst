@@ -85,7 +85,9 @@ The program above can take several minutes to execute on the ``arch.jpg`` pictur
 A Library of Images
 =====================
 
-Because of the way that web page images work, you can only manipulate pictures here that have been pre-loaded to this web-server.  Modify the program above to try out the code on some of these other images by changing line 4 above. 
+Here are some other small images that you can use.  Modify the program above to try out the code on some of these other images by changing line 4 above. 
+
+You can actually run this code on any image on the web by specifying the image url.  We recommend using small images since larger images will take more time to process.
 
 .. raw:: html
 

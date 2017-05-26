@@ -13,7 +13,7 @@
 	:prefix: csp-11-7-
 
 
-Chapter 11 - Concept Summary
+Chapter 11 - Summary
 ============================
 
 Chapter 11 included the following concepts from computing.
@@ -31,6 +31,4 @@ Chapter 11 included the following concepts from computing.
 
 .. note::  
 
-   This is the end of chapter 11.  Readers who are part of the teacher study should go to https://www.surveymonkey.com/r/ch9t11-feedback and provide feedback and then continue to the next section which is an exam on chapters 9, 10, and 11.  If you are not part of the study you can skip the exam or take it if you wish.  Remember that you can go to the table of contents by clicking on "Teacher-CSP" in the upper left corner of this window.
-
-
+   This is the end of chapter 11.   We would love it if you could give us some feedback on this chapter at https://www.surveymonkey.com/r/ch11-teacher-fb.  You might want to open this link in a new tab to make it easier for you to return to your place in this ebook.

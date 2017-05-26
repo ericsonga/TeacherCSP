@@ -48,7 +48,7 @@
     
 .. 	qnum::
 	:start: 1
-	:prefix: csp-3-7-
+	:prefix: csp-3-9-
 
 .. highlight:: java
    :linenothreshold: 4
@@ -65,7 +65,7 @@ Let's explore assignment in general.  Try tracing this example.
    c = "Fred"
    d = b
 
-.. mchoicemf:: 3_7_1_Assignment_Q1
+.. mchoice:: 3_7_1_Assignment_Q1
    :answer_a: 1
    :answer_b: 12.3
    :answer_c: "b"
@@ -86,7 +86,7 @@ The *sequence* of statements in a program is very important.  Assignment doesn't
 	    var1 = 17.3
 	    var2 = var1
 
-.. mchoicemf:: 3_7_2_Assignment_Multiple_Q1
+.. mchoice:: 3_7_2_Assignment_Multiple_Q1
 		   :answer_a: var1 is 45, var2 is 45
 		   :answer_b: var1 is 45, var2 is var1
 		   :answer_c: var1 is 17.3, var2 is 45
@@ -111,7 +111,7 @@ We can see values (including the values for named variables) by printing them.  
    numDays2 = daysInWeek * 3
    print(numDays2)
 
-.. mchoicemf:: 3_7_3_Assign_Days_Q1
+.. mchoice:: 3_7_3_Assign_Days_Q1
 		   :answer_a: 7, 7*3, daysInWeek*3
 		   :answer_b: daysInWeek, numDays, numDays2
 		   :answer_c: 7, 21, 21

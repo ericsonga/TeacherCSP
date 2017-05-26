@@ -19,7 +19,7 @@
 Web Data
 ===========
 
-There is *tons* of data available on the web!  You can analyze it and figure out all kinds of things on your own.
+There is *tons* of data available on the web!  You can analyze it and figure out all kinds of things with a bit of code.
 
 *Learning Objectives*:
 
@@ -29,6 +29,8 @@ This chapter of the book will address the following from the Computer Science Pr
  - LO 3.1.1: ... Use computers to process information, find patterns, and test hypotheses about digitally processed information to gain insight and knowledge.
  - LO 3.2.1: ... Extract information from data to discover and explain connections, patterns, or trends. 
  - LO 3.2.2: ... Use large data sets to explore and discover information and knowledge. 
+
+
 
 
 

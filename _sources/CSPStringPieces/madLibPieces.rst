@@ -16,19 +16,24 @@ Making MadLib Stories, Easier
 You might recall this example from earlier in this section of the book.
 
 .. activecode:: madlib1
-   :tour_1: "Line by line tour"; 1: StEx-line1; 2: StEx-line2; 3: StEx-line3; 4: StEx-line4; 5: StEx-line5; 6: StEx-line6; 7: StEx-line7; 8: StEx-line8; 9: StEx-line9; 10: StEx-line10; 11: StEx-line11; 12: StEx-line12; 13: StEx-line13; 14: StEx-line14; 15: StEx-line15; 
-   :tour_2: "Structural tour"; 1-5: StEx-line1-5; 6-10: StEx-line6-10; 11-15: StEx-line11-15;
+   :tour_1: "Line by line tour"; 2: StEx-line1; 3: StEx-line2; 4: StEx-line3; 5: StEx-line4; 6: StEx-line5; 9: StEx-line6; 10: StEx-line7; 11: StEx-line8; 12: StEx-line9; 13: StEx-line10; 16: StEx-line11; 17: StEx-line12; 18: StEx-line13; 19: StEx-line14; 20: StEx-line15; 
+   :tour_2: "Structural tour"; 2-6: StEx-line1-5; 9-13: StEx-line6-10; 16-20: StEx-line11-15;
 
+   # initialize the variables
    firstName = "Pat"
    lastName = "Smith"
    gender = "girl"
    address = "65 Elm Street"
    verb = "eat"
+   
+   # create the story
    start = "Once there was a " + gender + " named " + firstName + "."
    next1 = "A good " + gender + " living at " + address + "."
    next2 = "One day, a wicked witch came to the " + lastName + " house."
    next3 = "The wicked witch was planning to " + verb + " " + firstName + "!"
    ending = "But " + firstName + " was smart and avoided the wicked witch."
+   
+   # print the story
    print(start)
    print(next1)
    print(next2)

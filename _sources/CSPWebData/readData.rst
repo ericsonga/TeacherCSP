@@ -18,7 +18,7 @@
 Reading the data
 =================
 
-This program uses the same data file that we have been using, but if you want to see **all** of the data click on the *Show* button below.  Once it appears, you can hide it again by clicking on the *Hide* button.
+This section uses the same data file that we just saw. If you want to see **all** of the data click on the *Show* button below.  Once it appears, you can hide it again by clicking on the *Hide* button.
 
 .. reveal:: pol_Data3
     :showtitle: Show
@@ -408,9 +408,9 @@ This program uses the same data file that we have been using, but if you want to
        Yuma, AZ :14 :9
        </pre>
 
-If you clicked on the `Show` button you can tell that it is a lot of data.  But we don't actually know the number of lines of data in the file by looking at it.  Since we don't know the number of lines here, we won't use a *for* loop to process it.  We will use a *while* loop to keep reading the data until we're done.
+If you clicked on the `Show` button you can tell that it is a lot of data.  But we don't actually know the number of lines of data in the file by looking at it.  Since we don't know the number of lines here, we won't use a *for* loop to process it.  We will use a *while* loop to keep reading the data until there isn't any more (returns an empty string).
 
-We can process it by *opening* the file containing the data, then *reading* each line in.  As long as the line is not empty, we keep going doing a ``split`` and processing the data.  (This data is separated by a ":" instead of a ",".)
+We can process it by *opening* the file containing the data, then *reading* each line in.  As long as the line is not empty, we keep going doing a ``split`` and processing the data.  (This data is separated by a ``:`` instead of a ``,``.)
 
 In Python, we must **open** files before we can use them and **close** them when we are done with them. Opening a file returns a Python object that has predefined functions and procedures, just like the turtle objects we have seen before. :ref:`Table 1<filemethods1a>` shows the functions and procedures that can be used to open and close files.
 
@@ -421,45 +421,98 @@ In Python, we must **open** files before we can use them and **close** them when
 ================ ======================== =====================================================
 ``open``          ``open(filename,'r')``    Open a file called filename and use it for reading.  This will return a reference to a file object.
 ``open``          ``open(filename,'w')``    Open a file called filename and use it for writing.  This will also return a reference to a file object.
-``close``        ``filevariable.close()``   Closes the file after you are finished with it.  
+``close``         ``filename.close()``      Closes the file after you are finished with it.  
 ================ ======================== =====================================================
 
-The code below will print out the pollution information for the cities that start with ``"A"``.  It will print the city, state on one line and the two pollution values for that city on another line.  
+The code below will print out the pollution information for all the cities that start with ``"A"``.  It will print the city, state on one line and the two pollution values for that city on another line.  It stops looping when there aren't any more lines to be read (when the returned line is an empty string).  
 
 .. activecode:: printData
-   :tour_1: "Structural tour"; 1: web1-line4; 2: web1-line5; 3: web1-line6; 4: web1-line7; 5: web1-line8; 6: web1-line9; 7-8: web1-line10-11; 9: web1-line12; 11: web1-line14;
+   :tour_1: "Structural tour"; 2: web1-line4; 5: web1-line5; 8: web1-line6; 11: web1-line7; 14: web1-line8; 17: web1-line9; 18-19: web1-line10-11; 22: web1-line12; 25: web1-line14;
    :nocodelens:
 
+   # open the file for reading
    inFile = open("uspoll.txt","r")
+   
+   # read a line from the file
    line = inFile.readline()
+   
+   # while there is another line
    while line:
+   
+       # create a list by splitting at the :
        values = line.split(":")
+       
+       # get the city from the list
        city = values[0]
-       if (city.find("A",0,1) == 0):
+       
+       # if the city starts with an A print the info
+       if (city.find("A") == 0):
            print('City: ', city)
            print("Pollution values:",values[1],values[2])
+           
+       # read the next line
        line = inFile.readline()
 
+   # close the file
    inFile.close()
+   
+.. parsonsprob:: 18_3_1_printInfoForCity
 
-Now, there is actually a way of using a **for** loop to read in a file.  We can read the whole thing into one giant list, and then use a **for** loop to process each line in the list.
+   The following program prints the pollution information for all cities that start with a ``D``, but the code is mixed up.  Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or have the wrong indention.
+   -----
+   # open the file for reading
+   inFile = open("uspoll.txt","r")
+   
+   # read a line from the file
+   line = inFile.readline()
+   =====
+   # while there is another line
+   while line:
+   =====
+       # split at the :
+       v = line.split(":")
+       
+       # get the city
+       city = v[0]
+   =====
+       # if city starts with an D print info
+       if (city.find("D") == 0):
+           print('City: ', city)
+           print("Pollution values:",v[1],v[2])
+   ===== 
+       # read the next line
+       line = inFile.readline()
+   =====
+   # close the file
+   inFile.close()
+   
+
+There is actually a way of using a **for** loop to read in a file.  We can read the whole thing into one giant list, and then use a **for** loop to process each line in the list.
 
 .. activecode:: printData_withLines
-   :tour_1: "Structural tour"; 1: web1-line4; 2: web2-line5; 3: web2-line6; 5: web2-line8; 6: web2-line9; 7: web2-line10; 8: web2-line11; 9-10: web2-line12-13;
+   :tour_1: "Structural tour"; 2: web1-line4; 3: web2-line5; 4: web2-line6; 7: web2-line8; 10: web2-line9; 13: web2-line10; 16: web2-line11; 17-18: web2-line12-13;
    :nocodelens:
 
+   # open the file, read the lines into a list, and close the file
    inFile = open("uspoll.txt","r")
    lines = inFile.readlines()
    inFile.close()
    
+   # loop through the lines list
    for line in lines:
+   
+       # split at :
        values = line.split(":")
+       
+       # get the city
        city = values[0]
-       if (city.find("A",0,1) == 0):
+       
+       # if city starts with A print the info
+       if (city.find("A") == 0):
            print('City: ', city)
            print("Pollution values:",values[1],values[2])
 
-.. mchoicemf:: 18_3_1_for_disadvantage
+.. mchoice:: 18_3_1_for_disadvantage
    :answer_a: For a big data file, this could overload memory.
    :answer_b: <code>for</code> loops are inefficient.
    :answer_c: <code>for</code> loops are not as flexible as <code>while</code> loops.  

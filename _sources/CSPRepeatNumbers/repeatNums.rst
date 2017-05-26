@@ -30,7 +30,9 @@ Repeating with Numbers
 	pair: loop; body
 	pair: loop; indention
 	
-We are going to use a ``for`` loop.  A ``for`` loop is one type of loop or way to repeat a statement or set of statements in a program.  A ``for`` loop will use a variable and make the variable take on each of the values in a **list** of numbers one at a time.  Notice that line 3 in the program below ends with a ``:`` and that line 4 is **indented** so that it starts under the ``n`` in ``number``.  **Indented** means that text on the line has spaces at the beginning of the line so that the text doesn't start right at the left boundary. Both the ``:`` and the indention are required in a loop.  Line 3 is the start of the ``for`` loop and line 4 is the **body** of the loop.  The **body** of the loop is repeated for each value in the list ``thingsToAdd``.   
+We are going to use a ``for`` loop.  A ``for`` loop is one type of loop or way to repeat a statement or set of statements in a program.  A ``for`` loop will use a variable and make the variable take on each of the values in a **list** of numbers one at a time.  A **list** holds values in an order.  
+
+Notice that line 3 in the program below ends with a ``:`` and that line 4 is **indented** four spaces so that it starts under the ``n`` in ``number``.  **Indented** means that text on the line has spaces at the beginning of the line so that the text doesn't start right at the left boundary. Both the ``:`` and the indention are required in a loop.  Line 3 is the start of the ``for`` loop and line 4 is the **body** of the loop.  The **body** of the loop is repeated for each value in the list ``thingsToAdd``.   
 
 What is the sum of all the numbers between 1 and 10?  Run the program below to calculate the answer.
 
@@ -44,7 +46,7 @@ What is the sum of all the numbers between 1 and 10?  Run the program below to c
     	sum = sum + number
     print(sum)
     
-.. mchoicemf:: 7_2_1_Numbers_Repeat1_Q1
+.. mchoice:: 7_2_1_Numbers_Repeat1_Q1
    :answer_a: It prints the same thing it did before.
    :answer_b: It prints the value of sum 10 times and sum is different each time it is printed.
    :answer_c: It prints the same sum 10 times.
@@ -57,7 +59,7 @@ What is the sum of all the numbers between 1 and 10?  Run the program below to c
 
    What is printed if you change the program above so that line 5 is also indented the same amount as line 4?
    
-.. mchoicemf:: 7_2_2_Numbers_Repeat1_Q2
+.. mchoice:: 7_2_2_Numbers_Repeat1_Q2
    :answer_a: It prints the same thing it did before.
    :answer_b: It prints the value of sum 10 times and sum is different each time it is printed.
    :answer_c: It prints the same sum 10 times.

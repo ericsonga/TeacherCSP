@@ -13,7 +13,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-12-7-
+	:prefix: csp-12-8-
 	
 .. highlight:: python
    :linenothreshold: 3
@@ -68,7 +68,7 @@ An ``else`` is an additional optional phrase on an ``if`` statement.  IF AND ONL
 
 .. parsonsprob:: 12_7_1_Even_Odd
 
-   The following program should print out "x is even" if the remainder of x divided by 2 is 0 and "x is odd" otherwise, but the code is mixed up. The ``%`` symbol gives the remainder after the first number is divided by the second number.  Drag the blocks from the left and place them in the correct order on the right.  Be sure to also indent correctly! click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or have the wrong indention.</p>
+   The following program should print out "x is even" if the remainder of x divided by 2 is 0 and "x is odd" otherwise, but the code is mixed up. The ``%`` symbol gives the remainder after the first number is divided by the second number.  Drag the blocks from the left and place them in the correct order on the right.  Be sure to also indent correctly! Click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or have the wrong indention.</p>
    -----
    x = 92
    if x % 2 == 0:
@@ -76,7 +76,7 @@ An ``else`` is an additional optional phrase on an ``if`` statement.  IF AND ONL
    else: 
        print("x is odd")
 
-It is easy to write an ``if`` where you want *exactly* one block to execute, but you can accidentally create a "hole" -- a condition when neither block executes.  That's what happened in the example below when the weight is equal to 1 pound.
+It is easy to write an ``if`` when you want *exactly* one block to execute, but you can accidentally create a "hole" -- a condition where neither block executes.  That's what happened in the example below when the weight is equal to 1 pound.
 
 .. activeCode:: Price_If_Broken2
      :tour_1: "Structural Tour"; 1: c1-line1; 2-3: c1-line2-3; 4-5: c3-line4-5; 6: c1-line6; 7-9: c3f-line7-9;

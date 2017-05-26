@@ -13,7 +13,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-6-7-
+	:prefix: csp-6-10-
 	
 .. highlight:: java
    :linenothreshold: 4
@@ -55,7 +55,7 @@ Similarly, in the image processing example, we used ``from image import *``.  Th
     
 The ``for p in pixels`` on line 9 let's us loop through all of the pixels in the image and change the red value for each pixel.  We'll talk more about looping (repeating steps) in the next chapter.
 
-.. mchoicemf:: 6_7_1_Image_Functions_Q1
+.. mchoice:: 6_7_1_Image_Functions_Q1
    :answer_a: It sets the red value in the current pixel to half the red of the original.  
    :answer_b: It sets the red value in the current pixel to twice the red of the original.
    :answer_c: It sets the red value in the current pixel to 5 times the red of the original.

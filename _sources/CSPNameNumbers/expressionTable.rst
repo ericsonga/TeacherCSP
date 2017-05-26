@@ -48,7 +48,7 @@
     
 .. 	qnum::
 	:start: 1
-	:prefix: csp-3-3-
+	:prefix: csp-3-4-
 
 .. highlight:: java
    :linenothreshold: 4
@@ -58,36 +58,36 @@
 Summary of Expression Types
 ============================
 
-+------------+--------------------------------------------------------------------------------------------+
-| Expression | Arithmetic meaning                                                                         |
-+------------+--------------------------------------------------------------------------------------------+
-| 1 + 2      | Addition, the result is 3                                                                  |
-+------------+--------------------------------------------------------------------------------------------+
-| 3 * 4      | Multiplication, the result is 12                                                           |
-+------------+--------------------------------------------------------------------------------------------+
-| 1 / 3      | Integer division, the result is 0 in typical Python environments, but 0.333333333333 here  |
-+------------+--------------------------------------------------------------------------------------------+
-| 2.0 / 4.0  | Division, the result is 0.5, since you are using decimal numbers in the calculation        |
-+------------+--------------------------------------------------------------------------------------------+
-| 2 % 3      | Modulo (remainder), the result is 2                                                        |
-+------------+--------------------------------------------------------------------------------------------+
-| -1         | Negation, the result is -1                                                                 |
-+------------+--------------------------------------------------------------------------------------------+
++------------+-------------------------------------------------------------------------------------------------+
+| Expression | Arithmetic meaning                                                                              |
++------------+-------------------------------------------------------------------------------------------------+
+| 1 + 2      | Addition, the result is 3                                                                       |
++------------+-------------------------------------------------------------------------------------------------+
+| 3 * 4      | Multiplication, the result is 12                                                                |
++------------+-------------------------------------------------------------------------------------------------+
+| 1 / 3      | Integer division, the result is 0 in older Python environments, but 0.333333333333 in Python 3  |
++------------+-------------------------------------------------------------------------------------------------+
+| 2.0 / 4.0  | Division, the result is 0.5, since you are using decimal numbers in the calculation             |
++------------+-------------------------------------------------------------------------------------------------+
+| 2 % 3      | Modulo (remainder), the result is 2                                                             |
++------------+-------------------------------------------------------------------------------------------------+
+| -1         | Negation, the result is -1                                                                      |
++------------+-------------------------------------------------------------------------------------------------+
 
-.. mchoicemf:: 3_3_1_intDiv_Q1
+.. mchoice:: 3_3_1_intDiv_Q1
    :answer_a: 0
    :answer_b: 1
    :answer_c: 0.75
    :answer_d: 0.25
    :correct: c
-   :feedback_a: If the two values are both integers (whole numbers) you will normally get an integer (whole number) result in most Python environments.  But, since in the eBook we translate the Python to JavaScript it gives a decimal result.
+   :feedback_a: If the two values are both integers (whole numbers) you will normally get an integer (whole number) result in older Python environments.  But, this book is using Python 3 so you get a decimal result.
    :feedback_b: This would be correct if the result was rounded up before the values after the decimal point were thrown away, but it does not do this.   
-   :feedback_c: While this isn't the what most Pyton development environments would return, in this book we are translating the Python to JavaScript so it will give a decimal result.
+   :feedback_c: While this isn't the what older Pyton development environments would return, in this book we are using Python 3 so it returns a decimal result.
    :feedback_d: This would be correct if it was <code>1 / 4</code>, <code>1.0 / 4</code>, or <code>1 / 4.0</code>
 
    What is the result of ``3 / 4``?
     
-.. mchoicemf:: 3_3_2_mod_Q1
+.. mchoice:: 3_3_2_mod_Q1
    :answer_a: 0
    :answer_b: 1
    :answer_c: 2
@@ -100,7 +100,7 @@ Summary of Expression Types
 
    What is the result of ``18 % 5``?
    
-.. mchoicemf:: 3_3_3_mod_Q2
+.. mchoice:: 3_3_3_mod_Q2
    :answer_a: 0
    :answer_b: 1
    :answer_c: 2
@@ -109,7 +109,7 @@ Summary of Expression Types
    :feedback_a: This would be correct if it was <code>6 % 2</code>.  
    :feedback_b: This would be correct if it was some odd number divided by 2, but it is not.
    :feedback_c: 6 goes into 2 zero times with 2 left over.  
-   :feedback_d: If you have a larger number divided by a smaller number the remainder is always the smaller number. 
+   :feedback_d: If you have a smaller number divided by a larger number the remainder is always the smaller number. 
 
    What is the result of ``2 % 6``?
 

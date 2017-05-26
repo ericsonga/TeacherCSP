@@ -37,5 +37,4 @@ Chapter 2 included the following concepts from computing.
 
 .. note::  
 
-   This is the end of chapter 2.  Readers who are part of the teacher study should go to https://www.surveymonkey.com/r/1a2-feedback to give us feedback about these chapters and then continue to the next section which is an exam on chapters 1 and 2.  If you are not part of the study you can skip the exam or take it if you wish.  Remember that you can go to the table of contents by clicking on "Teacher-CSP" in the upper left corner of this window.
-
+   This is the end of chapter 2. We would love it if you could give us some feedback on this chapter at https://www.surveymonkey.com/r/ch2-teacher-fb.  You might want to open this link in a new tab to make it easier for you to return to your place in this ebook.

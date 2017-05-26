@@ -44,7 +44,7 @@ What happens if we add the letter to *both* sides of the new string that we're m
 
 Try changing the phrase and see what effects you can generate.
 
-.. mchoicemf:: 9_3_1_Copy_Mirror_Q1
+.. mchoice:: 9_3_1_Copy_Mirror_Q1
    :answer_a: Make the phrase <code>"Time to panic!"</code>
    :answer_b: Change the <code>newString</code> in line 1 to <code>"!"</code> instead of <cod>""</code>
    :answer_c: Change the right hand side of line 4 to <code>letter + "!" + newstring + letter</code>
@@ -67,7 +67,7 @@ The accumulator doesn't have to be set to be an empty string.  You can put somet
         newString = letter + newString + letter
     print(newString)
 
-.. mchoicemf:: 9_3_2_Count_Exclamations_Q1
+.. mchoice:: 9_3_2_Count_Exclamations_Q1
    :answer_a: One
    :answer_b: Two
    :answer_c: Three

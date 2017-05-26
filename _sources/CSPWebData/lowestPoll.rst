@@ -20,7 +20,7 @@ What's the lowest PM 2.5 pollution?
 
 If we can figure out the city with the maximum pollution, the city with the minimum pollution should be pretty easy to find as well.  
 
-This program uses the same data file that we have been using, but if you want to see **all** of the data click on the *Show* button below.  Once it appears, you can hide it again by clicking on the *Hide* button.
+This section uses the same data file that we have been using, but if you want to see **all** of the data click on the *Show* button below.  Once it appears, you can hide it again by clicking on the *Hide* button.
 
 .. reveal:: pol_Data5
     :showtitle: Show
@@ -411,22 +411,45 @@ This program uses the same data file that we have been using, but if you want to
        </pre>
 
 .. activecode:: min25
-   :tour_1: "Structural tour"; 1-3: web4-line1-3; 5-6: web4-line5-6; 7: web4-line7; 8: web4-line8; 9: web4-line9; 10: web4-line10; 11-12: web4-line11-12; 13: web4-line13;
+   :tour_1: "Structural tour"; 2-4: web4-line1-3; 7-8: web4-line5-6; 11: web4-line7; 14: web4-line8; 17: web4-line9; 20: web4-line10; 23-24: web4-line11-12; 27: web4-line13;
    :nocodelens:
 
+   # read all the lines
    inFile = open("uspoll.txt","r")
    lines = inFile.readlines()
    inFile.close()
      
+   # initialize the variables
    minCity = ''
    min25 = 500
+   
+   # loop through the lines
    for line in lines:
+   
+       # split at :
        values = line.split(":")
-       new25 = float(values[2]) # set the value for new25 to be the current PM 2.5 value
+       
+       # get the PM 2.5 pollution
+       new25 = float(values[2]) 
+       
+       # if current <  min
        if new25 < min25:
-           minCity = values[0] # Save the minimum city and state 
-           min25 = new25 # save the minimum PM 2.5 value
+       
+           # save new min info
+           minCity = values[0] 
+           min25 = new25
+           
+   # print the smallest PM 2.5 value
    print("Smallest PM 2.5 ",min25," in ",minCity)
+   
+.. mchoice:: 18_5_1_min25
+   :answer_a: Yes
+   :answer_b: No 
+   :correct: b
+   :feedback_a: This will work as long as the actual minimum is less than 500.  
+   :feedback_b: If the actual minimum is greater than 500 this won't work.
+
+   Will this code always work to find the minimum PM 2.5 value?
    
 .. tabbed:: tab_max_pol
 
@@ -472,7 +495,7 @@ This program uses the same data file that we have been using, but if you want to
                   min10 = new10
           print("Smallest PM 10 value is ",min10," in ",minCity)
 
-.. mchoicemf:: 18_5_1_min10
+.. mchoice:: 18_5_2_min10
    :answer_a: The same city has the minimum PM 2.5 and the minimum PM 10.  
    :answer_b: The two cities are in different states, but are both in the east.  
    :answer_c: The two cities are in different states, but are both in the west.  
@@ -482,4 +505,35 @@ This program uses the same data file that we have been using, but if you want to
    :feedback_c: Two different cities have the minimum values, but they are both in the west.
 
    Which of the following is true about the cities with the minimum PM 2.5 and PM 10 values? 
+   
+.. parsonsprob:: 18_5_1_minPM25
 
+   The following program prints the minimum PM 2.5 pollution found, but the code is mixed up.  Drag the blocks of statements from the left column to the right column and put them in the right order.  Then click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or have the wrong indention.
+   -----
+   # read all the lines
+   inFile = open("uspoll.txt","r")
+   lines = inFile.readlines()
+   inFile.close()
+
+   # initialize the variables
+   minCity = ''
+   min25 = 500
+   =====
+   # loop through the lines
+   for line in lines:
+   =====
+       # split at :
+       values = line.split(":")
+   =====    
+       # get the PM 2.5 pollution
+       new25 = float(values[2]) 
+   =====    
+       # if current <  min
+       if new25 < min25:
+   =====    
+           # save new min info
+           minCity = values[0] 
+           min25 = new25
+   =====        
+   # print the smallest PM 2.5 value
+   print("Smallest PM 2.5 ",min25," in ",minCity)

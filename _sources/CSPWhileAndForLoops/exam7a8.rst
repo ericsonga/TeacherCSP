@@ -1,19 +1,17 @@
 .. qnum::
-   :prefix: 8-6-
+   :prefix: 8-10-
    :start: 1
    
 Exam Questions for Chapters 7 and 8
 -------------------------------------
 
-The following questions test what you have learned in chapters 7 and 8. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  Hover over the clock icon to see how much time you have spent on the exam, but you have unlimited time.  Click on the "Submit Answers" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
+The following questions test what you have learned in chapters 7 and 8. Click the "Start" button when you are ready to begin the exam.  Click the "Pause" button to pause the exam (you will not be able to see the questions when the exam is paused).  It will show how much time you have used, but you have unlimited time.  Click on the "Finish Exam" button at the end when you are done.  The number correct, number wrong, and number skipped will be displayed at the bottom of the page.  Feedback for each answer will also be shown as well as your answer.
 
-You will not be able to change your answers after you hit the "Submit Answers" button.
+You will not be able to change your answers after you hit the "Finish Exam" button.
 
-.. startexam:: timed_Test
-    :showtitle: Exam Not Started
-    :hidetitle: Currently Taking Exam
+.. timed:: ch7a8ex
     
-    .. exammchoicemf:: e7a8_1
+    .. mchoice:: e7a8_1
        :answer_a: Number: 10
        :answer_b: Number: number
        :answer_c: Number: 0
@@ -24,7 +22,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
        :feedback_c: While number is set to 0 to start it increments each time inside the loop.
        :feedback_d: This would be true if the print statement was after number was incremented by 1, but it is before.
 
-       What is the last line to be printed when the following code is run? 
+       What is the last thing printed when the following code is run? 
        
        ::
 
@@ -33,7 +31,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
               print ("Number: ", number) 
               number = number + 1
            
-    .. exammchoicemf:: e7a8_2
+    .. mchoice:: e7a8_2
        :answer_a: 1
        :answer_b: 2
        :answer_c: 3
@@ -53,7 +51,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
               print ("hello")
           
            
-    .. exammchoicemf:: e7a8_3
+    .. mchoice:: e7a8_3
        :answer_a: The program will loop indefinitely
        :answer_b: The value of number will be printed exactly 1 time
        :answer_c: The while loop will never get executed
@@ -74,7 +72,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
                   number = number + 1 
               print(number)
            
-    .. exammchoicemf:: e7a8_4
+    .. mchoice:: e7a8_4
        :answer_a: 4
        :answer_b: 0
        :answer_c: 7
@@ -96,7 +94,7 @@ You will not be able to change your answers after you hit the "Submit Answers" b
               sum = sum + number
           print (sum)
            
-    .. exammchoicemf:: e7a8_5
+    .. mchoice:: e7a8_5
        :answer_a: 12
        :answer_b: 9
        :answer_c: 7
@@ -118,6 +116,5 @@ You will not be able to change your answers after you hit the "Submit Answers" b
               counter = counter + 2
           print (sum)
              
-    .. finishexam:: timed_Test
 
    

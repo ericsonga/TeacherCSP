@@ -10,10 +10,10 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-6-9-
+	:prefix: csp-6-12-
 
 
-Chapter 6 - Concept Summary
+Chapter 6 - Summary
 ============================
 
 Chapter 6 included the following concepts from computing.
@@ -47,8 +47,4 @@ Chapter 6 included the following concepts from computing.
 
 .. note::  
 
-   This is the end of chapter 6.  Readers who are part of the teacher study should go to https://www.surveymonkey.com/r/ch5a6-feedback to provide feedback and then continue to the next section which is an exam on chapters 5 and 6.  If you are not part of the study you can skip the exam or take it if you wish.  Remember that you can go to the table of contents by clicking on "Teacher-CSP" in the upper left corner of this window.
-
-   
-
- 
+   This is the end of chapter 6.   We would love it if you could give us some feedback on this chapter at https://www.surveymonkey.com/r/ch6-teacher-fb.  You might want to open this link in a new tab to make it easier for you to return to your place in this ebook.

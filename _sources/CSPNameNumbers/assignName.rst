@@ -123,7 +123,7 @@ There are restrictions on what you can use as a variable name.
 
 Since you can't have spaces in a variable name you can either join words together by uppercasing the first letter of each new word like ``heightInInches`` or use underscores between words ``height_in_inches``.  Uppercasing the first letter of each new word is called **camel-case** or **mixed-case**.  
 
-.. mchoicemf:: 3_1_1_varNames_Q1
+.. mchoice:: 3_1_1_varNames_Q1
    :answer_a: _a1
    :answer_b: my_name
    :answer_c: amountOfStuff
@@ -138,7 +138,7 @@ Since you can't have spaces in a variable name you can either join words togethe
 
    Which of the following is *not* a legal variable name?
    
-.. mchoicemf:: 3_1_2_varNames_Q2
+.. mchoice:: 3_1_2_varNames_Q2
    :answer_a: _my_name
    :answer_b: my name
    :answer_c: myname

@@ -75,7 +75,7 @@ Change the ``??`` in line 7 below to the amount to turn each time to draw a 12 s
       	mia.forward(40)       	# move forward by 40 units
       	mia.right(??)          	# change ?? to the amount to turn
 
-.. mchoicemf:: 10_2_1_Turtle_Dodecagon_Q1
+.. mchoice:: 10_2_1_Turtle_Dodecagon_Q1
    :answer_a: 15
    :answer_b: 30
    :answer_c: 12
@@ -89,6 +89,7 @@ Change the ``??`` in line 7 below to the amount to turn each time to draw a 12 s
    How much does ``mia`` need turn in the program above to create a closed dodecagon (12-sided figure)?  Only one of these works.
    
 .. parsonsprob:: 10_2_2_Triangle
+   :adaptive:
 
    The following program uses a turtle to draw a triangle as shown to the left, <img src="../_static/TurtleTriangle.png" width="150" align="left" hspace="10" vspace="5"/> but the lines are mixed up.  The program should do all necessary set-up and create the turtle.  After that, iterate (loop) 3 times, and each time through the loop the turtle should go forward 100 pixels, and then turn left 120 degrees.  After the loop, set the window to close when the user clicks in it.<br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order with the correct indention.  Click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or are incorrectly indented.</p> 
    -----

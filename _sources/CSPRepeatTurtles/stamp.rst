@@ -26,11 +26,11 @@ Here is an example that shows off these new features.
    from turtle import *
    space = Screen()
    tess = Turtle()
-   tess.pencolor("blue")
+   tess.color("blue")
    tess.shape("turtle")
 
    print(range(5, 60, 2))
-   tess.up()                     # ask tess to pick up her pen 
+   tess.penup()                  # ask tess to pick up her pen 
    for size in range(5, 60, 2):  # start with size = 5 and grow by 2
        tess.stamp()                # leave an impression on the canvas
        tess.forward(size)          # move tess along
@@ -44,6 +44,7 @@ not sure, write a new line of code after the ``for`` loop to change tess' color,
 **Mixed up program**
 
 .. parsonsprob:: 10_4_1_turtle-stamp
+   :adaptive:
 
    The following program uses the stamp method to create a line of turtle shapes as shown to the left, <img src="../_static/Turtle3Stamp.png" width="150" align="left" hspace="10" vspace="5" /> but the lines are mixed up.  The program should do all necessary set-up, create the turtle, set the shape to "turtle", and pick up the pen.  Then the turtle should repeat the following three times: go forward 50 pixels and leave a copy of the turtle at the current position.  <br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order with the correct indention.  Click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or are incorrectly indented.</p>
    -----
@@ -64,6 +65,7 @@ not sure, write a new line of code after the ``for`` loop to change tess' color,
        nikea.stamp()  
 
 .. parsonsprob:: 10_4_2_turtle-circle
+   :adaptive:
 
    The following program uses the stamp method to create a circle of turtle shapes as shown to the left, <img src="../_static/TurtleCircle.png" width="150" align="left" hspace="10" vspace="5"/> but the lines are mixed up.  The program should do all necessary set-up, create the turtle, set the shape to "turtle", and pick up the pen.  Then the turtle should repeat the following ten times: go forward 50 pixels, leave a copy of the turtle at the current position, reverse for 50 pixels, and then turn right 36 degrees.  <br /><br /><p>Drag the blocks of statements from the left column to the right column and put them in the right order with the correct indention.  Click on <i>Check Me</i> to see if you are right. You will be told if any of the lines are in the wrong order or are incorrectly indented.</p>  
    -----

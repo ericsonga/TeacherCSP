@@ -71,8 +71,29 @@ In the above program, we *DEFine* the word ``square`` to represent the Python st
 
 .. Note::
    Notice that we defined the turtle procedure ``def square (turtle):`` in the code above before we tried to call it ``square(malik)``.  This is required in Python, but not in some other programming languages.
+   
+Defining a Function
+--------------------
 
-.. mchoicemf:: 6_3_1_Functions_Q2
+You define a function just like you define a procedure, but it will also ``return`` a value as shown below.  
+
+.. activecode:: def_function
+  :nocodelens:
+
+  def bmi(height, weight):
+      heightSquared = height * height
+      BMI = weight / heightSquared
+      BMImetric = BMI * 703
+      return BMImetric
+      
+  print(bmi(60,110))
+  
+.. note::
+   To return a value from a function use the Python keyword ``return`` followed by the value to return.  
+  
+**Check Your Understanding**
+
+.. mchoice:: 6_3_1_Functions_Q2
    :answer_a: Procedure
    :answer_b: Function
    :correct: b
@@ -81,7 +102,7 @@ In the above program, we *DEFine* the word ``square`` to represent the Python st
 
    Is ``abs`` a procedure or a function?
    
-.. mchoicemf:: 6_3_2_Functions_Q3
+.. mchoice:: 6_3_2_Functions_Q3
    :answer_a: Procedure
    :answer_b: Function
    :correct: a
@@ -101,7 +122,7 @@ See the video below for a hint on how to solve the next mixed up code problem.
    
 .. parsonsprob:: 6_3_3_Triangle_Procedure
 
-   The following code should define a procedure that draws a triangle, but it may be mixed up *and may contain extra (unused) code*.  Drag the needed code to the right side in the correct order.  <b>Remember that the statements in the procedure must be indented!</b>  To indent a block drag it further right. 
+   The following code should define a procedure that draws a triangle, but it may be mixed up <i>and may contain extra (unused) code</i>.  Drag the needed code to the right side in the correct order.  <b>Remember that the statements in the procedure must be indented!</b>  To indent a block drag it further right. 
    -----
    def triangle(turtle):
    =====

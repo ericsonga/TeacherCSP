@@ -49,7 +49,7 @@ In programming there are two different terms used for a named sequence of statem
   print("Integer part of 34.2")
   print(int(34.2))
   
-.. mchoicemf:: 6_2_1_Functions_Q1
+.. mchoice:: 6_2_1_Functions_Q1
    :answer_a: -16
    :answer_b: -16.789
    :answer_c: 16.789

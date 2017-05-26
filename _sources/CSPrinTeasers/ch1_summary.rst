@@ -10,7 +10,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-1-7-
+	:prefix: csp-1-8-
 
 
 Chapter 1 - Concept Summary
@@ -35,5 +35,9 @@ Chapter 1 included the following concepts from computing.
 - **Pixel** - A pixel is one small part (element) of a picture.  Pixels are stored in a grid and have both x (horizontal) and y (vertical) values.  A pixel has a color which can be defined by an amount of red, green, and blue with values from 0 to 255.  
 - **Program** - A program is a set of instructions that a computer can understand to accomplish some goal.  This is sometimes called **code**.  
 - **Screen** - A ``Screen`` is part of the Turtle library.  It is a space on the page for the turtle to move in and draw on.
-- **String** - A string is anything we can type between a pair of double quotes (``"Hi"``) or a pair of single quotes (``'Hi'``).  It is a sequence of characters.  
+- **String** - A string is anything we can type between a pair of pair of single quotes (``'Hi'``), double quotes (``"Hi"``), or triple quotes (``'''Hi'''``).  It is a sequence of characters.  
 - **Variable** -  A variable is a name associated with computer memory that can hold a value and that value can change or vary. One example of a variable is the score in a game.
+
+.. note::  
+
+   This is the end of chapter 1. We would love it if you could give us some feedback on this chapter at https://www.surveymonkey.com/r/ch1-teacher-fb.  You might want to open this link in a new tab to make it easier for you to return to your place in this ebook.

@@ -10,10 +10,10 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-3-11-
+	:prefix: csp-3-13-
 
 
-Chapter 3 - Concept Summary
+Chapter 3 - Summary
 ============================
 
 Chapter 3 included the following concepts from computing.
@@ -39,3 +39,7 @@ Chapter 3 included the following concepts from computing.
 - **Modulo** - The modulo, or remainder operator, ``%``, returns the remainder after you divide one value by another.  For example the remainder of ``3 % 2`` is 1 since 2 goes into 3 one time with a remainder of 1.  
 - **Tracing** - Tracing a program means keeping track of the variables in the program and how their values change as the statements are executed.  We used a Code Lens tool to do this in this chapter.  
 - **Variable** -  A variable is a name associated with computer memory that can hold a value and that value can change or vary. One example of a variable is the score in a game.
+
+.. note::  
+
+   This is the end of chapter 3. We would love it if you could give us some feedback on this chapter at https://www.surveymonkey.com/r/ch3-teacher-fb.  You might want to open this link in a new tab to make it easier for you to return to your place in this ebook.

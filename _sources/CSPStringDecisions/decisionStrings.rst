@@ -31,8 +31,10 @@ Here's an example of conditional execution using ``if`` statements with strings.
     if numItems > 1:
         message = "You ordered " + str(numItems) + " items"
     print(message)
+    
+Change the value of ``numItems`` to see how that changes the output.
        
-.. mchoicemf:: 13_1_1_invoice_neg
+.. mchoice:: 13_1_1_invoice_neg
    :answer_a: You ordered 1 item
    :answer_b: Your ordered -1 items
    :answer_c: Nothing will be printed.
@@ -45,7 +47,7 @@ Here's an example of conditional execution using ``if`` statements with strings.
 
    What will be printed if numItems = -1? 
 
-.. mchoicemf:: 13_1_2_invoice_else
+.. mchoice:: 13_1_2_invoice_else
    :answer_a: You ordered 1 item
    :answer_b: Your ordered -1 items
    :answer_c: Nothing will be printed.
@@ -73,7 +75,7 @@ then answer the multiple choice questions below.
     if score > 20:
         print("Amazing")
          
-.. mchoicemf:: 13_1_3_score1
+.. mchoice:: 13_1_3_score1
    :answer_a: You can do better.
    :answer_b: Good job!
    :answer_c: Amazing!
@@ -86,7 +88,7 @@ then answer the multiple choice questions below.
 
    What is printed when the score is 10?
    
-.. mchoicemf:: 13_1_4_score2
+.. mchoice:: 13_1_4_score2
    :answer_a: You can do better.
    :answer_b: Good job!
    :answer_c: Amazing!

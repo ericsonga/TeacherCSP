@@ -1,0 +1,4 @@
+build/
+pavement.pyc
+*.swp
+.DS_Store

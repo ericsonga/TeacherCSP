@@ -13,7 +13,7 @@
 
 .. 	qnum::
 	:start: 1
-	:prefix: csp-12-8-
+	:prefix: csp-12-10-
 	
 .. highlight:: python
    :linenothreshold: 3
@@ -52,7 +52,7 @@ Don't ask students to do much with ``and`` and ``or`` to start.  Give them a lot
 |bigteachernote| Teacher Note: Confusing while and if
 ==========================================================
 
-A ``while`` loop and an ``if`` loop **look** almost the same.  They each have a logical expression, and a block of instructions underneath them.  
+A ``while`` loop and an ``if`` block **look** almost the same.  They each have a logical expression, and a block of instructions underneath them.  
 
 Students often get them confused.  Some key distinctions to make to students:
 
@@ -60,4 +60,4 @@ Students often get them confused.  Some key distinctions to make to students:
 
 - A ``while`` block executes **repeatedly** *as long as the expression is true*.  The body of the loop can be executed *many* times.
 
-When you show students examples of ``while`` loops, make sure that you choose examples where the body of the loop gets executed several times, to show a difference from ``if``.  When you trace the program, trace more than one iteration through the body of the loop, to emphasize the multiple times.
+When you show students examples of ``while`` loops, make sure that you choose examples where the body of the loop gets executed several times, to show the difference between ``while`` loops and an ``if`` block.  When you trace the program, trace more than one iteration through the body of the loop, to emphasize the multiple times.

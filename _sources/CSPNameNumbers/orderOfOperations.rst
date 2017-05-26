@@ -48,7 +48,7 @@
     
 .. 	qnum::
 	:start: 1
-	:prefix: csp-3-4-
+	:prefix: csp-3-5-
 
 .. highlight:: java
    :linenothreshold: 4
@@ -69,15 +69,15 @@ The order that expressions are executed is the same as it is in math and is show
 | x + y, x - y           | Addition and subtraction                           |
 +------------------------+----------------------------------------------------+
 
-.. fillintheblank:: 3_4_1_Order1
-   :correct: ^-2$
-   :feedback1: ('.*','Did you actually run the program?')
-   :blankid: order1Blank
+.. fillintheblank:: 3_4_1_Order1_fill
 
-   What is printed when you click on the *Run* button in the code below? :textfield:`order1Blank::small`
+    .. blank:: 3_4_1_Order1
+        :correct: ^-2$
+        :feedback1: ('.*','Did you actually run the program?')
+        
+        What is printed when you click on the Run button in the code below? 
 
 .. activecode:: Expression_Order1
-    :tour_1: "Line-by-line Tour"; 1: ex1-line1; 2: ex1-line2; 
     :nocodelens:
     
     result = 4 + -2 * 3
@@ -85,15 +85,15 @@ The order that expressions are executed is the same as it is in math and is show
    
 You can change the default order by adding parentheses around part of an expression.
 
-.. fillintheblank:: 3_4_2_Order2
-   :correct: ^6$
-   :feedback1: ('.*','Did you actually run the program?')
-   :blankid: order2Blank
+.. fillintheblank:: 3_4_2_Order2_fill
 
-   What is printed when you click on the *Run* button in the code below? :textfield:`order2Blank::small`
+    .. blank:: 3_4_1_Order2
+        :correct: ^6$
+        :feedback1: ('.*','Did you actually run the program?')
+
+        What is printed when you click on the Run button in the code below? 
 
 .. activecode:: Expression_Order2
-    :tour_1: "Line-by-line Tour"; 1: ex1-line1; 2: ex1-line2; 
     :nocodelens:
     
     result = (4 + -2) * 3
